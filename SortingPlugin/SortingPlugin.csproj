@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>SortingPlugin</Title>
+    <PackageId>SortingPlugin</PackageId>
+    <Version>0.0.14</Version>
+    <PackageIcon>SortIcon.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PKHeX.Core" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="PluginSettings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PluginSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="PluginSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>PluginSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Resources\SortIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

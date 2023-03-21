@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>Raid Plugin</Title>
+    <PackageId>RaidImportPlugin</PackageId>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PKHeX.Core"  />
+  </ItemGroup>
+
+</Project>

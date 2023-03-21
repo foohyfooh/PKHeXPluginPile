@@ -1,0 +1,55 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{B8272072-CF5B-4795-8DD6-E5F9492D8EE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingPlugin", "SortingPlugin\SortingPlugin.csproj", "{7520FFC0-BB7F-4F6B-95E9-10334530B9B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InsertionPlugin", "InsertionPlugin\InsertionPlugin.csproj", "{A1A53B4A-F77E-4377-884A-0E00726AC743}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaidImportPlugin", "RaidImportPlugin\RaidImportPlugin.csproj", "{7930B3A7-BA46-4E12-BE66-85421992EF54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVivillonPlugin", "SVivillonPlugin\SVivillonPlugin.csproj", "{B287B88F-33B4-4FDF-8110-80D12DEC56FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C8D1E390-F0E1-4910-9398-528B28C83D9C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8272072-CF5B-4795-8DD6-E5F9492D8EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8272072-CF5B-4795-8DD6-E5F9492D8EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8272072-CF5B-4795-8DD6-E5F9492D8EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8272072-CF5B-4795-8DD6-E5F9492D8EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7520FFC0-BB7F-4F6B-95E9-10334530B9B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7520FFC0-BB7F-4F6B-95E9-10334530B9B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7520FFC0-BB7F-4F6B-95E9-10334530B9B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7520FFC0-BB7F-4F6B-95E9-10334530B9B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1A53B4A-F77E-4377-884A-0E00726AC743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1A53B4A-F77E-4377-884A-0E00726AC743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1A53B4A-F77E-4377-884A-0E00726AC743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1A53B4A-F77E-4377-884A-0E00726AC743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7930B3A7-BA46-4E12-BE66-85421992EF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7930B3A7-BA46-4E12-BE66-85421992EF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7930B3A7-BA46-4E12-BE66-85421992EF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7930B3A7-BA46-4E12-BE66-85421992EF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B287B88F-33B4-4FDF-8110-80D12DEC56FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B287B88F-33B4-4FDF-8110-80D12DEC56FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B287B88F-33B4-4FDF-8110-80D12DEC56FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B287B88F-33B4-4FDF-8110-80D12DEC56FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11D2A59A-138D-4732-A900-DEF52B7BCB89}
+	EndGlobalSection
+EndGlobal

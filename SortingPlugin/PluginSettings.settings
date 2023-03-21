@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SortingPlugin" GeneratedClassName="PluginSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ShowIndividualPokedéxes" Description="Show the individual area Pokedéxes for those that have it." Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SortBeginBox" Description="The box to begin sorting from." Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="SortEndBox" Description="The box to ending sorting in.  -1 can be used to specify the last box." Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
