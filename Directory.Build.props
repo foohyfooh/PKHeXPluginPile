@@ -6,15 +6,14 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
+    <Version>1.0.2</Version>
     <Company>foohyfooh</Company>
     <Authors>foohyfooh</Authors>
     <RootNamespace>$(SolutionName).$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageVersion Include="PKHeX.Core" Version="23.2.28" />
     <ProjectReference Include="$(SolutionDir)\Common\Common.csproj" Condition="'$(RootNamespace)' != '$(SolutionName).Common'" PrivateAssets="All"/>
   </ItemGroup>
 

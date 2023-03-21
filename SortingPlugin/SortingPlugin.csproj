@@ -3,12 +3,11 @@
   <PropertyGroup>
     <Title>SortingPlugin</Title>
     <PackageId>SortingPlugin</PackageId>
-    <Version>0.0.14</Version>
     <PackageIcon>SortIcon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PKHeX.Core" />
+    <PackageReference Include="PKHeX.Core" Version="23.2.28" />
   </ItemGroup>
 
   <ItemGroup>
