@@ -30,7 +30,7 @@ namespace PluginPile.InsertionPlugin {
     private void boxNumber_TextChanged(object sender, EventArgs e) => ValidateNumberInput(sender, e);
     private void slotNumber_TextChanged(object sender, EventArgs e) => ValidateNumberInput(sender, e);
 
-    private void ShowErrorMessageBox(string text) => MessageBox.Show(text, "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    private void ShowErrorMessageBox(string text) => MessageBox.Show(text, Properties.Text.InputError, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
     private void insertSpotButton_Click(object sender, EventArgs e) {
       if (boxNumber.Text.Length == 0 || slotNumber.Text.Length == 0) return;
@@ -40,12 +40,12 @@ namespace PluginPile.InsertionPlugin {
       bool hadError = false;
       string errorText = string.Empty;
       if (boxNum < 1 || boxNum > saveFileEditor.SAV.BoxCount) {
-        errorText = $"Box Number should be between 1 and {saveFileEditor.SAV.BoxCount}";
+        errorText = string.Format(Properties.Text.BoxNumberRangeError, boxNum);
         hadError = true;
       }
       if (slotNum < 1 || slotNum > saveFileEditor.SAV.BoxSlotCount) {
         if (errorText.Length > 0) errorText += "\n";
-        errorText += $"Slot Number should be between 1 and {saveFileEditor.SAV.BoxSlotCount}";
+        errorText += string.Format(Properties.Text.SlotNumberRangeError, slotNum);
         hadError = true;
       }
       if (hadError) {
@@ -56,7 +56,7 @@ namespace PluginPile.InsertionPlugin {
       int startIndex = (boxNum - 1) * saveFileEditor.SAV.BoxSlotCount + (slotNum - 1);
       PKM currMon = saveFileEditor.SAV.GetBoxSlotAtIndex(startIndex), nextMon;
       if (currMon.Species == (int)Species.None) {
-        ShowErrorMessageBox($"Box {boxNum} Slot {slotNum} is already empty");
+        ShowErrorMessageBox(string.Format(Properties.Text.BoxSlotEmptyError, boxNum, slotNum));
         return;
       }
       int boxIndex = startIndex + 1;
@@ -66,7 +66,7 @@ namespace PluginPile.InsertionPlugin {
         boxIndex++;
       }
       if (boxIndex == saveFileEditor.SAV.SlotCount) {
-        ShowErrorMessageBox($"There are no empty slots after Box {boxNum} Slot {slotNum}");
+        ShowErrorMessageBox(string.Format(Properties.Text.NoEmptySlotsError, boxNum, slotNum));
         return;
       }
       currMon = saveFileEditor.SAV.GetBoxSlotAtIndex(startIndex);

@@ -23,66 +23,49 @@ namespace PluginPile.InsertionPlugin {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PositionForm));
       boxNumberLabel = new Label();
       boxNumber = new TextBox();
       slotNumberLabel = new Label();
       slotNumber = new TextBox();
       insertSpotButton = new Button();
       SuspendLayout();
-      //
+      // 
       // boxNumberLabel
-      //
-      boxNumberLabel.AutoSize = true;
-      boxNumberLabel.Location = new Point(12, 12);
+      // 
+      resources.ApplyResources(boxNumberLabel, "boxNumberLabel");
       boxNumberLabel.Name = "boxNumberLabel";
-      boxNumberLabel.Size = new Size(74, 15);
-      boxNumberLabel.TabIndex = 0;
-      boxNumberLabel.Text = "Box Number";
       boxNumberLabel.Click += boxNumberLabel_Click;
-      //
+      // 
       // boxNumber
-      //
-      boxNumber.Location = new Point(133, 12);
+      // 
+      resources.ApplyResources(boxNumber, "boxNumber");
       boxNumber.Name = "boxNumber";
-      boxNumber.PlaceholderText = "Box Number";
-      boxNumber.Size = new Size(100, 23);
-      boxNumber.TabIndex = 1;
       boxNumber.TextChanged += boxNumber_TextChanged;
-      //
+      // 
       // slotNumberLabel
-      //
-      slotNumberLabel.AutoSize = true;
-      slotNumberLabel.Location = new Point(12, 41);
+      // 
+      resources.ApplyResources(slotNumberLabel, "slotNumberLabel");
       slotNumberLabel.Name = "slotNumberLabel";
-      slotNumberLabel.Size = new Size(74, 15);
-      slotNumberLabel.TabIndex = 2;
-      slotNumberLabel.Text = "Slot Number";
       slotNumberLabel.Click += slotNumberLabel_Click;
-      //
+      // 
       // slotNumber
-      //
-      slotNumber.Location = new Point(133, 41);
+      // 
+      resources.ApplyResources(slotNumber, "slotNumber");
       slotNumber.Name = "slotNumber";
-      slotNumber.PlaceholderText = "Slot Number";
-      slotNumber.Size = new Size(100, 23);
-      slotNumber.TabIndex = 3;
       slotNumber.TextChanged += slotNumber_TextChanged;
-      //
+      // 
       // insertSpotButton
-      //
-      insertSpotButton.Location = new Point(12, 70);
+      // 
+      resources.ApplyResources(insertSpotButton, "insertSpotButton");
       insertSpotButton.Name = "insertSpotButton";
-      insertSpotButton.Size = new Size(221, 23);
-      insertSpotButton.TabIndex = 4;
-      insertSpotButton.Text = "Insert Spot";
       insertSpotButton.UseVisualStyleBackColor = true;
       insertSpotButton.Click += insertSpotButton_Click;
-      //
+      // 
       // PositionForm
-      //
-      AutoScaleDimensions = new SizeF(7F, 15F);
+      // 
+      resources.ApplyResources(this, "$this");
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(253, 103);
       Controls.Add(insertSpotButton);
       Controls.Add(slotNumber);
       Controls.Add(slotNumberLabel);
@@ -92,7 +75,6 @@ namespace PluginPile.InsertionPlugin {
       MaximizeBox = false;
       Name = "PositionForm";
       ShowIcon = false;
-      Text = "Insertion Plugin";
       ResumeLayout(false);
       PerformLayout();
     }

@@ -9,7 +9,7 @@ namespace PluginPile.RaidImportPlugin {
     }
 
     protected override void LoadMenu(ToolStripDropDownItem tools) {
-      ImportRaidButton = new ToolStripMenuItem("Import Raid");
+      ImportRaidButton = new ToolStripMenuItem(Properties.Text.MenuItemName);
       ImportRaidButton.Available = IsCompatibleSave;
       ImportRaidButton.Click += (s, e) => ImportRaid();
       tools.DropDownItems.Add(ImportRaidButton);
@@ -38,9 +38,9 @@ namespace PluginPile.RaidImportPlugin {
         foreach ((uint blockLocation, string file) in blocks)
           sav.Accessor.GetBlock(blockLocation).ChangeData(File.ReadAllBytes(RaidFilePath(file)));
         sav.State.Edited = true;
-        MessageBox.Show("Raid Imported", "Raid Importer");
+        MessageBox.Show(Properties.Text.RaidImported, Properties.Text.DialogName);
       } else {
-        MessageBox.Show($@"Ensure that all necessary files are in {raidPath}", "Raid Importer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show(string.Format(Properties.Text.FilesMissing, raidPath), Properties.Text.DialogName, MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 

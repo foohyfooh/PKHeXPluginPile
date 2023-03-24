@@ -11,8 +11,8 @@ namespace PluginPile.SVivillonPlugin {
     }
 
     protected override void LoadMenu(ToolStripDropDownItem tools) {
-      OpenFormButton = new ToolStripMenuItem("Vivillon Form Changer") {
-        Image = Properties.Resources.F18_Fancy
+      OpenFormButton = new ToolStripMenuItem(Properties.Text.MenuItemName) {
+        Image = Properties.Images.F18_Fancy
       };
       OpenFormButton.Click += (s, e) => new VivillonForm((SAV9SV)SaveFileEditor.SAV).ShowDialog();
       OpenFormButton.Available = IsCompatibleSave;

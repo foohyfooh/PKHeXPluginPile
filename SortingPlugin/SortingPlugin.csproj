@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Title>SortingPlugin</Title>
     <PackageId>SortingPlugin</PackageId>
-    <PackageIcon>SortIcon.png</PackageIcon>
+    <PackageIcon>Resources\SortIcon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,17 +18,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>PluginSettings.settings</DependentUpon>
     </Compile>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Compile Update="Properties\Images.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Text.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Text.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Text.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Text.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
