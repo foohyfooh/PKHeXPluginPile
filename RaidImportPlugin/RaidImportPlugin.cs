@@ -1,5 +1,6 @@
 using PKHeX.Core;
 using System.Reflection;
+using Block = PluginPile.Common.Block;
 
 namespace PluginPile.RaidImportPlugin {
   public class RaidImportPlugin : Common.PluginBase {

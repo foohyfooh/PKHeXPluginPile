@@ -1,10 +1,8 @@
+using Block = PluginPile.Common.Block;
+
 namespace PluginPile.RaidImportPlugin {
 
-  internal record class Block(uint Location, string Path) {
-    public static implicit operator Block((uint, string) v) => new Block(v.Item1, v.Item2);
-  }
-
-  internal class SwShConstants {
+  internal static class SwShConstants {
     // Base Game
     public static readonly Block BonusRewards        = (0xEFCAE04E, "bonus_rewards");
     public static readonly Block DiaEncounter        = (0xAD3920F5, "dai_encount");
@@ -21,7 +19,7 @@ namespace PluginPile.RaidImportPlugin {
     public static readonly IReadOnlyList<Block> CrownTundraBlocks = new List<Block>(IsleOfArmorBlocks) { NormalEncountRigel2 };
   }
 
-  internal class SVConstants {
+  internal static class SVConstants {
     // Base Game
     public static readonly Block EventRaidIdentifier    = (0x37B99B4D, "event_raid_identifier");
     public static readonly Block FixedRewardItemArray   = (0x7D6C2B82, "fixed_reward_item_array");
