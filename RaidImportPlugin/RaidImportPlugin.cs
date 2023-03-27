@@ -1,15 +1,17 @@
 using PKHeX.Core;
+using System.Reflection;
 
 namespace PluginPile.RaidImportPlugin {
   public class RaidImportPlugin : Common.PluginBase {
     public override string Name => nameof(RaidImportPlugin);
+    protected override Assembly PluginAssembly => typeof(RaidImportPlugin).Assembly;
     private ToolStripMenuItem ImportRaidButton = null!;
     private bool IsCompatibleSave {
       get { return SaveFileEditor.SAV is SAV8SWSH or SAV9SV; }
     }
 
     protected override void LoadMenu(ToolStripDropDownItem tools) {
-      ImportRaidButton = new ToolStripMenuItem(Properties.Text.MenuItemName);
+      ImportRaidButton = new ToolStripMenuItem(Language.MenuItemName);
       ImportRaidButton.Available = IsCompatibleSave;
       ImportRaidButton.Click += (s, e) => ImportRaid();
       tools.DropDownItems.Add(ImportRaidButton);
@@ -38,9 +40,9 @@ namespace PluginPile.RaidImportPlugin {
         foreach ((uint blockLocation, string file) in blocks)
           sav.Accessor.GetBlock(blockLocation).ChangeData(File.ReadAllBytes(RaidFilePath(file)));
         sav.State.Edited = true;
-        MessageBox.Show(Properties.Text.RaidImported, Properties.Text.DialogName);
+        MessageBox.Show(Language.RaidImported, Language.DialogName);
       } else {
-        MessageBox.Show(string.Format(Properties.Text.FilesMissing, raidPath), Properties.Text.DialogName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show(string.Format(Language.FilesMissing, raidPath), Language.DialogName, MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
 

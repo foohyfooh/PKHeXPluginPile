@@ -32,3 +32,16 @@ The purpose of this plugin is allow a user to edit which Vivillon Spawns in Scar
 
 ### Note
 The name was going to be one of the following SVVivillonPlugin, ScViVivillonPlugin, SVivillonPlugin, ScViVillonPlugin and I just went with SVivillonPlugin.
+
+## Contributing Language Support
+The default language for this project is English but there appears to be interest in localizing, so I have attempted to add multilingual support. The original idea was to use String Resources (resx files) as the means of multilingual support but the different language files were producing separate dll files which weren't being bundled into the plugin dll so I have added a hacky way to do multilingual support. To add support for a language that PKHeX supports, go to the desired plugin and modify the switch cases in the `Language.cs` file using the following language codes that `PKHeX.Core.GameInfo.CurrentLanguage` returns
+| Key | Language            |
+|-----|---------------------|
+| de  | German              |
+| es  | Spanish             |
+| fr  | French              |
+| it  | Italian             |
+| ja  | Japanese            |
+| ko  | Korean              |
+| zh  | Simplified Chinese  |
+| zh2 | Traditional Chinese |

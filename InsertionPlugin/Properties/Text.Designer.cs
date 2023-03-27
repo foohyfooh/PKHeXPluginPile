@@ -70,7 +70,7 @@ namespace PluginPile.InsertionPlugin.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Box {0} Slot {0} is already empty.
+        ///   Looks up a localized string similar to Box {0} Slot {1} is already empty.
         /// </summary>
         internal static string BoxSlotEmptyError {
             get {

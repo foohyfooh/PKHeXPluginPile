@@ -240,7 +240,7 @@
   <data name="NationalPokédex" xml:space="preserve">
     <value>National Pokédex</value>
   </data>
-  <data name="NationalPokédexRegionaalForms" xml:space="preserve">
+  <data name="NationalPokédexRegionalForms" xml:space="preserve">
     <value>National Pokédex (Regional Forms With Generation)</value>
   </data>
   <data name="RegionalPokédexTemplate" xml:space="preserve">

@@ -122,7 +122,7 @@
     <comment>Box Number should be between 1 and {saveFileEditor.SAV.BoxCount}</comment>
   </data>
   <data name="BoxSlotEmptyError" xml:space="preserve">
-    <value>Box {0} Slot {0} is already empty</value>
+    <value>Box {0} Slot {1} is already empty</value>
     <comment>Box {boxNum} Slot {slotNum} is already empty</comment>
   </data>
   <data name="InputError" xml:space="preserve">

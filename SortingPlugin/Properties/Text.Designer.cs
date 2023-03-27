@@ -434,7 +434,7 @@ namespace PluginPile.SortingPlugin.Properties {
         /// </summary>
         internal static string NationalPokédexRegionalForms {
             get {
-                return ResourceManager.GetString("NationalPokédexRegionaalForms", resourceCulture);
+                return ResourceManager.GetString("NationalPokédexRegionalForms", resourceCulture);
             }
         }
 
