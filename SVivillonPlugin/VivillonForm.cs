@@ -6,10 +6,10 @@ namespace PluginPile.SVivillonPlugin {
     // Block Locations
     private static readonly Block VivillonEnableBlock = 0x0C125D5C;
     private static readonly Block VivillonFormBlock = 0x22F70BCF;
-    private static readonly Block VivillonExpirationBlock = 0x867F0240;
+    private static readonly Block VivillonTimestampBlock = 0x867F0240;
 
     private readonly SAV9SV sav;
-    private readonly SCBlock enableBlock, formBlock, expirationBlock;
+    private readonly SCBlock enableBlock, formBlock, timestampBlock;
     private byte selectedForm;
 
     public VivillonForm(SAV9SV sav9sv) {
@@ -18,7 +18,7 @@ namespace PluginPile.SVivillonPlugin {
       sav = sav9sv;
       enableBlock = sav.Accessor.GetBlock(VivillonEnableBlock);
       formBlock = sav.Accessor.GetBlock(VivillonFormBlock);
-      expirationBlock = sav.Accessor.GetBlock(VivillonExpirationBlock);
+      timestampBlock = sav.Accessor.GetBlock(VivillonTimestampBlock);
       selectedForm = (byte)formBlock.GetValue();
       RadioButton initalForm = (RadioButton)formGroup.Controls.Find($"form{selectedForm:00}", true).First();
       initalForm.Checked = true;
@@ -61,7 +61,7 @@ namespace PluginPile.SVivillonPlugin {
     private void save_Click(object sender, EventArgs e) {
       enableBlock.ChangeBooleanType(SCTypeCode.Bool2);
       formBlock.SetValue(selectedForm);
-      expirationBlock.SetValue((ulong)DateTime.Now.AddDays(1).Ticks);
+      timestampBlock.SetValue((ulong)DateTimeOffset.Now.ToUnixTimeSeconds());
       sav.State.Edited = true;
       Close();
     }
