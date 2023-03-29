@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.SVivillonPlugin {
-  internal class Language {
+  internal static class Language {
 
     internal static string Cancel {
       get {

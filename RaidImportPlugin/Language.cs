@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.RaidImportPlugin {
-  internal class Language {
+  internal static class Language {
 
     internal static string DialogName {
       get {
