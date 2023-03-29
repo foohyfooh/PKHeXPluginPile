@@ -46,6 +46,8 @@ namespace PluginPile.SVivillonPlugin {
       form16.Text = Language.VivillonForm16Name;
       form17.Text = Language.VivillonForm17Name;
       form18.Text = Language.VivillonForm18Name;
+      cancel.Text = Language.Cancel;
+      save.Text = Language.Save;
     }
 
     private void formSelected(object sender, EventArgs e) {

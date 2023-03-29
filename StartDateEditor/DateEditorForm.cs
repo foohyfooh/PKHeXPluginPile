@@ -12,6 +12,8 @@ namespace PluginPile.StartDateEditor {
     private void HandleLanguageChange() {
       Text = Language.FormTitle;
       startDateLabel.Text = Language.StartDate;
+      cancelButton.Text = Language.Cancel;
+      saveButton.Text = Language.Save;
     }
 
     public DateTime GetStartDate() => startDatePicker.Value;
