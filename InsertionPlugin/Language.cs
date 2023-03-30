@@ -6,7 +6,7 @@ namespace PluginPile.InsertionPlugin {
     internal static string BoxNumber {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "Ïä×Ó±àºÅ",
+          "zh" => "ç®±å­ç¼–å·",
           "en" or _ => "Box Number"
         };
       }
@@ -15,7 +15,7 @@ namespace PluginPile.InsertionPlugin {
     internal static string BoxNumberRangeError {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "ºÐ×Ó±àºÅÓ¦½éÓÚ 1 ºÍ {0} Ö®¼ä",
+          "zh" => "ç›’å­ç¼–å·åº”ä»‹äºŽ 1 å’Œ {0} ä¹‹é—´",
           "en" or _ => "Box Number should be between 1 and {0}."
         };
       }
@@ -24,7 +24,7 @@ namespace PluginPile.InsertionPlugin {
     internal static string BoxSlotEmptyError {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "ºÐ×Ó {0} ²ÛÎ» {1} ÒÑÎª¿Õ ",
+          "zh" => "ç›’å­ {0} æ§½ä½ {1} å·²ä¸ºç©º",
           "en" or _ => "Box {0} Slot {1} is already empty"
         };
       }
@@ -33,7 +33,7 @@ namespace PluginPile.InsertionPlugin {
     internal static string InputError {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "ÊäÈë´íÎó",
+          "zh" => "è¾“å…¥é”™è¯¯",
           "en" or _ => "Input Error"
         };
       }
@@ -42,7 +42,7 @@ namespace PluginPile.InsertionPlugin {
     internal static string MenuItemName {
       get {
         return PKHeX.Core.GameInfo.CurrentLanguage switch {
-          "zh" => "²åÈë²å¼þ",
+          "zh" => "æ’å…¥æ’ä»¶",
           "en" or _ => "Insertion Plugin"
         };
       }
@@ -51,7 +51,7 @@ namespace PluginPile.InsertionPlugin {
     internal static string NoEmptySlotsError {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "ºÐ×Ó£û0£ý²ÛÎ»£û1£ýÖ®ºóÃ»ÓÐ¿Õ²ÛÎ»",
+          "zh" => "ç›’å­ {0} æ§½ä½ {1} ä¹‹åŽæ²¡æœ‰ç©ºæ§½ä½",
           "en" or _ => "There are no empty slots after Box {0} Slot {1}"
         };
       }
@@ -60,7 +60,7 @@ namespace PluginPile.InsertionPlugin {
     internal static string SlotNumber {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "²ÛÎ»±àºÅ",
+          "zh" => "æ§½ä½ç¼–å·",
           "en" or _ => "Slot Number"
         };
       }
@@ -69,7 +69,7 @@ namespace PluginPile.InsertionPlugin {
     internal static string SlotNumberRangeError {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "²ÛÎ»±àºÅÓ¦½éÓÚ1ºÍ£û0£ýÖ®¼ä",
+          "zh" => "æ§½ä½ç¼–å·åº”ä»‹äºŽ1å’Œ {0} ä¹‹é—´",
           "en" or _ => "Slot Number should be between 1 and {0}"
         };
       }

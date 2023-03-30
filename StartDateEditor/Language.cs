@@ -6,7 +6,7 @@ namespace PluginPile.StartDateEditor {
     internal static string Cancel {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "È¡Ïû",
+          "zh" => "å–æ¶ˆ",
           "en" or _ => "Cancel"
         };
       }
@@ -17,7 +17,7 @@ namespace PluginPile.StartDateEditor {
     internal static string MenuItemName {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "¿ªÊ¼ÈÕÆÚ±à¼­Æ÷",
+          "zh" => "å¼€å§‹æ—¥æœŸç¼–è¾‘å™¨",
           "en" or _ => "Start Date Editor"
         };
       }
@@ -26,7 +26,7 @@ namespace PluginPile.StartDateEditor {
     internal static string Save {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "±£´æ",
+          "zh" => "ä¿å­˜",
           "en" or _ => "Save"
         };
       }
@@ -35,7 +35,7 @@ namespace PluginPile.StartDateEditor {
     internal static string StartDate {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "¿ªÊ¼ÈÕÆÚ",
+          "zh" => "å¼€å§‹æ—¥æœŸ",
           "en" or _ => "Start Date"
         };
       }

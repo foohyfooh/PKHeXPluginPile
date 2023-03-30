@@ -6,7 +6,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string Cancel {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "È¡Ïû",
+          "zh" => "å–æ¶ˆ",
           "en" or _ => "Cancel"
         };
       }
@@ -17,7 +17,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string MenuItemName {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "²Ê·ÛµûÐÎÌ¬×ª»»Æ÷",
+          "zh" => "å½©ç²‰è¶å½¢æ€è½¬æ¢å™¨",
           "en" or _ => "Vivillon Form Changer"
         };
       }
@@ -26,7 +26,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string Save {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "±£´æ",
+          "zh" => "ä¿å­˜",
           "en" or _ => "Save"
         };
       }
@@ -35,7 +35,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForms {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "²Ê·ÛµûÐÎÌ¬",
+          "zh" => "å½©ç²‰è¶å½¢æ€",
           "en" or _ => "Vivillon Forms"
         };
       }
@@ -44,7 +44,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm00Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "±ùÑ©»¨ÎÆ",
+          "zh" => "å†°é›ªèŠ±çº¹",
           "en" or _ => "Icy Snow"
         };
       }
@@ -53,7 +53,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm01Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "Ñ©¹ú»¨ÎÆ",
+          "zh" => "é›ªå›½èŠ±çº¹",
           "en" or _ => "Polar"
         };
       }
@@ -62,7 +62,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm02Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "Ñ©Ô­»¨ÎÆ",
+          "zh" => "é›ªåŽŸèŠ±çº¹",
           "en" or _ => "Tundra"
         };
       }
@@ -71,7 +71,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm03Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "´óÂ½»¨ÎÆ",
+          "zh" => "å¤§é™†èŠ±çº¹",
           "en" or _ => "Continental"
         };
       }
@@ -80,7 +80,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm04Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "Í¥Ô°»¨ÎÆ",
+          "zh" => "Í¥åº­å›­èŠ±çº¹",
           "en" or _ => "Garden"
         };
       }
@@ -89,7 +89,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm05Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "¸ßÑÅ»¨ÎÆ",
+          "zh" => "é«˜é›…èŠ±çº¹",
           "en" or _ => "Elegant"
         };
       }
@@ -98,7 +98,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm06Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "»¨Ô°»¨ÎÆ",
+          "zh" => "èŠ±å›­èŠ±çº¹",
           "en" or _ => "Meadow"
         };
       }
@@ -107,7 +107,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm07Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "Ä¦µÇ»¨ÎÆ",
+          "zh" => "æ‘©ç™»èŠ±çº¹",
           "en" or _ => "Modern"
         };
       }
@@ -116,7 +116,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm08Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "´óº£»¨ÎÆ",
+          "zh" => "å¤§æµ·èŠ±çº¹",
           "en" or _ => "Marine"
         };
       }
@@ -125,7 +125,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm09Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "Èºµº»¨ÎÆ",
+          "zh" => "ç¾¤å²›èŠ±çº¹",
           "en" or _ => "Archipelago"
         };
       }
@@ -134,7 +134,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm10Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "»ÄÒ°»¨ÎÆ",
+          "zh" => "è’é‡ŽèŠ±çº¹",
           "en" or _ => "High Plains"
         };
       }
@@ -143,7 +143,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm11Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "É³³¾»¨ÎÆ",
+          "zh" => "æ²™å°˜èŠ±çº¹",
           "en" or _ => "Sandstorm"
         };
       }
@@ -152,7 +152,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm12Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "´óºÓ»¨ÎÆ",
+          "zh" => "å¤§æ²³èŠ±çº¹",
           "en" or _ => "River"
         };
       }
@@ -161,7 +161,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm13Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "ÖèÓê»¨ÎÆ",
+          "zh" => "éª¤é›¨èŠ±çº¹",
           "en" or _ => "Monsoon"
         };
       }
@@ -170,7 +170,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm14Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "ÈÈ´ø²ÝÔ­»¨ÎÆ",
+          "zh" => "çƒ­å¸¦è‰åŽŸèŠ±çº¹",
           "en" or _ => "Savana"
         };
       }
@@ -179,7 +179,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm15Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "Ì«Ñô»¨ÎÆ",
+          "zh" => "Ì«å¤ªé˜³èŠ±çº¹",
           "en" or _ => "Sun"
         };
       }
@@ -188,7 +188,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm16Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "´óÑó»¨ÎÆ",
+          "zh" => "å¤§æ´‹èŠ±çº¹",
           "en" or _ => "Ocean"
         };
       }
@@ -197,7 +197,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm17Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "ÈÈ´øÓêÁÖ»¨ÎÆ",
+          "zh" => "çƒ­å¸¦é›¨æž—èŠ±çº¹",
           "en" or _ => "Jungle"
         };
       }
@@ -206,7 +206,7 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm18Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "»Ã²Ê»¨ÎÆ",
+          "zh" => "å¹»å½©èŠ±çº¹",
           "en" or _ => "Fancy"
         };
       }

@@ -6,7 +6,7 @@ namespace PluginPile.RaidImportPlugin {
     internal static string DialogName {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "Raidµ¼Èë¹¤¾ß",
+          "zh" => "Raidå¯¼å…¥å·¥å…·",
           "en" or _ => "Raid Importer"
         };
       }
@@ -15,7 +15,7 @@ namespace PluginPile.RaidImportPlugin {
     internal static string FilesMissing {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "È·±£ËùÓÐ±ØÐèµÄÎÄ¼þ¶¼ÔÚ {0} ÖÐ",
+          "zh" => "ç¡®ä¿æ‰€æœ‰å¿…éœ€çš„æ–‡ä»¶éƒ½åœ¨ {0} ä¸­",
           "en" or _ => "Ensure that all necessary files are in {0}"
         };
       }
@@ -24,7 +24,7 @@ namespace PluginPile.RaidImportPlugin {
     internal static string MenuItemName {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "µ¼ÈëRaid",
+          "zh" => "å¯¼å…¥Raid",
           "en" or _ => "Import Raid"
         };
       }
@@ -33,7 +33,7 @@ namespace PluginPile.RaidImportPlugin {
     internal static string RaidImported {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "RaidÒÑµ¼Èë",
+          "zh" => "Raidå·²å¯¼å…¥",
           "en" or _ => "Raid Imported"
         };
       }
