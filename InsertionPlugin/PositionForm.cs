@@ -13,6 +13,7 @@ namespace PluginPile.InsertionPlugin {
     }
 
     private void HandleLanguageChange() {
+      Text = Language.FormTitle;
       boxNumber.PlaceholderText = Language.BoxNumber;
       boxNumberLabel.Text = Language.BoxNumber;
       slotNumber.PlaceholderText = Language.SlotNumber;

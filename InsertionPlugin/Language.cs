@@ -30,6 +30,8 @@ namespace PluginPile.InsertionPlugin {
       }
     }
 
+    internal static string FormTitle => MenuItemName;
+
     internal static string InputError {
       get {
         return GameInfo.CurrentLanguage switch {
@@ -41,9 +43,9 @@ namespace PluginPile.InsertionPlugin {
 
     internal static string MenuItemName {
       get {
-        return PKHeX.Core.GameInfo.CurrentLanguage switch {
+        return GameInfo.CurrentLanguage switch {
           "zh" => "插入插件",
-          "en" or _ => "Insertion Plugin"
+          "en" or _ => "Insert Slot"
         };
       }
     }
