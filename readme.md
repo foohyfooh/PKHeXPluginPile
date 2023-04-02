@@ -36,6 +36,21 @@ The name was going to be one of the following SVVivillonPlugin, ScViVivillonPlug
 ## Start Date Editor Plugin
 The purpose of this plugin is allow for editing the start date on Switch games.
 
+## Building
+- Open PowerShell and Run `build.ps1`
+- Plugin should be located in `bin\Build` and `bin\PKHeXPluginPile.zip`
+
+### Requirements
+- [Visual Studio](https://visualstudio.microsoft.com/)
+- [.NET](https://dotnet.microsoft.com/)
+
+### Trouble Running PowerShell Script
+- Open PowerShell As Administrator
+- Run `Get-ExecutionPolicy` and note the value
+- Run `Set-ExecutionPolicy Unrestricted`
+- Follow the building step above
+- Run `Set-ExecutionPolicy <previous execution policy value>` e.g. `Set-ExecutionPolicy AllSigned`
+
 ## Contributing Language Support
 The default language for this project is English but there appears to be interest in localizing, so I have attempted to add multilingual support. The original idea was to use String Resources (resx files) as the means of multilingual support but the different language files were producing separate dll files which weren't being bundled into the plugin dll so I have added a hacky way to do multilingual support. To add support for a language that PKHeX supports, go to the desired plugin and modify the switch cases in the `Language.cs` file using the following language codes that `PKHeX.Core.GameInfo.CurrentLanguage` returns
 | Key | Language            |
