@@ -4,19 +4,21 @@ using System.Reflection;
 namespace PluginPile.SortingPlugin {
   public class SortingPlugin : Common.PluginBase {
     public override string Name => nameof(SortingPlugin);
-    public const string MenuItemKey = "SortBoxesBy";
     protected override Assembly PluginAssembly => typeof(SortingPlugin).Assembly;
+    private ToolStripMenuItem? SortByButton = null;
 
     protected override void HandleSaveLoaded() => ReloadMenu();
 
     protected override void LoadMenu(ToolStripDropDownItem tools) {
-      tools.DropDownItems.RemoveByKey(MenuItemKey);
-      ToolStripMenuItem sortBoxesItem = new ToolStripMenuItem(Language.MenuItemName) {
-        Name = MenuItemKey,
-        Image = Properties.Images.SortIcon
-      };
-      tools.DropDownItems.Add(sortBoxesItem);
-      ToolStripItemCollection sortItems = sortBoxesItem.DropDownItems;
+      if (SortByButton == null) {
+        SortByButton = new ToolStripMenuItem(Language.MenuItemName) {
+          Image = Properties.Images.SortIcon
+        };
+        tools.DropDownItems.Add(SortByButton);
+      } else {
+        SortByButton.DropDownItems.Clear();
+      }
+      ToolStripItemCollection sortItems = SortByButton.DropDownItems;
 
       int gen = SaveFileEditor.SAV.Generation;
       GameVersion version = SaveFileEditor.SAV.Version;
