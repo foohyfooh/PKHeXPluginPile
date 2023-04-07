@@ -63,3 +63,7 @@ The default language for this project is English but there appears to be interes
 | ko  | Korean              |
 | zh  | Simplified Chinese  |
 | zh2 | Traditional Chinese |
+
+### Contributors
+- [wubinwww](https://github.com/wubinwww) - Chinese Simplified
+- [BlackShark](https://github.com/Bl4ckSh4rk) - German
