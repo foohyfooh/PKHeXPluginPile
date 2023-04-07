@@ -57,31 +57,9 @@ namespace PluginPile.StartDateEditor {
 
     private void EditSVEnrollmentDate() {
       SAV9SV sav = (SAV9SV)SaveFileEditor.SAV;
-      SCBlock startTimeBlock = sav.Accessor.GetBlock(SVConstants.EnrollmentDate);
-      byte[] data = startTimeBlock.Data.ToArray();
-      Array.Reverse(data);
-      // Ignore first byte since it should just be 00
-      // First 6 bits (first 6 bits of data[1]) are 1 index day
-      // Second 6 bits (last 2 bits of data[1] and first 4 bites of data[2]) are 0 index month
-      // Last 12 bits (last 4 bits of data[2] and all bits of data[3]) are year offset from 1900
-      int startDay = data[1] >> 2;
-      int startMonth = ((data[1] & 0b0000_0011) << 2) | ((data[2] & 0b1111_0000) >> 4);
-      int startYear = ((data[2] & 0b0000_1111) << 4) | data[3];
-      DateTime startDate = new DateTime(1900 + startYear, startMonth + 1, startDay);
-      DateEditorForm dateEditorForm = new DateEditorForm(startDate);
+      DateEditorForm dateEditorForm = new DateEditorForm(sav.EnrollmentDate.Timestamp);
       if (dateEditorForm.ShowDialog() == DialogResult.OK) {
-        startDate = dateEditorForm.GetStartDate();
-        startDay = startDate.Day;
-        startMonth = startDate.Month - 1;
-        startYear = startDate.Year - 1900;
-        // data[1] is last 6 bits of day and 3rd+4th bits of month
-        // data[2] is the last 4 bits of month and first 4 bits of year
-        // data[3] is last 8 bits of year
-        data[1] = (byte)(((startDay & 0b0011_1111) << 2) | ((startMonth & 0b0011_0000) >> 4));
-        data[2] = (byte)(((startMonth & 0b0000_1111) << 4) | ((startYear & 0b1111_0000_00000) >> 8));
-        data[3] = (byte)(startYear & 0b1111_1111);
-        Array.Reverse(data);
-        startTimeBlock.ChangeData(data);
+        sav.EnrollmentDate.Timestamp = dateEditorForm.GetStartDate();
         sav.State.Edited = true;
       }
     }
