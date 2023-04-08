@@ -1,0 +1,60 @@
+Eyeglasses: White lily
+Eyeglasses: Dark slate
+Eyeglasses: Crimson
+Eyeglasses: Daffodil
+Eyeglasses: Pine
+Eyeglasses: Sapphire
+Eyeglasses: Tangerine
+Eyeglasses: Indigo
+Eyeglasses: Amethyst
+Eyeglasses: Azalea
+Eyeglasses: Blue spruce
+Eyeglasses: Ocher
+Eyeglasses: Chartreuse
+Eyeglasses: Scarlet
+Eyeglasses: Teal
+Monocle: White lily
+Monocle: Dark slate
+Monocle: Crimson
+Monocle: Daffodil
+Monocle: Pine
+Monocle: Sapphire
+Monocle: Tangerine
+Monocle: Indigo
+Monocle: Amethyst
+Monocle: Azalea
+Monocle: Blue spruce
+Monocle: Ocher
+Monocle: Chartreuse
+Monocle: Scarlet
+Monocle: Teal
+Tinted Glasses: White lily
+Tinted Glasses: Dark slate
+Tinted Glasses: Crimson
+Tinted Glasses: Daffodil
+Tinted Glasses: Pine
+Tinted Glasses: Sapphire
+Tinted Glasses: Tangerine
+Tinted Glasses: Indigo
+Tinted Glasses: Amethyst
+Tinted Glasses: Azalea
+Tinted Glasses: Blue spruce
+Tinted Glasses: Ocher
+Tinted Glasses: Chartreuse
+Tinted Glasses: Scarlet
+Tinted Glasses: Teal
+Snow Glasses: White lily
+Snow Glasses: Dark slate
+Snow Glasses: Crimson
+Snow Glasses: Daffodil
+Snow Glasses: Pine
+Snow Glasses: Sapphire
+Snow Glasses: Tangerine
+Snow Glasses: Indigo
+Snow Glasses: Amethyst
+Snow Glasses: Azalea
+Snow Glasses: Blue spruce
+Snow Glasses: Ocher
+Snow Glasses: Chartreuse
+Snow Glasses: Scarlet
+Snow Glasses: Teal

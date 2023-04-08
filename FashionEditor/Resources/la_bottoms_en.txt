@@ -1,0 +1,142 @@
+Modern Trousers
+Everyday Trousers: White lily
+Everyday Trousers: Dark slate
+Everyday Trousers: Crimson
+Everyday Trousers: Daffodil
+Everyday Trousers: Pine
+Everyday Trousers: Sapphire
+Everyday Trousers: Tangerine
+Everyday Trousers: Indigo
+Everyday Trousers: Amethyst
+Everyday Trousers: Azalea
+Everyday Trousers: Blue spruce
+Everyday Trousers: Ocher
+Everyday Trousers: Chartreuse
+Everyday Trousers: Scarlet
+Everyday Trousers: Teal
+Everyday Trousers: Nickel
+Pokemon Bottoms: Flame
+Pokemon Bottoms: Splash
+Pokemon Bottoms: Meadow
+Pokemon Bottoms: Zap
+Pokemon Bottoms: Blank
+Pokemon Bottoms: Sky
+Pokemon Bottoms: Toxic
+Pokemon Bottoms: Dread
+Pokemon Bottoms: Iron
+Pokemon Bottoms: Draco
+Pokemon Bottoms: Fist
+Pokemon Bottoms: Icicle
+Pokemon Bottoms: Spooky
+Pokemon Bottoms: Pixie
+Pokemon Bottoms: Stone
+Pokemon Bottoms: Earth
+Pokemon Bottoms: Insect
+Pokemon Bottoms: Mind
+Patterned Bottoms: Vertical stripes I
+Patterned Bottoms: Vertical stripes II
+Patterned Bottoms: Vertical stripes III
+Patterned Bottoms: Horizontal stripes I
+Patterned Bottoms: Horizontal stripes II
+Patterned Bottoms: Horizontal stripes III
+Patterned Bottoms: Oribe pattern I
+Patterned Bottoms: Oribe pattern II
+Patterned Bottoms: Oribe pattern III
+Patterned Bottoms: Triangles I
+Patterned Bottoms: Triangles II
+Patterned Bottoms: Triangles III
+Patterned Bottoms: Stars I
+Patterned Bottoms: Stars II
+Patterned Bottoms: Stars III
+Patterned Bottoms: Checkered I
+Patterned Bottoms: Checkered II
+Patterned Bottoms: Checkered III
+Patterned Bottoms: Houndstooth I
+Patterned Bottoms: Houndstooth II
+Patterned Bottoms: Karakusa I
+Patterned Bottoms: Karakusa II
+Patterned Bottoms: Fletching I
+Patterned Bottoms: Fletching II
+Patterned Bottoms: Fletching III
+Patterned Bottoms: Camouflage I
+Patterned Bottoms: Camouflage II
+Patterned Bottoms: Camouflage III
+Patterned Bottoms: Paisley I
+Patterned Bottoms: Paisley II
+Patterned Bottoms: Paisley III
+Patterned Bottoms: Argyle I
+Patterned Bottoms: Argyle II
+Patterned Bottoms: Argyle III
+Patterned Bottoms: Plaid I
+Patterned Bottoms: Plaid II
+Patterned Bottoms: Plaid III
+Patterned Bottoms: Harlequin I
+Patterned Bottoms: Harlequin II
+Patterned Bottoms: Harlequin III
+Patterned Bottoms: Flourishes I
+Patterned Bottoms: Flourishes II
+Patterned Bottoms: Small dots I
+Patterned Bottoms: Small dots II
+Patterned Bottoms: Small dots III
+Patterned Bottoms: Large dots I
+Patterned Bottoms: Large dots II
+Fancy Bottoms: Oshawott
+Fancy Bottoms: Cyndaquil
+Fancy Bottoms: Rowlet
+Fancy Bottoms: Typhlosion
+Fancy Bottoms: Smaurott
+Fancy Bottoms: Decidueye
+Fancy Bottoms: Gyarados
+Fancy Bottoms: Cherrim
+Fancy Bottoms: Seascape
+Fancy Bottoms: Mountainscape
+Fancy Bottoms: Townscape
+Fancy Bottoms: Spiritomb
+Fancy Bottoms: Honchkrow
+Fancy Bottoms: Garchomp
+Fancy Bottoms: Heatran
+Fancy Bottoms: Cresselia
+Fancy Bottoms: Darkrai
+Fancy Bottoms: Regigigas
+Fancy Bottoms: Shaymin
+Fancy Bottoms: Giratina
+Fancy Bottoms: Wyrdeer
+Fancy Bottoms: Kleavor
+Fancy Bottoms: Ursaluna
+Fancy Bottoms: Basculegion
+Fancy Bottoms: Growlithe
+Fancy Bottoms: Lilligant
+Fancy Bottoms: Electrode
+Fancy Bottoms: Sneasler
+Fancy Bottoms: Avalugg
+Fancy Bottoms: Braviary
+Snow Trousers: White lily
+Snow Trousers: Dark slate
+Snow Trousers: Crimson
+Snow Trousers: Daffodil
+Snow Trousers: Pine
+Snow Trousers: Sapphire
+Snow Trousers: Tangerine
+Snow Trousers: Indigo
+Snow Trousers: Amethyst
+Snow Trousers: Azalea
+Snow Trousers: Blue spruce
+Snow Trousers: Ocher
+Snow Trousers: Chartreuse
+Snow Trousers: Scarlet
+Snow Trousers: Teal
+Cropped Bottoms: White lily
+Cropped Bottoms: Dark slate
+Cropped Bottoms: Crimson
+Cropped Bottoms: Daffodil
+Cropped Bottoms: Pine
+Cropped Bottoms: Sapphire
+Cropped Bottoms: Tangerine
+Cropped Bottoms: Indigo
+Cropped Bottoms: Amethyst
+Cropped Bottoms: Azalea
+Cropped Bottoms: Blue spruce
+Cropped Bottoms: Ocher
+Cropped Bottoms: Chartreuse
+Cropped Bottoms: Scarlet
+Cropped Bottoms: Teal

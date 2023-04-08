@@ -1,0 +1,142 @@
+Modern Jacket
+Everyday Kimono: White lily
+Everyday Kimono: Dark slate
+Everyday Kimono: Crimson
+Everyday Kimono: Daffodil
+Everyday Kimono: Pine
+Everyday Kimono: Sapphire
+Everyday Kimono: Tangerine
+Everyday Kimono: Indigo
+Everyday Kimono: Amethyst
+Everyday Kimono: Azalea
+Everyday Kimono: Blue spruce
+Everyday Kimono: Ocher
+Everyday Kimono: Chartreuse
+Everyday Kimono: Scarlet
+Everyday Kimono: Teal
+Everyday Kimono: Nickel
+Pokémon Kimono: Flame
+Pokémon Kimono: Splash
+Pokémon Kimono: Meadow
+Pokémon Kimono: Zap
+Pokémon Kimono: Blank
+Pokémon Kimono: Sky
+Pokémon Kimono: Toxic
+Pokémon Kimono: Dread
+Pokémon Kimono: Iron
+Pokémon Kimono: Draco
+Pokémon Kimono: Fist
+Pokémon Kimono: Icicle
+Pokémon Kimono: Spooky
+Pokémon Kimono: Pixie
+Pokémon Kimono: Stone
+Pokémon Kimono: Earth
+Pokémon Kimono: Insect
+Pokémon Kimono: Mind
+Patterned Kimono: Vertical stripes I
+Patterned Kimono: Vertical stripes II
+Patterned Kimono: Vertical stripes III
+Patterned Kimono: Horizontal stripes I
+Patterned Kimono: Horizontal stripes II
+Patterned Kimono: Horizontal stripes III
+Patterned Kimono: Oribe pattern I
+Patterned Kimono: Oribe pattern II
+Patterned Kimono: Oribe pattern III
+Patterned Kimono: Triangles I
+Patterned Kimono: Triangles II
+Patterned Kimono: Triangles III
+Patterned Kimono: Stars I
+Patterned Kimono: Stars II
+Patterned Kimono: Stars III
+Patterned Kimono: Checkered I
+Patterned Kimono: Checkered II
+Patterned Kimono: Checkered III
+Patterned Kimono: Houndstooth I
+Patterned Kimono: Houndstooth II
+Patterned Kimono: Karakusa I
+Patterned Kimono: Karakusa II
+Patterned Kimono: Fletching I
+Patterned Kimono: Fletching II
+Patterned Kimono: Fletching III
+Patterned Kimono: Camouflage I
+Patterned Kimono: Camouflage II
+Patterned Kimono: Camouflage III
+Patterned Kimono: Paisley I
+Patterned Kimono: Paisley II
+Patterned Kimono: Paisley III
+Patterned Kimono: Argyle I
+Patterned Kimono: Argyle II
+Patterned Kimono: Argyle III
+Patterned Kimono: Plaid I
+Patterned Kimono: Plaid II
+Patterned Kimono: Plaid III
+Patterned Kimono: Harlequin I
+Patterned Kimono: Harlequin II
+Patterned Kimono: Harlequin III
+Patterned Kimono: Flourishes I
+Patterned Kimono: Flourishes II
+Patterned Kimono: Small dots I
+Patterned Kimono: Small dots II
+Patterned Kimono: Small dots III
+Patterned Kimono: Large dots I
+Patterned Kimono: Large dots II
+Fancy Kimono: Oshawott
+Fancy Kimono: Cyndaquil
+Fancy Kimono: Rowlet
+Fancy Kimono: Typhlosion
+Fancy Kimono: Smaurott
+Fancy Kimono: Decidueye
+Fancy Kimono: Gyarados
+Fancy Kimono: Cherrim
+Fancy Kimono: Seascape
+Fancy Kimono: Mountainscape
+Fancy Kimono: Townscape
+Fancy Kimono: Spiritomb
+Fancy Kimono: Honchkrow
+Fancy Kimono: Garchomp
+Fancy Kimono: Heatran
+Fancy Kimono: Cresselia
+Fancy Kimono: Darkrai
+Fancy Kimono: Regigigas
+Fancy Kimono: Shaymin
+Fancy Kimono: Giratina
+Fancy Kimono: Wyrdeer
+Fancy Kimono: Kleavor
+Fancy Kimono: Ursaluna
+Fancy Kimono: Basculegion
+Fancy Kimono: Growlithe
+Fancy Kimono: Lilligant
+Fancy Kimono: Electrode
+Fancy Kimono: Sneasler
+Fancy Kimono: Avalugg
+Fancy Kimono: Braviary
+Snow Jacket: White lily
+Snow Jacket: Dark slate
+Snow Jacket: Crimson
+Snow Jacket: Daffodil
+Snow Jacket: Pine
+Snow Jacket: Sapphire
+Snow Jacket: Tangerine
+Snow Jacket: Indigo
+Snow Jacket: Amethyst
+Snow Jacket: Azalea
+Snow Jacket: Blue spruce
+Snow Jacket: Ocher
+Snow Jacket: Chartreuse
+Snow Jacket: Scarlet
+Snow Jacket: Teal
+Festival Top: White lily
+Festival Top: Dark slate
+Festival Top: Crimson
+Festival Top: Daffodil
+Festival Top: Pine
+Festival Top: Sapphire
+Festival Top: Tangerine
+Festival Top: Indigo
+Festival Top: Amethyst
+Festival Top: Azalea
+Festival Top: Blue spruce
+Festival Top: Ocher
+Festival Top: Chartreuse
+Festival Top: Scarlet
+Festival Top: Teal

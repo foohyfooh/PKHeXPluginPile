@@ -1,0 +1,127 @@
+Slippers
+Survey Corps Sandals
+Modern Shoes
+Geta Sandals: White lily
+Geta Sandals: Dark slate
+Geta Sandals: Crimson
+Geta Sandals: Daffodil
+Geta Sandals: Pine
+Geta Sandals: Sapphire
+Geta Sandals: Tangerine
+Geta Sandals: Indigo
+Geta Sandals: Amethyst
+Geta Sandals: Azalea
+Geta Sandals: Blue spruce
+Geta Sandals: Ocher
+Geta Sandals: Chartreuse
+Geta Sandals: Scarlet
+Geta Sandals: Teal
+Zori Sandals: White lily
+Zori Sandals: Dark slate
+Zori Sandals: Crimson
+Zori Sandals: Daffodil
+Zori Sandals: Pine
+Zori Sandals: Sapphire
+Zori Sandals: Tangerine
+Zori Sandals: Indigo
+Zori Sandals: Amethyst
+Zori Sandals: Azalea
+Zori Sandals: Blue spruce
+Zori Sandals: Ocher
+Zori Sandals: Chartreuse
+Zori Sandals: Scarlet
+Zori Sandals: Teal
+Snow Boots: White lily
+Snow Boots: Dark slate
+Snow Boots: Crimson
+Snow Boots: Daffodil
+Snow Boots: Pine
+Snow Boots: Sapphire
+Snow Boots: Tangerine
+Snow Boots: Indigo
+Snow Boots: Amethyst
+Snow Boots: Azalea
+Snow Boots: Blue spruce
+Snow Boots: Ocher
+Snow Boots: Chartreuse
+Snow Boots: Scarlet
+Snow Boots: Teal
+Diamond Clan Boots
+Pearl Clan Boots
+Ankle Boots: White lily
+Ankle Boots: Dark slate
+Ankle Boots: Crimson
+Ankle Boots: Ocher
+Ankle Boots: Dark tea
+Ankle Boots: Sapphire (Unused)
+Ankle Boots: Tangerine (Unused)
+Ankle Boots: Indigo
+Ankle Boots: Amethyst (Unused)
+Ankle Boots: Azalea (Unused)
+Ankle Boots: Blue spruce (Unused)
+Ankle Boots: Ivory
+Ankle Boots: Chartreuse (Unused)
+Ankle Boots: Scarlet (Unused)
+Ankle Boots: Teal (Unused)
+Ninja Footwear: White lily
+Ninja Footwear: Dark slate
+Ninja Footwear: Crimson
+Ninja Footwear: Daffodil
+Ninja Footwear: Pine
+Ninja Footwear: Sapphire
+Ninja Footwear: Tangerine
+Ninja Footwear: Indigo
+Ninja Footwear: Amethyst
+Ninja Footwear: Azalea
+Ninja Footwear: Blue spruce
+Ninja Footwear: Ocher
+Ninja Footwear: Chartreuse
+Ninja Footwear: Scarlet
+Ninja Footwear: Teal
+Fancy Zori Sandals: White lily
+Fancy Zori Sandals: Dark slate
+Fancy Zori Sandals: Crimson
+Fancy Zori Sandals: Daffodil
+Fancy Zori Sandals: Pine
+Fancy Zori Sandals: Sapphire
+Fancy Zori Sandals: Tangerine
+Fancy Zori Sandals: Indigo
+Fancy Zori Sandals: Amethyst
+Fancy Zori Sandals: Azalea
+Fancy Zori Sandals: Blue spruce
+Fancy Zori Sandals: Ocher
+Fancy Zori Sandals: Chartreuse
+Fancy Zori Sandals: Scarlet
+Fancy Zori Sandals: Teal
+Sinnoh Sandals: White lily
+Sinnoh Sandals: Dark slate
+Sinnoh Sandals: Crimson
+Sinnoh Sandals: Daffodil
+Sinnoh Sandals: Pine
+Sinnoh Sandals: Sapphire
+Sinnoh Sandals: Tangerine
+Sinnoh Sandals: Indigo
+Sinnoh Sandals: Amethyst
+Sinnoh Sandals: Azalea
+Sinnoh Sandals: Blue spruce
+Sinnoh Sandals: Ocher
+Sinnoh Sandals: Chartreuse
+Sinnoh Sandals: Scarlet
+Sinnoh Sandals: Teal
+Sinnoh Sandals: Gold
+Split-Toe Boots: White lily
+Split-Toe Boots: Dark slate
+Split-Toe Boots: Crimson
+Split-Toe Boots: Daffodil
+Split-Toe Boots: Pine
+Split-Toe Boots: Sapphire
+Split-Toe Boots: Tangerine
+Split-Toe Boots: Indigo
+Split-Toe Boots: Amethyst
+Split-Toe Boots: Azalea
+Split-Toe Boots: Blue spruce
+Split-Toe Boots: Ocher
+Split-Toe Boots: Chartreuse
+Split-Toe Boots: Scarlet
+Split-Toe Boots: Teal
+Sandals

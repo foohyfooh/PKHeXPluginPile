@@ -36,6 +36,12 @@ The name was going to be one of the following SVVivillonPlugin, ScViVivillonPlug
 ## Start Date Editor Plugin
 The purpose of this plugin is allow for editing the start date on Switch games.
 
+## Fashion Editor Plugin
+The purpose of this plugin is to allow for editing the owned clothes in games. <br>
+Currently works with
+- Pokémon Brilliant Diamond / Shining  Pearl
+- Pokémon Legends Arceus
+
 ## Building
 - Open PowerShell and Run `build.ps1`
 - Plugin should be located in `bin\Build` and `bin\PKHeXPluginPile.zip`

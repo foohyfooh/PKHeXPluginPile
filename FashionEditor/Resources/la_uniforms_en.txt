@@ -1,0 +1,84 @@
+Survey Corps Uniform
+Ninja Attire: White lily
+Ninja Attire: Dark slate
+Ninja Attire: Crimson
+Ninja Attire: Daffodil
+Ninja Attire: Pine
+Ninja Attire: Sapphire
+Ninja Attire: Tangerine
+Ninja Attire: Indigo
+Ninja Attire: Amethyst
+Ninja Attire: Azalea
+Ninja Attire: Blue spruce
+Ninja Attire: Ocher
+Ninja Attire: Chartreuse
+Ninja Attire: Scarlet
+Ninja Attire: Teal
+Tailored Suit: White lily
+Tailored Suit: Dark slate
+Tailored Suit: Crimson
+Tailored Suit: Daffodil
+Tailored Suit: Pine
+Tailored Suit: Sapphire
+Tailored Suit: Tangerine
+Tailored Suit: Indigo
+Tailored Suit: Amethyst
+Tailored Suit: Azalea
+Tailored Suit: Blue spruce
+Tailored Suit: Ocher
+Tailored Suit: Chartreuse
+Tailored Suit: Scarlet
+Tailored Suit: Teal
+Tailored Suit: Ivory
+Diamond Clan Outfit
+Pearl Clan Outfit
+Karate Gi: White lily
+Karate Gi: Dark slate
+Karate Gi: Crimson
+Karate Gi: Daffodil
+Karate Gi: Pine
+Karate Gi: Sapphire
+Karate Gi: Tangerine
+Karate Gi: Indigo
+Karate Gi: Amethyst
+Karate Gi: Azalea
+Karate Gi: Blue spruce
+Karate Gi: Ocher
+Karate Gi: Chartreuse
+Karate Gi: Scarlet
+Karate Gi: Teal
+Karate Gi: Expert
+Sinnoh Outfit: White lily
+Sinnoh Outfit: Dark slate
+Sinnoh Outfit: Crimson
+Sinnoh Outfit: Daffodil
+Sinnoh Outfit: Pine
+Sinnoh Outfit: Sapphire
+Sinnoh Outfit: Tangerine
+Sinnoh Outfit: Indigo
+Sinnoh Outfit: Amethyst
+Sinnoh Outfit: Azalea
+Sinnoh Outfit: Blue spruce
+Sinnoh Outfit: Ocher
+Sinnoh Outfit: Chartreuse
+Sinnoh Outfit: Scarlet
+Sinnoh Outfit: Teal
+Sinnoh Outfit: Gold
+Casual Tee (Before Entry Trial) (Unused)
+Casual Tee
+Bandit Outfit: White lily
+Bandit Outfit: Dark slate
+Bandit Outfit: Crimson
+Bandit Outfit: Daffodil
+Bandit Outfit: Pine
+Bandit Outfit: Sapphire
+Bandit Outfit: Tangerine
+Bandit Outfit: Indigo
+Bandit Outfit: Amethyst
+Bandit Outfit: Azalea
+Bandit Outfit: Blue spruce
+Bandit Outfit: Ocher
+Bandit Outfit: Chartreuse
+Bandit Outfit: Scarlet
+Bandit Outfit: Teal
+Bandit Outfit: Green tea
