@@ -1,6 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <None Remove="Resources\la_bottoms_zh.txt" />
+    <None Remove="Resources\la_glasses_zh.txt" />
+    <None Remove="Resources\la_hats_zh.txt" />
+    <None Remove="Resources\la_shoes_zh.txt" />
+    <None Remove="Resources\la_tops_zh.txt" />
+    <None Remove="Resources\la_uniforms_zh.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Costura.Fody" Version="5.7.0" PrivateAssets="all" />
     <PackageReference Include="Fody" Version="6.6.4" PrivateAssets="all" />
     <PackageReference Include="PKHeX.Core" Version="23.4.6" />
@@ -32,11 +41,17 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\la_bottoms_en.txt" />
+    <EmbeddedResource Include="Resources\la_bottoms_zh.txt" />
     <EmbeddedResource Include="Resources\la_glasses_en.txt" />
+    <EmbeddedResource Include="Resources\la_glasses_zh.txt" />
     <EmbeddedResource Include="Resources\la_hats_en.txt" />
+    <EmbeddedResource Include="Resources\la_hats_zh.txt" />
     <EmbeddedResource Include="Resources\la_shoes_en.txt" />
+    <EmbeddedResource Include="Resources\la_shoes_zh.txt" />
     <EmbeddedResource Include="Resources\la_tops_en.txt" />
+    <EmbeddedResource Include="Resources\la_tops_zh.txt" />
     <EmbeddedResource Include="Resources\la_uniforms_en.txt" />
+    <EmbeddedResource Include="Resources\la_uniforms_zh.txt" />
   </ItemGroup>
 
 </Project>
