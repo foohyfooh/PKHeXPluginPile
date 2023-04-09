@@ -27,6 +27,7 @@ namespace PluginPile.Common {
     public static string Unused {
       get {
         return GameInfo.CurrentLanguage switch {
+          "zh" => "未使用",
           "en" or _ => "Unused"
         };
       }

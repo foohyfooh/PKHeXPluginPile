@@ -39,6 +39,8 @@ namespace PluginPile.FashionEditor {
 
     private void HandleLanguageChange() {
       Text = Language.Title;
+      cancelButton.Text = Language.Cancel;
+      saveButton.Text = Language.Save;
       hatsPage.Text = Language.LA.Hats;
       topsPage.Text = Language.LA.Tops;
       bottomsPage.Text = Language.LA.Bottoms;
