@@ -57,19 +57,16 @@ Currently works with
 - Follow the building step above
 - Run `Set-ExecutionPolicy <previous execution policy value>` e.g. `Set-ExecutionPolicy AllSigned`
 
-## Contributing Language Support
-The default language for this project is English but there appears to be interest in localizing, so I have attempted to add multilingual support. The original idea was to use String Resources (resx files) as the means of multilingual support but the different language files were producing separate dll files which weren't being bundled into the plugin dll so I have added a hacky way to do multilingual support. To add support for a language that PKHeX supports, go to the desired plugin and modify the switch cases in the `Language.cs` file using the following language codes that `PKHeX.Core.GameInfo.CurrentLanguage` returns
-| Key | Language            |
-|-----|---------------------|
-| de  | German              |
-| es  | Spanish             |
-| fr  | French              |
-| it  | Italian             |
-| ja  | Japanese            |
-| ko  | Korean              |
-| zh  | Simplified Chinese  |
-| zh2 | Traditional Chinese |
-
-### Contributors
-- [wubinwww](https://github.com/wubinwww) - Chinese Simplified
-- [BlackShark](https://github.com/Bl4ckSh4rk) - German
+## Language Support
+The default language for this project is English but there appears to be interest in localizing, so I have added a way to add to do multilingual support even if it is hacky. To add support for a language that PKHeX supports, go to the desired plugin and modify the switch cases in the `Language.cs` file using the following language codes that `PKHeX.Core.GameInfo.CurrentLanguage` returns
+| Key | Language            | Supported | Contributors                                                                    |
+|-----|---------------------|-----------|---------------------------------------------------------------------------------|
+| de  | German              | Partial   | [BlackShark](https://github.com/Bl4ckSh4rk)                                     |
+| en  | English             | Yes       | Me                                                                              |
+| es  | Spanish             | No        |                                                                                 |
+| fr  | French              | No        |                                                                                 |
+| it  | Italian             | No        |                                                                                 |
+| ja  | Japanese            | No        |                                                                                 |
+| ko  | Korean              | No        |                                                                                 |
+| zh  | Simplified Chinese  | Yes       | [wubinwww](https://github.com/wubinwww), [ppllouf](https://github.com/ppllouf)  |
+| zh2 | Traditional Chinese | No        |                                                                                 |

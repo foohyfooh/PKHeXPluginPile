@@ -7,7 +7,6 @@ namespace PluginPile.SVivillonPlugin {
     public override string Name => nameof(SVivillonPlugin);
     protected override Assembly PluginAssembly => typeof(SVivillonPlugin).Assembly;
     ToolStripMenuItem OpenFormButton = null!;
-
     private bool IsCompatibleSave {
       get { return SaveFileEditor.SAV is SAV9SV; }
     }
