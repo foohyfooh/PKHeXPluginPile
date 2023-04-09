@@ -63,6 +63,8 @@ dotnet_style_prefer_compound_assignment = true:suggestion
 dotnet_style_prefer_simplified_interpolation = true:suggestion
 dotnet_style_namespace_match_folder = true:suggestion
 dotnet_style_operator_placement_when_wrapping = beginning_of_line
+
+charset = utf-8
 tab_width = 2
 indent_size = 2
 end_of_line = crlf
@@ -106,7 +108,7 @@ csharp_prefer_simple_default_expression = true:suggestion
 csharp_style_prefer_local_over_anonymous_function = true:suggestion
 csharp_style_prefer_index_operator = true:suggestion
 csharp_style_prefer_range_operator = true:suggestion
-csharp_style_implicit_object_creation_when_type_is_apparent = false
+csharp_style_implicit_object_creation_when_type_is_apparent = false:silent
 csharp_style_prefer_tuple_swap = true:suggestion
 csharp_indent_labels = one_less_than_current
 csharp_style_allow_blank_lines_between_consecutive_braces_experimental = true:silent
