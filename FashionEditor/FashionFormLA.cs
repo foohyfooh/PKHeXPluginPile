@@ -15,19 +15,20 @@ namespace PluginPile.FashionEditor {
       InitializeComponent();
       HandleLanguageChange();
       sav = sav8la;
-      SCBlock hatsBlock     = sav.Blocks.GetBlock(LAConstants.FashionHats);
-      SCBlock topsBlock     = sav.Blocks.GetBlock(LAConstants.FashionTops);
-      SCBlock bottomsBlock  = sav.Blocks.GetBlock(LAConstants.FashionBottoms);
+      SCBlock hatsBlock = sav.Blocks.GetBlock(LAConstants.FashionHats);
+      SCBlock topsBlock = sav.Blocks.GetBlock(LAConstants.FashionTops);
+      SCBlock bottomsBlock = sav.Blocks.GetBlock(LAConstants.FashionBottoms);
       SCBlock uniformsBlock = sav.Blocks.GetBlock(LAConstants.FashionUniforms);
-      SCBlock shoesBlock    = sav.Blocks.GetBlock(LAConstants.FashionShoes);
-      SCBlock glassesBlock  = sav.Blocks.GetBlock(LAConstants.FashionGlasses);
+      SCBlock shoesBlock = sav.Blocks.GetBlock(LAConstants.FashionShoes);
+      SCBlock glassesBlock = sav.Blocks.GetBlock(LAConstants.FashionGlasses);
 
-      hatSelector = new FashionPageSelector(hatsBlock, Language.LA.HatsList);
-      topsSelector = new FashionPageSelector(topsBlock, Language.LA.TopsList);
-      bottomsSelector = new FashionPageSelector(bottomsBlock, Language.LA.BottomsList);
-      uniformsSelector = new FashionPageSelector(uniformsBlock, Language.LA.UniformsList);
-      shoesSelector = new FashionPageSelector(shoesBlock, Language.LA.ShoesList);
-      glassesSelector = new FashionPageSelector(glassesBlock, Language.LA.GlassesList);
+      IFashionBlockConverter converter = new FashionBlockConverterLA();
+      hatSelector = new FashionPageSelector(hatsBlock, Language.LA.HatsList, converter);
+      topsSelector = new FashionPageSelector(topsBlock, Language.LA.TopsList, converter);
+      bottomsSelector = new FashionPageSelector(bottomsBlock, Language.LA.BottomsList, converter);
+      uniformsSelector = new FashionPageSelector(uniformsBlock, Language.LA.UniformsList, converter);
+      shoesSelector = new FashionPageSelector(shoesBlock, Language.LA.ShoesList, converter);
+      glassesSelector = new FashionPageSelector(glassesBlock, Language.LA.GlassesList, converter);
 
       hatsPage.Controls.Add(hatSelector);
       topsPage.Controls.Add(topsSelector);

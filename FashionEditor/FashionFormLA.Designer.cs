@@ -64,7 +64,7 @@ namespace PluginPile.FashionEditor {
       tabControl.Controls.Add(shoesPage);
       tabControl.Controls.Add(glassesPage);
       tabControl.Location = new Point(12, 12);
-      tabControl.Name = "tabControl1";
+      tabControl.Name = "tabControl";
       tabControl.SelectedIndex = 0;
       tabControl.Size = new Size(327, 99);
       tabControl.TabIndex = 2;
