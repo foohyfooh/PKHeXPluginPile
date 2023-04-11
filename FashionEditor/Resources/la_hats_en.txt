@@ -13,6 +13,7 @@ Flat Cap: Ocher
 Flat Cap: Chartreuse
 Flat Cap: Scarlet
 Flat Cap: Teal
+Survey Corps Cap
 Flat Cap: Flame
 Flat Cap: Splash
 Flat Cap: Meadow
