@@ -40,9 +40,10 @@ The purpose of this plugin is allow for editing the start date on Switch games.
 
 ## Fashion Editor Plugin
 The purpose of this plugin is to allow for editing the owned clothes in games. <br>
-Currently works with
-- Pokémon Brilliant Diamond / Shining  Pearl
-- Pokémon Legends Arceus
+- *Fashion Editor* should now be in the *Tools* menu of PKHeX
+  - Currently works with
+    - Pokémon Brilliant Diamond / Shining  Pearl
+    - Pokémon Legends Arceus
 
 ## Building
 - Open PowerShell and Run `build.ps1`
@@ -70,5 +71,5 @@ The default language for this project is English but there appears to be interes
 | it  | Italian             | No        |                                                                                 |
 | ja  | Japanese            | No        |                                                                                 |
 | ko  | Korean              | No        |                                                                                 |
-| zh  | Simplified Chinese  | Yes       | [wubinwww](https://github.com/wubinwww), [ppllouf](https://github.com/ppllouf)  |
+| zh  | Simplified Chinese  | Partial   | [wubinwww](https://github.com/wubinwww), [ppllouf](https://github.com/ppllouf)  |
 | zh2 | Traditional Chinese | No        |                                                                                 |

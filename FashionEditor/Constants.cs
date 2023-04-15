@@ -3,6 +3,17 @@ using Block = PluginPile.Common.Block;
 namespace PluginPile.FashionEditor {
   internal static class SwShConstants {
     public static readonly Block Fashion = 0xD224F9AC;
+    public const int RegionSize = 0x80;
+    public const int GlassesOffset  = 0x300;
+    public const int HatsOffset     = GlassesOffset  + RegionSize;
+    public const int JacketsOffset  = HatsOffset     + RegionSize;
+    public const int TopsOffset     = JacketsOffset  + RegionSize;
+    public const int BagsOffset     = TopsOffset     + RegionSize;
+    public const int GlovesOffset   = BagsOffset     + RegionSize; 
+    public const int BotttomsOffset = GlovesOffset   + RegionSize;
+    public const int SocksOffset    = BotttomsOffset + RegionSize;
+    public const int ShoesOffset    = SocksOffset    + RegionSize;
+    public const int DressesOffset  = ShoesOffset    + RegionSize;
   }
 
   internal static class BDSPConstants {

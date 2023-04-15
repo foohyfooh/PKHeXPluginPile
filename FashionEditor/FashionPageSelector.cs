@@ -1,20 +1,18 @@
 using PKHeX.Core;
+
 namespace PluginPile.FashionEditor {
   public partial class FashionPageSelector : UserControl {
-    
-    private readonly SCBlock block;
+
     private readonly bool[] unlocked;
     private readonly string[] text;
-    private readonly IFashionBlockConverter converter;
 
-    public FashionPageSelector(SCBlock scblock, string[] text, IFashionBlockConverter converter) {
+    public FashionPageSelector(bool[] unlocked, string[] text) {
       InitializeComponent();
       HandleLanguageChange();
-      block = scblock;
-      this.converter = converter;
+      this.unlocked = unlocked;
       this.text = text;
-      unlocked = converter.FromBlockData(block.Data);
       itemsList.DataSource = this.text;
+      owned.Enabled = this.text.Length > 0;
     }
 
     private void HandleLanguageChange() {
@@ -29,7 +27,9 @@ namespace PluginPile.FashionEditor {
 
     private void unlocked_CheckedChanged(object sender, EventArgs e) => unlocked[itemsList.SelectedIndex] = owned.Checked;
 
-    public void PersistChange() => block.ChangeData(converter.ToBlockData(unlocked));
+    public void PersistChange(SCBlock block, IFashionBlockConverter converter) => block.ChangeData(GetData(converter));
+
+    public byte[] GetData(IFashionBlockConverter converter) => converter.ToBlockData(unlocked);
 
   }
 }

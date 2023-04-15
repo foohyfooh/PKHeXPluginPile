@@ -4,6 +4,14 @@ namespace PluginPile.FashionEditor {
   public partial class FashionFormLA : Form {
 
     private readonly SAV8LA sav;
+    private readonly SCBlock hatsBlock;
+    private readonly SCBlock topsBlock;
+    private readonly SCBlock bottomsBlock;
+    private readonly SCBlock uniformsBlock;
+    private readonly SCBlock shoesBlock;
+    private readonly SCBlock glassesBlock;
+
+    private readonly FashionBlockConverterLA converter;
     private readonly FashionPageSelector hatSelector;
     private readonly FashionPageSelector topsSelector;
     private readonly FashionPageSelector bottomsSelector;
@@ -15,20 +23,20 @@ namespace PluginPile.FashionEditor {
       InitializeComponent();
       HandleLanguageChange();
       sav = sav8la;
-      SCBlock hatsBlock = sav.Blocks.GetBlock(LAConstants.FashionHats);
-      SCBlock topsBlock = sav.Blocks.GetBlock(LAConstants.FashionTops);
-      SCBlock bottomsBlock = sav.Blocks.GetBlock(LAConstants.FashionBottoms);
-      SCBlock uniformsBlock = sav.Blocks.GetBlock(LAConstants.FashionUniforms);
-      SCBlock shoesBlock = sav.Blocks.GetBlock(LAConstants.FashionShoes);
-      SCBlock glassesBlock = sav.Blocks.GetBlock(LAConstants.FashionGlasses);
+      hatsBlock = sav.Blocks.GetBlock(LAConstants.FashionHats);
+      topsBlock = sav.Blocks.GetBlock(LAConstants.FashionTops);
+      bottomsBlock = sav.Blocks.GetBlock(LAConstants.FashionBottoms);
+      uniformsBlock = sav.Blocks.GetBlock(LAConstants.FashionUniforms);
+      shoesBlock = sav.Blocks.GetBlock(LAConstants.FashionShoes);
+      glassesBlock = sav.Blocks.GetBlock(LAConstants.FashionGlasses);
 
-      IFashionBlockConverter converter = new FashionBlockConverterLA();
-      hatSelector = new FashionPageSelector(hatsBlock, Language.LA.HatsList, converter);
-      topsSelector = new FashionPageSelector(topsBlock, Language.LA.TopsList, converter);
-      bottomsSelector = new FashionPageSelector(bottomsBlock, Language.LA.BottomsList, converter);
-      uniformsSelector = new FashionPageSelector(uniformsBlock, Language.LA.UniformsList, converter);
-      shoesSelector = new FashionPageSelector(shoesBlock, Language.LA.ShoesList, converter);
-      glassesSelector = new FashionPageSelector(glassesBlock, Language.LA.GlassesList, converter);
+      converter = new FashionBlockConverterLA();
+      hatSelector = new FashionPageSelector(converter.FromBlockData(hatsBlock.Data), Language.LA.HatsList);
+      topsSelector = new FashionPageSelector(converter.FromBlockData(topsBlock.Data), Language.LA.TopsList);
+      bottomsSelector = new FashionPageSelector(converter.FromBlockData(bottomsBlock.Data), Language.LA.BottomsList);
+      uniformsSelector = new FashionPageSelector(converter.FromBlockData(uniformsBlock.Data), Language.LA.UniformsList);
+      shoesSelector = new FashionPageSelector(converter.FromBlockData(shoesBlock.Data), Language.LA.ShoesList);
+      glassesSelector = new FashionPageSelector(converter.FromBlockData(glassesBlock.Data), Language.LA.GlassesList);
 
       hatsPage.Controls.Add(hatSelector);
       topsPage.Controls.Add(topsSelector);
@@ -53,12 +61,12 @@ namespace PluginPile.FashionEditor {
     private void cancelButton_Click(object sender, EventArgs e) => Close();
 
     private void saveButton_Click(object sender, EventArgs e) {
-      hatSelector.PersistChange();
-      topsSelector.PersistChange();
-      bottomsSelector.PersistChange();
-      uniformsSelector.PersistChange();
-      shoesSelector.PersistChange();
-      glassesSelector.PersistChange();
+      hatSelector.PersistChange(hatsBlock, converter);
+      topsSelector.PersistChange(topsBlock, converter);
+      bottomsSelector.PersistChange(bottomsBlock, converter);
+      uniformsSelector.PersistChange(uniformsBlock, converter);
+      shoesSelector.PersistChange(shoesBlock, converter);
+      glassesSelector.PersistChange(glassesBlock, converter);
       sav.State.Edited = true;
       Close();
     }

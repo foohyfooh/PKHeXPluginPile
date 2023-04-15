@@ -39,6 +39,336 @@ namespace PluginPile.FashionEditor {
     private static string[] GetStringList(string filename) =>
       Common.Language.GetStringList(typeof(FashionEditor).Assembly, nameof(FashionEditor), filename);
 
+    #region Common Language 
+    private static string Bottoms {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "zh" => "下装",
+          "en" or _ => "Bottoms"
+        };
+      }
+    }
+
+    private static string Glasses {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "zh" => "眼镜",
+          "en" or _ => "Glasses"
+        };
+      }
+    }
+
+    private static string Hats {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "zh" => "头饰",
+          "en" or _ => "Hats"
+        };
+      }
+    }
+
+    private static string Shoes {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "zh" => "鞋子",
+          "en" or _ => "Shoes"
+        };
+      }
+    }
+
+    private static string Tops {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "zh" => "上装",
+          "en" or _ => "Tops"
+        };
+      }
+    }
+    #endregion
+
+    internal static class SwSh {
+      internal static string Tops => Language.Tops;
+      
+      internal static string[] TopsList(int gender) {
+        return gender switch {
+          0 => TopsListMale,
+          1 => TopsListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] TopsListMale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_tops_male_en.txt")
+          };
+        }
+      }
+
+      internal static string[] TopsListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_tops_female_en.txt")
+          };
+        }
+      }
+
+      internal static string Jackets {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => "Jackets"
+          };
+        }
+      }
+
+      internal static string[] JacketsList(int gender) {
+        return gender switch {
+          0 => JacketsListMale,
+          1 => JacketsListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] JacketsListMale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_jackets_male_en.txt")
+          };
+        }
+      }
+
+      internal static string[] JacketsListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_jackets_female_en.txt")
+          };
+        }
+      }
+
+      internal static string Bottoms => Language.Bottoms;
+
+      internal static string[] BottomsList(int gender) {
+        return gender switch {
+          0 => BottomsListMale,
+          1 => BottomsListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] BottomsListMale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_bottoms_male_en.txt")
+          };
+        }
+      }
+
+      internal static string[] BottomsListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_bottoms_female_en.txt")
+          };
+        }
+      }
+
+      internal static string Dresses {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => "Dresses"
+          };
+        }
+      }
+
+      internal static string[] DressesList(int gender) {
+        return gender switch {
+          1 => BottomsListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] DressesListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_dresses_female_en.txt")
+          };
+        }
+      }
+
+      internal static string Socks {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => "Socks"
+          };
+        }
+      }
+
+      internal static string[] SocksList(int gender) {
+        return gender switch {
+          0 => SocksListMale,
+          1 => SocksListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] SocksListMale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_socks_male_en.txt")
+          };
+        }
+      }
+
+      internal static string[] SocksListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_socks_female_en.txt")
+          };
+        }
+      }
+
+      internal static string Shoes => Language.Shoes;
+
+      internal static string[] ShoesList(int gender) {
+        return gender switch {
+          0 => ShoesListMale,
+          1 => ShoesListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] ShoesListMale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_shoes_male_en.txt")
+          };
+        }
+      }
+
+      internal static string[] ShoesListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_shoes_female_en.txt")
+          };
+        }
+      }
+
+      internal static string Bags {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => "Bags"
+          };
+        }
+      }
+
+      internal static string[] BagsList(int gender) {
+        return gender switch {
+          0 => BagsListMale,
+          1 => BagsListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] BagsListMale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_bags_male_en.txt")
+          };
+        }
+      }
+
+      internal static string[] BagsListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_bags_female_en.txt")
+          };
+        }
+      }
+
+      internal static string Hats => Language.Hats;
+
+      internal static string[] HatsList(int gender) {
+        return gender switch {
+          0 => HatsListMale,
+          1 => HatsListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] HatsListMale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_hats_male_en.txt")
+          };
+        }
+      }
+
+      internal static string[] HatsListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_hats_female_en.txt")
+          };
+        }
+      }
+
+      internal static string Glasses = Language.Glasses;
+
+      internal static string[] GlassesList(int gender) {
+        return gender switch {
+          0 => GlassesListMale,
+          1 => GlassesListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] GlassesListMale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_glasses_male_en.txt")
+          };
+        }
+      }
+
+      internal static string[] GlassesListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_glasses_female_en.txt")
+          };
+        }
+      }
+
+      internal static string Gloves {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => "Gloves"
+          };
+        }
+      }
+
+      internal static string[] GlovesList(int gender) {
+        return gender switch {
+          0 => GlovesListMale,
+          1 => GlovesListFemale,
+          _ => Array.Empty<string>()
+        };
+      }
+
+      internal static string[] GlovesListMale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_gloves_male_en.txt")
+          };
+        }
+      }
+
+      internal static string[] GlovesListFemale {
+        get {
+          return GameInfo.CurrentLanguage switch {
+            "en" or _ => GetStringList("swsh_gloves_female_en.txt")
+          };
+        }
+      }
+    }
+
     internal static class BDSP {
       internal static string FashionEveryday {
         get {
@@ -150,14 +480,7 @@ namespace PluginPile.FashionEditor {
     }
 
     internal static class LA {
-      internal static string Hats {
-        get {
-          return GameInfo.CurrentLanguage switch {
-            "zh" => "头饰",
-            "en" or _ => "Hats"
-          };
-        }
-      }
+      internal static string Hats => Language.Hats;
 
       internal static string[] HatsList {
         get {
@@ -168,14 +491,7 @@ namespace PluginPile.FashionEditor {
         }
       }
 
-      internal static string Tops {
-        get {
-          return GameInfo.CurrentLanguage switch {
-            "zh" => "上装",
-            "en" or _ => "Tops"
-          };
-        }
-      }
+      internal static string Tops => Language.Tops;
 
       internal static string[] TopsList {
         get {
@@ -186,14 +502,7 @@ namespace PluginPile.FashionEditor {
         }
       }
 
-      internal static string Bottoms {
-        get {
-          return GameInfo.CurrentLanguage switch {
-            "zh" => "下装",
-            "en" or _ => "Bottoms"
-          };
-        }
-      }
+      internal static string Bottoms => Language.Bottoms;
 
       internal static string[] BottomsList {
         get {
@@ -222,14 +531,7 @@ namespace PluginPile.FashionEditor {
         }
       }
 
-      internal static string Shoes {
-        get {
-          return GameInfo.CurrentLanguage switch {
-            "zh" => "鞋子",
-            "en" or _ => "Shoes"
-          };
-        }
-      }
+      internal static string Shoes => Language.Shoes;
 
       internal static string[] ShoesList {
         get {
@@ -240,14 +542,7 @@ namespace PluginPile.FashionEditor {
         }
       }
 
-      internal static string Glasses {
-        get {
-          return GameInfo.CurrentLanguage switch {
-            "zh" => "眼镜",
-            "en" or _ => "Glasses"
-          };
-        }
-      }
+      internal static string Glasses => Language.Glasses;
 
       internal static string[] GlassesList {
         get {

@@ -35,16 +35,19 @@ namespace PluginPile.Common {
 
     private const string StringCachePrefix = "PluginPile";
 
-    // Modified copy of PKHeX ResourceUtil GetStringList
+    // Modified Copy Of PKHeX ResourceUtil.GetStringList
     public static string[] GetStringList(Assembly assembly, string pluginName, string filename) {
       string fullyQualifiedName = $"{StringCachePrefix}_{pluginName}_{filename}";
       if (Util.IsStringListCached(fullyQualifiedName, out string[]? cachedText))
         return cachedText;
-      string resourceName = assembly.GetManifestResourceNames()
-        .Single(str => str.EndsWith(filename));
-      Stream? stream = assembly.GetManifestResourceStream(resourceName);
+      string? resourceName = assembly.GetManifestResourceNames()
+        .AsQueryable()
+        .SingleOrDefault(str => str.EndsWith(filename));
+      if (resourceName == null)
+        return Array.Empty<string>();
+      using Stream? stream = assembly.GetManifestResourceStream(resourceName);
       if (stream == null) return Array.Empty<string>();
-      StreamReader reader = new StreamReader(stream);
+      using StreamReader reader = new StreamReader(stream);
       string text = reader.ReadToEnd().Trim(); // Handle Final Newline Getting Counted
       return Util.LoadStringList(fullyQualifiedName, text);
     }
