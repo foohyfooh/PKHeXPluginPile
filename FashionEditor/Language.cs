@@ -181,7 +181,7 @@ namespace PluginPile.FashionEditor {
 
       internal static string[] DressesList(int gender) {
         return gender switch {
-          1 => BottomsListFemale,
+          1 => DressesListFemale,
           _ => Array.Empty<string>()
         };
       }

@@ -7,16 +7,16 @@ namespace PluginPile.FashionEditor {
     private readonly SCBlock block;
     private readonly FashionBlockConverterSwSh converter;
 
-    private readonly FashionPageSelector glassesSelector;
-    private readonly FashionPageSelector hatsSelector;
-    private readonly FashionPageSelector jacketsSelector;
     private readonly FashionPageSelector topsSelector;
-    private readonly FashionPageSelector bagsSelector;
-    private readonly FashionPageSelector glovesSelector;
+    private readonly FashionPageSelector jacketsSelector;
     private readonly FashionPageSelector bottomsSelector;
+    private readonly FashionPageSelector dressesSelector;
     private readonly FashionPageSelector socksSelector;
     private readonly FashionPageSelector shoesSelector;
-    private readonly FashionPageSelector dressesSelector;
+    private readonly FashionPageSelector bagsSelector;
+    private readonly FashionPageSelector hatsSelector;
+    private readonly FashionPageSelector glassesSelector;
+    private readonly FashionPageSelector glovesSelector;
 
     public FashionFormSwSh(SAV8SWSH sav8swsh) {
       InitializeComponent();
@@ -36,7 +36,7 @@ namespace PluginPile.FashionEditor {
       bagsSelector = new FashionPageSelector(Convert(SwShConstants.BagsOffset), Language.SwSh.BagsList(gender));
       hatsSelector = new FashionPageSelector(Convert(SwShConstants.HatsOffset), Language.SwSh.HatsList(gender));
       glassesSelector = new FashionPageSelector(Convert(SwShConstants.GlassesOffset), Language.SwSh.GlassesList(gender));
-      glovesSelector = new FashionPageSelector(Convert(SwShConstants.GlovesOffset), Array.Empty<string>());
+      glovesSelector = new FashionPageSelector(Convert(SwShConstants.GlovesOffset), Language.SwSh.GlovesList(gender));
 
       topsPage.Controls.Add(topsSelector);
       jacketsPage.Controls.Add(jacketsSelector);
