@@ -29,7 +29,6 @@ namespace PluginPile.FashionEditor {
       topsPage = new TabPage();
       jacketsPage = new TabPage();
       bottomsPage = new TabPage();
-      dressesPage = new TabPage();
       socksPage = new TabPage();
       shoesPage = new TabPage();
       bagsPage = new TabPage();
@@ -64,7 +63,6 @@ namespace PluginPile.FashionEditor {
       tabControl.Controls.Add(topsPage);
       tabControl.Controls.Add(jacketsPage);
       tabControl.Controls.Add(bottomsPage);
-      tabControl.Controls.Add(dressesPage);
       tabControl.Controls.Add(socksPage);
       tabControl.Controls.Add(shoesPage);
       tabControl.Controls.Add(bagsPage);
@@ -105,15 +103,6 @@ namespace PluginPile.FashionEditor {
       bottomsPage.TabIndex = 2;
       bottomsPage.Text = "Bottoms";
       bottomsPage.UseVisualStyleBackColor = true;
-      // 
-      // dressesPage
-      // 
-      dressesPage.Location = new Point(4, 24);
-      dressesPage.Name = "dressesPage";
-      dressesPage.Size = new Size(509, 72);
-      dressesPage.TabIndex = 9;
-      dressesPage.Text = "Dresses";
-      dressesPage.UseVisualStyleBackColor = true;
       // 
       // socksPage
       // 
@@ -195,7 +184,6 @@ namespace PluginPile.FashionEditor {
     private TabPage topsPage;
     private TabPage jacketsPage;
     private TabPage bottomsPage;
-    private TabPage dressesPage;
     private TabPage socksPage;
     private TabPage shoesPage;
     private TabPage bagsPage;

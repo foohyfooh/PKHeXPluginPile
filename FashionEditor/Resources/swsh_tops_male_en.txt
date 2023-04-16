@@ -1,0 +1,146 @@
+Sport Top: Challenger Kit
+Sport Top: Grass Type
+Sport Top: Water Type
+Sport Top: Fire Type
+Sport Top: Ghost Type
+Sport Top: Fighting Type
+Sport Top: Fiary Type
+Sport Top: Rock Type
+Sport Top: Ice Type
+Sport Top: Dark Type
+Sport Top: Dragon Type
+Sport Top: Bug Type
+Sport Top: Steel Type
+Sport Top: Psychic Type
+Sport Top: Electric Type
+Sport Top: Ground Type
+Sport Top: Flying Type
+Sport Top: Normal Type
+Sport Top: Poison Type
+Sport Top: Reigning Champion
+Sport Top: Pikachu Kit
+Sport Top: Eevee Kit
+Sport Top: Ranked Battles
+Sport Top: Battle Tower
+Sport Sweatshirt: Iconic Style
+Loose Top: White
+Loose Top: Black
+Loose Top: Red
+Loose Top: Yellow
+Loose Top: Green
+Loose Top: Blue
+Loose Top: Orange
+Loose Top: Navy
+Loose Top: Purple
+Loose Top: Pink
+Loose Top: Gray
+Loose Top: Tan
+Loose Top: Poliwag Pop
+Loose Top: Luxury Holiday
+Loose Top: Sea Urchin
+Striped Top: White
+Striped Top: Black
+Striped Top: Red
+Striped Top: Yellow
+Striped Top: Green
+Striped Top: Blue
+Striped Top: Orange
+Striped Top: Navy
+Striped Top: Purple
+Striped Top: Pink
+Striped Top: Gray
+Striped Top: Tan
+Three-Fourths Sleeves Polo: White
+Three-Fourths Sleeves Polo: Black
+Three-Fourths Sleeves Polo: Red
+Three-Fourths Sleeves Polo: Yellow
+Three-Fourths Sleeves Polo: Green
+Three-Fourths Sleeves Polo: Blue
+Three-Fourths Sleeves Polo: Orange
+Three-Fourths Sleeves Polo: Navy
+Three-Fourths Sleeves Polo: Purple
+Three-Fourths Sleeves Polo: Pink
+Three-Fourths Sleeves Polo: Gray
+Three-Fourths Sleeves Polo: Tan
+Faded Sweatshirt: White
+Faded Sweatshirt: Black
+Faded Sweatshirt: Red
+Faded Sweatshirt: Yellow
+Faded Sweatshirt: Green
+Faded Sweatshirt: Blue
+Faded Sweatshirt: Orange
+Faded Sweatshirt: Navy
+Faded Sweatshirt: Purple
+Faded Sweatshirt: Pink
+Faded Sweatshirt: Gray
+Faded Sweatshirt: Tan
+Boatneck Sweatshirt: Eternal Sleep
+Boatneck Sweatshirt: Mischief Maker
+Boatneck Sweatshirt: Gullet Glam
+Torn Top: White
+Torn Top: Black
+Torn Top: Nasty Plot
+Torn Top: Astonished Eeevee
+Torn Top: Pikachu Payback
+Torn Top: Night Shade
+Torn Top: Scary Face
+Three-Fourths Sleeves Button-Front Top: White
+Three-Fourths Sleeves Button-Front Top: Black
+Three-Fourths Sleeves Button-Front Top: Maroon
+Three-Fourths Sleeves Button-Front Top: Candy Stripe
+Three-Fourths Sleeves Button-Front Top: Paisley Pattern
+Casual Tee: Chosen Design (Unused)
+Casual Tee: Nasty Plot
+Casual Tee: Astonished Eeevee
+Casual Tee: Pikachu Payback
+Casual Tee: Night Shade
+Casual Tee: Scary Face
+Casual Tee: Arcanine Art
+Casual Tee: Urban Smog
+Casual Tee: Camp Curry
+Casual Tee: Dynamax Band
+Casual Tee: Poké Ball Guy
+Casual Tee: Great Ball Guy
+Casual Tee: Ultra Ball Guy
+Casual Tee: Tumblecube Cute
+No Model (Unused)
+Dojo Tee: Original Style
+Casual Tee: #7
+Casual Tee: #8
+Casual Tee: #9
+Casual Tee: Festival Feldlands
+Casual Tee: Middelands March
+Casual Tee: Auldands Amble
+Casual Tee: Ramblin' Rondelands
+Casual Tee: Penguin
+Casual Tee: Cream
+Casual Tee: W x F x G
+Casual Tee: Klara 4-ever (Sword Exclusive)
+Casual Tee: Avery 4-ever (Shield Exclusive)
+Casual Tee: Great Wave, Greater Dragon
+Casual Tee: The Masterly Mustard
+Vest and Tie Ensemble: White
+Vest and Tie Ensemble: Black
+Vest and Tie Ensemble: Red
+Vest and Tie Ensemble: Yellow
+Vest and Tie Ensemble: Green
+Vest and Tie Ensemble: Blue
+Vest and Tie Ensemble: Orange
+Vest and Tie Ensemble: Navy
+Vest and Tie Ensemble: Purple
+Vest and Tie Ensemble: Pink
+Vest and Tie Ensemble: Gray
+Vest and Tie Ensemble: Tan
+Boatneck Sweatshirt: Poke
+Boatneck Sweatshirt: Bro
+Boatneck Sweatshirt: King
+Boatneck Sweatshirt: Freezington's Fame
+Knit Sweater: Tapping Feet
+Knit Sweater: Rad Applin
+Knit Sweater: Peaceful Pastures
+Cable-Knit Sweater: White
+Cable-Knit Sweater: Black
+Cable-Knit Sweater: Gray
+Cable-Knit Sweater: Maroon
+Cable-Knit Sweater: Navy
+Sport Top: Galarian Star Tournament

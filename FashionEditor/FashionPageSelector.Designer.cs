@@ -30,6 +30,7 @@ namespace PluginPile.FashionEditor {
       // 
       // itemsList
       // 
+      itemsList.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
       itemsList.FormattingEnabled = true;
       itemsList.Location = new Point(51, 8);
       itemsList.Name = "itemsList";

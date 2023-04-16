@@ -9,10 +9,18 @@ namespace PluginPile.FashionEditor {
     public FashionPageSelector(bool[] unlocked, string[] text) {
       InitializeComponent();
       HandleLanguageChange();
+      // TODO: Deal with this causing some of the tabs to appear different from others.
+      // This is set so that selector will fill the tab since some of the items names and fashion style are long.
+      Dock = DockStyle.Fill;
       this.unlocked = unlocked;
       this.text = text;
       itemsList.DataSource = this.text;
-      owned.Enabled = this.text.Length > 0;
+      if (this.text.Length > 0) {
+        // Explicitly set since the SelectedIndexChanged is not firing after setting data source, if the first item is unused it can be accidentally set.
+        itemsList.SelectedIndex = 0;
+      } else {
+        owned.Enabled = false;
+      }
     }
 
     private void HandleLanguageChange() {

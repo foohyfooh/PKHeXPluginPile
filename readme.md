@@ -42,8 +42,12 @@ The purpose of this plugin is allow for editing the start date on Switch games.
 The purpose of this plugin is to allow for editing the owned clothes in games. <br>
 - *Fashion Editor* should now be in the *Tools* menu of PKHeX
   - Currently works with
+    - Pokémon Sword / Shield
     - Pokémon Brilliant Diamond / Shining  Pearl
     - Pokémon Legends Arceus
+
+### Pokémon Sword and Shield Note
+Note that in Sword and Shield when unlocking Tops this unlocks it in the uniform tab even if the other parts of the uniform aren't unlocked since the game is expecting all of them to be unlocked at the same time.
 
 ## Building
 - Open PowerShell and Run `build.ps1`

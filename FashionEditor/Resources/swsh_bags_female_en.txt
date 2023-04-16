@@ -1,0 +1,65 @@
+Sport Rucksack: Iconic Style
+Sport Rucksack: Challenger Kit
+Sport Rucksack: Grass Type
+Sport Rucksack: Water Type
+Sport Rucksack: Fire Type
+Sport Rucksack: Ghost Type
+Sport Rucksack: Fighting Type
+Sport Rucksack: Fiary Type
+Sport Rucksack: Rock Type
+Sport Rucksack: Ice Type
+Sport Rucksack: Dark Type
+Sport Rucksack: Dragon Type
+Sport Rucksack: Bug Type
+Sport Rucksack: Steel Type
+Sport Rucksack: Psychic Type
+Sport Rucksack: Electric Type
+Sport Rucksack: Ground Type
+Sport Rucksack: Flying Type
+Sport Rucksack: Normal Type
+Sport Rucksack: Poison Type
+Canvas Rucksack: White
+Canvas Rucksack: Navy
+Canvas Rucksack: White/Black
+Canvas Rucksack: White/Blue
+Canvas Rucksack: White/Red
+Leather-Trimmed Bag: Brown
+Leather-Trimmed Bag: Sand
+Leather-Trimmed Bag: White
+Leather-Trimmed Bag: Maroon
+Leather-Trimmed Bag: White/Brown
+Leather-Trimmed Bag: White/Black
+Plaid Rucksack: Cream/Green
+Plaid Rucksack: Cream/Red
+Plaid Rucksack: Cream/Monotone
+Plaid Rucksack: Cream/Pink
+Plaid Rucksack: Cream/Navy
+Plaid Rucksack: Cream/Yellow
+Frilly Rucksack: Brown
+Frilly Rucksack: Sand
+Frilly Rucksack: Black
+Frilly Rucksack: White
+Frilly Rucksack: Navy
+Frilly Rucksack: Maroon
+Studded Leather Case: White
+Studded Leather Case: Black
+Studded Leather Case: Red
+Studded Leather Case: Caramel
+Studded Leather Case: Blue
+Studded Leather Case: Gold
+Studded Leather Case: Brilliant Black
+Studded Leather Case: Harsh White
+Dojo Rucksack: Original Style
+Expedition Travel Bag: Original Style
+Gold Travel Bag: Original Style
+Designer Leather Rucksack: Black/Red
+Designer Leather Rucksack: Green/Black
+Designer Leather Rucksack: White/Black
+Designer Leather Rucksack: Pink/White
+Designer Leather Rucksack: Red/Black
+Luxury Travel Bag: Black/Red
+Luxury Travel Bag: Black/White
+Luxury Travel Bag: White/Red
+Luxury Travel Bag: White/Black
+Luxury Travel Bag: White
+Luxury Travel Bag: Black

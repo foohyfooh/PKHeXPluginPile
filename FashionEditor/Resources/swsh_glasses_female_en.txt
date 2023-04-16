@@ -1,0 +1,97 @@
+Sport Sunglasses: Iconic Style
+Sport Sunglasses: Challenger Kit
+Sport Sunglasses: Grass Type
+Sport Sunglasses: Water Type
+Sport Sunglasses: Fire Type
+Sport Sunglasses: Ghost Type
+Sport Sunglasses: Fighting Type
+Sport Sunglasses: Fiary Type
+Sport Sunglasses: Rock Type
+Sport Sunglasses: Ice Type
+Sport Sunglasses: Dark Type
+Sport Sunglasses: Dragon Type
+Sport Sunglasses: Bug Type
+Sport Sunglasses: Steel Type
+Sport Sunglasses: Psychic Type
+Sport Sunglasses: Electric Type
+Sport Sunglasses: Ground Type
+Sport Sunglasses: Flying Type
+Sport Sunglasses: Normal Type
+Sport Sunglasses: Poison Type
+Square Eyeglasses: White
+Square Eyeglasses: Black
+Square Eyeglasses: Red
+Square Eyeglasses: Yellow
+Square Eyeglasses: Green
+Square Eyeglasses: Blue
+Square Eyeglasses: Orange
+Square Eyeglasses: Navy
+Square Eyeglasses: Purple
+Square Eyeglasses: Pink
+Square Sunglasses: White/Black
+Square Sunglasses: Black/Black
+Square Sunglasses: Red/Black
+Square Sunglasses: Yellow/Black
+Square Sunglasses: Green/Black
+Square Sunglasses: Blue/Black
+Square Sunglasses: Orange/Black
+Square Sunglasses: Navy/Black
+Square Sunglasses: Purple/Black
+Square Sunglasses: Pink/Black
+Half-Rim Eyeglasses: Black
+Half-Rim Eyeglasses: Silver
+Half-Rim Eyeglasses: Gold
+Half-Rim Eyeglasses: Mottled
+Half-Rim Eyeglasses: Black/Gray
+Half-Rim Eyeglasses: Black/Blue
+Half-Rim Eyeglasses: Black/Purple
+Half-Rim Eyeglasses: Black/Pink
+Half-Rim Eyeglasses: Black/Yellow
+Half-Rim Eyeglasses: Black/Brown
+Half-Rim Eyeglasses: Silver/Gray
+Half-Rim Eyeglasses: Silver/Blue
+Half-Rim Eyeglasses: Silver/Purple
+Half-Rim Eyeglasses: Silver/Pink
+Half-Rim Eyeglasses: Silver/Yellow
+Half-Rim Eyeglasses: Silver/Brown
+Half-Rim Eyeglasses: Gold/Gray
+Half-Rim Eyeglasses: Gold/Blue
+Half-Rim Eyeglasses: Gold/Purple
+Half-Rim Eyeglasses: Gold/Pink
+Half-Rim Eyeglasses: Gold/Yellow
+Half-Rim Eyeglasses: Gold/Brown
+Half-Rim Eyeglasses: Mottled/Gray
+Half-Rim Eyeglasses: Mottled/Blue
+Half-Rim Eyeglasses: Mottled/Purple
+Half-Rim Eyeglasses: Mottled/Pink
+Half-Rim Eyeglasses: Mottled/Yellow
+Half-Rim Eyeglasses: Mottled/Brown
+Round Eyeglasses: Black
+Round Eyeglasses: Metal
+Round Eyeglasses: Mottled
+Round Eyeglasses: Black/Yellow
+Round Eyeglasses: Black/Blue
+Round Eyeglasses: Black/Red
+Round Eyeglasses: Black/Black
+Round Eyeglasses: Metal/Yellow
+Round Eyeglasses: Metal/Blue
+Round Eyeglasses: Metal/Red
+Round Eyeglasses: Metal/Black
+Round Eyeglasses: Mottled/Yellow
+Round Eyeglasses: Mottled/Blue
+Round Eyeglasses: Mottled/Red
+Round Eyeglasses: Mottled/Black
+Wraparound Sunglasses: White
+Wraparound Sunglasses: Black
+Wraparound Sunglasses: Mottled
+Wraparound Sunglasses: Red
+Wraparound Sunglasses: Green
+Wraparound Sunglasses: Blue
+Futuristic Shades: Red
+Futuristic Shades: Yellow
+Futuristic Shades: Blue
+Futuristic Shades: White
+Futuristic Monocle: Red
+Futuristic Monocle: Yellow
+Futuristic Monocle: Blue
+Futuristic Monocle: Black

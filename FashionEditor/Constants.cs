@@ -13,7 +13,6 @@ namespace PluginPile.FashionEditor {
     public const int BotttomsOffset = GlovesOffset   + RegionSize;
     public const int SocksOffset    = BotttomsOffset + RegionSize;
     public const int ShoesOffset    = SocksOffset    + RegionSize;
-    public const int DressesOffset  = ShoesOffset    + RegionSize;
   }
 
   internal static class BDSPConstants {

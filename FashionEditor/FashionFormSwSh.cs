@@ -10,7 +10,6 @@ namespace PluginPile.FashionEditor {
     private readonly FashionPageSelector topsSelector;
     private readonly FashionPageSelector jacketsSelector;
     private readonly FashionPageSelector bottomsSelector;
-    private readonly FashionPageSelector dressesSelector;
     private readonly FashionPageSelector socksSelector;
     private readonly FashionPageSelector shoesSelector;
     private readonly FashionPageSelector bagsSelector;
@@ -20,8 +19,8 @@ namespace PluginPile.FashionEditor {
 
     public FashionFormSwSh(SAV8SWSH sav8swsh) {
       InitializeComponent();
-      HandleLanguageChange();
       sav = sav8swsh;
+      HandleLanguageChange();
       block = sav.Blocks.GetBlock(SwShConstants.Fashion);
       int gender = sav.Gender;
 
@@ -30,7 +29,6 @@ namespace PluginPile.FashionEditor {
       topsSelector = new FashionPageSelector(Convert(SwShConstants.TopsOffset), Language.SwSh.TopsList(gender));
       jacketsSelector = new FashionPageSelector(Convert(SwShConstants.JacketsOffset), Language.SwSh.JacketsList(gender));
       bottomsSelector = new FashionPageSelector(Convert(SwShConstants.BotttomsOffset), Language.SwSh.BottomsList(gender));
-      dressesSelector = new FashionPageSelector(Convert(SwShConstants.DressesOffset), Language.SwSh.DressesList(gender));
       socksSelector = new FashionPageSelector(Convert(SwShConstants.SocksOffset), Language.SwSh.SocksList(gender));
       shoesSelector = new FashionPageSelector(Convert(SwShConstants.ShoesOffset), Language.SwSh.ShoesList(gender));
       bagsSelector = new FashionPageSelector(Convert(SwShConstants.BagsOffset), Language.SwSh.BagsList(gender));
@@ -41,7 +39,6 @@ namespace PluginPile.FashionEditor {
       topsPage.Controls.Add(topsSelector);
       jacketsPage.Controls.Add(jacketsSelector);
       bottomsPage.Controls.Add(bottomsSelector);
-      dressesPage.Controls.Add(dressesSelector);
       socksPage.Controls.Add(socksSelector);
       shoesPage.Controls.Add(shoesSelector);
       bagsPage.Controls.Add(bagsSelector);
@@ -57,7 +54,7 @@ namespace PluginPile.FashionEditor {
       topsPage.Text = Language.SwSh.Tops;
       jacketsPage.Text = Language.SwSh.Jackets;
       bottomsPage.Text = Language.SwSh.Bottoms;
-      dressesPage.Text = Language.SwSh.Dresses;
+      if (sav.Gender == 1) bottomsPage.Text += $"/{Language.SwSh.Dresses}"; 
       socksPage.Text = Language.SwSh.Socks;
       shoesPage.Text = Language.SwSh.Shoes;
       bagsPage.Text = Language.SwSh.Bags;
@@ -72,7 +69,6 @@ namespace PluginPile.FashionEditor {
       topsSelector.GetData(converter).CopyTo(block.Data, SwShConstants.TopsOffset);
       jacketsSelector.GetData(converter).CopyTo(block.Data, SwShConstants.JacketsOffset);
       bottomsSelector.GetData(converter).CopyTo(block.Data, SwShConstants.BotttomsOffset);
-      dressesSelector.GetData(converter).CopyTo(block.Data, SwShConstants.DressesOffset);
       socksSelector.GetData(converter).CopyTo(block.Data, SwShConstants.SocksOffset);
       shoesSelector.GetData(converter).CopyTo(block.Data, SwShConstants.ShoesOffset);
       bagsSelector.GetData(converter).CopyTo(block.Data, SwShConstants.BagsOffset);

@@ -41,7 +41,6 @@ namespace PluginPile.Common {
       if (Util.IsStringListCached(fullyQualifiedName, out string[]? cachedText))
         return cachedText;
       string? resourceName = assembly.GetManifestResourceNames()
-        .AsQueryable()
         .SingleOrDefault(str => str.EndsWith(filename));
       if (resourceName == null)
         return Array.Empty<string>();

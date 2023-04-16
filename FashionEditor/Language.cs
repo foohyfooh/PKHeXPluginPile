@@ -179,21 +179,6 @@ namespace PluginPile.FashionEditor {
         }
       }
 
-      internal static string[] DressesList(int gender) {
-        return gender switch {
-          1 => DressesListFemale,
-          _ => Array.Empty<string>()
-        };
-      }
-
-      internal static string[] DressesListFemale {
-        get {
-          return GameInfo.CurrentLanguage switch {
-            "en" or _ => GetStringList("swsh_dresses_female_en.txt")
-          };
-        }
-      }
-
       internal static string Socks {
         get {
           return GameInfo.CurrentLanguage switch {

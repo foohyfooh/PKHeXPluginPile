@@ -1,0 +1,87 @@
+Tracksuit Jacket: Iconic Style
+Tracksuit Jacket: Challenger Kit
+Tracksuit Jacket: Grass Type
+Tracksuit Jacket: Water Type
+Tracksuit Jacket: Fire Type
+Tracksuit Jacket: Ghost Type
+Tracksuit Jacket: Fighting Type
+Tracksuit Jacket: Fiary Type
+Tracksuit Jacket: Rock Type
+Tracksuit Jacket: Ice Type
+Tracksuit Jacket: Dark Type
+Tracksuit Jacket: Dragon Type
+Tracksuit Jacket: Bug Type
+Tracksuit Jacket: Steel Type
+Tracksuit Jacket: Psychic Type
+Tracksuit Jacket: Electric Type
+Tracksuit Jacket: Ground Type
+Tracksuit Jacket: Flying Type
+Tracksuit Jacket: Normal Type
+Tracksuit Jacket: Poison Type
+Hoodie: White
+Hoodie: Black
+Hoodie: Red
+Hoodie: Yellow
+Hoodie: Green
+Hoodie: Blue
+Hoodie: Orange
+Hoodie: Navy
+Hoodie: Purple
+Hoodie: Pink
+Hoodie: Gray
+Hoodie: Tan
+Hoodie: Gray Greed
+Hoodie: The Champ
+Hoodie: Sunset City
+Zippered Parka: Lovely Nightmare
+Zippered Parka: Cute Clobbering
+Zippered Parka: Berry Forest
+Satin Varsity Jacket: Bitter Rock
+Satin Varsity Jacket: Shocking Berry (Unused)
+Varsity Jacket: Green
+Varsity Jacket: Red
+Varsity Jacket: Blue
+Knitted Parka: White
+Knitted Parka: Black
+Knitted Parka: Red
+Knitted Parka: Yellow
+Knitted Parka: Green
+Knitted Parka: Blue
+Knitted Parka: Orange
+Knitted Parka: Navy
+Knitted Parka: Purple
+Knitted Parka: Pink
+Knitted Parka: Gray
+Knitted Parka: Tan
+Fuzzy Pastel Parka: White
+Fuzzy Pastel Parka: Black
+Fuzzy Pastel Parka: Red
+Fuzzy Pastel Parka: Yellow
+Fuzzy Pastel Parka: Green
+Fuzzy Pastel Parka: Blue
+Fuzzy Pastel Parka: Orange
+Fuzzy Pastel Parka: Navy
+Fuzzy Pastel Parka: Purple
+Fuzzy Pastel Parka: Pink
+Fuzzy Pastel Parka: Gray
+Fuzzy Pastel Parka: Tan
+Motorcycle Jacket: White
+Motorcycle Jacket: Black
+Motorcycle Jacket: Red
+Motorcycle Jacket: Caramel
+Motorcycle Jacket: Blue
+Punk Vest: Faded Black
+Punk Vest: Light Blue
+Punk Vest: Red
+Designer Motocycle Jacket: White
+Designer Motocycle Jacket: Black
+Designer Motocycle Jacket: Red
+Designer Motocycle Jacket: Caramel
+Designer Motocycle Jacket: Blue
+Expedition Jacket: Original Style
+Gold Expedition Jacket: Original Style
+Dojo Jacket: Original Style
+Hoodie: W x F x G
+Hoodie: C x L
+Hoodie: Legendary R-D
+Hoodie: Legendary R-E
