@@ -4,8 +4,6 @@ namespace PluginPile.FashionEditor {
   public partial class FashionFormSwSh : Form {
 
     private readonly SAV8SWSH sav;
-    private readonly SCBlock block;
-    private readonly FashionBlockConverterSwSh converter;
 
     private readonly FashionPageSelector topsSelector;
     private readonly FashionPageSelector jacketsSelector;
@@ -21,20 +19,16 @@ namespace PluginPile.FashionEditor {
       InitializeComponent();
       sav = sav8swsh;
       HandleLanguageChange();
-      block = sav.Blocks.GetBlock(SwShConstants.Fashion);
-      int gender = sav.Gender;
 
-      converter = new FashionBlockConverterSwSh();
-      bool[] Convert(int start) => converter.FromBlockData(block.Data[start..(start + SwShConstants.RegionSize)]);
-      topsSelector = new FashionPageSelector(Convert(SwShConstants.TopsOffset), Language.SwSh.TopsList(gender));
-      jacketsSelector = new FashionPageSelector(Convert(SwShConstants.JacketsOffset), Language.SwSh.JacketsList(gender));
-      bottomsSelector = new FashionPageSelector(Convert(SwShConstants.BotttomsOffset), Language.SwSh.BottomsList(gender));
-      socksSelector = new FashionPageSelector(Convert(SwShConstants.SocksOffset), Language.SwSh.SocksList(gender));
-      shoesSelector = new FashionPageSelector(Convert(SwShConstants.ShoesOffset), Language.SwSh.ShoesList(gender));
-      bagsSelector = new FashionPageSelector(Convert(SwShConstants.BagsOffset), Language.SwSh.BagsList(gender));
-      hatsSelector = new FashionPageSelector(Convert(SwShConstants.HatsOffset), Language.SwSh.HatsList(gender));
-      glassesSelector = new FashionPageSelector(Convert(SwShConstants.GlassesOffset), Language.SwSh.GlassesList(gender));
-      glovesSelector = new FashionPageSelector(Convert(SwShConstants.GlovesOffset), Language.SwSh.GlovesList(gender));
+      topsSelector = NewSelector(SwShConstants.TopsRegion, Language.SwSh.TopsList);
+      jacketsSelector = NewSelector(SwShConstants.JacketsRegion, Language.SwSh.JacketsList);
+      bottomsSelector = NewSelector(SwShConstants.BotttomsRegion, Language.SwSh.BottomsList);
+      socksSelector = NewSelector(SwShConstants.SocksRegion, Language.SwSh.SocksList);
+      shoesSelector = NewSelector(SwShConstants.ShoesRegion, Language.SwSh.ShoesList);
+      bagsSelector = NewSelector(SwShConstants.BagsRegion, Language.SwSh.BagsList);
+      hatsSelector = NewSelector(SwShConstants.HatsRegion, Language.SwSh.HatsList);
+      glassesSelector = NewSelector(SwShConstants.GlassesRegion, Language.SwSh.GlassesList);
+      glovesSelector = NewSelector(SwShConstants.GlovesRegion, Language.SwSh.GlovesList);
 
       topsPage.Controls.Add(topsSelector);
       jacketsPage.Controls.Add(jacketsSelector);
@@ -66,17 +60,29 @@ namespace PluginPile.FashionEditor {
     private void cancelButton_Click(object sender, EventArgs e) => Close();
 
     private void saveButton_Click(object sender, EventArgs e) {
-      topsSelector.GetData(converter).CopyTo(block.Data, SwShConstants.TopsOffset);
-      jacketsSelector.GetData(converter).CopyTo(block.Data, SwShConstants.JacketsOffset);
-      bottomsSelector.GetData(converter).CopyTo(block.Data, SwShConstants.BotttomsOffset);
-      socksSelector.GetData(converter).CopyTo(block.Data, SwShConstants.SocksOffset);
-      shoesSelector.GetData(converter).CopyTo(block.Data, SwShConstants.ShoesOffset);
-      bagsSelector.GetData(converter).CopyTo(block.Data, SwShConstants.BagsOffset);
-      hatsSelector.GetData(converter).CopyTo(block.Data, SwShConstants.HatsOffset);
-      glassesSelector.GetData(converter).CopyTo(block.Data, SwShConstants.GlassesOffset);
-      glovesSelector.GetData(converter).CopyTo(block.Data, SwShConstants.GlovesOffset);
+      SetFlags(topsSelector, SwShConstants.TopsRegion);
+      SetFlags(jacketsSelector, SwShConstants.JacketsRegion);
+      SetFlags(bottomsSelector, SwShConstants.BotttomsRegion);
+      SetFlags(socksSelector, SwShConstants.SocksRegion);
+      SetFlags(shoesSelector, SwShConstants.ShoesRegion);
+      SetFlags(bagsSelector, SwShConstants.BagsRegion);
+      SetFlags(hatsSelector, SwShConstants.HatsRegion);
+      SetFlags(glassesSelector, SwShConstants.GlassesRegion);
+      SetFlags(glovesSelector, SwShConstants.GlovesRegion);
       sav.State.Edited = true;
       Close();
     }
+
+    private FashionPageSelector NewSelector(int region, Func<int, string[]> textList) {
+      bool[] OwnedFlags(int region) => sav.Blocks.Fashion.GetArrayOwnedFlag(region);
+      bool[] NewFlags(int region) => sav.Blocks.Fashion.GetArrayNewFlag(region).Select((b, i) => !b).ToArray();
+      return new FashionPageSelector(OwnedFlags(region), textList(sav.Gender), NewFlags(region));
+    }
+
+    private void SetFlags(FashionPageSelector selector, int region) {
+      sav.Blocks.Fashion.SetArrayOwnedFlag(region, selector.GetBools());
+      sav.Blocks.Fashion.SetArrayNewFlag(region, selector.GetNew()!.Select((b, i) => !b).ToArray());
+    }
+
   }
 }

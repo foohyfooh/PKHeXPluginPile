@@ -4,15 +4,26 @@ namespace PluginPile.FashionEditor {
   internal static class SwShConstants {
     public static readonly Block Fashion = 0xD224F9AC;
     public const int RegionSize = 0x80;
-    public const int GlassesOffset  = 0x300;
-    public const int HatsOffset     = GlassesOffset  + RegionSize;
-    public const int JacketsOffset  = HatsOffset     + RegionSize;
-    public const int TopsOffset     = JacketsOffset  + RegionSize;
-    public const int BagsOffset     = TopsOffset     + RegionSize;
-    public const int GlovesOffset   = BagsOffset     + RegionSize; 
-    public const int BotttomsOffset = GlovesOffset   + RegionSize;
-    public const int SocksOffset    = BotttomsOffset + RegionSize;
-    public const int ShoesOffset    = SocksOffset    + RegionSize;
+    // Offsets
+    public const int GlassesOffset  = 0x300;                       // 0x300
+    public const int HatsOffset     = GlassesOffset  + RegionSize; // 0x380
+    public const int JacketsOffset  = HatsOffset     + RegionSize; // 0x400
+    public const int TopsOffset     = JacketsOffset  + RegionSize; // 0x480
+    public const int BagsOffset     = TopsOffset     + RegionSize; // 0x500
+    public const int GlovesOffset   = BagsOffset     + RegionSize; // 0x580
+    public const int BotttomsOffset = GlovesOffset   + RegionSize; // 0x600
+    public const int SocksOffset    = BotttomsOffset + RegionSize; // 0x680
+    public const int ShoesOffset    = SocksOffset    + RegionSize; // 0x700
+    // Region Numbers
+    public const int GlassesRegion  = GlassesOffset  / RegionSize; //  6
+    public const int HatsRegion     = HatsOffset     / RegionSize; //  7
+    public const int JacketsRegion  = JacketsOffset  / RegionSize; //  8
+    public const int TopsRegion     = TopsOffset     / RegionSize; //  9
+    public const int BagsRegion     = BagsOffset     / RegionSize; // 10
+    public const int GlovesRegion   = GlovesOffset   / RegionSize; // 11
+    public const int BotttomsRegion = BotttomsOffset / RegionSize; // 12
+    public const int SocksRegion    = SocksOffset    / RegionSize; // 13
+    public const int ShoesRegion    = ShoesOffset    / RegionSize; // 14
   }
 
   internal static class BDSPConstants {

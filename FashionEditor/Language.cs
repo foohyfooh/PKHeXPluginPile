@@ -14,6 +14,14 @@ namespace PluginPile.FashionEditor {
       }
     }
 
+    internal static string New {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "New"
+        };
+      }
+    }
+
     internal static string Title {
       get {
         return GameInfo.CurrentLanguage switch {

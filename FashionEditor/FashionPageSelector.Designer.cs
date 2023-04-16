@@ -26,6 +26,7 @@ namespace PluginPile.FashionEditor {
       itemsList = new ComboBox();
       itemLabel = new Label();
       owned = new CheckBox();
+      newCheckbox = new CheckBox();
       SuspendLayout();
       // 
       // itemsList
@@ -59,10 +60,24 @@ namespace PluginPile.FashionEditor {
       owned.UseVisualStyleBackColor = true;
       owned.CheckedChanged += unlocked_CheckedChanged;
       // 
+      // newCheckbox
+      // 
+      newCheckbox.AutoSize = true;
+      newCheckbox.CheckAlign = ContentAlignment.MiddleRight;
+      newCheckbox.Enabled = false;
+      newCheckbox.Location = new Point(85, 43);
+      newCheckbox.Name = "newCheckbox";
+      newCheckbox.Size = new Size(50, 19);
+      newCheckbox.TabIndex = 3;
+      newCheckbox.Text = "New";
+      newCheckbox.UseVisualStyleBackColor = true;
+      newCheckbox.CheckedChanged += newCheckbox_CheckedChanged;
+      // 
       // FashionPageSelector
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
+      Controls.Add(newCheckbox);
       Controls.Add(owned);
       Controls.Add(itemLabel);
       Controls.Add(itemsList);
@@ -77,5 +92,6 @@ namespace PluginPile.FashionEditor {
     private ComboBox itemsList;
     private Label itemLabel;
     private CheckBox owned;
+    private CheckBox newCheckbox;
   }
 }
