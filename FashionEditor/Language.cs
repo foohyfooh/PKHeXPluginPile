@@ -321,7 +321,7 @@ namespace PluginPile.FashionEditor {
         }
       }
 
-      internal static string Glasses = Language.Glasses;
+      internal static string Glasses => Language.Glasses;
 
       internal static string[] GlassesList(int gender) {
         return gender switch {

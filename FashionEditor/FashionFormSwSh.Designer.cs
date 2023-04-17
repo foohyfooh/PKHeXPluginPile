@@ -33,8 +33,8 @@ namespace PluginPile.FashionEditor {
       shoesPage = new TabPage();
       bagsPage = new TabPage();
       hatsPage = new TabPage();
-      glovesPage = new TabPage();
       glassesPage = new TabPage();
+      glovesPage = new TabPage();
       tabControl.SuspendLayout();
       SuspendLayout();
       // 
@@ -67,8 +67,8 @@ namespace PluginPile.FashionEditor {
       tabControl.Controls.Add(shoesPage);
       tabControl.Controls.Add(bagsPage);
       tabControl.Controls.Add(hatsPage);
-      tabControl.Controls.Add(glovesPage);
       tabControl.Controls.Add(glassesPage);
+      tabControl.Controls.Add(glovesPage);
       tabControl.Location = new Point(0, 0);
       tabControl.Name = "tabControl";
       tabControl.SelectedIndex = 0;
@@ -140,6 +140,15 @@ namespace PluginPile.FashionEditor {
       hatsPage.Text = "Hats";
       hatsPage.UseVisualStyleBackColor = true;
       // 
+      // glassesPage
+      // 
+      glassesPage.Location = new Point(4, 24);
+      glassesPage.Name = "glassesPage";
+      glassesPage.Size = new Size(509, 72);
+      glassesPage.TabIndex = 7;
+      glassesPage.Text = "Glasses";
+      glassesPage.UseVisualStyleBackColor = true;
+      // 
       // glovesPage
       // 
       glovesPage.Location = new Point(4, 24);
@@ -149,15 +158,6 @@ namespace PluginPile.FashionEditor {
       glovesPage.TabIndex = 8;
       glovesPage.Text = "Gloves";
       glovesPage.UseVisualStyleBackColor = true;
-      // 
-      // glassesPage
-      // 
-      glassesPage.Location = new Point(4, 24);
-      glassesPage.Name = "glassesPage";
-      glassesPage.Size = new Size(509, 72);
-      glassesPage.TabIndex = 7;
-      glassesPage.Text = "Glasses";
-      glassesPage.UseVisualStyleBackColor = true;
       // 
       // FashionFormSwSh
       // 

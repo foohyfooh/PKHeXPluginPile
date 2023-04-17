@@ -48,7 +48,7 @@ namespace PluginPile.FashionEditor {
       topsPage.Text = Language.SwSh.Tops;
       jacketsPage.Text = Language.SwSh.Jackets;
       bottomsPage.Text = Language.SwSh.Bottoms;
-      if (sav.Gender == 1) bottomsPage.Text += $"/{Language.SwSh.Dresses}"; 
+      if (sav.Gender == 1) bottomsPage.Text += $"/{Language.SwSh.Dresses}";
       socksPage.Text = Language.SwSh.Socks;
       shoesPage.Text = Language.SwSh.Shoes;
       bagsPage.Text = Language.SwSh.Bags;
