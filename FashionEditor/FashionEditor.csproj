@@ -44,23 +44,41 @@
     <EmbeddedResource Include="Resources\la_uniforms_en.txt" />
     <EmbeddedResource Include="Resources\la_uniforms_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_bags_female_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_bags_female_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_bags_male_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_bags_male_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_bottoms_female_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_bottoms_female_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_bottoms_male_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_bottoms_male_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_glasses_female_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_glasses_female_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_glasses_male_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_glasses_male_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_gloves_female_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_gloves_female_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_gloves_male_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_gloves_male_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_hats_female_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_hats_female_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_hats_male_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_hats_male_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_jackets_female_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_jackets_female_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_jackets_male_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_jackets_male_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_shoes_female_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_shoes_female_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_shoes_male_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_shoes_male_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_socks_female_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_socks_female_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_socks_male_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_socks_male_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_tops_female_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_tops_female_zh.txt" />
     <EmbeddedResource Include="Resources\swsh_tops_male_en.txt" />
+    <EmbeddedResource Include="Resources\swsh_tops_male_zh.txt" />
   </ItemGroup>
 
 </Project>

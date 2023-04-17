@@ -101,6 +101,7 @@ Studded Leather Skirt: White
 Studded Leather Skirt: Black
 Studded Leather Skirt: Red
 Studded Leather Skirt: Caramel
+Studded Leather Skirt: Blue
 Damaged Denim Shorts: Light Blue
 Damaged Denim Shorts: Blue
 Damaged Denim Shorts: Navy
