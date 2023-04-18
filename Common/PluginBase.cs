@@ -26,12 +26,6 @@ namespace PluginPile.Common {
       LoadContextMenu(contextMenu);
     }
 
-    protected ToolStripDropDownItem ObtainToolsMenu() {
-      ToolStrip menu = (ToolStrip)Array.Find(Args, z => z is ToolStrip)!;
-      ToolStripDropDownItem tools = (ToolStripDropDownItem)menu.Items.Find("Menu_Tools", false)[0]!;
-      return tools;
-    }
-
     protected virtual void LoadMenu(ToolStripDropDownItem tools) { }
 
     protected virtual void LoadContextMenu(ContextMenuStrip contextMenu) { }

@@ -15,11 +15,13 @@ namespace PluginPile.SortingPlugin {
           Image = Properties.Images.SortIcon
         };
         tools.DropDownItems.Add(SortByButton);
-      } else {
-        SortByButton.DropDownItems.Clear();
       }
-      ToolStripItemCollection sortItems = SortByButton.DropDownItems;
+      SetSortItems();
+    }
 
+    private void SetSortItems() {
+      SortByButton!.DropDownItems.Clear();
+      ToolStripItemCollection sortItems = SortByButton.DropDownItems;
       int gen = SaveFileEditor.SAV.Generation;
       GameVersion version = SaveFileEditor.SAV.Version;
       bool isLetsGo = version == GameVersion.GP || version == GameVersion.GE;
@@ -123,12 +125,12 @@ namespace PluginPile.SortingPlugin {
           sortItems.Add(GetRegionalSortButton(Language.Gen9Paldea, Gen9_Paldea.GetSortFunctions()));
         }
 
-        if(gen != 1) {
+        if (gen != 1) {
           ToolStripMenuItem nationalDexSortButton = new ToolStripMenuItem(Language.NationalPokédex);
           nationalDexSortButton.Click += (s, e) => SortByFunctions();
           sortItems.Add(nationalDexSortButton);
 
-          if(gen >= 7 && !isBDSP) {
+          if (gen >= 7 && !isBDSP) {
             ToolStripMenuItem nationalDexWithFormSortButton = new ToolStripMenuItem(Language.NationalPokédexRegionalForms);
             nationalDexWithFormSortButton.Click += (s, e) => SortByFunctions(Gen_National.GetNationalDexWithRegionalFormsSortFunctions());
             sortItems.Add(nationalDexWithFormSortButton);
@@ -141,10 +143,8 @@ namespace PluginPile.SortingPlugin {
       sortItems.Add(settingsButton);
     }
 
-    public void ReloadMenu() {
-      ToolStripDropDownItem tools = ObtainToolsMenu();
-      LoadMenu(tools);
-    }
+
+    public void ReloadMenu() => SetSortItems();
 
     private void SortByFunctions(Func<PKM, IComparable>[]? sortFunctions = null) {
       int beginIndex = PluginSettings.Default.SortBeginBox - 1;
