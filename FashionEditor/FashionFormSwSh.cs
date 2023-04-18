@@ -75,13 +75,13 @@ namespace PluginPile.FashionEditor {
 
     private FashionPageSelector NewSelector(int region, Func<int, string[]> textList) {
       bool[] OwnedFlags(int region) => sav.Blocks.Fashion.GetArrayOwnedFlag(region);
-      bool[] NewFlags(int region) => sav.Blocks.Fashion.GetArrayNewFlag(region).Select((b, i) => !b).ToArray();
+      bool[] NewFlags(int region) => sav.Blocks.Fashion.GetArrayNewFlag(region).Select(b => !b).ToArray();
       return new FashionPageSelector(OwnedFlags(region), textList(sav.Gender), NewFlags(region));
     }
 
     private void SetFlags(FashionPageSelector selector, int region) {
       sav.Blocks.Fashion.SetArrayOwnedFlag(region, selector.GetBools());
-      sav.Blocks.Fashion.SetArrayNewFlag(region, selector.GetNew()!.Select((b, i) => !b).ToArray());
+      sav.Blocks.Fashion.SetArrayNewFlag(region, selector.GetNew()!.Select(b => !b).ToArray());
     }
 
   }
