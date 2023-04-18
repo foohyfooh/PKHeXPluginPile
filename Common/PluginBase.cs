@@ -20,6 +20,10 @@ namespace PluginPile.Common {
       ToolStrip menu = (ToolStrip)Array.Find(args, z => z is ToolStrip)!;
       ToolStripDropDownItem tools = (ToolStripDropDownItem)menu.Items.Find("Menu_Tools", false)[0]!;
       LoadMenu(tools);
+      // Since the classes for these are in PKHeX.WinForms but not PKHeX.Core have to do this to get the context menu
+      // (SAVEditor)SaveFileEditor.(ContextMenuSAV)menu.(ContextMenuStrip)mnuVSD
+      ContextMenuStrip contextMenu = (ContextMenuStrip)((dynamic)SaveFileEditor).menu.mnuVSD;
+      LoadContextMenu(contextMenu);
     }
 
     protected ToolStripDropDownItem ObtainToolsMenu() {
@@ -28,7 +32,9 @@ namespace PluginPile.Common {
       return tools;
     }
 
-    protected abstract void LoadMenu(ToolStripDropDownItem tools);
+    protected virtual void LoadMenu(ToolStripDropDownItem tools) { }
+
+    protected virtual void LoadContextMenu(ContextMenuStrip contextMenu) { }
 
     public void NotifySaveLoaded() {
       Console.WriteLine($"{Name} was notified that a Save File was just loaded.");
@@ -41,5 +47,14 @@ namespace PluginPile.Common {
       Console.WriteLine($"{Name} was provided with the file path, but chose to do nothing with it.");
       return false; // no action taken
     }
+
+    protected SlotViewInfo<PictureBox> GetSenderInfo(ref object sender) {
+      // Accessing private static method GetSenderInfo by using (SAVEditor)SaveFileEditor.(ContextMenuSAV)menu and reflection
+      Type contextMenuSAVType = ((dynamic)SaveFileEditor).menu.GetType();
+      MethodInfo? getSenderInfoMethod = contextMenuSAVType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
+        .SingleOrDefault(m => m.Name.Contains("GetSenderInfo"));
+      return (SlotViewInfo<PictureBox>)getSenderInfoMethod?.Invoke(null, new object[] { sender })!;
+    }
+
   }
 }
