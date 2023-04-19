@@ -8,6 +8,8 @@ This is meant to be a single repo to contain all my [PKHeX](https://github.com/k
 
 *If you are confused on the setup then you can follow the instructions from PKHeX-Plugins [here](https://github.com/architdate/PKHeX-Plugins/wiki/Installing-PKHeX-Plugins).*
 
+*While the individual plugins don't require each other to work, when updating please ensure all plugin pile plugins are the same version or there may be issues. This is because there is a common emdedded library that will only be loaded once by PKHeX.*
+
 ## Sorting Plugin
 The purpose of this plugin is to provide sorting by different regional Pokédexes.
 - *Sort Boxes By* should now be in the *Tools* menu of PKHeX.
