@@ -1,5 +1,4 @@
 using PKHeX.Core;
-using PluginPile.Common;
 using System.Reflection;
 
 namespace PluginPile.FashionEditor {
