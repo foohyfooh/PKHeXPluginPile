@@ -51,6 +51,12 @@ The purpose of this plugin is to allow for editing the owned clothes in games. <
 ### Pokémon Sword and Shield Note
 Note that in Sword and Shield when unlocking Tops this unlocks it in the uniform tab even if the other parts of the uniform aren't unlocked since the game is expecting all of them to be unlocked at the same time.
 
+## Scarlet/Violet Profile Picture Viewer Plugin
+The purpose of this plugin is to view and save the Profile Picture and Icon in Pokémon Scarlet and Violet.
+- *Profile Picture Viewer* should now be in the *Tools* menu of PKHeX.
+
+This is a port of the script that [Pako96](https://projectpokemon.org/home/profile/129441-pako96/) provided [here](https://projectpokemon.org/home/forums/topic/63327-scarletviolet-trainer-pictureicon-visualizer/).
+
 ## Building
 - Open PowerShell and Run `build.ps1`
 - Plugin should be located in `bin\Build` and `bin\PKHeXPluginPile.zip`
