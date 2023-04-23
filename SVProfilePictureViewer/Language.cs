@@ -42,6 +42,36 @@ namespace PluginPile.SVProfilePictureViewer {
       }
     }
 
-    internal static string Save = Common.Language.Save;
+    internal static string Export {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "Export"
+        };
+      }
+    }
+
+    internal static string ImportTitle {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "Select Image for picture/icon"
+        };
+      }
+    }
+
+    internal static string ImportPicture {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "Import Picture"
+        };
+      }
+    }
+
+    internal static string ImportIcon {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "Import Icon"
+        };
+      }
+    }
   }
 }
