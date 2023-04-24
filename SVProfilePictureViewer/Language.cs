@@ -5,7 +5,7 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string CurrentProfilePicture {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "当前个人资料照片",
+          "zh" => "当前个人简介照片",
           "en" or _ => "Current Profile Picture"
         };
       }
@@ -14,7 +14,7 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string CurrentProfileIcon {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "当前个人资料图标",
+          "zh" => "当前训练家头像",
           "en" or _ => "Current Profile Icon"
         };
       }
@@ -23,7 +23,7 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string InitialProfilePicture {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "初始个人资料照片",
+          "zh" => "初始个人简介照片",
           "en" or _ => "Initial Profile Picture"
         };
       }
@@ -32,7 +32,7 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string InitialProfileIcon {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "初始个人资料图标",
+          "zh" => "初始训练家头像",
           "en" or _ => "Initial Profile Icon"
         };
       }
@@ -41,7 +41,7 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string PluginName {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "个人资料照片查看器",
+          "zh" => "个人简介照片查看器",
           "en" or _ => "Profile Picture Viewer"
         };
       }
@@ -59,7 +59,7 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string ImportTitle {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "选择一张图片作为您的个人资料照片或图标",
+          "zh" => "选择一张图片作为您的个人简介照片或训练家头像",
           "en" or _ => "Select Image for picture/icon"
         };
       }
@@ -77,7 +77,7 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string ImportIcon {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "导入图标",
+          "zh" => "导入头像",
           "en" or _ => "Import Icon"
         };
       }
