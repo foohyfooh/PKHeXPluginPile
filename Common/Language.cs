@@ -9,6 +9,7 @@ namespace PluginPile.Common {
         return GameInfo.CurrentLanguage switch {
           "de" => "Abbrechen",
           "zh" => "取消",
+          "it" => "Annulla",
           "en" or _ => "Cancel"
         };
       }
@@ -19,6 +20,7 @@ namespace PluginPile.Common {
         return GameInfo.CurrentLanguage switch {
           "de" => "Speichern",
           "zh" => "保存",
+          "it" => "Salva",
           "en" or _ => "Save"
         };
       }
@@ -28,6 +30,7 @@ namespace PluginPile.Common {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh" => "未使用",
+          "it" => "Inutilizzato",
           "en" or _ => "Unused"
         };
       }
