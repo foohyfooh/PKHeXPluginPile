@@ -12,6 +12,7 @@ namespace PluginPile.StartDateEditor {
         return GameInfo.CurrentLanguage switch {
           "de" => "Sarttdatum Editor",
           "zh" => "开始日期编辑器",
+          "it" => "Editor Data di Immatricolazione",
           "en" or _ => "Start Date Editor"
         };
       }
@@ -24,6 +25,7 @@ namespace PluginPile.StartDateEditor {
         return GameInfo.CurrentLanguage switch {
           "de" => "Startdatum",
           "zh" => "开始日期",
+          "it" => "Data di Immatricolazione",
           "en" or _ => "Start Date"
         };
       }

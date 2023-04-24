@@ -12,6 +12,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Vivillon Form Wechsler",
           "zh" => "彩粉蝶形态转换器",
+          "it" => "Editor Forma di Vivillion",
           "en" or _ => "Vivillon Form Changer"
         };
       }
@@ -24,6 +25,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Vivillon Formen",
           "zh" => "彩粉蝶形态",
+          "it" => "Forme di Vivillion",
           "en" or _ => "Vivillon Forms"
         };
       }
@@ -34,6 +36,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Frost",
           "zh" => "冰雪花纹",
+          "it" => "Glaciale",
           "en" or _ => "Icy Snow"
         };
       }
@@ -44,6 +47,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Schneefeld",
           "zh" => "雪国花纹",
+          "it" => "Polare",
           "en" or _ => "Polar"
         };
       }
@@ -54,6 +58,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Flocken",
           "zh" => "雪原花纹",
+          "it" => "Tundra",
           "en" or _ => "Tundra"
         };
       }
@@ -64,6 +69,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Kontinental",
           "zh" => "大陆花纹",
+          "it" => "Continentale",
           "en" or _ => "Continental"
         };
       }
@@ -74,6 +80,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Ziergarten",
           "zh" => "ͥ庭园花纹",
+          "it" => "Giardino",
           "en" or _ => "Garden"
         };
       }
@@ -84,6 +91,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Prunk",
           "zh" => "高雅花纹",
+          "it" => "Elegante",
           "en" or _ => "Elegant"
         };
       }
@@ -94,6 +102,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Blumenmeer",
           "zh" => "花园花纹",
+          "it" => "Prato",
           "en" or _ => "Meadow"
         };
       }
@@ -104,6 +113,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Innovation",
           "zh" => "摩登花纹",
+          "it" => "Innovativo",
           "en" or _ => "Modern"
         };
       }
@@ -114,6 +124,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Aquamarin",
           "zh" => "大海花纹",
+          "it" => "Marino",
           "en" or _ => "Marine"
         };
       }
@@ -124,6 +135,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Archipel",
           "zh" => "群岛花纹",
+          "it" => "Arcipelago",
           "en" or _ => "Archipelago"
         };
       }
@@ -134,6 +146,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Dürre",
           "zh" => "荒野花纹",
+          "it" => "Pianura",
           "en" or _ => "High Plains"
         };
       }
@@ -144,6 +157,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Sand",
           "zh" => "沙尘花纹",
+          "it" => "Sabbioso",
           "en" or _ => "Sandstorm"
         };
       }
@@ -154,6 +168,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Flussdelta",
           "zh" => "大河花纹",
+          "it" => "Fluviale",
           "en" or _ => "River"
         };
       }
@@ -164,6 +179,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Monsun",
           "zh" => "骤雨花纹",
+          "it" => "Monsone",
           "en" or _ => "Monsoon"
         };
       }
@@ -174,6 +190,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Savanne",
           "zh" => "热带草原花纹",
+          "it" => "Savana",
           "en" or _ => "Savana"
         };
       }
@@ -184,6 +201,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Sonne",
           "zh" => "̫太阳花纹",
+          "it" => "Solare",
           "en" or _ => "Sun"
         };
       }
@@ -194,6 +212,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Ozean",
           "zh" => "大洋花纹",
+          "it" => "Oceano",
           "en" or _ => "Ocean"
         };
       }
@@ -204,6 +223,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Dschungel",
           "zh" => "热带雨林花纹",
+          "it" => "Giungla",
           "en" or _ => "Jungle"
         };
       }
@@ -214,6 +234,7 @@ namespace PluginPile.SVivillonPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Fantasie",
           "zh" => "幻彩花纹",
+          "it" => "Fantasioso",
           "en" or _ => "Fancy"
         };
       }

@@ -8,6 +8,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 1 Kanto",
           "zh" => "Gen 1 关都",
+          "it" => "Gen 1 Kanto",
           "en" or _ => "Gen 1 Kanto"
         };
       }
@@ -18,6 +19,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 2 Johto",
           "zh" => "Gen 2 城都",
+          "it" => "Gen 2 Johto",
           "en" or _ => "Gen 2 Johto"
         };
       }
@@ -28,6 +30,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 3 Hoenn",
           "zh" => "Gen 3 丰缘",
+          "it" => "Gen 3 Hoenn",
           "en" or _ => "Gen 3 Hoenn"
         };
       }
@@ -38,6 +41,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 3 Kanto",
           "zh" => "Gen 3 关都",
+          "it" => "Gen 3 Kanto",
           "en" or _ => "Gen 3 Kanto"
         };
       }
@@ -48,6 +52,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 4 Johto",
           "zh" => "Gen 4 神奥",
+          "it" => "Gen 4 Johto",
           "en" or _ => "Gen 4 Johto"
         };
       }
@@ -58,6 +63,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 4 Sinnoh Diamant/Perl",
           "zh" => "Gen 4 神奥 钻石/珍珠",
+          "it" => "Gen 4 Sinnoh Diamante/Perla",
           "en" or _ => "Gen 4 Sinnoh Diamond/Pearl"
         };
       }
@@ -68,6 +74,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 4 Sinnoh Platin",
           "zh" => "Gen 4 神奥 白金",
+          "it" => "Gen 4 Sinnoh Platino",
           "en" or _ => "Gen 4 Sinnoh Platinum"
         };
       }
@@ -78,6 +85,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 5 Einall Schwarz 2/Weiß 2",
           "zh" => "Gen 5 合众 黑2/白2",
+          "it" => "Gen 5 Unima Nero 2/Bianco 2",
           "en" or _ => "Gen 5 Unova Black 2/White 2"
         };
       }
@@ -88,6 +96,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 5 Einall Schwarz/Weiß",
           "zh" => "Gen 5 合众 黑/白",
+          "it" => "Gen 5 Unima Nero/Bianco",
           "en" or _ => "Gen 5 Unova Black/White"
         };
       }
@@ -98,6 +107,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 6 Hoenn",
           "zh" => "Gen 6 丰缘",
+          "it" => "Gen 6 Hoenn",
           "en" or _ => "Gen 6 Hoenn"
         };
       }
@@ -108,6 +118,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 6 Kalos",
           "zh" => "Gen 6 卡洛斯",
+          "it" => "Gen 6 Kalos",
           "en" or _ => "Gen 6 Kalos"
         };
       }
@@ -118,6 +129,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 6 Kalos Gebiete",
           "zh" => "Gen 6 卡洛斯地区",
+          "it" => "Gen 6 Aree di Kalos",
           "en" or _ => "Gen 6 Kalos Areas"
         };
       }
@@ -128,6 +140,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Zentral-Kalos",
           "zh" => "卡洛斯中央地区",
+          "it" => "Kalos Centrale",
           "en" or _ => "Central Kalos"
         };
       }
@@ -138,6 +151,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Kalos-Küste",
           "zh" => "卡洛斯海岸地区",
+          "it" => "Kalos Costiera",
           "en" or _ => "Costal Kalos"
         };
       }
@@ -148,6 +162,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Kalos-Gebirge",
           "zh" => "卡洛斯山岳地区",
+          "it" => "Kalos Montana",
           "en" or _ => "Mountain Kalos"
         };
       }
@@ -158,6 +173,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Akala",
           "zh" => "阿卡拉岛",
+          "it" => "Akala",
           "en" or _ => "Akala"
         };
       }
@@ -168,6 +184,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Mele-Mele",
           "zh" => "美乐美乐岛",
+          "it" => "Mele-Mele",
           "en" or _ => "Melemele"
         };
       }
@@ -178,6 +195,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Poni",
           "zh" => "波尼岛",
+          "it" => "Poni",
           "en" or _ => "Poni"
         };
       }
@@ -188,6 +206,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Ula-Ula",
           "zh" => "乌拉乌拉岛",
+          "it" => "Ula'ula",
           "en" or _ => "Ula'ula"
         };
       }
@@ -198,6 +217,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 7 Alola Sonne/Mond",
           "zh" => "Gen 7 阿罗拉 日/月",
+          "it" => "Gen 7 Alola Sole/Luna",
           "en" or _ => "Gen 7 Alola Sun/Moon"
         };
       }
@@ -208,6 +228,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 7 Alola Sonne/Mond Inseln",
           "zh" => "Gen 7 阿罗拉 日/月 岛屿",
+          "it" => "Gen 7 Alola Sole/Luna Isole",
           "en" or _ => "Gen 7 Alola Sun/Moon Islands"
         };
       }
@@ -218,6 +239,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 7 Alola Ultra Sonne/Ultra Mond",
           "zh" => "Gen 7 阿罗拉 究极之日/究极之月",
+          "it" => "Gen 7 Alola Ultra Sole/Ultra Luna",
           "en" or _ => "Gen 7 Alola Ultra Sun/Ultra Moon"
         };
       }
@@ -228,6 +250,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 7 Alola Ultra Sonne/Ultra Mond Inseln",
           "zh" => "Gen 7 阿罗拉 究极之日/究极之月 岛屿",
+          "it" => "Gen 7 Alola Ultra Sole/Ultra Luna Isole",
           "en" or _ => "Gen 7 Alola Ultra Sun/Ultra Moon Islands"
         };
       }
@@ -238,6 +261,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 7 Kanto",
           "zh" => "Gen 7 关都",
+          "it" => "Gen 7 Kanto",
           "en" or _ => "Gen 7 Kanto"
         };
       }
@@ -248,6 +272,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 8 Kalar",
           "zh" => "Gen 8 伽勒尔",
+          "it" => "Gen 8 Galar",
           "en" or _ => "Gen 8 Galar"
         };
       }
@@ -258,6 +283,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 8 Galar Gebiete",
           "zh" => "Gen 8 伽勒尔地区",
+          "it" => "Gen 8 Aree di Galar",
           "en" or _ => "Gen 8 Galar Areas"
         };
       }
@@ -268,6 +294,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Kronen-Schneelande",
           "zh" => "王冠雪原",
+          "it" => "Landa Corona",
           "en" or _ => "Crown Tundra"
         };
       }
@@ -278,6 +305,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Galar",
           "zh" => "伽勒尔",
+          "it" => "Galar",
           "en" or _ => "Galar"
         };
       }
@@ -288,6 +316,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Rüstungsinsel",
           "zh" => "铠之孤岛",
+          "it" => "Isola dell'Armatura",
           "en" or _ => "Isle of Armor"
         };
       }
@@ -298,6 +327,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 8 Hisui",
           "zh" => "Gen 8 洗翠",
+          "it" => "Gen 8 Hisui",
           "en" or _ => "Gen 8 Hisui"
         };
       }
@@ -308,6 +338,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 8 Hisui Gebiete",
           "zh" => "Gen 8 洗翠地区",
+          "it" => "Gen 8 Aree di Hisui",
           "en" or _ => "Gen 8 Hisui Areas"
         };
       }
@@ -318,6 +349,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Weißes Frostland",
           "zh" => "纯白冻土",
+          "it" => "Ghiacci Candidi",
           "en" or _ => "Alabaster Icelands"
         };
       }
@@ -328,6 +360,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Kobalt-Küstenland",
           "zh" => "群青海岸",
+          "it" => "Costa Oltremare",
           "en" or _ => "Cobalt Coastlands"
         };
       }
@@ -338,6 +371,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Kraterberg-Hochland",
           "zh" => "天冠山麓",
+          "it" => "Pendici Corona",
           "en" or _ => "Coronet Highlands"
         };
       }
@@ -348,6 +382,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Rotes Sumpfland",
           "zh" => "红莲湿地",
+          "it" => "Acquitrino Vermiglio",
           "en" or _ => "Crimson Mirelands"
         };
       }
@@ -358,6 +393,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Obsidian-Grasland",
           "zh" => "黑曜原野",
+          "it" => "Landa Ossidiana",
           "en" or _ => "Obsidian Fieldlands"
         };
       }
@@ -368,6 +404,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 8 Sinnoh",
           "zh" => "Gen 8 神奥",
+          "it" => "Gen 8 Sinnoh",
           "en" or _ => "Gen 8 Sinnoh"
         };
       }
@@ -378,6 +415,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Gen 9 Paldea",
           "zh" => "Gen 9 帕底亚",
+          "it" => "Gen 9 Paldea",
           "en" or _ => "Gen 9 Paldea"
         };
       }
@@ -388,6 +426,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Sortiere Boxen nach",
           "zh" => "排序插件",
+          "it" => "Ordina i Box in base a",
           "en" or _ => "Sort Boxes By"
         };
       }
@@ -398,6 +437,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Nationaldex",
           "zh" => "全国图鉴",
+          "it" => "Dex Nazionale",
           "en" or _ => "National Pokédex"
         };
       }
@@ -408,6 +448,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Nationaldex (Regionale Formen mit Generation)",
           "zh" => "全国图鉴(地区形态出生世代)",
+          "it" => "Dex Nazionale (Forme Regionali nella Generazione originale)",
           "en" or _ => "National Pokédex (Regional Forms With Generation)"
         };
       }
@@ -418,6 +459,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "{0} Regionaldex",
           "zh" => "{0} 地区图鉴",
+          "it" => "{0} Dex Regionale",
           "en" or _ => "{0} Regional Pokédex"
         };
       }
@@ -428,6 +470,7 @@ namespace PluginPile.SortingPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Einstellungen",
           "zh" => "设置",
+          "it" => "Impostazioni",
           "en" or _ => "Settings"
         };
       }

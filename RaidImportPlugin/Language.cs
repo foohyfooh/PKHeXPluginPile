@@ -8,6 +8,7 @@ namespace PluginPile.RaidImportPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Raid Importierer",
           "zh" => "Raid导入工具",
+          "it" => "Importatore di Raid",
           "en" or _ => "Raid Importer"
         };
       }
@@ -18,6 +19,7 @@ namespace PluginPile.RaidImportPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Stelle sicher, dass alle Dateien in {0} sind.",
           "zh" => "确保所有必需的文件都在 {0} 中",
+          "it" => "Assicurati che tutti i file necessari siano in {0}",
           "en" or _ => "Ensure that all necessary files are in {0}"
         };
       }
@@ -28,6 +30,7 @@ namespace PluginPile.RaidImportPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Importiere Raid",
           "zh" => "导入Raid",
+          "it" => "Importa Raid",
           "en" or _ => "Import Raid"
         };
       }
@@ -38,6 +41,7 @@ namespace PluginPile.RaidImportPlugin {
         return GameInfo.CurrentLanguage switch {
           "de" => "Raid importiert",
           "zh" => "Raid已导入",
+          "it" => "Raid Importato",
           "en" or _ => "Raid Imported"
         };
       }
