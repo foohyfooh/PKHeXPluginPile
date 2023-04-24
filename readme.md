@@ -51,11 +51,14 @@ The purpose of this plugin is to allow for editing the owned clothes in games. <
 ### Pokémon Sword and Shield Note
 Note that in Sword and Shield when unlocking Tops this unlocks it in the uniform tab even if the other parts of the uniform aren't unlocked since the game is expecting all of them to be unlocked at the same time.
 
-## Scarlet/Violet Profile Picture Viewer Plugin
+## Scarlet/Violet Profile Picture Viewer/Injector Plugin
 The purpose of this plugin is to view and save the Profile Picture and Icon in Pokémon Scarlet and Violet.
 - *Profile Picture Viewer* should now be in the *Tools* menu of PKHeX.
 
 This is a port of the script that [Pako96](https://projectpokemon.org/home/profile/129441-pako96/) provided [here](https://projectpokemon.org/home/forums/topic/63327-scarletviolet-trainer-pictureicon-visualizer/).
+
+## Note
+While this plugin does allow for injecting custom profile picture and icon, it is recommended that you don't go online with an injected image as this a clear indicator of hacking and could result in a ban.
 
 ## Building
 - Open PowerShell and Run `build.ps1`
@@ -74,14 +77,14 @@ This is a port of the script that [Pako96](https://projectpokemon.org/home/profi
 
 ## Language Support
 The default language for this project is English but there appears to be interest in localizing, so I have added a way to add to do multilingual support even if it is hacky. To add support for a language that PKHeX supports, go to the desired plugin and modify the switch cases in the `Language.cs` file using the following language codes that `PKHeX.Core.GameInfo.CurrentLanguage` returns
-| Key | Language            | Supported | Contributors                                                                    |
-|-----|---------------------|-----------|---------------------------------------------------------------------------------|
-| de  | German              | Partial   | [BlackShark](https://github.com/Bl4ckSh4rk)                                     |
-| en  | English             | Yes       | Me                                                                              |
-| es  | Spanish             | No        |                                                                                 |
-| fr  | French              | No        |                                                                                 |
-| it  | Italian             | No        |                                                                                 |
-| ja  | Japanese            | No        |                                                                                 |
-| ko  | Korean              | No        |                                                                                 |
-| zh  | Simplified Chinese  | Partial   | [wubinwww](https://github.com/wubinwww), [ppllouf](https://github.com/ppllouf)  |
-| zh2 | Traditional Chinese | No        |                                                                                 |
+| Key | Language            | Supported | Contributors                                                                                                              |
+|-----|---------------------|-----------|---------------------------------------------------------------------------------------------------------------------------|
+| de  | German              | Partial   | [BlackShark](https://github.com/Bl4ckSh4rk)                                                                               |
+| en  | English             | Yes       | Me                                                                                                                        |
+| es  | Spanish             | No        |                                                                                                                           |
+| fr  | French              | No        |                                                                                                                           |
+| it  | Italian             | No        |                                                                                                                           |
+| ja  | Japanese            | No        |                                                                                                                           |
+| ko  | Korean              | No        |                                                                                                                           |
+| zh  | Simplified Chinese  | Yes       | [wubinwww](https://github.com/wubinwww), [ppllouf](https://github.com/ppllouf), [easyworld](https://github.com/easyworld) |
+| zh2 | Traditional Chinese | No        |                                                                                                                           |
