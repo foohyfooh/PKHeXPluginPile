@@ -45,9 +45,9 @@ namespace PluginPile.Common {
     protected SlotViewInfo<PictureBox> GetSenderInfo(ref object sender) {
       // Accessing private static method GetSenderInfo by using (SAVEditor)SaveFileEditor.(ContextMenuSAV)menu and reflection
       Type contextMenuSAVType = ((dynamic)SaveFileEditor).menu.GetType();
-      MethodInfo? getSenderInfoMethod = contextMenuSAVType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
-        .SingleOrDefault(m => m.Name.Contains("GetSenderInfo"));
-      return (SlotViewInfo<PictureBox>)getSenderInfoMethod?.Invoke(null, new object[] { sender })!;
+      MethodInfo getSenderInfoMethod = contextMenuSAVType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
+        .Single(m => m.Name.Contains("GetSenderInfo"));
+      return (SlotViewInfo<PictureBox>)getSenderInfoMethod.Invoke(null, new object[] { sender })!;
     }
 
   }
