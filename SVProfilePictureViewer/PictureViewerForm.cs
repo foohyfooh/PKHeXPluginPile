@@ -58,19 +58,38 @@ namespace PluginPile.SVProfilePictureViewer {
       SCBlock image = sav.Blocks.GetBlock(imageBlcok);
       int height = (int)sav.Blocks.GetBlockValue<uint>(heightBlock);
       int width = (int)sav.Blocks.GetBlockValue<uint>(widthBlock);
-      Bitmap bitmap = new Bitmap(width / 4, height / 4);
-      for (int y = 0, byteIndex = 0; y < bitmap.Height; y++) {
-        for (int x = 0; x < bitmap.Width; x++, byteIndex += 8) {
-          byte[] colourBytes = image.Data[byteIndex..(byteIndex + 2)];
-          int colour = BinaryPrimitives.ReadUInt16LittleEndian(colourBytes);
-          int b =  (colour & 0x001F) <<  3;
-          int g = ((colour & 0x07E0) >>  5) << 2;
-          int r = ((colour & 0xF800) >> 11) << 3;
-          Color c = Color.FromArgb(255, r, g, b);
-          bitmap.SetPixel(x, y, c);
-        }
+
+      Color BytesToColor(int offset) {
+        byte[] colourBytes = image.Data[offset..(offset + 2)];
+        int colour = BinaryPrimitives.ReadUInt16LittleEndian(colourBytes);
+        int b =  (colour & 0x001F) <<  3;
+        int g = ((colour & 0x07E0) >>  5) << 2;
+        int r = ((colour & 0xF800) >> 11) << 3;
+        return Color.FromArgb(255, r, g, b);
       }
-      return bitmap;
+
+      Bitmap ExtractComponent(int offset, bool useMask = false) {
+        Bitmap bitmap = new Bitmap(width / 4, height / 4);
+        for (int y = 0, byteIndex = 0; y < bitmap.Height; y++) {
+          for (int x = 0; x < bitmap.Width; x++, byteIndex += 8) {
+            Color c = BytesToColor(byteIndex + offset);
+            if (useMask) {
+              Color m = BytesToColor(byteIndex + offset + 4);
+              int alpha = (m.R + m.G + m.B) / 3;
+              c = Color.FromArgb(alpha, c);
+            }
+            bitmap.SetPixel(x, y, c);
+          }
+        }
+        return bitmap;
+      }
+
+      // TODO: Figure out how light mask is used.
+      Bitmap light = ExtractComponent(0);
+      Bitmap dark = ExtractComponent(2, true);
+      Graphics g = Graphics.FromImage(light);
+      g.DrawImage(dark, 0, 0);
+      return light;
     }
 
     private Bitmap? SelectImage(int id) {
