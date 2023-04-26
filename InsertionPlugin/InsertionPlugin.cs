@@ -1,8 +1,9 @@
 using PKHeX.Core;
+using PluginPile.Common;
 using System.Reflection;
 
 namespace PluginPile.InsertionPlugin {
-  public class InsertionPlugin : Common.PluginBase {
+  public class InsertionPlugin : PluginBase {
     public override string Name => nameof(InsertionPlugin);
     protected override Assembly PluginAssembly => typeof(InsertionPlugin).Assembly;
 

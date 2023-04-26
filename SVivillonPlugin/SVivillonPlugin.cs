@@ -1,8 +1,9 @@
 using PKHeX.Core;
+using PluginPile.Common;
 using System.Reflection;
 
 namespace PluginPile.SVivillonPlugin {
-  public class SVivillonPlugin : Common.PluginBase {
+  public class SVivillonPlugin : PluginBase {
 
     public override string Name => nameof(SVivillonPlugin);
     protected override Assembly PluginAssembly => typeof(SVivillonPlugin).Assembly;
@@ -15,7 +16,7 @@ namespace PluginPile.SVivillonPlugin {
       OpenFormButton = new ToolStripMenuItem(Language.MenuItemName) {
         Image = Properties.Images.F18_Fancy
       };
-      OpenFormButton.Click += (s, e) => new VivillonForm((SAV9SV)SaveFileEditor.SAV).ShowDialog();
+      OpenFormButton.Click += (s, e) => new VivillonForm((SAV9SV)SaveFileEditor.SAV).ShowDialogInParent();
       OpenFormButton.Available = IsCompatibleSave;
       tools.DropDownItems.Add(OpenFormButton);
     }

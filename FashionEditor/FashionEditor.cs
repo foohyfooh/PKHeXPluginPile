@@ -1,8 +1,9 @@
 using PKHeX.Core;
+using PluginPile.Common;
 using System.Reflection;
 
 namespace PluginPile.FashionEditor {
-  public class FashionEditor : Common.PluginBase {
+  public class FashionEditor : PluginBase {
     public override string Name => nameof(FashionEditor);
     protected override Assembly PluginAssembly => typeof(FashionEditor).Assembly;
     private ToolStripMenuItem FashionEditorButton = null!;
@@ -17,11 +18,11 @@ namespace PluginPile.FashionEditor {
       FashionEditorButton.Available = IsCompatibleSave;
       FashionEditorButton.Click += (s, e) => {
         if (SaveFileEditor.SAV is SAV8SWSH sav8swsh) {
-          new FashionFormSwSh(sav8swsh).ShowDialog();
+          new FashionFormSwSh(sav8swsh).ShowDialogInParent();
         } else if (SaveFileEditor.SAV is SAV8BS sav8bs) {
-          new FashionFormBDSP(sav8bs).ShowDialog();
+          new FashionFormBDSP(sav8bs).ShowDialogInParent();
         } else if (SaveFileEditor.SAV is SAV8LA sav8la) {
-          new FashionFormLA(sav8la).ShowDialog();
+          new FashionFormLA(sav8la).ShowDialogInParent();
         }
       };
       tools.DropDownItems.Add(FashionEditorButton);

@@ -1,8 +1,9 @@
 using PKHeX.Core;
+using PluginPile.Common;
 using System.Reflection;
 
 namespace PluginPile.StartDateEditor {
-  public class StartDateEditor: Common.PluginBase {
+  public class StartDateEditor: PluginBase {
     public override string Name => nameof(StartDateEditor);
     protected override Assembly PluginAssembly => typeof(StartDateEditor).Assembly;
     private ToolStripMenuItem StartDateEditorButton = null!;
@@ -28,7 +29,7 @@ namespace PluginPile.StartDateEditor {
       TrainerCard8 trainerCard = sav.TrainerCard;
       DateTime startDate = new DateTime(trainerCard.StartedYear, trainerCard.StartedMonth, trainerCard.StartedDay);
       DateEditorForm dateEditorForm = new DateEditorForm(startDate);
-      if (dateEditorForm.ShowDialog() == DialogResult.OK) {
+      if (dateEditorForm.ShowDialogInParent() == DialogResult.OK) {
         startDate = dateEditorForm.GetStartDate();
         trainerCard.StartedYear = (ushort)startDate.Year;
         trainerCard.StartedMonth = (byte)startDate.Month;
@@ -40,7 +41,7 @@ namespace PluginPile.StartDateEditor {
     private void EditBDSPAdventureStart() {
       SAV8BS sav = (SAV8BS)SaveFileEditor.SAV;
       DateEditorForm dateEditorForm = new DateEditorForm(sav.System.TimestampStart);
-      if (dateEditorForm.ShowDialog() == DialogResult.OK) {
+      if (dateEditorForm.ShowDialogInParent() == DialogResult.OK) {
         sav.System.TimestampStart = dateEditorForm.GetStartDate();
         sav.State.Edited = true;
       }
@@ -49,7 +50,7 @@ namespace PluginPile.StartDateEditor {
     private void EditLAAdventureStart() {
       SAV8LA sav = (SAV8LA)SaveFileEditor.SAV;
       DateEditorForm dateEditorForm = new DateEditorForm(sav.AdventureStart.Timestamp);
-      if (dateEditorForm.ShowDialog() == DialogResult.OK) {
+      if (dateEditorForm.ShowDialogInParent() == DialogResult.OK) {
         sav.AdventureStart.Timestamp = dateEditorForm.GetStartDate();
         sav.State.Edited = true;
       }
@@ -58,7 +59,7 @@ namespace PluginPile.StartDateEditor {
     private void EditSVEnrollmentDate() {
       SAV9SV sav = (SAV9SV)SaveFileEditor.SAV;
       DateEditorForm dateEditorForm = new DateEditorForm(sav.EnrollmentDate.Timestamp);
-      if (dateEditorForm.ShowDialog() == DialogResult.OK) {
+      if (dateEditorForm.ShowDialogInParent() == DialogResult.OK) {
         sav.EnrollmentDate.Timestamp = dateEditorForm.GetStartDate();
         sav.State.Edited = true;
       }

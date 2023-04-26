@@ -1,9 +1,10 @@
 using PKHeX.Core;
+using PluginPile.Common;
 using System.Reflection;
 using Block = PluginPile.Common.Block;
 
 namespace PluginPile.RaidImportPlugin {
-  public class RaidImportPlugin : Common.PluginBase {
+  public class RaidImportPlugin : PluginBase {
     public override string Name => nameof(RaidImportPlugin);
     protected override Assembly PluginAssembly => typeof(RaidImportPlugin).Assembly;
     private ToolStripMenuItem ImportRaidButton = null!;

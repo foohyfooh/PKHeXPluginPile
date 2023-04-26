@@ -1,8 +1,9 @@
 using PKHeX.Core;
+using PluginPile.Common;
 using System.Reflection;
 
 namespace PluginPile.SortingPlugin {
-  public class SortingPlugin : Common.PluginBase {
+  public class SortingPlugin : PluginBase {
     public override string Name => nameof(SortingPlugin);
     protected override Assembly PluginAssembly => typeof(SortingPlugin).Assembly;
     private ToolStripMenuItem? SortByButton = null;
@@ -139,7 +140,7 @@ namespace PluginPile.SortingPlugin {
       }
 
       ToolStripMenuItem settingsButton = new ToolStripMenuItem(Language.Settings);
-      settingsButton.Click += (s, e) => new SettingsForm(this).ShowDialog();
+      settingsButton.Click += (s, e) => new SettingsForm(this).ShowDialogInParent();
       sortItems.Add(settingsButton);
     }
 

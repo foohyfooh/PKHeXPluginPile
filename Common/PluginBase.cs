@@ -9,6 +9,7 @@ namespace PluginPile.Common {
 
     // Initialized on plugin load
     protected object[] Args { get; private set; } = null!;
+    public static Form MainWindow { get; private set; } = null!;
     public ISaveFileProvider SaveFileEditor { get; private set; } = null!;
     public IPKMView PKMEditor { get; private set; } = null!;
 
@@ -17,6 +18,7 @@ namespace PluginPile.Common {
       Args = args;
       SaveFileEditor = (ISaveFileProvider)Array.Find(args, z => z is ISaveFileProvider)!;
       PKMEditor = (IPKMView)Array.Find(args, z => z is IPKMView)!;
+      MainWindow = (Form)Array.Find(args, z => z is Form)!;
       ToolStrip menu = (ToolStrip)Array.Find(args, z => z is ToolStrip)!;
       ToolStripDropDownItem tools = (ToolStripDropDownItem)menu.Items.Find("Menu_Tools", false)[0]!;
       LoadMenu(tools);
