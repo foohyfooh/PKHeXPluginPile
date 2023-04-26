@@ -1,5 +1,6 @@
 using PKHeX.Core;
 using System.Buffers.Binary;
+using System.ComponentModel;
 using System.Drawing.Imaging;
 
 namespace PluginPile.SVProfilePictureViewer {
@@ -51,11 +52,26 @@ namespace PluginPile.SVProfilePictureViewer {
       }
     }
 
+    enum BlendType {
+      LightOnly,
+      LightMaskOnly,
+      DarkOnly,
+      DarkMaskOnly,
+      UseMasks,
+      AverageLightAndDark
+    }
+
+    enum MaskType {
+      None,
+      Alpha,
+      SubtractFromAlpha
+    }
+
     /// <summary>
-    /// Obtain Bitmap from BGR565 formated bytes in block
+    /// Obtain Bitmap from RGB565 formated bytes in block
     /// </summary>
-    private Bitmap ExtractImage(uint imageBlcok, uint heightBlock, uint widthBlock) {
-      SCBlock image = sav.Blocks.GetBlock(imageBlcok);
+    private Bitmap ExtractImage(uint imageBlock, uint heightBlock, uint widthBlock, BlendType blendType = BlendType.AverageLightAndDark) {
+      SCBlock image = sav.Blocks.GetBlock(imageBlock);
       int height = (int)sav.Blocks.GetBlockValue<uint>(heightBlock);
       int width = (int)sav.Blocks.GetBlockValue<uint>(widthBlock);
 
@@ -68,15 +84,19 @@ namespace PluginPile.SVProfilePictureViewer {
         return Color.FromArgb(255, r, g, b);
       }
 
-      Bitmap ExtractComponent(int offset, bool useMask = false) {
+      Bitmap ExtractComponent(int offset, MaskType maskType = MaskType.None) {
         Bitmap bitmap = new Bitmap(width / 4, height / 4);
         for (int y = 0, byteIndex = 0; y < bitmap.Height; y++) {
           for (int x = 0; x < bitmap.Width; x++, byteIndex += 8) {
             Color c = BytesToColor(byteIndex + offset);
-            if (useMask) {
+            if (maskType == MaskType.Alpha) {
               Color m = BytesToColor(byteIndex + offset + 4);
               int alpha = (m.R + m.G + m.B) / 3;
               c = Color.FromArgb(alpha, c);
+            } else if (maskType == MaskType.SubtractFromAlpha) {
+              Color m = BytesToColor(byteIndex + offset + 4);
+              int alpha = (m.R + m.G + m.B) / 3;
+              c = Color.FromArgb(255 - alpha, c);
             }
             bitmap.SetPixel(x, y, c);
           }
@@ -84,12 +104,44 @@ namespace PluginPile.SVProfilePictureViewer {
         return bitmap;
       }
 
-      // TODO: Figure out how light mask is used.
-      Bitmap light = ExtractComponent(0);
-      Bitmap dark = ExtractComponent(2, true);
-      Graphics g = Graphics.FromImage(light);
-      g.DrawImage(dark, 0, 0);
-      return light;
+      switch(blendType) {
+        case BlendType.LightOnly:
+          return ExtractComponent(0);
+        case BlendType.LightMaskOnly:
+          return ExtractComponent(4);
+        case BlendType.DarkOnly: 
+          return ExtractComponent(2);
+        case BlendType.DarkMaskOnly:
+          return ExtractComponent(6);
+        case BlendType.UseMasks: {
+          // TODO: Figure out how light mask is used.
+          Bitmap light = ExtractComponent(0);
+          Bitmap dark = ExtractComponent(2, MaskType.Alpha);
+          Graphics g = Graphics.FromImage(light);
+          g.DrawImage(dark, 0, 0);
+          return light;
+        }
+        case BlendType.AverageLightAndDark: {
+          Bitmap light = ExtractComponent(0);
+          Bitmap dark = ExtractComponent(2);
+          Bitmap result = new Bitmap(light.Width, light.Height);
+          for (int y = 0; y < result.Height; y++) {
+            for (int x = 0; x < result.Width; x++) {
+              Color lightColour = light.GetPixel(x, y);
+              Color darkColour = dark.GetPixel(x, y);
+              Color avg = Color.FromArgb(255,
+                (lightColour.R + darkColour.R) / 2,
+                (lightColour.G + darkColour.G) / 2,
+                (lightColour.B + darkColour.B) / 2
+              );
+              result.SetPixel(x, y, avg);
+            }
+          }
+          return result;
+        }
+        default:
+          throw new InvalidEnumArgumentException();
+      }
     }
 
     private Bitmap? SelectImage(int id) {
