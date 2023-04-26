@@ -84,9 +84,27 @@ namespace PluginPile.SVProfilePictureViewer {
         return bitmap;
       }
 
+      Bitmap ImageMean(Bitmap bmp1, Bitmap bmp2) {
+        Bitmap bitmap = new Bitmap(width / 4, height / 4);
+        for (int y = 0; y < bitmap.Height; y++) {
+          for (int x = 0; x < bitmap.Width; x++) {
+            Color px1 = bmp1.GetPixel(x, y);
+            Color px2 = bmp2.GetPixel(x, y);
+            int newR = (px1.R + px2.R) / 2;
+            int newG = (px1.G + px2.B) / 2;
+            int newB = (px1.B + px2.B) / 2;
+            bitmap.SetPixel(x, y, Color.FromArgb(255, newR, newG, newB));
+          }
+        }
+        return bitmap;
+      }
+
       // TODO: Figure out how light mask is used.
+      // The dark image plus its mask already gives good results, the arithmethic mean looks similiar.
+      // TODO: check best combination of image matrices.
       Bitmap light = ExtractComponent(0);
       Bitmap dark = ExtractComponent(2, true);
+      Bitmap mean = ImageMean(light, dark);
       Graphics g = Graphics.FromImage(light);
       g.DrawImage(dark, 0, 0);
       return light;
