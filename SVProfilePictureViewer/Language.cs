@@ -91,5 +91,23 @@ namespace PluginPile.SVProfilePictureViewer {
         };
       }
     }
+
+    internal static string WarnTitle {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "it" => "Attenzione",
+          "en" or _ => "Warning"
+        };
+      }
+    }
+
+    internal static string WarnContent {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "it" => "Questa funzione è a scopo sperimentale, la qualità non è garantita ed è raccomandato non andare online con tali modifiche onde evitare ban.",
+          "en" or _ => "This is an experimental function, quality is not guaranteed and it is recommended to not go online with these modifications, in order to avoid ban."
+        };
+      }
+    }
   }
 }

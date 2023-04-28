@@ -7,6 +7,8 @@ namespace PluginPile.SVProfilePictureViewer {
   public partial class PictureViewerForm : Form {
 
     private readonly SAV9SV sav;
+    private String? title;
+    private String? content;
 
     public PictureViewerForm(SAV9SV sav9sv) {
       InitializeComponent();
@@ -27,6 +29,8 @@ namespace PluginPile.SVProfilePictureViewer {
       initialProfileIconPage.Text = Language.InitialProfileIcon;
       importProfilePictureButton.Text = Language.ImportPicture;
       importProfileIconButton.Text = Language.ImportIcon;
+      title = Language.WarnTitle;
+      content = Language.WarnContent;
     }
 
     private void saveButton_Click(object sender, EventArgs e) {
@@ -58,7 +62,8 @@ namespace PluginPile.SVProfilePictureViewer {
       DarkOnly,
       DarkMaskOnly,
       UseMasks,
-      AverageLightAndDark
+      AverageLightAndDark,
+      Dynamic
     }
 
     enum MaskType {
@@ -70,7 +75,7 @@ namespace PluginPile.SVProfilePictureViewer {
     /// <summary>
     /// Obtain Bitmap from RGB565 formated bytes in block
     /// </summary>
-    private Bitmap ExtractImage(uint imageBlock, uint heightBlock, uint widthBlock, BlendType blendType = BlendType.AverageLightAndDark) {
+    private Bitmap ExtractImage(uint imageBlock, uint heightBlock, uint widthBlock, BlendType blendType = BlendType.Dynamic) {
       SCBlock image = sav.Blocks.GetBlock(imageBlock);
       int height = (int)sav.Blocks.GetBlockValue<uint>(heightBlock);
       int width = (int)sav.Blocks.GetBlockValue<uint>(widthBlock);
@@ -84,17 +89,17 @@ namespace PluginPile.SVProfilePictureViewer {
         return Color.FromArgb(255, r, g, b);
       }
 
-      Bitmap ExtractComponent(int offset, MaskType maskType = MaskType.None) {
+      Bitmap ExtractComponent(int offset, MaskType maskType = MaskType.None, int spacing = 4) {
         Bitmap bitmap = new Bitmap(width / 4, height / 4);
         for (int y = 0, byteIndex = 0; y < bitmap.Height; y++) {
           for (int x = 0; x < bitmap.Width; x++, byteIndex += 8) {
             Color c = BytesToColor(byteIndex + offset);
             if (maskType == MaskType.Alpha) {
-              Color m = BytesToColor(byteIndex + offset + 4);
+              Color m = BytesToColor(byteIndex + offset + spacing);
               int alpha = (m.R + m.G + m.B) / 3;
               c = Color.FromArgb(alpha, c);
             } else if (maskType == MaskType.SubtractFromAlpha) {
-              Color m = BytesToColor(byteIndex + offset + 4);
+              Color m = BytesToColor(byteIndex + offset + spacing);
               int alpha = (m.R + m.G + m.B) / 3;
               c = Color.FromArgb(255 - alpha, c);
             }
@@ -121,6 +126,7 @@ namespace PluginPile.SVProfilePictureViewer {
           g.DrawImage(dark, 0, 0);
           return light;
         }
+        //light still a bit off, but it's the best to see on pc screen
         case BlendType.AverageLightAndDark: {
           Bitmap light = ExtractComponent(0);
           Bitmap dark = ExtractComponent(2);
@@ -135,6 +141,23 @@ namespace PluginPile.SVProfilePictureViewer {
                 (lightColour.B + darkColour.B) / 2
               );
               result.SetPixel(x, y, avg);
+            }
+          }
+          return result;
+        }
+        //the most similiar to the IRL one
+        case BlendType.Dynamic: {
+          Bitmap m1 = ExtractComponent(0, MaskType.Alpha);
+          Bitmap m2 = ExtractComponent(0, MaskType.Alpha, 6);
+          Bitmap dark = ExtractComponent(2);
+          Bitmap result = new Bitmap(dark.Width, dark.Height);
+          for (int j = 0; j < dark.Height; j++) {
+            for (int i = 0; i < dark.Width; i++) {
+              Color dpx = dark.GetPixel(i, j);
+              Color mpx1 = m1.GetPixel(i, j);
+              Color mpx2 = m2.GetPixel(i, j);
+              result.SetPixel(i, j, Color.FromArgb((dpx.R + mpx1.R + mpx2.R) / 3, 
+                (dpx.G + mpx1.G + mpx2.G) / 3, (dpx.B + mpx1.B + mpx2.B) / 3));
             }
           }
           return result;
@@ -174,6 +197,7 @@ namespace PluginPile.SVProfilePictureViewer {
     }
 
     private void importProfilePictureButton_Click(object sender, EventArgs e) {
+      MessageBox.Show(content, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
       Bitmap? bitmap = SelectImage(1);
       if (bitmap == null) return;
       sav.Blocks.SetBlockValue(Constants.CurrentProfilePictureWidth, (uint)1440);
@@ -186,6 +210,7 @@ namespace PluginPile.SVProfilePictureViewer {
     }
 
     private void importProfileIconButton_Click(object sender, EventArgs e) {
+      MessageBox.Show(content, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
       Bitmap? bitmap = SelectImage(2);
       if (bitmap == null) return;
       sav.Blocks.SetBlockValue(Constants.CurrentProfileIconWidth, (uint)224);
