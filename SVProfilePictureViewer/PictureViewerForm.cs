@@ -58,7 +58,8 @@ namespace PluginPile.SVProfilePictureViewer {
       DarkOnly,
       DarkMaskOnly,
       UseMasks,
-      AverageLightAndDark
+      AverageLightAndDark,
+      AlphaBlend
     }
 
     enum MaskType {
@@ -70,7 +71,7 @@ namespace PluginPile.SVProfilePictureViewer {
     /// <summary>
     /// Obtain Bitmap from RGB565 formated bytes in block
     /// </summary>
-    private Bitmap ExtractImage(uint imageBlock, uint heightBlock, uint widthBlock, BlendType blendType = BlendType.AverageLightAndDark) {
+    private Bitmap ExtractImage(uint imageBlock, uint heightBlock, uint widthBlock, BlendType blendType = BlendType.AlphaBlend) {
       SCBlock image = sav.Blocks.GetBlock(imageBlock);
       int height = (int)sav.Blocks.GetBlockValue<uint>(heightBlock);
       int width = (int)sav.Blocks.GetBlockValue<uint>(widthBlock);
@@ -84,17 +85,17 @@ namespace PluginPile.SVProfilePictureViewer {
         return Color.FromArgb(255, r, g, b);
       }
 
-      Bitmap ExtractComponent(int offset, MaskType maskType = MaskType.None) {
+      Bitmap ExtractComponent(int offset, MaskType maskType = MaskType.None, int maskOffset = 4) {
         Bitmap bitmap = new Bitmap(width / 4, height / 4);
         for (int y = 0, byteIndex = 0; y < bitmap.Height; y++) {
           for (int x = 0; x < bitmap.Width; x++, byteIndex += 8) {
             Color c = BytesToColor(byteIndex + offset);
             if (maskType == MaskType.Alpha) {
-              Color m = BytesToColor(byteIndex + offset + 4);
+              Color m = BytesToColor(byteIndex + offset + maskOffset);
               int alpha = (m.R + m.G + m.B) / 3;
               c = Color.FromArgb(alpha, c);
             } else if (maskType == MaskType.SubtractFromAlpha) {
-              Color m = BytesToColor(byteIndex + offset + 4);
+              Color m = BytesToColor(byteIndex + offset + maskOffset);
               int alpha = (m.R + m.G + m.B) / 3;
               c = Color.FromArgb(255 - alpha, c);
             }
@@ -139,6 +140,30 @@ namespace PluginPile.SVProfilePictureViewer {
           }
           return result;
         }
+        case BlendType.AlphaBlend: {
+          Bitmap lmask = ExtractComponent(4);
+          Bitmap dmask = ExtractComponent(6);
+          Bitmap light = ExtractComponent(0);
+          Bitmap dark = ExtractComponent(2);
+          Bitmap result = new Bitmap(dark.Width, dark.Height);
+          for (int y = 0; y < dark.Height; y++) {
+            for (int x = 0; x < dark.Width; x++) {
+              Color lmpx = lmask.GetPixel(x, y);
+              Color dmpx = dmask.GetPixel(x, y);
+              int lgray = (int)(0.299 * lmpx.R + 0.587 * lmpx.G + 0.114 * lmpx.B);
+              int dgray = (int)(0.299 * dmpx.R + 0.587 * dmpx.G + 0.114 * dmpx.B);
+              int al = (lgray | dgray);
+              double alpha = al / 255.0;
+              Color lpx = light.GetPixel(x, y);
+              Color dpx = dark.GetPixel(x, y);
+              int newR = (int)(lpx.R * (1 - alpha) + dpx.R * alpha);
+              int newG = (int)(lpx.G * (1 - alpha) + dpx.G * alpha);
+              int newB = (int)(lpx.B * (1 - alpha) + dpx.B * alpha);
+              result.SetPixel(x, y, Color.FromArgb(newR, newG, newB));
+            }
+          }
+          return result;
+        }
         default:
           throw new InvalidEnumArgumentException();
       }
@@ -174,6 +199,7 @@ namespace PluginPile.SVProfilePictureViewer {
     }
 
     private void importProfilePictureButton_Click(object sender, EventArgs e) {
+      MessageBox.Show(Language.ImportWarning, Language.PluginName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
       Bitmap? bitmap = SelectImage(1);
       if (bitmap == null) return;
       sav.Blocks.SetBlockValue(Constants.CurrentProfilePictureWidth, (uint)1440);
@@ -186,6 +212,7 @@ namespace PluginPile.SVProfilePictureViewer {
     }
 
     private void importProfileIconButton_Click(object sender, EventArgs e) {
+      MessageBox.Show(Language.ImportWarning, Language.PluginName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
       Bitmap? bitmap = SelectImage(2);
       if (bitmap == null) return;
       sav.Blocks.SetBlockValue(Constants.CurrentProfileIconWidth, (uint)224);
