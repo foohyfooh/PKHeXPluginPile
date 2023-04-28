@@ -7,8 +7,6 @@ namespace PluginPile.SVProfilePictureViewer {
   public partial class PictureViewerForm : Form {
 
     private readonly SAV9SV sav;
-    private String? title;
-    private String? content;
 
     public PictureViewerForm(SAV9SV sav9sv) {
       InitializeComponent();
@@ -29,8 +27,6 @@ namespace PluginPile.SVProfilePictureViewer {
       initialProfileIconPage.Text = Language.InitialProfileIcon;
       importProfilePictureButton.Text = Language.ImportPicture;
       importProfileIconButton.Text = Language.ImportIcon;
-      title = Language.WarnTitle;
-      content = Language.WarnContent;
     }
 
     private void saveButton_Click(object sender, EventArgs e) {
@@ -63,7 +59,7 @@ namespace PluginPile.SVProfilePictureViewer {
       DarkMaskOnly,
       UseMasks,
       AverageLightAndDark,
-      Dynamic
+      TwoLightOneDark
     }
 
     enum MaskType {
@@ -75,7 +71,7 @@ namespace PluginPile.SVProfilePictureViewer {
     /// <summary>
     /// Obtain Bitmap from RGB565 formated bytes in block
     /// </summary>
-    private Bitmap ExtractImage(uint imageBlock, uint heightBlock, uint widthBlock, BlendType blendType = BlendType.Dynamic) {
+    private Bitmap ExtractImage(uint imageBlock, uint heightBlock, uint widthBlock, BlendType blendType = BlendType.TwoLightOneDark) {
       SCBlock image = sav.Blocks.GetBlock(imageBlock);
       int height = (int)sav.Blocks.GetBlockValue<uint>(heightBlock);
       int width = (int)sav.Blocks.GetBlockValue<uint>(widthBlock);
@@ -146,7 +142,7 @@ namespace PluginPile.SVProfilePictureViewer {
           return result;
         }
         //the most similiar to the IRL one
-        case BlendType.Dynamic: {
+        case BlendType.TwoLightOneDark: {
           Bitmap m1 = ExtractComponent(0, MaskType.Alpha);
           Bitmap m2 = ExtractComponent(0, MaskType.Alpha, 6);
           Bitmap dark = ExtractComponent(2);
@@ -197,7 +193,7 @@ namespace PluginPile.SVProfilePictureViewer {
     }
 
     private void importProfilePictureButton_Click(object sender, EventArgs e) {
-      MessageBox.Show(content, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+      MessageBox.Show(Language.ImportWarning, Language.PluginName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
       Bitmap? bitmap = SelectImage(1);
       if (bitmap == null) return;
       sav.Blocks.SetBlockValue(Constants.CurrentProfilePictureWidth, (uint)1440);
@@ -210,7 +206,7 @@ namespace PluginPile.SVProfilePictureViewer {
     }
 
     private void importProfileIconButton_Click(object sender, EventArgs e) {
-      MessageBox.Show(content, title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+      MessageBox.Show(Language.ImportWarning, Language.PluginName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
       Bitmap? bitmap = SelectImage(2);
       if (bitmap == null) return;
       sav.Blocks.SetBlockValue(Constants.CurrentProfileIconWidth, (uint)224);

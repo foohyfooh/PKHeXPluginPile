@@ -92,16 +92,7 @@ namespace PluginPile.SVProfilePictureViewer {
       }
     }
 
-    internal static string WarnTitle {
-      get {
-        return GameInfo.CurrentLanguage switch {
-          "it" => "Attenzione",
-          "en" or _ => "Warning"
-        };
-      }
-    }
-
-    internal static string WarnContent {
+    internal static string ImportWarning {
       get {
         return GameInfo.CurrentLanguage switch {
           "it" => "Questa funzione è a scopo sperimentale, la qualità non è garantita ed è raccomandato non andare online con tali modifiche onde evitare ban.",
