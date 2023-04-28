@@ -152,13 +152,13 @@ namespace PluginPile.SVProfilePictureViewer {
               Color dmpx = dmask.GetPixel(x, y);
               int lgray = (int)(0.299 * lmpx.R + 0.587 * lmpx.G + 0.114 * lmpx.B);
               int dgray = (int)(0.299 * dmpx.R + 0.587 * dmpx.G + 0.114 * dmpx.B);
-              int alpha = (lgray | dgray);
-              alpha /= 255;
+              int al = (lgray | dgray);
+              double alpha = al / 255.0;
               Color lpx = light.GetPixel(x, y);
               Color dpx = dark.GetPixel(x, y);
-              int newR = lpx.R * (1 - alpha) + dpx.R * alpha;
-              int newG = lpx.G * (1 - alpha) + dpx.G * alpha;
-              int newB = lpx.B * (1 - alpha) + dpx.B * alpha;
+              int newR = (int)(lpx.R * (1 - alpha) + dpx.R * alpha);
+              int newG = (int)(lpx.G * (1 - alpha) + dpx.G * alpha);
+              int newB = (int)(lpx.B * (1 - alpha) + dpx.B * alpha);
               result.SetPixel(x, y, Color.FromArgb(newR, newG, newB));
             }
           }
