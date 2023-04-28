@@ -85,17 +85,17 @@ namespace PluginPile.SVProfilePictureViewer {
         return Color.FromArgb(255, r, g, b);
       }
 
-      Bitmap ExtractComponent(int offset, MaskType maskType = MaskType.None, int spacing = 4) {
+      Bitmap ExtractComponent(int offset, MaskType maskType = MaskType.None, int maskOffset = 4) {
         Bitmap bitmap = new Bitmap(width / 4, height / 4);
         for (int y = 0, byteIndex = 0; y < bitmap.Height; y++) {
           for (int x = 0; x < bitmap.Width; x++, byteIndex += 8) {
             Color c = BytesToColor(byteIndex + offset);
             if (maskType == MaskType.Alpha) {
-              Color m = BytesToColor(byteIndex + offset + spacing);
+              Color m = BytesToColor(byteIndex + offset + maskOffset);
               int alpha = (m.R + m.G + m.B) / 3;
               c = Color.FromArgb(alpha, c);
             } else if (maskType == MaskType.SubtractFromAlpha) {
-              Color m = BytesToColor(byteIndex + offset + spacing);
+              Color m = BytesToColor(byteIndex + offset + maskOffset);
               int alpha = (m.R + m.G + m.B) / 3;
               c = Color.FromArgb(255 - alpha, c);
             }
