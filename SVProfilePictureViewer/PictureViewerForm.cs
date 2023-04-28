@@ -59,7 +59,7 @@ namespace PluginPile.SVProfilePictureViewer {
       DarkMaskOnly,
       UseMasks,
       AverageLightAndDark,
-      TwoLightOneDark
+      AlphaBlend
     }
 
     enum MaskType {
@@ -71,7 +71,7 @@ namespace PluginPile.SVProfilePictureViewer {
     /// <summary>
     /// Obtain Bitmap from RGB565 formated bytes in block
     /// </summary>
-    private Bitmap ExtractImage(uint imageBlock, uint heightBlock, uint widthBlock, BlendType blendType = BlendType.TwoLightOneDark) {
+    private Bitmap ExtractImage(uint imageBlock, uint heightBlock, uint widthBlock, BlendType blendType = BlendType.AlphaBlend) {
       SCBlock image = sav.Blocks.GetBlock(imageBlock);
       int height = (int)sav.Blocks.GetBlockValue<uint>(heightBlock);
       int width = (int)sav.Blocks.GetBlockValue<uint>(widthBlock);
@@ -122,7 +122,6 @@ namespace PluginPile.SVProfilePictureViewer {
           g.DrawImage(dark, 0, 0);
           return light;
         }
-        //light still a bit off, but it's the best to see on pc screen
         case BlendType.AverageLightAndDark: {
           Bitmap light = ExtractComponent(0);
           Bitmap dark = ExtractComponent(2);
@@ -141,19 +140,26 @@ namespace PluginPile.SVProfilePictureViewer {
           }
           return result;
         }
-        //the most similiar to the IRL one
-        case BlendType.TwoLightOneDark: {
-          Bitmap m1 = ExtractComponent(0, MaskType.Alpha);
-          Bitmap m2 = ExtractComponent(0, MaskType.Alpha, 6);
+        case BlendType.AlphaBlend: {
+          Bitmap lmask = ExtractComponent(4);
+          Bitmap dmask = ExtractComponent(6);
+          Bitmap light = ExtractComponent(0);
           Bitmap dark = ExtractComponent(2);
           Bitmap result = new Bitmap(dark.Width, dark.Height);
-          for (int j = 0; j < dark.Height; j++) {
-            for (int i = 0; i < dark.Width; i++) {
-              Color dpx = dark.GetPixel(i, j);
-              Color mpx1 = m1.GetPixel(i, j);
-              Color mpx2 = m2.GetPixel(i, j);
-              result.SetPixel(i, j, Color.FromArgb((dpx.R + mpx1.R + mpx2.R) / 3, 
-                (dpx.G + mpx1.G + mpx2.G) / 3, (dpx.B + mpx1.B + mpx2.B) / 3));
+          for (int y = 0; y < dark.Height; y++) {
+            for (int x = 0; x < dark.Width; x++) {
+              Color lmpx = lmask.GetPixel(x, y);
+              Color dmpx = dmask.GetPixel(x, y);
+              int lgray = (int)(0.299 * lmpx.R + 0.587 * lmpx.G + 0.114 * lmpx.B);
+              int dgray = (int)(0.299 * dmpx.R + 0.587 * dmpx.G + 0.114 * dmpx.B);
+              int alpha = (lgray | dgray);
+              alpha /= 255;
+              Color lpx = light.GetPixel(x, y);
+              Color dpx = dark.GetPixel(x, y);
+              int newR = lpx.R * (1 - alpha) + dpx.R * alpha;
+              int newG = lpx.G * (1 - alpha) + dpx.G * alpha;
+              int newB = lpx.B * (1 - alpha) + dpx.B * alpha;
+              result.SetPixel(x, y, Color.FromArgb(newR, newG, newB));
             }
           }
           return result;
