@@ -52,7 +52,20 @@ namespace PluginPile.SVProfilePictureViewer {
       }
     }
 
-    enum BlendType {
+    private enum Component: int {
+      Light = 0,
+      Dark = 2,
+      LightMask = 4,
+      DarkMask = 6,
+    }
+
+    private enum Mask {
+      Default,
+      Light,
+      Dark
+    }
+
+    private enum BlendType {
       LightOnly,
       LightMaskOnly,
       DarkOnly,
@@ -62,7 +75,7 @@ namespace PluginPile.SVProfilePictureViewer {
       AlphaBlend
     }
 
-    enum MaskType {
+    private enum MaskType {
       None,
       Alpha,
       SubtractFromAlpha
@@ -76,61 +89,69 @@ namespace PluginPile.SVProfilePictureViewer {
       int height = (int)sav.Blocks.GetBlockValue<uint>(heightBlock);
       int width = (int)sav.Blocks.GetBlockValue<uint>(widthBlock);
 
-      Color BytesToColor(int offset) {
+      Color BytesToColor(int offset, int alpha = 255) {
         byte[] colourBytes = image.Data[offset..(offset + 2)];
         int colour = BinaryPrimitives.ReadUInt16LittleEndian(colourBytes);
         int b =  (colour & 0x001F) <<  3;
         int g = ((colour & 0x07E0) >>  5) << 2;
         int r = ((colour & 0xF800) >> 11) << 3;
-        return Color.FromArgb(255, r, g, b);
+        return Color.FromArgb(alpha, r, g, b);
       }
 
-      Bitmap ExtractComponent(int offset, MaskType maskType = MaskType.None, int maskOffset = 4) {
+      Bitmap ExtractComponent(Component component, MaskType maskType = MaskType.None, Mask mask = Mask.Default) {
+        if (maskType != MaskType.None && (component == Component.LightMask || component == Component.DarkMask)) {
+          throw new ArgumentException("Mask Components Can Only Use MaskType.None");
+        }
+        int maskOffset = (component, mask) switch {
+          (Component.Light, Mask.Light) => 4,
+          (Component.Light, Mask.Dark) => 6,
+          (Component.Dark, Mask.Light) => 2,
+          (Component.Dark, Mask.Dark) => 4,
+          (_, Mask.Default) => 4,
+          _ => throw new InvalidEnumArgumentException($"Invalid Mask: {mask}"),
+        };
+
         Bitmap bitmap = new Bitmap(width / 4, height / 4);
-        for (int y = 0, byteIndex = 0; y < bitmap.Height; y++) {
+        for (int y = 0, byteIndex = (int)component; y < bitmap.Height; y++) {
           for (int x = 0; x < bitmap.Width; x++, byteIndex += 8) {
-            Color c = BytesToColor(byteIndex + offset);
-            if (maskType == MaskType.Alpha) {
-              Color m = BytesToColor(byteIndex + offset + maskOffset);
-              int alpha = (m.R + m.G + m.B) / 3;
-              c = Color.FromArgb(alpha, c);
-            } else if (maskType == MaskType.SubtractFromAlpha) {
-              Color m = BytesToColor(byteIndex + offset + maskOffset);
-              int alpha = (m.R + m.G + m.B) / 3;
-              c = Color.FromArgb(255 - alpha, c);
-            }
+            int alpha = maskType switch {
+              MaskType.Alpha => BytesToColor(byteIndex + maskOffset).AveragedGreyscale(),
+              MaskType.SubtractFromAlpha => 255 - BytesToColor(byteIndex + maskOffset).AveragedGreyscale(),
+              MaskType.None or _ => 255
+            };
+            Color c = BytesToColor(byteIndex, alpha);
             bitmap.SetPixel(x, y, c);
           }
         }
         return bitmap;
       }
 
-      switch(blendType) {
+      switch (blendType) {
         case BlendType.LightOnly:
-          return ExtractComponent(0);
+          return ExtractComponent(Component.Light);
         case BlendType.LightMaskOnly:
-          return ExtractComponent(4);
+          return ExtractComponent(Component.LightMask);
         case BlendType.DarkOnly: 
-          return ExtractComponent(2);
+          return ExtractComponent(Component.Dark);
         case BlendType.DarkMaskOnly:
-          return ExtractComponent(6);
+          return ExtractComponent(Component.DarkMask);
         case BlendType.UseMasks: {
           // TODO: Figure out how light mask is used.
-          Bitmap light = ExtractComponent(0);
-          Bitmap dark = ExtractComponent(2, MaskType.Alpha);
+          Bitmap light = ExtractComponent(Component.Light);
+          Bitmap dark = ExtractComponent(Component.Dark, MaskType.Alpha);
           Graphics g = Graphics.FromImage(light);
           g.DrawImage(dark, 0, 0);
           return light;
         }
         case BlendType.AverageLightAndDark: {
-          Bitmap light = ExtractComponent(0);
-          Bitmap dark = ExtractComponent(2);
+          Bitmap light = ExtractComponent(Component.Light);
+          Bitmap dark = ExtractComponent(Component.Dark);
           Bitmap result = new Bitmap(light.Width, light.Height);
           for (int y = 0; y < result.Height; y++) {
             for (int x = 0; x < result.Width; x++) {
               Color lightColour = light.GetPixel(x, y);
               Color darkColour = dark.GetPixel(x, y);
-              Color avg = Color.FromArgb(255,
+              Color avg = Color.FromArgb(
                 (lightColour.R + darkColour.R) / 2,
                 (lightColour.G + darkColour.G) / 2,
                 (lightColour.B + darkColour.B) / 2
@@ -141,19 +162,18 @@ namespace PluginPile.SVProfilePictureViewer {
           return result;
         }
         case BlendType.AlphaBlend: {
-          Bitmap lmask = ExtractComponent(4);
-          Bitmap dmask = ExtractComponent(6);
-          Bitmap light = ExtractComponent(0);
-          Bitmap dark = ExtractComponent(2);
+          Bitmap lmask = ExtractComponent(Component.LightMask);
+          Bitmap dmask = ExtractComponent(Component.DarkMask);
+          Bitmap light = ExtractComponent(Component.Light);
+          Bitmap dark = ExtractComponent(Component.Dark);
           Bitmap result = new Bitmap(dark.Width, dark.Height);
-          for (int y = 0; y < dark.Height; y++) {
-            for (int x = 0; x < dark.Width; x++) {
+          for (int y = 0; y < result.Height; y++) {
+            for (int x = 0; x < result.Width; x++) {
               Color lmpx = lmask.GetPixel(x, y);
               Color dmpx = dmask.GetPixel(x, y);
-              int lgray = (int)(0.299 * lmpx.R + 0.587 * lmpx.G + 0.114 * lmpx.B);
-              int dgray = (int)(0.299 * dmpx.R + 0.587 * dmpx.G + 0.114 * dmpx.B);
-              int al = (lgray | dgray);
-              double alpha = al / 255.0;
+              int lgray = lmpx.LuminosityGreyscale();
+              int dgray = dmpx.LuminosityGreyscale();
+              double alpha = (lgray | dgray) / 255.0;
               Color lpx = light.GetPixel(x, y);
               Color dpx = dark.GetPixel(x, y);
               int newR = (int)(lpx.R * (1 - alpha) + dpx.R * alpha);
@@ -165,7 +185,7 @@ namespace PluginPile.SVProfilePictureViewer {
           return result;
         }
         default:
-          throw new InvalidEnumArgumentException();
+          throw new InvalidEnumArgumentException($"Invalid BlendType {blendType}");
       }
     }
 
