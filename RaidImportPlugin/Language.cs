@@ -7,7 +7,7 @@ namespace PluginPile.RaidImportPlugin {
       get {
         return GameInfo.CurrentLanguage switch {
           "de" => "Raid Importierer",
-          "zh" => "Raid导入工具",
+          "zh" => "团体战导入工具",
           "it" => "Importatore di Raid",
           "en" or _ => "Raid Importer"
         };
@@ -29,7 +29,7 @@ namespace PluginPile.RaidImportPlugin {
       get {
         return GameInfo.CurrentLanguage switch {
           "de" => "Importiere Raid",
-          "zh" => "导入Raid",
+          "zh" => "导入团体战",
           "it" => "Importa Raid",
           "en" or _ => "Import Raid"
         };
@@ -40,7 +40,7 @@ namespace PluginPile.RaidImportPlugin {
       get {
         return GameInfo.CurrentLanguage switch {
           "de" => "Raid importiert",
-          "zh" => "Raid已导入",
+          "zh" => "团体战已导入",
           "it" => "Raid Importato",
           "en" or _ => "Raid Imported"
         };
