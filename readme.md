@@ -86,5 +86,5 @@ The default language for this project is English but there appears to be interes
 | it  | Italian             | Partial   | [Pasquale Nardiello](https://github.com/pasqualenardiello)                                                                |
 | ja  | Japanese            | No        |                                                                                                                           |
 | ko  | Korean              | No        |                                                                                                                           |
-| zh  | Simplified Chinese  | Yes       | [wubinwww](https://github.com/wubinwww), [ppllouf](https://github.com/ppllouf), [easyworld](https://github.com/easyworld) |
+| zh  | Simplified Chinese  | Partial   | [wubinwww](https://github.com/wubinwww), [ppllouf](https://github.com/ppllouf), [easyworld](https://github.com/easyworld) |
 | zh2 | Traditional Chinese | No        |                                                                                                                           |
