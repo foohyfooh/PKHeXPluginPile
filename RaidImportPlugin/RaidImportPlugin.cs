@@ -24,26 +24,32 @@ namespace PluginPile.RaidImportPlugin {
       DialogResult dialogResult = dialog.ShowDialog();
       if (dialogResult == DialogResult.OK) {
         string raidPath = dialog.SelectedPath;
-        IReadOnlyList<Block> blocks = null!;
+        IReadOnlyList<Block>[] blocksLists = null!;
         if (SaveFileEditor.SAV is SAV8SWSH sav8SwSh) {
-               if (sav8SwSh.SaveRevision == 0) blocks = SwShConstants.BaseGameBlocks;
-          else if (sav8SwSh.SaveRevision == 1) blocks = SwShConstants.IsleOfArmorBlocks;
-          else if (sav8SwSh.SaveRevision == 2) blocks = SwShConstants.CrownTundraBlocks;
+               if (sav8SwSh.SaveRevision == 0) blocksLists = new IReadOnlyList<Block>[] { SwShConstants.BaseGameBlocks };
+          else if (sav8SwSh.SaveRevision == 1) blocksLists = new IReadOnlyList<Block>[]{ SwShConstants.IsleOfArmorBlocks };
+          else if (sav8SwSh.SaveRevision == 2) blocksLists = new IReadOnlyList<Block>[]{ SwShConstants.CrownTundraBlocks };
         } else if (SaveFileEditor.SAV is SAV9SV) {
           raidPath += @"\Files";
-          blocks = SVConstants.BaseGameBlocks;
+          blocksLists = new IReadOnlyList<Block>[] { SVConstants.BaseGameBlocks, SVConstants.BaseGameBlocks_1_3_0 };
         }
-        ImportRaid(raidPath, (dynamic)SaveFileEditor.SAV, blocks);
+        ImportRaid(raidPath, (dynamic)SaveFileEditor.SAV, blocksLists);
       }
     }
-    private static void ImportRaid<S>(string raidPath, S sav, IReadOnlyList<Block> blocks) where S: SaveFile, ISCBlockArray, ISaveFileRevision {
+    private static void ImportRaid<S>(string raidPath, S sav, IReadOnlyList<Block>[] blocksLists) where S: SaveFile, ISCBlockArray, ISaveFileRevision {
       string RaidFilePath(string file) => $@"{raidPath}\{file}";
-      if (blocks.All(b => File.Exists(RaidFilePath(b.Path)))) {
-        foreach ((uint blockLocation, string file) in blocks)
-          sav.Accessor.GetBlock(blockLocation).ChangeData(File.ReadAllBytes(RaidFilePath(file)));
-        sav.State.Edited = true;
-        MessageBox.Show(Language.RaidImported, Language.DialogName);
-      } else {
+      bool didImport = false;
+      foreach (IReadOnlyList<Block> blocks in blocksLists) {
+        if (blocks.All(b => File.Exists(RaidFilePath(b.Path)))) {
+          foreach ((uint blockLocation, string file) in blocks)
+            sav.Accessor.GetBlock(blockLocation).ChangeData(File.ReadAllBytes(RaidFilePath(file)));
+          didImport = true;
+          sav.State.Edited = true;
+          MessageBox.Show(Language.RaidImported, Language.DialogName);
+        }
+        if(didImport) break;
+      }
+      if (!didImport) {
         MessageBox.Show(string.Format(Language.FilesMissing, raidPath), Language.DialogName, MessageBoxButtons.OK, MessageBoxIcon.Error);
       }
     }
