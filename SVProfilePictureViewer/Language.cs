@@ -95,6 +95,7 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string ImportWarning {
       get {
         return GameInfo.CurrentLanguage switch {
+          "zh" => "此功能为实验性功能，合法性不保证，修改后建议不要联网，以免被ban.",
           "it" => "Questa funzione è a scopo sperimentale, la qualità non è garantita ed è raccomandato non andare online con tali modifiche onde evitare ban.",
           "en" or _ => "This is an experimental function, quality is not guaranteed and it is recommended to not go online with these modifications, in order to avoid ban."
         };
