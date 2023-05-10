@@ -40,6 +40,8 @@ The purpose of this plugin is allow for editing the start date on Switch games.
 - *Start Date Editor* should now be in the *Tools* menu of PKHeX.
 - Clicking it will open a form to change the start date of the game.
 
+Thanks to [Lusamine](https://github.com/Lusamine) for the logic to get the date from the Scarlet and Violet Block.
+
 ## Fashion Editor Plugin
 The purpose of this plugin is to allow for editing the owned clothes in games. <br>
 - *Fashion Editor* should now be in the *Tools* menu of PKHeX
