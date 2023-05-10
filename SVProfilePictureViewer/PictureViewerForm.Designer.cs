@@ -62,6 +62,7 @@ namespace PluginPile.SVProfilePictureViewer {
       currentProfilePicture.Location = new Point(6, 6);
       currentProfilePicture.Name = "currentProfilePicture";
       currentProfilePicture.Size = new Size(360, 216);
+      currentProfilePicture.SizeMode = PictureBoxSizeMode.Zoom;
       currentProfilePicture.TabIndex = 0;
       currentProfilePicture.TabStop = false;
       // 
@@ -81,6 +82,7 @@ namespace PluginPile.SVProfilePictureViewer {
       currentProfileIcon.Location = new Point(6, 6);
       currentProfileIcon.Name = "currentProfileIcon";
       currentProfileIcon.Size = new Size(360, 216);
+      currentProfileIcon.SizeMode = PictureBoxSizeMode.Zoom;
       currentProfileIcon.TabIndex = 1;
       currentProfileIcon.TabStop = false;
       // 
@@ -99,6 +101,7 @@ namespace PluginPile.SVProfilePictureViewer {
       initialProfilePicture.Location = new Point(6, 6);
       initialProfilePicture.Name = "initialProfilePicture";
       initialProfilePicture.Size = new Size(360, 216);
+      initialProfilePicture.SizeMode = PictureBoxSizeMode.Zoom;
       initialProfilePicture.TabIndex = 2;
       initialProfilePicture.TabStop = false;
       // 
@@ -117,6 +120,7 @@ namespace PluginPile.SVProfilePictureViewer {
       initialProfileIcon.Location = new Point(6, 6);
       initialProfileIcon.Name = "initialProfileIcon";
       initialProfileIcon.Size = new Size(360, 216);
+      initialProfileIcon.SizeMode = PictureBoxSizeMode.Zoom;
       initialProfileIcon.TabIndex = 3;
       initialProfileIcon.TabStop = false;
       // 
