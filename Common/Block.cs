@@ -4,4 +4,8 @@ namespace PluginPile.Common {
     public static implicit operator Block(uint l) => new Block(l, string.Empty);
     public static implicit operator uint(Block b) => b.Location;
   }
+
+  public static class BlockExtensions {
+    public static bool FilesExist(this IReadOnlyList<Block> blocks, Func<string, string> pathModifier) => blocks.All(b => File.Exists(pathModifier(b.Path)));
+  }
 }

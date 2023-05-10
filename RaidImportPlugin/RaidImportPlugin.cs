@@ -40,7 +40,7 @@ namespace PluginPile.RaidImportPlugin {
       string RaidFilePath(string file) => $@"{raidPath}\{file}";
       bool didImport = false;
       foreach (IReadOnlyList<Block> blocks in blocksLists) {
-        if (blocks.All(b => File.Exists(RaidFilePath(b.Path)))) {
+        if (blocks.FilesExist(RaidFilePath)) {
           foreach ((uint blockLocation, string file) in blocks)
             sav.Accessor.GetBlock(blockLocation).ChangeData(File.ReadAllBytes(RaidFilePath(file)));
           didImport = true;
