@@ -1,6 +1,7 @@
 using PKHeX.Core;
 using System.Buffers.Binary;
 using System.Drawing.Imaging;
+using System.Runtime.InteropServices;
 
 namespace PluginPile.SVProfilePictureViewer {
   public partial class PictureViewerForm : Form {
@@ -55,7 +56,16 @@ namespace PluginPile.SVProfilePictureViewer {
       SCBlock image = sav.Blocks.GetBlock(imageBlock);
       int height = (int)sav.Blocks.GetBlockValue<uint>(heightBlock);
       int width = (int)sav.Blocks.GetBlockValue<uint>(widthBlock);
-      pictureBox.Image = DXT1.Decompress(image.Data, width, height);
+
+      Bitmap result = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+      Rectangle resultSizeRect = new Rectangle(0, 0, width, height);
+      BitmapData resultData = result.LockBits(resultSizeRect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
+      IntPtr resultPtr = resultData.Scan0;
+      byte[] rgbaBytes = DXT1.Decompress(image.Data, width, height);
+      Marshal.Copy(rgbaBytes, 0, resultPtr, rgbaBytes.Length);
+      result.UnlockBits(resultData);
+
+      pictureBox.Image = result;
       pictureBox.Size = pictureBox.Image.Size / 4;
     }
 

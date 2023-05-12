@@ -81,6 +81,7 @@ namespace PluginPile.StartDateEditor {
       MaximizeBox = false;
       MinimizeBox = false;
       Name = "DateEditorForm";
+      ShowIcon = false;
       Text = "Start Date Editor";
       ResumeLayout(false);
       PerformLayout();

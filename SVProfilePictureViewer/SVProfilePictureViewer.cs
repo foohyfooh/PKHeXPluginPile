@@ -3,7 +3,7 @@ using PluginPile.Common;
 using System.Reflection;
 
 namespace PluginPile.SVProfilePictureViewer {
-  internal class SVProfilePictureViewer : PluginBase {
+  public class SVProfilePictureViewer : PluginBase {
     public override string Name => nameof(SVProfilePictureViewer);
     protected override Assembly PluginAssembly => typeof(SVProfilePictureViewer).Assembly;
     private ToolStripMenuItem ImageViewerButton = null!;
