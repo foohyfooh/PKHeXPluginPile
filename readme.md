@@ -16,8 +16,7 @@ The purpose of this plugin is to provide sorting by different regional Pokédexe
 
 ## Insertion Plugin
 The purpose of this plugin is to insert an empty slot in your save file.
-- *Insertion Plugin* should now be in the *Tools* menu of PKHeX. Click on it to open the form.
-- Input the Box Number and Slot Number and all the Pokémon from that spot will be moved down a single slot.
+- Right click on the box slot where you want to insert and click insert slot in the context menu.
 
 ## Raid Importing Plugin
 The purpose of this plugin is to provide a convient way to import the raid data from [Project Pokémon Event Gallery](https://github.com/projectpokemon/EventsGallery) into Sword/Shield and Scarlet/Violet.
