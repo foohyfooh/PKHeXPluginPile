@@ -43,7 +43,7 @@ namespace PluginPile.SortingPlugin {
       if (species == Species.Yamask && pkm.Form == 1) return 8;
       if (species == Species.Stunfisk && pkm.Form == 1) return 8;
       if (species == Species.Slowpoke && pkm.Form == 1) return 8;
-      if (species == Species.Slowbro && pkm.Form == 1) return 8;
+      if (species == Species.Slowbro && pkm.Form == 2) return 8;
       if (species == Species.Slowking && pkm.Form == 1) return 8;
       if (species == Species.Articuno && pkm.Form == 1) return 8;
       if (species == Species.Zapdos && pkm.Form == 1) return 8;
