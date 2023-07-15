@@ -10,7 +10,7 @@ namespace PluginPile.InsertionPlugin {
     protected override void LoadContextMenu(ContextMenuStrip contextMenu) {
       contextMenu.Opening += (s, e) => {
         SlotViewInfo<PictureBox> info = GetSenderInfo(ref s!);
-        if (info.Slot.Origin == SlotOrigin.Box && info.ReadCurrent().Species != (int)Species.None) {
+        if (info.Slot.Origin == SlotOrigin.Box && info.ReadCurrent().Species != (int)Species.None && info.CanWriteTo()) {
           ToolStripMenuItem insertSlotButton = new ToolStripMenuItem(Language.MenuItemName);
           insertSlotButton.Click += (s, e) => InsertSlot(SaveFileEditor.CurrentBox, info.Slot.Slot);
           contextMenu.Items.Add(insertSlotButton);
@@ -35,6 +35,8 @@ namespace PluginPile.InsertionPlugin {
       currMon = SaveFileEditor.SAV.GetBoxSlotAtIndex(startIndex);
       SaveFileEditor.SAV.SetBoxSlotAtIndex(SaveFileEditor.SAV.BlankPKM, startIndex);
       for (int index = startIndex + 1; index <= boxIndex; index++) {
+        StorageSlotSource slotSource = SaveFileEditor.SAV.GetSlotFlags(index);
+        if (slotSource.IsOverwriteProtected()) continue;
         nextMon = SaveFileEditor.SAV.GetBoxSlotAtIndex(index);
         SaveFileEditor.SAV.SetBoxSlotAtIndex(currMon, index, PKMImportSetting.UseDefault, PKMImportSetting.Skip);
         currMon = nextMon;
