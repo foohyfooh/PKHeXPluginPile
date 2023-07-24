@@ -105,9 +105,14 @@ namespace PluginPile.SVProfilePictureViewer {
       sav.Blocks.SetBlockValue(Constants.CurrentProfilePictureWidth, (uint)1440);
       sav.Blocks.SetBlockValue(Constants.CurrentProfilePictureHeight, (uint)832);
       sav.Blocks.SetBlockValue(Constants.CurrentProfilePictureSize, (uint)599040);
+      sav.Blocks.SetBlockValue(Constants.InitialProfilePictureWidth, (uint)1440);
+      sav.Blocks.SetBlockValue(Constants.InitialProfilePictureHeight, (uint)832);
+      sav.Blocks.SetBlockValue(Constants.InitialProfilePictureSize, (uint)599040);
       byte[] data = BitmapToBlockData(bitmap, 622080);
       sav.Blocks.GetBlock(Constants.CurrentProfilePictureImage).ChangeData(data);
       ExtractImageTo(Constants.CurrentProfilePictureImage, Constants.CurrentProfilePictureHeight, Constants.CurrentProfilePictureWidth, currentProfilePicture);
+      sav.Blocks.GetBlock(Constants.InitialProfilePictureImage).ChangeData(data);
+      ExtractImageTo(Constants.InitialProfilePictureImage, Constants.InitialProfilePictureHeight, Constants.InitialProfilePictureWidth, initialProfilePicture);
       sav.State.Edited = true;
     }
 
@@ -118,9 +123,14 @@ namespace PluginPile.SVProfilePictureViewer {
       sav.Blocks.SetBlockValue(Constants.CurrentProfileIconWidth, (uint)224);
       sav.Blocks.SetBlockValue(Constants.CurrentProfileIconHeight, (uint)224);
       sav.Blocks.SetBlockValue(Constants.CurrentProfileIconSize, (uint)25088);
+      sav.Blocks.SetBlockValue(Constants.InitialProfileIconWidth, (uint)224);
+      sav.Blocks.SetBlockValue(Constants.InitialProfileIconHeight, (uint)224);
+      sav.Blocks.SetBlockValue(Constants.InitialProfileIconSize, (uint)25088);
       byte[] data = BitmapToBlockData(bitmap, 61952);
       sav.Blocks.GetBlock(Constants.CurrentProfileIconImage).ChangeData(data);
       ExtractImageTo(Constants.CurrentProfileIconImage, Constants.CurrentProfileIconHeight, Constants.CurrentProfileIconWidth, currentProfileIcon);
+      sav.Blocks.GetBlock(Constants.InitialProfileIconImage).ChangeData(data);
+      ExtractImageTo(Constants.InitialProfileIconImage, Constants.InitialProfileIconHeight, Constants.InitialProfileIconWidth, initialProfileIcon);
       sav.State.Edited = true;
     }
   }
