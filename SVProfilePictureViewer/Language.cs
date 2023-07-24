@@ -72,22 +72,41 @@ namespace PluginPile.SVProfilePictureViewer {
       }
     }
 
-    internal static string ImportPicture {
+    internal static string ImportCurrentPicture {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "导入照片",
-          "it" => "Importa Foto",
-          "en" or _ => "Import Picture"
+          "zh" => "导入当前照片",
+          "it" => "Importa Current Foto",
+          "en" or _ => "Import Current Picture"
         };
       }
     }
 
-    internal static string ImportIcon {
+    internal static string ImportCurrentIcon {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "导入头像",
-          "it" => "Importa Icona",
-          "en" or _ => "Import Icon"
+          "zh" => "导入当前头像",
+          "it" => "Importa Current Icona",
+          "en" or _ => "Import Current Icon"
+        };
+      }
+    }
+
+    internal static string ImportInitialPicture {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "zh" => "导入初始照片",
+          "it" => "Importa Initial Foto",
+          "en" or _ => "Import Initial Picture"
+        };
+      }
+    }
+    internal static string ImportInitialIcon {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "zh" => "导入初始头像",
+          "it" => "Importa Initial Icona",
+          "en" or _ => "Import Initial Icon"
         };
       }
     }

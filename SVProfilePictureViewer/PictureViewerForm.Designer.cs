@@ -33,26 +33,28 @@ namespace PluginPile.SVProfilePictureViewer {
       initialProfileIcon = new PictureBox();
       exportButton = new Button();
       tabs = new TabControl();
-      importProfilePictureButton = new Button();
-      importProfileIconButton = new Button();
+      importCurrentProfilePictureButton = new Button();
+      importCurrentProfileIconButton = new Button();
+      importInitialProfilePictureButton = new Button();
+      importInitialProfileIconButton = new Button();
       currentProfilePicturePage.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)currentProfilePicture).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(currentProfilePicture)).BeginInit();
       currentProfileIconPage.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)currentProfileIcon).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(currentProfileIcon)).BeginInit();
       initialProfilePicturePage.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)initialProfilePicture).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(initialProfilePicture)).BeginInit();
       initialProfileIconPage.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)initialProfileIcon).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(initialProfileIcon)).BeginInit();
       tabs.SuspendLayout();
       SuspendLayout();
       // 
       // currentProfilePicturePage
       // 
       currentProfilePicturePage.Controls.Add(currentProfilePicture);
-      currentProfilePicturePage.Location = new Point(4, 24);
+      currentProfilePicturePage.Location = new Point(4, 26);
       currentProfilePicturePage.Name = "currentProfilePicturePage";
       currentProfilePicturePage.Padding = new Padding(3);
-      currentProfilePicturePage.Size = new Size(494, 246);
+      currentProfilePicturePage.Size = new Size(494, 244);
       currentProfilePicturePage.TabIndex = 0;
       currentProfilePicturePage.Text = "Current Profile Picture";
       currentProfilePicturePage.UseVisualStyleBackColor = true;
@@ -69,10 +71,10 @@ namespace PluginPile.SVProfilePictureViewer {
       // currentProfileIconPage
       // 
       currentProfileIconPage.Controls.Add(currentProfileIcon);
-      currentProfileIconPage.Location = new Point(4, 24);
+      currentProfileIconPage.Location = new Point(4, 26);
       currentProfileIconPage.Name = "currentProfileIconPage";
       currentProfileIconPage.Padding = new Padding(3);
-      currentProfileIconPage.Size = new Size(494, 246);
+      currentProfileIconPage.Size = new Size(494, 244);
       currentProfileIconPage.TabIndex = 1;
       currentProfileIconPage.Text = "Current Profile Icon";
       currentProfileIconPage.UseVisualStyleBackColor = true;
@@ -89,9 +91,9 @@ namespace PluginPile.SVProfilePictureViewer {
       // initialProfilePicturePage
       // 
       initialProfilePicturePage.Controls.Add(initialProfilePicture);
-      initialProfilePicturePage.Location = new Point(4, 24);
+      initialProfilePicturePage.Location = new Point(4, 26);
       initialProfilePicturePage.Name = "initialProfilePicturePage";
-      initialProfilePicturePage.Size = new Size(494, 246);
+      initialProfilePicturePage.Size = new Size(494, 244);
       initialProfilePicturePage.TabIndex = 2;
       initialProfilePicturePage.Text = "Initial Profile Picture";
       initialProfilePicturePage.UseVisualStyleBackColor = true;
@@ -108,9 +110,9 @@ namespace PluginPile.SVProfilePictureViewer {
       // initialProfileIconPage
       // 
       initialProfileIconPage.Controls.Add(initialProfileIcon);
-      initialProfileIconPage.Location = new Point(4, 24);
+      initialProfileIconPage.Location = new Point(4, 26);
       initialProfileIconPage.Name = "initialProfileIconPage";
-      initialProfileIconPage.Size = new Size(494, 246);
+      initialProfileIconPage.Size = new Size(494, 244);
       initialProfileIconPage.TabIndex = 3;
       initialProfileIconPage.Text = "Initial Profile Icon";
       initialProfileIconPage.UseVisualStyleBackColor = true;
@@ -146,33 +148,55 @@ namespace PluginPile.SVProfilePictureViewer {
       tabs.Size = new Size(502, 274);
       tabs.TabIndex = 1;
       // 
-      // importProfilePictureButton
+      // importCurrentProfilePictureButton
       // 
-      importProfilePictureButton.Location = new Point(315, 292);
-      importProfilePictureButton.Name = "importProfilePictureButton";
-      importProfilePictureButton.Size = new Size(95, 23);
-      importProfilePictureButton.TabIndex = 2;
-      importProfilePictureButton.Text = "Import Picture";
-      importProfilePictureButton.UseVisualStyleBackColor = true;
-      importProfilePictureButton.Click += importProfilePictureButton_Click;
+      importCurrentProfilePictureButton.Location = new Point(315, 292);
+      importCurrentProfilePictureButton.Name = "importCurrentProfilePictureButton";
+      importCurrentProfilePictureButton.Size = new Size(95, 23);
+      importCurrentProfilePictureButton.TabIndex = 2;
+      importCurrentProfilePictureButton.Text = "Import Current Picture";
+      importCurrentProfilePictureButton.UseVisualStyleBackColor = true;
+      importCurrentProfilePictureButton.Click += importCurrentProfilePictureButton_Click;
       // 
-      // importProfileIconButton
+      // importCurrentProfileIconButton
       // 
-      importProfileIconButton.Location = new Point(416, 292);
-      importProfileIconButton.Name = "importProfileIconButton";
-      importProfileIconButton.Size = new Size(95, 23);
-      importProfileIconButton.TabIndex = 3;
-      importProfileIconButton.Text = "Import Icon";
-      importProfileIconButton.UseVisualStyleBackColor = true;
-      importProfileIconButton.Click += importProfileIconButton_Click;
+      importCurrentProfileIconButton.Location = new Point(416, 292);
+      importCurrentProfileIconButton.Name = "importCurrentProfileIconButton";
+      importCurrentProfileIconButton.Size = new Size(95, 23);
+      importCurrentProfileIconButton.TabIndex = 3;
+      importCurrentProfileIconButton.Text = "Import Current Icon";
+      importCurrentProfileIconButton.UseVisualStyleBackColor = true;
+      importCurrentProfileIconButton.Click += importCurrentProfileIconButton_Click;
+      // 
+      // importInitialProfilePictureButton
+      // 
+      importInitialProfilePictureButton.Location = new Point(315, 321);
+      importInitialProfilePictureButton.Name = "importInitialProfilePictureButton";
+      importInitialProfilePictureButton.Size = new Size(95, 26);
+      importInitialProfilePictureButton.TabIndex = 4;
+      importInitialProfilePictureButton.Text = "Import Initial Picture";
+      importInitialProfilePictureButton.UseVisualStyleBackColor = true;
+      importInitialProfilePictureButton.Click += importInitialProfilePictureButton_Click;
+      // 
+      // importInitialProfileIconButton
+      // 
+      importInitialProfileIconButton.Location = new Point(416, 321);
+      importInitialProfileIconButton.Name = "importInitialProfileIconButton";
+      importInitialProfileIconButton.Size = new Size(95, 26);
+      importInitialProfileIconButton.TabIndex = 5;
+      importInitialProfileIconButton.Text = "Import Initial Icon";
+      importInitialProfileIconButton.UseVisualStyleBackColor = true;
+      importInitialProfileIconButton.Click += importInitialProfileIconButton_Click;
       // 
       // PictureViewerForm
       // 
-      AutoScaleDimensions = new SizeF(7F, 15F);
+      AutoScaleDimensions = new SizeF(7F, 17F);
       AutoScaleMode = AutoScaleMode.Font;
-      ClientSize = new Size(524, 331);
-      Controls.Add(importProfileIconButton);
-      Controls.Add(importProfilePictureButton);
+      ClientSize = new Size(524, 375);
+      Controls.Add(importInitialProfilePictureButton);
+      Controls.Add(importInitialProfileIconButton);
+      Controls.Add(importCurrentProfileIconButton);
+      Controls.Add(importCurrentProfilePictureButton);
       Controls.Add(tabs);
       Controls.Add(exportButton);
       MaximizeBox = false;
@@ -181,15 +205,16 @@ namespace PluginPile.SVProfilePictureViewer {
       ShowIcon = false;
       Text = "PictureViewerForm";
       currentProfilePicturePage.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)currentProfilePicture).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(currentProfilePicture)).EndInit();
       currentProfileIconPage.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)currentProfileIcon).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(currentProfileIcon)).EndInit();
       initialProfilePicturePage.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)initialProfilePicture).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(initialProfilePicture)).EndInit();
       initialProfileIconPage.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)initialProfileIcon).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(initialProfileIcon)).EndInit();
       tabs.ResumeLayout(false);
       ResumeLayout(false);
+
     }
 
     #endregion
@@ -204,7 +229,9 @@ namespace PluginPile.SVProfilePictureViewer {
     private PictureBox initialProfilePicture;
     private TabPage initialProfileIconPage;
     private PictureBox initialProfileIcon;
-    private Button importProfilePictureButton;
-    private Button importProfileIconButton;
+    private Button importCurrentProfilePictureButton;
+    private Button importCurrentProfileIconButton;
+    private Button importInitialProfilePictureButton;
+    private Button importInitialProfileIconButton;
   }
 }
