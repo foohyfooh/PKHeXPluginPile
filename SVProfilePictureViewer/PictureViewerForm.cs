@@ -34,7 +34,7 @@ namespace PluginPile.SVProfilePictureViewer {
         0 => (currentProfilePicture.Image, "current_profile.png"),
         1 => (currentProfileIcon.Image, "current_icon.png"),
         2 => (initialProfilePicture.Image, "initial_profile.png"),
-        3 => (currentProfileIcon.Image, "initial_icon.png"),
+        3 => (initialProfileIcon.Image, "initial_icon.png"),
         _ => (null, string.Empty)
       };
       if (image == null) return;
