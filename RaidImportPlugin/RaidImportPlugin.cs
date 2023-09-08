@@ -26,12 +26,12 @@ namespace PluginPile.RaidImportPlugin {
         string raidPath = dialog.SelectedPath;
         IReadOnlyList<Block>[] blocksLists = null!;
         if (SaveFileEditor.SAV is SAV8SWSH sav8SwSh) {
-               if (sav8SwSh.SaveRevision == 0) blocksLists = new IReadOnlyList<Block>[] { SwShConstants.BaseGameBlocks };
+               if (sav8SwSh.SaveRevision == 0) blocksLists = new IReadOnlyList<Block>[]{ SwShConstants.BaseGameBlocks };
           else if (sav8SwSh.SaveRevision == 1) blocksLists = new IReadOnlyList<Block>[]{ SwShConstants.IsleOfArmorBlocks };
           else if (sav8SwSh.SaveRevision == 2) blocksLists = new IReadOnlyList<Block>[]{ SwShConstants.CrownTundraBlocks };
         } else if (SaveFileEditor.SAV is SAV9SV) {
           raidPath += @"\Files";
-          blocksLists = new IReadOnlyList<Block>[] { SVConstants.BaseGameBlocks, SVConstants.BaseGameBlocks_1_3_0 };
+          blocksLists = new IReadOnlyList<Block>[]{ SVConstants.BaseGameBlocks, SVConstants.BaseGameBlocks_1_3_0 };
         }
         ImportRaid(raidPath, (dynamic)SaveFileEditor.SAV, blocksLists);
       }
