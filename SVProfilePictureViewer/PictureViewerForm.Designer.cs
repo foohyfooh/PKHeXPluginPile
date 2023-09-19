@@ -33,8 +33,6 @@ namespace PluginPile.SVProfilePictureViewer {
       initialProfileIcon = new PictureBox();
       exportButton = new Button();
       tabs = new TabControl();
-      importProfilePictureButton = new Button();
-      importProfileIconButton = new Button();
       currentProfilePicturePage.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)currentProfilePicture).BeginInit();
       currentProfileIconPage.SuspendLayout();
@@ -146,33 +144,11 @@ namespace PluginPile.SVProfilePictureViewer {
       tabs.Size = new Size(502, 274);
       tabs.TabIndex = 1;
       // 
-      // importProfilePictureButton
-      // 
-      importProfilePictureButton.Location = new Point(315, 292);
-      importProfilePictureButton.Name = "importProfilePictureButton";
-      importProfilePictureButton.Size = new Size(95, 23);
-      importProfilePictureButton.TabIndex = 2;
-      importProfilePictureButton.Text = "Import Picture";
-      importProfilePictureButton.UseVisualStyleBackColor = true;
-      importProfilePictureButton.Click += importProfilePictureButton_Click;
-      // 
-      // importProfileIconButton
-      // 
-      importProfileIconButton.Location = new Point(416, 292);
-      importProfileIconButton.Name = "importProfileIconButton";
-      importProfileIconButton.Size = new Size(95, 23);
-      importProfileIconButton.TabIndex = 3;
-      importProfileIconButton.Text = "Import Icon";
-      importProfileIconButton.UseVisualStyleBackColor = true;
-      importProfileIconButton.Click += importProfileIconButton_Click;
-      // 
       // PictureViewerForm
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(524, 331);
-      Controls.Add(importProfileIconButton);
-      Controls.Add(importProfilePictureButton);
       Controls.Add(tabs);
       Controls.Add(exportButton);
       MaximizeBox = false;
@@ -204,7 +180,5 @@ namespace PluginPile.SVProfilePictureViewer {
     private PictureBox initialProfilePicture;
     private TabPage initialProfileIconPage;
     private PictureBox initialProfileIcon;
-    private Button importProfilePictureButton;
-    private Button importProfileIconButton;
   }
 }

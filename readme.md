@@ -58,8 +58,7 @@ The purpose of this plugin is to view and save the Profile Picture and Icon in P
 
 This is a port of the script that [Pako96](https://projectpokemon.org/home/profile/129441-pako96/) provided [here](https://projectpokemon.org/home/forums/topic/63327-scarletviolet-trainer-pictureicon-visualizer/).
 
-### Note
-While this plugin does allow for injecting custom profile picture and icon, it is recommended that you don't go online with an injected image as this a clear indicator of hacking and could result in a ban.
+If you are looking for injecting images into the game then you should use [PizzaTimeJoshua](https://github.com/PizzaTimeJoshua)'s [SV-Image-Injector](https://github.com/PizzaTimeJoshua/SV-Image-Injector) since it uses the correct method for converting images to the DXT1 format that the game uses.
 
 ## Building
 - Open PowerShell and Run `build.ps1`

@@ -1,5 +1,4 @@
 using PKHeX.Core;
-using System.Buffers.Binary;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
@@ -25,8 +24,6 @@ namespace PluginPile.SVProfilePictureViewer {
       currentProfileIconPage.Text = Language.CurrentProfileIcon;
       initialProfilePicturePage.Text = Language.InitialProfilePicture;
       initialProfileIconPage.Text = Language.InitialProfileIcon;
-      importProfilePictureButton.Text = Language.ImportPicture;
-      importProfileIconButton.Text = Language.ImportIcon;
     }
 
     private void saveButton_Click(object sender, EventArgs e) {
@@ -67,61 +64,6 @@ namespace PluginPile.SVProfilePictureViewer {
 
       pictureBox.Image = result;
       pictureBox.Size = pictureBox.Image.Size / 4;
-    }
-
-    private Bitmap? SelectImage(int id) {
-      OpenFileDialog openFileDialog = new OpenFileDialog();
-      openFileDialog.Title = Language.ImportTitle;
-      openFileDialog.Filter = "Images|*.png;*.bmp;*.jpg";
-      if (openFileDialog.ShowDialog() == DialogResult.OK) {
-        using Image image = Image.FromFile(openFileDialog.FileName);
-        if (id == 1)
-          return new Bitmap(image, 360, 208);
-        else
-          return new Bitmap(image, 56, 56);
-      }
-      return null;
-    }
-
-    private byte[] BitmapToBlockData(Bitmap bitmap, int size) {
-      byte[] data = new byte[size];
-      for (int y = 0, byteIndex = 0; y < bitmap.Height; y++) {
-        for (int x = 0; x < bitmap.Width; x++, byteIndex += 8) {
-          Color color = bitmap.GetPixel(x, y);
-          int r = color.R;
-          int g = color.G;
-          int b = color.B;
-          int color_int = ((r >> 3) << 11) | ((g >> 2) << 5) | (b >> 3);
-          BinaryPrimitives.WriteUInt16LittleEndian(data.AsSpan(byteIndex..(byteIndex + 2)), (ushort)color_int);
-        }
-      }
-      return data;
-    }
-
-    private void importProfilePictureButton_Click(object sender, EventArgs e) {
-      MessageBox.Show(Language.ImportWarning, Language.PluginName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-      Bitmap? bitmap = SelectImage(1);
-      if (bitmap == null) return;
-      sav.Blocks.SetBlockValue(Constants.CurrentProfilePictureWidth, (uint)1440);
-      sav.Blocks.SetBlockValue(Constants.CurrentProfilePictureHeight, (uint)832);
-      sav.Blocks.SetBlockValue(Constants.CurrentProfilePictureSize, (uint)599040);
-      byte[] data = BitmapToBlockData(bitmap, 622080);
-      sav.Blocks.GetBlock(Constants.CurrentProfilePictureImage).ChangeData(data);
-      ExtractImageTo(Constants.CurrentProfilePictureImage, Constants.CurrentProfilePictureHeight, Constants.CurrentProfilePictureWidth, currentProfilePicture);
-      sav.State.Edited = true;
-    }
-
-    private void importProfileIconButton_Click(object sender, EventArgs e) {
-      MessageBox.Show(Language.ImportWarning, Language.PluginName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-      Bitmap? bitmap = SelectImage(2);
-      if (bitmap == null) return;
-      sav.Blocks.SetBlockValue(Constants.CurrentProfileIconWidth, (uint)224);
-      sav.Blocks.SetBlockValue(Constants.CurrentProfileIconHeight, (uint)224);
-      sav.Blocks.SetBlockValue(Constants.CurrentProfileIconSize, (uint)25088);
-      byte[] data = BitmapToBlockData(bitmap, 61952);
-      sav.Blocks.GetBlock(Constants.CurrentProfileIconImage).ChangeData(data);
-      ExtractImageTo(Constants.CurrentProfileIconImage, Constants.CurrentProfileIconHeight, Constants.CurrentProfileIconWidth, currentProfileIcon);
-      sav.State.Edited = true;
     }
   }
 }
