@@ -71,6 +71,7 @@ namespace PluginPile.SortingPlugin {
       // Paldean Forms
       if (species == Species.Tauros && 1 <= pkm.Form && pkm.Form <= 3) return 9;
       if (species == Species.Wooper && pkm.Form == 1) return 9;
+      if (species == Species.Ursaluna && pkm.Form == 1) return 9;
 
       // Handle Dexes
       // Gen 1 Kanto
@@ -92,7 +93,7 @@ namespace PluginPile.SortingPlugin {
       // Gen 8 Hisui
       if (899 <= pkm.Species && pkm.Species <=  905) return 8.5;
       // Gen 9 Paldea
-      if (906 <= pkm.Species && pkm.Species <= 1010) return 9;
+      if (906 <= pkm.Species && pkm.Species <= 1017) return 9;
 
       // Default Value
       return double.MaxValue;

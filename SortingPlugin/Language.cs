@@ -421,6 +421,33 @@ namespace PluginPile.SortingPlugin {
       }
     }
 
+    internal static string Gen9PaldeaRegions {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "Gen 9 Paldea Regions"
+        };
+      }
+    }
+
+    internal static string Gen9PaldeaRegionsPaldea {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "de" => "Paldea",
+          "zh" => "帕底亚",
+          "it" => "Paldea",
+          "en" or _ => "Paldea"
+        };
+      }
+    }
+
+    internal static string Gen9PaldeaRegionsKitakami {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "Kitakami"
+        };
+      }
+    }
+
     internal static string MenuItemName {
       get {
         return GameInfo.CurrentLanguage switch {

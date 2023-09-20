@@ -123,6 +123,12 @@ namespace PluginPile.SortingPlugin {
         }
 
         if (gen >= 9) {
+          if (PluginSettings.Default.ShowIndividualPokedéxes) {
+            sortItems.Add(GetAreaButtons(Language.Gen9PaldeaRegions, new ToolStripItem[] {
+              GetRegionalSortButton(Language.Gen9PaldeaRegionsPaldea, Gen9_Paldea.GetPaldeaSortFunctions()),
+              GetRegionalSortButton(Language.Gen9PaldeaRegionsKitakami, Gen9_Paldea.GetKitakamiSortFunctions())
+            }));
+          }
           sortItems.Add(GetRegionalSortButton(Language.Gen9Paldea, Gen9_Paldea.GetSortFunctions()));
         }
 
