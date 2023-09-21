@@ -14,8 +14,6 @@ namespace PluginPile.SortingPlugin {
       if (species == Species.Sandslash && pkm.Form == 1) return 7;
       if (species == Species.Vulpix && pkm.Form == 1) return 7;
       if (species == Species.Ninetales && pkm.Form == 1) return 7;
-      if (species == Species.Vulpix && pkm.Form == 1) return 7;
-      if (species == Species.Ninetales && pkm.Form == 1) return 7;
       if (species == Species.Diglett && pkm.Form == 1) return 7;
       if (species == Species.Dugtrio && pkm.Form == 1) return 7;
       if (species == Species.Meowth && pkm.Form == 1) return 7;
