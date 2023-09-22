@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.SortingPlugin {
   class Gen1_Kanto : SortingBase {
 
-    protected static readonly Dictionary<SpeciesForm, int> dex = new Dictionary<SpeciesForm, int>() {
+    protected static readonly Dictionary<Species, PositionForms> dex = new Dictionary<Species, PositionForms>() {
       {Species.Bulbasaur, 1},
       {Species.Ivysaur, 2},
       {Species.Venusaur, 3},

@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.SortingPlugin {
   class Gen3_Hoenn : SortingBase {
 
-    private static readonly Dictionary<SpeciesForm, int> dex = new Dictionary<SpeciesForm, int>() {
+    private static readonly Dictionary<Species, PositionForms> dex = new Dictionary<Species, PositionForms>() {
       {Species.Treecko, 1},
       {Species.Grovyle, 2},
       {Species.Sceptile, 3},
@@ -145,10 +145,7 @@ namespace PluginPile.SortingPlugin {
       {Species.Wigglytuff, 139},
       {Species.Feebas, 140},
       {Species.Milotic, 141},
-      {(Species.Castform, 0), 142},
-      {(Species.Castform, 1), 142},
-      {(Species.Castform, 2), 142},
-      {(Species.Castform, 3), 142},
+      {Species.Castform, (142, new HashSet<int>() { 0 , 1, 2, 3 })},
       {Species.Staryu, 143},
       {Species.Starmie, 144},
       {Species.Kecleon, 145},
@@ -208,10 +205,7 @@ namespace PluginPile.SortingPlugin {
       {Species.Groudon, 199},
       {Species.Rayquaza, 200},
       {Species.Jirachi, 201},
-      {(Species.Deoxys, 0), 202},
-      {(Species.Deoxys, 1), 202},
-      {(Species.Deoxys, 2), 202},
-      {(Species.Deoxys, 3), 202},
+      {Species.Deoxys, (202, new HashSet<int>() { 0, 1, 2, 3 })},
     };
 
     public static Func<PKM, IComparable>[] GetSortFunctions() {

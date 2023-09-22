@@ -12,7 +12,7 @@ namespace PluginPile.SortingPlugin {
 
 
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
     internal sealed partial class PluginSettings : global::System.Configuration.ApplicationSettingsBase {
 
         private static PluginSettings defaultInstance = ((PluginSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new PluginSettings())));
@@ -68,6 +68,18 @@ namespace PluginPile.SortingPlugin {
             }
             set {
                 this["SortEndBox"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CheckForms {
+            get {
+                return ((bool)(this["CheckForms"]));
+            }
+            set {
+                this["CheckForms"] = value;
             }
         }
     }
