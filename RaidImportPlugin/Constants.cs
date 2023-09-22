@@ -30,5 +30,6 @@ namespace PluginPile.RaidImportPlugin {
     // Block Lists
     public static readonly IReadOnlyList<Block> BaseGameBlocks = new List<Block>() { EventRaidIdentifier, FixedRewardItemArray, LotteryRewardItemArray, RaidEnemyArray, RaidPriorityArray };
     public static readonly IReadOnlyList<Block> BaseGameBlocks_1_3_0 = BaseGameBlocks.Select(b => new Block(b.Location, b.Path + "_1_3_0")).ToList();
+    public static readonly IReadOnlyList<Block> TealMaskBlocks = BaseGameBlocks.Select(b => new Block(b.Location, b.Path + "_2_0_0")).ToList();
   }
 }
