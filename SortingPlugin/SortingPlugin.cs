@@ -171,7 +171,7 @@ namespace PluginPile.SortingPlugin {
       return dexSortButton;
     }
 
-    private ToolStripMenuItem GetAreaButtons(string name, ToolStripItem[] sortButtons) {
+    private static ToolStripMenuItem GetAreaButtons(string name, ToolStripItem[] sortButtons) {
       ToolStripMenuItem areas = new ToolStripMenuItem(name);
       areas.DropDownItems.AddRange(sortButtons);
       return areas;

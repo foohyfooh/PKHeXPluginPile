@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.SortingPlugin {
   class Gen7_Kanto : Gen1_Kanto {
 
-    private static readonly Dictionary<Species, int> extendedDex = new Dictionary<Species, int>(dex) {
+    private static readonly Dictionary<SpeciesForm, int> extendedDex = new Dictionary<SpeciesForm, int>(dex) {
       {Species.Meltan, 152},
       {Species.Melmetal, 153},
     };

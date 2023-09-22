@@ -3,32 +3,20 @@ using PKHeX.Core;
 namespace PluginPile.SortingPlugin {
   class SortingBase {
     
-    private static int SortBetweenDexes(Dictionary<Species, int>[] dexes, PKM pkm) {
+    private static (int, int, int) ProduceComparable(Dictionary<SpeciesForm, int>[] dexes, PKM pkm) {
       for (int i = 0; i < dexes.Length; i++) {
-        if (dexes[i].ContainsKey((Species)pkm.Species))
-          return i;
+        SpeciesForm speciesForm = (pkm.Species, pkm.Form);
+        if (dexes[i].ContainsKey(speciesForm))
+          return (i, dexes[i][speciesForm], pkm.Form);
       }
-      return dexes.Length;
+      return (dexes.Length, pkm.Species, pkm.Form);
     }
 
-    private static int SortWithinDex(Dictionary<Species, int>[] dexes, PKM pkm) {
-      for (int i = 0; i < dexes.Length; i++) {
-        if (dexes[i].ContainsKey((Species)pkm.Species))
-          return dexes[i][(Species) pkm.Species];
-      }
-      return pkm.Species;
-    }
-
-    protected static Func<PKM, IComparable>[] GenerateSortingFunctions(Dictionary<Species, int>[] dexes) {
+    protected static Func<PKM, IComparable>[] GenerateSortingFunctions(params Dictionary<SpeciesForm, int>[] dexes) {
       Func<PKM, IComparable>[] sortFunctions = new Func<PKM, IComparable>[] {
-        (PKM p) => SortBetweenDexes(dexes, p),
-        (PKM p) => SortWithinDex(dexes, p),
+        (PKM p) => ProduceComparable(dexes, p),
       };
       return sortFunctions;
-    }
-
-    protected static Func<PKM, IComparable>[] GenerateSortingFunctions(Dictionary<Species, int> dex) {
-      return GenerateSortingFunctions(new Dictionary<Species, int>[] { dex });
     }
 
   }

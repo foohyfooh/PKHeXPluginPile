@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.SortingPlugin {
   class Gen4_Sinnoh : SortingBase {
 
-    private static readonly Dictionary<Species, int> DPdex = new Dictionary<Species, int>(){
+    private static readonly Dictionary<SpeciesForm, int> DPdex = new Dictionary<SpeciesForm, int>(){
       {Species.Turtwig, 1},
       {Species.Grotle, 2},
       {Species.Torterra, 3},
@@ -48,9 +48,15 @@ namespace PluginPile.SortingPlugin {
       {Species.Machamp, 42},
       {Species.Psyduck, 43},
       {Species.Golduck, 44},
-      {Species.Burmy, 45},
-      {Species.Wormadam, 46},
-      {Species.Mothim, 47},
+      {(Species.Burmy, 0), 45},
+      {(Species.Burmy, 1), 45},
+      {(Species.Burmy, 2), 45},
+      {(Species.Wormadam, 0), 46},
+      {(Species.Wormadam, 1), 46},
+      {(Species.Wormadam, 2), 46},
+      {(Species.Mothim, 0), 47},
+      {(Species.Mothim, 1), 47},
+      {(Species.Mothim, 2), 47},
       {Species.Wurmple, 48},
       {Species.Silcoon, 49},
       {Species.Beautifly, 50},
@@ -62,9 +68,12 @@ namespace PluginPile.SortingPlugin {
       {Species.Buizel, 56},
       {Species.Floatzel, 57},
       {Species.Cherubi, 58},
-      {Species.Cherrim, 59},
-      {Species.Shellos, 60},
-      {Species.Gastrodon, 61},
+      {(Species.Cherrim, 0), 59},
+      {(Species.Cherrim, 1), 59},
+      {(Species.Shellos, 0), 60},
+      {(Species.Shellos, 1), 60},
+      {(Species.Gastrodon, 0), 61},
+      {(Species.Gastrodon, 1), 61},
       {Species.Heracross, 62},
       {Species.Aipom, 63},
       {Species.Ambipom, 64},
@@ -157,8 +166,13 @@ namespace PluginPile.SortingPlugin {
       {Species.Manaphy, 151},
     };
 
-    private static readonly Dictionary<Species, int> Ptdex = new Dictionary<Species, int>(DPdex) {
-      {Species.Rotom, 152},
+    private static readonly Dictionary<SpeciesForm, int> Ptdex = new Dictionary<SpeciesForm, int>(DPdex) {
+      {(Species.Rotom, 0), 152},
+      {(Species.Rotom, 1), 152},
+      {(Species.Rotom, 2), 152},
+      {(Species.Rotom, 3), 152},
+      {(Species.Rotom, 4), 152},
+      {(Species.Rotom, 5), 152},
       {Species.Gligar, 153},
       {Species.Gliscor, 154},
       {Species.Nosepass, 155},
@@ -216,7 +230,8 @@ namespace PluginPile.SortingPlugin {
       {Species.Glalie, 207},
       {Species.Froslass, 208},
       {Species.Absol, 209},
-      {Species.Giratina, 210},
+      {(Species.Giratina, 0), 210},
+      {(Species.Giratina, 1), 210},
     };
 
     public static Func<PKM, IComparable>[] GetDPSortFunctions() {

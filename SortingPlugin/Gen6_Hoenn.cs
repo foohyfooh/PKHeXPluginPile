@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.SortingPlugin {
   class Gen6_Hoenn : SortingBase {
 
-    private static readonly Dictionary<Species, int> dex = new Dictionary<Species, int>() {
+    private static readonly Dictionary<SpeciesForm, int> dex = new Dictionary<SpeciesForm, int>() {
       {Species.Treecko, 1},
       {Species.Grovyle, 2},
       {Species.Sceptile, 3},
@@ -150,7 +150,10 @@ namespace PluginPile.SortingPlugin {
       {Species.Wigglytuff, 144},
       {Species.Feebas, 145},
       {Species.Milotic, 146},
-      {Species.Castform, 147},
+      {(Species.Castform, 0), 147},
+      {(Species.Castform, 1), 147},
+      {(Species.Castform, 2), 147},
+      {(Species.Castform, 3), 147},
       {Species.Staryu, 148},
       {Species.Starmie, 149},
       {Species.Kecleon, 150},
@@ -210,11 +213,17 @@ namespace PluginPile.SortingPlugin {
       {Species.Registeel, 204},
       {Species.Latias, 205},
       {Species.Latios, 206},
-      {Species.Kyogre, 207},
-      {Species.Groudon, 208},
-      {Species.Rayquaza, 209},
+      {(Species.Kyogre, 0), 207},
+      {(Species.Kyogre, 1), 207},
+      {(Species.Groudon, 0), 208},
+      {(Species.Groudon, 1), 208},
+      {(Species.Rayquaza, 0), 209},
+      {(Species.Rayquaza, 1), 209},
       {Species.Jirachi, 210},
-      {Species.Deoxys, 211},
+      {(Species.Deoxys, 0), 211},
+      {(Species.Deoxys, 1), 211},
+      {(Species.Deoxys, 2), 211},
+      {(Species.Deoxys, 3), 211},
     };
 
     public static Func<PKM, IComparable>[] GetSortFunctions() {
