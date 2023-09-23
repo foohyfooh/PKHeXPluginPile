@@ -81,7 +81,7 @@ The default language for this project is English but there appears to be interes
 |-----|---------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | de  | German              | Partial   | [BlackShark](https://github.com/Bl4ckSh4rk)                                                                                                                        |
 | en  | English             | Yes       | Me                                                                                                                                                                 |
-| es  | Spanish             | No        |                                                                                                                                                                    |
+| es  | Spanish             | Partial   | [StevensND](https://github.com/StevensND)                                                                                                                          |
 | fr  | French              | No        |                                                                                                                                                                    |
 | it  | Italian             | Partial   | [Pasquale Nardiello](https://github.com/pasqualenardiello)                                                                                                         |
 | ja  | Japanese            | No        |                                                                                                                                                                    |
