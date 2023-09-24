@@ -424,6 +424,7 @@ namespace PluginPile.SortingPlugin {
     internal static string Gen9PaldeaRegions {
       get {
         return GameInfo.CurrentLanguage switch {
+          "zh" => "Gen 9 帕底亚地区",
           "en" or _ => "Gen 9 Paldea Regions"
         };
       }
@@ -443,6 +444,7 @@ namespace PluginPile.SortingPlugin {
     internal static string Gen9PaldeaRegionsKitakami {
       get {
         return GameInfo.CurrentLanguage switch {
+          "zh" => "北上乡",
           "en" or _ => "Kitakami"
         };
       }
