@@ -10,9 +10,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string MenuItemName {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Vivillon Form Wechsler",
-          "zh" => "彩粉蝶形态转换器",
-          "it" => "Editor Forma di Vivillion",
+          "de"      => "Vivillon Form Wechsler",
+          "zh"      => "彩粉蝶形态转换器",
+          "it"      => "Editor Forma di Vivillion",
           "en" or _ => "Vivillon Form Changer"
         };
       }
@@ -23,9 +23,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForms {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Vivillon Formen",
-          "zh" => "彩粉蝶形态",
-          "it" => "Forme di Vivillion",
+          "de"      => "Vivillon Formen",
+          "zh"      => "彩粉蝶形态",
+          "it"      => "Forme di Vivillion",
           "en" or _ => "Vivillon Forms"
         };
       }
@@ -34,9 +34,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm00Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Frost",
-          "zh" => "冰雪花纹",
-          "it" => "Nevi Perenni",
+          "de"      => "Frost",
+          "zh"      => "冰雪花纹",
+          "it"      => "Nevi Perenni",
           "en" or _ => "Icy Snow"
         };
       }
@@ -45,9 +45,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm01Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Schneefeld",
-          "zh" => "雪国花纹",
-          "it" => "Nordico",
+          "de"      => "Schneefeld",
+          "zh"      => "雪国花纹",
+          "it"      => "Nordico",
           "en" or _ => "Polar"
         };
       }
@@ -56,9 +56,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm02Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Flocken",
-          "zh" => "雪原花纹",
-          "it" => "Manto di Neve",
+          "de"      => "Flocken",
+          "zh"      => "雪原花纹",
+          "it"      => "Manto di Neve",
           "en" or _ => "Tundra"
         };
       }
@@ -67,9 +67,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm03Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Kontinental",
-          "zh" => "大陆花纹",
-          "it" => "Continentale",
+          "de"      => "Kontinental",
+          "zh"      => "大陆花纹",
+          "it"      => "Continentale",
           "en" or _ => "Continental"
         };
       }
@@ -78,9 +78,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm04Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Ziergarten",
-          "zh" => "ͥ庭园花纹",
-          "it" => "Prato",
+          "de"      => "Ziergarten",
+          "zh"      => "ͥ庭园花纹",
+          "it"      => "Prato",
           "en" or _ => "Garden"
         };
       }
@@ -89,9 +89,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm05Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Prunk",
-          "zh" => "高雅花纹",
-          "it" => "Eleganza",
+          "de"      => "Prunk",
+          "zh"      => "高雅花纹",
+          "it"      => "Eleganza",
           "en" or _ => "Elegant"
         };
       }
@@ -100,9 +100,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm06Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Blumenmeer",
-          "zh" => "花园花纹",
-          "it" => "Giardinfiore",
+          "de"      => "Blumenmeer",
+          "zh"      => "花园花纹",
+          "it"      => "Giardinfiore",
           "en" or _ => "Meadow"
         };
       }
@@ -111,9 +111,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm07Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Innovation",
-          "zh" => "摩登花纹",
-          "it" => "Trendy",
+          "de"      => "Innovation",
+          "zh"      => "摩登花纹",
+          "it"      => "Trendy",
           "en" or _ => "Modern"
         };
       }
@@ -122,9 +122,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm08Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Aquamarin",
-          "zh" => "大海花纹",
-          "it" => "Marino",
+          "de"      => "Aquamarin",
+          "zh"      => "大海花纹",
+          "it"      => "Marino",
           "en" or _ => "Marine"
         };
       }
@@ -133,9 +133,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm09Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Archipel",
-          "zh" => "群岛花纹",
-          "it" => "Arcipelago",
+          "de"      => "Archipel",
+          "zh"      => "群岛花纹",
+          "it"      => "Arcipelago",
           "en" or _ => "Archipelago"
         };
       }
@@ -144,9 +144,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm10Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Dürre",
-          "zh" => "荒野花纹",
-          "it" => "Deserto",
+          "de"      => "Dürre",
+          "zh"      => "荒野花纹",
+          "it"      => "Deserto",
           "en" or _ => "High Plains"
         };
       }
@@ -155,9 +155,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm11Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Sand",
-          "zh" => "沙尘花纹",
-          "it" => "Sabbia",
+          "de"      => "Sand",
+          "zh"      => "沙尘花纹",
+          "it"      => "Sabbia",
           "en" or _ => "Sandstorm"
         };
       }
@@ -166,9 +166,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm12Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Flussdelta",
-          "zh" => "大河花纹",
-          "it" => "Fluviale",
+          "de"      => "Flussdelta",
+          "zh"      => "大河花纹",
+          "it"      => "Fluviale",
           "en" or _ => "River"
         };
       }
@@ -177,9 +177,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm13Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Monsun",
-          "zh" => "骤雨花纹",
-          "it" => "Pluviale",
+          "de"      => "Monsun",
+          "zh"      => "骤雨花纹",
+          "it"      => "Pluviale",
           "en" or _ => "Monsoon"
         };
       }
@@ -188,9 +188,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm14Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Savanne",
-          "zh" => "热带草原花纹",
-          "it" => "Savana",
+          "de"      => "Savanne",
+          "zh"      => "热带草原花纹",
+          "it"      => "Savana",
           "en" or _ => "Savana"
         };
       }
@@ -199,9 +199,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm15Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Sonne",
-          "zh" => "̫太阳花纹",
-          "it" => "Solare",
+          "de"      => "Sonne",
+          "zh"      => "̫太阳花纹",
+          "it"      => "Solare",
           "en" or _ => "Sun"
         };
       }
@@ -210,9 +210,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm16Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Ozean",
-          "zh" => "大洋花纹",
-          "it" => "Oceanico",
+          "de"      => "Ozean",
+          "zh"      => "大洋花纹",
+          "it"      => "Oceanico",
           "en" or _ => "Ocean"
         };
       }
@@ -221,9 +221,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm17Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Dschungel",
-          "zh" => "热带雨林花纹",
-          "it" => "Giungla",
+          "de"      => "Dschungel",
+          "zh"      => "热带雨林花纹",
+          "it"      => "Giungla",
           "en" or _ => "Jungle"
         };
       }
@@ -232,9 +232,9 @@ namespace PluginPile.SVivillonPlugin {
     internal static string VivillonForm18Name {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Fantasie",
-          "zh" => "幻彩花纹",
-          "it" => "Sbarazzino",
+          "de"      => "Fantasie",
+          "zh"      => "幻彩花纹",
+          "it"      => "Sbarazzino",
           "en" or _ => "Fancy"
         };
       }

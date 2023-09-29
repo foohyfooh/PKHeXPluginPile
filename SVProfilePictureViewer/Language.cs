@@ -5,8 +5,8 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string CurrentProfilePicture {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "当前个人简介照片",
-          "it" => "Foto Profilo Attuale",
+          "zh"      => "当前个人简介照片",
+          "it"      => "Foto Profilo Attuale",
           "en" or _ => "Current Profile Picture"
         };
       }
@@ -15,8 +15,8 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string CurrentProfileIcon {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "当前训练家头像",
-          "it" => "Icona Profilo Corrente",
+          "zh"      => "当前训练家头像",
+          "it"      => "Icona Profilo Corrente",
           "en" or _ => "Current Profile Icon"
         };
       }
@@ -25,8 +25,8 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string InitialProfilePicture {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "初始个人简介照片",
-          "it" => "Foto Profilo Iniziale",
+          "zh"      => "初始个人简介照片",
+          "it"      => "Foto Profilo Iniziale",
           "en" or _ => "Initial Profile Picture"
         };
       }
@@ -35,8 +35,8 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string InitialProfileIcon {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "初始训练家头像",
-          "it" => "Icona Profilo Iniziale",
+          "zh"      => "初始训练家头像",
+          "it"      => "Icona Profilo Iniziale",
           "en" or _ => "Initial Profile Icon"
         };
       }
@@ -45,8 +45,8 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string PluginName {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "个人简介照片查看器",
-          "it" => "Visualizzatore Foto Profilo",
+          "zh"      => "个人简介照片查看器",
+          "it"      => "Visualizzatore Foto Profilo",
           "en" or _ => "Profile Picture Viewer"
         };
       }
@@ -55,8 +55,8 @@ namespace PluginPile.SVProfilePictureViewer {
     internal static string Export {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "导出",
-          "it" => "Esporta",
+          "zh"      => "导出",
+          "it"      => "Esporta",
           "en" or _ => "Export"
         };
       }

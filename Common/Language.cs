@@ -7,9 +7,9 @@ namespace PluginPile.Common {
     public static string Cancel {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Abbrechen",
-          "zh" => "取消",
-          "it" => "Annulla",
+          "de"      => "Abbrechen",
+          "zh"      => "取消",
+          "it"      => "Annulla",
           "en" or _ => "Cancel"
         };
       }
@@ -18,9 +18,9 @@ namespace PluginPile.Common {
     public static string Save {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Speichern",
-          "zh" => "保存",
-          "it" => "Salva",
+          "de"      => "Speichern",
+          "zh"      => "保存",
+          "it"      => "Salva",
           "en" or _ => "Save"
         };
       }
@@ -29,8 +29,8 @@ namespace PluginPile.Common {
     public static string Unused {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "未使用",
-          "it" => "Inutilizzato",
+          "zh"      => "未使用",
+          "it"      => "Inutilizzato",
           "en" or _ => "Unused"
         };
       }

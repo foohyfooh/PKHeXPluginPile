@@ -8,7 +8,7 @@ namespace PluginPile.FashionEditor {
     internal static string Item {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "样式",
+          "zh"      => "样式",
           "en" or _ => "Item"
         };
       }
@@ -25,7 +25,7 @@ namespace PluginPile.FashionEditor {
     internal static string Title {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "时装插件",
+          "zh"      => "时装插件",
           "en" or _ => "Fashion Editor"
         };
       }
@@ -36,7 +36,7 @@ namespace PluginPile.FashionEditor {
     internal static string Unlocked {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "解锁",
+          "zh"      => "解锁",
           "en" or _ => "Unlocked"
         };
       }
@@ -51,7 +51,7 @@ namespace PluginPile.FashionEditor {
     private static string Bottoms {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "下装",
+          "zh"      => "下装",
           "en" or _ => "Bottoms"
         };
       }
@@ -60,7 +60,7 @@ namespace PluginPile.FashionEditor {
     private static string Glasses {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "眼镜",
+          "zh"      => "眼镜",
           "en" or _ => "Glasses"
         };
       }
@@ -69,7 +69,7 @@ namespace PluginPile.FashionEditor {
     private static string Hats {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "头饰",
+          "zh"      => "头饰",
           "en" or _ => "Hats"
         };
       }
@@ -78,7 +78,7 @@ namespace PluginPile.FashionEditor {
     private static string Shoes {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "鞋子",
+          "zh"      => "鞋子",
           "en" or _ => "Shoes"
         };
       }
@@ -87,7 +87,7 @@ namespace PluginPile.FashionEditor {
     private static string Tops {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "上装",
+          "zh"      => "上装",
           "en" or _ => "Tops"
         };
       }
@@ -108,7 +108,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] TopsListMale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_tops_male_zh.txt"),
+            "zh"      => GetStringList("swsh_tops_male_zh.txt"),
             "en" or _ => GetStringList("swsh_tops_male_en.txt")
           };
         }
@@ -117,7 +117,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] TopsListFemale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_tops_female_zh.txt"),
+            "zh"      => GetStringList("swsh_tops_female_zh.txt"),
             "en" or _ => GetStringList("swsh_tops_female_en.txt")
           };
         }
@@ -126,7 +126,7 @@ namespace PluginPile.FashionEditor {
       internal static string Jackets {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "外套",
+            "zh"      => "外套",
             "en" or _ => "Jackets"
           };
         }
@@ -143,7 +143,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] JacketsListMale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_jackets_male_zh.txt"),
+            "zh"      => GetStringList("swsh_jackets_male_zh.txt"),
             "en" or _ => GetStringList("swsh_jackets_male_en.txt")
           };
         }
@@ -152,7 +152,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] JacketsListFemale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_jackets_female_zh.txt"),
+            "zh"      => GetStringList("swsh_jackets_female_zh.txt"),
             "en" or _ => GetStringList("swsh_jackets_female_en.txt")
           };
         }
@@ -171,7 +171,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] BottomsListMale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_bottoms_male_zh.txt"),
+            "zh"      => GetStringList("swsh_bottoms_male_zh.txt"),
             "en" or _ => GetStringList("swsh_bottoms_male_en.txt")
           };
         }
@@ -180,7 +180,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] BottomsListFemale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_bottoms_female_zh.txt"),
+            "zh"      => GetStringList("swsh_bottoms_female_zh.txt"),
             "en" or _ => GetStringList("swsh_bottoms_female_en.txt")
           };
         }
@@ -189,7 +189,7 @@ namespace PluginPile.FashionEditor {
       internal static string Dresses {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "时装",
+            "zh"      => "时装",
             "en" or _ => "Dresses"
           };
         }
@@ -198,7 +198,7 @@ namespace PluginPile.FashionEditor {
       internal static string Socks {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "袜子",
+            "zh"      => "袜子",
             "en" or _ => "Socks"
           };
         }
@@ -215,7 +215,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] SocksListMale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_socks_male_zh.txt"),
+            "zh"      => GetStringList("swsh_socks_male_zh.txt"),
             "en" or _ => GetStringList("swsh_socks_male_en.txt")
           };
         }
@@ -224,7 +224,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] SocksListFemale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_socks_female_zh.txt"),
+            "zh"      => GetStringList("swsh_socks_female_zh.txt"),
             "en" or _ => GetStringList("swsh_socks_female_en.txt")
           };
         }
@@ -243,7 +243,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] ShoesListMale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_shoes_male_zh.txt"),
+            "zh"      => GetStringList("swsh_shoes_male_zh.txt"),
             "en" or _ => GetStringList("swsh_shoes_male_en.txt")
           };
         }
@@ -252,7 +252,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] ShoesListFemale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_shoes_female_zh.txt"),
+            "zh"      => GetStringList("swsh_shoes_female_zh.txt"),
             "en" or _ => GetStringList("swsh_shoes_female_en.txt")
           };
         }
@@ -261,7 +261,7 @@ namespace PluginPile.FashionEditor {
       internal static string Bags {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "包包",
+            "zh"      => "包包",
             "en" or _ => "Bags"
           };
         }
@@ -278,7 +278,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] BagsListMale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_bags_male_zh.txt"),
+            "zh"      => GetStringList("swsh_bags_male_zh.txt"),
             "en" or _ => GetStringList("swsh_bags_male_en.txt")
           };
         }
@@ -287,7 +287,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] BagsListFemale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_bags_female_zh.txt"),
+            "zh"      => GetStringList("swsh_bags_female_zh.txt"),
             "en" or _ => GetStringList("swsh_bags_female_en.txt")
           };
         }
@@ -306,7 +306,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] HatsListMale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_hats_male_zh.txt"),
+            "zh"      => GetStringList("swsh_hats_male_zh.txt"),
             "en" or _ => GetStringList("swsh_hats_male_en.txt")
           };
         }
@@ -315,7 +315,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] HatsListFemale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_hats_female_zh.txt"),
+            "zh"      => GetStringList("swsh_hats_female_zh.txt"),
             "en" or _ => GetStringList("swsh_hats_female_en.txt")
           };
         }
@@ -334,7 +334,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] GlassesListMale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_glasses_male_zh.txt"),
+            "zh"      => GetStringList("swsh_glasses_male_zh.txt"),
             "en" or _ => GetStringList("swsh_glasses_male_en.txt")
           };
         }
@@ -343,7 +343,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] GlassesListFemale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_glasses_female_zh.txt"),
+            "zh"      => GetStringList("swsh_glasses_female_zh.txt"),
             "en" or _ => GetStringList("swsh_glasses_female_en.txt")
           };
         }
@@ -352,7 +352,7 @@ namespace PluginPile.FashionEditor {
       internal static string Gloves {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "手套",
+            "zh"      => "手套",
             "en" or _ => "Gloves"
           };
         }
@@ -369,7 +369,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] GlovesListMale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_gloves_male_zh.txt"),
+            "zh"      => GetStringList("swsh_gloves_male_zh.txt"),
             "en" or _ => GetStringList("swsh_gloves_male_en.txt")
           };
         }
@@ -378,7 +378,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] GlovesListFemale {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("swsh_gloves_female_zh.txt"),
+            "zh"      => GetStringList("swsh_gloves_female_zh.txt"),
             "en" or _ => GetStringList("swsh_gloves_female_en.txt")
           };
         }
@@ -389,7 +389,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionEveryday {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "平常",
+            "zh"      => "平常",
             "en" or _ => "Everyday"
           };
         }
@@ -398,7 +398,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionPikachu {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "皮卡丘卫衣",
+            "zh"      => "皮卡丘卫衣",
             "en" or _ => "Pikachu"
           };
         }
@@ -407,7 +407,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionPlatinum {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "白金",
+            "zh"      => "白金",
             "en" or _ => "Platinum"
           };
         }
@@ -416,7 +416,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionOveralls {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "工装服",
+            "zh"      => "工装服",
             "en" or _ => "Overalls"
           };
         }
@@ -425,7 +425,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionEevee {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "伊布刺绣夹克",
+            "zh"      => "伊布刺绣夹克",
             "en" or _ => "Eevee"
           };
         }
@@ -434,7 +434,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionGengar {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "耿鬼刺绣夹克",
+            "zh"      => "耿鬼刺绣夹克",
             "en" or _ => "Gengar"
           };
         }
@@ -443,7 +443,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionCyber {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "赛博",
+            "zh"      => "赛博",
             "en" or _ => "Cyber"
           };
         }
@@ -452,7 +452,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionSummer {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "夏季",
+            "zh"      => "夏季",
             "en" or _ => "Summer"
           };
         }
@@ -461,7 +461,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionWinter {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "冬季",
+            "zh"      => "冬季",
             "en" or _ => "Winter"
           };
         }
@@ -470,7 +470,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionSpring {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "春季",
+            "zh"      => "春季",
             "en" or _ => "Spring"
           };
         }
@@ -479,7 +479,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionCasual {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "运动",
+            "zh"      => "运动",
             "en" or _ => "Casual"
           };
         }
@@ -488,7 +488,7 @@ namespace PluginPile.FashionEditor {
       internal static string FashionLeather {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "皮夹克",
+            "zh"      => "皮夹克",
             "en" or _ => "Leather"
           };
         }
@@ -501,7 +501,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] HatsList {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("la_hats_zh.txt"),
+            "zh"      => GetStringList("la_hats_zh.txt"),
             "en" or _ => GetStringList("la_hats_en.txt")
           };
         }
@@ -512,7 +512,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] TopsList {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("la_tops_zh.txt"),
+            "zh"      => GetStringList("la_tops_zh.txt"),
             "en" or _ => GetStringList("la_tops_en.txt")
           };
         }
@@ -523,7 +523,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] BottomsList {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("la_bottoms_zh.txt"),
+            "zh"      => GetStringList("la_bottoms_zh.txt"),
             "en" or _ => GetStringList("la_bottoms_en.txt")
           };
         }
@@ -532,7 +532,7 @@ namespace PluginPile.FashionEditor {
       internal static string Uniforms {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => "套装",
+            "zh"      => "套装",
             "en" or _ => "Uniforms"
           };
         }
@@ -541,7 +541,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] UniformsList {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("la_uniforms_zh.txt"),
+            "zh"      => GetStringList("la_uniforms_zh.txt"),
             "en" or _ => GetStringList("la_uniforms_en.txt")
           };
         }
@@ -552,7 +552,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] ShoesList {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("la_shoes_zh.txt"),
+            "zh"      => GetStringList("la_shoes_zh.txt"),
             "en" or _ => GetStringList("la_shoes_en.txt")
           };
         }
@@ -563,7 +563,7 @@ namespace PluginPile.FashionEditor {
       internal static string[] GlassesList {
         get {
           return GameInfo.CurrentLanguage switch {
-            "zh" => GetStringList("la_glasses_zh.txt"),
+            "zh"      => GetStringList("la_glasses_zh.txt"),
             "en" or _ => GetStringList("la_glasses_en.txt")
           };
         }

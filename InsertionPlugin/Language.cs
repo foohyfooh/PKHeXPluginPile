@@ -8,9 +8,9 @@ namespace PluginPile.InsertionPlugin {
     internal static string MenuItemName {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Slot eingeben",
-          "zh" => "插入插件",
-          "it" => "Inserisci Slot",
+          "de"      => "Slot eingeben",
+          "zh"      => "插入插件",
+          "it"      => "Inserisci Slot",
           "en" or _ => "Insert Slot"
         };
       }
@@ -19,9 +19,9 @@ namespace PluginPile.InsertionPlugin {
     internal static string NoEmptySlotsError {
       get {
         return GameInfo.CurrentLanguage switch {
-          "de" => "Es gibt keine leeren Slots nach Box {0} Slot {1}",
-          "zh" => "盒子 {0} 槽位 {1} 之后没有空槽位",
-          "it" => "Non ci sono slot vuoti dopo Box {0} Slot {1}",
+          "de"      => "Es gibt keine leeren Slots nach Box {0} Slot {1}",
+          "zh"      => "盒子 {0} 槽位 {1} 之后没有空槽位",
+          "it"      => "Non ci sono slot vuoti dopo Box {0} Slot {1}",
           "en" or _ => "There are no empty slots after Box {0} Slot {1}"
         };
       }
