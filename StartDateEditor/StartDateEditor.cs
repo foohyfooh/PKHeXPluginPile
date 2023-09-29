@@ -15,10 +15,10 @@ namespace PluginPile.StartDateEditor {
       StartDateEditorButton = new ToolStripMenuItem(Language.MenuItemName);
       StartDateEditorButton.Available = IsCompatibleSave;
       StartDateEditorButton.Click += (s, e) => {
-        if (SaveFileEditor.SAV is SAV8SWSH) EditSwShStartDate();
-        else if (SaveFileEditor.SAV is SAV8BS) EditBDSPAdventureStart();
-        else if (SaveFileEditor.SAV is SAV8LA) EditLAAdventureStart();
-        else if (SaveFileEditor.SAV is SAV9SV) EditSVEnrollmentDate();
+             if (SaveFileEditor.SAV is SAV8SWSH) EditSwShStartDate();
+        else if (SaveFileEditor.SAV is SAV8BS)   EditBDSPAdventureStart();
+        else if (SaveFileEditor.SAV is SAV8LA)   EditLAAdventureStart();
+        else if (SaveFileEditor.SAV is SAV9SV)   EditSVEnrollmentDate();
       };
       tools.DropDownItems.Add(StartDateEditorButton);
     }
