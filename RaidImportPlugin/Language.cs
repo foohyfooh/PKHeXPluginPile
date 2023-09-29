@@ -27,7 +27,7 @@ namespace PluginPile.RaidImportPlugin {
       }
     }
 
-    internal static string MenuItemName {
+    internal static string ImportRaid {
       get {
         return GameInfo.CurrentLanguage switch {
           "de"      => "Importiere Raid",
@@ -47,6 +47,30 @@ namespace PluginPile.RaidImportPlugin {
           "it"      => "Raid Importato",
           "es"      => "Raid Importada",
           "en" or _ => "Raid Imported"
+        };
+      }
+    }
+
+    internal static string ImportOutbreak {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "Import Outbreak"
+        };
+      }
+    }
+
+    internal static string OutbreakImported {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "Outbreak Imported"
+        };
+      }
+    }
+
+    internal static string ImportRaidOrOutbreak {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "en" or _ => "Import Raid/Outbreak"
         };
       }
     }
