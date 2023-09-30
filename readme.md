@@ -20,11 +20,16 @@ The purpose of this plugin is to insert an empty slot in your save file.
 
 ## Raid Importing Plugin
 The purpose of this plugin is to provide a convient way to import the raid data from [Project Pokémon Event Gallery](https://github.com/projectpokemon/EventsGallery) into Sword/Shield and Scarlet/Violet.
-- *Import Raid* should now be in the *Tools* menu of PKHeX.
+- *Import Raid* and/or *Import Outbreak* should now be in the *Tools* menu of PKHeX.
 - Once you click the button a folder select dialog will pop up.
-- Select an appropriate raid folder from the Event Gallery for the game and it should be imported.
-  - For Sword/Shield, this is the folder with the blocks
-  - For Scarlet/Violet, this is the folder with the Identifier.txt
+- Select an appropriate folder from the Event Gallery for the game and it should be imported:
+  - For Sword/Shield raids, this is the folder with the blocks.
+  - For Scarlet/Violet raids, this is the folder with the Identifier.txt.
+  - For Scarlet/Violet outbreaks, this is the folder with the Files and Json folders.
+
+### Related Tools
+- [Manu098vm](https://github.com/Manu098vm)'s [Tera-Finder](https://github.com/Manu098vm/Tera-Finder)
+- [MewTracker](https://github.com/MewTracker)'s [RaidCalc](https://github.com/MewTracker/sv-research)
 
 ## Scarlet/Violet Vivillon Plugin
 The purpose of this plugin is allow a user to edit which Vivillon Spawns in Scarlet and Violet overworld without requiring GO Connectivity.
@@ -52,7 +57,7 @@ The purpose of this plugin is to allow for editing the owned clothes in games. <
 ### Pokémon Sword and Shield Note
 Note that in Sword and Shield when unlocking Tops this unlocks it in the uniform tab even if the other parts of the uniform aren't unlocked since the game is expecting all of them to be unlocked at the same time.
 
-## Scarlet/Violet Profile Picture Viewer/Injector Plugin
+## Scarlet/Violet Profile Picture Viewer Plugin
 The purpose of this plugin is to view and save the Profile Picture and Icon in Pokémon Scarlet and Violet.
 - *Profile Picture Viewer* should now be in the *Tools* menu of PKHeX.
 
