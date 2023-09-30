@@ -54,6 +54,7 @@ namespace PluginPile.RaidImportPlugin {
     internal static string ImportOutbreak {
       get {
         return GameInfo.CurrentLanguage switch {
+          "es"      => "Importar Aparición Masiva",
           "en" or _ => "Import Outbreak"
         };
       }
@@ -62,6 +63,7 @@ namespace PluginPile.RaidImportPlugin {
     internal static string OutbreakImported {
       get {
         return GameInfo.CurrentLanguage switch {
+          "es"      => "Aparición Masiva importada",
           "en" or _ => "Outbreak Imported"
         };
       }
@@ -70,6 +72,7 @@ namespace PluginPile.RaidImportPlugin {
     internal static string ImportRaidOrOutbreak {
       get {
         return GameInfo.CurrentLanguage switch {
+          "es"      => "Importar Raid/Aparición Masiva",
           "en" or _ => "Import Raid/Outbreak"
         };
       }
