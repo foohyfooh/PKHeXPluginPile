@@ -24,8 +24,7 @@ The purpose of this plugin is to provide a convient way to import the raid data 
 - Once you click the button a folder select dialog will pop up.
 - Select an appropriate folder from the Event Gallery for the game and it should be imported:
   - For Sword/Shield raids, this is the folder with the blocks.
-  - For Scarlet/Violet raids, this is the folder with the Identifier.txt.
-  - For Scarlet/Violet outbreaks, this is the folder with the Files and Json folders.
+  - For Scarlet/Violet raids and outbreaks, this is the folder with the Identifier.txt.
 
 ### Related Tools
 - [Manu098vm](https://github.com/Manu098vm)'s [Tera-Finder](https://github.com/Manu098vm/Tera-Finder)
