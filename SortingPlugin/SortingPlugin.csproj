@@ -33,10 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="PluginSettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>PluginSettings.Designer.cs</LastGenOutput>
-    </None>
     <None Update="Resources\SortIcon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
