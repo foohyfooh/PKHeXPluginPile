@@ -177,5 +177,42 @@ namespace PluginPile.SortingPlugin {
       return areas;
     }
 
+    protected override void LoadContextMenu(ContextMenuStrip contextMenu) {
+      contextMenu.Opening += (s, e) => {
+        SlotViewInfo<PictureBox> info = GetSenderInfo(ref s!);
+        if (info.Slot.Origin == SlotOrigin.Box && info.ReadCurrent().Species != (int)Species.None && info.CanWriteTo()) {
+          ToolStripMenuItem insertSlotButton = new ToolStripMenuItem(Language.InsertSlot);
+          insertSlotButton.Click += (s, e) => InsertSlot(SaveFileEditor.CurrentBox, info.Slot.Slot);
+          contextMenu.Items.Add(insertSlotButton);
+          contextMenu.Closing += (s, e) => contextMenu.Items.Remove(insertSlotButton);
+        }
+      };
+    }
+
+    private void InsertSlot(int boxNum, int slotNum) {
+      int startIndex = boxNum * SaveFileEditor.SAV.BoxSlotCount + slotNum;
+      int boxIndex = startIndex + 1;
+      PKM currMon, nextMon;
+      while (boxIndex < SaveFileEditor.SAV.SlotCount) {
+        currMon = SaveFileEditor.SAV.GetBoxSlotAtIndex(boxIndex);
+        if (currMon.Species == (int)Species.None) break;
+        boxIndex++;
+      }
+      if (boxIndex == SaveFileEditor.SAV.SlotCount) {
+        MessageBox.Show(string.Format(Language.NoEmptySlotsError, boxNum + 1, slotNum + 1), Language.InsertSlot, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
+      }
+      currMon = SaveFileEditor.SAV.GetBoxSlotAtIndex(startIndex);
+      SaveFileEditor.SAV.SetBoxSlotAtIndex(SaveFileEditor.SAV.BlankPKM, startIndex);
+      for (int index = startIndex + 1; index <= boxIndex; index++) {
+        StorageSlotSource slotSource = SaveFileEditor.SAV.GetSlotFlags(index);
+        if (slotSource.IsOverwriteProtected()) continue;
+        nextMon = SaveFileEditor.SAV.GetBoxSlotAtIndex(index);
+        SaveFileEditor.SAV.SetBoxSlotAtIndex(currMon, index, PKMImportSetting.UseDefault, PKMImportSetting.Skip);
+        currMon = nextMon;
+      }
+      SaveFileEditor.ReloadSlots();
+    }
+
   }
 }

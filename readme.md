@@ -11,12 +11,9 @@ This is meant to be a single repo to contain all my [PKHeX](https://github.com/k
 *While the individual plugins don't require each other to work, when updating please ensure all plugin pile plugins are the same version or there may be issues. This is because there is a common emdedded library that will only be loaded once by PKHeX.*
 
 ## Sorting Plugin
-The purpose of this plugin is to provide sorting by different regional Pokédexes.
+The purpose of this plugin is to provide sorting by different regional Pokédexes and other sorting features.
 - *Sort Boxes By* should now be in the *Tools* menu of PKHeX.
-
-## Insertion Plugin
-The purpose of this plugin is to insert an empty slot in your save file.
-- Right click on the box slot where you want to insert and click insert slot in the context menu.
+- *Insert Slot* should be in the slot context menu
 
 ## Raid Importing Plugin
 The purpose of this plugin is to provide a convient way to import the raid data from [Project Pokémon Event Gallery](https://github.com/projectpokemon/EventsGallery) into Sword/Shield and Scarlet/Violet.
