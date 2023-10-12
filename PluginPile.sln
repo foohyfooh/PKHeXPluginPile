@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaidImportPlugin", "RaidImp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVivillonPlugin", "SVivillonPlugin\SVivillonPlugin.csproj", "{B287B88F-33B4-4FDF-8110-80D12DEC56FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartDateEditor", "StartDateEditor\StartDateEditor.csproj", "{189BCCE6-3382-4F8A-A379-23C4A19EB0FD}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FashionEditor", "FashionEditor\FashionEditor.csproj", "{DDE40578-85DD-41F5-BD7D-A721657C7B2C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVProfilePictureViewer", "SVProfilePictureViewer\SVProfilePictureViewer.csproj", "{03A09A42-C21D-4CB0-8685-6464CC950C90}"
@@ -45,10 +43,6 @@ Global
 		{B287B88F-33B4-4FDF-8110-80D12DEC56FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B287B88F-33B4-4FDF-8110-80D12DEC56FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B287B88F-33B4-4FDF-8110-80D12DEC56FB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{189BCCE6-3382-4F8A-A379-23C4A19EB0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{189BCCE6-3382-4F8A-A379-23C4A19EB0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{189BCCE6-3382-4F8A-A379-23C4A19EB0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{189BCCE6-3382-4F8A-A379-23C4A19EB0FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDE40578-85DD-41F5-BD7D-A721657C7B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DDE40578-85DD-41F5-BD7D-A721657C7B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDE40578-85DD-41F5-BD7D-A721657C7B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
