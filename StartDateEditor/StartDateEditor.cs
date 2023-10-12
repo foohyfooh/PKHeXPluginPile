@@ -3,7 +3,7 @@ using PluginPile.Common;
 using System.Reflection;
 
 namespace PluginPile.StartDateEditor {
-  public class StartDateEditor: PluginBase {
+  public class StartDateEditor : PluginBase {
     public override string Name => nameof(StartDateEditor);
     protected override Assembly PluginAssembly => typeof(StartDateEditor).Assembly;
     private ToolStripMenuItem StartDateEditorButton = null!;

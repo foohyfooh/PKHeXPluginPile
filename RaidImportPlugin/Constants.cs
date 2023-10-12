@@ -1,4 +1,4 @@
-using Block = PluginPile.Common.Block;
+using PluginPile.Common;
 
 namespace PluginPile.RaidImportPlugin {
 

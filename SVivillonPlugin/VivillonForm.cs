@@ -1,5 +1,5 @@
 using PKHeX.Core;
-using Block = PluginPile.Common.Block;
+using PluginPile.Common;
 
 namespace PluginPile.SVivillonPlugin {
   public partial class VivillonForm : Form {
