@@ -180,7 +180,7 @@ namespace PluginPile.SortingPlugin {
     protected override void LoadContextMenu(ContextMenuStrip contextMenu) {
       contextMenu.Opening += (s, e) => {
         SlotViewInfo<PictureBox> info = GetSenderInfo(ref s!);
-        if (info.Slot.Origin == SlotOrigin.Box && info.ReadCurrent().Species != (int)Species.None && info.CanWriteTo()) {
+        if (info.IsNonEmptyWriteableBoxSlot()) {
           ToolStripMenuItem insertSlotButton = new ToolStripMenuItem(Language.InsertSlot);
           insertSlotButton.Click += (s, e) => InsertSlot(SaveFileEditor.CurrentBox, info.Slot.Slot);
           contextMenu.Items.Add(insertSlotButton);
