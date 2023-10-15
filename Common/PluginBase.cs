@@ -22,13 +22,19 @@ namespace PluginPile.Common {
       ToolStrip menu = (ToolStrip)Array.Find(args, z => z is ToolStrip)!;
       ToolStripDropDownItem tools = (ToolStripDropDownItem)menu.Items.Find("Menu_Tools", false)[0]!;
       LoadMenu(tools);
-      // Since the classes for these are in PKHeX.WinForms but not PKHeX.Core have to do this to get the context menu
+      // Since the classes for these are in PKHeX.WinForms but not PKHeX.Core have to do this to get the box context menu
+      // (SAVEditor)SaveFileEditor.(BoxMenuStrip)SortMenu
+      ContextMenuStrip boxMenu = (ContextMenuStrip)((dynamic)SaveFileEditor).SortMenu;
+      LoadBoxMenu(boxMenu);
+      // Since the classes for these are in PKHeX.WinForms but not PKHeX.Core have to do this to get the slot context menu
       // (SAVEditor)SaveFileEditor.(ContextMenuSAV)menu.(ContextMenuStrip)mnuVSD
       ContextMenuStrip contextMenu = (ContextMenuStrip)((dynamic)SaveFileEditor).menu.mnuVSD;
       LoadContextMenu(contextMenu);
     }
 
     protected virtual void LoadMenu(ToolStripDropDownItem tools) { }
+
+    protected virtual void LoadBoxMenu(ContextMenuStrip boxMenu) { }
 
     protected virtual void LoadContextMenu(ContextMenuStrip contextMenu) { }
 
@@ -50,6 +56,11 @@ namespace PluginPile.Common {
       MethodInfo getSenderInfoMethod = contextMenuSAVType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
         .Single(m => m.Name.Contains("GetSenderInfo"));
       return (SlotViewInfo<PictureBox>)getSenderInfoMethod.Invoke(null, new object[] { sender })!;
+    }
+
+    protected BoxManipulator GetBoxManipulatorWF() {
+      Type BoxManipulatorWFType = ((dynamic)SaveFileEditor).SortMenu.GetType().Assembly.GetType("PKHeX.WinForms.Controls.BoxManipulatorWF");
+      return (BoxManipulator)Activator.CreateInstance(BoxManipulatorWFType, SaveFileEditor)!;
     }
 
   }
