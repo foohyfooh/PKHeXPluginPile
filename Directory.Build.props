@@ -17,4 +17,8 @@
     <ProjectReference Include="$(SolutionDir)\Common\Common.csproj" Condition="'$(RootNamespace)' != '$(SolutionName).Common'" PrivateAssets="All"/>
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="$(SolutionDir)\FodyWeavers.xml" Link="FodyWeavers.xml" Condition="'$(RootNamespace)' != 'PluginPile.Common'" />
+  </ItemGroup>
+
 </Project>
