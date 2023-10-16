@@ -10,17 +10,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{B8272072-CF5B-4795-8DD6-E5F9492D8EE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.Common", "PluginPile.Common\PluginPile.Common.csproj", "{B8272072-CF5B-4795-8DD6-E5F9492D8EE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingPlugin", "SortingPlugin\SortingPlugin.csproj", "{7520FFC0-BB7F-4F6B-95E9-10334530B9B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.Sorting", "PluginPile.Sorting\PluginPile.Sorting.csproj", "{7520FFC0-BB7F-4F6B-95E9-10334530B9B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RaidImportPlugin", "RaidImportPlugin\RaidImportPlugin.csproj", "{7930B3A7-BA46-4E12-BE66-85421992EF54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.RaidImporter", "PluginPile.RaidImporter\PluginPile.RaidImporter.csproj", "{7930B3A7-BA46-4E12-BE66-85421992EF54}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVivillonPlugin", "SVivillonPlugin\SVivillonPlugin.csproj", "{B287B88F-33B4-4FDF-8110-80D12DEC56FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.SVivillon", "PluginPile.SVivillon\PluginPile.SVivillon.csproj", "{B287B88F-33B4-4FDF-8110-80D12DEC56FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FashionEditor", "FashionEditor\FashionEditor.csproj", "{DDE40578-85DD-41F5-BD7D-A721657C7B2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.FashionEditor", "PluginPile.FashionEditor\PluginPile.FashionEditor.csproj", "{DDE40578-85DD-41F5-BD7D-A721657C7B2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SVProfilePictureViewer", "SVProfilePictureViewer\SVProfilePictureViewer.csproj", "{03A09A42-C21D-4CB0-8685-6464CC950C90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.SVProfilePictureViewer", "PluginPile.SVProfilePictureViewer\PluginPile.SVProfilePictureViewer.csproj", "{03A09A42-C21D-4CB0-8685-6464CC950C90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile", "PluginPile\PluginPile.csproj", "{42993FCD-BE0F-4224-A157-A3653EDC1BD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,10 @@ Global
 		{03A09A42-C21D-4CB0-8685-6464CC950C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03A09A42-C21D-4CB0-8685-6464CC950C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03A09A42-C21D-4CB0-8685-6464CC950C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42993FCD-BE0F-4224-A157-A3653EDC1BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42993FCD-BE0F-4224-A157-A3653EDC1BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42993FCD-BE0F-4224-A157-A3653EDC1BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42993FCD-BE0F-4224-A157-A3653EDC1BD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

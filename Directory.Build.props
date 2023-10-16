@@ -10,11 +10,10 @@
     <Version>1.1.0</Version>
     <Company>foohyfooh</Company>
     <Authors>foohyfooh</Authors>
-    <RootNamespace>$(SolutionName).$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)\Common\Common.csproj" Condition="'$(RootNamespace)' != '$(SolutionName).Common'" PrivateAssets="All"/>
+    <ProjectReference Include="$(SolutionDir)\PluginPile.Common\PluginPile.Common.csproj" Condition="'$(RootNamespace)' != 'PluginPile.Common'" PrivateAssets="All"/>
   </ItemGroup>
 
   <ItemGroup>

@@ -15,7 +15,7 @@ The purpose of this plugin is to provide sorting by different regional Pokédexe
 - *Sort Boxes By* should now be in the *Tools* menu of PKHeX.
 - *Insert Slot* should be in the slot context menu
 
-## Raid Importing Plugin
+## Raid/Outbreak Importer Plugin
 The purpose of this plugin is to provide a convient way to import the raid data from [Project Pokémon Event Gallery](https://github.com/projectpokemon/EventsGallery) into Sword/Shield and Scarlet/Violet.
 - *Import Raid* and/or *Import Outbreak* should now be in the *Tools* menu of PKHeX.
 - Once you click the button a folder select dialog will pop up.
@@ -56,7 +56,8 @@ If you are looking for injecting images into the game then you should use [Pizza
 
 ## Building
 - Open PowerShell and Run `build.ps1`
-- Plugin should be located in `bin\Build` and `bin\PKHeXPluginPile.zip`
+- Individual Plugins should be located in `bin\Build` and `bin\PKHeXPluginPile.zip`
+- Combined Plugin should be located in `bin\PluginPile.dll`
 
 ### Requirements
 - [Visual Studio](https://visualstudio.microsoft.com/)

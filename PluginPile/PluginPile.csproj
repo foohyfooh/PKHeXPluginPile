@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Title>PKHeX Plugin Pile</Title>
+    <RootNamespace>PluginPile</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="5.7.0" PrivateAssets="all" />
+    <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PluginPile.Sorting\PluginPile.Sorting.csproj" />
+    <ProjectReference Include="..\PluginPile.RaidImporter\PluginPile.RaidImporter.csproj" />
+    <ProjectReference Include="..\PluginPile.SVivillon\PluginPile.SVivillon.csproj" />
+    <ProjectReference Include="..\PluginPile.FashionEditor\PluginPile.FashionEditor.csproj" />
+    <ProjectReference Include="..\PluginPile.SVProfilePictureViewer\PluginPile.SVProfilePictureViewer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\FodyWeavers.xml" Link="FodyWeavers.xml" />
+  </ItemGroup>
+
+</Project>
