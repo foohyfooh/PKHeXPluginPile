@@ -1,5 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <Title>Three Finder Plugin</Title>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Resources\icon.png" />
   </ItemGroup>

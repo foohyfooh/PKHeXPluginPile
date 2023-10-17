@@ -1,5 +1,5 @@
 # Unmaintained Plugins
-This is my attempt to at least keep some of the plugins that I used which were left unmaintained up to date with the latest PKHeX version. They won't be guaranteed to have the maintenance or language support that my plugins.
+This is my attempt to at least keep some of the plugins that I used which were left unmaintained up to date with the latest PKHeX version. They won't be guaranteed to have the maintenance or language support that my plugins have.
 
 ## ThreeFinderPlugin
 [Original source](https://github.com/suloku/PKHeXThreeFinderPlugin) by [suloku](https://github.com/suloku)
