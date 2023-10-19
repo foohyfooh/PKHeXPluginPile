@@ -139,3 +139,4 @@ csharp_new_line_before_else = false
 csharp_new_line_before_catch = false
 csharp_new_line_before_finally = false
 csharp_space_around_binary_operators = before_and_after
+csharp_style_prefer_primary_constructors = true:suggestion
