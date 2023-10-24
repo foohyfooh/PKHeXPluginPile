@@ -1,5 +1,13 @@
 root = true
 
+[*]
+charset = utf-8
+tab_width = 2
+indent_size = 2
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
 [*.{cs,vb}]
 #### Naming styles ####
 
@@ -63,12 +71,6 @@ dotnet_style_prefer_compound_assignment = true:suggestion
 dotnet_style_prefer_simplified_interpolation = true:suggestion
 dotnet_style_namespace_match_folder = true:suggestion
 dotnet_style_operator_placement_when_wrapping = beginning_of_line
-
-charset = utf-8
-tab_width = 2
-indent_size = 2
-end_of_line = crlf
-insert_final_newline = true
 
 opening_brace = same_line
 dotnet_style_readonly_field = true:suggestion
