@@ -28,6 +28,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.Unmaintained.Thr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.Unmaintained.SwShEventEditor", "Unmaintained\PluginPile.Unmaintained.SwShEventEditor\PluginPile.Unmaintained.SwShEventEditor.csproj", "{6A9A2EC3-0884-4EE5-932C-A29E3AB01B69}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.Unmaintained.SwShRaidTool", "Unmaintained\PluginPile.Unmaintained.SwShRaidTool\PluginPile.Unmaintained.SwShRaidTool.csproj", "{EC6E434D-101D-4F0C-B5D6-E133B4093A53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +72,10 @@ Global
 		{6A9A2EC3-0884-4EE5-932C-A29E3AB01B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A9A2EC3-0884-4EE5-932C-A29E3AB01B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A9A2EC3-0884-4EE5-932C-A29E3AB01B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC6E434D-101D-4F0C-B5D6-E133B4093A53}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{EC6E434D-101D-4F0C-B5D6-E133B4093A53}.Debug|Any CPU.Build.0 = Debug|x64
+		{EC6E434D-101D-4F0C-B5D6-E133B4093A53}.Release|Any CPU.ActiveCfg = Release|x64
+		{EC6E434D-101D-4F0C-B5D6-E133B4093A53}.Release|Any CPU.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
