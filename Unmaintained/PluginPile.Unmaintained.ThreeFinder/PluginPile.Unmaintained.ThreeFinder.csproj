@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <Title>Three Finder Plugin</Title>
+    <AssemblyName>PluginPile.Unmaintained.ThreeFinderPlugin</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

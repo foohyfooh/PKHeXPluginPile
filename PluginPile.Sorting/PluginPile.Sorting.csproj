@@ -3,6 +3,7 @@
   <PropertyGroup>
     <Title>Sorting Plugin</Title>
     <PackageIcon>Resources\SortIcon.png</PackageIcon>
+    <AssemblyName>PluginPile.SortingPlugin</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

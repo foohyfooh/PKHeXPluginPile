@@ -3,6 +3,7 @@
   <PropertyGroup>
     <Title>Scarlet/Violet Vivillon Plugin</Title>
     <PackageIcon>Resources\666-18.png</PackageIcon>
+    <AssemblyName>PluginPile.SVivillonPlugin</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
