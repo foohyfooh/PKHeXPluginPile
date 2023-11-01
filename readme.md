@@ -54,6 +54,10 @@ This is a port of the script that [Pako96](https://projectpokemon.org/home/profi
 
 If you are looking for injecting images into the game then you should use [PizzaTimeJoshua](https://github.com/PizzaTimeJoshua)'s [SV-Image-Injector](https://github.com/PizzaTimeJoshua/SV-Image-Injector) since it uses the correct method for converting images to the DXT1 format that the game uses.
 
+## TM Tool
+The purpose of this plugin is to do miscellaneous TM edits on mons
+- *TM Tool* should now be in the slot context menu and the box modifications context menu.
+
 ## Building
 - Open PowerShell and Run `build.ps1`
 - Individual Plugins should be located in `bin\Build` and `bin\PKHeXPluginPile.zip`
