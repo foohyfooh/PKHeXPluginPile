@@ -7,6 +7,12 @@ public class DrawingUtil {
   private static readonly Type ImageUtilType = AssemblyUtil.GetTypeFromAssembly("PKHeX.Drawing", "PKHeX.Drawing.ImageUtil");
   private static readonly Type SpriteUtilType = AssemblyUtil.GetTypeFromAssembly("PKHeX.Drawing.PokeSprite", "PKHeX.Drawing.PokeSprite.SpriteUtil");
 
+  public static Image GetSprite(PKM pkm) {
+    MethodInfo getSpriteMethod = SpriteUtilType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
+      .Single(m => m.Name == "GetSprite" && m.GetParameters().Length == 1);
+    return (Image)getSpriteMethod.Invoke(null, new object[] { pkm })!;
+  }  
+
   public static Image GetSprite(ushort species, byte form, int gender, uint formarg, int item, bool isegg, Shiny shiny, EntityContext context = EntityContext.None) {
     MethodInfo getSpriteMethod = SpriteUtilType.GetMethods(BindingFlags.Public | BindingFlags.Static)
       .Single(m => m.Name == "GetSprite" && m.GetParameters().Length == 8);
