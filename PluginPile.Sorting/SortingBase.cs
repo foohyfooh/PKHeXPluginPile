@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting; 
-class SortingBase {
+internal abstract class SortingBase {
 
   private static (int, int, int) SortPokemon(Dictionary<Species, PositionForms>[] dexes, PKM pkm) {
     for (int i = 0; i < dexes.Length; i++) {
