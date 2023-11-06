@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Title>Sword/Shield Event Editor Raid Tool</Title>
+    <Title>Sword/Shield Raid Tool</Title>
     <Platforms>x64;x86</Platforms>
   </PropertyGroup>
 
