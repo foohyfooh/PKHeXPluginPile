@@ -58,6 +58,10 @@ If you are looking for injecting images into the game then you should use [Pizza
 The purpose of this plugin is to do miscellaneous TM edits on mons
 - *TM Tool* should now be in the slot context menu and the box modifications context menu.
 
+## XY Roamer Tool
+The purpose of this tool is to edit the roaming Legendary Birds in Pokémon X and Y.
+- *Edit Roamer* should now be in the *Tools* menu of PKHeX
+
 ## Building
 - Open PowerShell and Run `build.ps1`
 - Individual Plugins should be located in `bin\Build` and `bin\PKHeXPluginPile.zip`
