@@ -3,6 +3,8 @@ using PKHeX.Core;
 namespace PluginPile.XYRoamerTool; 
 public partial class RoamerForm : Form {
 
+  private const int SpeciesOffset = 144;
+  private const int StarterChoiceIndex = 48;
   private readonly SAV6XY SAV;
   private readonly Roamer6 roamer;
 
@@ -13,9 +15,15 @@ public partial class RoamerForm : Form {
     roamer = SAV.Encount.Roamer;
 
     roamerSpecies.Items.AddRange(Language.Roamers);
-    roamerSpecies.SelectedIndex = roamer.Species - 144;
-    encountered.Value = roamer.TimesEncountered;
     state.Items.AddRange(Language.RoamerState);
+    if (roamer.Species != 0) {
+      roamerSpecies.SelectedIndex = roamer.Species - SpeciesOffset;
+    } else {
+      // Roamer Species is not set if the player hasn't beaten the league so derive the species from the starter choice
+      EventWorkspace<SAV6XY, ushort> editor = new EventWorkspace<SAV6XY, ushort>(sav);
+      roamerSpecies.SelectedIndex = editor.Values[StarterChoiceIndex];
+    }
+    encountered.Value = roamer.TimesEncountered;
     state.SelectedIndex = (int)roamer.RoamStatus;
   }
 
@@ -34,7 +42,7 @@ public partial class RoamerForm : Form {
   private void cancel_Click(object sender, EventArgs e) => Close();
 
   private void save_Click(object sender, EventArgs e) {
-    roamer.Species = (ushort)(144 + roamerSpecies.SelectedIndex);
+    roamer.Species = (ushort)(SpeciesOffset + roamerSpecies.SelectedIndex);
     roamer.TimesEncountered = (uint)encountered.Value;
     roamer.RoamStatus = (Roamer6State)state.SelectedIndex;
     SAV.Encount.Roamer = roamer;
