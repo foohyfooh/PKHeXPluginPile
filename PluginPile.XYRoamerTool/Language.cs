@@ -11,13 +11,7 @@ internal class Language {
     }
   }
 
-  public static string[] Roamers {
-    get {
-      return GameInfo.CurrentLanguage switch {
-        "en" or _ => new string[] { "Articuno", "Zapdos", "Moltres" }
-      };
-    }
-  }
+  public static string[] Roamers => GameInfo.Strings.specieslist.Slice((int)Species.Articuno, 3);
 
   public static string[] RoamerState {
     get {

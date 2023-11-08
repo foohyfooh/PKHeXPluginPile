@@ -14,21 +14,16 @@ public partial class RoamerForm : Form {
     SAV = sav;
     roamer = SAV.Encount.Roamer;
 
-    roamerSpecies.Items.AddRange(Language.Roamers);
-    state.Items.AddRange(Language.RoamerState);
-    if (roamer.Species != 0) {
-      roamerSpecies.SelectedIndex = roamer.Species - SpeciesOffset;
-    } else {
-      // Roamer Species is not set if the player hasn't beaten the league so derive the species from the starter choice
-      EventWorkspace<SAV6XY, ushort> editor = new EventWorkspace<SAV6XY, ushort>(sav);
-      roamerSpecies.SelectedIndex = editor.Values[StarterChoiceIndex];
-    }
+    // Roamer Species is obtainable from roamer info but if player hasn't beaten the league then derive it from the starter choice
+    roamerSpecies.SelectedIndex = roamer.Species != 0 ? roamer.Species - SpeciesOffset : sav.GetWork(StarterChoiceIndex);
     encountered.Value = roamer.TimesEncountered;
     state.SelectedIndex = (int)roamer.RoamStatus;
   }
 
   private void HandleLanguageChange() {
     Text = Language.MenuItemName;
+    roamerSpecies.Items.AddRange(Language.Roamers);
+    state.Items.AddRange(Language.RoamerState);
     cancel.Text = Language.Cancel;
     save.Text = Language.Save;
   }
