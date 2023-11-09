@@ -26,59 +26,58 @@ public class ThreeFinderPlugin : PluginBase {
   private void FindThreesome() {
     SaveFile sav = SaveFileEditor.SAV;
     int slotCount = sav.BoxSlotCount;
-    int dunsparce_count = 0;
-    int dunsparce_3_count = 0;
-    int tandemaus_count = 0;
-    int tandemaus_3_count = 0;
-    string output_message = string.Empty;
+    int dunsparceCount = 0;
+    int dunsparce3Count = 0;
+    int tandemausCount = 0;
+    int tandemaus3Count = 0;
+    string outputMessage = string.Empty;
 
     for (int i = 0; i < sav.PartyCount; i++) {
-      PKM current_party_mon = sav.GetPartySlotAtIndex(i);
-      if (current_party_mon.Species == (int)Species.Dunsparce) {
-        dunsparce_count++;
-        if (current_party_mon.EncryptionConstant % 100 == 0) {
-          dunsparce_3_count++;
-          output_message += $"Three-Segment Dunsparce found in party slot {i + 1}\n";
+      PKM currentPartyMon = sav.GetPartySlotAtIndex(i);
+      if (currentPartyMon.Species == (int)Species.Dunsparce) {
+        dunsparceCount++;
+        if (currentPartyMon.EncryptionConstant % 100 == 0) {
+          dunsparce3Count++;
+          outputMessage += $"Three-Segment Dunsparce found in party slot {i + 1}\n";
         }
-      } else if (current_party_mon.Species == (int)Species.Tandemaus) {
-        tandemaus_count++;
-        if (current_party_mon.EncryptionConstant % 100 == 0) {
-          tandemaus_3_count++;
-          output_message += $"Family of Three Tandemaus found in party slot {i + 1}\n";
+      } else if (currentPartyMon.Species == (int)Species.Tandemaus) {
+        tandemausCount++;
+        if (currentPartyMon.EncryptionConstant % 100 == 0) {
+          tandemaus3Count++;
+          outputMessage += $"Family of Three Tandemaus found in party slot {i + 1}\n";
         }
       }
     }
-
 
     for (int i = 0; i < sav.BoxCount * sav.BoxSlotCount; i++) {
-      PKM current_box_mon = sav.GetBoxSlotAtIndex(i);
-      if (current_box_mon.Species == (int)Species.Dunsparce) {
-        dunsparce_count++;
-        if (current_box_mon.EncryptionConstant % 100 == 0) {
-          dunsparce_3_count++;
-          output_message += $"Three-Segment Dunsparce found in box #{(i / slotCount) + 1} ({sav.GetBoxName(i / slotCount)}) slot {(i % slotCount) + 1}\n";
+      PKM currentBoxMon = sav.GetBoxSlotAtIndex(i);
+      if (currentBoxMon.Species == (int)Species.Dunsparce) {
+        dunsparceCount++;
+        if (currentBoxMon.EncryptionConstant % 100 == 0) {
+          dunsparce3Count++;
+          outputMessage += $"Three-Segment Dunsparce found in box #{(i / slotCount) + 1} ({sav.GetBoxName(i / slotCount)}) slot {(i % slotCount) + 1}\n";
         }
-      } else if (current_box_mon.Species == (int)Species.Tandemaus) {
-        tandemaus_count++;
-        if (current_box_mon.EncryptionConstant % 100 == 0) {
-          tandemaus_3_count++;
-          output_message += $"Family of Three Tandemaus found in box #{(i / slotCount) + 1} ({sav.GetBoxName(i / slotCount)}) slot {(i % slotCount) + 1}\n";
+      } else if (currentBoxMon.Species == (int)Species.Tandemaus) {
+        tandemausCount++;
+        if (currentBoxMon.EncryptionConstant % 100 == 0) {
+          tandemaus3Count++;
+          outputMessage += $"Family of Three Tandemaus found in box #{(i / slotCount) + 1} ({sav.GetBoxName(i / slotCount)}) slot {(i % slotCount) + 1}\n";
         }
       }
     }
 
-    if (output_message.Length > 0) output_message += "\n\n";
-    output_message += $"Total Dunsparce found: {dunsparce_count}\n";
-    output_message += $"Total Three-Segment Dunsparce found: {dunsparce_3_count}\n\n";
+    if (outputMessage.Length > 0) outputMessage += "\n\n";
+    outputMessage += $"Total Dunsparce found: {dunsparceCount}\n";
+    outputMessage += $"Total Three-Segment Dunsparce found: {dunsparce3Count}\n\n";
     if (sav is SAV9SV) {
-      output_message += $"Total Tandemaus found: {tandemaus_count}\n";
-      output_message += $"Total Family of Three Tandemaus found: {tandemaus_3_count}\n";
+      outputMessage += $"Total Tandemaus found: {tandemausCount}\n";
+      outputMessage += $"Total Family of Three Tandemaus found: {tandemaus3Count}\n";
     }
 
-    string display_message = output_message + "\n\n                Copy results to clipboard?                ";
-    DialogResult dialog_result = MessageBox.Show(display_message, Name, MessageBoxButtons.OKCancel);
-    if (dialog_result == DialogResult.OK) {
-      Clipboard.SetText(output_message);
+    string displayMessage = outputMessage + "\n\n                Copy results to clipboard?                ";
+    DialogResult dialogResult = MessageBox.Show(displayMessage, Name, MessageBoxButtons.OKCancel);
+    if (dialogResult == DialogResult.OK) {
+      Clipboard.SetText(outputMessage);
     }
   }
 
