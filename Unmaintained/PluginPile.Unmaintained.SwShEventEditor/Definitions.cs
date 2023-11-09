@@ -1,26 +1,36 @@
+using PKHeX.Core;
+using PluginPile.Common;
+
 namespace PluginPile.Unmaintained.SwShEventEditor;
 
 public static class Definitions {
 
-  /// <summary>
-  /// Which pattern was drawn for which regi, this should match the given regi
-  /// </summary>
-  public const uint KRegielekiOrRegidragoPattern = 0xCF90B39A;
-
   public const uint Playtime = 0x8CBBFD90;
 
-  public static readonly Dictionary<string, uint> memkeys_FootprintPercentage = new Dictionary<string, uint>() {
-    { "Cobalion", 0x4D50B655},
-    { "Terrakion", 0x771E4c88},
-    { "Virizion", 0xAD67A297}
+  public static readonly Block SwordsOfJusticeQuestStatus = 0x4DBB9B79;
+  public static readonly Block SwordsOfJusticeQuestProgress = 0xCB135C68;
+
+  public static readonly Dictionary<Species, uint> memkeys_SwordsOfJusticeProgress = new Dictionary<Species, uint>() {
+    {Species.Cobalion, 0xC35F6291},
+    {Species.Terrakion, 0x03C69A96},
+    {Species.Virizion, 0xB98F962B},
+    {Species.Keldeo, 0x9A39C8FC}
   };
 
-  public static readonly Dictionary<string, uint> memkeys_SwordsofJustice = new Dictionary<string, uint>() {
-    { "Cobalion", 0xBB305227},
-    { "Terrakion", 0x750C83A4},
-    { "Virizion", 0x1A27DF2C},
-    { "Keldeo", 0xA097DE31}
+  public static readonly Dictionary<Species, uint> memkeys_SwordsOfJusticeDisappeared = new Dictionary<Species, uint>() {
+    {Species.Cobalion, 0xBB305227},
+    {Species.Terrakion, 0x750C83A4},
+    {Species.Virizion, 0x1A27DF2C},
+    {Species.Keldeo, 0xA097DE31}
   };
+
+  public static readonly Dictionary<Species, uint> memkeys_SwordsOfJusticeFootprintPercentage = new Dictionary<Species, uint>() {
+    {Species.Cobalion, 0x4D50B655},
+    {Species.Terrakion, 0x771E4c88},
+    {Species.Virizion, 0xAD67A297}
+  };
+
+  public const uint KRegielekiOrRegidragoPattern = 0xCF90B39A;
 
   public static readonly Dictionary<string, uint> memkeys_Regis = new Dictionary<string, uint>() {
     { "Regirock", 0xEE3F84E6},

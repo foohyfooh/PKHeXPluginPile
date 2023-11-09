@@ -83,4 +83,36 @@ internal class Language {
     }
   }
 
+  public static string[] SwordsOfJusticeQuestStatus {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => new string[] { "Can't Start", "Can Start", "Camera Highlights Cobalion Footprints", "In Progress" }
+      };
+    }
+  }
+
+  public static string[] SwordsOfJusticeQuestProgress {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => new string[] { "0 Reported", "1 Reported", "2 Reported", "3 Reported/Keldeo Available", "Keldeo Captured", "Keldeo Reported" }
+      };
+    }
+  }
+
+  public static string[] SwordsOfJusticeProgress {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => new string[] { "Footprints Unreported", "Location Revealed/Appeared", "Captured", "Capture Reported" }
+      };
+    }
+  }
+
+  public static string[] KeldeoProgress {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => new string[] { "Have To Camp", "Appeared", "Captured" }
+      };
+    }
+  }
+
 }
