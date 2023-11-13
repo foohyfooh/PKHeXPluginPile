@@ -5,6 +5,7 @@ using PluginPile.RaidImporter;
 using PluginPile.SVivillon;
 using PluginPile.FashionEditor;
 using PluginPile.SVProfilePictureViewer;
+using PluginPile.XYRoamerTool;
 
 namespace PluginPile; 
 public class PluginLoader : PluginBase {
@@ -16,6 +17,7 @@ public class PluginLoader : PluginBase {
   private readonly SVivillonPlugin svVivillonPlugin;
   private readonly FashionEditorPlugin fashionEditorPlugin;
   private readonly SVProfilePictureViewerPlugin svProfilePictureViewerPlugin;
+  private readonly XYRoamerPlugin xyRoamerPlugin;
 
   public PluginLoader() {
     sortingPlugin = new SortingPlugin();
@@ -23,6 +25,7 @@ public class PluginLoader : PluginBase {
     svVivillonPlugin = new SVivillonPlugin();
     fashionEditorPlugin = new FashionEditorPlugin();
     svProfilePictureViewerPlugin = new SVProfilePictureViewerPlugin();
+    xyRoamerPlugin = new XYRoamerPlugin();
   }
 
   public override void Initialize(params object[] args) {
@@ -31,6 +34,7 @@ public class PluginLoader : PluginBase {
     svVivillonPlugin.Initialize(args);
     fashionEditorPlugin.Initialize(args);
     svProfilePictureViewerPlugin.Initialize(args);
+    xyRoamerPlugin.Initialize(args);
   }
 
   public override void NotifySaveLoaded() {
@@ -39,6 +43,7 @@ public class PluginLoader : PluginBase {
     svVivillonPlugin.NotifySaveLoaded();
     fashionEditorPlugin.NotifySaveLoaded();
     svProfilePictureViewerPlugin.NotifySaveLoaded();
+    xyRoamerPlugin.NotifySaveLoaded();
   }
 
 }
