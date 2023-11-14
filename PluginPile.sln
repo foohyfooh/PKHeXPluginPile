@@ -32,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.Unmaintained.SwS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.TMTool", "PluginPile.TMTool\PluginPile.TMTool.csproj", "{3E54334B-8DCD-4627-9D01-3A1E38EA67EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginPile.XYRoamerTool", "PluginPile.XYRoamerTool\PluginPile.XYRoamerTool.csproj", "{97B23E37-C89B-48D8-A03D-83BD049DE76E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.XYRoamerTool", "PluginPile.XYRoamerTool\PluginPile.XYRoamerTool.csproj", "{97B23E37-C89B-48D8-A03D-83BD049DE76E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
