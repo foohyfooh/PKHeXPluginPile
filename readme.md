@@ -62,6 +62,12 @@ The purpose of this plugin is to do miscellaneous TM edits on mons
 The purpose of this tool is to edit the roaming Legendary Birds in Pokémon X and Y.
 - *Edit Roamer* should now be in the *Tools* menu of PKHeX
 
+## Rental Viewer
+The purpose of this plugin is to view the Rental Teams
+- *View Rentals* should now be in the *Tools* menu of PKHeX
+
+Fork based on [Eppin](https://github.com/Eppin)'s [PKHeX.RentalViewer](https://github.com/Eppin/PKHeX.RentalViewer) to display teams in window rather than just copying to box.
+
 ## Building
 - Open PowerShell and Run `build.ps1`
 - Individual Plugins should be located in `bin\Build` and `bin\PKHeXPluginPile.zip`
