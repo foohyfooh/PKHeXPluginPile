@@ -58,7 +58,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       // questStatusLabel
       // 
       questStatusLabel.AutoSize = true;
-      questStatusLabel.Location = new Point(13, 10);
+      questStatusLabel.Location = new Point(18, 10);
       questStatusLabel.Name = "questStatusLabel";
       questStatusLabel.Size = new Size(73, 15);
       questStatusLabel.TabIndex = 0;
@@ -67,15 +67,15 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       // questStatus
       // 
       questStatus.FormattingEnabled = true;
-      questStatus.Location = new Point(13, 28);
+      questStatus.Location = new Point(18, 28);
       questStatus.Name = "questStatus";
-      questStatus.Size = new Size(337, 23);
+      questStatus.Size = new Size(319, 23);
       questStatus.TabIndex = 1;
       // 
       // questProgressLabel
       // 
       questProgressLabel.AutoSize = true;
-      questProgressLabel.Location = new Point(13, 65);
+      questProgressLabel.Location = new Point(18, 65);
       questProgressLabel.Name = "questProgressLabel";
       questProgressLabel.Size = new Size(86, 15);
       questProgressLabel.TabIndex = 2;
@@ -84,9 +84,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       // questProgress
       // 
       questProgress.FormattingEnabled = true;
-      questProgress.Location = new Point(13, 83);
+      questProgress.Location = new Point(18, 83);
       questProgress.Name = "questProgress";
-      questProgress.Size = new Size(337, 23);
+      questProgress.Size = new Size(319, 23);
       questProgress.TabIndex = 3;
       // 
       // cobalionGroup
@@ -110,25 +110,6 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       cobalionProgress.Size = new Size(319, 23);
       cobalionProgress.TabIndex = 5;
       // 
-      // cobalionFootprints
-      // 
-      cobalionFootprints.Increment = new decimal(new int[] { 2, 0, 0, 0 });
-      cobalionFootprints.Location = new Point(187, 45);
-      cobalionFootprints.Margin = new Padding(4, 3, 4, 3);
-      cobalionFootprints.Name = "cobalionFootprints";
-      cobalionFootprints.Size = new Size(58, 23);
-      cobalionFootprints.TabIndex = 6;
-      // 
-      // cobalionFootsprintsLabel
-      // 
-      cobalionFootsprintsLabel.AutoSize = true;
-      cobalionFootsprintsLabel.Location = new Point(110, 49);
-      cobalionFootsprintsLabel.Margin = new Padding(4, 0, 4, 0);
-      cobalionFootsprintsLabel.Name = "cobalionFootsprintsLabel";
-      cobalionFootsprintsLabel.Size = new Size(69, 15);
-      cobalionFootsprintsLabel.TabIndex = 7;
-      cobalionFootsprintsLabel.Text = "Footprint %";
-      // 
       // cobalionDisappeared
       // 
       cobalionDisappeared.AutoSize = true;
@@ -139,6 +120,25 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       cobalionDisappeared.TabIndex = 8;
       cobalionDisappeared.Text = "Disappeared";
       cobalionDisappeared.UseVisualStyleBackColor = true;
+      // 
+      // cobalionFootsprintsLabel
+      // 
+      cobalionFootsprintsLabel.AutoSize = true;
+      cobalionFootsprintsLabel.Location = new Point(110, 49);
+      cobalionFootsprintsLabel.Margin = new Padding(4, 0, 4, 0);
+      cobalionFootsprintsLabel.Name = "cobalionFootsprintsLabel";
+      cobalionFootsprintsLabel.Size = new Size(69, 15);
+      cobalionFootsprintsLabel.TabIndex = 6;
+      cobalionFootsprintsLabel.Text = "Footprint %";
+      // 
+      // cobalionFootprints
+      // 
+      cobalionFootprints.Increment = new decimal(new int[] { 2, 0, 0, 0 });
+      cobalionFootprints.Location = new Point(187, 45);
+      cobalionFootprints.Margin = new Padding(4, 3, 4, 3);
+      cobalionFootprints.Name = "cobalionFootprints";
+      cobalionFootprints.Size = new Size(58, 23);
+      cobalionFootprints.TabIndex = 7;
       // 
       // terrakionGroup
       // 
@@ -161,16 +161,6 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       terrakionProgress.Size = new Size(319, 23);
       terrakionProgress.TabIndex = 10;
       // 
-      // terrakionFootprintsLabel
-      // 
-      terrakionFootprintsLabel.AutoSize = true;
-      terrakionFootprintsLabel.Location = new Point(110, 55);
-      terrakionFootprintsLabel.Margin = new Padding(4, 0, 4, 0);
-      terrakionFootprintsLabel.Name = "terrakionFootprintsLabel";
-      terrakionFootprintsLabel.Size = new Size(69, 15);
-      terrakionFootprintsLabel.TabIndex = 11;
-      terrakionFootprintsLabel.Text = "Footprint %";
-      // 
       // terrakionDisappeared
       // 
       terrakionDisappeared.AutoSize = true;
@@ -178,9 +168,19 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       terrakionDisappeared.Margin = new Padding(4, 3, 4, 3);
       terrakionDisappeared.Name = "terrakionDisappeared";
       terrakionDisappeared.Size = new Size(91, 19);
-      terrakionDisappeared.TabIndex = 12;
+      terrakionDisappeared.TabIndex = 11;
       terrakionDisappeared.Text = "Disappeared";
       terrakionDisappeared.UseVisualStyleBackColor = true;
+      // 
+      // terrakionFootprintsLabel
+      // 
+      terrakionFootprintsLabel.AutoSize = true;
+      terrakionFootprintsLabel.Location = new Point(110, 55);
+      terrakionFootprintsLabel.Margin = new Padding(4, 0, 4, 0);
+      terrakionFootprintsLabel.Name = "terrakionFootprintsLabel";
+      terrakionFootprintsLabel.Size = new Size(69, 15);
+      terrakionFootprintsLabel.TabIndex = 12;
+      terrakionFootprintsLabel.Text = "Footprint %";
       // 
       // terrakionFootprints
       // 
@@ -209,18 +209,8 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       virizionProgress.FormattingEnabled = true;
       virizionProgress.Location = new Point(3, 21);
       virizionProgress.Name = "virizionProgress";
-      virizionProgress.Size = new Size(319, 23);
+      virizionProgress.Size = new Size(322, 23);
       virizionProgress.TabIndex = 15;
-      // 
-      // virizionFootprintsLabel
-      // 
-      virizionFootprintsLabel.AutoSize = true;
-      virizionFootprintsLabel.Location = new Point(107, 54);
-      virizionFootprintsLabel.Margin = new Padding(4, 0, 4, 0);
-      virizionFootprintsLabel.Name = "virizionFootprintsLabel";
-      virizionFootprintsLabel.Size = new Size(69, 15);
-      virizionFootprintsLabel.TabIndex = 16;
-      virizionFootprintsLabel.Text = "Footprint %";
       // 
       // virizionDisappeared
       // 
@@ -229,9 +219,19 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       virizionDisappeared.Margin = new Padding(4, 3, 4, 3);
       virizionDisappeared.Name = "virizionDisappeared";
       virizionDisappeared.Size = new Size(91, 19);
-      virizionDisappeared.TabIndex = 17;
+      virizionDisappeared.TabIndex = 16;
       virizionDisappeared.Text = "Disappeared";
       virizionDisappeared.UseVisualStyleBackColor = true;
+      // 
+      // virizionFootprintsLabel
+      // 
+      virizionFootprintsLabel.AutoSize = true;
+      virizionFootprintsLabel.Location = new Point(107, 54);
+      virizionFootprintsLabel.Margin = new Padding(4, 0, 4, 0);
+      virizionFootprintsLabel.Name = "virizionFootprintsLabel";
+      virizionFootprintsLabel.Size = new Size(69, 15);
+      virizionFootprintsLabel.TabIndex = 17;
+      virizionFootprintsLabel.Text = "Footprint %";
       // 
       // virizionFootprints
       // 
@@ -258,7 +258,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       keldeoProgress.FormattingEnabled = true;
       keldeoProgress.Location = new Point(3, 22);
       keldeoProgress.Name = "keldeoProgress";
-      keldeoProgress.Size = new Size(319, 23);
+      keldeoProgress.Size = new Size(322, 23);
       keldeoProgress.TabIndex = 20;
       // 
       // keldeoDisappeared
