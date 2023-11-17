@@ -21,3 +21,9 @@ The purpose of this plugin is to display Sword and Shield raids and calculate de
 - *Raid Seed Finder* should now be in the slot context menu
 
 **Note**: To use efficient seed calculation, you need to download `libz3.dll` and `Microsoft.Z3.dll` from `z3-<version>-x64-win.zip` provided by [z3 releases](https://github.com/Z3Prover/z3/releases) and place them in the *plugins* folder.
+
+
+## AutoMod QR Plugins
+Original source by [architdate](https://github.com/architdate) and [kwsch](https://github.com/kwsch)
+
+**Note**: Requires the existance of AutoModPlugins from [PKHeX-Plugins](https://github.com/architdate/PKHeX-Plugins) in the plugins folder to work
