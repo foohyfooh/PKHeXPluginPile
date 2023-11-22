@@ -27,3 +27,10 @@ The purpose of this plugin is to display Sword and Shield raids and calculate de
 Original source by [architdate](https://github.com/architdate) and [kwsch](https://github.com/kwsch)
 
 **Note**: Requires the existance of AutoModPlugins from [PKHeX-Plugins](https://github.com/architdate/PKHeX-Plugins) in the plugins folder to work
+
+
+## BW Tool
+[Original source](https://github.com/suloku/BW_tool) by [suloku](https://github.com/suloku)
+
+The purpose of this plugin is to supply various editors for Black/White and Black 2/White 2.
+- *BW Tool* should now be in the *Tools* menu of PKHeX
