@@ -2,7 +2,7 @@ using PKHeX.Core;
 
 namespace PluginPile.Unmaintained.SwShEventEditor {
   public partial class PokeCampCurrydexForm : Form {
-    
+
     private readonly SAV8SWSH SAV;
     //bool[][] CurryDex;
 
@@ -13,7 +13,6 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
 
     private void CurrdexForm_Load(object sender, EventArgs e) {
       SetupCamp();
-
       //label1.Text = SAV.Blocks.GetBlock(0x68EED750).Type.ToString();
     }
 

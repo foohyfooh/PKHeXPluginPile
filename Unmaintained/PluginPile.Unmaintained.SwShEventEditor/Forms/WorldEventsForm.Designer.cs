@@ -72,9 +72,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       groupBox1.SuspendLayout();
       toolStrip1.SuspendLayout();
       SuspendLayout();
-      // 
+      //
       // tabControl
-      // 
+      //
       tabControl.Controls.Add(tabPage1);
       tabControl.Controls.Add(tabPage2);
       tabControl.Controls.Add(tabPage3);
@@ -85,9 +85,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       tabControl.SelectedIndex = 0;
       tabControl.Size = new Size(933, 494);
       tabControl.TabIndex = 0;
-      // 
+      //
       // tabPage1
-      // 
+      //
       tabPage1.BackColor = SystemColors.Control;
       tabPage1.Controls.Add(groupBox5);
       tabPage1.Controls.Add(main_gift_toxel_PB);
@@ -99,9 +99,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       tabPage1.Size = new Size(925, 466);
       tabPage1.TabIndex = 0;
       tabPage1.Text = "Main Game";
-      // 
+      //
       // groupBox5
-      // 
+      //
       groupBox5.Controls.Add(main_gift_gcharmander_PB);
       groupBox5.Controls.Add(main_gift_typenull_PB);
       groupBox5.Location = new Point(298, 7);
@@ -112,9 +112,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       groupBox5.TabIndex = 25;
       groupBox5.TabStop = false;
       groupBox5.Text = "Champion Gifts";
-      // 
+      //
       // main_gift_gcharmander_PB
-      // 
+      //
       main_gift_gcharmander_PB.Caught = false;
       main_gift_gcharmander_PB.DrawDynaxMaxIcon = true;
       main_gift_gcharmander_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -129,9 +129,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       main_gift_gcharmander_PB.Size = new Size(158, 83);
       main_gift_gcharmander_PB.TabIndex = 21;
       main_gift_gcharmander_PB.ToolTip = "Player must be champion";
-      // 
+      //
       // main_gift_typenull_PB
-      // 
+      //
       main_gift_typenull_PB.Caught = false;
       main_gift_typenull_PB.DrawDynaxMaxIcon = false;
       main_gift_typenull_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -146,9 +146,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       main_gift_typenull_PB.Size = new Size(152, 83);
       main_gift_typenull_PB.TabIndex = 23;
       main_gift_typenull_PB.ToolTip = "Player must be champion";
-      // 
+      //
       // main_gift_toxel_PB
-      // 
+      //
       main_gift_toxel_PB.Caught = false;
       main_gift_toxel_PB.DrawDynaxMaxIcon = false;
       main_gift_toxel_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -163,9 +163,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       main_gift_toxel_PB.Size = new Size(152, 83);
       main_gift_toxel_PB.TabIndex = 24;
       main_gift_toxel_PB.ToolTip = "";
-      // 
+      //
       // groupBox4
-      // 
+      //
       groupBox4.Controls.Add(main_eevee_save_data_CB);
       groupBox4.Controls.Add(main_letsgo_forcelegal_CB);
       groupBox4.Controls.Add(main_geevee_PB);
@@ -179,9 +179,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       groupBox4.TabIndex = 19;
       groupBox4.TabStop = false;
       groupBox4.Text = "Let's Go Gifts";
-      // 
+      //
       // main_eevee_save_data_CB
-      // 
+      //
       main_eevee_save_data_CB.AutoSize = true;
       main_eevee_save_data_CB.Location = new Point(93, 157);
       main_eevee_save_data_CB.Margin = new Padding(4, 3, 4, 3);
@@ -191,9 +191,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       main_eevee_save_data_CB.Text = "Let's Go Eevee Save Data";
       main_eevee_save_data_CB.UseVisualStyleBackColor = true;
       main_eevee_save_data_CB.CheckedChanged += main_eevee_save_data_CB_CheckedChanged;
-      // 
+      //
       // main_letsgo_forcelegal_CB
-      // 
+      //
       main_letsgo_forcelegal_CB.AutoSize = true;
       main_letsgo_forcelegal_CB.Location = new Point(7, 202);
       main_letsgo_forcelegal_CB.Margin = new Padding(4, 3, 4, 3);
@@ -203,9 +203,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       main_letsgo_forcelegal_CB.Text = "Show Legalility Corrections";
       main_letsgo_forcelegal_CB.UseVisualStyleBackColor = true;
       main_letsgo_forcelegal_CB.CheckedChanged += main_letsgo_forcelegal_CB_CheckedChanged;
-      // 
+      //
       // main_geevee_PB
-      // 
+      //
       main_geevee_PB.Caught = false;
       main_geevee_PB.DrawDynaxMaxIcon = false;
       main_geevee_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -222,9 +222,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       main_geevee_PB.ToolTip = "";
       main_geevee_PB.LegaliltyCheck_OnClick += main_geevee_PB_LegaliltyCheck_OnClick;
       main_geevee_PB.Caught_OnClick += main_geevee_PB_Caught_OnClick;
-      // 
+      //
       // main_pikachu_save_data_CB
-      // 
+      //
       main_pikachu_save_data_CB.AutoSize = true;
       main_pikachu_save_data_CB.Location = new Point(93, 67);
       main_pikachu_save_data_CB.Margin = new Padding(4, 3, 4, 3);
@@ -234,9 +234,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       main_pikachu_save_data_CB.Text = "Let's Go Pikachu Save Data";
       main_pikachu_save_data_CB.UseVisualStyleBackColor = true;
       main_pikachu_save_data_CB.CheckedChanged += main_pikachu_save_data_CB_CheckedChanged;
-      // 
+      //
       // main_gpikachu_PB
-      // 
+      //
       main_gpikachu_PB.Caught = false;
       main_gpikachu_PB.DrawDynaxMaxIcon = false;
       main_gpikachu_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -253,9 +253,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       main_gpikachu_PB.ToolTip = "";
       main_gpikachu_PB.LegaliltyCheck_OnClick += main_gpikachu_PB_LegaliltyCheck_OnClick;
       main_gpikachu_PB.Caught_OnClick += main_gpikachu_PB_Caught_OnClick;
-      // 
+      //
       // tabPage2
-      // 
+      //
       tabPage2.BackColor = SystemColors.Control;
       tabPage2.Controls.Add(label3);
       tabPage2.Controls.Add(groupBox2);
@@ -266,9 +266,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       tabPage2.Size = new Size(925, 462);
       tabPage2.TabIndex = 1;
       tabPage2.Text = "Isle of Armor";
-      // 
+      //
       // label3
-      // 
+      //
       label3.AutoSize = true;
       label3.Location = new Point(331, 7);
       label3.Margin = new Padding(4, 0, 4, 0);
@@ -276,9 +276,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       label3.Size = new Size(143, 15);
       label3.TabIndex = 14;
       label3.Text = "Page not done yet! TODO!";
-      // 
+      //
       // groupBox2
-      // 
+      //
       groupBox2.Controls.Add(pokemonBaseUC7);
       groupBox2.Controls.Add(label2);
       groupBox2.Controls.Add(numericUpDown1);
@@ -291,9 +291,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       groupBox2.TabIndex = 13;
       groupBox2.TabStop = false;
       groupBox2.Text = "Dojo";
-      // 
+      //
       // pokemonBaseUC7
-      // 
+      //
       pokemonBaseUC7.Caught = false;
       pokemonBaseUC7.DrawDynaxMaxIcon = true;
       pokemonBaseUC7.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal;
@@ -308,9 +308,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       pokemonBaseUC7.Size = new Size(152, 83);
       pokemonBaseUC7.TabIndex = 24;
       pokemonBaseUC7.ToolTip = "";
-      // 
+      //
       // label2
-      // 
+      //
       label2.AutoSize = true;
       label2.Location = new Point(166, 22);
       label2.Margin = new Padding(4, 0, 4, 0);
@@ -318,18 +318,18 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       label2.Size = new Size(84, 15);
       label2.TabIndex = 11;
       label2.Text = "Watt Donation";
-      // 
+      //
       // numericUpDown1
-      // 
+      //
       numericUpDown1.Location = new Point(169, 40);
       numericUpDown1.Margin = new Padding(4, 3, 4, 3);
       numericUpDown1.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
       numericUpDown1.Name = "numericUpDown1";
       numericUpDown1.Size = new Size(130, 23);
       numericUpDown1.TabIndex = 12;
-      // 
+      //
       // pokemonBaseUC8
-      // 
+      //
       pokemonBaseUC8.Caught = false;
       pokemonBaseUC8.DrawDynaxMaxIcon = true;
       pokemonBaseUC8.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal;
@@ -344,9 +344,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       pokemonBaseUC8.Size = new Size(152, 83);
       pokemonBaseUC8.TabIndex = 23;
       pokemonBaseUC8.ToolTip = "";
-      // 
+      //
       // tabPage3
-      // 
+      //
       tabPage3.BackColor = SystemColors.Control;
       tabPage3.Controls.Add(ct_gift_poipole_PB);
       tabPage3.Controls.Add(groupBox3);
@@ -359,9 +359,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       tabPage3.Size = new Size(925, 462);
       tabPage3.TabIndex = 2;
       tabPage3.Text = "Crown Tundra";
-      // 
+      //
       // ct_gift_poipole_PB
-      // 
+      //
       ct_gift_poipole_PB.Caught = false;
       ct_gift_poipole_PB.DrawDynaxMaxIcon = false;
       ct_gift_poipole_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -376,9 +376,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_gift_poipole_PB.Size = new Size(152, 83);
       ct_gift_poipole_PB.TabIndex = 10;
       ct_gift_poipole_PB.ToolTip = "";
-      // 
+      //
       // groupBox3
-      // 
+      //
       groupBox3.Controls.Add(ct_spiritomb_forcelegal_CB);
       groupBox3.Controls.Add(label1);
       groupBox3.Controls.Add(ct_spiritomb_players_NUD);
@@ -392,9 +392,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       groupBox3.TabIndex = 9;
       groupBox3.TabStop = false;
       groupBox3.Text = "Spiritomb Values";
-      // 
+      //
       // ct_spiritomb_forcelegal_CB
-      // 
+      //
       ct_spiritomb_forcelegal_CB.AutoSize = true;
       ct_spiritomb_forcelegal_CB.Location = new Point(10, 160);
       ct_spiritomb_forcelegal_CB.Margin = new Padding(4, 3, 4, 3);
@@ -404,9 +404,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_spiritomb_forcelegal_CB.Text = "Show Legalility Corrections";
       ct_spiritomb_forcelegal_CB.UseVisualStyleBackColor = true;
       ct_spiritomb_forcelegal_CB.CheckedChanged += ct_spiritomb_forcelegal_CB_CheckedChanged;
-      // 
+      //
       // label1
-      // 
+      //
       label1.AutoSize = true;
       label1.Location = new Point(7, 112);
       label1.Margin = new Padding(4, 0, 4, 0);
@@ -414,9 +414,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       label1.Size = new Size(126, 15);
       label1.TabIndex = 10;
       label1.Text = "Players Interacted with";
-      // 
+      //
       // ct_spiritomb_players_NUD
-      // 
+      //
       ct_spiritomb_players_NUD.Location = new Point(10, 130);
       ct_spiritomb_players_NUD.Margin = new Padding(4, 3, 4, 3);
       ct_spiritomb_players_NUD.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
@@ -424,9 +424,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_spiritomb_players_NUD.Size = new Size(130, 23);
       ct_spiritomb_players_NUD.TabIndex = 10;
       ct_spiritomb_players_NUD.ValueChanged += ct_spiritomb_players_NUD_ValueChanged;
-      // 
+      //
       // ct_spiritomb_visible_CB
-      // 
+      //
       ct_spiritomb_visible_CB.AutoSize = true;
       ct_spiritomb_visible_CB.Location = new Point(93, 67);
       ct_spiritomb_visible_CB.Margin = new Padding(4, 3, 4, 3);
@@ -436,9 +436,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_spiritomb_visible_CB.Text = "Visible";
       ct_spiritomb_visible_CB.UseVisualStyleBackColor = true;
       ct_spiritomb_visible_CB.CheckedChanged += ct_spiritomb_visible_CB_CheckedChanged;
-      // 
+      //
       // ct_spiritomb_PB
-      // 
+      //
       ct_spiritomb_PB.Caught = false;
       ct_spiritomb_PB.DrawDynaxMaxIcon = false;
       ct_spiritomb_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -455,9 +455,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_spiritomb_PB.ToolTip = "";
       ct_spiritomb_PB.LegaliltyCheck_OnClick += ct_spiritomb_PB_LegaliltyCheck_OnClick;
       ct_spiritomb_PB.Caught_OnClick += ct_spiritomb_PB_Caught_OnClick;
-      // 
+      //
       // groupBox1
-      // 
+      //
       groupBox1.Controls.Add(ct_gmoltres_PB);
       groupBox1.Controls.Add(ct_birds_uncaughtBTN);
       groupBox1.Controls.Add(ct_birds_caughtBTN);
@@ -471,9 +471,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       groupBox1.TabIndex = 4;
       groupBox1.TabStop = false;
       groupBox1.Text = "Galarian Birds";
-      // 
+      //
       // ct_gmoltres_PB
-      // 
+      //
       ct_gmoltres_PB.Caught = false;
       ct_gmoltres_PB.DrawDynaxMaxIcon = false;
       ct_gmoltres_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -488,9 +488,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_gmoltres_PB.Size = new Size(152, 83);
       ct_gmoltres_PB.TabIndex = 7;
       ct_gmoltres_PB.ToolTip = "";
-      // 
+      //
       // ct_birds_uncaughtBTN
-      // 
+      //
       ct_birds_uncaughtBTN.Location = new Point(166, 66);
       ct_birds_uncaughtBTN.Margin = new Padding(4, 3, 4, 3);
       ct_birds_uncaughtBTN.Name = "ct_birds_uncaughtBTN";
@@ -499,9 +499,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_birds_uncaughtBTN.Text = "Un-Caught All";
       ct_birds_uncaughtBTN.UseVisualStyleBackColor = true;
       ct_birds_uncaughtBTN.Click += ct_birds_uncaughtBTN_Click;
-      // 
+      //
       // ct_birds_caughtBTN
-      // 
+      //
       ct_birds_caughtBTN.Location = new Point(166, 22);
       ct_birds_caughtBTN.Margin = new Padding(4, 3, 4, 3);
       ct_birds_caughtBTN.Name = "ct_birds_caughtBTN";
@@ -510,9 +510,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_birds_caughtBTN.Text = "Caught All";
       ct_birds_caughtBTN.UseVisualStyleBackColor = true;
       ct_birds_caughtBTN.Click += ct_birds_caughtBTN_Click;
-      // 
+      //
       // ct_gzapdos_PB
-      // 
+      //
       ct_gzapdos_PB.Caught = false;
       ct_gzapdos_PB.DrawDynaxMaxIcon = false;
       ct_gzapdos_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -527,9 +527,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_gzapdos_PB.Size = new Size(152, 83);
       ct_gzapdos_PB.TabIndex = 6;
       ct_gzapdos_PB.ToolTip = "";
-      // 
+      //
       // ct_garticuno_PB
-      // 
+      //
       ct_garticuno_PB.Caught = false;
       ct_garticuno_PB.DrawDynaxMaxIcon = false;
       ct_garticuno_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -544,9 +544,9 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_garticuno_PB.Size = new Size(152, 83);
       ct_garticuno_PB.TabIndex = 5;
       ct_garticuno_PB.ToolTip = "";
-      // 
+      //
       // ct_giftcosmog_PB
-      // 
+      //
       ct_giftcosmog_PB.Caught = false;
       ct_giftcosmog_PB.DrawDynaxMaxIcon = false;
       ct_giftcosmog_PB.Legalility = SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
@@ -561,27 +561,27 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       ct_giftcosmog_PB.Size = new Size(152, 83);
       ct_giftcosmog_PB.TabIndex = 6;
       ct_giftcosmog_PB.ToolTip = "";
-      // 
+      //
       // toolStrip1
-      // 
+      //
       toolStrip1.Items.AddRange(new ToolStripItem[] { ts_applyBTN });
       toolStrip1.Location = new Point(0, 0);
       toolStrip1.Name = "toolStrip1";
       toolStrip1.Size = new Size(933, 25);
       toolStrip1.TabIndex = 1;
       toolStrip1.Text = "toolStrip1";
-      // 
+      //
       // ts_applyBTN
-      // 
+      //
       ts_applyBTN.DisplayStyle = ToolStripItemDisplayStyle.Text;
       ts_applyBTN.ImageTransparentColor = Color.Magenta;
       ts_applyBTN.Name = "ts_applyBTN";
       ts_applyBTN.Size = new Size(93, 22);
       ts_applyBTN.Text = "Apply Selection";
       ts_applyBTN.Click += ts_applyBTN_Click;
-      // 
+      //
       // WorldEventsForm
-      // 
+      //
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(933, 519);

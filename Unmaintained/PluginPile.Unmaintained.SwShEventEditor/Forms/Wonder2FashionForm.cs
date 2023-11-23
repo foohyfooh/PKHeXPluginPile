@@ -1,6 +1,6 @@
 using PKHeX.Core;
 
-namespace PluginPile.Unmaintained.SwShEventEditor; 
+namespace PluginPile.Unmaintained.SwShEventEditor;
 public partial class Wonder2FashionForm : Form {
   public readonly SAV8SWSH SAV;
   string[] fashionItems;
