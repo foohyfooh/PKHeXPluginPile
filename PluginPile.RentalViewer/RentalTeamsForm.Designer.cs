@@ -62,7 +62,7 @@ namespace PluginPile.RentalViewer {
       team4Box.Location = new Point(15, 482);
       team4Box.Name = "team4Box";
       team4Box.Size = new Size(485, 150);
-      team4Box.TabIndex = 2;
+      team4Box.TabIndex = 3;
       team4Box.TabStop = false;
       team4Box.Text = "Team 4";
       //
@@ -71,7 +71,7 @@ namespace PluginPile.RentalViewer {
       team5Box.Location = new Point(15, 638);
       team5Box.Name = "team5Box";
       team5Box.Size = new Size(485, 150);
-      team5Box.TabIndex = 2;
+      team5Box.TabIndex = 4;
       team5Box.TabStop = false;
       team5Box.Text = "Team 5";
       //

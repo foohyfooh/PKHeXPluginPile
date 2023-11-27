@@ -31,8 +31,9 @@ namespace PluginPile.RentalViewer {
       pokemon6Image = new PictureBox();
       teamName = new Label();
       teamInfo = new Label();
-      BoxCopy = new Button();
-      PartyCopy = new Button();
+      CopyToBox = new Button();
+      CopyToParty = new Button();
+      CopyPaste = new Button();
       ((System.ComponentModel.ISupportInitialize)pokemon1Image).BeginInit();
       ((System.ComponentModel.ISupportInitialize)pokemon2Image).BeginInit();
       ((System.ComponentModel.ISupportInitialize)pokemon3Image).BeginInit();
@@ -107,32 +108,43 @@ namespace PluginPile.RentalViewer {
       teamInfo.TabIndex = 1;
       teamInfo.Text = "Team Creator | Team Code";
       //
-      // BoxCopy
+      // CopyToBox
       //
-      BoxCopy.Location = new Point(165, 16);
-      BoxCopy.Name = "BoxCopy";
-      BoxCopy.Size = new Size(155, 23);
-      BoxCopy.TabIndex = 8;
-      BoxCopy.Text = "Box Copy";
-      BoxCopy.UseVisualStyleBackColor = true;
-      BoxCopy.Click += BoxCopy_Click;
+      CopyToBox.Location = new Point(325, 8);
+      CopyToBox.Name = "CopyToBox";
+      CopyToBox.Size = new Size(155, 23);
+      CopyToBox.TabIndex = 9;
+      CopyToBox.Text = "Copy To Box";
+      CopyToBox.UseVisualStyleBackColor = true;
+      CopyToBox.Click += CopyToBox_Click;
       //
-      // PartyCopy
+      // CopyToParty
       //
-      PartyCopy.Location = new Point(325, 16);
-      PartyCopy.Name = "PartyCopy";
-      PartyCopy.Size = new Size(155, 23);
-      PartyCopy.TabIndex = 9;
-      PartyCopy.Text = "Party Copy";
-      PartyCopy.UseVisualStyleBackColor = true;
-      PartyCopy.Click += PartyCopy_Click;
+      CopyToParty.Location = new Point(325, 37);
+      CopyToParty.Name = "CopyToParty";
+      CopyToParty.Size = new Size(155, 23);
+      CopyToParty.TabIndex = 10;
+      CopyToParty.Text = "Copy To Party";
+      CopyToParty.UseVisualStyleBackColor = true;
+      CopyToParty.Click += CopyToParty_Click;
+      //
+      // CopyPaste
+      //
+      CopyPaste.Location = new Point(165, 8);
+      CopyPaste.Name = "CopyPaste";
+      CopyPaste.Size = new Size(155, 23);
+      CopyPaste.TabIndex = 8;
+      CopyPaste.Text = "Copy Paste";
+      CopyPaste.UseVisualStyleBackColor = true;
+      CopyPaste.Click += CopyPaste_Click;
       //
       // RentalTeamControl
       //
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
-      Controls.Add(PartyCopy);
-      Controls.Add(BoxCopy);
+      Controls.Add(CopyPaste);
+      Controls.Add(CopyToParty);
+      Controls.Add(CopyToBox);
       Controls.Add(teamInfo);
       Controls.Add(teamName);
       Controls.Add(pokemon6Image);
@@ -163,7 +175,8 @@ namespace PluginPile.RentalViewer {
     private PictureBox pokemon4Image;
     private PictureBox pokemon5Image;
     private PictureBox pokemon6Image;
-    private Button BoxCopy;
-    private Button PartyCopy;
+    private Button CopyToBox;
+    private Button CopyToParty;
+    private Button CopyPaste;
   }
 }

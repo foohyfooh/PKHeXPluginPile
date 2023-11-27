@@ -10,6 +10,7 @@ public partial class RentalTeamControl : UserControl {
 
   public RentalTeamControl(ISaveFileProvider saveFileEditor, RentalTeam rentalTeam) {
     InitializeComponent();
+    HandleLanguageChange();
     SetTooltip = new ToolTip() { InitialDelay = 200, IsBalloon = false, AutoPopDelay = 32_767 };
     SaveFileEditor = saveFileEditor;
     Team = rentalTeam;
@@ -27,15 +28,26 @@ public partial class RentalTeamControl : UserControl {
     }
   }
 
-  private void BoxCopy_Click(object sender, EventArgs e) {
+  private void HandleLanguageChange() {
+    CopyToBox.Text = Language.CopyToBox;
+    CopyToParty.Text = Language.CopyToParty;
+    CopyPaste.Text = Language.CopyPaste;
+  }
+
+  private void CopyToBox_Click(object sender, EventArgs e) {
     for (int i = 0; i < Team.Count; i++)
       SaveFileEditor.SAV.SetBoxSlotAtIndex(Team[i], SaveFileEditor.CurrentBox, i);
     SaveFileEditor.ReloadSlots();
   }
 
-  private void PartyCopy_Click(object sender, EventArgs e) {
+  private void CopyToParty_Click(object sender, EventArgs e) {
     for (int i = 0; i < Team.Count; i++)
       SaveFileEditor.SAV.SetPartySlotAtIndex(Team[i], i);
     SaveFileEditor.ReloadSlots();
+  }
+
+  private void CopyPaste_Click(object sender, EventArgs e) {
+    string paste = ShowdownParsing.GetShowdownSets(Team.Members, Environment.NewLine + Environment.NewLine);
+    Clipboard.SetText(paste);
   }
 }
