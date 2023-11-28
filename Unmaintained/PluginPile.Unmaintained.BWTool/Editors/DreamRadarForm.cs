@@ -61,24 +61,24 @@ public partial class DreamRadarForm : Form {
     pkm4.Items.Clear();
     pkm5.Items.Clear();
     pkm6.Items.Clear();
-    pkm1.Items.AddRange(BWTool.Text.drpklist);
-    pkm2.Items.AddRange(BWTool.Text.drpklist);
-    pkm3.Items.AddRange(BWTool.Text.drpklist);
-    pkm4.Items.AddRange(BWTool.Text.drpklist);
-    pkm5.Items.AddRange(BWTool.Text.drpklist);
-    pkm6.Items.AddRange(BWTool.Text.drpklist);
+    pkm1.Items.AddRange(Language.DRPkmList);
+    pkm2.Items.AddRange(Language.DRPkmList);
+    pkm3.Items.AddRange(Language.DRPkmList);
+    pkm4.Items.AddRange(Language.DRPkmList);
+    pkm5.Items.AddRange(Language.DRPkmList);
+    pkm6.Items.AddRange(Language.DRPkmList);
     item1.Items.Clear();
     item2.Items.Clear();
     item3.Items.Clear();
     item4.Items.Clear();
     item5.Items.Clear();
     item6.Items.Clear();
-    item1.Items.AddRange(BWTool.Text.dritemlist);
-    item2.Items.AddRange(BWTool.Text.dritemlist);
-    item3.Items.AddRange(BWTool.Text.dritemlist);
-    item4.Items.AddRange(BWTool.Text.dritemlist);
-    item5.Items.AddRange(BWTool.Text.dritemlist);
-    item6.Items.AddRange(BWTool.Text.dritemlist);
+    item1.Items.AddRange(Language.DRItemList);
+    item2.Items.AddRange(Language.DRItemList);
+    item3.Items.AddRange(Language.DRItemList);
+    item4.Items.AddRange(Language.DRItemList);
+    item5.Items.AddRange(Language.DRItemList);
+    item6.Items.AddRange(Language.DRItemList);
   }
 
   void set_all_list() {
@@ -88,24 +88,24 @@ public partial class DreamRadarForm : Form {
     pkm4.Items.Clear();
     pkm5.Items.Clear();
     pkm6.Items.Clear();
-    pkm1.Items.AddRange(BWTool.Text.pkmlist);
-    pkm2.Items.AddRange(BWTool.Text.pkmlist);
-    pkm3.Items.AddRange(BWTool.Text.pkmlist);
-    pkm4.Items.AddRange(BWTool.Text.pkmlist);
-    pkm5.Items.AddRange(BWTool.Text.pkmlist);
-    pkm6.Items.AddRange(BWTool.Text.pkmlist);
+    pkm1.Items.AddRange(Language.PkmList);
+    pkm2.Items.AddRange(Language.PkmList);
+    pkm3.Items.AddRange(Language.PkmList);
+    pkm4.Items.AddRange(Language.PkmList);
+    pkm5.Items.AddRange(Language.PkmList);
+    pkm6.Items.AddRange(Language.PkmList);
     item1.Items.Clear();
     item2.Items.Clear();
     item3.Items.Clear();
     item4.Items.Clear();
     item5.Items.Clear();
     item6.Items.Clear();
-    item1.Items.AddRange(BWTool.Text.itemlist);
-    item2.Items.AddRange(BWTool.Text.itemlist);
-    item3.Items.AddRange(BWTool.Text.itemlist);
-    item4.Items.AddRange(BWTool.Text.itemlist);
-    item5.Items.AddRange(BWTool.Text.itemlist);
-    item6.Items.AddRange(BWTool.Text.itemlist);
+    item1.Items.AddRange(Language.ItemList);
+    item2.Items.AddRange(Language.ItemList);
+    item3.Items.AddRange(Language.ItemList);
+    item4.Items.AddRange(Language.ItemList);
+    item5.Items.AddRange(Language.ItemList);
+    item6.Items.AddRange(Language.ItemList);
   }
 
   int poke2legit(int species) {

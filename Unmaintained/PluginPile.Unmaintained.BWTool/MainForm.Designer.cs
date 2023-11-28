@@ -70,7 +70,7 @@ namespace PluginPile.Unmaintained.BWTool {
       dumper_but.Name = "dumper_but";
       dumper_but.Size = new Size(163, 27);
       dumper_but.TabIndex = 4;
-      dumper_but.Text = "Block dumper";
+      dumper_but.Text = "Block Dumper";
       dumper_but.UseVisualStyleBackColor = true;
       dumper_but.Click += Dumper_butClick;
       // 

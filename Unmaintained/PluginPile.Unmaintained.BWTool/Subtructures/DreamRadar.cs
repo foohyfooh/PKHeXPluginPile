@@ -135,8 +135,54 @@ public class DreamRadarB {
   public const uint Lugia = 0x96636983;
 
   public readonly uint[] legendary_index = new uint[] { 0, Tornadus, Thundurus, Landorus, Dialga, Palkia, Giratina, HoOh, Lugia};
-  
+
+  /*
+   * 079 - Slowpoke
+   * 120 - Staryu
+   * 137 - Porygon
+   * 163 - Hoothoot
+   * 174 - Igglybuff
+   * 175 - Togepi
+   * 213 - Shuckle
+   * 238 - Smoochum
+   * 280 - Ralts
+   * 333 - Swablu
+   * 374 - Beldum
+   * 425 - Drifloon
+   * 436 - Bronzor
+   * 442 - Spiritomb
+   * 447 - Riolu
+   * 479 - Rotom
+   * 517 - Munna
+   * 561 - Sigilyph
+   */
   public readonly int[] legit_pk_index = new int[] { 0, 79, 120, 137, 163, 174, 175, 213, 238, 280, 333, 374, 425, 436, 442, 447, 479, 517, 561 };
+
+  /*
+   * Red Shard
+   * Blue Shard
+   * Yellow Shard
+   * Green Shard
+   * PP Up
+   * Leppa Berry
+   * Revive
+   * Max Revive
+   * Sun Stone
+   * Dawn Stone
+   * Moon Stone
+   * Fire Stone
+   * Thunderstone
+   * Water Stone
+   * Leaf Stone
+   * Star Piece
+   * Heart Scale
+   * Life Orb
+   * Focus Sash
+   * Eviolite
+   * Sacred Ash
+   * Rare Candy
+   * King's Rock
+   */
   public readonly int[] legit_item_index = new int[] { 0, 72, 73, 74, 75, 51, 154, 28, 29, 80, 109, 81, 82, 83, 84, 85, 91, 93, 270, 275, 538, 44, 50, 221 };
 
   public bool illegal;

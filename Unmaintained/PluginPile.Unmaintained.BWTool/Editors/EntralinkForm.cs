@@ -132,25 +132,22 @@ public partial class EntralinkForm : Form {
 
     if (forest.Area > 0 && forest.Area < 4) { //Area 9 ony holds 10 pokes
       hiderows.Visible = true;
-      /*
-      if (dataGridView1.Rows.Count == 20) {
-        for (i = 18; int i > 9; i--)
-          dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
-      }*/
 
+      //if (dataGridView1.Rows.Count == 20) {
+      //  for (i = 18; i > 9; i--)
+      //    dataGridView1.Rows.Remove(dataGridView1.Rows[i]);
+      //}
     } else {
       hiderows.Visible = false;
-      /*
-      if (dataGridView1.Rows.Count == 10) {
-        for (i = 0; i < 10; i++)
-          dataGridView1.Rows.Add();
-      }
-      */
+
+      //if (dataGridView1.Rows.Count == 10) {
+      //  for (i = 0; i < 10; i++)
+      //    dataGridView1.Rows.Add();
+      //}
     }
 
     updateGrid();
     updateslot();
-
   }
 
   void updateslot() {
@@ -164,26 +161,28 @@ public partial class EntralinkForm : Form {
   void SlotValueChanged(object sender, EventArgs e) {
     forest.Indexpkm = (int)slot.Value;
     updateslot();
-
   }
+
   void areaChanged(object sender, EventArgs e) {
     updatearea();
     updateslot();
   }
+
   void Unlock8boxSelectedIndexChanged(object sender, EventArgs e) {
     forest.Unlock8 = (byte)unlock8box.SelectedIndex;
     updatearea();
     updateslot();
   }
+
   void Unlock9SelectedIndexChanged(object sender, EventArgs e) {
     forest.Unlock9 = (byte)unlock9.SelectedIndex;
     updatearea();
     updateslot();
   }
+
   void updateGrid() {
-    int i;
     int temp = forest.Indexpkm;
-    for (i = 0; i <= slot.Maximum; i++) {
+    for (int i = 0; i <= slot.Maximum; i++) {
       if (forest.Area > 0 && forest.Area <= 3 && i > 9) {
         dataGridView1.Rows[i].Cells[0].Value = " ";
         dataGridView1.Rows[i].Cells[1].Value = " ";
@@ -199,8 +198,8 @@ public partial class EntralinkForm : Form {
           dataGridView1.Rows[i].Cells[3].Value = " ";
           dataGridView1.Rows[i].Cells[4].Value = " ";
         } else {
-          dataGridView1.Rows[i].Cells[0].Value = BWTool.Text.pkmlist[forest.Species];
-          dataGridView1.Rows[i].Cells[1].Value = BWTool.Text.movelist[forest.Move];
+          dataGridView1.Rows[i].Cells[0].Value = Language.PkmList[forest.Species];
+          dataGridView1.Rows[i].Cells[1].Value = Language.MoveList[forest.Move];
           switch (forest.Gender) {
             case 0:
               dataGridView1.Rows[i].Cells[2].Value = "Male";
@@ -214,37 +213,17 @@ public partial class EntralinkForm : Form {
           }
           dataGridView1.Rows[i].Cells[3].Value = forest.Form;
           //dataGridView1.Rows[i].Cells[4].Value = forest.Animation;
-          switch (forest.Animation) {
-            case 0:
-              dataGridView1.Rows[i].Cells[4].Value = "0" + forest.Animation.ToString() + "- " + "Randomly turning around";
-
-              break;
-            case 2:
-              dataGridView1.Rows[i].Cells[4].Value = "0" + forest.Animation.ToString() + "- " + "Randomly walking";
-              break;
-            case 4:
-              dataGridView1.Rows[i].Cells[4].Value = "0" + forest.Animation.ToString() + "- " + "Randomly walking";
-              break;
-            case 6:
-              dataGridView1.Rows[i].Cells[4].Value = "0" + forest.Animation.ToString() + "- " + "Walking up/down";
-              break;
-            case 8:
-              dataGridView1.Rows[i].Cells[4].Value = "0" + forest.Animation.ToString() + "- " + "Walking left/right";
-              break;
-            case 10:
-              dataGridView1.Rows[i].Cells[4].Value = forest.Animation.ToString() + "- " + "Walking left/right and randomly looking up/down";
-              break;
-            case 12:
-              dataGridView1.Rows[i].Cells[4].Value = forest.Animation.ToString() + "- " + "Turning around clockwise";
-              break;
-            case 14:
-              dataGridView1.Rows[i].Cells[4].Value = forest.Animation.ToString() + "- " + "Turning around counterclockwise";
-              break;
-            default:
-              dataGridView1.Rows[i].Cells[4].Value = forest.Animation.ToString() + "- " + "Invalid (odd)";
-              break;
-          }
-
+          dataGridView1.Rows[i].Cells[4].Value = $"{forest.Animation:00} - " + forest.Animation switch {
+             0 => "Randomly turning around",
+             2 => "Randomly walking",
+             4 => "Randomly walking",
+             6 => "Walking up/down",
+             8 => "Walking left/right",
+            10 => "Walking left/right and randomly looking up/down",
+            12 => "Turning around clockwise",
+            14 => "Turning around counterclockwise",
+            _  => "Invalid (odd)",
+          };
         }
 
       }
@@ -254,6 +233,7 @@ public partial class EntralinkForm : Form {
   void DataGridView1CurrentCellChanged(object sender, EventArgs e) {
     slot.Value = dataGridView1.CurrentRow.Index;
   }
+
   int animation() {
     //MessageBox.Show(animbox1.SelectedIndex.ToString());
     if (animbox1.SelectedIndex > 7)
@@ -263,14 +243,17 @@ public partial class EntralinkForm : Form {
       return (animbox1.SelectedIndex * 2);
     }
   }
+
   void Add_pkmClick(object sender, EventArgs e) {
     forest.add_pkm(forest.create_pkm(spbox1.SelectedIndex, move1box.SelectedIndex, genderbox1.SelectedIndex, formbox1.SelectedIndex, animation()));
     updateGrid();
   }
+
   void Del_pkmClick(object sender, EventArgs e) {
     forest.delete_pkm();
     updateGrid();
   }
+
   void Edit_pkmClick(object sender, EventArgs e) {
     //If slot is empty, add pokemon instead
     if (forest.is_pkm_empty() == true) {
@@ -536,6 +519,7 @@ public partial class EntralinkForm : Form {
     }
 
   }
+
   public static uint dream_pkm = 0;
   void add_dw_pkm() {
     //Add dream pokemon!
@@ -562,36 +546,43 @@ public partial class EntralinkForm : Form {
     dreamworld.ShowDialog();
     add_dw_pkm();
   }
+
   void Wind_butClick(object sender, EventArgs e) {
     Form dreamworld = new EntralinkDreamWorldForm(SAV, forest, 1, "Windswept Sky");
     dreamworld.ShowDialog();
     add_dw_pkm();
   }
+
   void Spark_butClick(object sender, EventArgs e) {
     Form dreamworld = new EntralinkDreamWorldForm(SAV, forest, 2, "Sparkling Sea");
     dreamworld.ShowDialog();
     add_dw_pkm();
   }
+
   void Spooky_butClick(object sender, EventArgs e) {
     Form dreamworld = new EntralinkDreamWorldForm(SAV, forest, 3, "Spooky Manor");
     dreamworld.ShowDialog();
     add_dw_pkm();
   }
+
   void Rugged_butClick(object sender, EventArgs e) {
     Form dreamworld = new EntralinkDreamWorldForm(SAV, forest, 4, "Rugged Mountain");
     dreamworld.ShowDialog();
     add_dw_pkm();
   }
+
   void Icy_butClick(object sender, EventArgs e) {
     Form dreamworld = new EntralinkDreamWorldForm(SAV, forest, 5, "Icy Cave");
     dreamworld.ShowDialog();
     add_dw_pkm();
   }
+
   void Dream_butClick(object sender, EventArgs e) {
     Form dreamworld = new EntralinkDreamWorldForm(SAV, forest, 6, "Dream Park");
     dreamworld.ShowDialog();
     add_dw_pkm();
   }
+
   void pkmcafe_butClick(object sender, EventArgs e) {
     Form dreamworld = new EntralinkDreamWorldForm(SAV, forest, 7, "Pokémon Café Forest");
     dreamworld.ShowDialog();

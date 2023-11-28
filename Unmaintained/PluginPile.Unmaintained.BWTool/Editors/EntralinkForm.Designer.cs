@@ -836,7 +836,7 @@ namespace PluginPile.Unmaintained.BWTool {
       // animbox1
       //
       animbox1.FormattingEnabled = true;
-      animbox1.Items.AddRange(new object[] { "00- Randomly turning around", "02- Randomly walking", "04- Randomly walking", "06- Walking up/down", "08- Walking left/right", "10- Walking left/right and randomly looking up/down", "12- Turning around clockwise", "14- Turning around counterclockwise", "--- Randomize ---" });
+      animbox1.Items.AddRange(new object[] { "00 - Randomly turning around", "02 - Randomly walking", "04 - Randomly walking", "06 - Walking up/down", "08 - Walking left/right", "10 - Walking left/right and randomly looking up/down", "12 - Turning around clockwise", "14 - Turning around counterclockwise", "--- Randomize ---" });
       animbox1.Location = new Point(889, 51);
       animbox1.Margin = new Padding(4, 3, 4, 3);
       animbox1.Name = "animbox1";
