@@ -49,9 +49,9 @@ public partial class PropcaseForm : Form {
       }
     }
 
-    SAV5Extensions.SetData(SAV, myProps.Data, 0x1F958);
+    SAV.SetData(myProps.Data, 0x1F958);
     //Mirror
-    SAV5Extensions.SetData(SAV, myProps.Data, 0x45958);
+    SAV.SetData(myProps.Data, 0x45958);
     //Update Checksum
     SAV.SetBlock(SAV.GetBlock(Constants.Musical), Constants.Musical);
     Close();

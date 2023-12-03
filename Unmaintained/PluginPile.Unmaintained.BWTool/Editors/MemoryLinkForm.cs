@@ -79,7 +79,7 @@ public partial class MemoryLinkForm : Form {
 
   void Saveexit_butClick(object sender, EventArgs e) {
     set_data();
-    SAV5Extensions.SetData(SAV, ml.Data, MemoryLink.Offset);
+    SAV.SetData(ml.Data, MemoryLink.Offset);
     Close();
   }
   void B1_exportClick(object sender, EventArgs e) {
