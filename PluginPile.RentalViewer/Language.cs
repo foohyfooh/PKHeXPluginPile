@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.RentalViewer;
-internal class Language {
+internal static class Language {
 
   public static string MenuItemName {
     get {
