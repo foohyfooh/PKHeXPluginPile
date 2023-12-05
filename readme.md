@@ -1,5 +1,7 @@
 # PKHeX Plugin Pile
-This is meant to be a single repo to contain all my [PKHeX](https://github.com/kwsch/PKHeX) plugins rather than having many separate repos.
+This is meant to be a collections of all my random [PKHeX](https://github.com/kwsch/PKHeX) plugins. The idea of this single repo is to make it easier for batch updates, adding random one-off tools, or prototyping things before trying to get them into PKHeX.
+
+There are also some plugins made by others in the [Unmaintained](/Unmaintained/) folder which don't appear to be actively updated so I have a copy of those to keep them compatible with the latest PKHeX.
 
 ## Setup Instructions
 - Download the plugins from the latest release [here](https://github.com/foohyfooh/PKHeXPluginPile/releases/latest).
@@ -70,8 +72,9 @@ Fork based on [Eppin](https://github.com/Eppin)'s [PKHeX.RentalViewer](https://g
 
 ## Building
 - Open PowerShell and Run `build.ps1`
-- Individual Plugins should be located in `bin\Build` and `bin\PKHeXPluginPile.zip`
-- Combined Plugin should be located in `bin\PluginPile.dll`
+- Individual Plugins should be located in `bin\Build\Individual`
+- Combined Plugin should be located in `bin\Build\PluginPile.dll`
+- Unmaintained Plugins should be located in `bin\Build\Unmaintained`
 
 ### Requirements
 - [Visual Studio](https://visualstudio.microsoft.com/)
