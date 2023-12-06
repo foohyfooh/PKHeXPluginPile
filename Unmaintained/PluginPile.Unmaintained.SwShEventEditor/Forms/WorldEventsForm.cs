@@ -299,6 +299,8 @@ public partial class WorldEventsForm : Form {
     SaveMain();
     SaveIsleOfArmor();
     SaveCrownTundra();
+    SAV.State.Edited = true;
+    Close();
   }
 
 }

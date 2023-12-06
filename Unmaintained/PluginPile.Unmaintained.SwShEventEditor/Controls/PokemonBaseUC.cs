@@ -9,30 +9,23 @@ public partial class PokemonBaseUC : UserControl {
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
   public int Pokemon {
-    get { return pokemonRenderUC1.Pokemon; }
-    set {
-      pokemonRenderUC1.Pokemon = value;
-    }
+    get => pokemonRenderUC1.Pokemon;
+    set => pokemonRenderUC1.Pokemon = value;
   }
   public string PokemonSubform {
-    get { return pokemonRenderUC1.PokemonSubForm; }
-    set {
-      pokemonRenderUC1.PokemonSubForm = value;
-    }
+    get => pokemonRenderUC1.PokemonSubForm;
+    set => pokemonRenderUC1.PokemonSubForm = value;
   }
 
   public PokemonRenderUC.LegalStatus Legalility {
-    get { return pokemonRenderUC1.Legalility; }
-    set {
-      pokemonRenderUC1.Legalility = value;
-    }
+    get => pokemonRenderUC1.Legalility;
+    set => pokemonRenderUC1.Legalility = value;
   }
 
   public bool Caught {
-    get { return pokemonRenderUC1.Caught; }
+    get => pokemonRenderUC1.Caught;
     set {
       pokemonRenderUC1.Caught = value;
-
       caught_CB.Checked = value;
       pokemonRenderUC1.Invalidate();
     }
@@ -43,22 +36,21 @@ public partial class PokemonBaseUC : UserControl {
     caughtToolStripMenuItem.Checked = Caught;
     illegalToolStripMenuItem.Text = Legalility == PokemonRenderUC.LegalStatus.Illegal ? "Illegal" : "Legal";
     illegalToolStripMenuItem.Image = Legalility == PokemonRenderUC.LegalStatus.Illegal ? Properties.Resources.warn : Properties.Resources.valid;
+  }
 
-  }
   public bool DrawDynaxMaxIcon {
-    get { return pokemonRenderUC1.DrawDynaxMaxIcon; }
-    set { pokemonRenderUC1.DrawDynaxMaxIcon = value; }
+    get => pokemonRenderUC1.DrawDynaxMaxIcon;
+    set => pokemonRenderUC1.DrawDynaxMaxIcon = value;
   }
+
   public string ToolTip {
-    get { return pokemonRenderUC1.ToolTip; }
-    set {
-      pokemonRenderUC1.ToolTip = value;
-    }
+    get => pokemonRenderUC1.ToolTip;
+    set => pokemonRenderUC1.ToolTip = value;
   }
 
   public string PokemonName {
-    get { return pokeName.Text; }
-    set { pokeName.Text = value; }
+    get => pokeName.Text;
+    set => pokeName.Text = value;
   }
 
   public event EventHandler LegaliltyCheck_OnClick;

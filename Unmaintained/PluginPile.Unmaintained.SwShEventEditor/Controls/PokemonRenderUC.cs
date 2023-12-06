@@ -10,9 +10,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
     private string pokemonsubform;
 
     public string PokemonSubForm {
-      get {
-        return pokemonsubform;
-      }
+      get => pokemonsubform;
       set {
         pokemonsubform = value;
         SetupPokemon();
@@ -22,9 +20,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
 
     private int pokemonID;
     public int Pokemon {
-      get {
-        return pokemonID;
-      }
+      get => pokemonID;
       set {
         pokemonID = value;
         SetupPokemon();
@@ -34,36 +30,32 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
     public enum LegalStatus { Illegal, Legal }
     private LegalStatus legalstatus;
     public LegalStatus Legalility {
-      get { return legalstatus; }
+      get => legalstatus;
       set {
         legalstatus = value;
-        this.Invalidate();
+        Invalidate();
       }
     }
 
     private bool messageicon;
     public bool ShowMessageIcon {
-      get { return messageicon; }
-      set {
-        messageicon = value;
-      }
+      get => messageicon;
+      set => messageicon = value;
     }
 
     private bool caught;
     public bool Caught {
-      get { return caught; }
+      get => caught;
       set {
         caught = value;
-        this.Invalidate();
+        Invalidate();
         Caught_OnClick?.Invoke(this, new EventArgs());
       }
     }
 
     public string ToolTip {
-      get { return toolTip1.GetToolTip(this); }
-      set {
-        toolTip1.SetToolTip(this, value);
-      }
+      get => toolTip1.GetToolTip(this)!;
+      set => toolTip1.SetToolTip(this, value);
     }
     void SetupPokemon() {
       pokemon?.Dispose();
@@ -73,25 +65,21 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
         pokemonstr += $"_{pokemonsubform}";
 
       pokemon = (Bitmap)Properties.Resources.ResourceManager.GetObject(pokemonstr)!;
-      if (pokemon == null)
-        pokemon = (Bitmap)Properties.Resources.ResourceManager.GetObject("0")!;
-      this.Invalidate();
-
+      pokemon ??= (Bitmap)Properties.Resources.ResourceManager.GetObject("0")!;
+      Invalidate();
     }
 
     private bool drawDyna;
     public bool DrawDynaxMaxIcon {
-      get { return drawDyna; }
-      set { drawDyna = value; }
+      get => drawDyna;
+      set => drawDyna = value;
     }
     public event EventHandler LegaliltyCheck_OnClick;
     public event EventHandler Caught_OnClick;
 
     Point MousePos = new Point();
     public bool capturedMouse;
-    private void PokemonRenderUC_Load(object sender, EventArgs e) {
-
-    }
+    private void PokemonRenderUC_Load(object sender, EventArgs e) { }
 
     private void PokemonRenderUC_Paint(object sender, PaintEventArgs e) {
       e.Graphics.Clear(Color.LightGray);
@@ -119,18 +107,18 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
     private void PokemonRenderUC_MouseMove(object sender, MouseEventArgs e) {
       MousePos.X = e.X;
       MousePos.Y = e.Y;
-      this.Invalidate();
+      Invalidate();
 
     }
 
     private void PokemonRenderUC_MouseEnter(object sender, EventArgs e) {
       capturedMouse = true;
-      this.Invalidate();
+      Invalidate();
     }
 
     private void PokemonRenderUC_MouseLeave(object sender, EventArgs e) {
       capturedMouse = false;
-      this.Invalidate();
+      Invalidate();
     }
 
     private void PokemonRenderUC_MouseDown(object sender, MouseEventArgs e) {
@@ -144,7 +132,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
       } else if (e.Button == MouseButtons.Left && control) {
         Caught = !Caught;
       }
-      this.Invalidate();
+      Invalidate();
     }
 
     bool shift;
