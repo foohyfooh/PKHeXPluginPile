@@ -7,6 +7,17 @@ public static class Definitions {
 
   public const uint Playtime = 0x8CBBFD90;
 
+  public static readonly Block DojoWattDonationProgress = 0x0CBEB855;
+  public static readonly Block DojoWattDonationTotal = 0xC7161487;
+  public static readonly Block DojoHairStylistAvailable = 0xE02A722C;
+  public static readonly Block DojoBrokenRotomiDisappeared = 0x60E04225;
+  public static readonly Block DojoRotomiDisappeared = 0x82E071A0;
+  public static readonly Block DojoTableDisappeared = 0x3D83DC85;
+  public static readonly Block DojoDrinksVendingMachineDisappeared = 0x209CF1DC;
+  public static readonly Block DojoVitaminsVendingMachineDisappeared = 0x5C3ED669;
+  public static readonly Block CanBattleHoney = 0xC0423F6D;
+  public static readonly Block BattledHoneyToday = 0xDDA3F583;
+
   public static readonly Block SwordsOfJusticeQuestStatus = 0x4DBB9B79;
   public static readonly Block SwordsOfJusticeQuestProgress = 0xCB135C68;
 

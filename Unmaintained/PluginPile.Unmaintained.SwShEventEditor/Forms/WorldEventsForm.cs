@@ -141,10 +141,47 @@ public partial class WorldEventsForm : Form {
       tabControl.Controls[1].Enabled = false;
       return;
     }
+    ioaWattDonationProgress.Items.AddRange(Language.DojoWattDonationQuestProgress);
+    ioaWattDonationProgress.SelectedIndex = (int)SAV.Blocks.GetBlockValue<uint>(Definitions.DojoWattDonationProgress);
+    ioaWattDonationTotal.Value = SAV.Blocks.GetBlockValue<uint>(Definitions.DojoWattDonationTotal);
+    SCBlock hairStylistAvailableBlock = SAV.Blocks.GetBlock(Definitions.DojoHairStylistAvailable);
+    hairStylistAvailable.Checked = hairStylistAvailableBlock.Type == SCTypeCode.Bool2;
+    SCBlock brokenRotomiDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoBrokenRotomiDisappeared);
+    brokenRotomiDisappared.Checked = brokenRotomiDisappearedBlock.Type == SCTypeCode.Bool2;
+    SCBlock fixedRotomiDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoRotomiDisappeared);
+    fixedRotomiDisappeared.Checked = fixedRotomiDisappearedBlock.Type == SCTypeCode.Bool2;
+    SCBlock tableDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoTableDisappeared);
+    tableDisappeared.Checked = tableDisappearedBlock.Type == SCTypeCode.Bool2;
+    SCBlock drinksVendingMachineDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoDrinksVendingMachineDisappeared);
+    drinksVendingMachineDisappeared.Checked = drinksVendingMachineDisappearedBlock.Type == SCTypeCode.Bool2;
+    SCBlock vitaminsVendingMachineDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoVitaminsVendingMachineDisappeared);
+    vitaminsVendingMachineDisappeared.Checked = vitaminsVendingMachineDisappearedBlock.Type == SCTypeCode.Bool2;
+    SCBlock canBattleHoneyBlock = SAV.Blocks.GetBlock(Definitions.CanBattleHoney);
+    canBattleHoney.Checked = canBattleHoneyBlock.Type == SCTypeCode.Bool2;
+    SCBlock battledHoneyTodayBlock = SAV.Blocks.GetBlock(Definitions.BattledHoneyToday);
+    battledHoneyToday.Checked = battledHoneyTodayBlock.Type == SCTypeCode.Bool2;
   }
 
   void SaveIsleOfArmor() {
     if (SAV.SaveRevision < 1) return;
+    SAV.Blocks.SetBlockValue(Definitions.DojoWattDonationProgress, (uint)ioaWattDonationProgress.SelectedIndex);
+    SAV.Blocks.SetBlockValue(Definitions.DojoWattDonationTotal, (uint)ioaWattDonationTotal.Value);
+    SCBlock hairStylistAvailableBlock = SAV.Blocks.GetBlock(Definitions.DojoHairStylistAvailable);
+    hairStylistAvailableBlock.ChangeBooleanType(hairStylistAvailable.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    SCBlock brokenRotomiDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoBrokenRotomiDisappeared);
+    brokenRotomiDisappearedBlock.ChangeBooleanType(brokenRotomiDisappared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    SCBlock fixedRotomiDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoRotomiDisappeared);
+    fixedRotomiDisappearedBlock.ChangeBooleanType(fixedRotomiDisappeared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    SCBlock tableDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoTableDisappeared);
+    tableDisappearedBlock.ChangeBooleanType(tableDisappeared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    SCBlock drinksVendingMachineDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoDrinksVendingMachineDisappeared);
+    drinksVendingMachineDisappearedBlock.ChangeBooleanType(drinksVendingMachineDisappeared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    SCBlock vitaminsVendingMachineDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoVitaminsVendingMachineDisappeared);
+    vitaminsVendingMachineDisappearedBlock.ChangeBooleanType(vitaminsVendingMachineDisappeared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    SCBlock canBattleHoneyBlock = SAV.Blocks.GetBlock(Definitions.CanBattleHoney);
+    canBattleHoneyBlock.ChangeBooleanType(canBattleHoney.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    SCBlock battledHoneyTodayBlock = SAV.Blocks.GetBlock(Definitions.BattledHoneyToday);
+    battledHoneyTodayBlock.ChangeBooleanType(battledHoneyToday.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
   }
 
   #endregion

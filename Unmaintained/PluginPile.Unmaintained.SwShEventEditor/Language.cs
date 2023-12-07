@@ -83,6 +83,14 @@ internal class Language {
     }
   }
 
+  public static string[] DojoWattDonationQuestProgress {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => new string[] { "Not Started", "Talked To Honey", "Hair Stylist Available", "Broken Rotomi Terminal", "Fixed Rotomi Terminal", "Fresh Water in Vending Machine", "Soda Pop in Vending Machine", "Lemonade in Vending Machine", "Fresh Ingredients in Refrigerator", "Protein and Iron in Vending Machine", "Calcium and Zinc in Vending Machine", "HP Up and Carbos in Vending Machine", "Master Dojo League Card Backgrounds", "Honey's League Card Received", "Trainer Battle with Honey Unlocked", "Walk with Honey and Honey's Rare League Card" }
+      };
+    }
+  }
+
   public static string[] SwordsOfJusticeQuestStatus {
     get {
       return GameInfo.CurrentLanguage switch {
