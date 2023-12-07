@@ -43,19 +43,19 @@ public static class Definitions {
 
   public const uint KRegielekiOrRegidragoPattern = 0xCF90B39A;
 
-  public static readonly Dictionary<string, uint> memkeys_Regis = new Dictionary<string, uint>() {
-    { "Regirock", 0xEE3F84E6},
-    { "Regice", 0xDAB3DD3A},
-    { "Registeel", 0xEE1FD86E},
-    { "Regigigas", 0xC4308A93},
-    { "Regieleki", 0x4F4AEC32},
-    { "Regidrago", 0x4F30F174}
+  public static readonly Dictionary<Species, uint> memkeys_Regis = new Dictionary<Species, uint>() {
+    { Species.Regirock, 0xEE3F84E6},
+    { Species.Regice, 0xDAB3DD3A},
+    { Species.Registeel, 0xEE1FD86E},
+    { Species.Regigigas, 0xC4308A93},
+    { Species.Regieleki, 0x4F4AEC32},
+    { Species.Regidrago, 0x4F30F174}
   };
 
-  public static readonly Dictionary<string, uint> memkeys_Birds = new Dictionary<string, uint>() {
-    { "Galarian Articuno", 0x4CAB7DA6},
-    { "Galarian Zapdos", 0x284CBECF},
-    { "Galarian Moltres", 0xF1E493AA},
+  public static readonly Dictionary<Species, uint> memkeys_Birds = new Dictionary<Species, uint>() {
+    { Species.Articuno, 0x4CAB7DA6},
+    { Species.Zapdos, 0x284CBECF},
+    { Species.Moltres, 0xF1E493AA},
   };
 
   public static readonly Dictionary<string, uint> memkeys_Gifts = new Dictionary<string, uint>() {

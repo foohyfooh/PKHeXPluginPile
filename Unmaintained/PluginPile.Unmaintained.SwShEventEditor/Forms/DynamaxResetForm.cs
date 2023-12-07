@@ -1,4 +1,5 @@
 using PKHeX.Core;
+using PluginPile.Common;
 
 namespace PluginPile.Unmaintained.SwShEventEditor;
 public partial class DynamaxResetForm : Form {
@@ -86,56 +87,48 @@ public partial class DynamaxResetForm : Form {
     //Check gen 1
     for (int i = 0; i < Gen1Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen1Keys[i]);
-      if (block.Type == SCTypeCode.Bool2)
-        gen1_clistbox.SetItemChecked(i, true);
+      gen1_clistbox.SetItemChecked(i, block.GetBooleanValue());
     }
 
     //Check gen 2
     for (int i = 0; i < Gen2Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen2Keys[i]);
-      if (block.Type == SCTypeCode.Bool2)
-        gen2_clistbox.SetItemChecked(i, true);
+      gen2_clistbox.SetItemChecked(i, block.GetBooleanValue());
     }
     //Check gen 3
     for (int i = 0; i < Gen3Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen3Keys[i]);
-      if (block.Type == SCTypeCode.Bool2)
-        gen3_clistbox.SetItemChecked(i, true);
+      gen3_clistbox.SetItemChecked(i, block.GetBooleanValue());
     }
 
     //Check gen 4
     for (int i = 0; i < Gen4Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen4Keys[i]);
-      if (block.Type == SCTypeCode.Bool2)
-        gen4_clistbox.SetItemChecked(i, true);
+      gen4_clistbox.SetItemChecked(i, block.GetBooleanValue());
     }
 
     //Check gen 5
     for (int i = 0; i < Gen5Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen5Keys[i]);
-      if (block.Type == SCTypeCode.Bool2)
-        gen5_clistbox.SetItemChecked(i, true);
+      gen5_clistbox.SetItemChecked(i, block.GetBooleanValue());
     }
 
     //Check gen 6
     for (int i = 0; i < Gen6Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen6Keys[i]);
-      if (block.Type == SCTypeCode.Bool2)
-        gen6_clistbox.SetItemChecked(i, true);
+      gen6_clistbox.SetItemChecked(i, block.GetBooleanValue());
     }
 
     //Check gen 7
     for (int i = 0; i < Gen7Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen7Keys[i]);
-      if (block.Type == SCTypeCode.Bool2)
-        gen7_clistbox.SetItemChecked(i, true);
+      gen7_clistbox.SetItemChecked(i, block.GetBooleanValue());
     }
 
     //Check gen 7 Ultra beasts
     for (int i = 0; i < Gen7UBKeys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen7UBKeys[i]);
-      if (block.Type == SCTypeCode.Bool2)
-        UB_clistbox.SetItemChecked(i, true);
+      UB_clistbox.SetItemChecked(i, block.GetBooleanValue());
     }
 
     //Get Misc
@@ -160,60 +153,50 @@ public partial class DynamaxResetForm : Form {
     //Check gen 1
     for (int i = 0; i < Gen1Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen1Keys[i]);
-
-      if (gen1_clistbox.GetItemChecked(i)) block.ChangeBooleanType(SCTypeCode.Bool2);
-      else block.ChangeBooleanType(SCTypeCode.Bool1);
+      block.ChangeBooleanValue(gen1_clistbox.GetItemChecked(i));
     }
 
     //Check gen 2
     for (int i = 0; i < Gen2Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen2Keys[i]);
-      if (gen2_clistbox.GetItemChecked(i)) block.ChangeBooleanType(SCTypeCode.Bool2);
-      else block.ChangeBooleanType(SCTypeCode.Bool1);
+      block.ChangeBooleanValue(gen2_clistbox.GetItemChecked(i));
     }
 
     //Check gen 3
     for (int i = 0; i < Gen3Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen3Keys[i]);
-      if (gen3_clistbox.GetItemChecked(i)) block.ChangeBooleanType(SCTypeCode.Bool2);
-      else block.ChangeBooleanType(SCTypeCode.Bool1);
+      block.ChangeBooleanValue(gen3_clistbox.GetItemChecked(i));
     }
 
     //Check gen 4
     for (int i = 0; i < Gen4Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen4Keys[i]);
-      if (gen4_clistbox.GetItemChecked(i)) block.ChangeBooleanType(SCTypeCode.Bool2);
-      else block.ChangeBooleanType(SCTypeCode.Bool1);
+      block.ChangeBooleanValue(gen4_clistbox.GetItemChecked(i));
     }
 
     //Check gen 5
     for (int i = 0; i < Gen5Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen5Keys[i]);
-      if (gen5_clistbox.GetItemChecked(i)) block.ChangeBooleanType(SCTypeCode.Bool2);
-      else block.ChangeBooleanType(SCTypeCode.Bool1);
+      block.ChangeBooleanValue(gen5_clistbox.GetItemChecked(i));
     }
 
     //Check gen 6
     for (int i = 0; i < Gen6Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen6Keys[i]);
-      if (gen6_clistbox.GetItemChecked(i)) block.ChangeBooleanType(SCTypeCode.Bool2);
-      else block.ChangeBooleanType(SCTypeCode.Bool1);
+      block.ChangeBooleanValue(gen6_clistbox.GetItemChecked(i));
     }
 
     //Check gen 7
     for (int i = 0; i < Gen7Keys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen7Keys[i]);
-      if (gen7_clistbox.GetItemChecked(i)) block.ChangeBooleanType(SCTypeCode.Bool2);
-      else block.ChangeBooleanType(SCTypeCode.Bool1);
+      block.ChangeBooleanValue(gen7_clistbox.GetItemChecked(i));
     }
 
     //Check gen 7 Ultra Beasts
     for (int i = 0; i < Gen7UBKeys.Length; i++) {
       SCBlock block = SAV.Blocks.GetBlock(Gen7UBKeys[i]);
-      if (UB_clistbox.GetItemChecked(i)) block.ChangeBooleanType(SCTypeCode.Bool2);
-      else block.ChangeBooleanType(SCTypeCode.Bool1);
+      block.ChangeBooleanValue(UB_clistbox.GetItemChecked(i));
     }
-
 
     //apply misc changes
     SCBlock b_notes1 = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairSpeciesID1Noted"]);

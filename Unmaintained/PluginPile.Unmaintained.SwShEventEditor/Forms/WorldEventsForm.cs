@@ -1,4 +1,6 @@
 using PKHeX.Core;
+using PluginPile.Common;
+using PluginPile.Unmaintained.SwShEventEditor.Controls;
 
 namespace PluginPile.Unmaintained.SwShEventEditor;
 public partial class WorldEventsForm : Form {
@@ -26,7 +28,7 @@ public partial class WorldEventsForm : Form {
   private void main_geevee_PB_Caught_OnClick(object sender, EventArgs e) {
     string[] issues = main_checklegal_Eevee();
     if (main_letsgo_forcelegal_CB.Checked)
-      if (main_geevee_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (main_geevee_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         main_letsgo_forcelegal_CB.Checked = ShowLegalMSG(issues);
   }
 
@@ -37,7 +39,7 @@ public partial class WorldEventsForm : Form {
   private void main_eevee_save_data_CB_CheckedChanged(object sender, EventArgs e) {
     string[] issues = main_checklegal_Eevee();
     if (main_letsgo_forcelegal_CB.Checked)
-      if (main_geevee_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (main_geevee_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         main_letsgo_forcelegal_CB.Checked = ShowLegalMSG(issues);
   }
 
@@ -47,9 +49,9 @@ public partial class WorldEventsForm : Form {
       Issues.Add("Gift Eevee cannot be had while the player has no \"Let's Go: Eevee!\" save data!");
     }
     if (Issues.Count == 0)
-      main_geevee_PB.Legalility = PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
+      main_geevee_PB.Legalility = PokemonRenderUC.LegalStatus.Legal;
     else
-      main_geevee_PB.Legalility = PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal;
+      main_geevee_PB.Legalility = PokemonRenderUC.LegalStatus.Illegal;
     return Issues.ToArray();
   }
 
@@ -60,21 +62,21 @@ public partial class WorldEventsForm : Form {
     }
 
     if (Issues.Count == 0)
-      main_gpikachu_PB.Legalility = PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
+      main_gpikachu_PB.Legalility = PokemonRenderUC.LegalStatus.Legal;
     else
-      main_gpikachu_PB.Legalility = PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal;
+      main_gpikachu_PB.Legalility = PokemonRenderUC.LegalStatus.Illegal;
     return Issues.ToArray();
   }
   private void main_gpikachu_PB_Caught_OnClick(object sender, EventArgs e) {
     string[] issues = main_checklegal_Pikachu();
     if (main_letsgo_forcelegal_CB.Checked)
-      if (main_gpikachu_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (main_gpikachu_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         main_letsgo_forcelegal_CB.Checked = ShowLegalMSG(issues);
   }
   private void main_pikachu_save_data_CB_CheckedChanged(object sender, EventArgs e) {
     string[] issues = main_checklegal_Pikachu();
     if (main_letsgo_forcelegal_CB.Checked)
-      if (main_gpikachu_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (main_gpikachu_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         main_letsgo_forcelegal_CB.Checked = ShowLegalMSG(issues);
   }
 
@@ -86,27 +88,27 @@ public partial class WorldEventsForm : Form {
   private void main_letsgo_forcelegal_CB_CheckedChanged(object sender, EventArgs e) {
     string[] issuese = main_checklegal_Eevee();
     if (main_letsgo_forcelegal_CB.Checked)
-      if (main_geevee_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (main_geevee_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         main_letsgo_forcelegal_CB.Checked = ShowLegalMSG(issuese);
 
     string[] issuesp = main_checklegal_Pikachu();
     if (main_letsgo_forcelegal_CB.Checked)
-      if (main_gpikachu_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (main_gpikachu_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         main_letsgo_forcelegal_CB.Checked = ShowLegalMSG(issuesp);
   }
   #endregion
 
   void SetupMain() {
 
-    main_eevee_save_data_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FSYS_PLAY_LETSGO_EEVEE"]).Type == SCTypeCode.Bool2;
-    main_pikachu_save_data_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FSYS_PLAY_LETSGO_PIKACHU"]).Type == SCTypeCode.Bool2;
+    main_eevee_save_data_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FSYS_PLAY_LETSGO_EEVEE"]).GetBooleanValue();
+    main_pikachu_save_data_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FSYS_PLAY_LETSGO_PIKACHU"]).GetBooleanValue();
 
-    main_geevee_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FE_SUB_037_EEVEE_CLEAR"]).Type == SCTypeCode.Bool2;
-    main_gpikachu_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FE_SUB_037_PIKACHU_CLEAR"]).Type == SCTypeCode.Bool2;
+    main_geevee_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FE_SUB_037_EEVEE_CLEAR"]).GetBooleanValue();
+    main_gpikachu_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FE_SUB_037_PIKACHU_CLEAR"]).GetBooleanValue();
 
-    main_gift_gcharmander_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["z_t0101_i0202_MONSBALL"]).Type == SCTypeCode.Bool2;
-    main_gift_typenull_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["z_bt0101_POKE_NUL"]).Type == SCTypeCode.Bool2;
-    main_gift_toxel_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FE_SUB_005_CLEAR"]).Type == SCTypeCode.Bool2;
+    main_gift_gcharmander_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["z_t0101_i0202_MONSBALL"]).GetBooleanValue();
+    main_gift_typenull_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["z_bt0101_POKE_NUL"]).GetBooleanValue();
+    main_gift_toxel_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FE_SUB_005_CLEAR"]).GetBooleanValue();
   }
 
   void SaveMain() {
@@ -121,15 +123,15 @@ public partial class WorldEventsForm : Form {
     SCBlock b_gift_toxel_caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["FE_SUB_005_CLEAR"]);
 
 
-    b_pikachu_save_data.ChangeBooleanType(main_pikachu_save_data_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-    b_eevee_save_data.ChangeBooleanType(main_eevee_save_data_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    b_pikachu_save_data.ChangeBooleanValue(main_pikachu_save_data_CB.Checked);
+    b_eevee_save_data.ChangeBooleanValue(main_eevee_save_data_CB.Checked);
 
-    b_geevee_caught.ChangeBooleanType(main_geevee_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-    b_gpikachu_caught.ChangeBooleanType(main_gpikachu_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    b_geevee_caught.ChangeBooleanValue(main_geevee_PB.Caught);
+    b_gpikachu_caught.ChangeBooleanValue(main_gpikachu_PB.Caught);
 
-    b_gift_gcharmander_caught.ChangeBooleanType(main_gift_gcharmander_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-    b_gift_typenull_caught.ChangeBooleanType(main_gift_typenull_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-    b_gift_toxel_caught.ChangeBooleanType(main_gift_toxel_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    b_gift_gcharmander_caught.ChangeBooleanValue(main_gift_gcharmander_PB.Caught);
+    b_gift_typenull_caught.ChangeBooleanValue(main_gift_typenull_PB.Caught);
+    b_gift_toxel_caught.ChangeBooleanValue(main_gift_toxel_PB.Caught);
   }
 
   #endregion
@@ -141,47 +143,49 @@ public partial class WorldEventsForm : Form {
       tabControl.Controls[1].Enabled = false;
       return;
     }
+
     ioaWattDonationProgress.Items.AddRange(Language.DojoWattDonationQuestProgress);
     ioaWattDonationProgress.SelectedIndex = (int)SAV.Blocks.GetBlockValue<uint>(Definitions.DojoWattDonationProgress);
     ioaWattDonationTotal.Value = SAV.Blocks.GetBlockValue<uint>(Definitions.DojoWattDonationTotal);
     SCBlock hairStylistAvailableBlock = SAV.Blocks.GetBlock(Definitions.DojoHairStylistAvailable);
-    hairStylistAvailable.Checked = hairStylistAvailableBlock.Type == SCTypeCode.Bool2;
+    hairStylistAvailable.Checked = hairStylistAvailableBlock.GetBooleanValue();
     SCBlock brokenRotomiDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoBrokenRotomiDisappeared);
-    brokenRotomiDisappared.Checked = brokenRotomiDisappearedBlock.Type == SCTypeCode.Bool2;
+    brokenRotomiDisappared.Checked = brokenRotomiDisappearedBlock.GetBooleanValue();
     SCBlock fixedRotomiDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoRotomiDisappeared);
-    fixedRotomiDisappeared.Checked = fixedRotomiDisappearedBlock.Type == SCTypeCode.Bool2;
+    fixedRotomiDisappeared.Checked = fixedRotomiDisappearedBlock.GetBooleanValue();
     SCBlock tableDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoTableDisappeared);
-    tableDisappeared.Checked = tableDisappearedBlock.Type == SCTypeCode.Bool2;
+    tableDisappeared.Checked = tableDisappearedBlock.GetBooleanValue();
     SCBlock drinksVendingMachineDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoDrinksVendingMachineDisappeared);
-    drinksVendingMachineDisappeared.Checked = drinksVendingMachineDisappearedBlock.Type == SCTypeCode.Bool2;
+    drinksVendingMachineDisappeared.Checked = drinksVendingMachineDisappearedBlock.GetBooleanValue();
     SCBlock vitaminsVendingMachineDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoVitaminsVendingMachineDisappeared);
-    vitaminsVendingMachineDisappeared.Checked = vitaminsVendingMachineDisappearedBlock.Type == SCTypeCode.Bool2;
+    vitaminsVendingMachineDisappeared.Checked = vitaminsVendingMachineDisappearedBlock.GetBooleanValue();
     SCBlock canBattleHoneyBlock = SAV.Blocks.GetBlock(Definitions.CanBattleHoney);
-    canBattleHoney.Checked = canBattleHoneyBlock.Type == SCTypeCode.Bool2;
+    canBattleHoney.Checked = canBattleHoneyBlock.GetBooleanValue();
     SCBlock battledHoneyTodayBlock = SAV.Blocks.GetBlock(Definitions.BattledHoneyToday);
-    battledHoneyToday.Checked = battledHoneyTodayBlock.Type == SCTypeCode.Bool2;
+    battledHoneyToday.Checked = battledHoneyTodayBlock.GetBooleanValue();
   }
 
   void SaveIsleOfArmor() {
     if (SAV.SaveRevision < 1) return;
+
     SAV.Blocks.SetBlockValue(Definitions.DojoWattDonationProgress, (uint)ioaWattDonationProgress.SelectedIndex);
     SAV.Blocks.SetBlockValue(Definitions.DojoWattDonationTotal, (uint)ioaWattDonationTotal.Value);
     SCBlock hairStylistAvailableBlock = SAV.Blocks.GetBlock(Definitions.DojoHairStylistAvailable);
-    hairStylistAvailableBlock.ChangeBooleanType(hairStylistAvailable.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    hairStylistAvailableBlock.ChangeBooleanValue(hairStylistAvailable.Checked);
     SCBlock brokenRotomiDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoBrokenRotomiDisappeared);
-    brokenRotomiDisappearedBlock.ChangeBooleanType(brokenRotomiDisappared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    brokenRotomiDisappearedBlock.ChangeBooleanValue(brokenRotomiDisappared.Checked);
     SCBlock fixedRotomiDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoRotomiDisappeared);
-    fixedRotomiDisappearedBlock.ChangeBooleanType(fixedRotomiDisappeared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    fixedRotomiDisappearedBlock.ChangeBooleanValue(fixedRotomiDisappeared.Checked);
     SCBlock tableDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoTableDisappeared);
-    tableDisappearedBlock.ChangeBooleanType(tableDisappeared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    tableDisappearedBlock.ChangeBooleanValue(tableDisappeared.Checked);
     SCBlock drinksVendingMachineDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoDrinksVendingMachineDisappeared);
-    drinksVendingMachineDisappearedBlock.ChangeBooleanType(drinksVendingMachineDisappeared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    drinksVendingMachineDisappearedBlock.ChangeBooleanValue(drinksVendingMachineDisappeared.Checked);
     SCBlock vitaminsVendingMachineDisappearedBlock = SAV.Blocks.GetBlock(Definitions.DojoVitaminsVendingMachineDisappeared);
-    vitaminsVendingMachineDisappearedBlock.ChangeBooleanType(vitaminsVendingMachineDisappeared.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    vitaminsVendingMachineDisappearedBlock.ChangeBooleanValue(vitaminsVendingMachineDisappeared.Checked);
     SCBlock canBattleHoneyBlock = SAV.Blocks.GetBlock(Definitions.CanBattleHoney);
-    canBattleHoneyBlock.ChangeBooleanType(canBattleHoney.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    canBattleHoneyBlock.ChangeBooleanValue(canBattleHoney.Checked);
     SCBlock battledHoneyTodayBlock = SAV.Blocks.GetBlock(Definitions.BattledHoneyToday);
-    battledHoneyTodayBlock.ChangeBooleanType(battledHoneyToday.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    battledHoneyTodayBlock.ChangeBooleanValue(battledHoneyToday.Checked);
   }
 
   #endregion
@@ -195,26 +199,27 @@ public partial class WorldEventsForm : Form {
     }
 
     //Setup Birds
-    ct_garticuno_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Birds["Galarian Articuno"]).Type == SCTypeCode.Bool2;
-    ct_gzapdos_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Birds["Galarian Zapdos"]).Type == SCTypeCode.Bool2;
-    ct_gmoltres_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Birds["Galarian Moltres"]).Type == SCTypeCode.Bool2;
+    ct_garticuno_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Birds[Species.Articuno]).GetBooleanValue();
+    ct_gzapdos_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Birds[Species.Zapdos]).GetBooleanValue();
+    ct_gmoltres_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Birds[Species.Moltres]).GetBooleanValue();
 
     //Setup Cosmog
-    ct_giftcosmog_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["z_wr0301_i0401_COSMOG"]).Type == SCTypeCode.Bool2;
+    ct_giftcosmog_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["z_wr0301_i0401_COSMOG"]).GetBooleanValue();
 
-    ct_gift_poipole_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["z_d0901_BEBENOM"]).Type == SCTypeCode.Bool2;
+    ct_gift_poipole_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["z_d0901_BEBENOM"]).GetBooleanValue();
+
     //Setup Spiritomb
-    ct_spiritomb_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_CrownTundra_Misc["FE_CAPTURE_MIKARUGE"]).Type == SCTypeCode.Bool2;
-    ct_spiritomb_visible_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_CrownTundra_Misc["z_wr0321_SymbolEncountPokemonGimmickSpawner_WR03_Mikaruge"]).Type == SCTypeCode.Bool1;
+    ct_spiritomb_PB.Caught = SAV.Blocks.GetBlock(Definitions.memkeys_CrownTundra_Misc["FE_CAPTURE_MIKARUGE"]).GetBooleanValue();
+    ct_spiritomb_visible_CB.Checked = !SAV.Blocks.GetBlock(Definitions.memkeys_CrownTundra_Misc["z_wr0321_SymbolEncountPokemonGimmickSpawner_WR03_Mikaruge"]).GetBooleanValue();
     ct_spiritomb_players_NUD.Value = (uint)SAV.Blocks.GetBlock(Definitions.memkeys_CrownTundra_Misc["KPlayersInteractedOnline"]).GetValue()!;
   }
 
   void SaveCrownTundra() {
     if (SAV.SaveRevision < 2) return;
 
-    SCBlock b_garticuno = SAV.Blocks.GetBlock(Definitions.memkeys_Birds["Galarian Articuno"]);
-    SCBlock b_gzapdos = SAV.Blocks.GetBlock(Definitions.memkeys_Birds["Galarian Zapdos"]);
-    SCBlock b_gmoltres = SAV.Blocks.GetBlock(Definitions.memkeys_Birds["Galarian Moltres"]);
+    SCBlock b_garticuno = SAV.Blocks.GetBlock(Definitions.memkeys_Birds[Species.Articuno]);
+    SCBlock b_gzapdos = SAV.Blocks.GetBlock(Definitions.memkeys_Birds[Species.Zapdos]);
+    SCBlock b_gmoltres = SAV.Blocks.GetBlock(Definitions.memkeys_Birds[Species.Moltres]);
 
     SCBlock b_giftcosmog = SAV.Blocks.GetBlock(Definitions.memkeys_Gifts["z_wr0301_i0401_COSMOG"]);
 
@@ -225,16 +230,16 @@ public partial class WorldEventsForm : Form {
 
     SCBlock b_playersonline = SAV.Blocks.GetBlock(Definitions.memkeys_CrownTundra_Misc["KPlayersInteractedOnline"]);
 
-    b_garticuno.ChangeBooleanType(ct_garticuno_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-    b_gzapdos.ChangeBooleanType(ct_gzapdos_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-    b_gmoltres.ChangeBooleanType(ct_gmoltres_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    b_garticuno.ChangeBooleanValue(ct_garticuno_PB.Caught);
+    b_gzapdos.ChangeBooleanValue(ct_gzapdos_PB.Caught);
+    b_gmoltres.ChangeBooleanValue(ct_gmoltres_PB.Caught);
 
-    b_giftcosmog.ChangeBooleanType(ct_giftcosmog_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    b_giftcosmog.ChangeBooleanValue(ct_giftcosmog_PB.Caught);
 
-    b_gift_poipole.ChangeBooleanType(ct_gift_poipole_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    b_gift_poipole.ChangeBooleanValue(ct_gift_poipole_PB.Caught);
 
-    b_spiritomb_caught.ChangeBooleanType(ct_spiritomb_PB.Caught ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-    b_spiritomb_visible.ChangeBooleanType(ct_spiritomb_visible_CB.Checked ? SCTypeCode.Bool1 : SCTypeCode.Bool2);
+    b_spiritomb_caught.ChangeBooleanValue(ct_spiritomb_PB.Caught);
+    b_spiritomb_visible.ChangeBooleanValue(!ct_spiritomb_visible_CB.Checked);
 
     b_playersonline.SetValue(Convert.ToUInt32(ct_spiritomb_players_NUD.Value));
   }
@@ -243,7 +248,7 @@ public partial class WorldEventsForm : Form {
   private void ct_spiritomb_forcelegal_CB_CheckedChanged(object sender, EventArgs e) {
     string[] issues = ct_checklegal_Spiritomb();
     if (ct_spiritomb_forcelegal_CB.Checked)
-      if (ct_spiritomb_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (ct_spiritomb_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         ct_spiritomb_forcelegal_CB.Checked = ShowLegalMSG(issues);
   }
 
@@ -256,20 +261,20 @@ public partial class WorldEventsForm : Form {
   private void ct_spiritomb_PB_Caught_OnClick(object sender, EventArgs e) {
     string[] issues = ct_checklegal_Spiritomb();
     if (ct_spiritomb_forcelegal_CB.Checked)
-      if (ct_spiritomb_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (ct_spiritomb_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         ct_spiritomb_forcelegal_CB.Checked = ShowLegalMSG(issues);
   }
   private void ct_spiritomb_visible_CB_CheckedChanged(object sender, EventArgs e) {
     string[] issues = ct_checklegal_Spiritomb();
     if (ct_spiritomb_forcelegal_CB.Checked)
-      if (ct_spiritomb_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (ct_spiritomb_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         ct_spiritomb_forcelegal_CB.Checked = ShowLegalMSG(issues);
   }
 
   private void ct_spiritomb_players_NUD_ValueChanged(object sender, EventArgs e) {
     string[] issues = ct_checklegal_Spiritomb();
     if (ct_spiritomb_forcelegal_CB.Checked)
-      if (ct_spiritomb_PB.Legalility == PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal)
+      if (ct_spiritomb_PB.Legalility == PokemonRenderUC.LegalStatus.Illegal)
         ct_spiritomb_forcelegal_CB.Checked = ShowLegalMSG(issues);
   }
 
@@ -279,18 +284,18 @@ public partial class WorldEventsForm : Form {
     if (ct_spiritomb_PB.Caught && ct_spiritomb_visible_CB.Checked) {
       Issues.Add("Spiritomb cannot be caught and visible in the overworld!");
     }
-    if (ct_spiritomb_visible_CB.Checked && ct_spiritomb_players_NUD.Value < 30) {
-      Issues.Add("Spiritomb visible in the overworld if the player has less than 30 online interactions!");
+    if (ct_spiritomb_visible_CB.Checked && ct_spiritomb_players_NUD.Value < 32) {
+      Issues.Add("Spiritomb visible in the overworld if the player has less than 32 online interactions!");
     }
-    if (ct_spiritomb_PB.Caught && ct_spiritomb_players_NUD.Value < 30) {
-      Issues.Add("Spiritomb caught if the player has less than 30 online interactions!");
+    if (ct_spiritomb_PB.Caught && ct_spiritomb_players_NUD.Value < 32) {
+      Issues.Add("Spiritomb caught if the player has less than 32 online interactions!");
     }
-    if (!ct_spiritomb_PB.Caught && !ct_spiritomb_visible_CB.Checked && ct_spiritomb_players_NUD.Value >= 30) {
-      Issues.Add("Spiritomb is not caught or visble/spawned in the overworld but player interactions >= 30!");
+    if (!ct_spiritomb_PB.Caught && !ct_spiritomb_visible_CB.Checked && ct_spiritomb_players_NUD.Value >= 32) {
+      Issues.Add("Spiritomb is not caught or visble/spawned in the overworld but player interactions >= 32!");
     }
 
-    if (Issues.Count == 0) ct_spiritomb_PB.Legalility = PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Legal;
-    else ct_spiritomb_PB.Legalility = PluginPile.Unmaintained.SwShEventEditor.Controls.PokemonRenderUC.LegalStatus.Illegal;
+    if (Issues.Count == 0) ct_spiritomb_PB.Legalility = PokemonRenderUC.LegalStatus.Legal;
+    else ct_spiritomb_PB.Legalility = PokemonRenderUC.LegalStatus.Illegal;
 
     return Issues.ToArray();
   }

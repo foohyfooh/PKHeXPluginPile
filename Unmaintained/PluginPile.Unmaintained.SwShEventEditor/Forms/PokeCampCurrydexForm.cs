@@ -1,4 +1,5 @@
 using PKHeX.Core;
+using PluginPile.Common;
 
 namespace PluginPile.Unmaintained.SwShEventEditor {
   public partial class PokeCampCurrydexForm : Form {
@@ -18,15 +19,15 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
 
     #region Camp
     void SetupCamp() {
-      camp_ball_fresh_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_FRESH_BALL"]).Type == SCTypeCode.Bool2;
-      camp_ball_weighted_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_HEAVY_BALL"]).Type == SCTypeCode.Bool2;
-      camp_ball_soothe_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_YASURAGI_BALL"]).Type == SCTypeCode.Bool2;
-      camp_ball_mirror_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_MIRROR_BALL"]).Type == SCTypeCode.Bool2;
-      camp_ball_tympole_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_OTAMA_BALL"]).Type == SCTypeCode.Bool2;
-      camp_ball_champion_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_CHAMPION_BALL"]).Type == SCTypeCode.Bool2;
+      camp_ball_fresh_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_FRESH_BALL"]).GetBooleanValue();
+      camp_ball_weighted_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_HEAVY_BALL"]).GetBooleanValue();
+      camp_ball_soothe_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_YASURAGI_BALL"]).GetBooleanValue();
+      camp_ball_mirror_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_MIRROR_BALL"]).GetBooleanValue();
+      camp_ball_tympole_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_OTAMA_BALL"]).GetBooleanValue();
+      camp_ball_champion_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_CHAMPION_BALL"]).GetBooleanValue();
 
-      camp_has_golden_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_GOLDEN_KITCHENWARE"]).Type == SCTypeCode.Bool2;
-      camp_use_golden_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_USE_GOLDEN_KITCHENWARE"]).Type == SCTypeCode.Bool2;
+      camp_has_golden_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_OPEN_GOLDEN_KITCHENWARE"]).GetBooleanValue();
+      camp_use_golden_CB.Checked = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["FSYS_POKECAMP_USE_GOLDEN_KITCHENWARE"]).GetBooleanValue();
 
       camp_type_CMB.SelectedIndex = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["SYS_WORK_POKECAMP_TENT_COLOR"]).GetValue());
     }
@@ -44,15 +45,15 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
 
       SCBlock b_tent_color = SAV.Blocks.GetBlock(Definitions.memkeys_PokeCamp["SYS_WORK_POKECAMP_TENT_COLOR"]);
 
-      b_fresh_ball.ChangeBooleanType(camp_ball_fresh_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-      b_weighted_ball.ChangeBooleanType(camp_ball_weighted_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-      b_soothe_ball.ChangeBooleanType(camp_ball_soothe_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-      b_mirror_ball.ChangeBooleanType(camp_ball_mirror_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-      b_tympole_ball.ChangeBooleanType(camp_ball_tympole_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-      b_champion_ball.ChangeBooleanType(camp_ball_champion_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+      b_fresh_ball.ChangeBooleanValue(camp_ball_fresh_CB.Checked);
+      b_weighted_ball.ChangeBooleanValue(camp_ball_weighted_CB.Checked);
+      b_soothe_ball.ChangeBooleanValue(camp_ball_soothe_CB.Checked);
+      b_mirror_ball.ChangeBooleanValue(camp_ball_mirror_CB.Checked);
+      b_tympole_ball.ChangeBooleanValue(camp_ball_tympole_CB.Checked);
+      b_champion_ball.ChangeBooleanValue(camp_ball_champion_CB.Checked);
 
-      b_has_golden_CB.ChangeBooleanType(camp_has_golden_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-      b_use_golden_CB.ChangeBooleanType(camp_use_golden_CB.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+      b_has_golden_CB.ChangeBooleanValue(camp_has_golden_CB.Checked);
+      b_use_golden_CB.ChangeBooleanValue(camp_use_golden_CB.Checked);
 
       b_tent_color.SetValue(Convert.ToUInt32(camp_type_CMB.SelectedIndex));
     }

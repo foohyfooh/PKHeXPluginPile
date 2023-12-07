@@ -1,4 +1,5 @@
 using PKHeX.Core;
+using PluginPile.Common;
 
 namespace PluginPile.Unmaintained.SwShEventEditor;
 public partial class RegiForm : Form {
@@ -12,40 +13,35 @@ public partial class RegiForm : Form {
   private void RegiForm_Load(object sender, EventArgs e) {
     //Check Regi values
     for (int i = 0; i < Definitions.memkeys_Regis.Count - 2; i++) { //-2 so we do all of them except for Regieleki and regidrago
-      if (SAV.Blocks.GetBlock(Definitions.memkeys_Regis.ElementAt(i).Value).Type == SCTypeCode.Bool2) regi_clistbox.SetItemChecked(i, true);
+      regi_clistbox.SetItemChecked(i, SAV.Blocks.GetBlock(Definitions.memkeys_Regis.ElementAt(i).Value).GetBooleanValue());
     }
     legailty_CB.Checked = true;
 
-    SCBlock eleki = SAV.Blocks.GetBlock(Definitions.memkeys_Regis["Regieleki"]);
-    SCBlock drago = SAV.Blocks.GetBlock(Definitions.memkeys_Regis["Regidrago"]);
+    SCBlock eleki = SAV.Blocks.GetBlock(Definitions.memkeys_Regis[Species.Regieleki]);
+    SCBlock drago = SAV.Blocks.GetBlock(Definitions.memkeys_Regis[Species.Regidrago]);
     SCBlock pattern = SAV.Blocks.GetBlock(Definitions.KRegielekiOrRegidragoPattern);
 
-
-    if (eleki?.Type == SCTypeCode.Bool2) {
+    if (eleki.GetBooleanValue()) {
       regieleki_RBTN.Checked = true;
       //Check if the pattern provided by the player matches the regi
-      if (Convert.ToInt32(pattern?.GetValue()) != 1) // 1 = regieleki pattern
-      {
-        if (ShowPatternMisMatchMSG() == DialogResult.Yes) pattern?.SetValue((uint)1);
+      if (Convert.ToInt32(pattern.GetValue()) != 1) { // 1 = regieleki pattern
+        if (ShowPatternMisMatchMSG() == DialogResult.Yes) pattern.SetValue((uint)1);
         else legailty_CB.Checked = false;
       }
     }
 
-    if (drago?.Type == SCTypeCode.Bool2) {
+    if (drago.GetBooleanValue()) {
       regidrago_RBTN.Checked = true;
       //Check if the pattern provided by the player matches the regi
-      if (Convert.ToInt32(pattern?.GetValue()) != 2) // 2 = regidrago pattern
-      {
-        if (ShowPatternMisMatchMSG() == DialogResult.Yes) pattern?.SetValue((uint)2);
+      if (Convert.ToInt32(pattern.GetValue()) != 2) { // 2 = regidrago pattern
+        if (ShowPatternMisMatchMSG() == DialogResult.Yes) pattern.SetValue((uint)2);
         else legailty_CB.Checked = false;
-
       }
     }
 
     MatchRegiPattern();
-    regipatternNUD.Value = Convert.ToInt32(pattern?.GetValue());
+    regipatternNUD.Value = Convert.ToInt32(pattern.GetValue());
   }
-
 
   void CheckLegality() {
     if (CheckElekiLegal() || CheckDragoLegal() || CheckNeitherLegal())
@@ -56,13 +52,14 @@ public partial class RegiForm : Form {
   bool CheckNeitherLegal() {
     return GetRegiPattern() <= 2 && reginone_RBTN.Checked;
   }
+
   bool CheckElekiLegal() {
     return GetRegiPattern() == 1 && regieleki_RBTN.Checked && !(GetRegiPattern() == 2 && regidrago_RBTN.Checked) || regieleki_patrBTN.Checked;
   }
+
   bool CheckDragoLegal() {
     return GetRegiPattern() == 2 && regidrago_RBTN.Checked && !(GetRegiPattern() == 1 && regieleki_RBTN.Checked) || regidrago_patrBTN.Checked;
   }
-
 
   /// <summary>
   /// 0 - None
@@ -73,8 +70,8 @@ public partial class RegiForm : Form {
   int GetRegiPattern() {
     if (regiother_patrBTN.Checked) return (int)regipatternNUD.Value;
     else return regidrago_patrBTN.Checked ? 2 : regieleki_patrBTN.Checked ? 1 : 0;
-
   }
+
   /// <summary>
   /// Match the regi (drago or eleki or neither) to the pattern value
   /// </summary>
@@ -114,7 +111,6 @@ public partial class RegiForm : Form {
     CheckLegality();
   }
 
-
   private void reginone_RBTN_CheckedChanged(object sender, EventArgs e) {
     if (legailty_CB.Checked) MatchRegiPattern();
     CheckLegality();
@@ -130,7 +126,6 @@ public partial class RegiForm : Form {
     CheckLegality();
   }
 
-
   private void forcematchCB_CheckedChanged(object sender, EventArgs e) {
     if (legailty_CB.Checked) MatchRegiPattern();
     CheckLegality();
@@ -138,13 +133,12 @@ public partial class RegiForm : Form {
 
   private void applyBTN_Click(object sender, EventArgs e) {
     for (int i = 0; i < Definitions.memkeys_Regis.Count - 2; i++) { //do all except for eleki and drago
-      SAV.Blocks.GetBlock(Definitions.memkeys_Regis.ElementAt(i).Value).ChangeBooleanType(regi_clistbox.GetItemChecked(i) ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+      SAV.Blocks.GetBlock(Definitions.memkeys_Regis.ElementAt(i).Value).ChangeBooleanValue(regi_clistbox.GetItemChecked(i));
     }
 
-    SAV.Blocks.GetBlock(Definitions.memkeys_Regis["Regieleki"]).ChangeBooleanType(regieleki_RBTN.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
-    SAV.Blocks.GetBlock(Definitions.memkeys_Regis["Regidrago"]).ChangeBooleanType(regidrago_RBTN.Checked ? SCTypeCode.Bool2 : SCTypeCode.Bool1);
+    SAV.Blocks.GetBlock(Definitions.memkeys_Regis[Species.Regieleki]).ChangeBooleanValue(regieleki_RBTN.Checked);
+    SAV.Blocks.GetBlock(Definitions.memkeys_Regis[Species.Regidrago]).ChangeBooleanValue(regidrago_RBTN.Checked);
 
-    //If you don't cast the int, you will get an exeception that will crash the plugin.
     if (regieleki_patrBTN.Checked) SAV.Blocks.GetBlock(Definitions.KRegielekiOrRegidragoPattern).SetValue((uint)1);
     else if (regidrago_patrBTN.Checked) SAV.Blocks.GetBlock(Definitions.KRegielekiOrRegidragoPattern).SetValue((uint)2);
     else if (reginone_patrBTN.Checked) SAV.Blocks.GetBlock(Definitions.KRegielekiOrRegidragoPattern).SetValue((uint)0);
