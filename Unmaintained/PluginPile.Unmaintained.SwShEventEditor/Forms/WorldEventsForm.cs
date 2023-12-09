@@ -44,7 +44,7 @@ public partial class WorldEventsForm : Form {
   }
 
   string[] main_checklegal_Eevee() {
-    List<string> Issues = new List<string>();
+    List<string> Issues = [];
     if (main_geevee_PB.Caught && !main_eevee_save_data_CB.Checked) {
       Issues.Add("Gift Eevee cannot be had while the player has no \"Let's Go: Eevee!\" save data!");
     }
@@ -52,20 +52,19 @@ public partial class WorldEventsForm : Form {
       main_geevee_PB.Legalility = PokemonRenderUC.LegalStatus.Legal;
     else
       main_geevee_PB.Legalility = PokemonRenderUC.LegalStatus.Illegal;
-    return Issues.ToArray();
+    return [.. Issues];
   }
 
   string[] main_checklegal_Pikachu() {
-    List<string> Issues = new List<string>();
+    List<string> Issues = [];
     if (main_gpikachu_PB.Caught && !main_pikachu_save_data_CB.Checked) {
       Issues.Add("Gift Pikachu cannot be had while the player has no \"Let's Go: Pikachu!\" save data!");
     }
-
     if (Issues.Count == 0)
       main_gpikachu_PB.Legalility = PokemonRenderUC.LegalStatus.Legal;
     else
       main_gpikachu_PB.Legalility = PokemonRenderUC.LegalStatus.Illegal;
-    return Issues.ToArray();
+    return [.. Issues];
   }
   private void main_gpikachu_PB_Caught_OnClick(object sender, EventArgs e) {
     string[] issues = main_checklegal_Pikachu();
@@ -279,8 +278,7 @@ public partial class WorldEventsForm : Form {
   }
 
   string[] ct_checklegal_Spiritomb() {
-    List<string> Issues = new List<string>();
-
+    List<string> Issues = [];
     if (ct_spiritomb_PB.Caught && ct_spiritomb_visible_CB.Checked) {
       Issues.Add("Spiritomb cannot be caught and visible in the overworld!");
     }
@@ -293,11 +291,9 @@ public partial class WorldEventsForm : Form {
     if (!ct_spiritomb_PB.Caught && !ct_spiritomb_visible_CB.Checked && ct_spiritomb_players_NUD.Value >= 32) {
       Issues.Add("Spiritomb is not caught or visble/spawned in the overworld but player interactions >= 32!");
     }
-
     if (Issues.Count == 0) ct_spiritomb_PB.Legalility = PokemonRenderUC.LegalStatus.Legal;
     else ct_spiritomb_PB.Legalility = PokemonRenderUC.LegalStatus.Illegal;
-
-    return Issues.ToArray();
+    return [.. Issues];
   }
 
   #endregion

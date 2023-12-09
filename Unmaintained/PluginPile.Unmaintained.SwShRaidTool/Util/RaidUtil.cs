@@ -4,7 +4,7 @@ using PluginPile.Unmaintained.SwShRaidTool.Properties;
 
 namespace PluginPile.Unmaintained.SwShRaidTool;
 public static class RaidUtil {
-  private static readonly Shiny[] shinies = { Shiny.Random, Shiny.AlwaysStar, Shiny.AlwaysSquare, Shiny.Never };
+  private static readonly Shiny[] shinies = [Shiny.Random, Shiny.AlwaysStar, Shiny.AlwaysSquare, Shiny.Never];
   public static string GetStarString(RaidParameters raidParameters) {
     const string star = "\u2605";
     string output = star;
@@ -43,8 +43,8 @@ public static class RaidUtil {
       } else {
         map = Resources.map_ioa;
       }
-      using (Graphics graphics = Graphics.FromImage(map))
-        graphics.DrawArc(redPen, raidParameters.X - 1, raidParameters.Y - 1, 2, 2, 0, 360);
+      using Graphics graphics = Graphics.FromImage(map);
+      graphics.DrawArc(redPen, raidParameters.X - 1, raidParameters.Y - 1, 2, 2, 0, 360);
       int start_point_x = raidParameters.X - 172 / 2;
       int start_point_y = raidParameters.Y - 402 / 2;
       if (start_point_x < 0) start_point_x = 0;
@@ -52,7 +52,7 @@ public static class RaidUtil {
       if (start_point_y < 0) start_point_y = 0;
       if (start_point_y + 402 > map.Width) start_point_y = map.Height - 402;
       Rectangle cropRect = new Rectangle(start_point_x, start_point_y, 172, 402);
-      Bitmap src = map as Bitmap;
+      Bitmap src = map;
       Bitmap target = new Bitmap(cropRect.Width, cropRect.Height);
 
       using (Graphics g = Graphics.FromImage(target)) {

@@ -104,7 +104,7 @@ public static class Definitions {
 
 
   public static class MaxLairExclusives {
-    public static readonly List<string> Sword = new List<string>() {
+    public static readonly List<string> Sword = [
       "Ho-oh",
       "Latios",
       "Groudon",
@@ -112,9 +112,9 @@ public static class Definitions {
       "Tornadus",
       "Reshiram",
       "Xerneas"
-    };
+    ];
 
-    public static readonly List<string> Shield = new List<string>() {
+    public static readonly List<string> Shield = [
       "Lugia",
       "Latias",
       "Kyogre",
@@ -122,7 +122,7 @@ public static class Definitions {
       "Thundurus",
       "Zekrom",
       "Yveltal"
-    };
+    ];
   }
 
   public static class NationalDex {

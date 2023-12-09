@@ -9,10 +9,8 @@ public static class RandUtil {
   public static uint GetShinyType(uint pid, uint tidsid) {
     uint p = GetShinyXor(pid);
     uint t = GetShinyXor(tidsid);
-    if (p == t)
-      return 2; // square;
-    if ((p ^ t) < 0x10)
-      return 1; // star
+    if (p == t) return 2; // square;
+    if ((p ^ t) < 0x10) return 1; // star
     return 0;
   }
 

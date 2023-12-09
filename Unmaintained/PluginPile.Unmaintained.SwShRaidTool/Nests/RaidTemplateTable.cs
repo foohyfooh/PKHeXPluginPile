@@ -1,14 +1,8 @@
 namespace PluginPile.Unmaintained.SwShRaidTool;
-public class RaidTemplateTable {
-  public readonly ulong TableID;
-  public readonly uint GameVersion;
-  public readonly RaidTemplate[] Entries;
-
-  public RaidTemplateTable(ulong tableID, uint game, RaidTemplate[] entries) {
-    TableID = tableID;
-    GameVersion = game;
-    Entries = entries;
-  }
+public class RaidTemplateTable(ulong tableID, uint game, RaidTemplate[] entries) {
+  public readonly ulong TableID = tableID;
+  public readonly uint GameVersion = game;
+  public readonly RaidTemplate[] Entries = entries;
 }
 
 public static class RaidTemplateExtensions {

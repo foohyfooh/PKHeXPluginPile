@@ -1,8 +1,9 @@
 <Project>
 
   <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <LangVersion>11</LangVersion>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <Platforms>x64</Platforms>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>

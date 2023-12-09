@@ -7,7 +7,7 @@ public static class BruteForceSearch {
     rng.NextInt(); // EC
     rng.NextInt(); // TID
     rng.NextInt(); // PID
-    int[] check_ivs = { -1, -1, -1, -1, -1, -1 };
+    int[] check_ivs = [-1, -1, -1, -1, -1, -1];
     for (int i = 0; i < fixed_ivs; i++) {
       uint slot;
       do {

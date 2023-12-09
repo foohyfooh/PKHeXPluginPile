@@ -86,7 +86,7 @@ internal class Language {
   public static string[] DojoWattDonationQuestProgress {
     get {
       return GameInfo.CurrentLanguage switch {
-        "en" or _ => new string[] { "Not Started", "Talked To Honey", "Hair Stylist Available", "Broken Rotomi Terminal", "Fixed Rotomi Terminal", "Fresh Water in Vending Machine", "Soda Pop in Vending Machine", "Lemonade in Vending Machine", "Fresh Ingredients in Refrigerator", "Protein and Iron in Vending Machine", "Calcium and Zinc in Vending Machine", "HP Up and Carbos in Vending Machine", "Master Dojo League Card Backgrounds", "Honey's League Card Received", "Trainer Battle with Honey Unlocked", "Walk with Honey and Honey's Rare League Card" }
+        "en" or _ => ["Not Started", "Talked To Honey", "Hair Stylist Available", "Broken Rotomi Terminal", "Fixed Rotomi Terminal", "Fresh Water in Vending Machine", "Soda Pop in Vending Machine", "Lemonade in Vending Machine", "Fresh Ingredients in Refrigerator", "Protein and Iron in Vending Machine", "Calcium and Zinc in Vending Machine", "HP Up and Carbos in Vending Machine", "Master Dojo League Card Backgrounds", "Honey's League Card Received", "Trainer Battle with Honey Unlocked", "Walk with Honey and Honey's Rare League Card"]
       };
     }
   }
@@ -94,7 +94,7 @@ internal class Language {
   public static string[] SwordsOfJusticeQuestStatus {
     get {
       return GameInfo.CurrentLanguage switch {
-        "en" or _ => new string[] { "Can't Start", "Can Start", "Camera Highlights Cobalion Footprints", "In Progress" }
+        "en" or _ => ["Can't Start", "Can Start", "Camera Highlights Cobalion Footprints", "In Progress"]
       };
     }
   }
@@ -102,7 +102,7 @@ internal class Language {
   public static string[] SwordsOfJusticeQuestProgress {
     get {
       return GameInfo.CurrentLanguage switch {
-        "en" or _ => new string[] { "0 Reported", "1 Reported", "2 Reported", "3 Reported/Keldeo Available", "Keldeo Captured", "Keldeo Reported" }
+        "en" or _ => ["0 Reported", "1 Reported", "2 Reported", "3 Reported/Keldeo Available", "Keldeo Captured", "Keldeo Reported"]
       };
     }
   }
@@ -110,7 +110,7 @@ internal class Language {
   public static string[] SwordsOfJusticeProgress {
     get {
       return GameInfo.CurrentLanguage switch {
-        "en" or _ => new string[] { "Footprints Unreported", "Location Revealed/Appeared", "Captured", "Capture Reported" }
+        "en" or _ => ["Footprints Unreported", "Location Revealed/Appeared", "Captured", "Capture Reported"]
       };
     }
   }
@@ -118,7 +118,7 @@ internal class Language {
   public static string[] KeldeoProgress {
     get {
       return GameInfo.CurrentLanguage switch {
-        "en" or _ => new string[] { "Have To Camp", "Appeared", "Captured" }
+        "en" or _ => ["Have To Camp", "Appeared", "Captured"]
       };
     }
   }

@@ -15,8 +15,8 @@ public class RaidTemplate {
   public readonly int[] FixedIV;
   public readonly sbyte ShinyType;
 
-  public static readonly int[] ToxtricityAmplifiedNatures = { 0x03, 0x04, 0x02, 0x08, 0x09, 0x13, 0x16, 0x0B, 0x0D, 0x0E, 0x00, 0x06, 0x18 };
-  public static readonly int[] ToxtricityLowKeyNatures = { 0x01, 0x05, 0x07, 0x0A, 0x0C, 0x0F, 0x10, 0x11, 0x12, 0x14, 0x15, 0x17 };
+  public static readonly int[] ToxtricityAmplifiedNatures = [0x03, 0x04, 0x02, 0x08, 0x09, 0x13, 0x16, 0x0B, 0x0D, 0x0E, 0x00, 0x06, 0x18];
+  public static readonly int[] ToxtricityLowKeyNatures = [0x01, 0x05, 0x07, 0x0A, 0x0C, 0x0F, 0x10, 0x11, 0x12, 0x14, 0x15, 0x17];
 
   public RaidTemplate(uint species, uint[] probabilities, int flawlessIVs, uint altForm, int ability, int gender, bool giga, sbyte shinytype = 0) :
       this(species, probabilities, flawlessIVs, altForm, ability, gender, 25, giga, shinytype) {
@@ -34,7 +34,7 @@ public class RaidTemplate {
     Gender = gender;
     Nature = nature;
     ShinyType = shinytype;
-    FixedIV = new[] { -1, -1, -1, -1, -1, -1 };
+    FixedIV = [-1, -1, -1, -1, -1, -1];
   }
 
   public RaidTemplate(uint species, int[] ivs, int rank, bool giga) {
@@ -46,7 +46,7 @@ public class RaidTemplate {
     Ability = 3;
     ShinyType = 0;
     FlawlessIVs = -1;
-    Probabilities = new[] { 0u, 0u, 0u, 0u, 0u };
+    Probabilities = [0u, 0u, 0u, 0u, 0u];
   }
 
   public bool CanObtainWith(int stars) => Probabilities[stars] > 0;
@@ -67,10 +67,7 @@ public class RaidTemplate {
     uint tsv = RandUtil.GetShinyValue((sid << 16) | tid);
     PID = GetFinalPID(tid, sid, PID, SIDTID, tsv, ShinyType);
 
-    int[] ivs = { -1, -1, -1, -1, -1, -1 };
-    for (int i = 0; i < 6; i++) {
-      ivs[i] = FixedIV[i];
-    }
+    int[] ivs = [.. FixedIV];
     int deviation = -FlawlessIVs;
     for (int i = 0; i < FlawlessIVs; i++) {
       int idx;
@@ -88,7 +85,7 @@ public class RaidTemplate {
     }
 
     int abilityIdx = 0;
-    IPersonalAbility12H abilities = PersonalTable.SWSH.GetFormEntry(Species, AltForm);
+    PersonalInfo8SWSH abilities = PersonalTable.SWSH.GetFormEntry(Species, AltForm);
     if (Ability < 3) {
       abilityIdx = Ability;
     }

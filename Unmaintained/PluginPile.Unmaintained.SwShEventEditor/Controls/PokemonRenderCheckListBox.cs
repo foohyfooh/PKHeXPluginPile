@@ -8,7 +8,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
 
     private bool _containsMouse = false;
     private Point _relativeMousePosition = Point.Empty;
-    private ObservableCollection<int> _pokemonArray = new ObservableCollection<int>();
+    private ObservableCollection<int> _pokemonArray = [];
 
 
     public ObservableCollection<int> PokemonIDs {

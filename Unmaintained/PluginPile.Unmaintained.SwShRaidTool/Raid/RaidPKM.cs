@@ -1,32 +1,16 @@
 namespace PluginPile.Unmaintained.SwShRaidTool;
-public class RaidPKM {
-  public readonly int Nature;
-  public readonly ushort Species;
-  public readonly int[] IVs;
-  public readonly int Gender;
-  public readonly uint EC;
-  public readonly uint PID;
-  public readonly byte AltForm;
-  public readonly int Ability;
-  public readonly uint ShinyType;
-  public readonly bool IsGigantamax;
-  public readonly sbyte ForcedShinyType;
-  public readonly int Deviation;
-  public readonly int AbilityIdx;
-
-  public RaidPKM(ushort species, byte altForm, uint ec, uint pid, int[] ivs, int ability, int abilityIdx, int gender, int nature, int deviation, uint shinyType, bool isGigantamax, sbyte forcedShinyType = 0) {
-    Species = species;
-    AltForm = altForm;
-    EC = ec;
-    PID = pid;
-    IVs = ivs;
-    Ability = ability;
-    Gender = gender;
-    Nature = nature;
-    ShinyType = shinyType;
-    IsGigantamax = isGigantamax;
-    ForcedShinyType = forcedShinyType;
-    Deviation = deviation;
-    AbilityIdx = abilityIdx;
-  }
+public class RaidPKM(ushort species, byte altForm, uint ec, uint pid, int[] ivs, int ability, int abilityIdx, int gender, int nature, int deviation, uint shinyType, bool isGigantamax, sbyte forcedShinyType = 0) {
+  public readonly int Nature = nature;
+  public readonly ushort Species = species;
+  public readonly int[] IVs = ivs;
+  public readonly int Gender = gender;
+  public readonly uint EC = ec;
+  public readonly uint PID = pid;
+  public readonly byte AltForm = altForm;
+  public readonly int Ability = ability;
+  public readonly uint ShinyType = shinyType;
+  public readonly bool IsGigantamax = isGigantamax;
+  public readonly sbyte ForcedShinyType = forcedShinyType;
+  public readonly int Deviation = deviation;
+  public readonly int AbilityIdx = abilityIdx;
 }

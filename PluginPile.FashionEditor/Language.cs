@@ -101,7 +101,7 @@ internal static class Language {
       return gender switch {
         0 => TopsListMale,
         1 => TopsListFemale,
-        _ => Array.Empty<string>()
+        _ => []
       };
     }
 
@@ -136,7 +136,7 @@ internal static class Language {
       return gender switch {
         0 => JacketsListMale,
         1 => JacketsListFemale,
-        _ => Array.Empty<string>()
+        _ => []
       };
     }
 
@@ -164,7 +164,7 @@ internal static class Language {
       return gender switch {
         0 => BottomsListMale,
         1 => BottomsListFemale,
-        _ => Array.Empty<string>()
+        _ => []
       };
     }
 
@@ -208,7 +208,7 @@ internal static class Language {
       return gender switch {
         0 => SocksListMale,
         1 => SocksListFemale,
-        _ => Array.Empty<string>()
+        _ => []
       };
     }
 
@@ -236,7 +236,7 @@ internal static class Language {
       return gender switch {
         0 => ShoesListMale,
         1 => ShoesListFemale,
-        _ => Array.Empty<string>()
+        _ => []
       };
     }
 
@@ -271,7 +271,7 @@ internal static class Language {
       return gender switch {
         0 => BagsListMale,
         1 => BagsListFemale,
-        _ => Array.Empty<string>()
+        _ => []
       };
     }
 
@@ -299,7 +299,7 @@ internal static class Language {
       return gender switch {
         0 => HatsListMale,
         1 => HatsListFemale,
-        _ => Array.Empty<string>()
+        _ => []
       };
     }
 
@@ -327,7 +327,7 @@ internal static class Language {
       return gender switch {
         0 => GlassesListMale,
         1 => GlassesListFemale,
-        _ => Array.Empty<string>()
+        _ => []
       };
     }
 
@@ -362,7 +362,7 @@ internal static class Language {
       return gender switch {
         0 => GlovesListMale,
         1 => GlovesListFemale,
-        _ => Array.Empty<string>()
+        _ => []
       };
     }
 

@@ -37,7 +37,7 @@ public partial class SeedFinder : Form {
       if (PIDBox.Text.Length == 0) return;
       uint ec = uint.Parse(ECBox.Text, System.Globalization.NumberStyles.HexNumber);
       uint pid = uint.Parse(PIDBox.Text, System.Globalization.NumberStyles.HexNumber);
-      int[] ivs = { (int)minHP.Value, (int)minAtk.Value, (int)minDef.Value, (int)minSpa.Value, (int)minSpd.Value, (int)MinSpe.Value, };
+      int[] ivs = [(int)minHP.Value, (int)minAtk.Value, (int)minDef.Value, (int)minSpa.Value, (int)minSpd.Value, (int)MinSpe.Value,];
       IEnumerable<ulong> seeds = BruteForceSearch.FindSeeds(ec, pid, TID, SID);
       SeedResult.Text = FindFirstSeed(seeds, ivs);
     }
@@ -46,8 +46,7 @@ public partial class SeedFinder : Form {
   private static string FindFirstSeed(IEnumerable<ulong> potential_seeds, int[] ivs) {
     foreach (ulong seed in potential_seeds) {
       // Verify the IVs; at most 5 can match
-      for (int i = 1; i <= 5; i++) // fixed IV count
-      {
+      for (int i = 1; i <= 5; i++) { // fixed IV count
         if (!BruteForceSearch.IsMatch(seed, ivs, i))
           continue;
         return $"{seed:X16}";
@@ -61,9 +60,9 @@ public partial class SeedFinder : Form {
     if (PIDBox.Text.Length == 0) return;
     uint ec = uint.Parse(ECBox.Text, System.Globalization.NumberStyles.HexNumber);
     uint pid = uint.Parse(PIDBox.Text, System.Globalization.NumberStyles.HexNumber);
-    int[] ivs = { (int)minHP.Value, (int)minAtk.Value, (int)minDef.Value, (int)minSpa.Value, (int)minSpd.Value, (int)MinSpe.Value };
+    int[] ivs = [(int)minHP.Value, (int)minAtk.Value, (int)minDef.Value, (int)minSpa.Value, (int)minSpd.Value, (int)MinSpe.Value];
     try {
-      IEnumerable<ulong> seeds = Z3Search.GetSeeds(ec, pid, ivs);
+      IEnumerable<ulong> seeds = Z3Search.GetSeeds(ec, pid);
       SeedResult.Text = FindFirstSeed(seeds, ivs);
     } catch (Exception ex) {
       WinFormsUtil.Error("This method requires Z3. Please add Z3 to your path." + Environment.NewLine + ex.Message, "Cannot calculate seed");

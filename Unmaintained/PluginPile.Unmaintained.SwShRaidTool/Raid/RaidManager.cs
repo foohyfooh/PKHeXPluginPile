@@ -64,7 +64,7 @@ public class RaidManager {
     }
     if (raidParameters.IsEvent) {
       RaidTemplateTable[] denDetails = Game == GameVersion.SW ? _raidTables.SwordNestsEvent : _raidTables.ShieldNestsEvent;
-      return denDetails.ConvertToPKM(raidParameters, NestLocations.getEventHash(raidParameters), TID, SID);
+      return denDetails.ConvertToPKM(raidParameters, NestLocations.GetEventHash(raidParameters), TID, SID);
     } else {
       NestHashDetail detail = NestLocations.Nests[raidParameters.Index];
       ulong hash = raidParameters.IsRare ? detail.RareHash : detail.CommonHash;

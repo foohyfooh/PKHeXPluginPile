@@ -8,11 +8,11 @@ public partial class Wonder2FashionForm : Form {
   public Wonder2FashionForm(SAV8SWSH sav) {
     SAV = sav;
     InitializeComponent();
-    fashionItems = Array.Empty<string>();
+    fashionItems = [];
   }
 
   string[] OpenWonderCardDLG(string type) {
-    string[] temp = Array.Empty<string>();
+    string[] temp = [];
     using (OpenFileDialog dlg = new OpenFileDialog()) {
       dlg.Multiselect = true;
       dlg.Title = $"Please Select Wondercard {type} File";
@@ -38,7 +38,7 @@ public partial class Wonder2FashionForm : Form {
   }
 
   void fashion_Convert() {
-    List<KeyValuePair<int, int>> pairs = new List<KeyValuePair<int, int>>();
+    List<KeyValuePair<int, int>> pairs = [];
     //byte blocksize = 0x80;
     int startingpos = 0x20;
 
@@ -75,6 +75,6 @@ public partial class Wonder2FashionForm : Form {
   #endregion
 
   private void ts_apply_BTN_Click(object sender, EventArgs e) {
-    this.Close();
+    Close();
   }
 }

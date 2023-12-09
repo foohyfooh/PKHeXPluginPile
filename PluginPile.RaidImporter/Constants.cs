@@ -14,9 +14,9 @@ internal static class SwShConstants {
   public static readonly Block NormalEncountRigel2 = (0x11615F45, "normal_encount_rigel2");
 
   // Block Lists
-  public static readonly IReadOnlyList<Block> BaseGameBlocks    = new List<Block>() { BonusRewards, DiaEncounter, DropRewards, NormalEncount };
-  public static readonly IReadOnlyList<Block> IsleOfArmorBlocks = new List<Block>(BaseGameBlocks) { NormalEncountRigel1 };
-  public static readonly IReadOnlyList<Block> CrownTundraBlocks = new List<Block>(IsleOfArmorBlocks) { NormalEncountRigel2 };
+  public static readonly IReadOnlyList<Block> BaseGameBlocks    = [BonusRewards, DiaEncounter, DropRewards, NormalEncount];
+  public static readonly IReadOnlyList<Block> IsleOfArmorBlocks = [.. BaseGameBlocks,    NormalEncountRigel1];
+  public static readonly IReadOnlyList<Block> CrownTundraBlocks = [.. IsleOfArmorBlocks, NormalEncountRigel2];
 }
 
 internal static class SVConstants {
@@ -31,7 +31,7 @@ internal static class SVConstants {
   public static readonly Block RaidPriorityArray          = (0x095451E4, "raid_priority_array");
 
   // Raids Block Lists
-  public static readonly IReadOnlyList<Block> BaseGameRaidBlocks       = new List<Block>() { RaidEventIdentifier, RaidFixedRewardItemArray, RaidLotteryRewardItemArray, RaidEnemyArray, RaidPriorityArray };
+  public static readonly IReadOnlyList<Block> BaseGameRaidBlocks       = [RaidEventIdentifier, RaidFixedRewardItemArray, RaidLotteryRewardItemArray, RaidEnemyArray, RaidPriorityArray];
   public static readonly IReadOnlyList<Block> BaseGameRaidBlocks_1_3_0 = BaseGameRaidBlocks.Select(b => new Block(b.Location, b.Path + "_1_3_0")).ToList();
   public static readonly IReadOnlyList<Block> TealMaskRaidBlocks       = BaseGameRaidBlocks.Select(b => new Block(b.Location, b.Path + TealMaskSuffix)).ToList();
 
@@ -43,5 +43,6 @@ internal static class SVConstants {
   public static readonly Block OutbreakZoneBlueberry = (0x1B45E41C, "zone_su2_array");
 
   // Outbreaks Block Lists
-  public static readonly IReadOnlyList<Block> TealMaskOutbreakBlocks = new List<Block>() { OutbreakPokedata, OutbreakZonePaldea, OutbreakZoneKitakami }.Select(b => new Block(b.Location, b.Path + TealMaskSuffix)).ToList();
+  private static readonly IReadOnlyList<Block> BaseGameOutbreakBlocks = [OutbreakPokedata, OutbreakZonePaldea, OutbreakZoneKitakami];
+  public  static readonly IReadOnlyList<Block> TealMaskOutbreakBlocks = BaseGameOutbreakBlocks.Select(b => new Block(b.Location, b.Path + TealMaskSuffix)).ToList();
 }

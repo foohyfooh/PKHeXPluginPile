@@ -8,13 +8,13 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
     }
 
     public int FileCount {
-      get { return Files.Count(); }
+      get { return Files.Count; }
     }
 
-    List<string> Files = new List<string>();
+    readonly List<string> Files = [];
 
     string[] OpenWonderCardDLG() {
-      string[] temp = Array.Empty<string>();
+      string[] temp = [];
       using (OpenFileDialog dlg = new OpenFileDialog()) {
         dlg.Multiselect = true;
         dlg.Title = $"Please Select Wondercard File";

@@ -45,10 +45,9 @@ public static class Language {
       return cachedText;
     string? resourceName = assembly.GetManifestResourceNames()
       .SingleOrDefault(str => str.EndsWith(filename));
-    if (resourceName == null)
-      return Array.Empty<string>();
+    if (resourceName == null) return [];
     using Stream? stream = assembly.GetManifestResourceStream(resourceName);
-    if (stream == null) return Array.Empty<string>();
+    if (stream == null) return [];
     using StreamReader reader = new StreamReader(stream);
     string text = reader.ReadToEnd().Trim(); // Handle Final Newline Getting Counted
     return Util.LoadStringList(fullyQualifiedName, text);

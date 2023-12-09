@@ -73,7 +73,7 @@ Fork based on [Eppin](https://github.com/Eppin)'s [PKHeX.RentalViewer](https://g
 ## Building
 - Open PowerShell and Run `build.ps1`
 - Individual Plugins should be located in `bin\Build\Individual`
-- Combined Plugin should be located in `bin\Build\PluginPile.dll`
+- Combined Plugin should be located at `bin\Build\PluginPile.dll`
 - Unmaintained Plugins should be located in `bin\Build\Unmaintained`
 
 ### Requirements

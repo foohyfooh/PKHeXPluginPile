@@ -2,27 +2,14 @@
 
   <PropertyGroup>
     <Title>Sword/Shield Raid Tool</Title>
-    <Platforms>x64;x86</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Costura.Fody" Version="5.7.0" PrivateAssets="all" />
     <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Z3" Version="4.12.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-
-  <Choose>
-    <When Condition="'$(Platform)' == 'x64' OR $(RuntimeIdentifier.EndsWith('x64'))">
-      <ItemGroup>
-        <PackageReference Include="Microsoft.Z3" Version="4.12.2" />
-      </ItemGroup>
-    </When>
-    <Otherwise>
-      <ItemGroup>
-        <PackageReference Include="Microsoft.Z3.x86" Version="4.12.2" />
-      </ItemGroup>
-    </Otherwise>
-  </Choose>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

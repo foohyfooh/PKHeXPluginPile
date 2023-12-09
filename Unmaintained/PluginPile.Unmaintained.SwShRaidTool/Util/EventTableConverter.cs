@@ -50,7 +50,7 @@ public static class EventTableConverter {
 
 
     fbb = new FlatBufferBuilder(new ByteBuffer(encount_data));
-    dist_encounts = PluginPile.Unmaintained.SwShRaidTool.NestHoleDistributionEncounter8Archive.GetRootAsNestHoleDistributionEncounter8Archive(fbb.DataBuffer);
+    dist_encounts = NestHoleDistributionEncounter8Archive.GetRootAsNestHoleDistributionEncounter8Archive(fbb.DataBuffer);
 
     sword_table = dist_encounts.Tables(0)!.Value;
     shield_table = dist_encounts.Tables(1)!.Value;
@@ -82,7 +82,7 @@ public static class EventTableConverter {
 
 
     fbb = new FlatBufferBuilder(new ByteBuffer(encount_data));
-    dist_encounts = PluginPile.Unmaintained.SwShRaidTool.NestHoleDistributionEncounter8Archive.GetRootAsNestHoleDistributionEncounter8Archive(fbb.DataBuffer);
+    dist_encounts = NestHoleDistributionEncounter8Archive.GetRootAsNestHoleDistributionEncounter8Archive(fbb.DataBuffer);
 
     sword_table = dist_encounts.Tables(0)!.Value;
     shield_table = dist_encounts.Tables(1)!.Value;

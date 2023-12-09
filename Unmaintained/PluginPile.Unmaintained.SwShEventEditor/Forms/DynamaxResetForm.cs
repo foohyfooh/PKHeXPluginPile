@@ -11,30 +11,30 @@ public partial class DynamaxResetForm : Form {
     SAV = sav;
   }
 
-  public uint[] Gen1Keys = new uint[] {
+  public uint[] Gen1Keys = [
     0xF75E52CF, //Articuno
     0xF75E5635, //Zapdos
     0xF75E511C, //Moltres
     0xF75E4DB6 //Mewtwo
-  };
+  ];
 
-  public uint[] Gen2Keys = new uint[] {
+  public uint[] Gen2Keys = [
     0xF75E4C03, //Raikou
     0xF75E4A50, //Entei
     0xF75E4F69, //Suicune
     0xF75E621A, //Lugia
     0xF75E63CD //Ho-Oh
-  };
+  ];
 
-  public uint[] Gen3Keys = new uint[] {
+  public uint[] Gen3Keys = [
     0xF760963E, //Kyogre
     0xF76097F1, //Groudon
     0xF7609B57, //Rayquaza
     0xF760948B, //Latias
     0xF76092D8, //Latios
-  };
+  ];
 
-  public uint[] Gen4Keys = new uint[] {
+  public uint[] Gen4Keys = [
     0xF76086F3, //Dialga
     0xF7608540, //Palkia
     0xF7582170, //Giratina
@@ -43,33 +43,33 @@ public partial class DynamaxResetForm : Form {
     0xF7609EBD, //Azelf
     0xF7582323, //Heatran
     0xF75824D6, //Cresselia
-  };
+  ];
 
-  public uint[] Gen5Keys = new uint[] {
+  public uint[] Gen5Keys = [
     0xF7582BA2, //Reshiram
     0xF7582D55, //Zekrom
     0xF7582F08, //Kyurem
     0xF7582689, //Tornadus
     0xF758283C, //Thundurus
     0xF75829EF, //Landorus
-  };
+  ];
 
-  public uint[] Gen6Keys = new uint[] {
+  public uint[] Gen6Keys = [
     0xF75830BB, //Xerneas
     0xF75B3AF9, //Yveltal
     0xF75B3946, //Zygarde
-  };
+  ];
 
-  public uint[] Gen7Keys = new uint[] {
+  public uint[] Gen7Keys = [
     0xF75B3E5F, //Solgaleo
     0xF75B3CAC, //Lunala
     0xF75B3793, //Tapu Koko
     0xF75B35E0, //Tapu Lele
     0xF75B41C5, //Tapu Bulu
     0xF75B4012, //Tapu Fini
-  };
+  ];
 
-  public uint[] Gen7UBKeys = new uint[] {
+  public uint[] Gen7UBKeys = [
     0xF75B46DE, //Nihilego
     0xF769AAC6, //Buzzwole
     0xF769AC79, //Pheromosa
@@ -80,7 +80,7 @@ public partial class DynamaxResetForm : Form {
     0xF75B4891, //Necrozma
     0xF769B85E, //Stakataka
     0xF769AFDF, //Blacephalon
-  };
+  ];
 
 
   private void DynamaxResetForm_Load(object sender, EventArgs e) {
@@ -205,11 +205,11 @@ public partial class DynamaxResetForm : Form {
 
     SCBlock b_hint = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairPeoniaSpeciesHint"]);
 
-    b_notes1.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlspecies1_CMB.SelectedItem.ToString()!)));
-    b_notes2.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlspecies2_CMB.SelectedItem.ToString()!)));
-    b_notes3.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlspecies3_CMB.SelectedItem.ToString()!)));
+    b_notes1.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlspecies1_CMB.SelectedItem!.ToString()!)));
+    b_notes2.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlspecies2_CMB.SelectedItem!.ToString()!)));
+    b_notes3.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlspecies3_CMB.SelectedItem!.ToString()!)));
 
-    b_hint.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlhint_CMB.SelectedItem.ToString()!)));
+    b_hint.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlhint_CMB.SelectedItem!.ToString()!)));
 
     SCBlock b_dstreak = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairDisconnectStreak"]);
     SCBlock b_estreak = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairEndlessStreak"]);
@@ -397,7 +397,7 @@ public partial class DynamaxResetForm : Form {
   }
 
   bool CheckPeoniaNotes() {
-    if ((string)mlhint_CMB.SelectedItem == "None")
+    if ((string)mlhint_CMB.SelectedItem! == "None")
       return false;
 
     if (!ml_legality_CB.Checked)
@@ -407,14 +407,14 @@ public partial class DynamaxResetForm : Form {
       //Check the opposing game for an entry
       if (Definitions.MaxLairExclusives.Shield.Contains(mlhint_CMB.SelectedItem)) {
         if (DialogResult.Yes == ShowWrongGameMSG()) {
-          mlhint_CMB.SelectedItem = Definitions.MaxLairExclusives.Sword[Definitions.MaxLairExclusives.Shield.IndexOf(mlhint_CMB.SelectedItem.ToString()!)];
+          mlhint_CMB.SelectedItem = Definitions.MaxLairExclusives.Sword[Definitions.MaxLairExclusives.Shield.IndexOf(mlhint_CMB.SelectedItem!.ToString()!)];
         } else ml_legality_CB.Checked = false;
       }
     } else if (SAV.Version == GameVersion.SH) {
       //Check the opposing game for an entry
       if (Definitions.MaxLairExclusives.Sword.Contains(mlhint_CMB.SelectedItem)) {
         if (DialogResult.Yes == ShowWrongGameMSG()) {
-          mlhint_CMB.SelectedItem = Definitions.MaxLairExclusives.Shield[Definitions.MaxLairExclusives.Sword.IndexOf(mlhint_CMB.SelectedItem.ToString()!)];
+          mlhint_CMB.SelectedItem = Definitions.MaxLairExclusives.Shield[Definitions.MaxLairExclusives.Sword.IndexOf(mlhint_CMB.SelectedItem!.ToString()!)];
         } else ml_legality_CB.Checked = false;
       }
     }
@@ -446,7 +446,7 @@ public partial class DynamaxResetForm : Form {
 
   }
 
-  DialogResult ShowWrongGameMSG() {
+  private static DialogResult ShowWrongGameMSG() {
     return MessageBox.Show("You have chosen a legendary that you cannot have notes for! Would you like to correct this to the legendary for your game?", "Error", MessageBoxButtons.YesNo);
   }
 

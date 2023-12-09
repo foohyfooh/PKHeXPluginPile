@@ -4,17 +4,17 @@ using System.ComponentModel;
 namespace PluginPile.Unmaintained.SwShRaidTool;
 public partial class DenIVs : Form {
   private readonly RaidManager Raids;
-  private static readonly int[] min_stars = { 0, 0, 0, 0, 1, 1, 2, 2, 2, 0 };
-  private static readonly int[] max_stars = { 0, 1, 1, 2, 2, 2, 3, 3, 4, 4 };
+  private static readonly int[] min_stars = [0, 0, 0, 0, 1, 1, 2, 2, 2, 0];
+  private static readonly int[] max_stars = [0, 1, 1, 2, 2, 2, 3, 3, 4, 4];
 
   private static readonly ComboboxItem genderless = new ComboboxItem("Genderless", 2);
   private static readonly ComboboxItem female = new ComboboxItem("Female", 1);
   private static readonly ComboboxItem male = new ComboboxItem("Male", 0);
   private static readonly ComboboxItem any = new ComboboxItem("Any", -1);
 
-  private static readonly string[] genders = { "Male", "Female", "Genderless" };
-  private static readonly string[] shinytype = { "No", "Star", "Square" };
-  private static readonly Dictionary<string, int> natureIdx = new Dictionary<string, int>();
+  private static readonly string[] genders = ["Male", "Female", "Genderless"];
+  private static readonly string[] shinytype = ["No", "Star", "Square"];
+  private static readonly Dictionary<string, int> natureIdx = [];
 
   private CancellationTokenSource cts = new CancellationTokenSource();
 
@@ -79,16 +79,16 @@ public partial class DenIVs : Form {
     endFrame.Text = end_frame.ToString();
     ulong current_seed = Advance(start_seed, start_frame);
     GameStrings s = GameInfo.Strings;
-    RaidTemplate pkmn = (RaidTemplate)((ComboboxItem)speciesList.SelectedItem).Value;
+    RaidTemplate pkmn = (RaidTemplate)((ComboboxItem)speciesList.SelectedItem!).Value;
     raidContent.Rows.Clear();
-    List<DataGridViewRow> rows = new List<DataGridViewRow>();
+    List<DataGridViewRow> rows = [];
     ((ISupportInitialize)raidContent).BeginInit();
     for (uint current_frame = start_frame; current_frame <= start_frame + end_frame; current_frame++, current_seed += Xoroshiro128Plus.XOROSHIRO_CONST) {
       RaidPKM res = pkmn.ConvertToPKM(current_seed, Raids.TID, Raids.SID);
       DataGridViewRow row = CreateRaidRow(current_frame, res, s, current_seed);
       rows.Add(row);
     }
-    raidContent.Rows.AddRange(rows.ToArray());
+    raidContent.Rows.AddRange([..rows]);
     // Double buffering can make DGV slow in remote desktop
     if (!SystemInformation.TerminalServerSession)
       raidContent.DoubleBuffered(true);
@@ -120,9 +120,9 @@ public partial class DenIVs : Form {
       return false;
     if (!natureBox.GetItemChecked(0) && !natureBox.GetItemChecked(res.Nature + 1))
       return false;
-    if (abilityBox.SelectedIndex != 0 && (int)((ComboboxItem)abilityBox.SelectedItem).Value != res.Ability)
+    if (abilityBox.SelectedIndex != 0 && (int)((ComboboxItem)abilityBox.SelectedItem!).Value != res.Ability)
       return false;
-    if (genderBox.SelectedIndex != 0 && (int)((ComboboxItem)genderBox.SelectedItem).Value != res.Gender)
+    if (genderBox.SelectedIndex != 0 && (int)((ComboboxItem)genderBox.SelectedItem!).Value != res.Gender)
       return false;
 
     return (shinyBox.SelectedIndex == 1 && res.ShinyType > 0) || shinyBox.SelectedIndex - 2 == res.ShinyType || shinyBox.SelectedIndex == 0;
@@ -167,7 +167,7 @@ public partial class DenIVs : Form {
   }
 
   private void SpeciesList_SelectedIndexChanged(object sender, EventArgs e) {
-    RaidTemplate pkm = (RaidTemplate)((ComboboxItem)speciesList.SelectedItem).Value;
+    RaidTemplate pkm = (RaidTemplate)((ComboboxItem)speciesList.SelectedItem!).Value;
     PersonalInfo8SWSH abilities = PersonalTable.SWSH.GetFormEntry(pkm.Species, pkm.AltForm);
     PopulateAbilityList(abilities, pkm.Ability);
     PopulateGenderList(PersonalTable.SWSH[pkm.Species].Gender);
@@ -176,9 +176,9 @@ public partial class DenIVs : Form {
     genderBox.SelectedIndex = 0;
   }
 
-  private static readonly string[] AbilitySuffix = { " (1)", " (2)", " (H)" };
+  private static readonly string[] AbilitySuffix = [" (1)", " (2)", " (H)"];
 
-  private void PopulateAbilityList(IPersonalAbility12H abilities, int a) {
+  private void PopulateAbilityList(PersonalInfo8SWSH abilities, int a) {
     abilityBox.Items.Clear();
     abilityBox.Items.Add("Any");
     GameStrings s = GameInfo.Strings;
@@ -257,7 +257,7 @@ public partial class DenIVs : Form {
 
   private async Task<DataGridViewRow> SearchTask(ulong start_seed, uint start_frame, CancellationToken cancelToken) {
     ulong current_seed = Advance(start_seed, start_frame);
-    RaidTemplate template = (RaidTemplate)((ComboboxItem)speciesList.SelectedItem).Value;
+    RaidTemplate template = (RaidTemplate)((ComboboxItem)speciesList.SelectedItem!).Value;
     GameStrings s = GameInfo.Strings;;
     return await Task.Run(() => {
       for (uint current_frame = start_frame; ; current_frame++, current_seed += Xoroshiro128Plus.XOROSHIRO_CONST) {

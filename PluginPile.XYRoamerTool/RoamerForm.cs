@@ -40,7 +40,6 @@ public partial class RoamerForm : Form {
     roamer.Species = (ushort)(SpeciesOffset + roamerSpecies.SelectedIndex);
     roamer.TimesEncountered = (uint)encountered.Value;
     roamer.RoamStatus = (Roamer6State)state.SelectedIndex;
-    SAV.Encount.Roamer = roamer;
     SAV.State.Edited = true;
     Close();
   }

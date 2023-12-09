@@ -88,6 +88,7 @@ dotnet_style_qualification_for_field = false:silent
 dotnet_style_qualification_for_property = false:silent
 dotnet_style_qualification_for_method = false:silent
 dotnet_style_qualification_for_event = false:silent
+dotnet_style_prefer_collection_expression = true:suggestion
 
 [*.cs]
 csharp_using_directive_placement = outside_namespace:silent

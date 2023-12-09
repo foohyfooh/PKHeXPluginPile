@@ -7,7 +7,7 @@ public partial class RaidList : Form {
 
   public RaidList(SaveBlockAccessor8SWSH blocks, GameVersion game, int badges, int tid, int sid) {
     InitializeComponent();
-    IVs = new[] { TB_HP_IV1, TB_ATK_IV1, TB_DEF_IV1, TB_SPA_IV1, TB_SPD_IV1, TB_SPE_IV1 };
+    IVs = [TB_HP_IV1, TB_ATK_IV1, TB_DEF_IV1, TB_SPA_IV1, TB_SPD_IV1, TB_SPE_IV1];
     _raids = new RaidManager(blocks, game, badges, (uint)tid, (uint)sid);
     CB_Den.SelectedIndex = 0;
     CenterToParent();

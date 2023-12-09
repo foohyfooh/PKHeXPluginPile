@@ -2,7 +2,7 @@ using PKHeX.Core;
 
 namespace PluginPile.Unmaintained.SwShRaidTool;
 public class RaidParameters {
-  private static readonly string[] LocationNames = {
+  private static readonly string[] LocationNames = [
     "Axew's Eye",
     "Bridge Field",
     "Dappled Grove",
@@ -49,7 +49,7 @@ public class RaidParameters {
     "Three-Point Pass",
     "Ballimere Lake",
     "Dyna Tree Hill"
-  };
+  ];
 
   public readonly int Flags;
   public readonly RaidType Type;

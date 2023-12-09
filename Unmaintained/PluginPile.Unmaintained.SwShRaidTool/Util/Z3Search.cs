@@ -4,16 +4,16 @@ using System.Runtime.CompilerServices;
 
 namespace PluginPile.Unmaintained.SwShRaidTool;
 public static class Z3Search {
-  public static IEnumerable<ulong> GetSeeds(uint ec, uint pid, int[] ivs) {
-    foreach (ulong seed in FindPotentialSeeds(ec, pid, false, ivs))
+  public static IEnumerable<ulong> GetSeeds(uint ec, uint pid) {
+    foreach (ulong seed in FindPotentialSeeds(ec, pid, false))
       yield return seed;
-    foreach (ulong seed in FindPotentialSeeds(ec, pid ^ 0x10000000, false, ivs))
+    foreach (ulong seed in FindPotentialSeeds(ec, pid ^ 0x10000000, false))
       yield return seed;
-    foreach (ulong seed in FindPotentialSeeds(ec, pid, true, ivs))
+    foreach (ulong seed in FindPotentialSeeds(ec, pid, true))
       yield return seed;
   }
 
-  public static IEnumerable<ulong> FindPotentialSeeds(uint ec, uint pid, bool shiny, int[] ivs) {
+  public static IEnumerable<ulong> FindPotentialSeeds(uint ec, uint pid, bool shiny) {
     using Context ctx = new Context(new Dictionary<string, string> { { "model", "true" } });
     BoolExpr exp = CreateModel(ctx, ec, pid, shiny, out BitVecExpr s0);
 

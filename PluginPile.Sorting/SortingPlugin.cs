@@ -59,11 +59,11 @@ public class SortingPlugin : PluginBase {
 
       if (gen >= 6 && !isBDSP) {
         if (PluginSettings.Default.ShowIndividualPokedéxes) {
-          sortItems.Add(GetAreaButtons(Language.Gen6KalosAreas, new ToolStripItem[] {
+          sortItems.Add(GetAreaButtons(Language.Gen6KalosAreas, [
             GetRegionalSortButton(Language.Gen6KalosAreasCentralKalos, Gen6_Kalos.GetCentralDexSortFunctions()),
             GetRegionalSortButton(Language.Gen6KalosAreasCostalKalos, Gen6_Kalos.GetCostalDexSortFunctions()),
             GetRegionalSortButton(Language.Gen6KalosAreasMountainKalos, Gen6_Kalos.GetMountainDexSortFunctions())
-          }));
+          ]));
         }
         sortItems.Add(GetRegionalSortButton(Language.Gen6Kalos, Gen6_Kalos.GetSortFunctions()));
         sortItems.Add(GetRegionalSortButton(Language.Gen6Hoenn, Gen6_Hoenn.GetSortFunctions()));
@@ -71,21 +71,21 @@ public class SortingPlugin : PluginBase {
 
       if (gen >= 7 && !isBDSP && !isPLA) {
         if (PluginSettings.Default.ShowIndividualPokedéxes) {
-          sortItems.Add(GetAreaButtons(Language.Gen7AlolaSunMoonIslands, new ToolStripItem[] {
+          sortItems.Add(GetAreaButtons(Language.Gen7AlolaSunMoonIslands, [
             GetRegionalSortButton(Language.Gen7AlolaIslandsMelemele, Gen7_Alola.GetSMMelemeleSortFunctions()),
             GetRegionalSortButton(Language.Gen7AlolaIslandsAkala, Gen7_Alola.GetSMAkalaSortFunctions()),
             GetRegionalSortButton(Language.Gen7AlolaIslandsUlaula, Gen7_Alola.GetSMUlaulaSortFunctions()),
             GetRegionalSortButton(Language.Gen7AlolaIslandsPoni, Gen7_Alola.GetSMPoniSortFunctions())
-          }));
+          ]));
         }
         sortItems.Add(GetRegionalSortButton(Language.Gen7AlolaSunMoon, Gen7_Alola.GetSMSortFunctions()));
         if (PluginSettings.Default.ShowIndividualPokedéxes) {
-          sortItems.Add(GetAreaButtons(Language.Gen7AlolaUltraSunUltraMoonIslands, new ToolStripItem[] {
+          sortItems.Add(GetAreaButtons(Language.Gen7AlolaUltraSunUltraMoonIslands, [
             GetRegionalSortButton(Language.Gen7AlolaIslandsMelemele, Gen7_Alola.GetUSUMMelemeleSortFunctions()),
             GetRegionalSortButton(Language.Gen7AlolaIslandsAkala, Gen7_Alola.GetUSUMAkalaSortFunctions()),
             GetRegionalSortButton(Language.Gen7AlolaIslandsUlaula, Gen7_Alola.GetUSUMUlaulaSortFunctions()),
             GetRegionalSortButton(Language.Gen7AlolaIslandsPoni, Gen7_Alola.GetUSUMPoniSortFunctions())
-          }));
+          ]));
         }
         sortItems.Add(GetRegionalSortButton(Language.Gen7AlolaUltraSunUltraMoon, Gen7_Alola.GetUSUMSortFunctions()));
       }
@@ -98,11 +98,11 @@ public class SortingPlugin : PluginBase {
             sortItems.Add(GetRegionalSortButton(Language.Gen7Kanto, Gen7_Kanto.GetSortFunctions()));
           }
           if (PluginSettings.Default.ShowIndividualPokedéxes) {
-            sortItems.Add(GetAreaButtons(Language.Gen8GalarAreas, new ToolStripItem[] {
+            sortItems.Add(GetAreaButtons(Language.Gen8GalarAreas, [
               GetRegionalSortButton(Language.Gen8GalarAreasGalar, Gen8_Galar.GetGalarDexSortFunctions()),
               GetRegionalSortButton(Language.Gen8GalarAreasIsleofArmor, Gen8_Galar.GetIoADexSortFunctions()),
               GetRegionalSortButton(Language.Gen8GalarAreasCrownTundra, Gen8_Galar.GetCTDexSortFunction())
-            }));
+            ]));
           }
           sortItems.Add(GetRegionalSortButton(Language.Gen8Galar, Gen8_Galar.GetFullGalarDexSortFunctions()));
         }
@@ -110,13 +110,13 @@ public class SortingPlugin : PluginBase {
           sortItems.Add(GetRegionalSortButton(Language.Gen8Sinnoh, Gen8_Sinnoh.GetSortFunctions()));
           if (!isBDSP) {
             if (PluginSettings.Default.ShowIndividualPokedéxes) {
-              sortItems.Add(GetAreaButtons(Language.Gen8HisuiAreas, new ToolStripItem[] {
+              sortItems.Add(GetAreaButtons(Language.Gen8HisuiAreas, [
                 GetRegionalSortButton(Language.Gen8HisuiAreasObsidianFieldlands, Gen8_Hisui.GetObsidianFieldlandsSortFunctions()),
                 GetRegionalSortButton(Language.Gen8HisuiAreasCrimsonMirelands, Gen8_Hisui.GetCrimsonMirelandsSortFunctions()),
                 GetRegionalSortButton(Language.Gen8HisuiAreasCobaltCoastlands, Gen8_Hisui.GetCobaltCoastlandsSortFunctions()),
                 GetRegionalSortButton(Language.Gen8HisuiAreasCoronetHighlands, Gen8_Hisui.GetCoronetHighlandsSortFunctions()),
                 GetRegionalSortButton(Language.Gen8HisuiAreasAlabasterIcelands, Gen8_Hisui.GetAlabasterIcelandsSortFunctions())
-              }));
+              ]));
             }
             sortItems.Add(GetRegionalSortButton(Language.Gen8Hisui, Gen8_Hisui.GetSortFunctions()));
           }
@@ -125,10 +125,10 @@ public class SortingPlugin : PluginBase {
 
       if (gen >= 9) {
         if (PluginSettings.Default.ShowIndividualPokedéxes) {
-          sortItems.Add(GetAreaButtons(Language.Gen9PaldeaRegions, new ToolStripItem[] {
+          sortItems.Add(GetAreaButtons(Language.Gen9PaldeaRegions, [
             GetRegionalSortButton(Language.Gen9PaldeaRegionsPaldea, Gen9_Paldea.GetPaldeaSortFunctions()),
             GetRegionalSortButton(Language.Gen9PaldeaRegionsKitakami, Gen9_Paldea.GetKitakamiSortFunctions())
-          }));
+          ]));
         }
         sortItems.Add(GetRegionalSortButton(Language.Gen9Paldea, Gen9_Paldea.GetSortFunctions()));
       }
@@ -166,7 +166,7 @@ public class SortingPlugin : PluginBase {
     SaveFileEditor.ReloadSlots();
   }
 
-  private ToolStripItem GetRegionalSortButton(string dex, Func<PKM, IComparable>[] sortFunctions) {
+  private ToolStripMenuItem GetRegionalSortButton(string dex, Func<PKM, IComparable>[] sortFunctions) {
     ToolStripMenuItem dexSortButton = new ToolStripMenuItem(string.Format(Language.RegionalPokédexTemplate, dex));
     dexSortButton.Click += (s, e) => SortByFunctions(sortFunctions);
     return dexSortButton;

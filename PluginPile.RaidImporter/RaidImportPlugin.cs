@@ -7,9 +7,7 @@ public class RaidImportPlugin : PluginBase {
   public override string Name => nameof(RaidImportPlugin);
   protected override Assembly PluginAssembly => typeof(RaidImportPlugin).Assembly;
   private readonly ToolStripMenuItem ImportRaidOrOutbreakButton;
-  private bool IsCompatibleSave {
-    get { return SaveFileEditor.SAV is SAV8SWSH or SAV9SV; }
-  }
+  private bool IsCompatibleSave => SaveFileEditor.SAV is SAV8SWSH or SAV9SV;
 
   public RaidImportPlugin() {
     ImportRaidOrOutbreakButton = new ToolStripMenuItem();
@@ -50,13 +48,13 @@ public class RaidImportPlugin : PluginBase {
       string raidPath = dialog.SelectedPath;
       IReadOnlyList<Block>[] blocksLists = null!;
       if (SaveFileEditor.SAV is SAV8SWSH sav8SwSh) {
-             if (sav8SwSh.SaveRevision == 0) blocksLists = new IReadOnlyList<Block>[]{ SwShConstants.BaseGameBlocks };
-        else if (sav8SwSh.SaveRevision == 1) blocksLists = new IReadOnlyList<Block>[]{ SwShConstants.IsleOfArmorBlocks };
-        else if (sav8SwSh.SaveRevision == 2) blocksLists = new IReadOnlyList<Block>[]{ SwShConstants.CrownTundraBlocks };
+             if (sav8SwSh.SaveRevision == 0) blocksLists = [SwShConstants.BaseGameBlocks];
+        else if (sav8SwSh.SaveRevision == 1) blocksLists = [SwShConstants.IsleOfArmorBlocks];
+        else if (sav8SwSh.SaveRevision == 2) blocksLists = [SwShConstants.CrownTundraBlocks];
       } else if (SaveFileEditor.SAV is SAV9SV sav9SV) {
         raidPath += @"\Files";
-             if (sav9SV.SaveRevision == 0) blocksLists = new IReadOnlyList<Block>[] { SVConstants.BaseGameRaidBlocks, SVConstants.BaseGameRaidBlocks_1_3_0 };
-        else if (sav9SV.SaveRevision == 1) blocksLists = new IReadOnlyList<Block>[] { SVConstants.TealMaskRaidBlocks };
+             if (sav9SV.SaveRevision == 0) blocksLists = [SVConstants.BaseGameRaidBlocks, SVConstants.BaseGameRaidBlocks_1_3_0];
+        else if (sav9SV.SaveRevision == 1) blocksLists = [SVConstants.TealMaskRaidBlocks];
       }
       Import(raidPath, (dynamic)SaveFileEditor.SAV, blocksLists, Language.RaidImported);
     }
@@ -68,7 +66,7 @@ public class RaidImportPlugin : PluginBase {
     if (dialogResult == DialogResult.OK) {
       SAV9SV sav = (SAV9SV)SaveFileEditor.SAV;
       string outbtreakPath = $@"{dialog.SelectedPath}\Files";
-      IReadOnlyList<Block>[] blocksLists = new IReadOnlyList<Block>[] { SVConstants.TealMaskOutbreakBlocks };
+      IReadOnlyList<Block>[] blocksLists = [SVConstants.TealMaskOutbreakBlocks];
       bool didImport = Import(outbtreakPath, sav, blocksLists, Language.OutbreakImported);
       if (didImport) {
         sav.Blocks.GetBlock(SVConstants.OutbreakEnabled).ChangeBooleanType(SCTypeCode.Bool2);

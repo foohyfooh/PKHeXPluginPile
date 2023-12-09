@@ -1,18 +1,10 @@
 namespace PluginPile.Unmaintained.SwShRaidTool;
-public class NestHashDetail {
-  public readonly ulong CommonHash;
-  public readonly ulong RareHash;
-  public readonly int Location;
-  public readonly int MapX;
-  public readonly int MapY;
-
-  public NestHashDetail(ulong common, ulong rare, int location, int mapX, int mapY) {
-    CommonHash = common;
-    RareHash = rare;
-    Location = location;
-    MapX = mapX;
-    MapY = mapY;
-  }
+public class NestHashDetail(ulong common, ulong rare, int location, int mapX, int mapY) {
+  public readonly ulong CommonHash = common;
+  public readonly ulong RareHash = rare;
+  public readonly int Location = location;
+  public readonly int MapX = mapX;
+  public readonly int MapY = mapY;
 }
 
 public static class NestLocations {
@@ -20,7 +12,7 @@ public static class NestLocations {
   public const ulong EventHash_Rigel1 = 968916678281972007;
   public const ulong EventHash_Rigel2 = 968917777793600218;
 
-  public static readonly NestHashDetail[] Nests = new NestHashDetail[] {
+  public static readonly NestHashDetail[] Nests = [
     new NestHashDetail(0x173f0456dc5dfc52, 0xba83e1671012ebcd, 12, 185, 977), //16 52
     new NestHashDetail(0x17458556dc634333, 0xba8745671015cb90, 12, 125,1005), //37 64
     new NestHashDetail(0x17458b56dc634d65, 0x450421d99cf882c1, 12, 114, 936), //31 90
@@ -307,9 +299,9 @@ public static class NestLocations {
     new NestHashDetail(0x3d2f6b02fc6dd797, 0xf9d3242b837d627e, 42, 1462, 1472), //184 185
 
     new NestHashDetail(0x42b21efc37c7b974, 0x9d415f6a7a841dd9, 43, 993, 1565), //176 177
-  };
+  ];
 
-  internal static ulong getEventHash(RaidParameters raidParameters) {
+  internal static ulong GetEventHash(RaidParameters raidParameters) {
     if (raidParameters.Index >= PKHeX.Core.RaidSpawnList8.RaidCountLegal_O0 + PKHeX.Core.RaidSpawnList8.RaidCountLegal_R1) return EventHash_Rigel2;
     if (raidParameters.Index >= PKHeX.Core.RaidSpawnList8.RaidCountLegal_O0) return EventHash_Rigel1;
     return EventHash;
