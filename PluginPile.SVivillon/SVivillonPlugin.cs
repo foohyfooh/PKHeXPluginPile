@@ -1,12 +1,10 @@
 using PKHeX.Core;
 using PluginPile.Common;
-using System.Reflection;
 
 namespace PluginPile.SVivillon; 
 public class SVivillonPlugin : PluginBase {
 
   public override string Name => nameof(SVivillonPlugin);
-  protected override Assembly PluginAssembly => typeof(SVivillonPlugin).Assembly;
   private readonly ToolStripMenuItem OpenFormButton;
   private bool IsCompatibleSave => SaveFileEditor.SAV is SAV9SV;
 

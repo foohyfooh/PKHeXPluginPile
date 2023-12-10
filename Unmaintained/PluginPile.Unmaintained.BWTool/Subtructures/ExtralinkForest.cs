@@ -1,107 +1,101 @@
 namespace PluginPile.Unmaintained.BWTool;
-public class ExtralinkForest {
+public class ExtralinkForest(byte[] data) {
 
-  //private int Size = SAV is SAV5BW ? SAV.getBlockLength(Constants.BW.Forest) : SAV.getBlockLength(Constants.B2W2.Forest);
-
-  public byte[] Data;
-  public ExtralinkForest(byte[] data) {
-    Data = data;
-  }
-
-  private int area = 4;
-  private int indexpkm = 0;
-  private int total_areas = (9 * 3) + 1;
-  private int area_size = 0x50;
-  private int deep_area_size = 0x28;
-  private int pkmnsize = 4;
+  public byte[] Data = data;
+  private int InternalArea = 4;
+  private int InternalIndexPkm = 0;
+  private readonly int TotalAreas = (9 * 3) + 1;
+  private readonly int AreaSize = 0x50;
+  private readonly int DeepAreaSize = 0x28;
+  private readonly int PkmnSize = 4;
 
   public int Area {
-    get { return area; }
-    set { if ((value >= 0) && (value < total_areas)) { area = value; } }
+    get => InternalArea;
+    set { if ((value >= 0) && (value < TotalAreas)) { InternalArea = value; } }
   }
 
-  public int Indexpkm {
-    get { return indexpkm; }
-    set { if ((value >= 0) && (value < 20)) { indexpkm = (value); } }
+  public int IndexPkm {
+    get => InternalIndexPkm;
+    set { if ((value >= 0) && (value < 20)) { InternalIndexPkm = (value); } }
   }
 
   public byte Unlock9 {
-    get { return Data[0x848]; }
-    set { Data[0x848] = value; }
+    get => Data[0x848];
+    set => Data[0x848] = value;
   }
 
   public byte Unlock8 {
-    get { return Data[0x849]; }
-    set { Data[0x849] = value; }
+    get => Data[0x849];
+    set => Data[0x849] = value;
   }
 
-  internal int get_pkmoffset() {
-    if (area == 0) { //Deepest area
-      if (indexpkm > 19) return -1;
-      return indexpkm * pkmnsize;
-    } else if (area > 0 && area < 4) { //Area 9 ony holds 10 pokes
-      if (indexpkm > 9) return -1;
-      return area_size + (indexpkm * pkmnsize) + deep_area_size * area - deep_area_size;
-    } else if (area > 3 && area < 28) { //Areas 1-8
-      if (indexpkm > 19) return -1;
-      return area_size + (deep_area_size * 3) + ((area - 4) * area_size) + (indexpkm * pkmnsize);
+  internal int GetPkmoffset() {
+    if (InternalArea == 0) { //Deepest InternalArea
+      if (InternalIndexPkm > 19) return -1;
+      return InternalIndexPkm * PkmnSize;
+    } else if (InternalArea > 0 && InternalArea < 4) { //Area 9 ony holds 10 pokes
+      if (InternalIndexPkm > 9) return -1;
+      return AreaSize + (InternalIndexPkm * PkmnSize) + DeepAreaSize * InternalArea - DeepAreaSize;
+    } else if (InternalArea > 3 && InternalArea < 28) { //Areas 1-8
+      if (InternalIndexPkm > 19) return -1;
+      return AreaSize + (DeepAreaSize * 3) + ((InternalArea - 4) * AreaSize) + (InternalIndexPkm * PkmnSize);
     }
     return -1;
   }
 
-  public void dump_area() {
-    int tmp_slot = indexpkm;
+  public void DumpArea() {
+    int tmp_slot = InternalIndexPkm;
     byte[] phl = new byte[4 * 20];
-    indexpkm = 0;
+    InternalIndexPkm = 0;
 
-    if (area > 0 && area < 4) { //Area 9 ony holds 10 pokes
-      for (indexpkm = 0; indexpkm < 10; indexpkm++) {
-        BitConverter.GetBytes(get_pkm()).CopyTo(phl, indexpkm * 4);
+    if (InternalArea > 0 && InternalArea < 4) { //Area 9 ony holds 10 pokes
+      for (InternalIndexPkm = 0; InternalIndexPkm < 10; InternalIndexPkm++) {
+        BitConverter.GetBytes(GetPkm()).CopyTo(phl, InternalIndexPkm * 4);
       }
     } else {
-      for (indexpkm = 0; indexpkm < 20; indexpkm++) {
-        BitConverter.GetBytes(get_pkm()).CopyTo(phl, indexpkm * 4);
+      for (InternalIndexPkm = 0; InternalIndexPkm < 20; InternalIndexPkm++) {
+        BitConverter.GetBytes(GetPkm()).CopyTo(phl, InternalIndexPkm * 4);
       }
     }
 
-    indexpkm = tmp_slot;
+    InternalIndexPkm = tmp_slot;
     FileIO.SaveFile(phl, "Entree Forest Area data|*.phl|All Files (*.*)|*.*");
   }
 
-  public void import_area() {
+  public void ImportArea() {
     byte[]? phl = new byte[4 * 20];
     string? path = null;
     int res = FileIO.LoadFile(ref phl, ref path, "Entree Forest Area data|*.phl|All Files (*.*)|*.*");
     if (res == -1) return;
 
     uint temp_pkm;
-    indexpkm = 0;
+    InternalIndexPkm = 0;
 
-    if (area > 0 && area < 4) { //Area 9 ony holds 10 pokes
-      for (indexpkm = 0; indexpkm < 10; indexpkm++) {
-        temp_pkm = BitConverter.ToUInt32(phl!, indexpkm * 4);
-        edit_pkm(temp_pkm);
+    if (InternalArea > 0 && InternalArea < 4) { //Area 9 ony holds 10 pokes
+      for (InternalIndexPkm = 0; InternalIndexPkm < 10; InternalIndexPkm++) {
+        temp_pkm = BitConverter.ToUInt32(phl!, InternalIndexPkm * 4);
+        EditPkm(temp_pkm);
       }
     } else {
-      for (indexpkm = 0; indexpkm < 20; indexpkm++) {
-        temp_pkm = BitConverter.ToUInt32(phl!, indexpkm * 4);
-        edit_pkm(temp_pkm);
+      for (InternalIndexPkm = 0; InternalIndexPkm < 20; InternalIndexPkm++) {
+        temp_pkm = BitConverter.ToUInt32(phl!, InternalIndexPkm * 4);
+        EditPkm(temp_pkm);
       }
     }
 
-    indexpkm = 0;
+    InternalIndexPkm = 0;
   }
 
-  public void export_forest() {
+  public void ExportForest() {
     FileIO.SaveFile(Data, "Entralink Forest Decrypted Data|*.efdd|All Files (*.*)|*.*");
   }
 
-  public void import_forest() {
+  public void ImportForest() {
     byte[] forest = new byte[2304];
     string? path = null;
     FileIO.LoadFile(ref forest!, ref path, "Entralink Forest Decrypted Data|*.efdd|All Files (*.*)|*.*");
     Data = forest;
-    indexpkm = 0;
+    InternalIndexPkm = 0;
   }
 
   /*
@@ -113,131 +107,128 @@ public class ExtralinkForest {
   23-27   Form
   28-31   Animation (only even numbers allowed, last bit makes Pokemon invisible)
   */
-  private int species;
-  private int move;
-  private int gender;
-  private int form;
-  private int animation;
+#pragma warning disable IDE0052 // Remove unread private members
+  private int InternalSpecies;
+  private int InternalMove;
+  private int InternalGender;
+  private int InternalForm;
+  private int InternalAnimation;
+#pragma warning restore IDE0052 // Remove unread private members
 
   public int Species {
-    get { return (BitConverter.ToInt32(Data, get_pkmoffset()) & 0x7FF); }
-    set { species = value; }
+    get => BitConverter.ToInt32(Data, GetPkmoffset()) & 0x7FF;
+    set => InternalSpecies = value;
   }
   public int Move {
-    get { return ((BitConverter.ToInt32(Data, get_pkmoffset()) & 0x1FF800) >> 11); }
-    set { move = value; }
+    get => (BitConverter.ToInt32(Data, GetPkmoffset()) & 0x1FF800) >> 11;
+    set => InternalMove = value;
   }
   public int Gender {
-    get { return ((BitConverter.ToInt32(Data, get_pkmoffset()) & 0x600000) >> 21); }
-    set { gender = value; }
+    get => (BitConverter.ToInt32(Data, GetPkmoffset()) & 0x600000) >> 21;
+    set => InternalGender = value;
   }
   public int Form {
-    get { return ((BitConverter.ToInt32(Data, get_pkmoffset()) & 0xF800000) >> 23); }
-    set { form = value; }
+    get => (BitConverter.ToInt32(Data, GetPkmoffset()) & 0xF800000) >> 23;
+    set => InternalForm = value;
   }
   public int Animation {
-    get { return (int)((BitConverter.ToInt32(Data, get_pkmoffset()) & 0xF0000000) >> 28); }
-    set { animation = value; }
+    get => (int)((BitConverter.ToInt32(Data, GetPkmoffset()) & 0xF0000000) >> 28);
+    set => InternalAnimation = value;
   }
 
   //Just return if there's a valid pkm in current slot
-  public bool is_pkm_empty() {
-    if (Species == 0)
-      return true;
-    else
-      return false;
+  public bool IsPkmEmpty() => Species == 0;
+
+  public uint GetPkm() { //Relies on current InternalIndexPkm
+    return BitConverter.ToUInt32(Data, GetPkmoffset());
   }
-  public uint get_pkm() //Relies on current indexpkm
-  {
-    return BitConverter.ToUInt32(Data, get_pkmoffset());
-  }
+
   //Build a u32 pkm for entralink forest
-  public uint create_pkm(int sp, int mv, int gdr, int frm, int anim) {
+  public static uint CreatePkm(int sp, int mv, int gdr, int frm, int anim) {
     return unchecked((uint)((sp & 0x7FF) | ((mv & 0x3FF) << 11) | ((gdr & 0x3) << 21) | ((frm & 0x1F) << 23) | ((anim & 0xF) << 28)));
   }
+
   //Sets pkm data to current slot
-  public void edit_pkm(uint pkm) {
-    Array.Copy(BitConverter.GetBytes(pkm), 0, Data, get_pkmoffset(), 4);
+  public void EditPkm(uint pkm) {
+    Array.Copy(BitConverter.GetBytes(pkm), 0, Data, GetPkmoffset(), 4);
   }
+
   //Sets pkm data to first available slot, if there's one
-  public void add_pkm(uint pkm) {
-    int tmp_slot = indexpkm;
+  public void AddPkm(uint pkm) {
+    int tmp_slot = InternalIndexPkm;
     bool found_empty = false;
     //Find first available slot
-    if (area > 0 && area < 4) //Area 9 ony holds 10 pokes
-    {
-      for (indexpkm = 0; indexpkm < 10; indexpkm++) {
-        if (is_pkm_empty() == true) {
+    if (InternalArea > 0 && InternalArea < 4) { //Area 9 ony holds 10 pokes
+      for (InternalIndexPkm = 0; InternalIndexPkm < 10; InternalIndexPkm++) {
+        if (IsPkmEmpty()) {
           found_empty = true;
           break;
         }
       }
     } else {
-      for (indexpkm = 0; indexpkm < 20; indexpkm++) {
-        if (is_pkm_empty() == true) {
+      for (InternalIndexPkm = 0; InternalIndexPkm < 20; InternalIndexPkm++) {
+        if (IsPkmEmpty()) {
           found_empty = true;
           break;
         }
       }
     }
 
-    if (found_empty == true)
-      Array.Copy(BitConverter.GetBytes(pkm), 0, Data, get_pkmoffset(), 4);
+    if (found_empty)
+      Array.Copy(BitConverter.GetBytes(pkm), 0, Data, GetPkmoffset(), 4);
     else
-      MessageBox.Show("There are no free slots in this area.");
+      MessageBox.Show("There are no free slots in this InternalArea.");
 
-    indexpkm = tmp_slot;
+    InternalIndexPkm = tmp_slot;
   }
+
   //deletes current slot
-  //todo: move all slots up
-  public void delete_pkm() {
-    int tmp_slot = indexpkm;
-    uint temp_pkm = 0;
+  //todo: mve all slots up
+  public void DeletePkm() {
+    int tmp_slot = InternalIndexPkm;
 
     //Delete selected pkm
     uint delete = 0;
-    Array.Copy(BitConverter.GetBytes(delete), 0, Data, get_pkmoffset(), 4);
+    Array.Copy(BitConverter.GetBytes(delete), 0, Data, GetPkmoffset(), 4);
 
     //Move all pkm up 1 slot
     int i;
-    if (area > 0 && area < 4) //Area 9 ony holds 10 pokes
-    {
-      if (indexpkm != 9)//If user didn't delete last slot
-      {
-        for (i = indexpkm; i < 9; i++) {
+    uint temp_pkm;
+    if (InternalArea > 0 && InternalArea < 4) { //Area 9 ony holds 10 pokes
+      if (InternalIndexPkm != 9) { //If user didn't delete last slot
+        for (i = InternalIndexPkm; i < 9; i++) {
           //Get next pkm
-          indexpkm = indexpkm + 1;
-          temp_pkm = BitConverter.ToUInt32(Data, get_pkmoffset());
+          InternalIndexPkm++;
+          temp_pkm = BitConverter.ToUInt32(Data, GetPkmoffset());
           //Set to previous slot
-          indexpkm = indexpkm - 1;
-          edit_pkm(temp_pkm);
+          InternalIndexPkm--;
+          EditPkm(temp_pkm);
           //Return index to next slot
-          indexpkm = indexpkm + 1;
+          InternalIndexPkm++;
         }
         //Now empty last slot
         temp_pkm = 0;
-        edit_pkm(temp_pkm);
+        EditPkm(temp_pkm);
       }
     } else {
-      if (indexpkm != 19)//If user didn't delete last slot
-      {
-        for (i = indexpkm; i < 19; i++) {
+      if (InternalIndexPkm != 19) { //If user didn't delete last slot
+        for (i = InternalIndexPkm; i < 19; i++) {
           //Get next pkm
-          indexpkm = indexpkm + 1;
-          temp_pkm = BitConverter.ToUInt32(Data, get_pkmoffset());
+          InternalIndexPkm++;
+          temp_pkm = BitConverter.ToUInt32(Data, GetPkmoffset());
           //Set to previous slot
-          indexpkm = indexpkm - 1;
-          edit_pkm(temp_pkm);
+          InternalIndexPkm--;
+          EditPkm(temp_pkm);
           //Return index to next slot
-          indexpkm = indexpkm + 1;
+          InternalIndexPkm++;
         }
         //Now empty last slot
         temp_pkm = 0;
-        edit_pkm(temp_pkm);
+        EditPkm(temp_pkm);
       }
     }
 
-    indexpkm = tmp_slot;
+    InternalIndexPkm = tmp_slot;
   }
 }
 

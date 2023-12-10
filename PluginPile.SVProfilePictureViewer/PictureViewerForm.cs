@@ -1,37 +1,37 @@
 using PKHeX.Core;
+using PluginPile.Common;
 using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
 
-namespace PluginPile.SVProfilePictureViewer; 
+namespace PluginPile.SVProfilePictureViewer;
 public partial class PictureViewerForm : Form {
 
-  private readonly SAV9SV sav;
+  private readonly SAV9SV SAV;
 
   public PictureViewerForm(SAV9SV sav9sv) {
     InitializeComponent();
     HandleLanguageChange();
-    sav = sav9sv;
-    ExtractImageTo(Constants.CurrentProfilePictureImage, Constants.CurrentProfilePictureHeight, Constants.CurrentProfilePictureWidth, currentProfilePicture);
-    ExtractImageTo(Constants.CurrentProfileIconImage, Constants.CurrentProfileIconHeight, Constants.CurrentProfileIconWidth, currentProfileIcon);
-    ExtractImageTo(Constants.InitialProfilePictureImage, Constants.InitialProfilePictureHeight, Constants.InitialProfilePictureWidth, initialProfilePicture);
-    ExtractImageTo(Constants.InitialProfileIconImage, Constants.InitialProfileIconHeight, Constants.InitialProfileIconWidth, initialProfileIcon);
+    SAV = sav9sv;
+    ExtractImageTo(Constants.CurrentProfilePictureImage, Constants.CurrentProfilePictureWidth, Constants.CurrentProfilePictureHeight, CrrentProfilePicture);
+    ExtractImageTo(Constants.CurrentProfileIconImage, Constants.CurrentProfileIconWidth, Constants.CurrentProfileIconHeight, CurrentProfileIcon);
+    ExtractImageTo(Constants.InitialProfilePictureImage, Constants.InitialProfilePictureWidth, Constants.InitialProfilePictureHeight, InitialProfilePicture);
+    ExtractImageTo(Constants.InitialProfileIconImage, Constants.InitialProfileIconWidth, Constants.InitialProfileIconHeight, InitialProfileIcon);
   }
 
   private void HandleLanguageChange() {
     Text = Language.PluginName;
-    exportButton.Text = Language.Export;
-    currentProfilePicturePage.Text = Language.CurrentProfilePicture;
-    currentProfileIconPage.Text = Language.CurrentProfileIcon;
-    initialProfilePicturePage.Text = Language.InitialProfilePicture;
-    initialProfileIconPage.Text = Language.InitialProfileIcon;
+    ExportButton.Text = Language.Export;
+    CurrentProfilePicturePage.Text = Language.CurrentProfilePicture;
+    CurrentProfileIconPage.Text = Language.CurrentProfileIcon;
+    InitialProfilePicturePage.Text = Language.InitialProfilePicture;
+    InitialProfileIconPage.Text = Language.InitialProfileIcon;
   }
 
-  private void saveButton_Click(object sender, EventArgs e) {
-    (Image? image, string name) = tabs.SelectedIndex switch {
-      0 => (currentProfilePicture.Image, "current_profile.png"),
-      1 => (currentProfileIcon.Image, "current_icon.png"),
-      2 => (initialProfilePicture.Image, "initial_profile.png"),
-      3 => (initialProfileIcon.Image, "initial_icon.png"),
+  private void ExportButton_Click(object sender, EventArgs e) {
+    (Image? image, string name) = Tabs.SelectedIndex switch {
+      0 => (CrrentProfilePicture.Image, "current_profile.png"),
+      1 => (CurrentProfileIcon.Image, "current_icon.png"),
+      2 => (InitialProfilePicture.Image, "initial_profile.png"),
+      3 => (InitialProfileIcon.Image, "initial_icon.png"),
       _ => (null, string.Empty)
     };
     if (image == null) return;
@@ -49,20 +49,13 @@ public partial class PictureViewerForm : Form {
     }
   }
 
-  private void ExtractImageTo(uint imageBlock, uint heightBlock, uint widthBlock, PictureBox pictureBox) {
-    SCBlock image = sav.Blocks.GetBlock(imageBlock);
-    int height = (int)sav.Blocks.GetBlockValue<uint>(heightBlock);
-    int width = (int)sav.Blocks.GetBlockValue<uint>(widthBlock);
-
-    Bitmap result = new Bitmap(width, height, PixelFormat.Format32bppArgb);
-    Rectangle resultSizeRect = new Rectangle(0, 0, width, height);
-    BitmapData resultData = result.LockBits(resultSizeRect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
-    IntPtr resultPtr = resultData.Scan0;
+  private void ExtractImageTo(uint imageBlock, uint widthBlock, uint heightBlock, PictureBox pictureBox) {
+    SCBlock image = SAV.Blocks.GetBlock(imageBlock);
+    int height = (int)SAV.Blocks.GetBlockValue<uint>(heightBlock);
+    int width = (int)SAV.Blocks.GetBlockValue<uint>(widthBlock);
     byte[] rgbaBytes = DXT1.Decompress(image.Data, width, height);
-    Marshal.Copy(rgbaBytes, 0, resultPtr, rgbaBytes.Length);
-    result.UnlockBits(resultData);
-
-    pictureBox.Image = result;
+    pictureBox.Image = DrawingUtil.GetBitmap(rgbaBytes, width, height);
     pictureBox.Size = pictureBox.Image.Size / 4;
   }
+  
 }

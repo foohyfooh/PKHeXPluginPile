@@ -21,21 +21,21 @@ public static class Definitions {
   public static readonly Block SwordsOfJusticeQuestStatus = 0x4DBB9B79;
   public static readonly Block SwordsOfJusticeQuestProgress = 0xCB135C68;
 
-  public static readonly Dictionary<Species, uint> memkeys_SwordsOfJusticeProgress = new Dictionary<Species, uint>() {
+  public static readonly Dictionary<Species, uint> SwordsOfJusticeProgressKeys = new Dictionary<Species, uint>() {
     {Species.Cobalion, 0xC35F6291},
     {Species.Terrakion, 0x03C69A96},
     {Species.Virizion, 0xB98F962B},
     {Species.Keldeo, 0x9A39C8FC}
   };
 
-  public static readonly Dictionary<Species, uint> memkeys_SwordsOfJusticeDisappeared = new Dictionary<Species, uint>() {
+  public static readonly Dictionary<Species, uint> SwordsOfJusticeDisappearedKeys = new Dictionary<Species, uint>() {
     {Species.Cobalion, 0xBB305227},
     {Species.Terrakion, 0x750C83A4},
     {Species.Virizion, 0x1A27DF2C},
     {Species.Keldeo, 0xA097DE31}
   };
 
-  public static readonly Dictionary<Species, uint> memkeys_SwordsOfJusticeFootprintPercentage = new Dictionary<Species, uint>() {
+  public static readonly Dictionary<Species, uint> SwordsOfJusticeFootprintPercentageKeys = new Dictionary<Species, uint>() {
     {Species.Cobalion, 0x4D50B655},
     {Species.Terrakion, 0x771E4c88},
     {Species.Virizion, 0xAD67A297}
@@ -43,7 +43,7 @@ public static class Definitions {
 
   public const uint KRegielekiOrRegidragoPattern = 0xCF90B39A;
 
-  public static readonly Dictionary<Species, uint> memkeys_Regis = new Dictionary<Species, uint>() {
+  public static readonly Dictionary<Species, uint> RegisKeys = new Dictionary<Species, uint>() {
     { Species.Regirock, 0xEE3F84E6},
     { Species.Regice, 0xDAB3DD3A},
     { Species.Registeel, 0xEE1FD86E},
@@ -52,13 +52,13 @@ public static class Definitions {
     { Species.Regidrago, 0x4F30F174}
   };
 
-  public static readonly Dictionary<Species, uint> memkeys_Birds = new Dictionary<Species, uint>() {
+  public static readonly Dictionary<Species, uint> BirdsKeys = new Dictionary<Species, uint>() {
     { Species.Articuno, 0x4CAB7DA6},
     { Species.Zapdos, 0x284CBECF},
     { Species.Moltres, 0xF1E493AA},
   };
 
-  public static readonly Dictionary<string, uint> memkeys_Gifts = new Dictionary<string, uint>() {
+  public static readonly Dictionary<string, uint> GiftsKeys = new Dictionary<string, uint>() {
     { "FSYS_PLAY_LETSGO_PIKACHU", 0x1C74460E},
     { "FSYS_PLAY_LETSGO_EEVEE", 0xC804E4AF},
     { "FE_SUB_037_PIKACHU_CLEAR", 0x9D95E9CA},
@@ -70,7 +70,7 @@ public static class Definitions {
     { "z_t0101_i0202_MONSBALL", 0x178159E5}
   };
 
-  public static readonly Dictionary<string, uint> memkeys_PokeCamp = new Dictionary<string, uint>() {
+  public static readonly Dictionary<string, uint> PokeCampKeys = new Dictionary<string, uint>() {
     { "FSYS_POKECAMP_OPEN_FRESH_BALL", 0xAFA33CBD},
     { "FSYS_POKECAMP_OPEN_HEAVY_BALL", 0xE49088C4},
     { "FSYS_POKECAMP_OPEN_YASURAGI_BALL", 0x45E850BE}, //soothe?
@@ -83,13 +83,13 @@ public static class Definitions {
     { "SYS_WORK_POKECAMP_TENT_COLOR", 0x61952B51}
   };
 
-  public static readonly Dictionary<string, uint> memkeys_CrownTundra_Misc = new Dictionary<string, uint>() {
+  public static readonly Dictionary<string, uint> CrownTundraMiscKeys = new Dictionary<string, uint>() {
     { "FE_CAPTURE_MIKARUGE", 0x11C12005},
     { "z_wr0321_SymbolEncountPokemonGimmickSpawner_WR03_Mikaruge", 0x1895E693},
     { "KPlayersInteractedOnline", 0x31A13425}
   };
 
-  public static readonly Dictionary<string, uint> memkeys_MaxLairMisc = new Dictionary<string, uint>() {
+  public static readonly Dictionary<string, uint> MaxLairMiscKeys = new Dictionary<string, uint>() {
     { "KMaxLairDisconnectStreak", 0x8EAEB8FF},
     { "KMaxLairEndlessStreak", 0x7F4B4B10},
 

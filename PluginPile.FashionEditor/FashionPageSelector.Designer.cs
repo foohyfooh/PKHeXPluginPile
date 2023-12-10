@@ -23,64 +23,64 @@ namespace PluginPile.FashionEditor {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      itemsList = new ComboBox();
-      itemLabel = new Label();
-      owned = new CheckBox();
-      newCheckbox = new CheckBox();
+      ItemsList = new ComboBox();
+      ItemLabel = new Label();
+      Owned = new CheckBox();
+      NewCheckbox = new CheckBox();
       SuspendLayout();
-      // 
-      // itemsList
-      // 
-      itemsList.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-      itemsList.FormattingEnabled = true;
-      itemsList.Location = new Point(51, 8);
-      itemsList.Name = "itemsList";
-      itemsList.Size = new Size(243, 23);
-      itemsList.TabIndex = 0;
-      itemsList.SelectedIndexChanged += namesList_SelectedIndexChanged;
-      // 
-      // itemLabel
-      // 
-      itemLabel.AutoSize = true;
-      itemLabel.Location = new Point(3, 11);
-      itemLabel.Name = "itemLabel";
-      itemLabel.Size = new Size(31, 15);
-      itemLabel.TabIndex = 1;
-      itemLabel.Text = "Item";
-      // 
-      // owned
-      // 
-      owned.AutoSize = true;
-      owned.CheckAlign = ContentAlignment.MiddleRight;
-      owned.Location = new Point(3, 43);
-      owned.Name = "owned";
-      owned.Size = new Size(64, 19);
-      owned.TabIndex = 2;
-      owned.Text = "Owned";
-      owned.UseVisualStyleBackColor = true;
-      owned.CheckedChanged += unlocked_CheckedChanged;
-      // 
-      // newCheckbox
-      // 
-      newCheckbox.AutoSize = true;
-      newCheckbox.CheckAlign = ContentAlignment.MiddleRight;
-      newCheckbox.Enabled = false;
-      newCheckbox.Location = new Point(85, 43);
-      newCheckbox.Name = "newCheckbox";
-      newCheckbox.Size = new Size(50, 19);
-      newCheckbox.TabIndex = 3;
-      newCheckbox.Text = "New";
-      newCheckbox.UseVisualStyleBackColor = true;
-      newCheckbox.CheckedChanged += newCheckbox_CheckedChanged;
-      // 
+      //
+      // ItemsList
+      //
+      ItemsList.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+      ItemsList.FormattingEnabled = true;
+      ItemsList.Location = new Point(51, 8);
+      ItemsList.Name = "ItemsList";
+      ItemsList.Size = new Size(243, 23);
+      ItemsList.TabIndex = 0;
+      ItemsList.SelectedIndexChanged += NamesList_SelectedIndexChanged;
+      //
+      // ItemLabel
+      //
+      ItemLabel.AutoSize = true;
+      ItemLabel.Location = new Point(3, 11);
+      ItemLabel.Name = "ItemLabel";
+      ItemLabel.Size = new Size(31, 15);
+      ItemLabel.TabIndex = 1;
+      ItemLabel.Text = "Item";
+      //
+      // Owned
+      //
+      Owned.AutoSize = true;
+      Owned.CheckAlign = ContentAlignment.MiddleRight;
+      Owned.Location = new Point(3, 43);
+      Owned.Name = "Owned";
+      Owned.Size = new Size(64, 19);
+      Owned.TabIndex = 2;
+      Owned.Text = "Owned";
+      Owned.UseVisualStyleBackColor = true;
+      Owned.CheckedChanged += Unlocked_CheckedChanged;
+      //
+      // NewCheckbox
+      //
+      NewCheckbox.AutoSize = true;
+      NewCheckbox.CheckAlign = ContentAlignment.MiddleRight;
+      NewCheckbox.Enabled = false;
+      NewCheckbox.Location = new Point(85, 43);
+      NewCheckbox.Name = "NewCheckbox";
+      NewCheckbox.Size = new Size(50, 19);
+      NewCheckbox.TabIndex = 3;
+      NewCheckbox.Text = "New";
+      NewCheckbox.UseVisualStyleBackColor = true;
+      NewCheckbox.CheckedChanged += NewCheckbox_CheckedChanged;
+      //
       // FashionPageSelector
-      // 
+      //
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
-      Controls.Add(newCheckbox);
-      Controls.Add(owned);
-      Controls.Add(itemLabel);
-      Controls.Add(itemsList);
+      Controls.Add(NewCheckbox);
+      Controls.Add(Owned);
+      Controls.Add(ItemLabel);
+      Controls.Add(ItemsList);
       Name = "FashionPageSelector";
       Size = new Size(307, 74);
       ResumeLayout(false);
@@ -89,9 +89,9 @@ namespace PluginPile.FashionEditor {
 
     #endregion
 
-    private ComboBox itemsList;
-    private Label itemLabel;
-    private CheckBox owned;
-    private CheckBox newCheckbox;
+    private ComboBox ItemsList;
+    private Label ItemLabel;
+    private CheckBox Owned;
+    private CheckBox NewCheckbox;
   }
 }

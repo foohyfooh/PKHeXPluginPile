@@ -1,12 +1,10 @@
 using PKHeX.Core;
-using System.Reflection;
 
 namespace PluginPile.Unmaintained.AutoModQRPlugins;
 public class QRPlugins : AutoModPlugin {
 
   public override string Name => "QR Plugins";
   public override int Priority => 1;
-  protected override Assembly PluginAssembly => typeof(QRPlugins).Assembly;
 
   protected override void AddPluginControl(ToolStripDropDownItem modMenu) {
     ToolStripMenuItem Export = new ToolStripMenuItem("Export QR Codes") {

@@ -17,29 +17,29 @@ public partial class SwordsOfJusticeForm : Form {
     int progressValue = Convert.ToInt32(progressBlock.GetValue());
     questProgress.SelectedIndex = progressValue < 4 ? progressValue : progressValue == 4 ? 3 : progressValue - 3; // Account for skips in value range
 
-    SCBlock cobalionProgressBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeProgress[Species.Cobalion]);
-    SCBlock cobalionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeDisappeared[Species.Cobalion]);
-    SCBlock cobalionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeFootprintPercentage[Species.Cobalion]);
+    SCBlock cobalionProgressBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeProgressKeys[Species.Cobalion]);
+    SCBlock cobalionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeDisappearedKeys[Species.Cobalion]);
+    SCBlock cobalionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeFootprintPercentageKeys[Species.Cobalion]);
     cobalionProgress.SelectedIndex = Convert.ToInt32(cobalionProgressBlock.GetValue());
     cobalionDisappeared.Checked = cobalionDisappearedBlock.GetBooleanValue();
     cobalionFootprints.Value = Convert.ToInt32(cobalionFootprintsBlock.GetValue());
 
-    SCBlock terrakionProgressBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeProgress[Species.Terrakion]);
-    SCBlock terrakionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeDisappeared[Species.Terrakion]);
-    SCBlock terrakionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeFootprintPercentage[Species.Terrakion]);
+    SCBlock terrakionProgressBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeProgressKeys[Species.Terrakion]);
+    SCBlock terrakionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeDisappearedKeys[Species.Terrakion]);
+    SCBlock terrakionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeFootprintPercentageKeys[Species.Terrakion]);
     terrakionProgress.SelectedIndex = Convert.ToInt32(terrakionProgressBlock.GetValue());
     terrakionDisappeared.Checked = terrakionDisappearedBlock.GetBooleanValue();
     terrakionFootprints.Value = Convert.ToInt32(terrakionFootprintsBlock.GetValue());
 
-    SCBlock virizionProgressBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeProgress[Species.Virizion]);
-    SCBlock virizionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeDisappeared[Species.Virizion]);
-    SCBlock virizionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeFootprintPercentage[Species.Virizion]);
+    SCBlock virizionProgressBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeProgressKeys[Species.Virizion]);
+    SCBlock virizionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeDisappearedKeys[Species.Virizion]);
+    SCBlock virizionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeFootprintPercentageKeys[Species.Virizion]);
     virizionProgress.SelectedIndex = Convert.ToInt32(virizionProgressBlock.GetValue());
     virizionDisappeared.Checked = virizionDisappearedBlock.GetBooleanValue();
     virizionFootprints.Value = Convert.ToInt32(virizionFootprintsBlock.GetValue());
 
-    SCBlock keldeoProgressBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeProgress[Species.Keldeo]);
-    SCBlock keldeoDisappearedBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeDisappeared[Species.Keldeo]);
+    SCBlock keldeoProgressBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeProgressKeys[Species.Keldeo]);
+    SCBlock keldeoDisappearedBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeDisappearedKeys[Species.Keldeo]);
     int keldeoProgressValue = Convert.ToInt32(keldeoProgressBlock.GetValue());
     keldeoProgress.SelectedIndex = keldeoProgressValue == 0 ? keldeoProgressValue : keldeoProgressValue - 1; // Account for skips in value range
     keldeoDisappeared.Checked = keldeoDisappearedBlock.GetBooleanValue();
@@ -66,29 +66,29 @@ public partial class SwordsOfJusticeForm : Form {
     int progressValue = questProgress.SelectedIndex < 3 ? questProgress.SelectedIndex : questProgress.SelectedIndex == 3 ? 4 : questProgress.SelectedIndex + 3; // Account for skips in value range
     progressBlock.SetValue(Convert.ToUInt32(progressValue));
 
-    SCBlock cobalionProgressBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeProgress[Species.Cobalion]);
-    SCBlock cobalionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeDisappeared[Species.Cobalion]);
-    SCBlock cobalionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeFootprintPercentage[Species.Cobalion]);
+    SCBlock cobalionProgressBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeProgressKeys[Species.Cobalion]);
+    SCBlock cobalionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeDisappearedKeys[Species.Cobalion]);
+    SCBlock cobalionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeFootprintPercentageKeys[Species.Cobalion]);
     cobalionProgressBlock.SetValue(Convert.ToUInt32(cobalionProgress.SelectedIndex));
     cobalionDisappearedBlock.ChangeBooleanValue(cobalionDisappeared.Checked);
     cobalionFootprintsBlock.SetValue(Convert.ToUInt32(cobalionFootprints.Value));
 
-    SCBlock terrakionProgressBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeProgress[Species.Terrakion]);
-    SCBlock terrakionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeDisappeared[Species.Terrakion]);
-    SCBlock terrakionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeFootprintPercentage[Species.Terrakion]);
+    SCBlock terrakionProgressBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeProgressKeys[Species.Terrakion]);
+    SCBlock terrakionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeDisappearedKeys[Species.Terrakion]);
+    SCBlock terrakionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeFootprintPercentageKeys[Species.Terrakion]);
     terrakionProgressBlock.SetValue(Convert.ToUInt32(terrakionProgress.SelectedIndex));
     terrakionDisappearedBlock.ChangeBooleanValue(terrakionDisappeared.Checked);
     terrakionFootprintsBlock.SetValue(Convert.ToUInt32(terrakionFootprints.Value));
 
-    SCBlock virizionProgressBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeProgress[Species.Virizion]);
-    SCBlock virizionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeDisappeared[Species.Virizion]);
-    SCBlock virizionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeFootprintPercentage[Species.Virizion]);
+    SCBlock virizionProgressBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeProgressKeys[Species.Virizion]);
+    SCBlock virizionDisappearedBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeDisappearedKeys[Species.Virizion]);
+    SCBlock virizionFootprintsBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeFootprintPercentageKeys[Species.Virizion]);
     virizionProgressBlock.SetValue(Convert.ToUInt32(virizionProgress.SelectedIndex));
     virizionDisappearedBlock.ChangeBooleanValue(virizionDisappeared.Checked);
     virizionFootprintsBlock.SetValue(Convert.ToUInt32(virizionFootprints.Value));
 
-    SCBlock keldeoProgressBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeProgress[Species.Keldeo]);
-    SCBlock keldeoDisappearedBlock = SAV.Blocks.GetBlock(Definitions.memkeys_SwordsOfJusticeDisappeared[Species.Keldeo]);
+    SCBlock keldeoProgressBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeProgressKeys[Species.Keldeo]);
+    SCBlock keldeoDisappearedBlock = SAV.Blocks.GetBlock(Definitions.SwordsOfJusticeDisappearedKeys[Species.Keldeo]);
     int keldeoProgressValue = keldeoProgress.SelectedIndex == 0 ? keldeoProgress.SelectedIndex : keldeoProgress.SelectedIndex + 1; // Account for skips in value range
     keldeoProgressBlock.SetValue(Convert.ToUInt32(keldeoProgressValue));
     keldeoDisappearedBlock.ChangeBooleanValue(keldeoDisappeared.Checked);

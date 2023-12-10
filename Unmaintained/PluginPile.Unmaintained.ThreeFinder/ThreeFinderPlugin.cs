@@ -1,15 +1,11 @@
 using PKHeX.Core;
 using PluginPile.Common;
-using System.Reflection;
 
 namespace PluginPile.Unmaintained.ThreeFinder;
 public class ThreeFinderPlugin : PluginBase {
   public override string Name => nameof(ThreeFinderPlugin);
-  protected override Assembly PluginAssembly => typeof(ThreeFinderPlugin).Assembly;
   private readonly ToolStripMenuItem MenuItem;
-  private bool IsCompatibleSave {
-    get { return SaveFileEditor.SAV is SAV8SWSH or SAV8BS or SAV9SV; }
-  }
+  private bool IsCompatibleSave => SaveFileEditor.SAV is SAV8SWSH or SAV8BS or SAV9SV;
 
   public ThreeFinderPlugin() {
     MenuItem = new ToolStripMenuItem(Language.MenuItemName) {

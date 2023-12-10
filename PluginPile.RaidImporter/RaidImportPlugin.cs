@@ -1,11 +1,9 @@
 using PKHeX.Core;
 using PluginPile.Common;
-using System.Reflection;
 
 namespace PluginPile.RaidImporter; 
 public class RaidImportPlugin : PluginBase {
   public override string Name => nameof(RaidImportPlugin);
-  protected override Assembly PluginAssembly => typeof(RaidImportPlugin).Assembly;
   private readonly ToolStripMenuItem ImportRaidOrOutbreakButton;
   private bool IsCompatibleSave => SaveFileEditor.SAV is SAV8SWSH or SAV9SV;
 

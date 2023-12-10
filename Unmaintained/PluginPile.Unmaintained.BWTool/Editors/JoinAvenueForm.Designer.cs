@@ -54,7 +54,7 @@ namespace PluginPile.Unmaintained.BWTool {
     private System.Windows.Forms.Label label16;
     private System.Windows.Forms.ComboBox helper_country;
     private System.Windows.Forms.TextBox helper_name;
-    private System.Windows.Forms.ComboBox helper_subregion_argentina;
+    private System.Windows.Forms.ComboBox HelperSubregion_argentina;
     private System.Windows.Forms.ComboBox helper_subregion_australia;
     private System.Windows.Forms.ComboBox helper_subregion_brazil;
     private System.Windows.Forms.ComboBox helper_subregion_canada;
@@ -117,7 +117,7 @@ namespace PluginPile.Unmaintained.BWTool {
     private System.Windows.Forms.ComboBox visitor_gender;
     private System.Windows.Forms.Label label41;
     private System.Windows.Forms.DateTimePicker visitor_date;
-    private System.Windows.Forms.ComboBox visitor_subregion;
+    private System.Windows.Forms.ComboBox VisitorSubregion;
     private System.Windows.Forms.Label label42;
     private System.Windows.Forms.NumericUpDown visitor_sprite;
     private System.Windows.Forms.Label label43;
@@ -219,7 +219,7 @@ namespace PluginPile.Unmaintained.BWTool {
       visitor_gender = new ComboBox();
       label41 = new Label();
       visitor_date = new DateTimePicker();
-      visitor_subregion = new ComboBox();
+      VisitorSubregion = new ComboBox();
       label42 = new Label();
       visitor_sprite = new NumericUpDown();
       label43 = new Label();
@@ -252,7 +252,7 @@ namespace PluginPile.Unmaintained.BWTool {
       label20 = new Label();
       helper_date = new DateTimePicker();
       helper_subregion = new ComboBox();
-      helper_subregion_argentina = new ComboBox();
+      HelperSubregion_argentina = new ComboBox();
       helper_subregion_australia = new ComboBox();
       helper_subregion_brazil = new ComboBox();
       helper_subregion_canada = new ComboBox();
@@ -328,22 +328,22 @@ namespace PluginPile.Unmaintained.BWTool {
       Saveexit_but.UseVisualStyleBackColor = true;
       Saveexit_but.Click += Saveexit_butClick;
       //
-      // rank
+      // Rank
       //
       rank.Location = new Point(125, 52);
       rank.Margin = new Padding(4, 3, 4, 3);
       rank.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
-      rank.Name = "rank";
+      rank.Name = "Rank";
       rank.Size = new Size(183, 23);
       rank.TabIndex = 9;
       //
-      // color
+      // Color
       //
       color.FormattingEnabled = true;
       color.Items.AddRange(new object[] { "Orange", "Purple", "Blue", "Green" });
       color.Location = new Point(125, 82);
       color.Margin = new Padding(4, 3, 4, 3);
-      color.Name = "color";
+      color.Name = "Color";
       color.Size = new Size(182, 23);
       color.TabIndex = 10;
       //
@@ -381,11 +381,11 @@ namespace PluginPile.Unmaintained.BWTool {
       Impressed.Size = new Size(182, 23);
       Impressed.TabIndex = 14;
       //
-      // name
+      // Name
       //
       name.Location = new Point(125, 22);
       name.Margin = new Padding(4, 3, 4, 3);
-      name.Name = "name";
+      name.Name = "Name";
       name.Size = new Size(182, 23);
       name.TabIndex = 15;
       //
@@ -540,12 +540,12 @@ namespace PluginPile.Unmaintained.BWTool {
       shop_debug.TabIndex = 114;
       shop_debug.Visible = false;
       //
-      // shop_exp
+      // ShopExp
       //
       shop_exp.Location = new Point(90, 324);
       shop_exp.Margin = new Padding(4, 3, 4, 3);
       shop_exp.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
-      shop_exp.Name = "shop_exp";
+      shop_exp.Name = "ShopExp";
       shop_exp.Size = new Size(158, 23);
       shop_exp.TabIndex = 113;
       //
@@ -596,13 +596,13 @@ namespace PluginPile.Unmaintained.BWTool {
       label33.TabIndex = 107;
       label33.Text = "Shop Ver";
       //
-      // shop_type
+      // ShopType
       //
       shop_type.FormattingEnabled = true;
       shop_type.Items.AddRange(new object[] { "Black", "White", "Black 2", "White 2" });
       shop_type.Location = new Point(90, 230);
       shop_type.Margin = new Padding(4, 3, 4, 3);
-      shop_type.Name = "shop_type";
+      shop_type.Name = "ShopType";
       shop_type.Size = new Size(157, 23);
       shop_type.TabIndex = 106;
       //
@@ -621,7 +621,7 @@ namespace PluginPile.Unmaintained.BWTool {
       shop_rank.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
       shop_rank.Location = new Point(90, 292);
       shop_rank.Margin = new Padding(4, 3, 4, 3);
-      shop_rank.Name = "shop_rank";
+      shop_rank.Name = "ShopRank";
       shop_rank.Size = new Size(157, 23);
       shop_rank.TabIndex = 104;
       //
@@ -852,7 +852,7 @@ namespace PluginPile.Unmaintained.BWTool {
       tabPage2.Controls.Add(visitor_gender);
       tabPage2.Controls.Add(label41);
       tabPage2.Controls.Add(visitor_date);
-      tabPage2.Controls.Add(visitor_subregion);
+      tabPage2.Controls.Add(VisitorSubregion);
       tabPage2.Controls.Add(label42);
       tabPage2.Controls.Add(visitor_sprite);
       tabPage2.Controls.Add(label43);
@@ -976,13 +976,13 @@ namespace PluginPile.Unmaintained.BWTool {
       //
       // visitor_subregion
       //
-      visitor_subregion.FormattingEnabled = true;
-      visitor_subregion.Items.AddRange(new object[] { "0 None" });
-      visitor_subregion.Location = new Point(342, 78);
-      visitor_subregion.Margin = new Padding(4, 3, 4, 3);
-      visitor_subregion.Name = "visitor_subregion";
-      visitor_subregion.Size = new Size(222, 23);
-      visitor_subregion.TabIndex = 131;
+      VisitorSubregion.FormattingEnabled = true;
+      VisitorSubregion.Items.AddRange(new object[] { "0 None" });
+      VisitorSubregion.Location = new Point(342, 78);
+      VisitorSubregion.Margin = new Padding(4, 3, 4, 3);
+      VisitorSubregion.Name = "visitor_subregion";
+      VisitorSubregion.Size = new Size(222, 23);
+      VisitorSubregion.TabIndex = 131;
       //
       // label42
       //
@@ -1111,7 +1111,7 @@ namespace PluginPile.Unmaintained.BWTool {
       visitor_country.Name = "visitor_country";
       visitor_country.Size = new Size(222, 23);
       visitor_country.TabIndex = 117;
-      visitor_country.SelectedIndexChanged += Visitor_countrySelectedIndexChanged;
+      visitor_country.SelectedIndexChanged += VisitorCountrySelectedIndexChanged;
       //
       // visitor_name
       //
@@ -1254,7 +1254,7 @@ namespace PluginPile.Unmaintained.BWTool {
       tabPage4.Controls.Add(label20);
       tabPage4.Controls.Add(helper_date);
       tabPage4.Controls.Add(helper_subregion);
-      tabPage4.Controls.Add(helper_subregion_argentina);
+      tabPage4.Controls.Add(HelperSubregion_argentina);
       tabPage4.Controls.Add(helper_subregion_australia);
       tabPage4.Controls.Add(helper_subregion_brazil);
       tabPage4.Controls.Add(helper_subregion_canada);
@@ -1337,14 +1337,14 @@ namespace PluginPile.Unmaintained.BWTool {
       //
       // helper_subregion_argentina
       //
-      helper_subregion_argentina.FormattingEnabled = true;
-      helper_subregion_argentina.Items.AddRange(new object[] { "0 None", "1 Buenos Aires", "2 Ciudad Autónoma de Buenos Aires", "3 Catamarca", "4 Chaco", "5 Chubut", "6 Córdoba", "7 Corrientes", "8 Entre Ríos", "9 Formosa", "10 Jujuy", "11 La Pampa", "12 La Rioja", "13 Mendoza", "14 Misiones", "15 Neuquén", "16 Río Negro", "17 Salta", "18 San Juan", "19 San Luis", "20 Santa Cruz", "21 Santa Fe", "22 Santiago del Estero", "23 Tierra del Fuego", "24 Tucumán" });
-      helper_subregion_argentina.Location = new Point(551, 210);
-      helper_subregion_argentina.Margin = new Padding(4, 3, 4, 3);
-      helper_subregion_argentina.Name = "helper_subregion_argentina";
-      helper_subregion_argentina.Size = new Size(48, 23);
-      helper_subregion_argentina.TabIndex = 77;
-      helper_subregion_argentina.Visible = false;
+      HelperSubregion_argentina.FormattingEnabled = true;
+      HelperSubregion_argentina.Items.AddRange(new object[] { "0 None", "1 Buenos Aires", "2 Ciudad Autónoma de Buenos Aires", "3 Catamarca", "4 Chaco", "5 Chubut", "6 Córdoba", "7 Corrientes", "8 Entre Ríos", "9 Formosa", "10 Jujuy", "11 La Pampa", "12 La Rioja", "13 Mendoza", "14 Misiones", "15 Neuquén", "16 Río Negro", "17 Salta", "18 San Juan", "19 San Luis", "20 Santa Cruz", "21 Santa Fe", "22 Santiago del Estero", "23 Tierra del Fuego", "24 Tucumán" });
+      HelperSubregion_argentina.Location = new Point(551, 210);
+      HelperSubregion_argentina.Margin = new Padding(4, 3, 4, 3);
+      HelperSubregion_argentina.Name = "helper_subregion_argentina";
+      HelperSubregion_argentina.Size = new Size(48, 23);
+      HelperSubregion_argentina.TabIndex = 77;
+      HelperSubregion_argentina.Visible = false;
       //
       // helper_subregion_australia
       //

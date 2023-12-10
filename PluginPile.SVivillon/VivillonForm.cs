@@ -1,70 +1,65 @@
 using PKHeX.Core;
-using PluginPile.Common;
 
 namespace PluginPile.SVivillon; 
 public partial class VivillonForm : Form {
-  // Block Locations
-  private static readonly Block VivillonEnableBlock    = 0x0C125D5C;
-  private static readonly Block VivillonFormBlock      = 0x22F70BCF;
-  private static readonly Block VivillonTimestampBlock = 0x867F0240;
 
-  private readonly SAV9SV sav;
-  private readonly SCBlock enableBlock, formBlock, timestampBlock;
-  private byte selectedForm;
+  private readonly SAV9SV SAV;
+  private readonly SCBlock EnableBlock, FormBlock, TimestampBlock;
+  private byte SelectedForm;
 
   public VivillonForm(SAV9SV sav9sv) {
     InitializeComponent();
     HandleLanguageChange();
-    sav = sav9sv;
-    enableBlock = sav.Accessor.GetBlock(VivillonEnableBlock);
-    formBlock = sav.Accessor.GetBlock(VivillonFormBlock);
-    timestampBlock = sav.Accessor.GetBlock(VivillonTimestampBlock);
-    selectedForm = (byte)formBlock.GetValue();
-    RadioButton initalForm = (RadioButton)formGroup.Controls.Find($"form{selectedForm:00}", true).First();
+    SAV = sav9sv;
+    EnableBlock = SAV.Accessor.GetBlock(Constants.VivillonEnableBlock);
+    FormBlock = SAV.Accessor.GetBlock(Constants.VivillonFormBlock);
+    TimestampBlock = SAV.Accessor.GetBlock(Constants.VivillonTimestampBlock);
+    SelectedForm = (byte)FormBlock.GetValue();
+    RadioButton initalForm = (RadioButton)FormGroup.Controls.Find($"form{SelectedForm:00}", true).First();
     initalForm.Checked = true;
   }
 
   private void HandleLanguageChange() {
     Text = Language.FormTitle;
-    formGroup.Text = Language.VivillonForms;
-    form00.Text = Language.VivillonForm00Name;
-    form01.Text = Language.VivillonForm01Name;
-    form02.Text = Language.VivillonForm02Name;
-    form03.Text = Language.VivillonForm03Name;
-    form04.Text = Language.VivillonForm04Name;
-    form05.Text = Language.VivillonForm05Name;
-    form06.Text = Language.VivillonForm06Name;
-    form07.Text = Language.VivillonForm07Name;
-    form08.Text = Language.VivillonForm08Name;
-    form09.Text = Language.VivillonForm09Name;
-    form10.Text = Language.VivillonForm10Name;
-    form11.Text = Language.VivillonForm11Name;
-    form12.Text = Language.VivillonForm12Name;
-    form13.Text = Language.VivillonForm13Name;
-    form14.Text = Language.VivillonForm14Name;
-    form15.Text = Language.VivillonForm15Name;
-    form16.Text = Language.VivillonForm16Name;
-    form17.Text = Language.VivillonForm17Name;
-    form18.Text = Language.VivillonForm18Name;
-    cancel.Text = Language.Cancel;
-    save.Text = Language.Save;
+    FormGroup.Text = Language.VivillonForms;
+    Form00.Text = Language.VivillonForm00Name;
+    Form01.Text = Language.VivillonForm01Name;
+    Form02.Text = Language.VivillonForm02Name;
+    Form03.Text = Language.VivillonForm03Name;
+    Form04.Text = Language.VivillonForm04Name;
+    Form05.Text = Language.VivillonForm05Name;
+    Form06.Text = Language.VivillonForm06Name;
+    Form07.Text = Language.VivillonForm07Name;
+    Form08.Text = Language.VivillonForm08Name;
+    Form09.Text = Language.VivillonForm09Name;
+    Form10.Text = Language.VivillonForm10Name;
+    Form11.Text = Language.VivillonForm11Name;
+    Form12.Text = Language.VivillonForm12Name;
+    Form13.Text = Language.VivillonForm13Name;
+    Form14.Text = Language.VivillonForm14Name;
+    Form15.Text = Language.VivillonForm15Name;
+    Form16.Text = Language.VivillonForm16Name;
+    Form17.Text = Language.VivillonForm17Name;
+    Form18.Text = Language.VivillonForm18Name;
+    Cancel.Text = Language.Cancel;
+    Save.Text = Language.Save;
   }
 
-  private void formSelected(object sender, EventArgs e) {
+  private void FormSelected(object sender, EventArgs e) {
     if (sender == null) return;
     RadioButton radioButton = (RadioButton)sender;
     if (radioButton.Checked) {
-      selectedForm = byte.Parse((string)radioButton.Tag!);
+      SelectedForm = byte.Parse((string)radioButton.Tag!);
     }
   }
 
-  private void cancel_Click(object sender, EventArgs e) => Close();
+  private void Cancel_Click(object sender, EventArgs e) => Close();
 
-  private void save_Click(object sender, EventArgs e) {
-    enableBlock.ChangeBooleanType(SCTypeCode.Bool2);
-    formBlock.SetValue(selectedForm);
-    timestampBlock.SetValue((ulong)DateTimeOffset.Now.ToUnixTimeSeconds());
-    sav.State.Edited = true;
+  private void Save_Click(object sender, EventArgs e) {
+    EnableBlock.ChangeBooleanType(SCTypeCode.Bool2);
+    FormBlock.SetValue(SelectedForm);
+    TimestampBlock.SetValue((ulong)DateTimeOffset.Now.ToUnixTimeSeconds());
+    SAV.State.Edited = true;
     Close();
   }
 }

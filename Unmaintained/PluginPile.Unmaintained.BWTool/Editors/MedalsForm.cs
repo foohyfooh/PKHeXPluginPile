@@ -92,8 +92,8 @@ public partial class MedalsForm : Form {
   }
 
   void update_hex() {
-    date_hex.Text = (medals.medal_bytes & 0x0000FFFF).ToString("X4");
-    flag_hex.Text = ((medals.medal_bytes & 0xFFFF0000) >> 4).ToString("X4");
+    date_hex.Text = (medals.MedalBytes & 0x0000FFFF).ToString("X4");
+    flag_hex.Text = ((medals.MedalBytes & 0xFFFF0000) >> 4).ToString("X4");
   }
 
   private void medalState_SelectedIndexChanged(object sender, EventArgs e) {

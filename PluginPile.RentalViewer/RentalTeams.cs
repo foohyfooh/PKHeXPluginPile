@@ -4,23 +4,24 @@ using System.Text;
 namespace PluginPile.RentalViewer;
 public class RentalTeams {
 
-  private readonly List<RentalTeam> teams;
+  private readonly List<RentalTeam> Teams;
+  public int Count => Teams.Count;
 
   private RentalTeams(int numTeams) {
-    teams = new List<RentalTeam>(numTeams);
+    Teams = new List<RentalTeam>(numTeams);
   }
 
   public RentalTeams(SAV8SWSH sav) : this(Constants.SwSh.NumRentalTeams) {
     SCBlock team1Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam1);
-    teams.Add(new RentalTeam8(team1Block.Data));
+    Teams.Add(new RentalTeam8(team1Block.Data));
     SCBlock team2Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam2);
-    teams.Add(new RentalTeam8(team2Block.Data));
+    Teams.Add(new RentalTeam8(team2Block.Data));
     SCBlock team3Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam3);
-    teams.Add(new RentalTeam8(team3Block.Data));
+    Teams.Add(new RentalTeam8(team3Block.Data));
     SCBlock team4Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam4);
-    teams.Add(new RentalTeam8(team4Block.Data));
+    Teams.Add(new RentalTeam8(team4Block.Data));
     SCBlock team5Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam5);
-    teams.Add(new RentalTeam8(team5Block.Data));
+    Teams.Add(new RentalTeam8(team5Block.Data));
   }
 
   public RentalTeams(SAV9SV sav) : this(Constants.SV.NumRentalTeams) {
@@ -35,11 +36,11 @@ public class RentalTeams {
         .Skip(i * Constants.SV.TeamSize)
         .Take(Constants.SV.TeamSize)
         .ToArray();
-      teams.Add(new RentalTeam9(codeBytes, teamBytes));
+      Teams.Add(new RentalTeam9(codeBytes, teamBytes));
     }
   }
 
-  public RentalTeam this[int index] => teams[index];
+  public RentalTeam this[int index] => Teams[index];
 }
 
 public abstract class RentalTeam {

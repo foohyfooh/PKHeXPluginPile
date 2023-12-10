@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.Sorting; 
 class Gen1_Kanto : SortingBase {
 
-  protected static readonly Dictionary<Species, PositionForms> dex = new Dictionary<Species, PositionForms>() {
+  protected static readonly Dictionary<Species, PositionForms> Dex = new Dictionary<Species, PositionForms>() {
     {Species.Bulbasaur, 1},
     {Species.Ivysaur, 2},
     {Species.Venusaur, 3},
@@ -158,7 +158,7 @@ class Gen1_Kanto : SortingBase {
   };
 
   public static Func<PKM, IComparable>[] GetSortFunctions() {
-    return GenerateSortingFunctions(dex);
+    return GenerateSortingFunctions(Dex);
   }
 
 }

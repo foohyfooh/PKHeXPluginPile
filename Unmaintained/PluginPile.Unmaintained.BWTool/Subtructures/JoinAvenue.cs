@@ -11,14 +11,14 @@ public class JoinAvenue {
 
   public JoinAvenue(byte[] data) {
     Data = data;
-    load_people();
+    LoadPeople();
   }
 
-  public byte[] getData(int Offset, int Length) {
+  public byte[] GetData(int Offset, int Length) {
     return Data.Skip(Offset).Take(Length).ToArray();
   }
 
-  public void setData(byte[] input, int Offset) {
+  public void SetData(byte[] input, int Offset) {
     input.CopyTo(Data, Offset);
   }
 
@@ -27,111 +27,107 @@ public class JoinAvenue {
   private const int VISITOR_OFFSET = 0x08;
   private const int VISITOR_TOTAL = 8 - 1;
 
-  public JoinAvenueOccupant get_visitor(int index) {
+  public JoinAvenueOccupant GetVisitor(int index) {
     if (index > VISITOR_TOTAL) index = VISITOR_TOTAL;
-    return new JoinAvenueOccupant(getData(VISITOR_OFFSET + (VISITOR_SIZE * index), VISITOR_SIZE));
+    return new JoinAvenueOccupant(GetData(VISITOR_OFFSET + (VISITOR_SIZE * index), VISITOR_SIZE));
   }
 
-  public void set_visitor(JoinAvenueOccupant visitant, int index) {
+  public void SetVisitor(JoinAvenueOccupant visitant, int index) {
     if (index > VISITOR_TOTAL) index = VISITOR_TOTAL;
-    setData(visitant.Data, VISITOR_OFFSET + (VISITOR_SIZE * index));
+    SetData(visitant.Data, VISITOR_OFFSET + (VISITOR_SIZE * index));
   }
 
   //NPC Fans
   private const int NPC_SIZE = 0x60;
   private const int NPC_OFFSET = 0x62C;
   private const int NPC_TOTAL = 12 - 1;
-  public JoinAnvenueNPC get_npc(int index) {
+  public JoinAnvenueNPC GetNPC(int index) {
     if (index > NPC_TOTAL) index = NPC_TOTAL;
-    return new JoinAnvenueNPC(getData(NPC_OFFSET + (NPC_SIZE * index), NPC_SIZE));
+    return new JoinAnvenueNPC(GetData(NPC_OFFSET + (NPC_SIZE * index), NPC_SIZE));
   }
-  public void set_npc(JoinAnvenueNPC npc, int index) {
+  public void SetNpc(JoinAnvenueNPC npc, int index) {
     if (index > NPC_TOTAL) index = NPC_TOTAL;
-    setData(npc.Data, NPC_OFFSET + (NPC_SIZE * index));
+    SetData(npc.Data, NPC_OFFSET + (NPC_SIZE * index));
   }
 
   //Occupants
-  int OCCUPANT_SIZE = 0xC4;
-  int OCCUPANT_OFFSET = 0xAAC;
-  int OCCUPANT_TOTAL = 8 - 1;
+  private readonly int OCCUPANT_SIZE = 0xC4;
+  private readonly int OCCUPANT_OFFSET = 0xAAC;
+  private readonly int OCCUPANT_TOTAL = 8 - 1;
 
-  public JoinAvenueOccupant get_occupant(int index) {
+  public JoinAvenueOccupant GetOccupant(int index) {
     if (index > OCCUPANT_TOTAL) index = OCCUPANT_TOTAL;
-    return new JoinAvenueOccupant(getData(OCCUPANT_OFFSET + (OCCUPANT_SIZE * index), OCCUPANT_SIZE));
+    return new JoinAvenueOccupant(GetData(OCCUPANT_OFFSET + (OCCUPANT_SIZE * index), OCCUPANT_SIZE));
   }
-  public void set_occupant(JoinAvenueOccupant occupant, int index) {
+  public void SetOccupant(JoinAvenueOccupant occupant, int index) {
     if (index > OCCUPANT_TOTAL) index = OCCUPANT_TOTAL;
-    setData(occupant.Data, OCCUPANT_OFFSET + (OCCUPANT_SIZE * index));
+    SetData(occupant.Data, OCCUPANT_OFFSET + (OCCUPANT_SIZE * index));
   }
 
   //Helpers
-  private int HELPER_SIZE = 0x58;
-  private int HELPER_OFFSET = 0x10CC;
-  private int HELPER_TOTAL = 4 - 1;
+  private readonly int HELPER_SIZE = 0x58;
+  private readonly int HELPER_OFFSET = 0x10CC;
+  private readonly int HELPER_TOTAL = 4 - 1;
 
-  public JoinAvenueHelper get_helper(int index) {
+  public JoinAvenueHelper GetHelper(int index) {
     if (index > HELPER_TOTAL) index = HELPER_TOTAL;
-    return new JoinAvenueHelper(getData(HELPER_OFFSET + (HELPER_SIZE * index), HELPER_SIZE));
+    return new JoinAvenueHelper(GetData(HELPER_OFFSET + (HELPER_SIZE * index), HELPER_SIZE));
   }
 
-  public void set_helper(JoinAvenueHelper helper, int index) {
+  public void SetHelper(JoinAvenueHelper helper, int index) {
     if (index > HELPER_TOTAL) index = HELPER_TOTAL;
-    setData(helper.Data, HELPER_OFFSET + (HELPER_SIZE * index));
+    SetData(helper.Data, HELPER_OFFSET + (HELPER_SIZE * index));
   }
 
-  public void load_people() {
+  public void LoadPeople() {
     for (int i = 0; i < 8; i++) {
-      visitor[i] = get_visitor(i);
-      shop[i] = get_occupant(i);
+      visitor[i] = GetVisitor(i);
+      shop[i] = GetOccupant(i);
     }
     for (int i = 0; i < 12; i++) {
-      npc[i] = get_npc(i);
+      npc[i] = GetNPC(i);
     }
     for (int i = 0; i < 4; i++) {
-      helper[i] = get_helper(i);
+      helper[i] = GetHelper(i);
     }
   }
 
-  public void set_people() {
+  public void SetPeople() {
     for (int i = 0; i < 8; i++) {
-      set_visitor(visitor[i], i);
-      set_occupant(shop[i], i);
+      SetVisitor(visitor[i], i);
+      SetOccupant(shop[i], i);
     }
     for (int i = 0; i < 12; i++) {
-      set_npc(npc[i], i);
+      SetNpc(npc[i], i);
     }
     for (int i = 0; i < 4; i++) {
-      set_helper(helper[i], i);
+      SetHelper(helper[i], i);
     }
   }
 
-  public ushort rank {
-    get { return BitConverter.ToUInt16(getData(0x13CC, 2), 0); }
-    set { setData(BitConverter.GetBytes(value), 0x13CC); }
+  public ushort Rank {
+    get { return BitConverter.ToUInt16(GetData(0x13CC, 2), 0); }
+    set { SetData(BitConverter.GetBytes(value), 0x13CC); }
   }
 
   //00 Orange 01 Purple 02 Blue 03 Green
-  public int color {
-    get { return BitConverter.ToUInt16(getData(0x13CE, 2), 0); }
-    set { setData(BitConverter.GetBytes((ushort)value), 0x13CE); }
+  public int Color {
+    get { return BitConverter.ToUInt16(GetData(0x13CE, 2), 0); }
+    set { SetData(BitConverter.GetBytes((ushort)value), 0x13CE); }
   }
 
-  //Helper functions from pkhex
-  internal static string TrimFromFFFF(string input) {
-    int index = input.IndexOf((char)0xFFFF);
-    return index < 0 ? input : input.Substring(0, index);
-  }
+  
 
-  public string fav_phrase {
+  public string FavPhrase {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x12AC, 0x10))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x12AC, 0x10))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0x10 / 2)
-        value = value.Substring(0, 0x10 / 2); // Hard cap
+        value = value[..(0x10 / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -141,16 +137,16 @@ public class JoinAvenue {
     }
   }
 
-  public string imp_phrase {
+  public string ImpPhrase {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x12BC, 0x10))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x12BC, 0x10))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0x10 / 2)
-        value = value.Substring(0, 0x10 / 2); // Hard cap
+        value = value[..(0x10 / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -160,16 +156,16 @@ public class JoinAvenue {
     }
   }
 
-  public string name {
+  public string Name {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x12F4, 0x1A))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x12F4, 0x1A))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0x1A / 2)
-        value = value.Substring(0, 0x1A / 2); // Hard cap
+        value = value[..(0x1A / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -179,16 +175,16 @@ public class JoinAvenue {
     }
   }
 
-  public string title {
+  public string Title {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x131E, 0x10))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x131E, 0x10))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0x10 / 2)
-        value = value.Substring(0, 0x10 / 2); // Hard cap
+        value = value[..(0x10 / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -211,30 +207,27 @@ public class JoinAvenue {
   */
 }
 
-public class JoinAnvenueNPC {
-  public readonly byte[] Data;
-  public JoinAnvenueNPC(byte[] data) {
-    Data = data;
-  }
+public class JoinAnvenueNPC(byte[] data) {
+  public readonly byte[] Data = data;
 
-  public byte[] getData(int Offset, int Length) {
+  public byte[] GetData(int Offset, int Length) {
     return Data.Skip(Offset).Take(Length).ToArray();
   }
 
-  public void setData(byte[] input, int Offset) {
+  public void SetData(byte[] input, int Offset) {
     input.CopyTo(Data, Offset);
   }
 
-  public string name {
+  public string Name {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -244,7 +237,7 @@ public class JoinAnvenueNPC {
     }
   }
 
-  public int gender {
+  public int Gender {
     get {
       if (Data[0x22] == 0x10)
         return 1;
@@ -259,16 +252,16 @@ public class JoinAnvenueNPC {
     }
   }
 
-  public string text1 {
+  public string Text1 {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x2C, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x2C, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -278,16 +271,16 @@ public class JoinAnvenueNPC {
     }
   }
 
-  public string text2 {
+  public string Text2 {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x3C, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x3C, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -297,7 +290,7 @@ public class JoinAnvenueNPC {
     }
   }
 
-  public bool spoken {
+  public bool Spoken {
     get {
       if (Data[0x4F] == 1)
         return true;
@@ -305,44 +298,35 @@ public class JoinAnvenueNPC {
         return false;
     }
     set {
-      if (value == true)
+      if (value)
         Data[0x4F] = 1;
       else
         Data[0x4F] = 0;
     }
   }
-
-  //Helper functions from pkhex
-  internal static string TrimFromFFFF(string input) {
-    int index = input.IndexOf((char)0xFFFF);
-    return index < 0 ? input : input.Substring(0, index);
-  }
 }
 
-public class JoinAvenueHelper {
-  public readonly byte[] Data;
-  public JoinAvenueHelper(byte[] data) {
-    Data = data;
-  }
+public class JoinAvenueHelper(byte[] data) {
+  public readonly byte[] Data = data;
 
-  public byte[] getData(int Offset, int Length) {
+  public byte[] GetData(int Offset, int Length) {
     return Data.Skip(Offset).Take(Length).ToArray();
   }
 
-  public void setData(byte[] input, int Offset) {
+  public void SetData(byte[] input, int Offset) {
     input.CopyTo(Data, Offset);
   }
 
-  public string name {
+  public string Name {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -352,16 +336,16 @@ public class JoinAvenueHelper {
     }
   }
 
-  public string text0 {
+  public string Text0 {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x10, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x10, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -371,16 +355,16 @@ public class JoinAvenueHelper {
     }
   }
 
-  public string text1 {
+  public string Text1 {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x34, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x34, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -390,16 +374,16 @@ public class JoinAvenueHelper {
     }
   }
 
-  public string text2 {
+  public string Text2 {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x44, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x44, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -409,34 +393,22 @@ public class JoinAvenueHelper {
     }
   }
 
-  public int sprite {
-    get {
-      return Data[0x2A];
-    }
-    set {
-      Data[0x2A] = (value > 0xFF ? (byte)0xFF : (byte)value);
-    }
+  public int Sprite {
+    get => Data[0x2A];
+    set => Data[0x2A] = (value > 0xFF ? (byte)0xFF : (byte)value);
   }
 
-  public int country {
-    get {
-      return Data[0xE];
-    }
-    set {
-      Data[0xE] = (value > 0xFF ? (byte)0xFF : (byte)value);
-    }
+  public int Country {
+    get => Data[0xE];
+    set => Data[0xE] = (value > 0xFF ? (byte)0xFF : (byte)value);
   }
 
-  public int subregion {
-    get {
-      return Data[0xF];
-    }
-    set {
-      Data[0xF] = (value > 0xFF ? (byte)0xFF : (byte)value);
-    }
+  public int Subregion {
+    get => Data[0xF];
+    set => Data[0xF] = (value > 0xFF ? (byte)0xFF : (byte)value);
   }
 
-  public DateTime met {
+  public DateTime Met {
     get {
       if (Data[0x30] != 0 && Data[0x31] != 0 && Data[0x32] != 0)
         return new DateTime(2000 + Data[0x30], Data[0x31], Data[0x32]);
@@ -449,35 +421,28 @@ public class JoinAvenueHelper {
       Data[0x32] = (byte)value.Day;
     }
   }
-
-  //Helper functions from pkhex
-  internal static string TrimFromFFFF(string input) {
-    int index = input.IndexOf((char)0xFFFF);
-    return index < 0 ? input : input.Substring(0, index);
-  }
 }
-public class JoinAvenueOccupant {
-  public byte[] Data;
-  public JoinAvenueOccupant(byte[]? data = null) {
-    Data = data ?? new byte[0xC4];
-  }
-  public byte[] getData(int Offset, int Length) {
+
+public class JoinAvenueOccupant(byte[]? data = null) {
+  public byte[] Data = data ?? new byte[0xC4];
+
+  public byte[] GetData(int Offset, int Length) {
     return Data.Skip(Offset).Take(Length).ToArray();
   }
-  public void setData(byte[] input, int Offset) {
+  public void SetData(byte[] input, int Offset) {
     input.CopyTo(Data, Offset);
   }
 
-  public string name {
+  public string Name {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -486,32 +451,27 @@ public class JoinAvenueOccupant {
       Encoding.Unicode.GetBytes(TempNick).CopyTo(Data, 0);
     }
   }
-  public int country {
-    get {
-      return Data[0xE];
-    }
-    set {
-      Data[0xE] = (value > 0xFF ? (byte)0xFF : (byte)value);
-    }
+
+  public int Country {
+    get => Data[0xE];
+    set => Data[0xE] = (value > 0xFF ? (byte)0xFF : (byte)value);
   }
-  public int subregion {
-    get {
-      return Data[0xF];
-    }
-    set {
-      Data[0xF] = (value > 0xFF ? (byte)0xFF : (byte)value);
-    }
+
+  public int Subregion {
+    get => Data[0xF];
+    set => Data[0xF] = (value > 0xFF ? (byte)0xFF : (byte)value);
   }
-  public string shout {
+
+  public string Shout {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x10, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x10, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -520,7 +480,7 @@ public class JoinAvenueOccupant {
       Encoding.Unicode.GetBytes(TempNick).CopyTo(Data, 0x10);
     }
   }
-  public int gender {
+  public int Gender {
     get {
       if (Data[0x22] == 0x10)
         return 1;
@@ -535,34 +495,26 @@ public class JoinAvenueOccupant {
     }
   }
 
-  public int sprite {
-    get {
-      return Data[0x2A];
-    }
-    set {
-      Data[0x2A] = (value > 0xFF ? (byte)0xFF : (byte)value);
-    }
+  public int Sprite {
+    get => Data[0x2A];
+    set => Data[0x2A] = (value > 0xFF ? (byte)0xFF : (byte)value);
   }
 
-  public int recruitlvl {
-    get {
-      return Data[0x2C];
-    }
-    set {
-      Data[0x2C] = (value > 0xFF ? (byte)0xFF : (byte)value);
-    }
+  public int RecruitLvl {
+    get => Data[0x2C];
+    set => Data[0x2C] = (value > 0xFF ? (byte)0xFF : (byte)value);
   }
 
-  public string greeting {
+  public string Greeting {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x80, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x80, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -571,16 +523,16 @@ public class JoinAvenueOccupant {
       Encoding.Unicode.GetBytes(TempNick).CopyTo(Data, 0x80);
     }
   }
-  public string farewell {
+  public string Farewell {
     get {
-      return TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x90, 0xE))
+      return StringUtil.TrimFromFFFF(Encoding.Unicode.GetString(Data, 0x90, 0xE))
           .Replace("\uE08F", "\u2640") // nidoran
           .Replace("\uE08E", "\u2642") // nidoran
           .Replace("\u2019", "\u0027"); // farfetch'd
     }
     set {
       if (value.Length > 0xE / 2)
-        value = value.Substring(0, 0xE / 2); // Hard cap
+        value = value[..(0xE / 2)]; // Hard cap
       string TempNick = value // Replace Special Characters and add Terminator
           .Replace("\u2640", "\uE08F") // nidoran
           .Replace("\u2642", "\uE08E") // nidoran
@@ -589,21 +541,16 @@ public class JoinAvenueOccupant {
       Encoding.Unicode.GetBytes(TempNick).CopyTo(Data, 0x90);
     }
   }
-  public bool isplayer {
-    get {
-      if (Data[0xA0] == 1)
-        return true;
-      else
-        return false;
-    }
+  public bool IsPlayer {
+    get => Data[0xA0] == 1;
     set {
-      if (value == true)
-        Data[0xA0] = (byte)1;
+      if (value)
+        Data[0xA0] = 1;
       else
-        Data[0xA0] = (byte)0;
+        Data[0xA0] = 0;
     }
   }
-  public DateTime met {
+  public DateTime Met {
     get {
       if (Data[0xA3] != 0 && Data[0xA4] != 0 && Data[0xA5] != 0)
         return new DateTime(2000 + Data[0xA3], Data[0xA4], Data[0xA5]);
@@ -617,8 +564,7 @@ public class JoinAvenueOccupant {
     }
   }
 
-  public int av_occupant_rank //Rank of player's own avenue, visitors use it. Disabled since not used in gui
-  {
+  public int AVOccupantRank { //Rank of player's own avenue, visitors use it. Disabled since not used in gui
     get {
       return Data[0xAB];
     }
@@ -627,7 +573,7 @@ public class JoinAvenueOccupant {
     }
   }
 
-  public int shop_rank {
+  public int ShopRank {
     get {
       return Data[0xAD];
     }
@@ -636,9 +582,9 @@ public class JoinAvenueOccupant {
     }
   }
 
-  public int shop_exp {
+  public int ShopExp {
     get {
-      return BitConverter.ToUInt16(getData(0xAD, 2), 0);
+      return BitConverter.ToUInt16(GetData(0xAD, 2), 0);
     }
     set {
       ushort exp;
@@ -646,11 +592,11 @@ public class JoinAvenueOccupant {
         exp = 0xFFFF;
       else
         exp = (ushort)value;
-      setData(BitConverter.GetBytes(exp), 0xAD);
+      SetData(BitConverter.GetBytes(exp), 0xAD);
     }
   }
 
-  public bool inventory {
+  public bool Inventory {
     get {
       if (Data[0xB0] == 1)
         return true;
@@ -658,78 +604,68 @@ public class JoinAvenueOccupant {
         return false;
     }
     set {
-      if (value == true)
-        Data[0xB0] = (byte)1;
+      if (value)
+        Data[0xB0] = 1;
       else
-        Data[0xB0] = (byte)0;
+        Data[0xB0] = 0;
     }
   }
 
   //Note: 0xB4 = FF when there's no shop
 
-  public ushort ShopBytes() {
-    return BitConverter.ToUInt16(getData(0xB4, 2), 0);
+  public ushort GetShopBytes() {
+    return BitConverter.ToUInt16(GetData(0xB4, 2), 0);
   }
 
-  public void set_ShopBytes() {
-    ushort bytes = (ushort)(1 + Shop_version * 0x50 + Shop_type * 0xA + Shop_level);
-    setData(BitConverter.GetBytes(bytes), 0xB4);
+  public void SetShopBytes() {
+    ushort bytes = (ushort)(1 + InternalShopVersion * 0x50 + InternalShopType * 0xA + InternalShopLevel);
+    SetData(BitConverter.GetBytes(bytes), 0xB4);
   }
 
-  private int Shop_version;
-  public int shop_version //0 black, 1 white, 2 black2, 3 white3
-  {
+  private int InternalShopVersion;
+  public int ShopVersion { //0 black, 1 white, 2 black2, 3 white2
     get {
-      return ShopBytes() / 0x50;
+      return GetShopBytes() / 0x50;
     }
     set {
       if (value > 3) {
-        Shop_version = 3;
+        InternalShopVersion = 3;
       } else {
-        Shop_version = value;
+        InternalShopVersion = value;
       }
     }
   }
 
-  private int Shop_level;
-  public int shop_level { // 0-9 (1-10)
+  private int InternalShopLevel;
+  public int ShopLevel { // 0-9 (1-10)
     get {
-      if (ShopBytes() % 0x50 == 0) //Last shop, level 10, remainder of negative number not correctly behaving...
+      if (GetShopBytes() % 0x50 == 0) //Last shop, level 10, remainder of negative number not correctly behaving...
         return 9;
       else
-        return (((ShopBytes() % 0x50) - 1) % 0xA);
+        return (((GetShopBytes() % 0x50) - 1) % 0xA);
     }
     set {
       if (value > 0x9)
-        Shop_level = 0x9;
+        InternalShopLevel = 0x9;
       else
-        Shop_level = value;
+        InternalShopLevel = value;
     }
   }
 
-  private int Shop_type;
-  public int shop_type { // 0=raffle, 1=salon, 2 = market, 3=florist, 4 = dojo, 5=nurse, 6=antique, 7=cafe
+  private int InternalShopType;
+  public int ShopType { // 0=raffle, 1=salon, 2 = market, 3=florist, 4 = dojo, 5=nurse, 6=antique, 7=cafe
     get {
-      if (shop_level == 9) { //Level 10 gives problems... just consider it a level 9 shop for type return
-                             //MessageBox.Show((ShopBytes() % 0x50).ToString() + "  -"+((ShopBytes() % 0x50)/0xA).ToString());
-        return (((ShopBytes() - 1) % 0x50) / 0xA);
+      if (ShopLevel == 9) { //Level 10 gives problems... just consider it a level 9 shop for type return
+        return (((GetShopBytes() - 1) % 0x50) / 0xA);
       } else {
-        return ((ShopBytes() % 0x50) / 0xA);
+        return ((GetShopBytes() % 0x50) / 0xA);
       }
-      //
-      // return ((ShopBytes() % 0x50) / 0xA);
     }
     set {
       if (value > 0x7)
-        Shop_type = 0x7;
+        InternalShopType = 0x7;
       else
-        Shop_type = value;
+        InternalShopType = value;
     }
-  }
-
-  //Helper functions from pkhex
-  internal static string TrimFromFFFF(string input) {
-    int index = input.IndexOf((char)0xFFFF);
-    return index < 0 ? input : input.Substring(0, index);
   }
 }

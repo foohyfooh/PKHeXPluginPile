@@ -23,184 +23,184 @@ namespace PluginPile.FashionEditor {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      cancelButton = new Button();
-      saveButton = new Button();
-      fashionEveryday = new CheckBox();
-      fashionPikachu = new CheckBox();
-      fashionPlatinum = new CheckBox();
-      fashionOveralls = new CheckBox();
-      fashionEevee = new CheckBox();
-      fashionGengar = new CheckBox();
-      fashionCyber = new CheckBox();
-      fashionSummer = new CheckBox();
-      fashionWinter = new CheckBox();
-      fashionSpring = new CheckBox();
-      fashionCasual = new CheckBox();
-      fashionLeather = new CheckBox();
+      Cancel = new Button();
+      SaveButton = new Button();
+      FashionEveryday = new CheckBox();
+      FashionPikachu = new CheckBox();
+      FashionPlatinum = new CheckBox();
+      FashionOveralls = new CheckBox();
+      FashionEevee = new CheckBox();
+      FashionGengar = new CheckBox();
+      FashionCyber = new CheckBox();
+      FashionSummer = new CheckBox();
+      FashionWinter = new CheckBox();
+      FashionSpring = new CheckBox();
+      FashionCasual = new CheckBox();
+      FashionLeather = new CheckBox();
       SuspendLayout();
       // 
-      // cancelButton
+      // Cancel
       // 
-      cancelButton.Location = new Point(12, 181);
-      cancelButton.Name = "cancelButton";
-      cancelButton.Size = new Size(75, 23);
-      cancelButton.TabIndex = 0;
-      cancelButton.Text = "Cancel";
-      cancelButton.UseVisualStyleBackColor = true;
-      cancelButton.Click += cancelButton_Click;
+      Cancel.Location = new Point(12, 181);
+      Cancel.Name = "Cancel";
+      Cancel.Size = new Size(75, 23);
+      Cancel.TabIndex = 0;
+      Cancel.Text = "Cancel";
+      Cancel.UseVisualStyleBackColor = true;
+      Cancel.Click += CancelButton_Click;
       // 
-      // saveButton
+      // SaveButton
       // 
-      saveButton.Location = new Point(120, 181);
-      saveButton.Name = "saveButton";
-      saveButton.Size = new Size(75, 23);
-      saveButton.TabIndex = 1;
-      saveButton.Text = "Save";
-      saveButton.UseVisualStyleBackColor = true;
-      saveButton.Click += saveButton_Click;
+      SaveButton.Location = new Point(120, 181);
+      SaveButton.Name = "SaveButton";
+      SaveButton.Size = new Size(75, 23);
+      SaveButton.TabIndex = 1;
+      SaveButton.Text = "Save";
+      SaveButton.UseVisualStyleBackColor = true;
+      SaveButton.Click += SaveButton_Click;
       // 
-      // fashionEveryday
+      // FashionEveryday
       // 
-      fashionEveryday.AutoSize = true;
-      fashionEveryday.Checked = true;
-      fashionEveryday.CheckState = CheckState.Checked;
-      fashionEveryday.Enabled = false;
-      fashionEveryday.Location = new Point(12, 12);
-      fashionEveryday.Name = "fashionEveryday";
-      fashionEveryday.Size = new Size(73, 19);
-      fashionEveryday.TabIndex = 2;
-      fashionEveryday.Text = "Everyday";
-      fashionEveryday.UseVisualStyleBackColor = true;
+      FashionEveryday.AutoSize = true;
+      FashionEveryday.Checked = true;
+      FashionEveryday.CheckState = CheckState.Checked;
+      FashionEveryday.Enabled = false;
+      FashionEveryday.Location = new Point(12, 12);
+      FashionEveryday.Name = "FashionEveryday";
+      FashionEveryday.Size = new Size(73, 19);
+      FashionEveryday.TabIndex = 2;
+      FashionEveryday.Text = "Everyday";
+      FashionEveryday.UseVisualStyleBackColor = true;
       // 
-      // fashionPikachu
+      // FashionPikachu
       // 
-      fashionPikachu.AutoSize = true;
-      fashionPikachu.Location = new Point(120, 12);
-      fashionPikachu.Name = "fashionPikachu";
-      fashionPikachu.Size = new Size(68, 19);
-      fashionPikachu.TabIndex = 3;
-      fashionPikachu.Text = "Pikachu";
-      fashionPikachu.UseVisualStyleBackColor = true;
+      FashionPikachu.AutoSize = true;
+      FashionPikachu.Location = new Point(120, 12);
+      FashionPikachu.Name = "FashionPikachu";
+      FashionPikachu.Size = new Size(68, 19);
+      FashionPikachu.TabIndex = 3;
+      FashionPikachu.Text = "Pikachu";
+      FashionPikachu.UseVisualStyleBackColor = true;
       // 
-      // fashionPlatinum
+      // FashionPlatinum
       // 
-      fashionPlatinum.AutoSize = true;
-      fashionPlatinum.Location = new Point(12, 37);
-      fashionPlatinum.Name = "fashionPlatinum";
-      fashionPlatinum.Size = new Size(74, 19);
-      fashionPlatinum.TabIndex = 4;
-      fashionPlatinum.Text = "Platinum";
-      fashionPlatinum.UseVisualStyleBackColor = true;
+      FashionPlatinum.AutoSize = true;
+      FashionPlatinum.Location = new Point(12, 37);
+      FashionPlatinum.Name = "FashionPlatinum";
+      FashionPlatinum.Size = new Size(74, 19);
+      FashionPlatinum.TabIndex = 4;
+      FashionPlatinum.Text = "Platinum";
+      FashionPlatinum.UseVisualStyleBackColor = true;
       // 
-      // fashionOveralls
+      // FashionOveralls
       // 
-      fashionOveralls.AutoSize = true;
-      fashionOveralls.Location = new Point(120, 37);
-      fashionOveralls.Name = "fashionOveralls";
-      fashionOveralls.Size = new Size(68, 19);
-      fashionOveralls.TabIndex = 5;
-      fashionOveralls.Text = "Overalls";
-      fashionOveralls.UseVisualStyleBackColor = true;
+      FashionOveralls.AutoSize = true;
+      FashionOveralls.Location = new Point(120, 37);
+      FashionOveralls.Name = "FashionOveralls";
+      FashionOveralls.Size = new Size(68, 19);
+      FashionOveralls.TabIndex = 5;
+      FashionOveralls.Text = "Overalls";
+      FashionOveralls.UseVisualStyleBackColor = true;
       // 
-      // fashionEevee
+      // FashionEevee
       // 
-      fashionEevee.AutoSize = true;
-      fashionEevee.Location = new Point(12, 62);
-      fashionEevee.Name = "fashionEevee";
-      fashionEevee.Size = new Size(56, 19);
-      fashionEevee.TabIndex = 6;
-      fashionEevee.Text = "Eevee";
-      fashionEevee.UseVisualStyleBackColor = true;
+      FashionEevee.AutoSize = true;
+      FashionEevee.Location = new Point(12, 62);
+      FashionEevee.Name = "FashionEevee";
+      FashionEevee.Size = new Size(56, 19);
+      FashionEevee.TabIndex = 6;
+      FashionEevee.Text = "Eevee";
+      FashionEevee.UseVisualStyleBackColor = true;
       // 
-      // fashionGengar
+      // FashionGengar
       // 
-      fashionGengar.AutoSize = true;
-      fashionGengar.Location = new Point(120, 62);
-      fashionGengar.Name = "fashionGengar";
-      fashionGengar.Size = new Size(64, 19);
-      fashionGengar.TabIndex = 7;
-      fashionGengar.Text = "Gengar";
-      fashionGengar.UseVisualStyleBackColor = true;
+      FashionGengar.AutoSize = true;
+      FashionGengar.Location = new Point(120, 62);
+      FashionGengar.Name = "FashionGengar";
+      FashionGengar.Size = new Size(64, 19);
+      FashionGengar.TabIndex = 7;
+      FashionGengar.Text = "Gengar";
+      FashionGengar.UseVisualStyleBackColor = true;
       // 
-      // fashionCyber
+      // FashionCyber
       // 
-      fashionCyber.AutoSize = true;
-      fashionCyber.Location = new Point(12, 87);
-      fashionCyber.Name = "fashionCyber";
-      fashionCyber.Size = new Size(57, 19);
-      fashionCyber.TabIndex = 8;
-      fashionCyber.Text = "Cyber";
-      fashionCyber.UseVisualStyleBackColor = true;
+      FashionCyber.AutoSize = true;
+      FashionCyber.Location = new Point(12, 87);
+      FashionCyber.Name = "FashionCyber";
+      FashionCyber.Size = new Size(57, 19);
+      FashionCyber.TabIndex = 8;
+      FashionCyber.Text = "Cyber";
+      FashionCyber.UseVisualStyleBackColor = true;
       // 
-      // fashionSummer
+      // FashionSummer
       // 
-      fashionSummer.AutoSize = true;
-      fashionSummer.Location = new Point(120, 87);
-      fashionSummer.Name = "fashionSummer";
-      fashionSummer.Size = new Size(71, 19);
-      fashionSummer.TabIndex = 9;
-      fashionSummer.Text = "Summer";
-      fashionSummer.UseVisualStyleBackColor = true;
+      FashionSummer.AutoSize = true;
+      FashionSummer.Location = new Point(120, 87);
+      FashionSummer.Name = "FashionSummer";
+      FashionSummer.Size = new Size(71, 19);
+      FashionSummer.TabIndex = 9;
+      FashionSummer.Text = "Summer";
+      FashionSummer.UseVisualStyleBackColor = true;
       // 
-      // fashionWinter
+      // FashionWinter
       // 
-      fashionWinter.AutoSize = true;
-      fashionWinter.Location = new Point(12, 112);
-      fashionWinter.Name = "fashionWinter";
-      fashionWinter.Size = new Size(61, 19);
-      fashionWinter.TabIndex = 10;
-      fashionWinter.Text = "Winter";
-      fashionWinter.UseVisualStyleBackColor = true;
+      FashionWinter.AutoSize = true;
+      FashionWinter.Location = new Point(12, 112);
+      FashionWinter.Name = "FashionWinter";
+      FashionWinter.Size = new Size(61, 19);
+      FashionWinter.TabIndex = 10;
+      FashionWinter.Text = "Winter";
+      FashionWinter.UseVisualStyleBackColor = true;
       // 
-      // fashionSpring
+      // FashionSpring
       // 
-      fashionSpring.AutoSize = true;
-      fashionSpring.Location = new Point(120, 112);
-      fashionSpring.Name = "fashionSpring";
-      fashionSpring.Size = new Size(60, 19);
-      fashionSpring.TabIndex = 11;
-      fashionSpring.Text = "Spring";
-      fashionSpring.UseVisualStyleBackColor = true;
+      FashionSpring.AutoSize = true;
+      FashionSpring.Location = new Point(120, 112);
+      FashionSpring.Name = "FashionSpring";
+      FashionSpring.Size = new Size(60, 19);
+      FashionSpring.TabIndex = 11;
+      FashionSpring.Text = "Spring";
+      FashionSpring.UseVisualStyleBackColor = true;
       // 
-      // fashionCasual
+      // FashionCasual
       // 
-      fashionCasual.AutoSize = true;
-      fashionCasual.Location = new Point(12, 137);
-      fashionCasual.Name = "fashionCasual";
-      fashionCasual.Size = new Size(61, 19);
-      fashionCasual.TabIndex = 12;
-      fashionCasual.Text = "Casual";
-      fashionCasual.UseVisualStyleBackColor = true;
+      FashionCasual.AutoSize = true;
+      FashionCasual.Location = new Point(12, 137);
+      FashionCasual.Name = "FashionCasual";
+      FashionCasual.Size = new Size(61, 19);
+      FashionCasual.TabIndex = 12;
+      FashionCasual.Text = "Casual";
+      FashionCasual.UseVisualStyleBackColor = true;
       // 
-      // fashionLeather
+      // FashionLeather
       // 
-      fashionLeather.AutoSize = true;
-      fashionLeather.Location = new Point(120, 137);
-      fashionLeather.Name = "fashionLeather";
-      fashionLeather.Size = new Size(65, 19);
-      fashionLeather.TabIndex = 13;
-      fashionLeather.Text = "Leather";
-      fashionLeather.UseVisualStyleBackColor = true;
+      FashionLeather.AutoSize = true;
+      FashionLeather.Location = new Point(120, 137);
+      FashionLeather.Name = "FashionLeather";
+      FashionLeather.Size = new Size(65, 19);
+      FashionLeather.TabIndex = 13;
+      FashionLeather.Text = "Leather";
+      FashionLeather.UseVisualStyleBackColor = true;
       // 
       // FashionFormBDSP
       // 
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(234, 216);
-      Controls.Add(fashionLeather);
-      Controls.Add(fashionCasual);
-      Controls.Add(fashionSpring);
-      Controls.Add(fashionWinter);
-      Controls.Add(fashionSummer);
-      Controls.Add(fashionCyber);
-      Controls.Add(fashionGengar);
-      Controls.Add(fashionEevee);
-      Controls.Add(fashionOveralls);
-      Controls.Add(fashionPlatinum);
-      Controls.Add(fashionPikachu);
-      Controls.Add(fashionEveryday);
-      Controls.Add(saveButton);
-      Controls.Add(cancelButton);
+      Controls.Add(FashionLeather);
+      Controls.Add(FashionCasual);
+      Controls.Add(FashionSpring);
+      Controls.Add(FashionWinter);
+      Controls.Add(FashionSummer);
+      Controls.Add(FashionCyber);
+      Controls.Add(FashionGengar);
+      Controls.Add(FashionEevee);
+      Controls.Add(FashionOveralls);
+      Controls.Add(FashionPlatinum);
+      Controls.Add(FashionPikachu);
+      Controls.Add(FashionEveryday);
+      Controls.Add(SaveButton);
+      Controls.Add(Cancel);
       MaximizeBox = false;
       MinimizeBox = false;
       Name = "FashionFormBDSP";
@@ -212,19 +212,19 @@ namespace PluginPile.FashionEditor {
 
     #endregion
 
-    private Button cancelButton;
-    private Button saveButton;
-    private CheckBox fashionEveryday;
-    private CheckBox fashionPikachu;
-    private CheckBox fashionPlatinum;
-    private CheckBox fashionOveralls;
-    private CheckBox fashionEevee;
-    private CheckBox fashionGengar;
-    private CheckBox fashionCyber;
-    private CheckBox fashionSummer;
-    private CheckBox fashionWinter;
-    private CheckBox fashionSpring;
-    private CheckBox fashionCasual;
-    private CheckBox fashionLeather;
+    private Button Cancel;
+    private Button SaveButton;
+    private CheckBox FashionEveryday;
+    private CheckBox FashionPikachu;
+    private CheckBox FashionPlatinum;
+    private CheckBox FashionOveralls;
+    private CheckBox FashionEevee;
+    private CheckBox FashionGengar;
+    private CheckBox FashionCyber;
+    private CheckBox FashionSummer;
+    private CheckBox FashionWinter;
+    private CheckBox FashionSpring;
+    private CheckBox FashionCasual;
+    private CheckBox FashionLeather;
   }
 }

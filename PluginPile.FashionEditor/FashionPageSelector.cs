@@ -3,9 +3,9 @@ using PKHeX.Core;
 namespace PluginPile.FashionEditor; 
 public partial class FashionPageSelector : UserControl {
 
-  private readonly bool[] unlocked;
-  private readonly string[] text;
-  private readonly bool[]? isNew;
+  private readonly bool[] Unlocked;
+  private readonly string[] ItemText;
+  private readonly bool[]? IsNew;
 
   public FashionPageSelector(bool[] unlockedFlags, string[] text, bool[]? newFlags = null) {
     InitializeComponent();
@@ -13,45 +13,45 @@ public partial class FashionPageSelector : UserControl {
     // TODO: Deal with this causing some of the tabs to appear different from others.
     // This is set so that selector will fill the tab since some of the items names and fashion style are long.
     Dock = DockStyle.Fill;
-    unlocked = unlockedFlags;
-    this.text = text;
-    isNew = newFlags;
-    itemsList.DataSource = this.text;
-    if (this.text.Length > 0) {
+    Unlocked = unlockedFlags;
+    ItemText = text;
+    IsNew = newFlags;
+    ItemsList.DataSource = ItemText;
+    if (ItemText.Length > 0) {
       // Explicitly set since the SelectedIndexChanged is not firing after setting data source, if the first item is unused it can be accidentally set.
-      itemsList.SelectedIndex = 0;
+      ItemsList.SelectedIndex = 0;
     } else {
-      owned.Enabled = false;
+      Owned.Enabled = false;
     }
   }
 
   private void HandleLanguageChange() {
-    itemLabel.Text = Language.Item;
-    owned.Text = Language.Unlocked;
-    newCheckbox.Text = Language.New;
+    ItemLabel.Text = Language.Item;
+    Owned.Text = Language.Unlocked;
+    NewCheckbox.Text = Language.New;
   }
 
-  private void namesList_SelectedIndexChanged(object sender, EventArgs e) {
-    owned.Checked = unlocked[itemsList.SelectedIndex];
-    owned.Enabled = !text[itemsList.SelectedIndex].Contains(Language.Unused);
-    if (isNew != null) {
-      newCheckbox.Enabled = owned.Enabled && owned.Checked;
-      newCheckbox.Checked = isNew[itemsList.SelectedIndex];
+  private void NamesList_SelectedIndexChanged(object sender, EventArgs e) {
+    Owned.Checked = Unlocked[ItemsList.SelectedIndex];
+    Owned.Enabled = !ItemText[ItemsList.SelectedIndex].Contains(Language.Unused);
+    if (IsNew != null) {
+      NewCheckbox.Enabled = Owned.Enabled && Owned.Checked;
+      NewCheckbox.Checked = IsNew[ItemsList.SelectedIndex];
     }
   }
 
-  private void unlocked_CheckedChanged(object sender, EventArgs e) {
-    unlocked[itemsList.SelectedIndex] = owned.Checked;
-    newCheckbox.Enabled = isNew != null && owned.Checked;
+  private void Unlocked_CheckedChanged(object sender, EventArgs e) {
+    Unlocked[ItemsList.SelectedIndex] = Owned.Checked;
+    NewCheckbox.Enabled = IsNew != null && Owned.Checked;
   }
 
-  private void newCheckbox_CheckedChanged(object sender, EventArgs e) => isNew![itemsList.SelectedIndex] = newCheckbox.Checked;
+  private void NewCheckbox_CheckedChanged(object sender, EventArgs e) => IsNew![ItemsList.SelectedIndex] = NewCheckbox.Checked;
 
   public void PersistChange(SCBlock block, IFashionBlockConverter converter) => block.ChangeData(GetData(converter));
 
-  public byte[] GetData(IFashionBlockConverter converter) => converter.ToBlockData(unlocked);
+  public byte[] GetData(IFashionBlockConverter converter) => converter.ToBlockData(Unlocked);
 
-  public bool[] GetBools() => unlocked;
+  public bool[] GetBools() => Unlocked;
 
-  public bool[]? GetNew() => isNew;
+  public bool[]? GetNew() => IsNew;
 }

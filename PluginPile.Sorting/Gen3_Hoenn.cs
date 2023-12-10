@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.Sorting; 
 class Gen3_Hoenn : SortingBase {
 
-  private static readonly Dictionary<Species, PositionForms> dex = new Dictionary<Species, PositionForms>() {
+  private static readonly Dictionary<Species, PositionForms> Dex = new Dictionary<Species, PositionForms>() {
     {Species.Treecko, 1},
     {Species.Grovyle, 2},
     {Species.Sceptile, 3},
@@ -209,7 +209,7 @@ class Gen3_Hoenn : SortingBase {
   };
 
   public static Func<PKM, IComparable>[] GetSortFunctions() {
-    return GenerateSortingFunctions(dex);
+    return GenerateSortingFunctions(Dex);
   }
 
 }

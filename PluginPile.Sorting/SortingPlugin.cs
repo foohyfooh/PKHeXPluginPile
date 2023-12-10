@@ -1,11 +1,9 @@
 using PKHeX.Core;
 using PluginPile.Common;
-using System.Reflection;
 
 namespace PluginPile.Sorting; 
 public class SortingPlugin : PluginBase {
   public override string Name => nameof(SortingPlugin);
-  protected override Assembly PluginAssembly => typeof(SortingPlugin).Assembly;
   private readonly ToolStripMenuItem SortByButton;
 
   public SortingPlugin() {

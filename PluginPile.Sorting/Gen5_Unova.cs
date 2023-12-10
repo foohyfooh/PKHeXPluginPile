@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.Sorting; 
 class Gen5_Unova : SortingBase {
 
-  private static readonly Dictionary<Species, PositionForms> BWdex = new Dictionary<Species, PositionForms>() {
+  private static readonly Dictionary<Species, PositionForms> BWDex = new Dictionary<Species, PositionForms>() {
     {Species.Victini, 0},
     {Species.Snivy, 1},
     {Species.Servine, 2},
@@ -467,7 +467,7 @@ class Gen5_Unova : SortingBase {
   };
 
   public static Func<PKM, IComparable>[] GetBWSortFunctions() {
-    return GenerateSortingFunctions(BWdex);
+    return GenerateSortingFunctions(BWDex);
   }
 
   public static Func<PKM, IComparable>[] GetB2W2SortFunctions() {

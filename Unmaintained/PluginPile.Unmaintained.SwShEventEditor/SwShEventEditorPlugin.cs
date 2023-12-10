@@ -1,11 +1,9 @@
 using PKHeX.Core;
-using System.Reflection;
 using PluginPile.Common;
 
 namespace PluginPile.Unmaintained.SwShEventEditor;
 public class SwShEventEditorPlugin : PluginBase {
   public override string Name => nameof(SwShEventEditorPlugin);
-  protected override Assembly PluginAssembly => throw new NotImplementedException();
   private readonly ToolStripMenuItem RootToolStripMenuItem;
   private readonly ToolStripMenuItem BaseGameMenuItem;
   private readonly ToolStripMenuItem IsleOfArmorMenuItem;

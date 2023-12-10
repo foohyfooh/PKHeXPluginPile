@@ -1,5 +1,7 @@
 using PKHeX.Core;
+using System.Drawing.Imaging;
 using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace PluginPile.Common;
 public class DrawingUtil {
@@ -34,6 +36,15 @@ public class DrawingUtil {
   public static Image ToGrayscale(Image img) {
     MethodInfo toGrayscaleMethod = ImageUtilType.GetMethod("ToGrayscale")!;
     return (Image)toGrayscaleMethod.Invoke(null, new object[] { img })!;
+  }
+
+  public static Bitmap GetBitmap(byte[] data, int width, int height) {
+    Bitmap result = new Bitmap(width, height, PixelFormat.Format32bppArgb);
+    Rectangle resultSizeRect = new Rectangle(0, 0, width, height);
+    BitmapData resultData = result.LockBits(resultSizeRect, ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
+    Marshal.Copy(data, 0, resultData.Scan0, data.Length);
+    result.UnlockBits(resultData);
+    return result;
   }
 
 }

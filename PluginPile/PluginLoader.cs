@@ -1,4 +1,3 @@
-using System.Reflection;
 using PluginPile.Common;
 using PluginPile.Sorting;
 using PluginPile.RaidImporter;
@@ -11,44 +10,43 @@ using PluginPile.RentalViewer;
 namespace PluginPile; 
 public class PluginLoader : PluginBase {
   public override string Name => "Plugin Pile";
-  protected override Assembly PluginAssembly => typeof(PluginLoader).Assembly;
 
-  private readonly SortingPlugin sortingPlugin;
-  private readonly RaidImportPlugin raidImportPlugin;
-  private readonly SVivillonPlugin svVivillonPlugin;
-  private readonly FashionEditorPlugin fashionEditorPlugin;
-  private readonly SVProfilePictureViewerPlugin svProfilePictureViewerPlugin;
-  private readonly XYRoamerPlugin xyRoamerPlugin;
-  private readonly RentalViewerPlugin rentalViewerPlugin;
+  private readonly SortingPlugin SortingPluginInstance;
+  private readonly RaidImportPlugin RaidImportPluginInstance;
+  private readonly SVivillonPlugin SVivillonPluginInstance;
+  private readonly FashionEditorPlugin FashionEditorPluginInstance;
+  private readonly SVProfilePictureViewerPlugin SVProfilePictureViewerPluginInstance;
+  private readonly XYRoamerPlugin XYRoamerPluginInstance;
+  private readonly RentalViewerPlugin RentalViewerPluginInstance;
 
   public PluginLoader() {
-    sortingPlugin = new SortingPlugin();
-    raidImportPlugin = new RaidImportPlugin();
-    svVivillonPlugin = new SVivillonPlugin();
-    fashionEditorPlugin = new FashionEditorPlugin();
-    svProfilePictureViewerPlugin = new SVProfilePictureViewerPlugin();
-    xyRoamerPlugin = new XYRoamerPlugin();
-    rentalViewerPlugin = new RentalViewerPlugin();
+    SortingPluginInstance = new SortingPlugin();
+    RaidImportPluginInstance = new RaidImportPlugin();
+    SVivillonPluginInstance = new SVivillonPlugin();
+    FashionEditorPluginInstance = new FashionEditorPlugin();
+    SVProfilePictureViewerPluginInstance = new SVProfilePictureViewerPlugin();
+    XYRoamerPluginInstance = new XYRoamerPlugin();
+    RentalViewerPluginInstance = new RentalViewerPlugin();
   }
 
   public override void Initialize(params object[] args) {
-    sortingPlugin.Initialize(args);
-    raidImportPlugin.Initialize(args);
-    svVivillonPlugin.Initialize(args);
-    fashionEditorPlugin.Initialize(args);
-    svProfilePictureViewerPlugin.Initialize(args);
-    xyRoamerPlugin.Initialize(args);
-    rentalViewerPlugin.Initialize(args);
+    SortingPluginInstance.Initialize(args);
+    RaidImportPluginInstance.Initialize(args);
+    SVivillonPluginInstance.Initialize(args);
+    FashionEditorPluginInstance.Initialize(args);
+    SVProfilePictureViewerPluginInstance.Initialize(args);
+    XYRoamerPluginInstance.Initialize(args);
+    RentalViewerPluginInstance.Initialize(args);
   }
 
   public override void NotifySaveLoaded() {
-    sortingPlugin.NotifySaveLoaded();
-    raidImportPlugin.NotifySaveLoaded();
-    svVivillonPlugin.NotifySaveLoaded();
-    fashionEditorPlugin.NotifySaveLoaded();
-    svProfilePictureViewerPlugin.NotifySaveLoaded();
-    xyRoamerPlugin.NotifySaveLoaded();
-    rentalViewerPlugin.NotifySaveLoaded();
+    SortingPluginInstance.NotifySaveLoaded();
+    RaidImportPluginInstance.NotifySaveLoaded();
+    SVivillonPluginInstance.NotifySaveLoaded();
+    FashionEditorPluginInstance.NotifySaveLoaded();
+    SVProfilePictureViewerPluginInstance.NotifySaveLoaded();
+    XYRoamerPluginInstance.NotifySaveLoaded();
+    RentalViewerPluginInstance.NotifySaveLoaded();
   }
 
 }

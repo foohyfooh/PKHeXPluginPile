@@ -3,85 +3,85 @@ using PKHeX.Core;
 namespace PluginPile.FashionEditor; 
 public partial class FashionFormSwSh : Form {
 
-  private readonly SAV8SWSH sav;
+  private readonly SAV8SWSH SAV;
 
-  private readonly FashionPageSelector topsSelector;
-  private readonly FashionPageSelector jacketsSelector;
-  private readonly FashionPageSelector bottomsSelector;
-  private readonly FashionPageSelector socksSelector;
-  private readonly FashionPageSelector shoesSelector;
-  private readonly FashionPageSelector bagsSelector;
-  private readonly FashionPageSelector hatsSelector;
-  private readonly FashionPageSelector glassesSelector;
-  private readonly FashionPageSelector glovesSelector;
+  private readonly FashionPageSelector TopsSelector;
+  private readonly FashionPageSelector JacketsSelector;
+  private readonly FashionPageSelector BottomsSelector;
+  private readonly FashionPageSelector SocksSelector;
+  private readonly FashionPageSelector ShoesSelector;
+  private readonly FashionPageSelector BagsSelector;
+  private readonly FashionPageSelector HatsSelector;
+  private readonly FashionPageSelector GlassesSelector;
+  private readonly FashionPageSelector GlovesSelector;
 
   public FashionFormSwSh(SAV8SWSH sav8swsh) {
     InitializeComponent();
-    sav = sav8swsh;
+    SAV = sav8swsh;
     HandleLanguageChange();
 
-    topsSelector = NewSelector(SwShConstants.TopsRegion, Language.SwSh.TopsList);
-    jacketsSelector = NewSelector(SwShConstants.JacketsRegion, Language.SwSh.JacketsList);
-    bottomsSelector = NewSelector(SwShConstants.BotttomsRegion, Language.SwSh.BottomsList);
-    socksSelector = NewSelector(SwShConstants.SocksRegion, Language.SwSh.SocksList);
-    shoesSelector = NewSelector(SwShConstants.ShoesRegion, Language.SwSh.ShoesList);
-    bagsSelector = NewSelector(SwShConstants.BagsRegion, Language.SwSh.BagsList);
-    hatsSelector = NewSelector(SwShConstants.HatsRegion, Language.SwSh.HatsList);
-    glassesSelector = NewSelector(SwShConstants.GlassesRegion, Language.SwSh.GlassesList);
-    glovesSelector = NewSelector(SwShConstants.GlovesRegion, Language.SwSh.GlovesList);
+    TopsSelector = NewSelector(SwShConstants.TopsRegion, Language.SwSh.TopsList);
+    JacketsSelector = NewSelector(SwShConstants.JacketsRegion, Language.SwSh.JacketsList);
+    BottomsSelector = NewSelector(SwShConstants.BotttomsRegion, Language.SwSh.BottomsList);
+    SocksSelector = NewSelector(SwShConstants.SocksRegion, Language.SwSh.SocksList);
+    ShoesSelector = NewSelector(SwShConstants.ShoesRegion, Language.SwSh.ShoesList);
+    BagsSelector = NewSelector(SwShConstants.BagsRegion, Language.SwSh.BagsList);
+    HatsSelector = NewSelector(SwShConstants.HatsRegion, Language.SwSh.HatsList);
+    GlassesSelector = NewSelector(SwShConstants.GlassesRegion, Language.SwSh.GlassesList);
+    GlovesSelector = NewSelector(SwShConstants.GlovesRegion, Language.SwSh.GlovesList);
 
-    topsPage.Controls.Add(topsSelector);
-    jacketsPage.Controls.Add(jacketsSelector);
-    bottomsPage.Controls.Add(bottomsSelector);
-    socksPage.Controls.Add(socksSelector);
-    shoesPage.Controls.Add(shoesSelector);
-    bagsPage.Controls.Add(bagsSelector);
-    hatsPage.Controls.Add(hatsSelector);
-    glassesPage.Controls.Add(glassesSelector);
-    glovesPage.Controls.Add(glovesSelector);
+    TopsPage.Controls.Add(TopsSelector);
+    JacketsPage.Controls.Add(JacketsSelector);
+    BottomsPage.Controls.Add(BottomsSelector);
+    SocksPage.Controls.Add(SocksSelector);
+    ShoesPage.Controls.Add(ShoesSelector);
+    BagsPage.Controls.Add(BagsSelector);
+    HatsPage.Controls.Add(HatsSelector);
+    GlassesPage.Controls.Add(GlassesSelector);
+    GlovesPage.Controls.Add(GlovesSelector);
   }
 
   private void HandleLanguageChange() {
     Text = Language.Title;
-    cancelButton.Text = Language.Cancel;
-    saveButton.Text = Language.Save;
-    topsPage.Text = Language.SwSh.Tops;
-    jacketsPage.Text = Language.SwSh.Jackets;
-    bottomsPage.Text = Language.SwSh.Bottoms;
-    if (sav.Gender == 1) bottomsPage.Text += $"/{Language.SwSh.Dresses}";
-    socksPage.Text = Language.SwSh.Socks;
-    shoesPage.Text = Language.SwSh.Shoes;
-    bagsPage.Text = Language.SwSh.Bags;
-    hatsPage.Text = Language.SwSh.Hats;
-    glassesPage.Text = Language.SwSh.Glasses;
-    glovesPage.Text = Language.SwSh.Gloves;
+    Cancel.Text = Language.Cancel;
+    SaveButton.Text = Language.Save;
+    TopsPage.Text = Language.SwSh.Tops;
+    JacketsPage.Text = Language.SwSh.Jackets;
+    BottomsPage.Text = Language.SwSh.Bottoms;
+    if (SAV.Gender == 1) BottomsPage.Text += $"/{Language.SwSh.Dresses}";
+    SocksPage.Text = Language.SwSh.Socks;
+    ShoesPage.Text = Language.SwSh.Shoes;
+    BagsPage.Text = Language.SwSh.Bags;
+    HatsPage.Text = Language.SwSh.Hats;
+    GlassesPage.Text = Language.SwSh.Glasses;
+    GlovesPage.Text = Language.SwSh.Gloves;
   }
 
-  private void cancelButton_Click(object sender, EventArgs e) => Close();
+  private void CancelButton_Click(object sender, EventArgs e) => Close();
 
-  private void saveButton_Click(object sender, EventArgs e) {
-    SetFlags(topsSelector, SwShConstants.TopsRegion);
-    SetFlags(jacketsSelector, SwShConstants.JacketsRegion);
-    SetFlags(bottomsSelector, SwShConstants.BotttomsRegion);
-    SetFlags(socksSelector, SwShConstants.SocksRegion);
-    SetFlags(shoesSelector, SwShConstants.ShoesRegion);
-    SetFlags(bagsSelector, SwShConstants.BagsRegion);
-    SetFlags(hatsSelector, SwShConstants.HatsRegion);
-    SetFlags(glassesSelector, SwShConstants.GlassesRegion);
-    SetFlags(glovesSelector, SwShConstants.GlovesRegion);
-    sav.State.Edited = true;
+  private void SaveButton_Click(object sender, EventArgs e) {
+    SetFlags(TopsSelector, SwShConstants.TopsRegion);
+    SetFlags(JacketsSelector, SwShConstants.JacketsRegion);
+    SetFlags(BottomsSelector, SwShConstants.BotttomsRegion);
+    SetFlags(SocksSelector, SwShConstants.SocksRegion);
+    SetFlags(ShoesSelector, SwShConstants.ShoesRegion);
+    SetFlags(BagsSelector, SwShConstants.BagsRegion);
+    SetFlags(HatsSelector, SwShConstants.HatsRegion);
+    SetFlags(GlassesSelector, SwShConstants.GlassesRegion);
+    SetFlags(GlovesSelector, SwShConstants.GlovesRegion);
+    SAV.State.Edited = true;
     Close();
   }
 
   private FashionPageSelector NewSelector(int region, Func<int, string[]> textList) {
-    bool[] OwnedFlags(int region) => sav.Blocks.Fashion.GetArrayOwnedFlag(region);
-    bool[] NewFlags(int region) => sav.Blocks.Fashion.GetArrayNewFlag(region).Select(b => !b).ToArray();
-    return new FashionPageSelector(OwnedFlags(region), textList(sav.Gender), NewFlags(region));
+    bool[] OwnedFlags(int region) => SAV.Blocks.Fashion.GetArrayOwnedFlag(region);
+    bool[] NewFlags(int region) => SAV.Blocks.Fashion.GetArrayNewFlag(region).Select(b => !b).ToArray();
+    return new FashionPageSelector(OwnedFlags(region), textList(SAV.Gender), NewFlags(region));
   }
 
   private void SetFlags(FashionPageSelector selector, int region) {
-    sav.Blocks.Fashion.SetArrayOwnedFlag(region, selector.GetBools());
-    sav.Blocks.Fashion.SetArrayNewFlag(region, selector.GetNew()!.Select(b => !b).ToArray());
+    SAV.Blocks.Fashion.SetArrayOwnedFlag(region, selector.GetBools());
+    SAV.Blocks.Fashion.SetArrayNewFlag(region, selector.GetNew()!.Select(b => !b).ToArray());
   }
 
 }

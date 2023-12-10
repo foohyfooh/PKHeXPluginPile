@@ -14,8 +14,8 @@ public partial class RentalTeamsForm : Form {
     else
       throw new ArgumentException("Invalid SAV Type");
 
-    GroupBox[] teamSlots = new GroupBox[] { team1Box, team2Box, team3Box, team4Box, team5Box };
-    for (int i = 0; i < Constants.SV.NumRentalTeams; i++) {
+    GroupBox[] teamSlots = [Team1Box, Team2Box, Team3Box, Team4Box, Team5Box];
+    for (int i = 0; i < rentalTeams.Count; i++) {
       if (rentalTeams[i].Enabled) {
         RentalTeamControl teamControl = new RentalTeamControl(saveFileProvider, rentalTeams[i]);
         teamSlots[i].Controls.Add(teamControl);

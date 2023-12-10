@@ -13,23 +13,23 @@ public partial class MemoryLinkForm : Form {
 
     ml = new MemoryLink(SAV.GetData(MemoryLink.Offset, MemoryLink.Size));
 
-    if (ml.block2.name == "") {
+    if (ml.Block2.Name == "") {
       MessageBox.Show("The savegame does not contain memory link Data.\n\nA default memory link data will be loaded, it unlocks the following:" +
                       "\n\t- All 8 flashbacks" +
                       "\n\t- NPC Battles with Cheren and Bianca" +
-                      "\n\t- NPC will use BW1 trainer name instead of just Trainer" +
+                      "\n\t- NPC will use BW1 trainer Name instead of just Trainer" +
                       "\n\t- Certificates for completed Pokedex and trophies from Battle Subway\n\t   (they are placed in the players room)" +
                       "\n\t- My personal hall of fame from my BW1 playthrough\n\t    (no known use in-game)" +
                       "\n\nNote: No data related to Loblolly's Studio (would unlock Dream World furniture from BW on BW2) is present, but Dream World has closed anyways.");
 
       ml = new MemoryLink(default_memories);
-      ml.block2.name = "Nate";
-      ml.block2.TID = 25560;
-      ml.block2.SID = 13453;
+      ml.Block2.Name = "Nate";
+      ml.Block2.TID = 25560;
+      ml.Block2.SID = 13453;
 
       uint newseed = (uint)(rand.Next(0xFFFF + 1) << 16);
-      ml.block1.crypt_seed = newseed;
-      ml.block1_mirror.crypt_seed = newseed;
+      ml.Block1.CryptSeed = newseed;
+      ml.Block1Mirror.CryptSeed = newseed;
 
       //Needed so export memory doesn't export my own data (default_memories)
       load_data();
@@ -40,39 +40,39 @@ public partial class MemoryLinkForm : Form {
   }
 
   void load_data() {
-    name.Text = ml.block2.name;
-    tid.Value = ml.block2.TID;
-    sid.Value = ml.block2.SID;
-    starter.SelectedIndex = ml.block2.STARTER;
+    name.Text = ml.Block2.Name;
+    tid.Value = ml.Block2.TID;
+    sid.Value = ml.Block2.SID;
+    starter.SelectedIndex = ml.Block2.STARTER;
 
-    flag1.Checked = ml.block2.checkflag(0);
-    flag2.Checked = ml.block2.checkflag(1);
-    flag3.Checked = ml.block2.checkflag(2);
-    flag4.Checked = ml.block2.checkflag(3);
-    flag5.Checked = ml.block2.checkflag(4);
-    flag6.Checked = ml.block2.checkflag(5);
-    flag7.Checked = ml.block2.checkflag(6);
-    flag8.Checked = ml.block2.checkflag(7);
+    flag1.Checked = ml.Block2.Checkflag(0);
+    flag2.Checked = ml.Block2.Checkflag(1);
+    flag3.Checked = ml.Block2.Checkflag(2);
+    flag4.Checked = ml.Block2.Checkflag(3);
+    flag5.Checked = ml.Block2.Checkflag(4);
+    flag6.Checked = ml.Block2.Checkflag(5);
+    flag7.Checked = ml.Block2.Checkflag(6);
+    flag8.Checked = ml.Block2.Checkflag(7);
 
-    PROP.Text = BitConverter.ToString(ml.block2.getData(0x94, 13)).Replace("-", string.Empty);
+    PROP.Text = BitConverter.ToString(ml.Block2.GetData(0x94, 13)).Replace("-", string.Empty);
   }
 
   void set_data() {
-    ml.block2.name = name.Text;
-    ml.block2.TID = (ushort)tid.Value;
-    ml.block2.SID = (ushort)sid.Value;
-    ml.block2.STARTER = (byte)starter.SelectedIndex;
+    ml.Block2.Name = name.Text;
+    ml.Block2.TID = (ushort)tid.Value;
+    ml.Block2.SID = (ushort)sid.Value;
+    ml.Block2.STARTER = (byte)starter.SelectedIndex;
 
-    ml.block2.setflag(0, flag1.Checked);
-    ml.block2.setflag(1, flag2.Checked);
-    ml.block2.setflag(2, flag3.Checked);
-    ml.block2.setflag(3, flag4.Checked);
-    ml.block2.setflag(4, flag5.Checked);
-    ml.block2.setflag(5, flag6.Checked);
-    ml.block2.setflag(6, flag7.Checked);
-    ml.block2.setflag(7, flag8.Checked);
+    ml.Block2.Setflag(0, flag1.Checked);
+    ml.Block2.Setflag(1, flag2.Checked);
+    ml.Block2.Setflag(2, flag3.Checked);
+    ml.Block2.Setflag(3, flag4.Checked);
+    ml.Block2.Setflag(4, flag5.Checked);
+    ml.Block2.Setflag(5, flag6.Checked);
+    ml.Block2.Setflag(6, flag7.Checked);
+    ml.Block2.Setflag(7, flag8.Checked);
 
-    ml.set_blocks();
+    ml.SetBlocks();
   }
 
   void Exit_butClick(object sender, EventArgs e) => Close();
@@ -83,15 +83,15 @@ public partial class MemoryLinkForm : Form {
     Close();
   }
   void B1_exportClick(object sender, EventArgs e) {
-    FileIO.SaveFile(ml.block1.Data, "Memory Link Data|*.bin|All Files (*.*)|*.*");
+    FileIO.SaveFile(ml.Block1.Data, "Memory Link Data|*.bin|All Files (*.*)|*.*");
   }
 
   void B1m_exportClick(object sender, EventArgs e) {
-    FileIO.SaveFile(ml.block1_mirror.Data, "Memory Link Data|*.bin|All Files (*.*)|*.*");
+    FileIO.SaveFile(ml.Block1Mirror.Data, "Memory Link Data|*.bin|All Files (*.*)|*.*");
   }
 
   void B2_exportClick(object sender, EventArgs e) {
-    FileIO.SaveFile(ml.block2.Data, "Memory Link Data|*.bin|All Files (*.*)|*.*");
+    FileIO.SaveFile(ml.Block2.Data, "Memory Link Data|*.bin|All Files (*.*)|*.*");
   }
 
   void B1_importClick(object sender, EventArgs e) {
@@ -100,7 +100,7 @@ public partial class MemoryLinkForm : Form {
     int filesize = FileIO.LoadFile(ref new_block1!, ref path, "Memory Link Data|*.bin|All Files (*.*)|*.*");
 
     if (filesize == MemoryLink.MemoryLinkBlock1.Size) {
-      new_block1.CopyTo(ml.block1.Data, 0);
+      new_block1.CopyTo(ml.Block1.Data, 0);
       //Reload
       load_data();
     } else if (filesize != -1) {
@@ -114,7 +114,7 @@ public partial class MemoryLinkForm : Form {
     int filesize = FileIO.LoadFile(ref new_block1m!, ref path, "Memory Link Data|*.bin|All Files (*.*)|*.*");
 
     if (filesize == MemoryLink.MemoryLinkBlock1.Size) {
-      new_block1m.CopyTo(ml.block1_mirror.Data, 0);
+      new_block1m.CopyTo(ml.Block1Mirror.Data, 0);
       //Reload
       load_data();
     } else if (filesize != -1) {
@@ -127,7 +127,7 @@ public partial class MemoryLinkForm : Form {
     int filesize = FileIO.LoadFile(ref new_block2!, ref path, "Memory Link Data|*.bin|All Files (*.*)|*.*");
 
     if (filesize == MemoryLink.MemoryLinkBlock2.Size) {
-      new_block2.CopyTo(ml.block2.Data, 0);
+      new_block2.CopyTo(ml.Block2.Data, 0);
       //Reload
       load_data();
     } else if (filesize != -1) {
@@ -157,17 +157,17 @@ public partial class MemoryLinkForm : Form {
     if (filesize != -1) {
       SaveFile bwSAV = (SaveFile)FileUtil.GetSupportedFile(bw, Path.GetExtension(path))!;
       if (bwSAV is SAV5BW) {
-        ml.block2.name_fromarray(bw.Skip(0x19404).Take(0xF).ToArray());
-        ml.block2.TID = BitConverter.ToUInt16(bw, 0x19414);
-        ml.block2.SID = BitConverter.ToUInt16(bw, 0x19416);
-        ml.block2.STARTER = bwSAV.Data[0x20160];
+        ml.Block2.NameFromArray(bw.Skip(0x19404).Take(0xF).ToArray());
+        ml.Block2.TID = BitConverter.ToUInt16(bw, 0x19414);
+        ml.Block2.SID = BitConverter.ToUInt16(bw, 0x19416);
+        ml.Block2.STARTER = bwSAV.Data[0x20160];
 
-        ml.block2.set_hof(bw.Skip(0x23B00).Take(0x168).ToArray());
-        ml.block2.set_props(bw.Skip(0x1F958).Take(0x13).ToArray());
+        ml.Block2.SetHOF(bw.Skip(0x23B00).Take(0x168).ToArray());
+        ml.Block2.SetProps(bw.Skip(0x1F958).Take(0x13).ToArray());
 
         uint newseed = (uint)(rand.Next(0xFFFF + 1) << 16);
-        ml.block1.crypt_seed = newseed;
-        ml.block1_mirror.crypt_seed = newseed;
+        ml.Block1.CryptSeed = newseed;
+        ml.Block1Mirror.CryptSeed = newseed;
 
         //Reload all data
         load_data();
@@ -399,9 +399,9 @@ public partial class MemoryLinkForm : Form {
 
 
   void PropUnlockButClick(object sender, EventArgs e) {
-    ml.block2.set_props(default_memories.Skip(0x894).Take(0x13).ToArray());
+    ml.Block2.SetProps(default_memories.Skip(0x894).Take(0x13).ToArray());
     MessageBox.Show("All props have been unlocked for memory link.");
-    PROP.Text = BitConverter.ToString(ml.block2.getData(0x94, 13)).Replace("-", string.Empty);
+    PROP.Text = BitConverter.ToString(ml.Block2.GetData(0x94, 13)).Replace("-", string.Empty);
   }
 
   void MemoryLinkLoad(object sender, EventArgs e) {

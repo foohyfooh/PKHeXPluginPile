@@ -17,26 +17,25 @@ public partial class DreamRadarForm : Form {
     dra = new DreamRadarA(SAV.GetDSLinkA());
     drb = new DreamRadarB(SAV.GetDSLinkB()); //Get 3DS link data decrypted
 
-    if (dra.received == false) {
+    if (!dra.Received) {
       MessageBox.Show("Warning! There's unreceived data in the savegame!");
-      dra.key = drb.EncKey ^ drkey.FLAGS;//This makes editing the data possible without messing up the current encryption
+      dra.Key = drb.EncKey ^ drkey.FLAGS;//This makes editing the data possible without messing up the current encryption
     }
 
-    if (drb.illegal == true) {
+    if (drb.illegal) {
       allmode.Checked = true;
-      set_all_list();
-
+      SetAllLlist();
     } else {
       legitmode.Checked = true;
-      set_legal_list();
+      SetLegalList();
     }
 
-    load_data();
+    LoadData();
   }
   void Exit_butClick(object sender, EventArgs e) => Close();
 
   void Saveexit_butClick(object sender, EventArgs e) {
-    set_data();
+    SetData();
     SAV.SetBlock(drkey.Data, Constants.B2W2.DreamRadarKey);
     SAV.SetDSLinkA(dra.Data);
     SAV.SetDSLinkB(drb.Data);
@@ -44,9 +43,9 @@ public partial class DreamRadarForm : Form {
   }
 
   void Clean_butClick(object sender, EventArgs e) { //Right now this button is disabled as we know how to edit all the data
-    drkey.reinit();
-    dra.reinit();
-    drb.reinit();
+    drkey.ReInit();
+    dra.ReInit();
+    drb.ReInit();
 
     SAV.SetBlock(drkey.Data, Constants.B2W2.DreamRadarKey);
     SAV.SetDSLinkA(dra.Data);
@@ -54,7 +53,7 @@ public partial class DreamRadarForm : Form {
     Close();
   }
 
-  void set_legal_list() {
+  void SetLegalList() {
     pkm1.Items.Clear();
     pkm2.Items.Clear();
     pkm3.Items.Clear();
@@ -81,7 +80,7 @@ public partial class DreamRadarForm : Form {
     item6.Items.AddRange(Language.DRItemList);
   }
 
-  void set_all_list() {
+  void SetAllLlist() {
     pkm1.Items.Clear();
     pkm2.Items.Clear();
     pkm3.Items.Clear();
@@ -108,7 +107,7 @@ public partial class DreamRadarForm : Form {
     item6.Items.AddRange(Language.ItemList);
   }
 
-  int poke2legit(int species) {
+  int Poke2Legit(int species) {
     if (legitmode.Checked) {
       for (int i = 0; i < 19; i++) {
         if (species == drb.legit_pk_index[i])
@@ -118,7 +117,7 @@ public partial class DreamRadarForm : Form {
     return species;
   }
 
-  int item2legit(int item) {
+  int Item2Legit(int item) {
     if (legitmode.Checked) {
       for (int i = 0; i < 24; i++) {
         if (item == drb.legit_item_index[i])
@@ -128,43 +127,43 @@ public partial class DreamRadarForm : Form {
     return item;
   }
 
-  void load_data() {
-    pkm1.SelectedIndex = poke2legit(drb.get_poke_species(0));
-    pkm2.SelectedIndex = poke2legit(drb.get_poke_species(1));
-    pkm3.SelectedIndex = poke2legit(drb.get_poke_species(2));
-    pkm4.SelectedIndex = poke2legit(drb.get_poke_species(3));
-    pkm5.SelectedIndex = poke2legit(drb.get_poke_species(4));
-    pkm6.SelectedIndex = poke2legit(drb.get_poke_species(5));
+  void LoadData() {
+    pkm1.SelectedIndex = Poke2Legit(drb.GePokeSpecies(0));
+    pkm2.SelectedIndex = Poke2Legit(drb.GePokeSpecies(1));
+    pkm3.SelectedIndex = Poke2Legit(drb.GePokeSpecies(2));
+    pkm4.SelectedIndex = Poke2Legit(drb.GePokeSpecies(3));
+    pkm5.SelectedIndex = Poke2Legit(drb.GePokeSpecies(4));
+    pkm6.SelectedIndex = Poke2Legit(drb.GePokeSpecies(5));
 
-    item1.SelectedIndex = item2legit(drb.get_item_id(0));
-    item2.SelectedIndex = item2legit(drb.get_item_id(1));
-    item3.SelectedIndex = item2legit(drb.get_item_id(2));
-    item4.SelectedIndex = item2legit(drb.get_item_id(3));
-    item5.SelectedIndex = item2legit(drb.get_item_id(4));
-    item6.SelectedIndex = item2legit(drb.get_item_id(5));
+    item1.SelectedIndex = Item2Legit(drb.GetItemId(0));
+    item2.SelectedIndex = Item2Legit(drb.GetItemId(1));
+    item3.SelectedIndex = Item2Legit(drb.GetItemId(2));
+    item4.SelectedIndex = Item2Legit(drb.GetItemId(3));
+    item5.SelectedIndex = Item2Legit(drb.GetItemId(4));
+    item6.SelectedIndex = Item2Legit(drb.GetItemId(5));
 
-    pkmgnd1.SelectedIndex = drb.get_poke_gender(0);
-    pkmgnd2.SelectedIndex = drb.get_poke_gender(1);
-    pkmgnd3.SelectedIndex = drb.get_poke_gender(2);
-    pkmgnd4.SelectedIndex = drb.get_poke_gender(3);
-    pkmgnd5.SelectedIndex = drb.get_poke_gender(4);
-    pkmgnd6.SelectedIndex = drb.get_poke_gender(5);
+    pkmgnd1.SelectedIndex = drb.GetPokeGender(0);
+    pkmgnd2.SelectedIndex = drb.GetPokeGender(1);
+    pkmgnd3.SelectedIndex = drb.GetPokeGender(2);
+    pkmgnd4.SelectedIndex = drb.GetPokeGender(3);
+    pkmgnd5.SelectedIndex = drb.GetPokeGender(4);
+    pkmgnd6.SelectedIndex = drb.GetPokeGender(5);
 
-    itemcnt1.Value = drb.get_item_amount(0);
-    itemcnt2.Value = drb.get_item_amount(1);
-    itemcnt3.Value = drb.get_item_amount(2);
-    itemcnt4.Value = drb.get_item_amount(3);
-    itemcnt5.Value = drb.get_item_amount(4);
-    itemcnt6.Value = drb.get_item_amount(5);
+    itemcnt1.Value = drb.GetItemAmount(0);
+    itemcnt2.Value = drb.GetItemAmount(1);
+    itemcnt3.Value = drb.GetItemAmount(2);
+    itemcnt4.Value = drb.GetItemAmount(3);
+    itemcnt5.Value = drb.GetItemAmount(4);
+    itemcnt6.Value = drb.GetItemAmount(5);
 
-    legend1.SelectedIndex = drb.get_legend(0);
-    legend2.SelectedIndex = drb.get_legend(1);
-    legend3.SelectedIndex = drb.get_legend(2);
-    legend4.SelectedIndex = drb.get_legend(3);
-    legend5.SelectedIndex = drb.get_legend(4);
-    legend6.SelectedIndex = drb.get_legend(5);
-    legend7.SelectedIndex = drb.get_legend(6);
-    legend8.SelectedIndex = drb.get_legend(7);
+    legend1.SelectedIndex = drb.GetLegend(0);
+    legend2.SelectedIndex = drb.GetLegend(1);
+    legend3.SelectedIndex = drb.GetLegend(2);
+    legend4.SelectedIndex = drb.GetLegend(3);
+    legend5.SelectedIndex = drb.GetLegend(4);
+    legend6.SelectedIndex = drb.GetLegend(5);
+    legend7.SelectedIndex = drb.GetLegend(6);
+    legend8.SelectedIndex = drb.GetLegend(7);
 
     flag0.Checked = drkey.Tornadus;
     flag1.Checked = drkey.Thundurus;
@@ -176,9 +175,9 @@ public partial class DreamRadarForm : Form {
     flag7.Checked = drkey.Lugia;
   }
 
-  void set_data() {
+  void SetData() {
     //Get the correct intial key before changing the flags
-    drb.EncKey = dra.key ^ drkey.FLAGS;
+    drb.EncKey = dra.Key ^ drkey.FLAGS;
 
     //Set the flags
     drkey.Tornadus = flag0.Checked;
@@ -190,73 +189,73 @@ public partial class DreamRadarForm : Form {
     drkey.HoOh = flag6.Checked;
     drkey.Lugia = flag7.Checked;
 
-    drb.clean_data();//Set everything to 0 first
+    drb.CleanData(); //Set everything to 0 first
                      //Legendary slots
-    drb.set_legend(drb.legendary_index[legend1.SelectedIndex], 0);
-    drb.set_legend(drb.legendary_index[legend2.SelectedIndex], 1);
-    drb.set_legend(drb.legendary_index[legend3.SelectedIndex], 2);
-    drb.set_legend(drb.legendary_index[legend4.SelectedIndex], 3);
-    drb.set_legend(drb.legendary_index[legend5.SelectedIndex], 4);
-    drb.set_legend(drb.legendary_index[legend6.SelectedIndex], 5);
-    drb.set_legend(drb.legendary_index[legend7.SelectedIndex], 6);
-    drb.set_legend(drb.legendary_index[legend8.SelectedIndex], 7);
+    drb.SetLegend(drb.legendary_index[legend1.SelectedIndex], 0);
+    drb.SetLegend(drb.legendary_index[legend2.SelectedIndex], 1);
+    drb.SetLegend(drb.legendary_index[legend3.SelectedIndex], 2);
+    drb.SetLegend(drb.legendary_index[legend4.SelectedIndex], 3);
+    drb.SetLegend(drb.legendary_index[legend5.SelectedIndex], 4);
+    drb.SetLegend(drb.legendary_index[legend6.SelectedIndex], 5);
+    drb.SetLegend(drb.legendary_index[legend7.SelectedIndex], 6);
+    drb.SetLegend(drb.legendary_index[legend8.SelectedIndex], 7);
 
     if (legitmode.Checked) {
-      drb.set_poke(drb.legit_pk_index[pkm1.SelectedIndex], pkmgnd1.SelectedIndex, 0);
-      drb.set_poke(drb.legit_pk_index[pkm2.SelectedIndex], pkmgnd2.SelectedIndex, 1);
-      drb.set_poke(drb.legit_pk_index[pkm3.SelectedIndex], pkmgnd3.SelectedIndex, 2);
-      drb.set_poke(drb.legit_pk_index[pkm4.SelectedIndex], pkmgnd4.SelectedIndex, 3);
-      drb.set_poke(drb.legit_pk_index[pkm5.SelectedIndex], pkmgnd5.SelectedIndex, 4);
-      drb.set_poke(drb.legit_pk_index[pkm6.SelectedIndex], pkmgnd6.SelectedIndex, 5);
+      drb.SetPoke(drb.legit_pk_index[pkm1.SelectedIndex], pkmgnd1.SelectedIndex, 0);
+      drb.SetPoke(drb.legit_pk_index[pkm2.SelectedIndex], pkmgnd2.SelectedIndex, 1);
+      drb.SetPoke(drb.legit_pk_index[pkm3.SelectedIndex], pkmgnd3.SelectedIndex, 2);
+      drb.SetPoke(drb.legit_pk_index[pkm4.SelectedIndex], pkmgnd4.SelectedIndex, 3);
+      drb.SetPoke(drb.legit_pk_index[pkm5.SelectedIndex], pkmgnd5.SelectedIndex, 4);
+      drb.SetPoke(drb.legit_pk_index[pkm6.SelectedIndex], pkmgnd6.SelectedIndex, 5);
 
-      drb.set_item((int)itemcnt1.Value, drb.legit_item_index[item1.SelectedIndex], 0);
-      drb.set_item((int)itemcnt2.Value, drb.legit_item_index[item2.SelectedIndex], 1);
-      drb.set_item((int)itemcnt3.Value, drb.legit_item_index[item3.SelectedIndex], 2);
-      drb.set_item((int)itemcnt4.Value, drb.legit_item_index[item4.SelectedIndex], 3);
-      drb.set_item((int)itemcnt5.Value, drb.legit_item_index[item5.SelectedIndex], 4);
-      drb.set_item((int)itemcnt6.Value, drb.legit_item_index[item6.SelectedIndex], 5);
+      drb.SetItem((int)itemcnt1.Value, drb.legit_item_index[item1.SelectedIndex], 0);
+      drb.SetItem((int)itemcnt2.Value, drb.legit_item_index[item2.SelectedIndex], 1);
+      drb.SetItem((int)itemcnt3.Value, drb.legit_item_index[item3.SelectedIndex], 2);
+      drb.SetItem((int)itemcnt4.Value, drb.legit_item_index[item4.SelectedIndex], 3);
+      drb.SetItem((int)itemcnt5.Value, drb.legit_item_index[item5.SelectedIndex], 4);
+      drb.SetItem((int)itemcnt6.Value, drb.legit_item_index[item6.SelectedIndex], 5);
     } else {
-      drb.set_poke(pkm1.SelectedIndex, pkmgnd1.SelectedIndex, 0);
-      drb.set_poke(pkm2.SelectedIndex, pkmgnd2.SelectedIndex, 1);
-      drb.set_poke(pkm3.SelectedIndex, pkmgnd3.SelectedIndex, 2);
-      drb.set_poke(pkm4.SelectedIndex, pkmgnd4.SelectedIndex, 3);
-      drb.set_poke(pkm5.SelectedIndex, pkmgnd5.SelectedIndex, 4);
-      drb.set_poke(pkm6.SelectedIndex, pkmgnd6.SelectedIndex, 5);
+      drb.SetPoke(pkm1.SelectedIndex, pkmgnd1.SelectedIndex, 0);
+      drb.SetPoke(pkm2.SelectedIndex, pkmgnd2.SelectedIndex, 1);
+      drb.SetPoke(pkm3.SelectedIndex, pkmgnd3.SelectedIndex, 2);
+      drb.SetPoke(pkm4.SelectedIndex, pkmgnd4.SelectedIndex, 3);
+      drb.SetPoke(pkm5.SelectedIndex, pkmgnd5.SelectedIndex, 4);
+      drb.SetPoke(pkm6.SelectedIndex, pkmgnd6.SelectedIndex, 5);
 
-      drb.set_item((int)itemcnt1.Value, item1.SelectedIndex, 0);
-      drb.set_item((int)itemcnt2.Value, item2.SelectedIndex, 1);
-      drb.set_item((int)itemcnt3.Value, item3.SelectedIndex, 2);
-      drb.set_item((int)itemcnt4.Value, item4.SelectedIndex, 3);
-      drb.set_item((int)itemcnt5.Value, item5.SelectedIndex, 4);
-      drb.set_item((int)itemcnt6.Value, item6.SelectedIndex, 5);
+      drb.SetItem((int)itemcnt1.Value, item1.SelectedIndex, 0);
+      drb.SetItem((int)itemcnt2.Value, item2.SelectedIndex, 1);
+      drb.SetItem((int)itemcnt3.Value, item3.SelectedIndex, 2);
+      drb.SetItem((int)itemcnt4.Value, item4.SelectedIndex, 3);
+      drb.SetItem((int)itemcnt5.Value, item5.SelectedIndex, 4);
+      drb.SetItem((int)itemcnt6.Value, item6.SelectedIndex, 5);
     }
 
     for (int i = 0; i < DreamRadarB.Size; i++) {
       if (drb.Data[i] != 0)
-        dra.received = false; //If we have any data, mark as available to be received
+        dra.Received = false; //If we have any data, mark as available to be received
     }
 
     //This is what Dream Radar does, not doing this makes the data be recognized as corrupted.
-    dra.unknown1 = 0;
-    dra.key = 0;
+    dra.Unknown1 = 0;
+    dra.Key = 0;
   }
 
   void AllmodeCheckedChanged(object sender, EventArgs e) {
-    if (allmode.Checked == true) {
-      set_all_list();
+    if (allmode.Checked) {
+      SetAllLlist();
     } else {
-      set_legal_list();
+      SetLegalList();
     }
-    load_data();
+    LoadData();
   }
 
   void LegitmodeCheckedChanged(object sender, EventArgs e) {
-    if (allmode.Checked == true) {
-      set_all_list();
+    if (allmode.Checked) {
+      SetAllLlist();
     } else {
-      set_legal_list();
+      SetLegalList();
     }
-    load_data();
+    LoadData();
   }
 
 }

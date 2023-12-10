@@ -1,11 +1,9 @@
 using PKHeX.Core;
 using PluginPile.Common;
-using System.Reflection;
 
 namespace PluginPile.FashionEditor; 
 public class FashionEditorPlugin : PluginBase {
   public override string Name => nameof(FashionEditorPlugin);
-  protected override Assembly PluginAssembly => typeof(FashionEditorPlugin).Assembly;
   private readonly ToolStripMenuItem FashionEditorButton;
   private bool IsCompatibleSave {
     get { return SaveFileEditor.SAV is SAV8SWSH or SAV8BS or SAV8LA; }

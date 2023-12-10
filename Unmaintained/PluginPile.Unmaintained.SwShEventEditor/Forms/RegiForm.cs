@@ -12,13 +12,13 @@ public partial class RegiForm : Form {
 
   private void RegiForm_Load(object sender, EventArgs e) {
     //Check Regi values
-    for (int i = 0; i < Definitions.memkeys_Regis.Count - 2; i++) { //-2 so we do all of them except for Regieleki and regidrago
-      regi_clistbox.SetItemChecked(i, SAV.Blocks.GetBlock(Definitions.memkeys_Regis.ElementAt(i).Value).GetBooleanValue());
+    for (int i = 0; i < Definitions.RegisKeys.Count - 2; i++) { //-2 so we do all of them except for Regieleki and regidrago
+      regi_clistbox.SetItemChecked(i, SAV.Blocks.GetBlock(Definitions.RegisKeys.ElementAt(i).Value).GetBooleanValue());
     }
     legailty_CB.Checked = true;
 
-    SCBlock eleki = SAV.Blocks.GetBlock(Definitions.memkeys_Regis[Species.Regieleki]);
-    SCBlock drago = SAV.Blocks.GetBlock(Definitions.memkeys_Regis[Species.Regidrago]);
+    SCBlock eleki = SAV.Blocks.GetBlock(Definitions.RegisKeys[Species.Regieleki]);
+    SCBlock drago = SAV.Blocks.GetBlock(Definitions.RegisKeys[Species.Regidrago]);
     SCBlock pattern = SAV.Blocks.GetBlock(Definitions.KRegielekiOrRegidragoPattern);
 
     if (eleki.GetBooleanValue()) {
@@ -132,12 +132,12 @@ public partial class RegiForm : Form {
   }
 
   private void applyBTN_Click(object sender, EventArgs e) {
-    for (int i = 0; i < Definitions.memkeys_Regis.Count - 2; i++) { //do all except for eleki and drago
-      SAV.Blocks.GetBlock(Definitions.memkeys_Regis.ElementAt(i).Value).ChangeBooleanValue(regi_clistbox.GetItemChecked(i));
+    for (int i = 0; i < Definitions.RegisKeys.Count - 2; i++) { //do all except for eleki and drago
+      SAV.Blocks.GetBlock(Definitions.RegisKeys.ElementAt(i).Value).ChangeBooleanValue(regi_clistbox.GetItemChecked(i));
     }
 
-    SAV.Blocks.GetBlock(Definitions.memkeys_Regis[Species.Regieleki]).ChangeBooleanValue(regieleki_RBTN.Checked);
-    SAV.Blocks.GetBlock(Definitions.memkeys_Regis[Species.Regidrago]).ChangeBooleanValue(regidrago_RBTN.Checked);
+    SAV.Blocks.GetBlock(Definitions.RegisKeys[Species.Regieleki]).ChangeBooleanValue(regieleki_RBTN.Checked);
+    SAV.Blocks.GetBlock(Definitions.RegisKeys[Species.Regidrago]).ChangeBooleanValue(regidrago_RBTN.Checked);
 
     if (regieleki_patrBTN.Checked) SAV.Blocks.GetBlock(Definitions.KRegielekiOrRegidragoPattern).SetValue((uint)1);
     else if (regidrago_patrBTN.Checked) SAV.Blocks.GetBlock(Definitions.KRegielekiOrRegidragoPattern).SetValue((uint)2);

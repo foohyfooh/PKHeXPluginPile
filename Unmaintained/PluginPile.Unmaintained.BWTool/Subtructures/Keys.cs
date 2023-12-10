@@ -1,9 +1,7 @@
 namespace PluginPile.Unmaintained.BWTool;
-public class Keys {
-  public readonly byte[] Data;
-  public Keys(byte[] data) {
-    Data = data;
-  }
+public class Keys(byte[] data) {
+  public readonly byte[] Data = data;
+
   /*
   0x00-0x07 - Unknown
   0x08-0x17 - Seems always 0x00
@@ -25,19 +23,19 @@ public class Keys {
   0x60 - Counter
   0x62 - ccrit checksum
   */
-  private const uint easykey = 0x00035691;
-  private const uint challengekey = 0x00018256;
-  private const uint citykey = 0x00059389;
-  private const uint ironkey = 0x00048292;
-  private const uint icebergkey = 0x00009892;
-  private const uint easy_u = 0x00093389;
-  private const uint challenge_u = 0x00022843;
-  private const uint city_u = 0x00034771;
-  private const uint iron_u = 0x000AB031;
-  private const uint iceberg_u = 0x000B3818;
-  private uint[] difficult_cfg = new uint[4] { 0x0, 0x00031239, 0x00015657, 0x00049589 };
-  private uint[] city_cfg = new uint[3] { 0x0, 0x00034525, 0x00011963 };
-  private uint[] chamber_cfg = new uint[4] { 0x0, 0x00094525, 0x00081963, 0x00038569 };
+  private const uint EasyKey = 0x00035691;
+  private const uint ChallengeKey = 0x00018256;
+  private const uint CityKey = 0x00059389;
+  private const uint IronKey = 0x00048292;
+  private const uint IcebergKey = 0x00009892;
+  private const uint EasyUnlocked = 0x00093389;
+  private const uint ChallengeUnlocked = 0x00022843;
+  private const uint CityUnlocked = 0x00034771;
+  private const uint IronUnlocked = 0x000AB031;
+  private const uint IcebergUnlocked = 0x000B3818;
+  private readonly uint[] DifficultCfg = [0x0, 0x00031239, 0x00015657, 0x00049589];
+  private readonly uint[] CtyCg = [0x0, 0x00034525, 0x00011963];
+  private readonly uint[] ChamberCfg = [0x0, 0x00094525, 0x00081963, 0x00038569];
   private const uint zero = 0;
 
   public bool KeysUnlocked() {
@@ -48,24 +46,24 @@ public class Keys {
     return false;
   }
 
-  public int getConfig(int configIndex) {
+  public int GetConfig(int configIndex) {
     if (configIndex == 0) {
       for (int i = 0; i < 4; i++) {
-        if (getKeyXor(10) == difficult_cfg[i]) {
+        if (GetKeyXor(10) == DifficultCfg[i]) {
           return i;
         }
       }
       return 0;
     } else if (configIndex == 1) {
       for (int i = 0; i < 3; i++) {
-        if (getKeyXor(11) == city_cfg[i]) {
+        if (GetKeyXor(11) == CtyCg[i]) {
           return i;
         }
       }
       return 0;
     } else if (configIndex == 2) {
       for (int i = 0; i < 4; i++) {
-        if (getKeyXor(12) == chamber_cfg[i]) {
+        if (GetKeyXor(12) == ChamberCfg[i]) {
           return i;
         }
       }
@@ -74,42 +72,42 @@ public class Keys {
       return 0;
     }
   }
-  private uint getKey(int keyIndex) {
+  private uint GetKey(int keyIndex) {
     return BitConverter.ToUInt32(Data, 0x28 + (keyIndex * 4));
   }
-  private uint getKeyXor(int keyIndex) {
-    return getKey(keyIndex) ^ ID;
+  private uint GetKeyXor(int keyIndex) {
+    return GetKey(keyIndex) ^ ID;
   }
-  public bool getKeyState(int keyIndex) {
-    return getKeyXor(keyIndex) switch {
-      easykey => true,
-      challengekey => true,
-      citykey => true,
-      ironkey => true,
-      icebergkey => true,
-      easy_u => true,
-      challenge_u => true,
-      city_u => true,
-      iron_u => true,
-      iceberg_u => true,
+  public bool GetKeyState(int keyIndex) {
+    return GetKeyXor(keyIndex) switch {
+      EasyKey => true,
+      ChallengeKey => true,
+      CityKey => true,
+      IronKey => true,
+      IcebergKey => true,
+      EasyUnlocked => true,
+      ChallengeUnlocked => true,
+      CityUnlocked => true,
+      IronUnlocked => true,
+      IcebergUnlocked => true,
       _ => false,
     };
   }
-  public void setKey(bool state, int keyIndex) {
+  public void SetKey(bool state, int keyIndex) {
     if (!state) {
       Array.Copy(BitConverter.GetBytes(zero), 0, Data, 0x28 + (keyIndex * 4), 4);
     } else {
       var xorkey = keyIndex switch {
-        0 => easykey,
-        1 => challengekey,
-        2 => citykey,
-        3 => ironkey,
-        4 => icebergkey,
-        5 => easy_u,
-        6 => challenge_u,
-        7 => city_u,
-        8 => iron_u,
-        9 => iceberg_u,
+        0 => EasyKey,
+        1 => ChallengeKey,
+        2 => CityKey,
+        3 => IronKey,
+        4 => IcebergKey,
+        5 => EasyUnlocked,
+        6 => ChallengeUnlocked,
+        7 => CityUnlocked,
+        8 => IronUnlocked,
+        9 => IcebergUnlocked,
         //Invalid index, this should never happen
         _ => zero,
       };

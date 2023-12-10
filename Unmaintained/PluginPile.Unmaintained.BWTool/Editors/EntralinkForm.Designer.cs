@@ -186,7 +186,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check9r.Text = "9 Right";
       check9r.TextAlign = ContentAlignment.MiddleCenter;
       check9r.UseVisualStyleBackColor = true;
-      check9r.CheckedChanged += areaChanged;
+      check9r.CheckedChanged += AreaChanged;
       //
       // check9c
       //
@@ -200,7 +200,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check9c.Text = "9 Center";
       check9c.TextAlign = ContentAlignment.MiddleCenter;
       check9c.UseVisualStyleBackColor = true;
-      check9c.CheckedChanged += areaChanged;
+      check9c.CheckedChanged += AreaChanged;
       //
       // check9l
       //
@@ -214,7 +214,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check9l.Text = "9 Left";
       check9l.TextAlign = ContentAlignment.MiddleCenter;
       check9l.UseVisualStyleBackColor = true;
-      check9l.CheckedChanged += areaChanged;
+      check9l.CheckedChanged += AreaChanged;
       //
       // checkdeep
       //
@@ -228,7 +228,7 @@ namespace PluginPile.Unmaintained.BWTool {
       checkdeep.Text = "Deep";
       checkdeep.TextAlign = ContentAlignment.MiddleCenter;
       checkdeep.UseVisualStyleBackColor = true;
-      checkdeep.CheckedChanged += areaChanged;
+      checkdeep.CheckedChanged += AreaChanged;
       //
       // check8r
       //
@@ -242,7 +242,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check8r.Text = "8 Right";
       check8r.TextAlign = ContentAlignment.MiddleCenter;
       check8r.UseVisualStyleBackColor = true;
-      check8r.CheckedChanged += areaChanged;
+      check8r.CheckedChanged += AreaChanged;
       //
       // check8c
       //
@@ -256,7 +256,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check8c.Text = "8 Center";
       check8c.TextAlign = ContentAlignment.MiddleCenter;
       check8c.UseVisualStyleBackColor = true;
-      check8c.CheckedChanged += areaChanged;
+      check8c.CheckedChanged += AreaChanged;
       //
       // check8l
       //
@@ -270,7 +270,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check8l.Text = "8 Left";
       check8l.TextAlign = ContentAlignment.MiddleCenter;
       check8l.UseVisualStyleBackColor = true;
-      check8l.CheckedChanged += areaChanged;
+      check8l.CheckedChanged += AreaChanged;
       //
       // check7r
       //
@@ -284,7 +284,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check7r.Text = "7 Right";
       check7r.TextAlign = ContentAlignment.MiddleCenter;
       check7r.UseVisualStyleBackColor = true;
-      check7r.CheckedChanged += areaChanged;
+      check7r.CheckedChanged += AreaChanged;
       //
       // check7c
       //
@@ -298,7 +298,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check7c.Text = "7 Center";
       check7c.TextAlign = ContentAlignment.MiddleCenter;
       check7c.UseVisualStyleBackColor = true;
-      check7c.CheckedChanged += areaChanged;
+      check7c.CheckedChanged += AreaChanged;
       //
       // check7l
       //
@@ -312,7 +312,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check7l.Text = "7 Left";
       check7l.TextAlign = ContentAlignment.MiddleCenter;
       check7l.UseVisualStyleBackColor = true;
-      check7l.CheckedChanged += areaChanged;
+      check7l.CheckedChanged += AreaChanged;
       //
       // check6r
       //
@@ -326,7 +326,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check6r.Text = "6 Right";
       check6r.TextAlign = ContentAlignment.MiddleCenter;
       check6r.UseVisualStyleBackColor = true;
-      check6r.CheckedChanged += areaChanged;
+      check6r.CheckedChanged += AreaChanged;
       //
       // check6c
       //
@@ -340,7 +340,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check6c.Text = "6 Center";
       check6c.TextAlign = ContentAlignment.MiddleCenter;
       check6c.UseVisualStyleBackColor = true;
-      check6c.CheckedChanged += areaChanged;
+      check6c.CheckedChanged += AreaChanged;
       //
       // check6l
       //
@@ -354,7 +354,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check6l.Text = "6 Left";
       check6l.TextAlign = ContentAlignment.MiddleCenter;
       check6l.UseVisualStyleBackColor = true;
-      check6l.CheckedChanged += areaChanged;
+      check6l.CheckedChanged += AreaChanged;
       //
       // check5r
       //
@@ -368,7 +368,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check5r.Text = "5 Right";
       check5r.TextAlign = ContentAlignment.MiddleCenter;
       check5r.UseVisualStyleBackColor = true;
-      check5r.CheckedChanged += areaChanged;
+      check5r.CheckedChanged += AreaChanged;
       //
       // check5c
       //
@@ -382,7 +382,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check5c.Text = "5 Center";
       check5c.TextAlign = ContentAlignment.MiddleCenter;
       check5c.UseVisualStyleBackColor = true;
-      check5c.CheckedChanged += areaChanged;
+      check5c.CheckedChanged += AreaChanged;
       //
       // check5l
       //
@@ -396,7 +396,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check5l.Text = "5 Left";
       check5l.TextAlign = ContentAlignment.MiddleCenter;
       check5l.UseVisualStyleBackColor = true;
-      check5l.CheckedChanged += areaChanged;
+      check5l.CheckedChanged += AreaChanged;
       //
       // check4r
       //
@@ -410,7 +410,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check4r.Text = "4 Right";
       check4r.TextAlign = ContentAlignment.MiddleCenter;
       check4r.UseVisualStyleBackColor = true;
-      check4r.CheckedChanged += areaChanged;
+      check4r.CheckedChanged += AreaChanged;
       //
       // check4c
       //
@@ -424,7 +424,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check4c.Text = "4 Center";
       check4c.TextAlign = ContentAlignment.MiddleCenter;
       check4c.UseVisualStyleBackColor = true;
-      check4c.CheckedChanged += areaChanged;
+      check4c.CheckedChanged += AreaChanged;
       //
       // check4l
       //
@@ -438,7 +438,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check4l.Text = "4 Left";
       check4l.TextAlign = ContentAlignment.MiddleCenter;
       check4l.UseVisualStyleBackColor = true;
-      check4l.CheckedChanged += areaChanged;
+      check4l.CheckedChanged += AreaChanged;
       //
       // check3r
       //
@@ -452,7 +452,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check3r.Text = "3 Right";
       check3r.TextAlign = ContentAlignment.MiddleCenter;
       check3r.UseVisualStyleBackColor = true;
-      check3r.CheckedChanged += areaChanged;
+      check3r.CheckedChanged += AreaChanged;
       //
       // check3c
       //
@@ -466,7 +466,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check3c.Text = "3 Center";
       check3c.TextAlign = ContentAlignment.MiddleCenter;
       check3c.UseVisualStyleBackColor = true;
-      check3c.CheckedChanged += areaChanged;
+      check3c.CheckedChanged += AreaChanged;
       //
       // check3l
       //
@@ -480,7 +480,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check3l.Text = "3 Left";
       check3l.TextAlign = ContentAlignment.MiddleCenter;
       check3l.UseVisualStyleBackColor = true;
-      check3l.CheckedChanged += areaChanged;
+      check3l.CheckedChanged += AreaChanged;
       //
       // check2r
       //
@@ -494,7 +494,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check2r.Text = "2 Right";
       check2r.TextAlign = ContentAlignment.MiddleCenter;
       check2r.UseVisualStyleBackColor = true;
-      check2r.CheckedChanged += areaChanged;
+      check2r.CheckedChanged += AreaChanged;
       //
       // check2c
       //
@@ -508,7 +508,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check2c.Text = "2 Center";
       check2c.TextAlign = ContentAlignment.MiddleCenter;
       check2c.UseVisualStyleBackColor = true;
-      check2c.CheckedChanged += areaChanged;
+      check2c.CheckedChanged += AreaChanged;
       //
       // check2l
       //
@@ -522,7 +522,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check2l.Text = "2 Left";
       check2l.TextAlign = ContentAlignment.MiddleCenter;
       check2l.UseVisualStyleBackColor = true;
-      check2l.CheckedChanged += areaChanged;
+      check2l.CheckedChanged += AreaChanged;
       //
       // check1r
       //
@@ -536,7 +536,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check1r.Text = "1 Right";
       check1r.TextAlign = ContentAlignment.MiddleCenter;
       check1r.UseVisualStyleBackColor = true;
-      check1r.CheckedChanged += areaChanged;
+      check1r.CheckedChanged += AreaChanged;
       //
       // check1c
       //
@@ -550,7 +550,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check1c.Text = "1 Center";
       check1c.TextAlign = ContentAlignment.MiddleCenter;
       check1c.UseVisualStyleBackColor = true;
-      check1c.CheckedChanged += areaChanged;
+      check1c.CheckedChanged += AreaChanged;
       //
       // check1l
       //
@@ -564,7 +564,7 @@ namespace PluginPile.Unmaintained.BWTool {
       check1l.Text = "1 Left";
       check1l.TextAlign = ContentAlignment.MiddleCenter;
       check1l.UseVisualStyleBackColor = true;
-      check1l.CheckedChanged += areaChanged;
+      check1l.CheckedChanged += AreaChanged;
       //
       // spbox1
       //

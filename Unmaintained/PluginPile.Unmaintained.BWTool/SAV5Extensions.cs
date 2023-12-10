@@ -62,7 +62,7 @@ public static class SAV5Extensions {
         // Update CRC tables
         Array.Copy(BitConverter.GetBytes(crc), 0, sav.Data, (sav.AllBlocks[crcIndex].Offset) + (index * 2), 2);
         Array.Copy(BitConverter.GetBytes(crc), 0, sav.Data, (sav.AllBlocks[crcIndex].Offset) + (index * 2) + backupOffset, 2);
-        // recalculate crc table's checksum
+        // recalculate CRC table's checksum
         ushort crctable = Checksums.CRC16_CCITT(sav.Data.Skip(sav.AllBlocks[crcIndex].Offset).Take((crcIndex + 1) * 2).ToArray());
         Array.Copy(BitConverter.GetBytes(crctable), 0, sav.Data, ((BlockInfoNDS)sav.AllBlocks[crcIndex]).Checksum(), 2);
         Array.Copy(BitConverter.GetBytes(crctable), 0, sav.Data, ((BlockInfoNDS)sav.AllBlocks[crcIndex]).Checksum() + backupOffset, 2);

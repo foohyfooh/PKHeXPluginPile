@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.Sorting; 
 class Gen4_Sinnoh : SortingBase {
 
-  private static readonly Dictionary<Species, PositionForms> DPdex = new Dictionary<Species, PositionForms>(){
+  private static readonly Dictionary<Species, PositionForms> DPDex = new Dictionary<Species, PositionForms>(){
     {Species.Turtwig, 1},
     {Species.Grotle, 2},
     {Species.Torterra, 3},
@@ -157,7 +157,7 @@ class Gen4_Sinnoh : SortingBase {
     {Species.Manaphy, 151},
   };
 
-  private static readonly Dictionary<Species, PositionForms> Ptdex = new Dictionary<Species, PositionForms>(DPdex) {
+  private static readonly Dictionary<Species, PositionForms> Ptdex = new Dictionary<Species, PositionForms>(DPDex) {
     {Species.Rotom, (152, 0..5)},
     {Species.Gligar, 153},
     {Species.Gliscor, 154},
@@ -220,7 +220,7 @@ class Gen4_Sinnoh : SortingBase {
   };
 
   public static Func<PKM, IComparable>[] GetDPSortFunctions() {
-    return GenerateSortingFunctions(DPdex);
+    return GenerateSortingFunctions(DPDex);
   }
 
   public static Func<PKM, IComparable>[] GetPtSortFunctions() {

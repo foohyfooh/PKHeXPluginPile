@@ -132,14 +132,14 @@ public partial class DynamaxResetForm : Form {
     }
 
     //Get Misc
-    dstreak_NUD.Value = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairDisconnectStreak"]).GetValue());
-    estreak_NUD.Value = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairEndlessStreak"]).GetValue());
+    dstreak_NUD.Value = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairDisconnectStreak"]).GetValue());
+    estreak_NUD.Value = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairEndlessStreak"]).GetValue());
 
-    int notes1 = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairSpeciesID1Noted"]).GetValue());
-    int notes2 = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairSpeciesID2Noted"]).GetValue());
-    int notes3 = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairSpeciesID3Noted"]).GetValue());
+    int notes1 = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairSpeciesID1Noted"]).GetValue());
+    int notes2 = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairSpeciesID2Noted"]).GetValue());
+    int notes3 = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairSpeciesID3Noted"]).GetValue());
 
-    int hint = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairPeoniaSpeciesHint"]).GetValue());
+    int hint = Convert.ToInt32(SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairPeoniaSpeciesHint"]).GetValue());
 
     mlspecies1_CMB.SelectedIndex = Definitions.NationalDex.GetIDIndex(notes1);
     mlspecies2_CMB.SelectedIndex = Definitions.NationalDex.GetIDIndex(notes2);
@@ -199,11 +199,11 @@ public partial class DynamaxResetForm : Form {
     }
 
     //apply misc changes
-    SCBlock b_notes1 = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairSpeciesID1Noted"]);
-    SCBlock b_notes2 = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairSpeciesID2Noted"]);
-    SCBlock b_notes3 = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairSpeciesID3Noted"]);
+    SCBlock b_notes1 = SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairSpeciesID1Noted"]);
+    SCBlock b_notes2 = SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairSpeciesID2Noted"]);
+    SCBlock b_notes3 = SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairSpeciesID3Noted"]);
 
-    SCBlock b_hint = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairPeoniaSpeciesHint"]);
+    SCBlock b_hint = SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairPeoniaSpeciesHint"]);
 
     b_notes1.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlspecies1_CMB.SelectedItem!.ToString()!)));
     b_notes2.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlspecies2_CMB.SelectedItem!.ToString()!)));
@@ -211,8 +211,8 @@ public partial class DynamaxResetForm : Form {
 
     b_hint.SetValue(Convert.ToUInt32(Definitions.NationalDex.GetID(mlhint_CMB.SelectedItem!.ToString()!)));
 
-    SCBlock b_dstreak = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairDisconnectStreak"]);
-    SCBlock b_estreak = SAV.Blocks.GetBlock(Definitions.memkeys_MaxLairMisc["KMaxLairEndlessStreak"]);
+    SCBlock b_dstreak = SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairDisconnectStreak"]);
+    SCBlock b_estreak = SAV.Blocks.GetBlock(Definitions.MaxLairMiscKeys["KMaxLairEndlessStreak"]);
 
     b_dstreak.SetValue(Convert.ToUInt32(dstreak_NUD.Value));
     b_estreak.SetValue(Convert.ToUInt32(estreak_NUD.Value));

@@ -25,15 +25,15 @@ namespace PluginPile.Unmaintained.BWTool {
     /// </summary>
     private void InitializeComponent() {
       Proplist = new ComboBox();
-      hasprop_checkbox = new CheckBox();
+      HasPropCheckbox = new CheckBox();
       unloackAllBut = new Button();
-      label1 = new Label();
-      propHex = new Label();
-      Exit_but = new Button();
-      Saveexit_but = new Button();
-      spriteBox = new PictureBox();
-      removeAllBut = new Button();
-      ((System.ComponentModel.ISupportInitialize)spriteBox).BeginInit();
+      HexValueLabel = new Label();
+      PropHex = new Label();
+      ExitButton = new Button();
+      SaveExitButton = new Button();
+      SpriteBox = new PictureBox();
+      RemoveAllBut = new Button();
+      ((System.ComponentModel.ISupportInitialize)SpriteBox).BeginInit();
       SuspendLayout();
       //
       // Proplist
@@ -47,16 +47,16 @@ namespace PluginPile.Unmaintained.BWTool {
       Proplist.TabIndex = 0;
       Proplist.SelectedIndexChanged += ProplistSelectedIndexChanged;
       //
-      // hasprop_checkbox
+      // HasPropCheckbox
       //
-      hasprop_checkbox.Location = new Point(196, 32);
-      hasprop_checkbox.Margin = new Padding(4, 3, 4, 3);
-      hasprop_checkbox.Name = "hasprop_checkbox";
-      hasprop_checkbox.Size = new Size(121, 28);
-      hasprop_checkbox.TabIndex = 1;
-      hasprop_checkbox.Text = "Obtained";
-      hasprop_checkbox.UseVisualStyleBackColor = true;
-      hasprop_checkbox.CheckedChanged += Hasprop_checkboxCheckedChanged;
+      HasPropCheckbox.Location = new Point(196, 32);
+      HasPropCheckbox.Margin = new Padding(4, 3, 4, 3);
+      HasPropCheckbox.Name = "HasPropCheckbox";
+      HasPropCheckbox.Size = new Size(121, 28);
+      HasPropCheckbox.TabIndex = 1;
+      HasPropCheckbox.Text = "Obtained";
+      HasPropCheckbox.UseVisualStyleBackColor = true;
+      HasPropCheckbox.CheckedChanged += Hasprop_checkboxCheckedChanged;
       //
       // unloackAllBut
       //
@@ -69,99 +69,99 @@ namespace PluginPile.Unmaintained.BWTool {
       unloackAllBut.UseVisualStyleBackColor = true;
       unloackAllBut.Click += UnlockAllButClick;
       //
-      // label1
+      // HexValueLabel
       //
-      label1.Location = new Point(30, 108);
-      label1.Margin = new Padding(4, 0, 4, 0);
-      label1.Name = "label1";
-      label1.Size = new Size(117, 27);
-      label1.TabIndex = 3;
-      label1.Text = "Hex value:";
+      HexValueLabel.Location = new Point(30, 108);
+      HexValueLabel.Margin = new Padding(4, 0, 4, 0);
+      HexValueLabel.Name = "HexValueLabel";
+      HexValueLabel.Size = new Size(117, 27);
+      HexValueLabel.TabIndex = 3;
+      HexValueLabel.Text = "Hex value:";
       //
-      // propHex
+      // PropHex
       //
-      propHex.Location = new Point(108, 108);
-      propHex.Margin = new Padding(4, 0, 4, 0);
-      propHex.Name = "propHex";
-      propHex.Size = new Size(338, 27);
-      propHex.TabIndex = 4;
-      propHex.Text = "0x";
+      PropHex.Location = new Point(108, 108);
+      PropHex.Margin = new Padding(4, 0, 4, 0);
+      PropHex.Name = "PropHex";
+      PropHex.Size = new Size(338, 27);
+      PropHex.TabIndex = 4;
+      PropHex.Text = "0x";
       //
-      // Exit_but
+      // ExitButton
       //
-      Exit_but.Location = new Point(30, 128);
-      Exit_but.Margin = new Padding(4, 3, 4, 3);
-      Exit_but.Name = "Exit_but";
-      Exit_but.Size = new Size(119, 27);
-      Exit_but.TabIndex = 21;
-      Exit_but.Text = "Exit";
-      Exit_but.UseVisualStyleBackColor = true;
-      Exit_but.Click += Exit_butClick;
+      ExitButton.Location = new Point(30, 128);
+      ExitButton.Margin = new Padding(4, 3, 4, 3);
+      ExitButton.Name = "ExitButton";
+      ExitButton.Size = new Size(119, 27);
+      ExitButton.TabIndex = 21;
+      ExitButton.Text = "Exit";
+      ExitButton.UseVisualStyleBackColor = true;
+      ExitButton.Click += Exit_butClick;
       //
-      // Saveexit_but
+      // SaveExitButton
       //
-      Saveexit_but.Location = new Point(155, 128);
-      Saveexit_but.Margin = new Padding(4, 3, 4, 3);
-      Saveexit_but.Name = "Saveexit_but";
-      Saveexit_but.Size = new Size(119, 27);
-      Saveexit_but.TabIndex = 20;
-      Saveexit_but.Text = "Save and Exit";
-      Saveexit_but.UseVisualStyleBackColor = true;
-      Saveexit_but.Click += Saveexit_butClick;
+      SaveExitButton.Location = new Point(155, 128);
+      SaveExitButton.Margin = new Padding(4, 3, 4, 3);
+      SaveExitButton.Name = "SaveExitButton";
+      SaveExitButton.Size = new Size(119, 27);
+      SaveExitButton.TabIndex = 20;
+      SaveExitButton.Text = "Save and Exit";
+      SaveExitButton.UseVisualStyleBackColor = true;
+      SaveExitButton.Click += Saveexit_butClick;
       //
-      // spriteBox
+      // SpriteBox
       //
-      spriteBox.Location = new Point(296, 21);
-      spriteBox.Margin = new Padding(4, 3, 4, 3);
-      spriteBox.Name = "spriteBox";
-      spriteBox.Size = new Size(129, 73);
-      spriteBox.SizeMode = PictureBoxSizeMode.AutoSize;
-      spriteBox.TabIndex = 22;
-      spriteBox.TabStop = false;
+      SpriteBox.Location = new Point(296, 21);
+      SpriteBox.Margin = new Padding(4, 3, 4, 3);
+      SpriteBox.Name = "SpriteBox";
+      SpriteBox.Size = new Size(129, 73);
+      SpriteBox.SizeMode = PictureBoxSizeMode.AutoSize;
+      SpriteBox.TabIndex = 22;
+      SpriteBox.TabStop = false;
       //
-      // removeAllBut
+      // RemoveAllBut
       //
-      removeAllBut.Location = new Point(155, 78);
-      removeAllBut.Margin = new Padding(4, 3, 4, 3);
-      removeAllBut.Name = "removeAllBut";
-      removeAllBut.Size = new Size(119, 27);
-      removeAllBut.TabIndex = 23;
-      removeAllBut.Text = "Remove all";
-      removeAllBut.UseVisualStyleBackColor = true;
-      removeAllBut.Click += RemoveAllButClick;
+      RemoveAllBut.Location = new Point(155, 78);
+      RemoveAllBut.Margin = new Padding(4, 3, 4, 3);
+      RemoveAllBut.Name = "RemoveAllBut";
+      RemoveAllBut.Size = new Size(119, 27);
+      RemoveAllBut.TabIndex = 23;
+      RemoveAllBut.Text = "Remove all";
+      RemoveAllBut.UseVisualStyleBackColor = true;
+      RemoveAllBut.Click += RemoveAllButClick;
       //
       // PropcaseForm
       //
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(458, 163);
-      Controls.Add(removeAllBut);
+      Controls.Add(RemoveAllBut);
       Controls.Add(unloackAllBut);
-      Controls.Add(spriteBox);
-      Controls.Add(Exit_but);
-      Controls.Add(Saveexit_but);
-      Controls.Add(propHex);
-      Controls.Add(label1);
-      Controls.Add(hasprop_checkbox);
+      Controls.Add(SpriteBox);
+      Controls.Add(ExitButton);
+      Controls.Add(SaveExitButton);
+      Controls.Add(PropHex);
+      Controls.Add(HexValueLabel);
+      Controls.Add(HasPropCheckbox);
       Controls.Add(Proplist);
       Margin = new Padding(4, 3, 4, 3);
       MaximizeBox = false;
       MinimizeBox = false;
       Name = "PropcaseForm";
       Text = "Props Case Editor";
-      ((System.ComponentModel.ISupportInitialize)spriteBox).EndInit();
+      ((System.ComponentModel.ISupportInitialize)SpriteBox).EndInit();
       ResumeLayout(false);
       PerformLayout();
     }
 
-    private System.Windows.Forms.Button removeAllBut;
-    private System.Windows.Forms.PictureBox spriteBox;
-    private System.Windows.Forms.Button Saveexit_but;
-    private System.Windows.Forms.Button Exit_but;
-    private System.Windows.Forms.Label propHex;
-    private System.Windows.Forms.Label label1;
+    private System.Windows.Forms.Button RemoveAllBut;
+    private System.Windows.Forms.PictureBox SpriteBox;
+    private System.Windows.Forms.Button SaveExitButton;
+    private System.Windows.Forms.Button ExitButton;
+    private System.Windows.Forms.Label PropHex;
+    private System.Windows.Forms.Label HexValueLabel;
     private System.Windows.Forms.Button unloackAllBut;
-    private System.Windows.Forms.CheckBox hasprop_checkbox;
+    private System.Windows.Forms.CheckBox HasPropCheckbox;
     private System.Windows.Forms.ComboBox Proplist;
   }
 }

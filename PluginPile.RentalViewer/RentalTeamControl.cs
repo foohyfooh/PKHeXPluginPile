@@ -14,10 +14,10 @@ public partial class RentalTeamControl : UserControl {
     SetTooltip = new ToolTip() { InitialDelay = 200, IsBalloon = false, AutoPopDelay = 32_767 };
     SaveFileEditor = saveFileEditor;
     Team = rentalTeam;
-    teamName.Text = Team.Name;
-    teamInfo.Text = $"{Team.Creator} | {Team.Code}";
+    TeamName.Text = Team.Name;
+    TeamInfo.Text = $"{Team.Creator} | {Team.Code}";
 
-    PictureBox[] boxes = new PictureBox[] { pokemon1Image, pokemon2Image, pokemon3Image, pokemon4Image, pokemon5Image, pokemon6Image };
+    PictureBox[] boxes = [Pokemon1Image, Pokemon2Image, Pokemon3Image, Pokemon4Image, Pokemon5Image, Pokemon6Image];
     foreach ((PictureBox box, PKM mon) in boxes.Zip(Team.Members)) {
       box.Image = DrawingUtil.GetSprite(mon);
       box.MouseEnter += (o, args) => {

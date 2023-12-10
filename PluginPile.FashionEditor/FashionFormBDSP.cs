@@ -3,60 +3,60 @@ using PKHeX.Core;
 namespace PluginPile.FashionEditor; 
 public partial class FashionFormBDSP : Form {
 
-  private readonly SAV8BS sav;
+  private readonly SAV8BS SAV;
 
   public FashionFormBDSP(SAV8BS sav8bs) {
     InitializeComponent();
     HandleLanguageChange();
-    sav = sav8bs;
+    SAV = sav8bs;
     //fashionEveryday.Checked = sav.FlagWork.GetFlag(BDSPConstants.FashionEveryday);
-    fashionPikachu.Checked  = sav.FlagWork.GetFlag(BDSPConstants.FashionPikachu);
-    fashionPlatinum.Checked = sav.FlagWork.GetFlag(BDSPConstants.FashionPlatinum);
-    fashionOveralls.Checked = sav.FlagWork.GetFlag(BDSPConstants.FashionOveralls);
-    fashionEevee.Checked    = sav.FlagWork.GetFlag(BDSPConstants.FashionEevee);
-    fashionGengar.Checked   = sav.FlagWork.GetFlag(BDSPConstants.FashionGengar);
-    fashionCyber.Checked    = sav.FlagWork.GetFlag(BDSPConstants.FashionCyber);
-    fashionSummer.Checked   = sav.FlagWork.GetFlag(BDSPConstants.FashionSummer);
-    fashionWinter.Checked   = sav.FlagWork.GetFlag(BDSPConstants.FashionWinter);
-    fashionSpring.Checked   = sav.FlagWork.GetFlag(BDSPConstants.FashionSpring);
-    fashionCasual.Checked   = sav.FlagWork.GetFlag(BDSPConstants.FashionCasual);
-    fashionLeather.Checked  = sav.FlagWork.GetFlag(BDSPConstants.FashionLeather);
+    FashionPikachu.Checked  = SAV.FlagWork.GetFlag(BDSPConstants.FashionPikachu);
+    FashionPlatinum.Checked = SAV.FlagWork.GetFlag(BDSPConstants.FashionPlatinum);
+    FashionOveralls.Checked = SAV.FlagWork.GetFlag(BDSPConstants.FashionOveralls);
+    FashionEevee.Checked    = SAV.FlagWork.GetFlag(BDSPConstants.FashionEevee);
+    FashionGengar.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionGengar);
+    FashionCyber.Checked    = SAV.FlagWork.GetFlag(BDSPConstants.FashionCyber);
+    FashionSummer.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionSummer);
+    FashionWinter.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionWinter);
+    FashionSpring.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionSpring);
+    FashionCasual.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionCasual);
+    FashionLeather.Checked  = SAV.FlagWork.GetFlag(BDSPConstants.FashionLeather);
   }
 
   private void HandleLanguageChange() {
     Text = Language.Title;
-    cancelButton.Text = Language.Cancel;
-    saveButton.Text = Language.Save;
-    fashionEveryday.Text = Language.BDSP.FashionEveryday;
-    fashionPikachu.Text  = Language.BDSP.FashionPikachu;
-    fashionPlatinum.Text = Language.BDSP.FashionPlatinum;
-    fashionOveralls.Text = Language.BDSP.FashionOveralls;
-    fashionEevee.Text    = Language.BDSP.FashionEevee;
-    fashionGengar.Text   = Language.BDSP.FashionGengar;
-    fashionCyber.Text    = Language.BDSP.FashionCyber;
-    fashionSummer.Text   = Language.BDSP.FashionSummer;
-    fashionWinter.Text   = Language.BDSP.FashionWinter;
-    fashionSpring.Text   = Language.BDSP.FashionSpring;
-    fashionCasual.Text   = Language.BDSP.FashionCasual;
-    fashionLeather.Text  = Language.BDSP.FashionLeather;
+    Cancel.Text = Language.Cancel;
+    SaveButton.Text = Language.Save;
+    FashionEveryday.Text = Language.BDSP.FashionEveryday;
+    FashionPikachu.Text  = Language.BDSP.FashionPikachu;
+    FashionPlatinum.Text = Language.BDSP.FashionPlatinum;
+    FashionOveralls.Text = Language.BDSP.FashionOveralls;
+    FashionEevee.Text    = Language.BDSP.FashionEevee;
+    FashionGengar.Text   = Language.BDSP.FashionGengar;
+    FashionCyber.Text    = Language.BDSP.FashionCyber;
+    FashionSummer.Text   = Language.BDSP.FashionSummer;
+    FashionWinter.Text   = Language.BDSP.FashionWinter;
+    FashionSpring.Text   = Language.BDSP.FashionSpring;
+    FashionCasual.Text   = Language.BDSP.FashionCasual;
+    FashionLeather.Text  = Language.BDSP.FashionLeather;
   }
 
-  private void cancelButton_Click(object sender, EventArgs e) => Close();
+  private void CancelButton_Click(object sender, EventArgs e) => Close();
 
-  private void saveButton_Click(object sender, EventArgs e) {
+  private void SaveButton_Click(object sender, EventArgs e) {
     //sav.FlagWork.SetFlag(BDSPConstants.FashionEveryday, fashionEveryday.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionPikachu,  fashionPikachu.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionPlatinum, fashionPlatinum.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionOveralls, fashionOveralls.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionEevee,    fashionEevee.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionGengar,   fashionGengar.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionCyber,    fashionCyber.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionSummer,   fashionSummer.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionWinter,   fashionWinter.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionSpring,   fashionSpring.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionCasual,   fashionCasual.Checked);
-    sav.FlagWork.SetFlag(BDSPConstants.FashionLeather,  fashionLeather.Checked);
-    sav.State.Edited = true;
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionPikachu,  FashionPikachu.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionPlatinum, FashionPlatinum.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionOveralls, FashionOveralls.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionEevee,    FashionEevee.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionGengar,   FashionGengar.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionCyber,    FashionCyber.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionSummer,   FashionSummer.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionWinter,   FashionWinter.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionSpring,   FashionSpring.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionCasual,   FashionCasual.Checked);
+    SAV.FlagWork.SetFlag(BDSPConstants.FashionLeather,  FashionLeather.Checked);
+    SAV.State.Edited = true;
     Close();
   }
 }

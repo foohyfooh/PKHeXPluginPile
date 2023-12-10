@@ -5,7 +5,6 @@ namespace PluginPile.Common;
 public abstract class PluginBase : IPlugin {
   public abstract string Name { get; }
   public virtual int Priority => 1; // Loading order, lowest is first.
-  protected abstract Assembly PluginAssembly { get; }
 
   // Initialized on plugin load
   protected object[] Args { get; private set; } = null!;

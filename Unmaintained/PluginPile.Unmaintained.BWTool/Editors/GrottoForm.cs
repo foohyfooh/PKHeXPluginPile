@@ -64,8 +64,8 @@ public partial class GrottoForm : Form {
 
   private byte swarm = 0x00;
 
-  private byte[] grottobuffer = new byte[GROTTO_BLOCK_SIZE];
-  private byte[] overworldbuffer = new byte[OVERWORLD_BLOCK_SIZE];
+  private readonly byte[] grottobuffer = new byte[GROTTO_BLOCK_SIZE];
+  private readonly byte[] overworldbuffer = new byte[OVERWORLD_BLOCK_SIZE];
 
   public GrottoForm(SAV5B2W2 sav) {
     InitializeComponent();
@@ -73,16 +73,16 @@ public partial class GrottoForm : Form {
     unknowngrottobox.Hexadecimal = true;
     Array.Copy(SAV.Data, SAV.AllBlocks[Constants.B2W2.Grotto].Offset, grottobuffer, 0, GROTTO_BLOCK_SIZE);
     Array.Copy(SAV.Data, SAV.AllBlocks[Constants.B2W2.Overworld].Offset, overworldbuffer, 0, OVERWORLD_BLOCK_SIZE);
-    loadGrottoData();
-    loadSwarmData();
+    LoadGrottoData();
+    LoadSwarmData();
     Grotto_route.SelectedIndex = 0;
   }
 
-  void loadSwarmData() {
+  void LoadSwarmData() {
     swarm = overworldbuffer[SWARM_OFFSET];
     swarmbox.SelectedIndex = swarm;
   }
-  void loadGrottoData() {
+  void LoadGrottoData() {
     grotto = grottobuffer[HOLLOW_OFFSET + (Grotto_route.SelectedIndex * 2)];
     grotto_fun = grottobuffer[HOLLOW_OFFSET + (Grotto_route.SelectedIndex * 2) + 1];
     last_grotto = grottobuffer[HOLLOW_OFFSET + 40];
@@ -412,14 +412,15 @@ public partial class GrottoForm : Form {
 
     }
   }
-  void setSwarmData() {
+  void SetSwarmData() {
     overworldbuffer[SWARM_OFFSET] = BitConverter.GetBytes(swarmbox.SelectedIndex)[0];
   }
 
-  void setLastGrottoData() {
+  void SetLastGrottoData() {
     grottobuffer[HOLLOW_OFFSET + 40] = BitConverter.GetBytes(lastgrottobox.SelectedIndex)[0];
   }
-  void setGrottoData() {
+
+  void SetGrottoData() {
     byte newgrotto = 0x00;
     //Group
     switch (normalgrottobox.SelectedIndex) {
@@ -493,7 +494,7 @@ public partial class GrottoForm : Form {
     }
     grottobuffer[HOLLOW_OFFSET + (Grotto_route.SelectedIndex * 2)] = newgrotto;
   }
-  void setFunGrottoData() {
+  void SetFunGrottoData() {
     byte newgrotto = 0x00;
     //Group
     switch (fungrottobox.SelectedIndex) {
@@ -567,7 +568,7 @@ public partial class GrottoForm : Form {
     grottobuffer[HOLLOW_OFFSET + (Grotto_route.SelectedIndex * 2) + 1] = newgrotto;
   }
 
-  void updategenders() {
+  void UpdateGenders() {
     switch (fungrottogroupbox.SelectedIndex) {
       case 0:
         if (fungrottobox.SelectedIndex < 15 && fungrottobox.SelectedIndex > 4) {
@@ -598,28 +599,28 @@ public partial class GrottoForm : Form {
   }
 
   void Grotto_routeSelectedIndexChanged(object sender, EventArgs e) {
-    loadGrottoData();
+    LoadGrottoData();
     if (Grotto_route.SelectedIndex > -1) table_but.Enabled = true;
   }
 
   void FungrottoboxSelectedIndexChanged(object sender, EventArgs e) {
-    updategenders();
+    UpdateGenders();
   }
 
   void FungrottoavailableCheckedChanged(object sender, EventArgs e) {
-    updategenders();
+    UpdateGenders();
   }
 
   void FungrottogroupboxSelectedIndexChanged(object sender, EventArgs e) {
-    updategenders();
+    UpdateGenders();
   }
 
   void Save_buttonClick(object sender, EventArgs e) {
-    setSwarmData();
+    SetSwarmData();
     //PDR_fix_overworld_checksum();
-    setGrottoData();
-    setFunGrottoData();
-    setLastGrottoData();
+    SetGrottoData();
+    SetFunGrottoData();
+    SetLastGrottoData();
     //PDR_fix_grotto_checksum();
     //PDR_injectNsave();
 

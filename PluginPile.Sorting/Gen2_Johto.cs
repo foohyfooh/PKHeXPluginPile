@@ -3,7 +3,7 @@ using PKHeX.Core;
 namespace PluginPile.Sorting; 
 class Gen2_Johto : SortingBase {
 
-  private static readonly Dictionary<Species, PositionForms> newPokedex = new Dictionary<Species, PositionForms>() {
+  private static readonly Dictionary<Species, PositionForms> NewPokedex = new Dictionary<Species, PositionForms>() {
     {Species.Chikorita, 1},
     {Species.Bayleef, 2},
     {Species.Meganium, 3},
@@ -258,7 +258,7 @@ class Gen2_Johto : SortingBase {
   };
 
   public static Func<PKM, IComparable>[] GetSortFunctions() {
-    return GenerateSortingFunctions(newPokedex);
+    return GenerateSortingFunctions(NewPokedex);
   }
 
 }

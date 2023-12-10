@@ -1,11 +1,9 @@
 using PKHeX.Core;
 using PluginPile.Common;
-using System.Reflection;
 
 namespace PluginPile.TMTool;
 public class TMTool : PluginBase {
   public override string Name => nameof(TMTool);
-  protected override Assembly PluginAssembly => typeof(TMTool).Assembly;
   private BoxManipulator Manipulator = null!;
   private readonly BoxManipType CustomManipType = (BoxManipType)42;
   private readonly ToolStripMenuItem MenuItem;

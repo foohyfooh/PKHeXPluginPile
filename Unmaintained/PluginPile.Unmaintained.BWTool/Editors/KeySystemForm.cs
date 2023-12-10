@@ -17,18 +17,18 @@ public partial class KeySystemForm : Form {
     updatekeys();
   }
   public void updatekeys() {
-    easykeybox.Checked = keys.getKeyState(0);
-    challengekeybox.Checked = keys.getKeyState(1);
-    citykeybox.Checked = keys.getKeyState(2);
-    ironkeybox.Checked = keys.getKeyState(3);
-    icebergkeybox.Checked = keys.getKeyState(4);
-    easymodebox.Checked = keys.getKeyState(5);
-    challengemodebox.Checked = keys.getKeyState(6);
-    citybox.Checked = keys.getKeyState(7);
-    ironbox.Checked = keys.getKeyState(8);
-    icebergbox.Checked = keys.getKeyState(9);
+    easykeybox.Checked = keys.GetKeyState(0);
+    challengekeybox.Checked = keys.GetKeyState(1);
+    citykeybox.Checked = keys.GetKeyState(2);
+    ironkeybox.Checked = keys.GetKeyState(3);
+    icebergkeybox.Checked = keys.GetKeyState(4);
+    easymodebox.Checked = keys.GetKeyState(5);
+    challengemodebox.Checked = keys.GetKeyState(6);
+    citybox.Checked = keys.GetKeyState(7);
+    ironbox.Checked = keys.GetKeyState(8);
+    icebergbox.Checked = keys.GetKeyState(9);
 
-    switch (keys.getConfig(0)) {
+    switch (keys.GetConfig(0)) {
       case 0:
         cfg_mode_def.Checked = true;
         break;
@@ -42,7 +42,7 @@ public partial class KeySystemForm : Form {
         cfg_mode_3.Checked = true;
         break;
     }
-    switch (keys.getConfig(1)) {
+    switch (keys.GetConfig(1)) {
       case 0:
         cfg_city_def.Checked = true;
         break;
@@ -53,7 +53,7 @@ public partial class KeySystemForm : Form {
         cfg_city_foreing.Checked = true;
         break;
     }
-    switch (keys.getConfig(2)) {
+    switch (keys.GetConfig(2)) {
       case 0:
         cfg_chamber_def.Checked = true;
         break;
@@ -69,16 +69,16 @@ public partial class KeySystemForm : Form {
     }
   }
   public void setAllkeys() {
-    keys.setKey(easykeybox.Checked, 0);
-    keys.setKey(challengekeybox.Checked, 1);
-    keys.setKey(citykeybox.Checked, 2);
-    keys.setKey(ironkeybox.Checked, 3);
-    keys.setKey(icebergkeybox.Checked, 4);
-    keys.setKey(easymodebox.Checked, 5);
-    keys.setKey(challengemodebox.Checked, 6);
-    keys.setKey(citybox.Checked, 7);
-    keys.setKey(ironbox.Checked, 8);
-    keys.setKey(icebergbox.Checked, 9);
+    keys.SetKey(easykeybox.Checked, 0);
+    keys.SetKey(challengekeybox.Checked, 1);
+    keys.SetKey(citykeybox.Checked, 2);
+    keys.SetKey(ironkeybox.Checked, 3);
+    keys.SetKey(icebergkeybox.Checked, 4);
+    keys.SetKey(easymodebox.Checked, 5);
+    keys.SetKey(challengemodebox.Checked, 6);
+    keys.SetKey(citybox.Checked, 7);
+    keys.SetKey(ironbox.Checked, 8);
+    keys.SetKey(icebergbox.Checked, 9);
   }
   void Exit_butClick(object sender, EventArgs e) {
     Close();

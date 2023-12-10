@@ -23,162 +23,162 @@ namespace PluginPile.SVProfilePictureViewer {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-      currentProfilePicturePage = new TabPage();
-      currentProfilePicture = new PictureBox();
-      currentProfileIconPage = new TabPage();
-      currentProfileIcon = new PictureBox();
-      initialProfilePicturePage = new TabPage();
-      initialProfilePicture = new PictureBox();
-      initialProfileIconPage = new TabPage();
-      initialProfileIcon = new PictureBox();
-      exportButton = new Button();
-      tabs = new TabControl();
-      currentProfilePicturePage.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)currentProfilePicture).BeginInit();
-      currentProfileIconPage.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)currentProfileIcon).BeginInit();
-      initialProfilePicturePage.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)initialProfilePicture).BeginInit();
-      initialProfileIconPage.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)initialProfileIcon).BeginInit();
-      tabs.SuspendLayout();
+      CurrentProfilePicturePage = new TabPage();
+      CrrentProfilePicture = new PictureBox();
+      CurrentProfileIconPage = new TabPage();
+      CurrentProfileIcon = new PictureBox();
+      InitialProfilePicturePage = new TabPage();
+      InitialProfilePicture = new PictureBox();
+      InitialProfileIconPage = new TabPage();
+      InitialProfileIcon = new PictureBox();
+      ExportButton = new Button();
+      Tabs = new TabControl();
+      CurrentProfilePicturePage.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)CrrentProfilePicture).BeginInit();
+      CurrentProfileIconPage.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)CurrentProfileIcon).BeginInit();
+      InitialProfilePicturePage.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)InitialProfilePicture).BeginInit();
+      InitialProfileIconPage.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)InitialProfileIcon).BeginInit();
+      Tabs.SuspendLayout();
       SuspendLayout();
-      // 
-      // currentProfilePicturePage
-      // 
-      currentProfilePicturePage.Controls.Add(currentProfilePicture);
-      currentProfilePicturePage.Location = new Point(4, 24);
-      currentProfilePicturePage.Name = "currentProfilePicturePage";
-      currentProfilePicturePage.Padding = new Padding(3);
-      currentProfilePicturePage.Size = new Size(494, 246);
-      currentProfilePicturePage.TabIndex = 0;
-      currentProfilePicturePage.Text = "Current Profile Picture";
-      currentProfilePicturePage.UseVisualStyleBackColor = true;
-      // 
-      // currentProfilePicture
-      // 
-      currentProfilePicture.Location = new Point(6, 6);
-      currentProfilePicture.Name = "currentProfilePicture";
-      currentProfilePicture.Size = new Size(360, 216);
-      currentProfilePicture.SizeMode = PictureBoxSizeMode.Zoom;
-      currentProfilePicture.TabIndex = 0;
-      currentProfilePicture.TabStop = false;
-      // 
-      // currentProfileIconPage
-      // 
-      currentProfileIconPage.Controls.Add(currentProfileIcon);
-      currentProfileIconPage.Location = new Point(4, 24);
-      currentProfileIconPage.Name = "currentProfileIconPage";
-      currentProfileIconPage.Padding = new Padding(3);
-      currentProfileIconPage.Size = new Size(494, 246);
-      currentProfileIconPage.TabIndex = 1;
-      currentProfileIconPage.Text = "Current Profile Icon";
-      currentProfileIconPage.UseVisualStyleBackColor = true;
-      // 
-      // currentProfileIcon
-      // 
-      currentProfileIcon.Location = new Point(6, 6);
-      currentProfileIcon.Name = "currentProfileIcon";
-      currentProfileIcon.Size = new Size(360, 216);
-      currentProfileIcon.SizeMode = PictureBoxSizeMode.Zoom;
-      currentProfileIcon.TabIndex = 1;
-      currentProfileIcon.TabStop = false;
-      // 
-      // initialProfilePicturePage
-      // 
-      initialProfilePicturePage.Controls.Add(initialProfilePicture);
-      initialProfilePicturePage.Location = new Point(4, 24);
-      initialProfilePicturePage.Name = "initialProfilePicturePage";
-      initialProfilePicturePage.Size = new Size(494, 246);
-      initialProfilePicturePage.TabIndex = 2;
-      initialProfilePicturePage.Text = "Initial Profile Picture";
-      initialProfilePicturePage.UseVisualStyleBackColor = true;
-      // 
-      // initialProfilePicture
-      // 
-      initialProfilePicture.Location = new Point(6, 6);
-      initialProfilePicture.Name = "initialProfilePicture";
-      initialProfilePicture.Size = new Size(360, 216);
-      initialProfilePicture.SizeMode = PictureBoxSizeMode.Zoom;
-      initialProfilePicture.TabIndex = 2;
-      initialProfilePicture.TabStop = false;
-      // 
-      // initialProfileIconPage
-      // 
-      initialProfileIconPage.Controls.Add(initialProfileIcon);
-      initialProfileIconPage.Location = new Point(4, 24);
-      initialProfileIconPage.Name = "initialProfileIconPage";
-      initialProfileIconPage.Size = new Size(494, 246);
-      initialProfileIconPage.TabIndex = 3;
-      initialProfileIconPage.Text = "Initial Profile Icon";
-      initialProfileIconPage.UseVisualStyleBackColor = true;
-      // 
-      // initialProfileIcon
-      // 
-      initialProfileIcon.Location = new Point(6, 6);
-      initialProfileIcon.Name = "initialProfileIcon";
-      initialProfileIcon.Size = new Size(360, 216);
-      initialProfileIcon.SizeMode = PictureBoxSizeMode.Zoom;
-      initialProfileIcon.TabIndex = 3;
-      initialProfileIcon.TabStop = false;
-      // 
-      // exportButton
-      // 
-      exportButton.Location = new Point(12, 292);
-      exportButton.Name = "exportButton";
-      exportButton.Size = new Size(75, 23);
-      exportButton.TabIndex = 0;
-      exportButton.Text = "Export";
-      exportButton.UseVisualStyleBackColor = true;
-      exportButton.Click += saveButton_Click;
-      // 
-      // tabs
-      // 
-      tabs.Controls.Add(currentProfilePicturePage);
-      tabs.Controls.Add(currentProfileIconPage);
-      tabs.Controls.Add(initialProfilePicturePage);
-      tabs.Controls.Add(initialProfileIconPage);
-      tabs.Location = new Point(12, 12);
-      tabs.Name = "tabs";
-      tabs.SelectedIndex = 0;
-      tabs.Size = new Size(502, 274);
-      tabs.TabIndex = 1;
-      // 
+      //
+      // CurrentProfilePicturePage
+      //
+      CurrentProfilePicturePage.Controls.Add(CrrentProfilePicture);
+      CurrentProfilePicturePage.Location = new Point(4, 24);
+      CurrentProfilePicturePage.Name = "CurrentProfilePicturePage";
+      CurrentProfilePicturePage.Padding = new Padding(3);
+      CurrentProfilePicturePage.Size = new Size(494, 246);
+      CurrentProfilePicturePage.TabIndex = 0;
+      CurrentProfilePicturePage.Text = "Current Profile Picture";
+      CurrentProfilePicturePage.UseVisualStyleBackColor = true;
+      //
+      // CurrentProfilePicture
+      //
+      CrrentProfilePicture.Location = new Point(6, 6);
+      CrrentProfilePicture.Name = "CurrentProfilePicture";
+      CrrentProfilePicture.Size = new Size(360, 216);
+      CrrentProfilePicture.SizeMode = PictureBoxSizeMode.Zoom;
+      CrrentProfilePicture.TabIndex = 0;
+      CrrentProfilePicture.TabStop = false;
+      //
+      // CurrentProfileIconPage
+      //
+      CurrentProfileIconPage.Controls.Add(CurrentProfileIcon);
+      CurrentProfileIconPage.Location = new Point(4, 24);
+      CurrentProfileIconPage.Name = "CurrentProfileIconPage";
+      CurrentProfileIconPage.Padding = new Padding(3);
+      CurrentProfileIconPage.Size = new Size(494, 246);
+      CurrentProfileIconPage.TabIndex = 1;
+      CurrentProfileIconPage.Text = "Current Profile Icon";
+      CurrentProfileIconPage.UseVisualStyleBackColor = true;
+      //
+      // CurrentProfileIcon
+      //
+      CurrentProfileIcon.Location = new Point(6, 6);
+      CurrentProfileIcon.Name = "CurrentProfileIcon";
+      CurrentProfileIcon.Size = new Size(360, 216);
+      CurrentProfileIcon.SizeMode = PictureBoxSizeMode.Zoom;
+      CurrentProfileIcon.TabIndex = 1;
+      CurrentProfileIcon.TabStop = false;
+      //
+      // InitialProfilePicturePage
+      //
+      InitialProfilePicturePage.Controls.Add(InitialProfilePicture);
+      InitialProfilePicturePage.Location = new Point(4, 24);
+      InitialProfilePicturePage.Name = "InitialProfilePicturePage";
+      InitialProfilePicturePage.Size = new Size(494, 246);
+      InitialProfilePicturePage.TabIndex = 2;
+      InitialProfilePicturePage.Text = "Initial Profile Picture";
+      InitialProfilePicturePage.UseVisualStyleBackColor = true;
+      //
+      // InitialProfilePicture
+      //
+      InitialProfilePicture.Location = new Point(6, 6);
+      InitialProfilePicture.Name = "InitialProfilePicture";
+      InitialProfilePicture.Size = new Size(360, 216);
+      InitialProfilePicture.SizeMode = PictureBoxSizeMode.Zoom;
+      InitialProfilePicture.TabIndex = 2;
+      InitialProfilePicture.TabStop = false;
+      //
+      // InitialProfileIconPage
+      //
+      InitialProfileIconPage.Controls.Add(InitialProfileIcon);
+      InitialProfileIconPage.Location = new Point(4, 24);
+      InitialProfileIconPage.Name = "InitialProfileIconPage";
+      InitialProfileIconPage.Size = new Size(494, 246);
+      InitialProfileIconPage.TabIndex = 3;
+      InitialProfileIconPage.Text = "Initial Profile Icon";
+      InitialProfileIconPage.UseVisualStyleBackColor = true;
+      //
+      // InitialProfileIcon
+      //
+      InitialProfileIcon.Location = new Point(6, 6);
+      InitialProfileIcon.Name = "InitialProfileIcon";
+      InitialProfileIcon.Size = new Size(360, 216);
+      InitialProfileIcon.SizeMode = PictureBoxSizeMode.Zoom;
+      InitialProfileIcon.TabIndex = 3;
+      InitialProfileIcon.TabStop = false;
+      //
+      // ExportButton
+      //
+      ExportButton.Location = new Point(12, 292);
+      ExportButton.Name = "ExportButton";
+      ExportButton.Size = new Size(75, 23);
+      ExportButton.TabIndex = 0;
+      ExportButton.Text = "Export";
+      ExportButton.UseVisualStyleBackColor = true;
+      ExportButton.Click += ExportButton_Click;
+      //
+      // Tabs
+      //
+      Tabs.Controls.Add(CurrentProfilePicturePage);
+      Tabs.Controls.Add(CurrentProfileIconPage);
+      Tabs.Controls.Add(InitialProfilePicturePage);
+      Tabs.Controls.Add(InitialProfileIconPage);
+      Tabs.Location = new Point(12, 12);
+      Tabs.Name = "Tabs";
+      Tabs.SelectedIndex = 0;
+      Tabs.Size = new Size(502, 274);
+      Tabs.TabIndex = 1;
+      //
       // PictureViewerForm
-      // 
+      //
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(524, 331);
-      Controls.Add(tabs);
-      Controls.Add(exportButton);
+      Controls.Add(Tabs);
+      Controls.Add(ExportButton);
       MaximizeBox = false;
       MinimizeBox = false;
       Name = "PictureViewerForm";
       ShowIcon = false;
       Text = "PictureViewerForm";
-      currentProfilePicturePage.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)currentProfilePicture).EndInit();
-      currentProfileIconPage.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)currentProfileIcon).EndInit();
-      initialProfilePicturePage.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)initialProfilePicture).EndInit();
-      initialProfileIconPage.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)initialProfileIcon).EndInit();
-      tabs.ResumeLayout(false);
+      CurrentProfilePicturePage.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)CrrentProfilePicture).EndInit();
+      CurrentProfileIconPage.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)CurrentProfileIcon).EndInit();
+      InitialProfilePicturePage.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)InitialProfilePicture).EndInit();
+      InitialProfileIconPage.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)InitialProfileIcon).EndInit();
+      Tabs.ResumeLayout(false);
       ResumeLayout(false);
     }
 
     #endregion
 
-    private Button exportButton;
-    private TabControl tabs;
-    private TabPage currentProfilePicturePage;
-    private PictureBox currentProfilePicture;
-    private TabPage currentProfileIconPage;
-    private PictureBox currentProfileIcon;
-    private TabPage initialProfilePicturePage;
-    private PictureBox initialProfilePicture;
-    private TabPage initialProfileIconPage;
-    private PictureBox initialProfileIcon;
+    private Button ExportButton;
+    private TabControl Tabs;
+    private TabPage CurrentProfilePicturePage;
+    private PictureBox CrrentProfilePicture;
+    private TabPage CurrentProfileIconPage;
+    private PictureBox CurrentProfileIcon;
+    private TabPage InitialProfilePicturePage;
+    private PictureBox InitialProfilePicture;
+    private TabPage InitialProfileIconPage;
+    private PictureBox InitialProfileIcon;
   }
 }

@@ -51,9 +51,9 @@ namespace PluginPile.Unmaintained.BWTool {
       prop_but = new Button();
       exit = new Button();
       SuspendLayout();
-      // 
+      //
       // save_but
-      // 
+      //
       save_but.Location = new Point(184, 214);
       save_but.Margin = new Padding(4, 3, 4, 3);
       save_but.Name = "save_but";
@@ -62,9 +62,9 @@ namespace PluginPile.Unmaintained.BWTool {
       save_but.Text = "Save";
       save_but.UseVisualStyleBackColor = true;
       save_but.Click += Save_butClick;
-      // 
+      //
       // dumper_but
-      // 
+      //
       dumper_but.Location = new Point(184, 146);
       dumper_but.Margin = new Padding(4, 3, 4, 3);
       dumper_but.Name = "dumper_but";
@@ -73,9 +73,9 @@ namespace PluginPile.Unmaintained.BWTool {
       dumper_but.Text = "Block Dumper";
       dumper_but.UseVisualStyleBackColor = true;
       dumper_but.Click += Dumper_butClick;
-      // 
+      //
       // grotto_but
-      // 
+      //
       grotto_but.Location = new Point(14, 13);
       grotto_but.Margin = new Padding(4, 3, 4, 3);
       grotto_but.Name = "grotto_but";
@@ -84,9 +84,9 @@ namespace PluginPile.Unmaintained.BWTool {
       grotto_but.Text = "Hidden Grotto and Swarm";
       grotto_but.UseVisualStyleBackColor = true;
       grotto_but.Click += Grotto_butClick;
-      // 
+      //
       // trainer_records_but
-      // 
+      //
       trainer_records_but.Location = new Point(14, 181);
       trainer_records_but.Margin = new Padding(4, 3, 4, 3);
       trainer_records_but.Name = "trainer_records_but";
@@ -96,9 +96,9 @@ namespace PluginPile.Unmaintained.BWTool {
       trainer_records_but.UseVisualStyleBackColor = true;
       trainer_records_but.Visible = false;
       trainer_records_but.Click += TrainerRecords_butClick;
-      // 
+      //
       // medal_but
-      // 
+      //
       medal_but.Location = new Point(14, 113);
       medal_but.Margin = new Padding(4, 3, 4, 3);
       medal_but.Name = "medal_but";
@@ -107,9 +107,9 @@ namespace PluginPile.Unmaintained.BWTool {
       medal_but.Text = "Medals";
       medal_but.UseVisualStyleBackColor = true;
       medal_but.Click += Medal_butClick;
-      // 
+      //
       // forest_but
-      // 
+      //
       forest_but.Location = new Point(184, 13);
       forest_but.Margin = new Padding(4, 3, 4, 3);
       forest_but.Name = "forest_but";
@@ -118,9 +118,9 @@ namespace PluginPile.Unmaintained.BWTool {
       forest_but.Text = "Entralink Forest";
       forest_but.UseVisualStyleBackColor = true;
       forest_but.Click += Forest_butClick;
-      // 
+      //
       // key_but
-      // 
+      //
       key_but.Location = new Point(184, 80);
       key_but.Margin = new Padding(4, 3, 4, 3);
       key_but.Name = "key_but";
@@ -129,9 +129,9 @@ namespace PluginPile.Unmaintained.BWTool {
       key_but.Text = "Key System";
       key_but.UseVisualStyleBackColor = true;
       key_but.Click += Key_butClick;
-      // 
+      //
       // join_but
-      // 
+      //
       join_but.Location = new Point(14, 80);
       join_but.Margin = new Padding(4, 3, 4, 3);
       join_but.Name = "join_but";
@@ -140,9 +140,9 @@ namespace PluginPile.Unmaintained.BWTool {
       join_but.Text = "Join Avenue";
       join_but.UseVisualStyleBackColor = true;
       join_but.Click += Join_butClick;
-      // 
+      //
       // trainer_but
-      // 
+      //
       trainer_but.Location = new Point(184, 46);
       trainer_but.Margin = new Padding(4, 3, 4, 3);
       trainer_but.Name = "trainer_but";
@@ -151,9 +151,9 @@ namespace PluginPile.Unmaintained.BWTool {
       trainer_but.Text = "Trainer Info";
       trainer_but.UseVisualStyleBackColor = true;
       trainer_but.Click += Trainer_butClick;
-      // 
+      //
       // memory_but
-      // 
+      //
       memory_but.Location = new Point(184, 113);
       memory_but.Margin = new Padding(4, 3, 4, 3);
       memory_but.Name = "memory_but";
@@ -162,9 +162,9 @@ namespace PluginPile.Unmaintained.BWTool {
       memory_but.Text = "Memory Link";
       memory_but.UseVisualStyleBackColor = true;
       memory_but.Click += Memory_butClick;
-      // 
+      //
       // dlc_but
-      // 
+      //
       dlc_but.Location = new Point(184, 181);
       dlc_but.Margin = new Padding(4, 3, 4, 3);
       dlc_but.Name = "dlc_but";
@@ -174,9 +174,9 @@ namespace PluginPile.Unmaintained.BWTool {
       dlc_but.UseVisualStyleBackColor = true;
       dlc_but.Visible = false;
       dlc_but.Click += Dlc_butClick;
-      // 
+      //
       // dr_but
-      // 
+      //
       dr_but.Location = new Point(14, 147);
       dr_but.Margin = new Padding(4, 3, 4, 3);
       dr_but.Name = "dr_but";
@@ -185,9 +185,9 @@ namespace PluginPile.Unmaintained.BWTool {
       dr_but.Text = "3DS Link (Dream Radar)";
       dr_but.UseVisualStyleBackColor = true;
       dr_but.Click += Dr_butClick;
-      // 
+      //
       // prop_but
-      // 
+      //
       prop_but.Location = new Point(14, 46);
       prop_but.Margin = new Padding(4, 3, 4, 3);
       prop_but.Name = "prop_but";
@@ -196,9 +196,9 @@ namespace PluginPile.Unmaintained.BWTool {
       prop_but.Text = "Prop Case";
       prop_but.UseVisualStyleBackColor = true;
       prop_but.Click += Prop_butClick;
-      // 
+      //
       // exit
-      // 
+      //
       exit.Location = new Point(14, 214);
       exit.Name = "exit";
       exit.Size = new Size(163, 27);
@@ -206,9 +206,9 @@ namespace PluginPile.Unmaintained.BWTool {
       exit.Text = "Exit";
       exit.UseVisualStyleBackColor = true;
       exit.Click += exit_Click;
-      // 
+      //
       // MainForm
-      // 
+      //
       AllowDrop = true;
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;

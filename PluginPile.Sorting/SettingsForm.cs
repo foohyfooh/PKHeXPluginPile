@@ -1,12 +1,12 @@
 namespace PluginPile.Sorting; 
 public partial class SettingsForm : Form {
-  private readonly SortingPlugin sortingPlugin;
+  private readonly SortingPlugin Plugin;
 
   public SettingsForm(SortingPlugin plugin) {
     InitializeComponent();
     HandleLanguageChange();
-    sortingPlugin = plugin;
-    propertyGrid.SelectedObject = PluginSettings.Default;
+    Plugin = plugin;
+    PropertyGrid.SelectedObject = PluginSettings.Default;
     FormClosing += new FormClosingEventHandler(SettingsForm_FormClosing);
   }
 
@@ -16,7 +16,7 @@ public partial class SettingsForm : Form {
 
   private void SettingsForm_FormClosing(object? sender, FormClosingEventArgs e) {
     PluginSettings.Default.Save();
-    sortingPlugin.ReloadMenu();
+    Plugin.ReloadMenu();
   }
 
 }

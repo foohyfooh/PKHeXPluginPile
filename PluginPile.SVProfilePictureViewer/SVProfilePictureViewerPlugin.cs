@@ -1,11 +1,9 @@
 using PKHeX.Core;
 using PluginPile.Common;
-using System.Reflection;
 
 namespace PluginPile.SVProfilePictureViewer {
   public class SVProfilePictureViewerPlugin : PluginBase {
     public override string Name => nameof(SVProfilePictureViewerPlugin);
-    protected override Assembly PluginAssembly => typeof(SVProfilePictureViewerPlugin).Assembly;
     private readonly ToolStripMenuItem ImageViewerButton;
     private bool IsSaveCompatable => SaveFileEditor.SAV is SAV9SV;
 

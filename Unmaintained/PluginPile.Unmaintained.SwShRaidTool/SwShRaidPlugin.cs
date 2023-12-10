@@ -1,11 +1,9 @@
 using PKHeX.Core;
 using PluginPile.Common;
-using System.Reflection;
 
 namespace PluginPile.Unmaintained.SwShRaidTool;
 public class SwShRaidPlugin : PluginBase {
   public override string Name => nameof(SwShRaidPlugin);
-  protected override Assembly PluginAssembly => typeof(SwShRaidPlugin).Assembly;
 
   private readonly ToolStripMenuItem RaidsViewer;
   private bool IsCompatibleSave => SaveFileEditor.SAV is SAV8SWSH;

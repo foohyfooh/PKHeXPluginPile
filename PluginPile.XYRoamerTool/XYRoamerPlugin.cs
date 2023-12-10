@@ -1,11 +1,9 @@
 using PKHeX.Core;
 using PluginPile.Common;
-using System.Reflection;
 
 namespace PluginPile.XYRoamerTool;
 public class XYRoamerPlugin : PluginBase {
   public override string Name => nameof(XYRoamerPlugin);
-  protected override Assembly PluginAssembly => typeof(XYRoamerPlugin).Assembly;
   public ToolStripMenuItem MenuItem;
   private bool IsCompatibleSave => SaveFileEditor.SAV is SAV6XY;
 
