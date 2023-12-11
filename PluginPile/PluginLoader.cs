@@ -4,7 +4,7 @@ using PluginPile.RaidImporter;
 using PluginPile.SVivillon;
 using PluginPile.FashionEditor;
 using PluginPile.SVProfilePictureViewer;
-using PluginPile.XYRoamerTool;
+using PluginPile.RoamerTool;
 using PluginPile.RentalViewer;
 
 namespace PluginPile; 
@@ -16,7 +16,7 @@ public class PluginLoader : PluginBase {
   private readonly SVivillonPlugin SVivillonPluginInstance;
   private readonly FashionEditorPlugin FashionEditorPluginInstance;
   private readonly SVProfilePictureViewerPlugin SVProfilePictureViewerPluginInstance;
-  private readonly XYRoamerPlugin XYRoamerPluginInstance;
+  private readonly RoamerPlugin XYRoamerPluginInstance;
   private readonly RentalViewerPlugin RentalViewerPluginInstance;
 
   public PluginLoader() {
@@ -25,7 +25,7 @@ public class PluginLoader : PluginBase {
     SVivillonPluginInstance = new SVivillonPlugin();
     FashionEditorPluginInstance = new FashionEditorPlugin();
     SVProfilePictureViewerPluginInstance = new SVProfilePictureViewerPlugin();
-    XYRoamerPluginInstance = new XYRoamerPlugin();
+    XYRoamerPluginInstance = new RoamerPlugin();
     RentalViewerPluginInstance = new RentalViewerPlugin();
   }
 

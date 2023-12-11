@@ -1,14 +1,14 @@
 using PKHeX.Core;
 
-namespace PluginPile.XYRoamerTool; 
-public partial class RoamerForm : Form {
+namespace PluginPile.RoamerTool;
+public partial class XYRoamerForm : Form {
 
   private const int SpeciesOffset = 144;
   private const int StarterChoiceIndex = 48;
   private readonly SAV6XY SAV;
   private readonly Roamer6 Roamer;
 
-  public RoamerForm(SAV6XY sav) {
+  public XYRoamerForm(SAV6XY sav) {
     InitializeComponent();
     HandleLanguageChange();
     SAV = sav;
@@ -22,8 +22,8 @@ public partial class RoamerForm : Form {
 
   private void HandleLanguageChange() {
     Text = Language.MenuItemName;
-    RoamerSpecies.Items.AddRange(Language.Roamers);
-    State.Items.AddRange(Language.RoamerState);
+    RoamerSpecies.Items.AddRange(Language.XY.Roamers);
+    State.Items.AddRange(Language.XY.RoamerState);
     Cancel.Text = Language.Cancel;
     Save.Text = Language.Save;
   }

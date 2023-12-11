@@ -1,5 +1,5 @@
-namespace PluginPile.XYRoamerTool {
-  partial class RoamerForm {
+namespace PluginPile.RoamerTool {
+  partial class XYRoamerForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -108,7 +108,7 @@ namespace PluginPile.XYRoamerTool {
       Save.UseVisualStyleBackColor = true;
       Save.Click += Save_Click;
       //
-      // RoamerForm
+      // XYRoamerForm
       //
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
@@ -123,9 +123,9 @@ namespace PluginPile.XYRoamerTool {
       Controls.Add(RoamerSpeciesLabel);
       MaximizeBox = false;
       MinimizeBox = false;
-      Name = "RoamerForm";
+      Name = "XYRoamerForm";
       ShowIcon = false;
-      Text = "RoamerForm";
+      Text = "XYRoamerForm";
       ((System.ComponentModel.ISupportInitialize)Encountered).EndInit();
       ResumeLayout(false);
       PerformLayout();
