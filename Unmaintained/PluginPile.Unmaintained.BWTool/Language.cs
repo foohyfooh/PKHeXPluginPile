@@ -6,6 +6,7 @@ internal static class Language {
   public static string MenuName {
     get {
       return GameInfo.CurrentLanguage switch {
+        "zh" => "BW工具",
         "en" or _ => "BW Tool"
       };
     }
@@ -14,6 +15,7 @@ internal static class Language {
   private static string None {
     get {
       return GameInfo.CurrentLanguage switch {
+        "zh" => "无",
         "en" or _ => "None"
       };
     }

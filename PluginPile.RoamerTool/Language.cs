@@ -19,6 +19,7 @@ internal static class Language {
     public static string[] RoamerState {
       get {
         return GameInfo.CurrentLanguage switch {
+          "zh" => ["游走", "捕获", "击败"],
           "en" or _ => ["Roaming", "Caught", "Fainted"]
         };
       }
@@ -27,6 +28,7 @@ internal static class Language {
     public static string NoActieRoamer {
       get {
         return GameInfo.CurrentLanguage switch {
+          "zh" => "无活跃的游走",
           "en" or _ => "No Active Roamer"
         };
       }
@@ -41,6 +43,7 @@ internal static class Language {
     public static string[] RoamerState {
       get {
         return GameInfo.CurrentLanguage switch {
+          "zh" => new string[] { "未激活", "游走", "定点", "击败", "捕获" },
           "en" or _ => ["Inactive", "Roaming", "Stationary", "Defeated", "Captured"]
         };
       }
