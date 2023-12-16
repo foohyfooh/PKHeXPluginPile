@@ -256,7 +256,7 @@ public partial class EntralinkForm : Form {
 
   void Edit_pkmClick(object sender, EventArgs e) {
     //If slot is empty, add pokemon instead
-    if (forest.IsPkmEmpty() == true) {
+    if (forest.IsPkmEmpty()) {
       forest.AddPkm(ExtralinkForest.CreatePkm(spbox1.SelectedIndex, move1box.SelectedIndex, genderbox1.SelectedIndex, formbox1.SelectedIndex, Animation()));
       UpdateGrid();
     } else {
@@ -371,7 +371,7 @@ public partial class EntralinkForm : Form {
       }
     }
 
-    if (special_gender == false) {
+    if (!special_gender) {
       //Re-enable list
       genderbox1.Enabled = true;
       genderbox1.Items.Clear();
@@ -528,7 +528,7 @@ public partial class EntralinkForm : Form {
       if ((DreamPkm & 0x7FF) == 493 && forest.Area != 1)
         MessageBox.Show("Warning! PGL Arceus was a special event and is supposed to reside at aea 9 center!\n\nI don't know if any other PGL Pokémon was distributed at special areas, I only know that Mamoswine and Porygon were download alongside other Dream World Pokémon, so Arceus might be the only special case. Any information on the topic is welcome.");
       //If slot is empty, add pokemon instead
-      if (forest.IsPkmEmpty() == true) {
+      if (forest.IsPkmEmpty()) {
         forest.AddPkm(DreamPkm);
         UpdateGrid();
       } else {

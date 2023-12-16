@@ -11,7 +11,7 @@ public partial class KeySystemForm : Form {
     SAV = sav;
     keys = new Keys(SAV.GetBlock(Constants.B2W2.Keys));
 
-    if (keys.KeysUnlocked() == false)
+    if (!keys.KeysUnlocked())
       MessageBox.Show("  Warning!\n\nThis savefile doesn't seem to have unlocked the key system yet.\nKey system is unlocked after beating the Elite Four.\n\nYou can still edit it though.");
 
     updatekeys();

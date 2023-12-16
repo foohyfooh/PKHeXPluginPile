@@ -99,11 +99,11 @@ public class DreamRadarB {
           illegal = true;
         }
       }
-      if (illegal == true) // No need to continue
+      if (illegal) // No need to continue
         break;
     }
 
-    if (illegal == false) {
+    if (!illegal) {
       for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 24; j++) {
           if (GetItemId(i) == legit_item_index[j]) {
@@ -112,7 +112,7 @@ public class DreamRadarB {
             illegal = true;
           }
         }
-        if (illegal == true) // No need to continue
+        if (illegal) // No need to continue
           break;
       }
     }

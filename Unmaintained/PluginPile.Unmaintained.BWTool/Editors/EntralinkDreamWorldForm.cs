@@ -591,7 +591,7 @@ public partial class EntralinkDreamWorldForm : Form {
       }
     }
 
-    if (special_gender == false) {
+    if (!special_gender) {
       //Male/female
       if (gender == 2 || (world == 8)) {
         if (world == 8 && speciesbox.SelectedIndex == 22) { //Banette is the only female pokemon distributed via PGL
@@ -605,7 +605,7 @@ public partial class EntralinkDreamWorldForm : Form {
           gnd_male.Enabled = true;
         }
       }
-      if (gnd_male.Checked == false && gnd_female.Checked == false && gnd_none.Checked == false) {
+      if (!gnd_male.Checked && !gnd_female.Checked && !gnd_none.Checked) {
         if (world == 8 && speciesbox.SelectedIndex == 22) { //Banette is the only female pokemon distributed via PGL
           gnd_female.Enabled = true;
           gnd_female.Checked = true;
@@ -648,7 +648,7 @@ public partial class EntralinkDreamWorldForm : Form {
         default://male/female
           if (Gender == 2)
             gnd_male.Checked = true;
-          if (gnd_male.Checked == false && gnd_female.Checked == false && gnd_none.Checked == false)
+          if (!gnd_male.Checked && !gnd_female.Checked && !gnd_none.Checked)
             gnd_male.Checked = true;
           gnd_male.Enabled = true;
           gnd_female.Enabled = true;
