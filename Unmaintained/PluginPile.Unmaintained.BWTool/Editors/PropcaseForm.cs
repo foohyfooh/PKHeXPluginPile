@@ -5,17 +5,17 @@ using System.Resources;
 namespace PluginPile.Unmaintained.BWTool;
 
 public partial class PropcaseForm : Form {
-  private readonly SAV5 SAV;
-  private readonly Propcase MyProps;
+  private readonly SAV5 Origin, SAV;
+  private readonly Musical5 Musical;
   private readonly ResourceManager resources = new ResourceManager("PluginPile.Unmaintained.BWTool.PropcaseForm", Assembly.GetExecutingAssembly());
 
   public PropcaseForm(SAV5 sav) {
     InitializeComponent();
-    SAV = sav;
-    MyProps = new Propcase(SAV.GetData(0x1F958, 13)); //Same offset for BW1 and BW2. Should update to block management...
+    SAV = (SAV5)(Origin = sav).Clone();
+    Musical = SAV.Musical;
     Proplist.SelectedIndex = 0;
-    HasPropCheckbox.Checked = MyProps.GetProp(Proplist.SelectedIndex);
-    PropHex.Text = "0x" + BitConverter.ToString(MyProps.Data);
+    HasPropCheckbox.Checked = Musical.GetHasProp(Proplist.SelectedIndex);
+    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data);
   }
 
   void ShowProp() {
@@ -26,50 +26,42 @@ public partial class PropcaseForm : Form {
   }
 
   void ProplistSelectedIndexChanged(object sender, EventArgs e) {
-    HasPropCheckbox.Checked = MyProps.GetProp(Proplist.SelectedIndex);
+    HasPropCheckbox.Checked = Musical.GetHasProp(Proplist.SelectedIndex);
     ShowProp();
   }
 
   void Hasprop_checkboxCheckedChanged(object sender, EventArgs e) {
-    MyProps.SetProp(Proplist.SelectedIndex, HasPropCheckbox.Checked);
-    PropHex.Text = "0x" + BitConverter.ToString(MyProps.Data);
+    Musical.SetHasProp(Proplist.SelectedIndex, HasPropCheckbox.Checked);
+    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data);
   }
 
-  void Exit_butClick(object sender, EventArgs e) => Close();
+  void Exit_Click(object sender, EventArgs e) => Close();
 
-  void Saveexit_butClick(object sender, EventArgs e) {
+  void Save_Click(object sender, EventArgs e) {
     //Check that there's at least one prop
     int i = 0;
     while (i < 100) {
-      if (MyProps.GetProp(i) == true) break;
+      if (Musical.GetHasProp(i)) break;
       i++;
       if (i == 100) {
         MessageBox.Show("Warning! Game will freeze if you have no props. Pink Barrette has been set by default.");
-        MyProps.SetProp(0, true); //Set at least one prop
+        Musical.SetHasProp(0, true); //Set at least one prop
       }
     }
-
-    SAV.SetData(MyProps.Data, 0x1F958);
-    //Mirror
-    SAV.SetData(MyProps.Data, 0x45958);
-    //Update Checksum
-    SAV.SetBlock(SAV.GetBlock(Constants.Musical), Constants.Musical);
+    Origin.CopyChangesFrom(SAV);
     Close();
   }
 
-  void UnlockAllButClick(object sender, EventArgs e) {
-    for (int i = 0; i < 100; i++)
-      MyProps.SetProp(i, true);
-    PropHex.Text = "0x" + BitConverter.ToString(MyProps.Data);
-    HasPropCheckbox.Checked = MyProps.GetProp(Proplist.SelectedIndex);
+  void UnlockAll_Click(object sender, EventArgs e) {
+    Musical.UnlockAllMusicalProps();
     ShowProp();
   }
 
-  void RemoveAllButClick(object sender, EventArgs e) {
+  void RemoveAll_Click(object sender, EventArgs e) {
     for (int i = 0; i < 100; i++)
-      MyProps.SetProp(i, false);
-    PropHex.Text = "0x" + BitConverter.ToString(MyProps.Data);
-    HasPropCheckbox.Checked = MyProps.GetProp(Proplist.SelectedIndex);
+      Musical.SetHasProp(i, false);
+    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data);
+    HasPropCheckbox.Checked = Musical.GetHasProp(Proplist.SelectedIndex);
     ShowProp();
   }
 }

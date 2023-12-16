@@ -26,13 +26,13 @@ namespace PluginPile.Unmaintained.BWTool {
     private void InitializeComponent() {
       Proplist = new ComboBox();
       HasPropCheckbox = new CheckBox();
-      unloackAllBut = new Button();
+      UnlockAll = new Button();
       HexValueLabel = new Label();
       PropHex = new Label();
-      ExitButton = new Button();
-      SaveExitButton = new Button();
+      Exit = new Button();
+      SaveButton = new Button();
       SpriteBox = new PictureBox();
-      RemoveAllBut = new Button();
+      RemoveAll = new Button();
       ((System.ComponentModel.ISupportInitialize)SpriteBox).BeginInit();
       SuspendLayout();
       //
@@ -58,16 +58,16 @@ namespace PluginPile.Unmaintained.BWTool {
       HasPropCheckbox.UseVisualStyleBackColor = true;
       HasPropCheckbox.CheckedChanged += Hasprop_checkboxCheckedChanged;
       //
-      // unloackAllBut
+      // UnlockAll
       //
-      unloackAllBut.Location = new Point(30, 78);
-      unloackAllBut.Margin = new Padding(4, 3, 4, 3);
-      unloackAllBut.Name = "unloackAllBut";
-      unloackAllBut.Size = new Size(119, 27);
-      unloackAllBut.TabIndex = 2;
-      unloackAllBut.Text = "Unlock all";
-      unloackAllBut.UseVisualStyleBackColor = true;
-      unloackAllBut.Click += UnlockAllButClick;
+      UnlockAll.Location = new Point(30, 78);
+      UnlockAll.Margin = new Padding(4, 3, 4, 3);
+      UnlockAll.Name = "UnlockAll";
+      UnlockAll.Size = new Size(119, 27);
+      UnlockAll.TabIndex = 2;
+      UnlockAll.Text = "Unlock all";
+      UnlockAll.UseVisualStyleBackColor = true;
+      UnlockAll.Click += UnlockAll_Click;
       //
       // HexValueLabel
       //
@@ -87,27 +87,27 @@ namespace PluginPile.Unmaintained.BWTool {
       PropHex.TabIndex = 4;
       PropHex.Text = "0x";
       //
-      // ExitButton
+      // Exit
       //
-      ExitButton.Location = new Point(30, 128);
-      ExitButton.Margin = new Padding(4, 3, 4, 3);
-      ExitButton.Name = "ExitButton";
-      ExitButton.Size = new Size(119, 27);
-      ExitButton.TabIndex = 21;
-      ExitButton.Text = "Exit";
-      ExitButton.UseVisualStyleBackColor = true;
-      ExitButton.Click += Exit_butClick;
+      Exit.Location = new Point(30, 128);
+      Exit.Margin = new Padding(4, 3, 4, 3);
+      Exit.Name = "Exit";
+      Exit.Size = new Size(119, 27);
+      Exit.TabIndex = 21;
+      Exit.Text = "Exit";
+      Exit.UseVisualStyleBackColor = true;
+      Exit.Click += Exit_Click;
       //
-      // SaveExitButton
+      // SaveButton
       //
-      SaveExitButton.Location = new Point(155, 128);
-      SaveExitButton.Margin = new Padding(4, 3, 4, 3);
-      SaveExitButton.Name = "SaveExitButton";
-      SaveExitButton.Size = new Size(119, 27);
-      SaveExitButton.TabIndex = 20;
-      SaveExitButton.Text = "Save and Exit";
-      SaveExitButton.UseVisualStyleBackColor = true;
-      SaveExitButton.Click += Saveexit_butClick;
+      SaveButton.Location = new Point(155, 128);
+      SaveButton.Margin = new Padding(4, 3, 4, 3);
+      SaveButton.Name = "SaveButton";
+      SaveButton.Size = new Size(119, 27);
+      SaveButton.TabIndex = 20;
+      SaveButton.Text = "Save";
+      SaveButton.UseVisualStyleBackColor = true;
+      SaveButton.Click += Save_Click;
       //
       // SpriteBox
       //
@@ -119,27 +119,27 @@ namespace PluginPile.Unmaintained.BWTool {
       SpriteBox.TabIndex = 22;
       SpriteBox.TabStop = false;
       //
-      // RemoveAllBut
+      // RemoveAll
       //
-      RemoveAllBut.Location = new Point(155, 78);
-      RemoveAllBut.Margin = new Padding(4, 3, 4, 3);
-      RemoveAllBut.Name = "RemoveAllBut";
-      RemoveAllBut.Size = new Size(119, 27);
-      RemoveAllBut.TabIndex = 23;
-      RemoveAllBut.Text = "Remove all";
-      RemoveAllBut.UseVisualStyleBackColor = true;
-      RemoveAllBut.Click += RemoveAllButClick;
+      RemoveAll.Location = new Point(155, 78);
+      RemoveAll.Margin = new Padding(4, 3, 4, 3);
+      RemoveAll.Name = "RemoveAll";
+      RemoveAll.Size = new Size(119, 27);
+      RemoveAll.TabIndex = 23;
+      RemoveAll.Text = "Remove all";
+      RemoveAll.UseVisualStyleBackColor = true;
+      RemoveAll.Click += RemoveAll_Click;
       //
       // PropcaseForm
       //
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(458, 163);
-      Controls.Add(RemoveAllBut);
-      Controls.Add(unloackAllBut);
+      Controls.Add(RemoveAll);
+      Controls.Add(UnlockAll);
       Controls.Add(SpriteBox);
-      Controls.Add(ExitButton);
-      Controls.Add(SaveExitButton);
+      Controls.Add(Exit);
+      Controls.Add(SaveButton);
       Controls.Add(PropHex);
       Controls.Add(HexValueLabel);
       Controls.Add(HasPropCheckbox);
@@ -154,13 +154,13 @@ namespace PluginPile.Unmaintained.BWTool {
       PerformLayout();
     }
 
-    private System.Windows.Forms.Button RemoveAllBut;
+    private System.Windows.Forms.Button RemoveAll;
     private System.Windows.Forms.PictureBox SpriteBox;
-    private System.Windows.Forms.Button SaveExitButton;
-    private System.Windows.Forms.Button ExitButton;
+    private System.Windows.Forms.Button SaveButton;
+    private System.Windows.Forms.Button Exit;
     private System.Windows.Forms.Label PropHex;
     private System.Windows.Forms.Label HexValueLabel;
-    private System.Windows.Forms.Button unloackAllBut;
+    private System.Windows.Forms.Button UnlockAll;
     private System.Windows.Forms.CheckBox HasPropCheckbox;
     private System.Windows.Forms.ComboBox Proplist;
   }
