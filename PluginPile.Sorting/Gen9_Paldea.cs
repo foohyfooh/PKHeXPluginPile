@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
-namespace PluginPile.Sorting; 
-class Gen9_Paldea : SortingBase {
+namespace PluginPile.Sorting;
+internal class Gen9_Paldea : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> PaldeaDex = new Dictionary<Species, PositionForms>() {
     {Species.Sprigatito, 1},
@@ -378,7 +378,7 @@ class Gen9_Paldea : SortingBase {
     {Species.Hydreigon, 372},
     {Species.Veluza, 373},
     {Species.Dondozo, 374},
-    {Species.Tatsugiri, (375, 0 ..2)},
+    {Species.Tatsugiri, (375, 0..2)},
     {Species.GreatTusk, 376},
     {Species.ScreamTail, 377},
     {Species.BruteBonnet, 378},
@@ -521,7 +521,7 @@ class Gen9_Paldea : SortingBase {
     {Species.Grubbin, 112},
     {Species.Charjabug, 113},
     {Species.Vikavolt, 114},
-    {Species.Oricorio, (115, 0 ..3)},
+    {Species.Oricorio, (115, 0..3)},
     {Species.Sandshrew, 116},
     {Species.Sandslash, 117},
     {Species.Gastly, 118},

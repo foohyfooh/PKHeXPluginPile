@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
-namespace PluginPile.Sorting; 
-class Gen8_Hisui : SortingBase {
+namespace PluginPile.Sorting;
+internal class Gen8_Hisui : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> ObsidianFieldlandsDex = new Dictionary<Species, PositionForms>() {
     {Species.Bidoof, 10},

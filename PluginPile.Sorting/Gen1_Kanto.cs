@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting; 
-class Gen1_Kanto : SortingBase {
+internal class Gen1_Kanto : SortingBase {
 
   protected static readonly Dictionary<Species, PositionForms> Dex = new Dictionary<Species, PositionForms>() {
     {Species.Bulbasaur, 1},

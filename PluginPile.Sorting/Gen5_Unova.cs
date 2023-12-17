@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
-namespace PluginPile.Sorting; 
-class Gen5_Unova : SortingBase {
+namespace PluginPile.Sorting;
+internal class Gen5_Unova : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> BWDex = new Dictionary<Species, PositionForms>() {
     {Species.Victini, 0},
@@ -463,7 +463,7 @@ class Gen5_Unova : SortingBase {
     {Species.Kyurem, (297, 0..2)},
     {Species.Keldeo, (298, 0..1)},
     {Species.Meloetta, (299, 0..1)},
-    {Species.Genesect, (300, 0 ..5)},
+    {Species.Genesect, (300, 0..5)},
   };
 
   public static Func<PKM, IComparable>[] GetBWSortFunctions() {

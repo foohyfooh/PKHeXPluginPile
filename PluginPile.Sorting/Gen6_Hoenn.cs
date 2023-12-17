@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
-namespace PluginPile.Sorting; 
-class Gen6_Hoenn : SortingBase {
+namespace PluginPile.Sorting;
+internal class Gen6_Hoenn : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> Dex = new Dictionary<Species, PositionForms>() {
     {Species.Treecko, 1},

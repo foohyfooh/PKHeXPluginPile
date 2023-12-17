@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting; 
-class Gen2_Johto : SortingBase {
+internal class Gen2_Johto : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> NewPokedex = new Dictionary<Species, PositionForms>() {
     {Species.Chikorita, 1},

@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting; 
-class Gen_National: SortingBase {
+internal class Gen_National: SortingBase {
 
   private static double SortRegionalForms(PKM pkm) {
     Species species = (Species)pkm.Species;
