@@ -16,7 +16,7 @@ public class PluginLoader : PluginBase {
   private readonly SVivillonPlugin SVivillonPluginInstance;
   private readonly FashionEditorPlugin FashionEditorPluginInstance;
   private readonly SVProfilePictureViewerPlugin SVProfilePictureViewerPluginInstance;
-  private readonly RoamerPlugin XYRoamerPluginInstance;
+  private readonly RoamerPlugin RoamerPluginInstance;
   private readonly RentalViewerPlugin RentalViewerPluginInstance;
 
   public PluginLoader() {
@@ -25,7 +25,7 @@ public class PluginLoader : PluginBase {
     SVivillonPluginInstance = new SVivillonPlugin();
     FashionEditorPluginInstance = new FashionEditorPlugin();
     SVProfilePictureViewerPluginInstance = new SVProfilePictureViewerPlugin();
-    XYRoamerPluginInstance = new RoamerPlugin();
+    RoamerPluginInstance = new RoamerPlugin();
     RentalViewerPluginInstance = new RentalViewerPlugin();
   }
 
@@ -35,7 +35,7 @@ public class PluginLoader : PluginBase {
     SVivillonPluginInstance.Initialize(args);
     FashionEditorPluginInstance.Initialize(args);
     SVProfilePictureViewerPluginInstance.Initialize(args);
-    XYRoamerPluginInstance.Initialize(args);
+    RoamerPluginInstance.Initialize(args);
     RentalViewerPluginInstance.Initialize(args);
   }
 
@@ -45,7 +45,7 @@ public class PluginLoader : PluginBase {
     SVivillonPluginInstance.NotifySaveLoaded();
     FashionEditorPluginInstance.NotifySaveLoaded();
     SVProfilePictureViewerPluginInstance.NotifySaveLoaded();
-    XYRoamerPluginInstance.NotifySaveLoaded();
+    RoamerPluginInstance.NotifySaveLoaded();
     RentalViewerPluginInstance.NotifySaveLoaded();
   }
 
