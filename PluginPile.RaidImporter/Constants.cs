@@ -21,7 +21,8 @@ internal static class SwShConstants {
 
 internal static class SVConstants {
   // Version Suffixes
-  private static readonly string TealMaskSuffix = "_2_0_0";
+  private static readonly string TealMaskSuffix    = "_2_0_0";
+  private static readonly string InidigoDiskSuffix = "_3_0_0";
 
   // Base Game Raids
   public static readonly Block RaidEventIdentifier        = (0x37B99B4D, "event_raid_identifier");
@@ -32,8 +33,9 @@ internal static class SVConstants {
 
   // Raids Block Lists
   public static readonly IReadOnlyList<Block> BaseGameRaidBlocks       = [RaidEventIdentifier, RaidFixedRewardItemArray, RaidLotteryRewardItemArray, RaidEnemyArray, RaidPriorityArray];
-  public static readonly IReadOnlyList<Block> BaseGameRaidBlocks_1_3_0 = BaseGameRaidBlocks.Select(b => new Block(b.Location, b.Path + "_1_3_0")).ToList();
-  public static readonly IReadOnlyList<Block> TealMaskRaidBlocks       = BaseGameRaidBlocks.Select(b => new Block(b.Location, b.Path + TealMaskSuffix)).ToList();
+  public static readonly IReadOnlyList<Block> BaseGameRaidBlocks_1_3_0 = [.. BaseGameRaidBlocks.Select(b => new Block(b.Location, b.Path + "_1_3_0"))];
+  public static readonly IReadOnlyList<Block> TealMaskRaidBlocks       = [.. BaseGameRaidBlocks.Select(b => new Block(b.Location, b.Path + TealMaskSuffix))];
+  public static readonly IReadOnlyList<Block> IndigoDiskRaidBlocks     = [.. BaseGameRaidBlocks.Select(b => new Block(b.Location, b.Path + InidigoDiskSuffix))];
 
   // Outbreaks
   public static readonly Block OutbreakEnabled       =  0x61552076;
@@ -43,6 +45,9 @@ internal static class SVConstants {
   public static readonly Block OutbreakZoneBlueberry = (0x1B45E41C, "zone_su2_array");
 
   // Outbreaks Block Lists
-  private static readonly IReadOnlyList<Block> BaseGameOutbreakBlocks = [OutbreakPokedata, OutbreakZonePaldea, OutbreakZoneKitakami];
-  public  static readonly IReadOnlyList<Block> TealMaskOutbreakBlocks = BaseGameOutbreakBlocks.Select(b => new Block(b.Location, b.Path + TealMaskSuffix)).ToList();
+  private static readonly IReadOnlyList<Block> TealMaskOutbreakBlocksNoSuffix   = [OutbreakPokedata, OutbreakZonePaldea, OutbreakZoneKitakami];
+  private static readonly IReadOnlyList<Block> IndigoDiskOutbreakBlocksNoSuffix = [.. TealMaskOutbreakBlocksNoSuffix, OutbreakZoneBlueberry];
+
+  public static readonly IReadOnlyList<Block> TealMaskOutbreakBlocks   = [.. TealMaskOutbreakBlocksNoSuffix.Select(b => new Block(b.Location, b.Path + TealMaskSuffix))];
+  public static readonly IReadOnlyList<Block> IndigoDiskOutbreakBlocks = [.. IndigoDiskOutbreakBlocksNoSuffix.Select(b => new Block(b.Location, b.Path + InidigoDiskSuffix))];
 }

@@ -27,7 +27,7 @@ public class RaidImportPlugin : PluginBase {
              if (sav9SV.SaveRevision == 0) {
         ImportRaidOrOutbreakButton.Text = Language.ImportRaid;
         ImportRaidOrOutbreakButton.Click += ImportRaid;
-      } else if(sav9SV.SaveRevision == 1) {
+      } else if(sav9SV.SaveRevision >= 1) {
         ImportRaidOrOutbreakButton.Text = Language.ImportRaidOrOutbreak;
         ToolStripMenuItem importRaidButton = new ToolStripMenuItem(Language.ImportRaid);
         importRaidButton.Click += ImportRaid;
@@ -52,7 +52,8 @@ public class RaidImportPlugin : PluginBase {
       } else if (SaveFileEditor.SAV is SAV9SV sav9SV) {
         raidPath += @"\Files";
              if (sav9SV.SaveRevision == 0) blocksLists = [SVConstants.BaseGameRaidBlocks, SVConstants.BaseGameRaidBlocks_1_3_0];
-        else if (sav9SV.SaveRevision == 1) blocksLists = [SVConstants.TealMaskRaidBlocks];
+        else if (sav9SV.SaveRevision >= 1) blocksLists = [SVConstants.TealMaskRaidBlocks];
+        else if (sav9SV.SaveRevision == 2) blocksLists = [SVConstants.IndigoDiskRaidBlocks];
       }
       Import(raidPath, (dynamic)SaveFileEditor.SAV, blocksLists, Language.RaidImported);
     }
@@ -64,7 +65,9 @@ public class RaidImportPlugin : PluginBase {
     if (dialogResult == DialogResult.OK) {
       SAV9SV sav = (SAV9SV)SaveFileEditor.SAV;
       string outbtreakPath = $@"{dialog.SelectedPath}\Files";
-      IReadOnlyList<Block>[] blocksLists = [SVConstants.TealMaskOutbreakBlocks];
+      IReadOnlyList<Block>[] blocksLists = null!;
+           if (sav.SaveRevision >= 1) blocksLists = [SVConstants.TealMaskOutbreakBlocks];
+      else if (sav.SaveRevision == 2) blocksLists = [SVConstants.IndigoDiskOutbreakBlocks];
       bool didImport = Import(outbtreakPath, sav, blocksLists, Language.OutbreakImported);
       if (didImport) {
         sav.Blocks.GetBlock(SVConstants.OutbreakEnabled).ChangeBooleanType(SCTypeCode.Bool2);
