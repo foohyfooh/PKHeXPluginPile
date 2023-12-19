@@ -4,5 +4,9 @@
     <ExcludeAssemblies>
       PKHeX.Core
     </ExcludeAssemblies>
+    <Unmanaged64Assemblies>
+      libz3
+      Microsoft.Z3
+    </Unmanaged64Assemblies>
   </Costura>
 </Weavers>

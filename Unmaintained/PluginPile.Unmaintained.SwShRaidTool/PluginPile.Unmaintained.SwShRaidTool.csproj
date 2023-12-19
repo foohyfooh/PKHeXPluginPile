@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <Title>Sword/Shield Raid Tool</Title>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
