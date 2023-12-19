@@ -450,6 +450,14 @@ internal static class Language {
     }
   }
 
+  internal static string Gen9PaldeaRegionsBlueberryAcademy {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => "Blueberry Academy"
+      };
+    }
+  }
+
   internal static string MenuItemName {
     get {
       return GameInfo.CurrentLanguage switch {

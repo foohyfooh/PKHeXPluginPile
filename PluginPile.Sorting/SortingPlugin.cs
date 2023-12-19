@@ -125,7 +125,8 @@ public class SortingPlugin : PluginBase {
         if (PluginSettings.Default.ShowIndividualPokedéxes) {
           sortItems.Add(GetAreaButtons(Language.Gen9PaldeaRegions, [
             GetRegionalSortButton(Language.Gen9PaldeaRegionsPaldea, Gen9_Paldea.GetPaldeaSortFunctions()),
-            GetRegionalSortButton(Language.Gen9PaldeaRegionsKitakami, Gen9_Paldea.GetKitakamiSortFunctions())
+            GetRegionalSortButton(Language.Gen9PaldeaRegionsKitakami, Gen9_Paldea.GetKitakamiSortFunctions()),
+            GetRegionalSortButton(Language.Gen9PaldeaRegionsBlueberryAcademy, Gen9_Paldea.GetBlueberryAcademySortFunctions())
           ]));
         }
         sortItems.Add(GetRegionalSortButton(Language.Gen9Paldea, Gen9_Paldea.GetSortFunctions()));
