@@ -20,15 +20,15 @@ public partial class FashionFormSwSh : Form {
     SAV = sav8swsh;
     HandleLanguageChange();
 
-    TopsSelector = NewSelector(SwShConstants.TopsRegion, Language.SwSh.TopsList);
-    JacketsSelector = NewSelector(SwShConstants.JacketsRegion, Language.SwSh.JacketsList);
-    BottomsSelector = NewSelector(SwShConstants.BotttomsRegion, Language.SwSh.BottomsList);
-    SocksSelector = NewSelector(SwShConstants.SocksRegion, Language.SwSh.SocksList);
-    ShoesSelector = NewSelector(SwShConstants.ShoesRegion, Language.SwSh.ShoesList);
-    BagsSelector = NewSelector(SwShConstants.BagsRegion, Language.SwSh.BagsList);
-    HatsSelector = NewSelector(SwShConstants.HatsRegion, Language.SwSh.HatsList);
-    GlassesSelector = NewSelector(SwShConstants.GlassesRegion, Language.SwSh.GlassesList);
-    GlovesSelector = NewSelector(SwShConstants.GlovesRegion, Language.SwSh.GlovesList);
+    TopsSelector = NewSelector(Constants.SwSh.TopsRegion, Language.SwSh.TopsList);
+    JacketsSelector = NewSelector(Constants.SwSh.JacketsRegion, Language.SwSh.JacketsList);
+    BottomsSelector = NewSelector(Constants.SwSh.BotttomsRegion, Language.SwSh.BottomsList);
+    SocksSelector = NewSelector(Constants.SwSh.SocksRegion, Language.SwSh.SocksList);
+    ShoesSelector = NewSelector(Constants.SwSh.ShoesRegion, Language.SwSh.ShoesList);
+    BagsSelector = NewSelector(Constants.SwSh.BagsRegion, Language.SwSh.BagsList);
+    HatsSelector = NewSelector(Constants.SwSh.HatsRegion, Language.SwSh.HatsList);
+    GlassesSelector = NewSelector(Constants.SwSh.GlassesRegion, Language.SwSh.GlassesList);
+    GlovesSelector = NewSelector(Constants.SwSh.GlovesRegion, Language.SwSh.GlovesList);
 
     TopsPage.Controls.Add(TopsSelector);
     JacketsPage.Controls.Add(JacketsSelector);
@@ -60,15 +60,15 @@ public partial class FashionFormSwSh : Form {
   private void CancelButton_Click(object sender, EventArgs e) => Close();
 
   private void SaveButton_Click(object sender, EventArgs e) {
-    SetFlags(TopsSelector, SwShConstants.TopsRegion);
-    SetFlags(JacketsSelector, SwShConstants.JacketsRegion);
-    SetFlags(BottomsSelector, SwShConstants.BotttomsRegion);
-    SetFlags(SocksSelector, SwShConstants.SocksRegion);
-    SetFlags(ShoesSelector, SwShConstants.ShoesRegion);
-    SetFlags(BagsSelector, SwShConstants.BagsRegion);
-    SetFlags(HatsSelector, SwShConstants.HatsRegion);
-    SetFlags(GlassesSelector, SwShConstants.GlassesRegion);
-    SetFlags(GlovesSelector, SwShConstants.GlovesRegion);
+    SetFlags(TopsSelector, Constants.SwSh.TopsRegion);
+    SetFlags(JacketsSelector, Constants.SwSh.JacketsRegion);
+    SetFlags(BottomsSelector, Constants.SwSh.BotttomsRegion);
+    SetFlags(SocksSelector, Constants.SwSh.SocksRegion);
+    SetFlags(ShoesSelector, Constants.SwSh.ShoesRegion);
+    SetFlags(BagsSelector, Constants.SwSh.BagsRegion);
+    SetFlags(HatsSelector, Constants.SwSh.HatsRegion);
+    SetFlags(GlassesSelector, Constants.SwSh.GlassesRegion);
+    SetFlags(GlovesSelector, Constants.SwSh.GlovesRegion);
     SAV.State.Edited = true;
     Close();
   }

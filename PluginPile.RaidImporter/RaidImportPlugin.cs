@@ -46,14 +46,14 @@ public class RaidImportPlugin : PluginBase {
       string raidPath = dialog.SelectedPath;
       IReadOnlyList<Block>[] blocksLists = null!;
       if (SaveFileEditor.SAV is SAV8SWSH sav8SwSh) {
-             if (sav8SwSh.SaveRevision == 0) blocksLists = [SwShConstants.BaseGameBlocks];
-        else if (sav8SwSh.SaveRevision == 1) blocksLists = [SwShConstants.IsleOfArmorBlocks];
-        else if (sav8SwSh.SaveRevision == 2) blocksLists = [SwShConstants.CrownTundraBlocks];
+             if (sav8SwSh.SaveRevision == 0) blocksLists = [Constants.SwSh.BaseGameBlocks];
+        else if (sav8SwSh.SaveRevision == 1) blocksLists = [Constants.SwSh.IsleOfArmorBlocks];
+        else if (sav8SwSh.SaveRevision == 2) blocksLists = [Constants.SwSh.CrownTundraBlocks];
       } else if (SaveFileEditor.SAV is SAV9SV sav9SV) {
         raidPath += @"\Files";
-             if (sav9SV.SaveRevision == 0) blocksLists = [SVConstants.BaseGameRaidBlocks, SVConstants.BaseGameRaidBlocks_1_3_0];
-        else if (sav9SV.SaveRevision == 1) blocksLists = [SVConstants.TealMaskRaidBlocks];
-        else if (sav9SV.SaveRevision == 2) blocksLists = [SVConstants.IndigoDiskRaidBlocks];
+             if (sav9SV.SaveRevision == 0) blocksLists = [Constants.SV.BaseGameRaidBlocks, Constants.SV.BaseGameRaidBlocks_1_3_0];
+        else if (sav9SV.SaveRevision == 1) blocksLists = [Constants.SV.TealMaskRaidBlocks];
+        else if (sav9SV.SaveRevision == 2) blocksLists = [Constants.SV.IndigoDiskRaidBlocks];
       }
       Import(raidPath, (dynamic)SaveFileEditor.SAV, blocksLists, Language.RaidImported);
     }
@@ -66,11 +66,11 @@ public class RaidImportPlugin : PluginBase {
       SAV9SV sav = (SAV9SV)SaveFileEditor.SAV;
       string outbtreakPath = $@"{dialog.SelectedPath}\Files";
       IReadOnlyList<Block>[] blocksLists = null!;
-           if (sav.SaveRevision == 1) blocksLists = [SVConstants.TealMaskOutbreakBlocks];
-      else if (sav.SaveRevision == 2) blocksLists = [SVConstants.IndigoDiskOutbreakBlocks];
+           if (sav.SaveRevision == 1) blocksLists = [Constants.SV.TealMaskOutbreakBlocks];
+      else if (sav.SaveRevision == 2) blocksLists = [Constants.SV.IndigoDiskOutbreakBlocks];
       bool didImport = Import(outbtreakPath, sav, blocksLists, Language.OutbreakImported);
       if (didImport) {
-        sav.Blocks.GetBlock(SVConstants.OutbreakEnabled).ChangeBooleanType(SCTypeCode.Bool2);
+        sav.Blocks.GetBlock(Constants.SV.OutbreakEnabled).ChangeBooleanType(SCTypeCode.Bool2);
       } 
     }
   }

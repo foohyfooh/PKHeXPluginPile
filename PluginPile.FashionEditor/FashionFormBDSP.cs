@@ -10,17 +10,17 @@ public partial class FashionFormBDSP : Form {
     HandleLanguageChange();
     SAV = sav8bs;
     //fashionEveryday.Checked = sav.FlagWork.GetFlag(BDSPConstants.FashionEveryday);
-    FashionPikachu.Checked  = SAV.FlagWork.GetFlag(BDSPConstants.FashionPikachu);
-    FashionPlatinum.Checked = SAV.FlagWork.GetFlag(BDSPConstants.FashionPlatinum);
-    FashionOveralls.Checked = SAV.FlagWork.GetFlag(BDSPConstants.FashionOveralls);
-    FashionEevee.Checked    = SAV.FlagWork.GetFlag(BDSPConstants.FashionEevee);
-    FashionGengar.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionGengar);
-    FashionCyber.Checked    = SAV.FlagWork.GetFlag(BDSPConstants.FashionCyber);
-    FashionSummer.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionSummer);
-    FashionWinter.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionWinter);
-    FashionSpring.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionSpring);
-    FashionCasual.Checked   = SAV.FlagWork.GetFlag(BDSPConstants.FashionCasual);
-    FashionLeather.Checked  = SAV.FlagWork.GetFlag(BDSPConstants.FashionLeather);
+    FashionPikachu.Checked  = SAV.FlagWork.GetFlag(Constants.BDSP.FashionPikachu);
+    FashionPlatinum.Checked = SAV.FlagWork.GetFlag(Constants.BDSP.FashionPlatinum);
+    FashionOveralls.Checked = SAV.FlagWork.GetFlag(Constants.BDSP.FashionOveralls);
+    FashionEevee.Checked    = SAV.FlagWork.GetFlag(Constants.BDSP.FashionEevee);
+    FashionGengar.Checked   = SAV.FlagWork.GetFlag(Constants.BDSP.FashionGengar);
+    FashionCyber.Checked    = SAV.FlagWork.GetFlag(Constants.BDSP.FashionCyber);
+    FashionSummer.Checked   = SAV.FlagWork.GetFlag(Constants.BDSP.FashionSummer);
+    FashionWinter.Checked   = SAV.FlagWork.GetFlag(Constants.BDSP.FashionWinter);
+    FashionSpring.Checked   = SAV.FlagWork.GetFlag(Constants.BDSP.FashionSpring);
+    FashionCasual.Checked   = SAV.FlagWork.GetFlag(Constants.BDSP.FashionCasual);
+    FashionLeather.Checked  = SAV.FlagWork.GetFlag(Constants.BDSP.FashionLeather);
   }
 
   private void HandleLanguageChange() {
@@ -45,17 +45,17 @@ public partial class FashionFormBDSP : Form {
 
   private void SaveButton_Click(object sender, EventArgs e) {
     //sav.FlagWork.SetFlag(BDSPConstants.FashionEveryday, fashionEveryday.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionPikachu,  FashionPikachu.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionPlatinum, FashionPlatinum.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionOveralls, FashionOveralls.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionEevee,    FashionEevee.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionGengar,   FashionGengar.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionCyber,    FashionCyber.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionSummer,   FashionSummer.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionWinter,   FashionWinter.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionSpring,   FashionSpring.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionCasual,   FashionCasual.Checked);
-    SAV.FlagWork.SetFlag(BDSPConstants.FashionLeather,  FashionLeather.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionPikachu,  FashionPikachu.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionPlatinum, FashionPlatinum.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionOveralls, FashionOveralls.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionEevee,    FashionEevee.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionGengar,   FashionGengar.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionCyber,    FashionCyber.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionSummer,   FashionSummer.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionWinter,   FashionWinter.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionSpring,   FashionSpring.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionCasual,   FashionCasual.Checked);
+    SAV.FlagWork.SetFlag(Constants.BDSP.FashionLeather,  FashionLeather.Checked);
     SAV.State.Edited = true;
     Close();
   }

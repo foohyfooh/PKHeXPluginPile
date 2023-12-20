@@ -23,12 +23,12 @@ public partial class FashionFormLA : Form {
     InitializeComponent();
     HandleLanguageChange();
     SAV = sav8la;
-    HatsBlock = SAV.Blocks.GetBlock(LAConstants.FashionHats);
-    TopsBlock = SAV.Blocks.GetBlock(LAConstants.FashionTops);
-    BottomsBlock = SAV.Blocks.GetBlock(LAConstants.FashionBottoms);
-    UniformsBlock = SAV.Blocks.GetBlock(LAConstants.FashionUniforms);
-    ShoesBlock = SAV.Blocks.GetBlock(LAConstants.FashionShoes);
-    GlassesBlock = SAV.Blocks.GetBlock(LAConstants.FashionGlasses);
+    HatsBlock = SAV.Blocks.GetBlock(Constants.LA.FashionHats);
+    TopsBlock = SAV.Blocks.GetBlock(Constants.LA.FashionTops);
+    BottomsBlock = SAV.Blocks.GetBlock(Constants.LA.FashionBottoms);
+    UniformsBlock = SAV.Blocks.GetBlock(Constants.LA.FashionUniforms);
+    ShoesBlock = SAV.Blocks.GetBlock(Constants.LA.FashionShoes);
+    GlassesBlock = SAV.Blocks.GetBlock(Constants.LA.FashionGlasses);
 
     Converter = new FashionBlockConverterLA();
     HatSelector = new FashionPageSelector(Converter.FromBlockData(HatsBlock.Data), Language.LA.HatsList);
