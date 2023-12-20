@@ -8,7 +8,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
-    <Version>1.4.0</Version>
+    <Version>1.5.0</Version>
     <Company>foohyfooh</Company>
     <Authors>foohyfooh</Authors>
   </PropertyGroup>
