@@ -54,6 +54,7 @@ internal static class Language {
   internal static string ImportOutbreak {
     get {
       return GameInfo.CurrentLanguage switch {
+        "zh"      => "导入大量出现",
         "es"      => "Importar Aparición Masiva",
         "en" or _ => "Import Outbreak"
       };
@@ -63,6 +64,7 @@ internal static class Language {
   internal static string OutbreakImported {
     get {
       return GameInfo.CurrentLanguage switch {
+        "zh"      => "大量出现已导入",
         "es"      => "Aparición Masiva importada",
         "en" or _ => "Outbreak Imported"
       };
@@ -72,6 +74,7 @@ internal static class Language {
   internal static string ImportRaidOrOutbreak {
     get {
       return GameInfo.CurrentLanguage switch {
+        "zh"      => "导入 团体战/大量出现",
         "es"      => "Importar Raid/Aparición Masiva",
         "en" or _ => "Import Raid/Outbreak"
       };
