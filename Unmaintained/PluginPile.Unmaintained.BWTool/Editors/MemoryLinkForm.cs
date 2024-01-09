@@ -45,14 +45,14 @@ public partial class MemoryLinkForm : Form {
     sid.Value = ml.Block2.SID;
     starter.SelectedIndex = ml.Block2.STARTER;
 
-    flag1.Checked = ml.Block2.Checkflag(0);
-    flag2.Checked = ml.Block2.Checkflag(1);
-    flag3.Checked = ml.Block2.Checkflag(2);
-    flag4.Checked = ml.Block2.Checkflag(3);
-    flag5.Checked = ml.Block2.Checkflag(4);
-    flag6.Checked = ml.Block2.Checkflag(5);
-    flag7.Checked = ml.Block2.Checkflag(6);
-    flag8.Checked = ml.Block2.Checkflag(7);
+    flag1.Checked = ml.Block2.CheckFlag(0);
+    flag2.Checked = ml.Block2.CheckFlag(1);
+    flag3.Checked = ml.Block2.CheckFlag(2);
+    flag4.Checked = ml.Block2.CheckFlag(3);
+    flag5.Checked = ml.Block2.CheckFlag(4);
+    flag6.Checked = ml.Block2.CheckFlag(5);
+    flag7.Checked = ml.Block2.CheckFlag(6);
+    flag8.Checked = ml.Block2.CheckFlag(7);
 
     PROP.Text = BitConverter.ToString(ml.Block2.GetData(0x94, 13)).Replace("-", string.Empty);
   }
@@ -63,14 +63,14 @@ public partial class MemoryLinkForm : Form {
     ml.Block2.SID = (ushort)sid.Value;
     ml.Block2.STARTER = (byte)starter.SelectedIndex;
 
-    ml.Block2.Setflag(0, flag1.Checked);
-    ml.Block2.Setflag(1, flag2.Checked);
-    ml.Block2.Setflag(2, flag3.Checked);
-    ml.Block2.Setflag(3, flag4.Checked);
-    ml.Block2.Setflag(4, flag5.Checked);
-    ml.Block2.Setflag(5, flag6.Checked);
-    ml.Block2.Setflag(6, flag7.Checked);
-    ml.Block2.Setflag(7, flag8.Checked);
+    ml.Block2.SetFlag(0, flag1.Checked);
+    ml.Block2.SetFlag(1, flag2.Checked);
+    ml.Block2.SetFlag(2, flag3.Checked);
+    ml.Block2.SetFlag(3, flag4.Checked);
+    ml.Block2.SetFlag(4, flag5.Checked);
+    ml.Block2.SetFlag(5, flag6.Checked);
+    ml.Block2.SetFlag(6, flag7.Checked);
+    ml.Block2.SetFlag(7, flag8.Checked);
 
     ml.SetBlocks();
   }

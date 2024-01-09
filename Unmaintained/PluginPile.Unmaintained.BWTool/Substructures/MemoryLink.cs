@@ -110,6 +110,7 @@ public class MemoryLink {
       set => SetData(BitConverter.GetBytes(value), 0x370);
     }
   }
+
   public class MemoryLinkBlock2(byte[] data) {
     public const int Size = 0x2A0;
 
@@ -173,17 +174,19 @@ public class MemoryLink {
         SetData(BitConverter.GetBytes(value), 0x76);
       }
     }
+
     public byte STARTER {
       get => Data[0x8E];
       set => Data[0x8E] = value;
     }
 
-    public bool Checkflag(int index) {
+    public bool CheckFlag(int index) {
       if (index > 7)
         index = 7;
       return (Data[0x8D] & (0x1 << index)) != 0;
     }
-    public void Setflag(int index, bool status) {
+
+    public void SetFlag(int index, bool status) {
       if (index > 7)
         index = 7;
       if (status)

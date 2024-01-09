@@ -72,12 +72,15 @@ public class Keys(byte[] data) {
       return 0;
     }
   }
+
   private uint GetKey(int keyIndex) {
     return BitConverter.ToUInt32(Data, 0x28 + (keyIndex * 4));
   }
+
   private uint GetKeyXor(int keyIndex) {
     return GetKey(keyIndex) ^ ID;
   }
+
   public bool GetKeyState(int keyIndex) {
     return GetKeyXor(keyIndex) switch {
       EasyKey => true,
@@ -93,6 +96,7 @@ public class Keys(byte[] data) {
       _ => false,
     };
   }
+
   public void SetKey(bool state, int keyIndex) {
     if (!state) {
       Array.Copy(BitConverter.GetBytes(zero), 0, Data, 0x28 + (keyIndex * 4), 4);
