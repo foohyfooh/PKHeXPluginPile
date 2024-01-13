@@ -9,18 +9,12 @@ public class SwShRaidPlugin : PluginBase {
   private bool IsCompatibleSave => SaveFileEditor.SAV is SAV8SWSH;
 
   public SwShRaidPlugin() {
-    RaidsViewer = new ToolStripMenuItem(Language.DisplayRaids) { Visible = false };
-    RaidsViewer.Click += (s, e) => Open();
+    RaidsViewer = new ToolStripMenuItem(Language.DisplayRaids);
+    RaidsViewer.Click += (s, e) => new RaidList((SAV8SWSH)SaveFileEditor.SAV).Show();
   }
 
   protected override void LoadMenu(ToolStripDropDownItem tools) {
     tools.DropDownItems.Add(RaidsViewer);
-  }
-
-  private void Open() {
-    SAV8SWSH sav = (SAV8SWSH)SaveFileEditor.SAV;
-    RaidList f = new RaidList(sav.Blocks, sav.Version, sav.Badges, sav.TID16, sav.SID16);
-    f.Show();
   }
 
   protected override void LoadContextMenu(ContextMenuStrip contextMenu) {
@@ -41,7 +35,7 @@ public class SwShRaidPlugin : PluginBase {
     };
   }
 
-  public override void NotifySaveLoaded() {
-    RaidsViewer.Visible = IsCompatibleSave;
-  }
+  protected override void HandleSaveLoaded() => RaidsViewer.Visible = IsCompatibleSave;
+
+  public override void NotifyDisplayLanguageChanged(string language) => RaidsViewer.Text = Language.DisplayRaids;
 }

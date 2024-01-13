@@ -8,7 +8,7 @@ public interface IFashionBlockConverter {
 }
 
 public class FashionBlockConverterSwSh : IFashionBlockConverter {
-  public bool[] FromBlockData(byte[] data) => FlagUtil.GitBitFlagArray(data);
+  public bool[] FromBlockData(byte[] data) => FlagUtil.GetBitFlagArray(data);
 
   public byte[] ToBlockData(bool[] bools) {
     byte[] data = new byte[bools.Length >> 3];

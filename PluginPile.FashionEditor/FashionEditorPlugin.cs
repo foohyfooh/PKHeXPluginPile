@@ -16,7 +16,6 @@ public class FashionEditorPlugin : PluginBase {
   }
 
   protected override void LoadMenu(ToolStripDropDownItem tools) {
-    
     FashionEditorButton.Available = IsCompatibleSave;
     FashionEditorButton.Click += (s, e) => {
       if (SaveFileEditor.SAV is SAV8SWSH sav8swsh) {
@@ -31,4 +30,6 @@ public class FashionEditorPlugin : PluginBase {
   }
 
   protected override void HandleSaveLoaded() => FashionEditorButton.Available = IsCompatibleSave;
+
+  public override void NotifyDisplayLanguageChanged(string language) => FashionEditorButton.Text = Language.Title;
 }

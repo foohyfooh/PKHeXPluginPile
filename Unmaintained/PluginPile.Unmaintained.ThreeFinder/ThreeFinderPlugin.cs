@@ -77,5 +77,7 @@ public class ThreeFinderPlugin : PluginBase {
     }
   }
 
+  public override void NotifyDisplayLanguageChanged(string language) => MenuItem.Text = Language.MenuItemName;
+
   protected override void HandleSaveLoaded() => MenuItem.Available = IsCompatibleSave;
 }

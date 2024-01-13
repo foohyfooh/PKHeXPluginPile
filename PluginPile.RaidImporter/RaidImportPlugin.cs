@@ -96,4 +96,5 @@ public class RaidImportPlugin : PluginBase {
 
   protected override void HandleSaveLoaded() => SetImportItems();
 
+  public override void NotifyDisplayLanguageChanged(string language) => SetImportItems();
 }

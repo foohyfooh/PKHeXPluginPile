@@ -5,10 +5,10 @@ public partial class RaidList : Form {
   private readonly RaidManager _raids;
   private readonly TextBox[] IVs;
 
-  public RaidList(SaveBlockAccessor8SWSH blocks, GameVersion game, int badges, int tid, int sid) {
+  public RaidList(SAV8SWSH SAV) {
     InitializeComponent();
     IVs = [TB_HP_IV1, TB_ATK_IV1, TB_DEF_IV1, TB_SPA_IV1, TB_SPD_IV1, TB_SPE_IV1];
-    _raids = new RaidManager(blocks, game, badges, (uint)tid, (uint)sid);
+    _raids = new RaidManager(SAV);
     CB_Den.SelectedIndex = 0;
     CenterToParent();
   }

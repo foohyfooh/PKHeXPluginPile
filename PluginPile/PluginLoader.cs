@@ -49,4 +49,14 @@ public class PluginLoader : PluginBase {
     RentalViewerPluginInstance.NotifySaveLoaded();
   }
 
+  public override void NotifyDisplayLanguageChanged(string language) {
+    SortingPluginInstance.NotifyDisplayLanguageChanged(language);
+    RaidImportPluginInstance.NotifyDisplayLanguageChanged(language);
+    SVivillonPluginInstance.NotifyDisplayLanguageChanged(language);
+    FashionEditorPluginInstance.NotifyDisplayLanguageChanged(language);
+    SVProfilePictureViewerPluginInstance.NotifyDisplayLanguageChanged(language);
+    RoamerPluginInstance.NotifyDisplayLanguageChanged(language);
+    RentalViewerPluginInstance.NotifyDisplayLanguageChanged(language);
+  }
+
 }

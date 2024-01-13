@@ -19,5 +19,7 @@ namespace PluginPile.SVProfilePictureViewer {
     }
 
     protected override void HandleSaveLoaded() => ImageViewerButton.Available = IsSaveCompatable;
+
+    public override void NotifyDisplayLanguageChanged(string language) => ImageViewerButton.Text = Language.PluginName;
   }
 }

@@ -28,4 +28,6 @@ public class RoamerPlugin : PluginBase {
   }
 
   protected override void HandleSaveLoaded() => MenuItem.Available = IsCompatibleSave;
+
+  public override void NotifyDisplayLanguageChanged(string language) => MenuItem.Text = Language.MenuItemName;
 }

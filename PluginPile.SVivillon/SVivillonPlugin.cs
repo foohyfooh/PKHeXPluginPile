@@ -22,4 +22,6 @@ public class SVivillonPlugin : PluginBase {
 
   protected override void HandleSaveLoaded() => OpenFormButton.Available = IsCompatibleSave;
 
+  public override void NotifyDisplayLanguageChanged(string language) => OpenFormButton.Text = Language.MenuItemName;
+
 }

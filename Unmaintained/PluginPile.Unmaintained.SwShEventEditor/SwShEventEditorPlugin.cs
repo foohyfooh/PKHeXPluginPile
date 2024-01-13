@@ -48,7 +48,7 @@ public class SwShEventEditorPlugin : PluginBase {
     tools.DropDownItems.Add(RootToolStripMenuItem);
   }
 
-  public override void NotifySaveLoaded() {
+  protected override void HandleSaveLoaded() {
     RootToolStripMenuItem.Available = IsGameSwordShield;
     BaseGameMenuItem.Image = SaveFileEditor.SAV.Version == GameVersion.SW ? Properties.Resources.Sword : Properties.Resources.Shield;
     IsleOfArmorMenuItem.Available = IsGameSwordShield && ((SAV8SWSH)SaveFileEditor.SAV).SaveRevision >= 1;

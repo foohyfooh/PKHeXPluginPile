@@ -20,4 +20,6 @@ public class RentalViewerPlugin : PluginBase {
 
   protected override void HandleSaveLoaded() => ViewRentalsButton.Available = IsCompatibleSave;
 
+  public override void NotifyDisplayLanguageChanged(string language) => ViewRentalsButton.Text = Language.MenuItemName;
+
 }

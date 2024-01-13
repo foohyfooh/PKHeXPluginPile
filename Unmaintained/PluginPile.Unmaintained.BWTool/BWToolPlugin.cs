@@ -16,7 +16,10 @@ public class BWToolPlugin : PluginBase {
 
   protected override void HandleSaveLoaded() => MenuItem.Available = IsCompatibleSave;
 
+  public override void NotifyDisplayLanguageChanged(string language) => MenuItem.Text = Language.MenuName;
+
   protected override void LoadMenu(ToolStripDropDownItem tools) {
     tools.DropDownItems.Add(MenuItem);
   }
+
 }

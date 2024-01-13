@@ -10,16 +10,16 @@ public class RaidManager {
   private readonly RaidTables _raidTables = new RaidTables();
   private readonly RaidParameters[] DenList;
 
-  public RaidManager(SaveBlockAccessor8SWSH blocks, GameVersion game, int badges, uint tid, uint sid) {
-    EventTableConverter.GetCurrentEventTable(blocks, _raidTables);
-    DenList = InitializeDenList(blocks.Raid, blocks.RaidArmor, blocks.RaidCrown);
+  public RaidManager(SAV8SWSH SAV) {
+    EventTableConverter.GetCurrentEventTable(SAV.Blocks, _raidTables);
+    DenList = InitializeDenList(SAV.Blocks.Raid, SAV.Blocks.RaidArmor, SAV.Blocks.RaidCrown);
 
-    Game = game;
-    BadgeCount = Util.NumberOfSetBits(badges);
+    Game = SAV.Version;
+    BadgeCount = Util.NumberOfSetBits(SAV.Badges);
     if (BadgeCount == 0)
       BadgeCount = 9; // enable all dens for basically no SaveFile loaded
-    TID = tid;
-    SID = sid;
+    TID = SAV.TID16;
+    SID = SAV.SID16;
   }
 
   private static RaidParameters[] InitializeDenList(RaidSpawnList8 raids, RaidSpawnList8 raidsArmor, RaidSpawnList8 raidsCrown) {

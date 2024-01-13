@@ -15,9 +15,17 @@ public class TMTool : PluginBase {
 
   protected override void HandleSaveLoaded() => MenuItem.Visible = IsCompatibleSave;
 
+  public override void NotifyDisplayLanguageChanged(string language) => SetMenuItems();
+
   protected override void LoadBoxMenu(ContextMenuStrip boxMenu) {
     Manipulator = GetBoxManipulatorWF();
     boxMenu.Items.Add(MenuItem);
+    SetMenuItems();
+  }
+
+  private void SetMenuItems() {
+    MenuItem.Text = Language.MenuItemName;
+    MenuItem.DropDownItems.Clear();
 
     ToolStripMenuItem addProtectMenuItem = new ToolStripMenuItem(Language.AddProtect);
     BoxManipModify modifyProtect = new BoxManipModify(CustomManipType, pkm => ((PK9)pkm).SetMoveRecordFlag(Constants.TM_PROTECT, true), s => s is SAV9SV);

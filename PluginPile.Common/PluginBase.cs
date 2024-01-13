@@ -44,6 +44,8 @@ public abstract class PluginBase : IPlugin {
 
   protected virtual void HandleSaveLoaded() { }
 
+  public virtual void NotifyDisplayLanguageChanged(string language) { }
+
   public bool TryLoadFile(string filePath) {
     Console.WriteLine($"{Name} was provided with the file path, but chose to do nothing with it.");
     return false; // no action taken

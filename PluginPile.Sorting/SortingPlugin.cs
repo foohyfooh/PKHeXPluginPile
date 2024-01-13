@@ -7,12 +7,14 @@ public class SortingPlugin : PluginBase {
   private readonly ToolStripMenuItem SortByButton;
 
   public SortingPlugin() {
-    SortByButton = new ToolStripMenuItem(Language.MenuItemName) {
+    SortByButton = new ToolStripMenuItem() {
       Image = Properties.Images.SortIcon
     };
   }
 
   protected override void HandleSaveLoaded() => ReloadMenu();
+
+  public override void NotifyDisplayLanguageChanged(string language) => ReloadMenu();
 
   protected override void LoadMenu(ToolStripDropDownItem tools) {
     tools.DropDownItems.Add(SortByButton);
@@ -20,6 +22,7 @@ public class SortingPlugin : PluginBase {
   }
 
   private void SetSortItems() {
+    SortByButton.Text = Language.MenuItemName;
     SortByButton.DropDownItems.Clear();
     ToolStripItemCollection sortItems = SortByButton.DropDownItems;
     int gen = SaveFileEditor.SAV.Generation;
@@ -149,7 +152,6 @@ public class SortingPlugin : PluginBase {
     settingsButton.Click += (s, e) => new SettingsForm(this).ShowDialogInParent();
     sortItems.Add(settingsButton);
   }
-
 
   public void ReloadMenu() => SetSortItems();
 
