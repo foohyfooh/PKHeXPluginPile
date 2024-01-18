@@ -5,7 +5,7 @@ using PluginPile.SVivillon;
 using PluginPile.FashionEditor;
 using PluginPile.SVProfilePictureViewer;
 using PluginPile.RoamerTool;
-using PluginPile.RentalViewer;
+using PluginPile.TeamViewer;
 
 namespace PluginPile; 
 public class PluginLoader : PluginBase {
@@ -17,7 +17,7 @@ public class PluginLoader : PluginBase {
   private readonly FashionEditorPlugin FashionEditorPluginInstance;
   private readonly SVProfilePictureViewerPlugin SVProfilePictureViewerPluginInstance;
   private readonly RoamerPlugin RoamerPluginInstance;
-  private readonly RentalViewerPlugin RentalViewerPluginInstance;
+  private readonly TeamViewerPlugin TeamViewerPluginInstance;
 
   public PluginLoader() {
     SortingPluginInstance = new SortingPlugin();
@@ -26,7 +26,7 @@ public class PluginLoader : PluginBase {
     FashionEditorPluginInstance = new FashionEditorPlugin();
     SVProfilePictureViewerPluginInstance = new SVProfilePictureViewerPlugin();
     RoamerPluginInstance = new RoamerPlugin();
-    RentalViewerPluginInstance = new RentalViewerPlugin();
+    TeamViewerPluginInstance = new TeamViewerPlugin();
   }
 
   public override void Initialize(params object[] args) {
@@ -36,7 +36,7 @@ public class PluginLoader : PluginBase {
     FashionEditorPluginInstance.Initialize(args);
     SVProfilePictureViewerPluginInstance.Initialize(args);
     RoamerPluginInstance.Initialize(args);
-    RentalViewerPluginInstance.Initialize(args);
+    TeamViewerPluginInstance.Initialize(args);
   }
 
   public override void NotifySaveLoaded() {
@@ -46,7 +46,7 @@ public class PluginLoader : PluginBase {
     FashionEditorPluginInstance.NotifySaveLoaded();
     SVProfilePictureViewerPluginInstance.NotifySaveLoaded();
     RoamerPluginInstance.NotifySaveLoaded();
-    RentalViewerPluginInstance.NotifySaveLoaded();
+    TeamViewerPluginInstance.NotifySaveLoaded();
   }
 
   public override void NotifyDisplayLanguageChanged(string language) {
@@ -56,7 +56,7 @@ public class PluginLoader : PluginBase {
     FashionEditorPluginInstance.NotifyDisplayLanguageChanged(language);
     SVProfilePictureViewerPluginInstance.NotifyDisplayLanguageChanged(language);
     RoamerPluginInstance.NotifyDisplayLanguageChanged(language);
-    RentalViewerPluginInstance.NotifyDisplayLanguageChanged(language);
+    TeamViewerPluginInstance.NotifyDisplayLanguageChanged(language);
   }
 
 }

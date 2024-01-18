@@ -64,11 +64,12 @@ The purpose of this plugin is to do miscellaneous TM edits on mons
 The purpose of this tool is to edit the roaming Pokémon in the Gen 4 Games and Pokémon X and Y.
 - *Edit Roamer* should now be in the *Tools* menu of PKHeX
 
-## Rental Viewer
-The purpose of this plugin is to view the Rental Teams
-- *View Rentals* should now be in the *Tools* menu of PKHeX
+## Battle and Rental Teams Viewer
+The purpose of this plugin is to view the Battle and Rental Teams
+- *View Battle Teams* should now be in the *Tools* menu of PKHeX
+- *View Rental Teams* should now be in the *Tools* menu of PKHeX
 
-Fork based on [Eppin](https://github.com/Eppin)'s [PKHeX.RentalViewer](https://github.com/Eppin/PKHeX.RentalViewer) to display teams in window rather than just copying to box.
+Original idea based on [Eppin](https://github.com/Eppin)'s [PKHeX.RentalViewer](https://github.com/Eppin/PKHeX.RentalViewer) to display rental teams in window rather than just copying to box and extended to show both battle and rental teams.
 
 ## Building
 - Open PowerShell and Run `build.ps1`

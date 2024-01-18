@@ -1,5 +1,5 @@
-namespace PluginPile.RentalViewer {
-  partial class RentalTeamControl {
+namespace PluginPile.TeamViewer {
+  partial class TeamControl {
     /// <summary>
     /// Required designer variable.
     /// </summary>

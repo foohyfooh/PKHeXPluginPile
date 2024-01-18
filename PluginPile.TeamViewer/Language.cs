@@ -1,13 +1,21 @@
 using PKHeX.Core;
 
-namespace PluginPile.RentalViewer;
+namespace PluginPile.TeamViewer;
 internal static class Language {
 
-  public static string MenuItemName {
+  public static string ViewBattleTeams {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => "View Battle Teams"
+      };
+    }
+  }
+
+  public static string ViewRentalTeams {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh" => "查看租借队伍",
-        "en" or _ => "View Rentals"
+        "en" or _ => "View Rental Teams"
       };
     }
   }
@@ -39,4 +47,27 @@ internal static class Language {
     }
   }
 
+  public static string BattleTeams {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => "Battle Teams"
+      };
+    }
+  }
+
+  public static string RentalTeams {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => "Rental Teams"
+      };
+    }
+  }
+
+  public static string Team {
+    get {
+      return GameInfo.CurrentLanguage switch {
+        "en" or _ => "Team"
+      };
+    }
+  }
 }

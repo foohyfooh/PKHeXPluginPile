@@ -17,7 +17,7 @@
     <ProjectReference Include="..\PluginPile.FashionEditor\PluginPile.FashionEditor.csproj" />
     <ProjectReference Include="..\PluginPile.SVProfilePictureViewer\PluginPile.SVProfilePictureViewer.csproj" />
     <ProjectReference Include="..\PluginPile.RoamerTool\PluginPile.RoamerTool.csproj" />
-    <ProjectReference Include="..\PluginPile.RentalViewer\PluginPile.RentalViewer.csproj" />
+    <ProjectReference Include="..\PluginPile.TeamViewer\PluginPile.TeamViewer.csproj" />
   </ItemGroup>
 
   <ItemGroup>

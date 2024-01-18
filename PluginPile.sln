@@ -34,7 +34,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.TMTool", "Plugin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.RoamerTool", "PluginPile.RoamerTool\PluginPile.RoamerTool.csproj", "{97B23E37-C89B-48D8-A03D-83BD049DE76E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.RentalViewer", "PluginPile.RentalViewer\PluginPile.RentalViewer.csproj", "{34FF1A80-E93F-456C-91A5-CF5A7F43017D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.TeamViewer", "PluginPile.TeamViewer\PluginPile.TeamViewer.csproj", "{34FF1A80-E93F-456C-91A5-CF5A7F43017D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.Unmaintained.AutoModQRPlugins", "Unmaintained\PluginPile.Unmaintained.AutoModQRPlugins\PluginPile.Unmaintained.AutoModQRPlugins.csproj", "{E0366507-E690-46CA-AC69-0A8B91956BA4}"
 EndProject

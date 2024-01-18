@@ -1,21 +1,27 @@
 using PKHeX.Core;
 using PluginPile.Common;
 
-namespace PluginPile.RentalViewer;
-public partial class RentalTeamControl : UserControl {
+namespace PluginPile.TeamViewer;
+public partial class TeamControl : UserControl {
 
   private readonly ISaveFileProvider SaveFileEditor;
-  private readonly RentalTeam Team;
+  private readonly TeamBase Team;
   private readonly ToolTip SetTooltip;
 
-  public RentalTeamControl(ISaveFileProvider saveFileEditor, RentalTeam rentalTeam) {
+  public TeamControl(ISaveFileProvider saveFileEditor, TeamBase team) {
     InitializeComponent();
     HandleLanguageChange();
     SetTooltip = new ToolTip() { InitialDelay = 200, IsBalloon = false, AutoPopDelay = 32_767 };
     SaveFileEditor = saveFileEditor;
-    Team = rentalTeam;
+    Team = team;
     TeamName.Text = Team.Name;
-    TeamInfo.Text = $"{Team.Creator} | {Team.Code}";
+    if (Team is RentalTeam rentalTeam) {
+      TeamInfo.Text = $"{rentalTeam.Creator} | {rentalTeam.Code}";
+    } else {
+      TeamInfo.Text = "";
+      CopyToBox.Enabled = false;
+      CopyToParty.Enabled = false;
+    }
 
     PictureBox[] boxes = [Pokemon1Image, Pokemon2Image, Pokemon3Image, Pokemon4Image, Pokemon5Image, Pokemon6Image];
     foreach ((PictureBox box, PKM mon) in boxes.Zip(Team.Members)) {
