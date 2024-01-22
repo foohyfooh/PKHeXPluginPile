@@ -22,7 +22,10 @@ public class TeamViewerPlugin : PluginBase {
     tools.DropDownItems.Add(ViewRentalsButton);
   }
 
-  protected override void HandleSaveLoaded() => ViewRentalsButton.Available = IsCompatibleSave;
+  protected override void HandleSaveLoaded() {
+    ViewBattleTeamsButton.Available = IsCompatibleSave;
+    ViewRentalsButton.Available = IsCompatibleSave;
+  }
 
   public override void NotifyDisplayLanguageChanged(string language) {
     ViewBattleTeamsButton.Text = Language.ViewBattleTeams;
