@@ -25,7 +25,7 @@ public static class SAV5Extensions {
   public static byte[] GetBlock(this SAV5 sav, int index) {
     if (sav is SAV5BW) {
       return sav.GetBlock(index, Constants.BW.CrcIndex, Constants.BW.BackupOffset);
-    } else { // sav is SAV5BW
+    } else { // sav is SAV5B2W2
       return sav.GetBlock(index, Constants.B2W2.CrcIndex, Constants.B2W2.BackupOffset);
     } 
   }
@@ -42,7 +42,7 @@ public static class SAV5Extensions {
   public static int GetBlockLength(this SAV5 sav, int index) {
     if (sav is SAV5BW) {
       return sav.GetBlockLength(index, Constants.BW.CrcIndex, Constants.BW.BackupOffset);
-    } else { // sav is SAV5BW
+    } else { // sav is SAV5B2W2
       return sav.GetBlockLength(index, Constants.B2W2.CrcIndex, Constants.B2W2.BackupOffset);
     }
   }
@@ -114,7 +114,7 @@ public static class SAV5Extensions {
   public static byte[] GetBlockDec(this SAV5 sav, int index) {
     if (sav is SAV5BW) {
       return sav.GetBlockDec(index, Constants.BW.CrcIndex, Constants.BW.BackupOffset);
-    } else { // sav is SAV5BW
+    } else { // sav is SAV5B2W2
       return sav.GetBlockDec(index, Constants.B2W2.CrcIndex, Constants.B2W2.BackupOffset);
     }
   }
