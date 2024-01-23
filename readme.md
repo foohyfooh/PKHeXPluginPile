@@ -71,6 +71,12 @@ The purpose of this plugin is to view the Battle and Rental Teams
 
 Original idea based on [Eppin](https://github.com/Eppin)'s [PKHeX.RentalViewer](https://github.com/Eppin/PKHeX.RentalViewer) to display rental teams in window rather than just copying to box and extended to show both battle and rental teams.
 
+## Special Pokémon Finder
+The purpose of this plugin is to find Pokémon with special conditions to get specific forms or evolutions
+- *Pokémon Finders* should now be in the *Tools* menu of PKHeX.
+
+The original idea is from [suloku](https://github.com/suloku)'s [PKHeXThreeFinderPlugin](https://github.com/suloku/PKHeXThreeFinderPlugin) to find Dunsparce or Tandemaus which will give the Three-Segment or Family of Three forms respectively.
+
 ## Building
 - Open PowerShell and Run `build.ps1`
 - Individual Plugins should be located in `bin\Build\Individual`

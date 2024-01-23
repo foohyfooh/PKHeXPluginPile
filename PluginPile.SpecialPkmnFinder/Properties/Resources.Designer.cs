@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PluginPile.Unmaintained.ThreeFinder.Properties {
+namespace PluginPile.SpecialPkmnFinder.Properties {
     using System;
 
 
@@ -39,7 +39,7 @@ namespace PluginPile.Unmaintained.ThreeFinder.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PluginPile.Unmaintained.ThreeFinder.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PluginPile.SpecialPkmnFinder.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
