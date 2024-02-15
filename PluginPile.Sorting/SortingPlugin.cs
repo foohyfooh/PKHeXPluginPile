@@ -184,7 +184,7 @@ public class SortingPlugin : PluginBase {
       SlotViewInfo<PictureBox> info = GetSenderInfo(ref s!);
       int startIndex = SaveFileEditor.CurrentBox * SaveFileEditor.SAV.BoxSlotCount + info.Slot.Slot;
       StorageSlotSource startSlotSource = SaveFileEditor.SAV.GetSlotFlags(startIndex);
-      if (info.IsNonEmptyWriteableBoxSlot() & !(startSlotSource.IsOverwriteProtected() | startSlotSource.IsBattleTeam() != -1)) {
+      if (info.IsNonEmptyWriteableBoxSlot() & !startSlotSource.IsOverwriteProtected()) {
         ToolStripMenuItem insertSlotButton = new ToolStripMenuItem(Language.InsertSlot);
         insertSlotButton.Click += (s, e) => InsertSlot(SaveFileEditor.CurrentBox, info.Slot.Slot);
         contextMenu.Items.Add(insertSlotButton);
@@ -210,7 +210,7 @@ public class SortingPlugin : PluginBase {
     SaveFileEditor.SAV.SetBoxSlotAtIndex(SaveFileEditor.SAV.BlankPKM, startIndex);
     for (int index = startIndex + 1; index <= boxIndex; index++) {
       StorageSlotSource slotSource = SaveFileEditor.SAV.GetSlotFlags(index);
-      if (slotSource.IsOverwriteProtected() | slotSource.IsBattleTeam() != -1) continue;
+      if (slotSource.IsOverwriteProtected()) continue;
       nextMon = SaveFileEditor.SAV.GetBoxSlotAtIndex(index);
       SaveFileEditor.SAV.SetBoxSlotAtIndex(currMon, index, PKMImportSetting.UseDefault, PKMImportSetting.Skip);
       currMon = nextMon;
