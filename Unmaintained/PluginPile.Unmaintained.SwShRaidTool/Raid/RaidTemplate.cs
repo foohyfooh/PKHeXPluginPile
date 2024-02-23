@@ -97,11 +97,11 @@ public class RaidTemplate {
     int ability = abilities.GetAbilityAtIndex(abilityIdx);
     // gender
     int gt = PersonalTable.SWSH[Species].Gender;
-    int gender = gt switch {
+    byte gender = gt switch {
       255 => 2, // Genderless
       254 => 1, // Female-Only
       0 => 0, // Male-Only
-      _ => ((int)rng.NextInt(253) + 1 < gt ? 1 : 0)
+      _ => (byte)((int)rng.NextInt(253) + 1 < gt ? 1 : 0)
     };
 
     int nature;

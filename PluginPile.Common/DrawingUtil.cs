@@ -12,30 +12,30 @@ public class DrawingUtil {
   public static Image GetSprite(PKM pkm) {
     MethodInfo getSpriteMethod = SpriteUtilType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
       .Single(m => m.Name == "GetSprite" && m.GetParameters().Length == 1);
-    return (Image)getSpriteMethod.Invoke(null, new object[] { pkm })!;
+    return (Image)getSpriteMethod.Invoke(null, [pkm])!;
   }  
 
-  public static Image GetSprite(ushort species, byte form, int gender, uint formarg, int item, bool isegg, Shiny shiny, EntityContext context = EntityContext.None) {
+  public static Image GetSprite(ushort species, byte form, byte gender, uint formarg, int item, bool isegg, Shiny shiny, EntityContext context = EntityContext.None) {
     MethodInfo getSpriteMethod = SpriteUtilType.GetMethods(BindingFlags.Public | BindingFlags.Static)
       .Single(m => m.Name == "GetSprite" && m.GetParameters().Length == 8);
-    return (Image)getSpriteMethod.Invoke(null, new object[] { species, form, gender, formarg, item, isegg, shiny, context })!;
+    return (Image)getSpriteMethod.Invoke(null, [species, form, gender, formarg, item, isegg, shiny, context])!;
   }
 
   public static Image LayerImage(Image baseLayer, Image overLayer, int x, int y, double transparency) {
     MethodInfo layerImageMethod = ImageUtilType.GetMethods(BindingFlags.Public | BindingFlags.Static)
       .Single(m => m.Name == "LayerImage" && m.GetParameters().Length == 5);
-    return (Image)layerImageMethod.Invoke(null, new object[] { baseLayer, overLayer, x, y, transparency })!;
+    return (Image)layerImageMethod.Invoke(null, [baseLayer, overLayer, x, y, transparency])!;
   }
 
   public static Image LayerImage(Image baseLayer, Image overLayer, int x, int y) {
     MethodInfo layerImageMethod = ImageUtilType.GetMethods(BindingFlags.Public | BindingFlags.Static)
       .Single(m => m.Name == "LayerImage" && m.GetParameters().Length == 4);
-    return (Image)layerImageMethod.Invoke(null, new object[] { baseLayer, overLayer, x, y })!;
+    return (Image)layerImageMethod.Invoke(null, [baseLayer, overLayer, x, y])!;
   }
 
   public static Image ToGrayscale(Image img) {
     MethodInfo toGrayscaleMethod = ImageUtilType.GetMethod("ToGrayscale")!;
-    return (Image)toGrayscaleMethod.Invoke(null, new object[] { img })!;
+    return (Image)toGrayscaleMethod.Invoke(null, [img])!;
   }
 
   public static Bitmap GetBitmap(byte[] data, int width, int height) {

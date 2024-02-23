@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Costura.Fody" Version="5.7.0" PrivateAssets="all" />
     <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="all" />
-    <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.0" />
     <PackageReference Include="QRCoder" Version="1.4.3" />
     <PackageReference Include="ZXing.Net" Version="0.16.9" />
     <PackageReference Include="ZXing.Net.Bindings.Windows.Compatibility" Version="0.16.12" />

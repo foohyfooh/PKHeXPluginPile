@@ -20,12 +20,12 @@ public class SwShRaidPlugin : PluginBase {
   protected override void LoadContextMenu(ContextMenuStrip contextMenu) {
     contextMenu.Opening += (s, e) => {
       SlotViewInfo<PictureBox> info = GetSenderInfo(ref s!);
-      if (IsCompatibleSave) {
+      int slotIndex = info.View.ViewIndex * SaveFileEditor.SAV.BoxSlotCount + info.Slot.Slot;
+      PKM mon = SaveFileEditor.SAV.GetBoxSlotAtIndex(slotIndex);
+      if (IsCompatibleSave && (Species)mon.Species != Species.None && mon.Generation == 8) {
         ToolStripMenuItem findSeedButton = new ToolStripMenuItem(Language.SeedFinder);
         findSeedButton.Click += (s, e) => {
           SeedFinder sf = new SeedFinder(SaveFileEditor.SAV.TID16, SaveFileEditor.SAV.SID16);
-          int slotIndex = SaveFileEditor.CurrentBox * SaveFileEditor.SAV.BoxSlotCount + info.Slot.Slot;
-          PK8 mon = (PK8)SaveFileEditor.SAV.GetBoxSlotAtIndex(slotIndex);
           sf.LoadPKM(mon);
           sf.Show();
         };
