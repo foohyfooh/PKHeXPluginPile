@@ -182,9 +182,7 @@ public class SortingPlugin : PluginBase {
   protected override void LoadContextMenu(ContextMenuStrip contextMenu) {
     contextMenu.Opening += (s, e) => {
       SlotViewInfo<PictureBox> info = GetSenderInfo(ref s!);
-      int startIndex = info.View.ViewIndex * SaveFileEditor.SAV.BoxSlotCount + info.Slot.Slot;
-      StorageSlotSource startSlotSource = SaveFileEditor.SAV.GetSlotFlags(startIndex);
-      if (info.IsNonEmptyWriteableBoxSlot() & !startSlotSource.IsOverwriteProtected()) {
+      if (info.IsNonEmptyWriteableBoxSlot() && !SaveFileEditor.SAV.IsSlotOverwriteProtected(info.View.ViewIndex, info.Slot.Slot)) {
         ToolStripMenuItem insertSlotButton = new ToolStripMenuItem(Language.InsertSlot);
         insertSlotButton.Click += (s, e) => InsertSlot(info.View.ViewIndex, info.Slot.Slot);
         contextMenu.Items.Add(insertSlotButton);
