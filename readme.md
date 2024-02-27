@@ -48,6 +48,9 @@ The purpose of this plugin is to allow for editing the owned clothes in games. <
 ### Pokémon Sword and Shield Note
 Note that in Sword and Shield when unlocking Tops this unlocks it in the uniform tab even if the other parts of the uniform aren't unlocked since the game is expecting all of them to be unlocked at the same time.
 
+### Acknowledgement
+The original idea for this came from [theSLAYER](https://projectpokemon.org/home/profile/1731-theslayer/)'s [Fashion Block Editor for Sword and Shield](https://projectpokemon.org/home/files/file/4384-fashion-block-viewer-and-editor-experimental/).
+
 ## Scarlet/Violet Profile Picture Viewer Plugin
 The purpose of this plugin is to view and save the Profile Picture and Icon in Pokémon Scarlet and Violet.
 - *Profile Picture Viewer* should now be in the *Tools* menu of PKHeX.
@@ -69,12 +72,14 @@ The purpose of this plugin is to view the Battle and Rental Teams
 - *View Battle Teams* should now be in the *Tools* menu of PKHeX
 - *View Rental Teams* should now be in the *Tools* menu of PKHeX
 
-Original idea based on [Eppin](https://github.com/Eppin)'s [PKHeX.RentalViewer](https://github.com/Eppin/PKHeX.RentalViewer) to display rental teams in window rather than just copying to box and extended to show both battle and rental teams.
+### Acknowledgement
+Original idea based on [Eppin](https://github.com/Eppin)'s [PKHeX.RentalViewer](https://github.com/Eppin/PKHeX.RentalViewer) which copied the rental teams to box. This was made to display rental teams in window instead and extended to show both battle and rental teams.
 
 ## Special Pokémon Finder
 The purpose of this plugin is to find Pokémon with special conditions to get specific forms or evolutions
 - *Pokémon Finders* should now be in the *Tools* menu of PKHeX.
 
+### Acknowledgement
 The original idea is from [suloku](https://github.com/suloku)'s [PKHeXThreeFinderPlugin](https://github.com/suloku/PKHeXThreeFinderPlugin) to find Dunsparce or Tandemaus which will give the Three-Segment or Family of Three forms respectively.
 
 ## Building
