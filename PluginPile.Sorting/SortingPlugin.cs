@@ -25,7 +25,7 @@ public class SortingPlugin : PluginBase {
     SortByButton.Text = Language.MenuItemName;
     SortByButton.DropDownItems.Clear();
     ToolStripItemCollection sortItems = SortByButton.DropDownItems;
-    byte gen = SaveFileEditor.SAV.Generation;
+    int gen = SaveFileEditor.SAV.Generation;
     GameVersion version = SaveFileEditor.SAV.Version;
     bool isLetsGo = version == GameVersion.GP || version == GameVersion.GE;
     if (isLetsGo) {
