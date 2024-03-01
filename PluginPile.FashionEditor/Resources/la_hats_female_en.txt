@@ -1,0 +1,152 @@
+Flat Cap: White lily
+Flat Cap: Dark slate
+Flat Cap: Crimson
+Flat Cap: Daffodil
+Flat Cap: Pine
+Flat Cap: Sapphire
+Flat Cap: Tangerine
+Flat Cap: Indigo
+Flat Cap: Amethyst
+Flat Cap: Azalea
+Flat Cap: Blue spruce
+Flat Cap: Ocher
+Flat Cap: Chartreuse
+Flat Cap: Scarlet
+Flat Cap: Teal
+Flat Cap: Flame
+Flat Cap: Splash
+Flat Cap: Meadow
+Flat Cap: Zap
+Flat Cap: Blank
+Flat Cap: Sky
+Flat Cap: Toxic
+Flat Cap: Dread
+Flat Cap: Iron
+Flat Cap: Draco
+Flat Cap: Fist
+Flat Cap: Icicle
+Flat Cap: Spooky
+Flat Cap: Pixie
+Flat Cap: Stone
+Flat Cap: Earth
+Flat Cap: Insect
+Flat Cap: Mind
+Woven Hat
+Twisted Headband: White lily
+Twisted Headband: Dark slate
+Twisted Headband: Crimson
+Twisted Headband: Daffodil
+Twisted Headband: Pine
+Twisted Headband: Sapphire
+Twisted Headband: Tangerine
+Twisted Headband: Indigo
+Twisted Headband: Amethyst
+Twisted Headband: Azalea
+Twisted Headband: Blue spruce
+Twisted Headband: Ocher
+Twisted Headband: Chartreuse
+Twisted Headband: Scarlet
+Twisted Headband: Teal
+Festival Mask: Pikachu
+Festival Mask: Shinx
+Festival Mask: Buneary
+Festival Mask: Pachirisu
+Festival Mask: Happiny
+Festival Mask: Croagunk
+Festival Mask: Goomy
+Festival Mask: Bidoof
+Festival Mask: Sneasel
+Festival Mask: Mime Jr.
+Festival Mask: Eevee
+Headband: White lily
+Headband: Dark slate
+Headband: Crimson
+Headband: Daffodil
+Headband: Pine
+Headband: Sapphire
+Headband: Tangerine
+Headband: Indigo
+Headband: Amethyst
+Headband: Azalea
+Headband: Blue spruce
+Headband: Ocher
+Headband: Chartreuse
+Headband: Scarlet
+Headband: Teal
+Handkerchief: White lily
+Handkerchief: Dark slate
+Handkerchief: Crimson
+Handkerchief: Daffodil
+Handkerchief: Pine
+Handkerchief: Sapphire
+Handkerchief: Tangerine
+Handkerchief: Indigo
+Handkerchief: Amethyst
+Handkerchief: Azalea
+Handkerchief: Blue spruce
+Handkerchief: Ocher
+Handkerchief: Chartreuse
+Handkerchief: Scarlet
+Handkerchief: Teal
+Warm Cap: White lily
+Warm Cap: Dark slate
+Warm Cap: Crimson
+Warm Cap: Daffodil
+Warm Cap: Pine
+Warm Cap: Sapphire
+Warm Cap: Tangerine
+Warm Cap: Indigo
+Warm Cap: Amethyst
+Warm Cap: Azalea
+Warm Cap: Blue spruce
+Warm Cap: Ocher
+Warm Cap: Chartreuse
+Warm Cap: Scarlet
+Warm Cap: Teal
+Bowler Hat: White lily
+Bowler Hat: Dark slate
+Bowler Hat: Crimson
+Bowler Hat: Daffodil
+Bowler Hat: Pine
+Bowler Hat: Sapphire
+Bowler Hat: Tangerine
+Bowler Hat: Indigo
+Bowler Hat: Amethyst
+Bowler Hat: Azalea
+Bowler Hat: Blue spruce
+Bowler Hat: Ocher
+Bowler Hat: Chartreuse
+Bowler Hat: Scarlet
+Bowler Hat: Teal
+Ninja Mask: White lily
+Ninja Mask: Dark slate
+Ninja Mask: Crimson
+Ninja Mask: Daffodil
+Ninja Mask: Pine
+Ninja Mask: Sapphire
+Ninja Mask: Tangerine
+Ninja Mask: Indigo
+Ninja Mask: Amethyst
+Ninja Mask: Azalea
+Ninja Mask: Blue spruce
+Ninja Mask: Ocher
+Ninja Mask: Chartreuse
+Ninja Mask: Scarlet
+Ninja Mask: Teal
+Brimmed Hat: White lily
+Brimmed Hat: Dark slate
+Brimmed Hat: Crimson
+Brimmed Hat: Daffodil
+Brimmed Hat: Pine
+Brimmed Hat: Sapphire
+Brimmed Hat: Tangerine
+Brimmed Hat: Indigo
+Brimmed Hat: Amethyst
+Brimmed Hat: Azalea
+Brimmed Hat: Blue spruce
+Brimmed Hat: Ocher
+Brimmed Hat: Chartreuse
+Brimmed Hat: Scarlet
+Brimmed Hat: Teal
+Baneful Fox Mask: White lily
+Baneful Fox Mask: Shiny

@@ -498,11 +498,29 @@ internal static class Language {
   internal static class LA {
     internal static string Hats => Language.Hats;
 
-    internal static string[] HatsList {
+    internal static string[] HatsList(int gender) {
+      return gender switch {
+        0 => HatsListMale,
+        1 => HatsListFemale,
+        _ => []
+      };
+    }
+
+
+    internal static string[] HatsListMale {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh"      => GetStringList("la_hats_zh.txt"),
-          "en" or _ => GetStringList("la_hats_en.txt")
+          "zh"      => GetStringList("la_hats_male_zh.txt"),
+          "en" or _ => GetStringList("la_hats_male_en.txt")
+        };
+      }
+    }
+
+    internal static string[] HatsListFemale {
+      get {
+        return GameInfo.CurrentLanguage switch {
+          "zh"      => GetStringList("la_hats_female_zh.txt"),
+          "en" or _ => GetStringList("la_hats_female_en.txt")
         };
       }
     }

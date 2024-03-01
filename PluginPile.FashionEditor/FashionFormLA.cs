@@ -31,7 +31,7 @@ public partial class FashionFormLA : Form {
     GlassesBlock = SAV.Blocks.GetBlock(Constants.LA.FashionGlasses);
 
     Converter = new FashionBlockConverterLA();
-    HatSelector = new FashionPageSelector(Converter.FromBlockData(HatsBlock.Data), Language.LA.HatsList);
+    HatSelector = new FashionPageSelector(Converter.FromBlockData(HatsBlock.Data), Language.LA.HatsList(SAV.Gender));
     TopsSelector = new FashionPageSelector(Converter.FromBlockData(TopsBlock.Data), Language.LA.TopsList);
     BottomsSelector = new FashionPageSelector(Converter.FromBlockData(BottomsBlock.Data), Language.LA.BottomsList);
     UniformsSelector = new FashionPageSelector(Converter.FromBlockData(UniformsBlock.Data), Language.LA.UniformsList);

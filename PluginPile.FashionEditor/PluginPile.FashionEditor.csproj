@@ -38,8 +38,10 @@
     <EmbeddedResource Include="Resources\la_bottoms_zh.txt" />
     <EmbeddedResource Include="Resources\la_glasses_en.txt" />
     <EmbeddedResource Include="Resources\la_glasses_zh.txt" />
-    <EmbeddedResource Include="Resources\la_hats_en.txt" />
-    <EmbeddedResource Include="Resources\la_hats_zh.txt" />
+    <EmbeddedResource Include="Resources\la_hats_female_en.txt" />
+    <EmbeddedResource Include="Resources\la_hats_female_zh.txt" />
+    <EmbeddedResource Include="Resources\la_hats_male_en.txt" />
+    <EmbeddedResource Include="Resources\la_hats_male_zh.txt" />
     <EmbeddedResource Include="Resources\la_shoes_en.txt" />
     <EmbeddedResource Include="Resources\la_shoes_zh.txt" />
     <EmbeddedResource Include="Resources\la_tops_en.txt" />
