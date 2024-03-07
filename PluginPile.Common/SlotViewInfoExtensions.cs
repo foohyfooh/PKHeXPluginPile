@@ -11,8 +11,11 @@ public static class SlotViewInfoExtensions {
       case SlotOrigin.Party:
         return sav.GetPartySlotAtIndex(info.Slot.Slot);
       case SlotOrigin.Box:
-        int slotIndex = info.View.ViewIndex * sav.BoxSlotCount + info.Slot.Slot;
-        return sav.GetBoxSlotAtIndex(slotIndex);
+        if (info.View.ViewIndex >= 0) {
+          int slotIndex = info.View.ViewIndex * sav.BoxSlotCount + info.Slot.Slot;
+          return sav.GetBoxSlotAtIndex(slotIndex);
+        }
+        return sav.BlankPKM;
       default:
         return sav.BlankPKM;
     }
