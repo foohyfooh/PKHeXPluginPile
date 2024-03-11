@@ -22,7 +22,7 @@ public class BattleTeams : TeamsBase {
         .Skip(i * nameSize)
         .Take(nameSize)
         .ToArray();
-      string name = StringUtils.GetUnicodeString(nameBytes);
+      string name = StringConverter8.GetString(nameBytes);
       if (name.Length == 0) name = $"{Language.Team} {i + 1}";
       List<PKM> mons = indexes.GetTeam(sav, i);
       Teams.Add(new BattleTeam(name, mons));

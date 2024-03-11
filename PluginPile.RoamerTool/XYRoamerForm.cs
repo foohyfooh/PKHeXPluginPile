@@ -15,7 +15,7 @@ public partial class XYRoamerForm : Form {
     Roamer = SAV.Encount.Roamer;
 
     // Roamer Species is obtainable from roamer info but if player hasn't beaten the league then derive it from the starter choice
-    RoamerSpecies.SelectedIndex = Roamer.Species != 0 ? Roamer.Species - SpeciesOffset : sav.GetWork(StarterChoiceIndex);
+    RoamerSpecies.SelectedIndex = Roamer.Species != 0 ? Roamer.Species - SpeciesOffset : sav.EventWork.GetWork(StarterChoiceIndex);
     Encountered.Value = Roamer.TimesEncountered;
     State.SelectedIndex = (int)Roamer.RoamStatus;
   }

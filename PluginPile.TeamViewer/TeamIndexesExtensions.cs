@@ -7,7 +7,6 @@ public static class TeamIndexesExtensions {
   public static List<PKM> GetTeam(this ITeamIndexSet teamIndexes, SaveFile sav, int i) {
      int[] slots = teamIndexes switch {
       TeamIndexes8 indexes8 => indexes8.TeamSlots,
-      TeamIndexes9 indexes9 => indexes9.TeamSlots,
       _ => throw new ArgumentException("Invalid Team Indexes")
     };
 

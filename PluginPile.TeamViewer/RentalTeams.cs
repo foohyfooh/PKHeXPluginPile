@@ -51,12 +51,12 @@ public class RentalTeam8 : RentalTeam {
     if (!Enabled) return;
     byte[] teamBytes = allTeamBytes.Skip(Constants.SwSh.RentalStartingDataSize).ToArray();
     byte[] codeBytes = teamBytes.Take(Constants.SwSh.RentalTeamCodeSize).ToArray();
-    Code = StringUtils.GetUnicodeString(codeBytes);
+    Code = StringConverter8.GetString(codeBytes);
     Code = string.Join(" ", Code.Chunk(4).Select(c => new string(c)));
     byte[] teamNameBytes = teamBytes.Skip(Constants.SwSh.RentalTeamCodeSize).Take(Constants.SwSh.TeamNameSize).ToArray();
-    Name = StringUtils.GetUnicodeString(teamNameBytes);
+    Name = StringConverter8.GetString(teamNameBytes);
     byte[] teamCreatorBytes = teamBytes.Skip(Constants.SwSh.RentalTeamCodeSize + Constants.SwSh.TeamNameSize).Take(Constants.SwSh.RentalTeamCreatorNameSize).ToArray();
-    Creator = StringUtils.GetUnicodeString(teamCreatorBytes);
+    Creator = StringConverter8.GetString(teamCreatorBytes);
     byte[] pokemonBytes = allTeamBytes.Skip(Constants.SwSh.RentalTeamHeaderSize).ToArray();
     for (int i = 0; i < Constants.NumTeamMons; i++) {
       byte[] partialData = pokemonBytes
@@ -74,11 +74,11 @@ public class RentalTeam9 : RentalTeam {
   public RentalTeam9(byte[] codeBytes, byte[] teamBytes) : base() {
     Enabled = teamBytes[Constants.SV.RentalTeamEnabledLocation] != 0;
     if (!Enabled) return;
-    Code = StringUtils.GetUnicodeString(codeBytes);
+    Code = StringConverter8.GetString(codeBytes);
     byte[] creatorNameBytes = teamBytes.Take(Constants.SV.RentalTeamCreatorNameSize).ToArray();
-    Creator = StringUtils.GetUnicodeString(creatorNameBytes);
+    Creator = StringConverter8.GetString(creatorNameBytes);
     byte[] teamNameBytes = teamBytes.Skip(Constants.SV.RentalTeamCreatorNameSize).Take(Constants.SV.RentalTeamNameSize).ToArray();
-    Name = StringUtils.GetUnicodeString(teamNameBytes);
+    Name = StringConverter8.GetString(teamNameBytes);
     byte[] pokemonBytes = teamBytes.Skip(Constants.SV.RentalTeamHeaderSize).ToArray();
     for (int i = 0; i < Constants.NumTeamMons; i++) {
       byte[] partialData = pokemonBytes

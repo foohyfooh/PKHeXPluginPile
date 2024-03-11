@@ -12,7 +12,7 @@ public class RaidManager {
 
   public RaidManager(SAV8SWSH SAV) {
     EventTableConverter.GetCurrentEventTable(SAV.Blocks, _raidTables);
-    DenList = InitializeDenList(SAV.Blocks.Raid, SAV.Blocks.RaidArmor, SAV.Blocks.RaidCrown);
+    DenList = InitializeDenList(SAV.Blocks.RaidGalar, SAV.Blocks.RaidArmor, SAV.Blocks.RaidCrown);
 
     Game = SAV.Version;
     BadgeCount = Util.NumberOfSetBits(SAV.Badges);

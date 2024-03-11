@@ -15,7 +15,7 @@ public partial class PropcaseForm : Form {
     Musical = SAV.Musical;
     Proplist.SelectedIndex = 0;
     HasPropCheckbox.Checked = Musical.GetHasProp(Proplist.SelectedIndex);
-    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data);
+    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data[0x258..0x264].ToArray());
   }
 
   void ShowProp() {
@@ -32,7 +32,7 @@ public partial class PropcaseForm : Form {
 
   void Hasprop_checkboxCheckedChanged(object sender, EventArgs e) {
     Musical.SetHasProp(Proplist.SelectedIndex, HasPropCheckbox.Checked);
-    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data);
+    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data[0x258..0x264].ToArray());
   }
 
   void Exit_Click(object sender, EventArgs e) => Close();
@@ -54,13 +54,15 @@ public partial class PropcaseForm : Form {
 
   void UnlockAll_Click(object sender, EventArgs e) {
     Musical.UnlockAllMusicalProps();
+    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data[0x258..0x264].ToArray());
+    HasPropCheckbox.Checked = Musical.GetHasProp(Proplist.SelectedIndex);
     ShowProp();
   }
 
   void RemoveAll_Click(object sender, EventArgs e) {
     for (int i = 0; i < 100; i++)
       Musical.SetHasProp(i, false);
-    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data);
+    PropHex.Text = "0x" + BitConverter.ToString(Musical.Data[0x258..0x264].ToArray());
     HasPropCheckbox.Checked = Musical.GetHasProp(Proplist.SelectedIndex);
     ShowProp();
   }
