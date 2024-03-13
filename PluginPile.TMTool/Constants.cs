@@ -1,4 +1,4 @@
 namespace PluginPile.TMTool;
-internal class Constants {
+internal static class Constants {
   public const int TM_PROTECT = 7;
 }

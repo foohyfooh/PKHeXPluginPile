@@ -1,6 +1,6 @@
 using PKHeX.Core;
 
-namespace PluginPile.SVivillon; 
+namespace PluginPile.SVivillon;
 public partial class VivillonForm : Form {
 
   private readonly SAV9SV SAV;

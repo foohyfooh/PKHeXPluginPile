@@ -1,9 +1,9 @@
 using PKHeX.Core;
 
-namespace PluginPile.RaidImporter; 
+namespace PluginPile.RaidImporter;
 internal static class Language {
 
-  internal static string DialogName {
+  public static string DialogName {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Raid Importierer",
@@ -15,7 +15,7 @@ internal static class Language {
     }
   }
 
-  internal static string FilesMissing {
+  public static string FilesMissing {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Stelle sicher, dass alle Dateien in {0} sind.",
@@ -27,7 +27,7 @@ internal static class Language {
     }
   }
 
-  internal static string ImportRaid {
+  public static string ImportRaid {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Importiere Raid",
@@ -39,7 +39,7 @@ internal static class Language {
     }
   }
 
-  internal static string RaidImported {
+  public static string RaidImported {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Raid importiert",
@@ -51,7 +51,7 @@ internal static class Language {
     }
   }
 
-  internal static string ImportOutbreak {
+  public static string ImportOutbreak {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "导入大量出现",
@@ -61,7 +61,7 @@ internal static class Language {
     }
   }
 
-  internal static string OutbreakImported {
+  public static string OutbreakImported {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "大量出现已导入",
@@ -71,7 +71,7 @@ internal static class Language {
     }
   }
 
-  internal static string ImportRaidOrOutbreak {
+  public static string ImportRaidOrOutbreak {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "导入 团体战/大量出现",

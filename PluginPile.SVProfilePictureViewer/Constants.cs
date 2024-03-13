@@ -1,4 +1,4 @@
-namespace PluginPile.SVProfilePictureViewer; 
+namespace PluginPile.SVProfilePictureViewer;
 internal static class Constants {
   // Current Profile Picture
   public const uint CurrentProfilePictureImage  = 0x14C5A101;

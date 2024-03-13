@@ -1,9 +1,9 @@
 using PKHeX.Core;
 
-namespace PluginPile.Sorting; 
+namespace PluginPile.Sorting;
 internal static class Language {
 
-  internal static string Gen1Kanto {
+  public static string Gen1Kanto {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 1 Kanto",
@@ -14,7 +14,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen2Johto {
+  public static string Gen2Johto {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 2 Johto",
@@ -25,7 +25,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen3Hoenn {
+  public static string Gen3Hoenn {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 3 Hoenn",
@@ -36,7 +36,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen3Kanto {
+  public static string Gen3Kanto {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 3 Kanto",
@@ -47,7 +47,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen4Johto {
+  public static string Gen4Johto {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 4 Johto",
@@ -58,7 +58,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen4SinnohDiamondPearl {
+  public static string Gen4SinnohDiamondPearl {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 4 Sinnoh Diamant/Perl",
@@ -69,7 +69,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen4SinnohPlatinum {
+  public static string Gen4SinnohPlatinum {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 4 Sinnoh Platin",
@@ -80,7 +80,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen5UnovaBlack2White2 {
+  public static string Gen5UnovaBlack2White2 {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 5 Einall Schwarz 2/Weiß 2",
@@ -91,7 +91,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen5UnovaBlackWhite {
+  public static string Gen5UnovaBlackWhite {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 5 Einall Schwarz/Weiß",
@@ -102,7 +102,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen6Hoenn {
+  public static string Gen6Hoenn {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 6 Hoenn",
@@ -113,7 +113,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen6Kalos {
+  public static string Gen6Kalos {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 6 Kalos",
@@ -124,7 +124,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen6KalosAreas {
+  public static string Gen6KalosAreas {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 6 Kalos Gebiete",
@@ -135,7 +135,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen6KalosAreasCentralKalos {
+  public static string Gen6KalosAreasCentralKalos {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Zentral-Kalos",
@@ -146,7 +146,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen6KalosAreasCostalKalos {
+  public static string Gen6KalosAreasCostalKalos {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Kalos-Küste",
@@ -157,7 +157,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen6KalosAreasMountainKalos {
+  public static string Gen6KalosAreasMountainKalos {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Kalos-Gebirge",
@@ -168,7 +168,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen7AlolaIslandsAkala {
+  public static string Gen7AlolaIslandsAkala {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Akala",
@@ -179,7 +179,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen7AlolaIslandsMelemele {
+  public static string Gen7AlolaIslandsMelemele {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Mele-Mele",
@@ -190,7 +190,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen7AlolaIslandsPoni {
+  public static string Gen7AlolaIslandsPoni {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Poni",
@@ -201,7 +201,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen7AlolaIslandsUlaula {
+  public static string Gen7AlolaIslandsUlaula {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Ula-Ula",
@@ -212,7 +212,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen7AlolaSunMoon {
+  public static string Gen7AlolaSunMoon {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 7 Alola Sonne/Mond",
@@ -223,7 +223,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen7AlolaSunMoonIslands {
+  public static string Gen7AlolaSunMoonIslands {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 7 Alola Sonne/Mond Inseln",
@@ -234,7 +234,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen7AlolaUltraSunUltraMoon {
+  public static string Gen7AlolaUltraSunUltraMoon {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 7 Alola Ultra Sonne/Ultra Mond",
@@ -245,7 +245,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen7AlolaUltraSunUltraMoonIslands {
+  public static string Gen7AlolaUltraSunUltraMoonIslands {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 7 Alola Ultra Sonne/Ultra Mond Inseln",
@@ -256,7 +256,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen7Kanto {
+  public static string Gen7Kanto {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 7 Kanto",
@@ -267,7 +267,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8Galar {
+  public static string Gen8Galar {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 8 Kalar",
@@ -278,7 +278,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8GalarAreas {
+  public static string Gen8GalarAreas {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 8 Galar Gebiete",
@@ -289,7 +289,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8GalarAreasCrownTundra {
+  public static string Gen8GalarAreasCrownTundra {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Kronen-Schneelande",
@@ -300,7 +300,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8GalarAreasGalar {
+  public static string Gen8GalarAreasGalar {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Galar",
@@ -311,7 +311,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8GalarAreasIsleofArmor {
+  public static string Gen8GalarAreasIsleofArmor {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Rüstungsinsel",
@@ -322,7 +322,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8Hisui {
+  public static string Gen8Hisui {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 8 Hisui",
@@ -333,7 +333,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8HisuiAreas {
+  public static string Gen8HisuiAreas {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 8 Hisui Gebiete",
@@ -344,7 +344,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8HisuiAreasAlabasterIcelands {
+  public static string Gen8HisuiAreasAlabasterIcelands {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Weißes Frostland",
@@ -355,7 +355,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8HisuiAreasCobaltCoastlands {
+  public static string Gen8HisuiAreasCobaltCoastlands {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Kobalt-Küstenland",
@@ -366,7 +366,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8HisuiAreasCoronetHighlands {
+  public static string Gen8HisuiAreasCoronetHighlands {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Kraterberg-Hochland",
@@ -377,7 +377,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8HisuiAreasCrimsonMirelands {
+  public static string Gen8HisuiAreasCrimsonMirelands {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Rotes Sumpfland",
@@ -388,7 +388,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8HisuiAreasObsidianFieldlands {
+  public static string Gen8HisuiAreasObsidianFieldlands {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Obsidian-Grasland",
@@ -399,7 +399,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen8Sinnoh {
+  public static string Gen8Sinnoh {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 8 Sinnoh",
@@ -410,7 +410,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen9Paldea {
+  public static string Gen9Paldea {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Gen 9 Paldea",
@@ -421,7 +421,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen9PaldeaRegions {
+  public static string Gen9PaldeaRegions {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "Gen 9 帕底亚地区",
@@ -430,7 +430,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen9PaldeaRegionsPaldea {
+  public static string Gen9PaldeaRegionsPaldea {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Paldea",
@@ -441,7 +441,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen9PaldeaRegionsKitakami {
+  public static string Gen9PaldeaRegionsKitakami {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "北上乡",
@@ -450,7 +450,7 @@ internal static class Language {
     }
   }
 
-  internal static string Gen9PaldeaRegionsBlueberryAcademy {
+  public static string Gen9PaldeaRegionsBlueberryAcademy {
     get {
       return GameInfo.CurrentLanguage switch {
         "en" or _ => "Blueberry Academy"
@@ -458,7 +458,7 @@ internal static class Language {
     }
   }
 
-  internal static string MenuItemName {
+  public static string MenuItemName {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Sortiere Boxen nach",
@@ -469,7 +469,7 @@ internal static class Language {
     }
   }
 
-  internal static string NationalPokédex {
+  public static string NationalPokédex {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Nationaldex",
@@ -480,7 +480,7 @@ internal static class Language {
     }
   }
 
-  internal static string NationalPokédexRegionalForms {
+  public static string NationalPokédexRegionalForms {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Nationaldex (Regionale Formen mit Generation)",
@@ -491,7 +491,7 @@ internal static class Language {
     }
   }
 
-  internal static string RegionalPokédexTemplate {
+  public static string RegionalPokédexTemplate {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "{0} Regionaldex",
@@ -502,7 +502,7 @@ internal static class Language {
     }
   }
 
-  internal static string Settings {
+  public static string Settings {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Einstellungen",
@@ -513,23 +513,23 @@ internal static class Language {
     }
   }
 
-  internal static string InsertSlot {
+  public static string InsertSlot {
     get {
       return GameInfo.CurrentLanguage switch {
-        "de" => "Slot eingeben",
-        "zh" => "插入插件",
-        "it" => "Inserisci Slot",
+        "de"      => "Slot eingeben",
+        "zh"      => "插入插件",
+        "it"      => "Inserisci Slot",
         "en" or _ => "Insert Slot"
       };
     }
   }
 
-  internal static string NoEmptySlotsError {
+  public static string NoEmptySlotsError {
     get {
       return GameInfo.CurrentLanguage switch {
-        "de" => "Es gibt keine leeren Slots nach Box {0} Slot {1}",
-        "zh" => "盒子 {0} 槽位 {1} 之后没有空槽位",
-        "it" => "Non ci sono slot vuoti dopo Box {0} Slot {1}",
+        "de"      => "Es gibt keine leeren Slots nach Box {0} Slot {1}",
+        "zh"      => "盒子 {0} 槽位 {1} 之后没有空槽位",
+        "it"      => "Non ci sono slot vuoti dopo Box {0} Slot {1}",
         "en" or _ => "There are no empty slots after Box {0} Slot {1}"
       };
     }

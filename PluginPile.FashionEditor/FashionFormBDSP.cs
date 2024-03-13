@@ -1,6 +1,6 @@
 using PKHeX.Core;
 
-namespace PluginPile.FashionEditor; 
+namespace PluginPile.FashionEditor;
 public partial class FashionFormBDSP : Form {
 
   private readonly SAV8BS SAV;

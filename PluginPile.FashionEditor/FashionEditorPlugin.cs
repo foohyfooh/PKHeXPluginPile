@@ -1,7 +1,7 @@
 using PKHeX.Core;
 using PluginPile.Common;
 
-namespace PluginPile.FashionEditor; 
+namespace PluginPile.FashionEditor;
 public class FashionEditorPlugin : PluginBase {
   public override string Name => nameof(FashionEditorPlugin);
   private readonly ToolStripMenuItem FashionEditorButton;

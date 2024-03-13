@@ -1,6 +1,6 @@
 using PluginPile.Common;
 
-namespace PluginPile.RaidImporter; 
+namespace PluginPile.RaidImporter;
 internal static class Constants {
 
   internal static class SwSh {

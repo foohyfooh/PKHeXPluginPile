@@ -1,13 +1,13 @@
 using PKHeX.Core;
 
-namespace PluginPile.SVivillon; 
+namespace PluginPile.SVivillon;
 internal static class Language {
 
-  internal static string Cancel => Common.Language.Cancel;
+  public static string Cancel => Common.Language.Cancel;
 
-  internal static string FormTitle => MenuItemName;
+  public static string FormTitle => MenuItemName;
 
-  internal static string MenuItemName {
+  public static string MenuItemName {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Vivillon Form Wechsler",
@@ -18,9 +18,9 @@ internal static class Language {
     }
   }
 
-  internal static string Save => Common.Language.Save;
+  public static string Save => Common.Language.Save;
 
-  internal static string VivillonForms {
+  public static string VivillonForms {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Vivillon Formen",
@@ -31,7 +31,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm00Name {
+  public static string VivillonForm00Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Frost",
@@ -42,7 +42,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm01Name {
+  public static string VivillonForm01Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Schneefeld",
@@ -53,7 +53,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm02Name {
+  public static string VivillonForm02Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Flocken",
@@ -64,7 +64,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm03Name {
+  public static string VivillonForm03Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Kontinental",
@@ -75,7 +75,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm04Name {
+  public static string VivillonForm04Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Ziergarten",
@@ -86,7 +86,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm05Name {
+  public static string VivillonForm05Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Prunk",
@@ -97,7 +97,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm06Name {
+  public static string VivillonForm06Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Blumenmeer",
@@ -108,7 +108,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm07Name {
+  public static string VivillonForm07Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Innovation",
@@ -119,7 +119,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm08Name {
+  public static string VivillonForm08Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Aquamarin",
@@ -130,7 +130,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm09Name {
+  public static string VivillonForm09Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Archipel",
@@ -141,7 +141,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm10Name {
+  public static string VivillonForm10Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Dürre",
@@ -152,7 +152,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm11Name {
+  public static string VivillonForm11Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Sand",
@@ -163,7 +163,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm12Name {
+  public static string VivillonForm12Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Flussdelta",
@@ -174,7 +174,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm13Name {
+  public static string VivillonForm13Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Monsun",
@@ -185,7 +185,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm14Name {
+  public static string VivillonForm14Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Savanne",
@@ -196,7 +196,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm15Name {
+  public static string VivillonForm15Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Sonne",
@@ -207,7 +207,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm16Name {
+  public static string VivillonForm16Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Ozean",
@@ -218,7 +218,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm17Name {
+  public static string VivillonForm17Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Dschungel",
@@ -229,7 +229,7 @@ internal static class Language {
     }
   }
 
-  internal static string VivillonForm18Name {
+  public static string VivillonForm18Name {
     get {
       return GameInfo.CurrentLanguage switch {
         "de"      => "Fantasie",
@@ -239,6 +239,5 @@ internal static class Language {
       };
     }
   }
-
 
 }

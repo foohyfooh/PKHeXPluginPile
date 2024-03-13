@@ -1,11 +1,11 @@
 using PKHeX.Core;
 
-namespace PluginPile.FashionEditor; 
+namespace PluginPile.FashionEditor;
 internal static class Language {
 
-  internal static string Cancel => Common.Language.Cancel;
+  public static string Cancel => Common.Language.Cancel;
 
-  internal static string Item {
+  public static string Item {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "样式",
@@ -14,7 +14,7 @@ internal static class Language {
     }
   }
 
-  internal static string New {
+  public static string New {
     get {
       return GameInfo.CurrentLanguage switch {
         "en" or _ => "New"
@@ -22,7 +22,7 @@ internal static class Language {
     }
   }
 
-  internal static string Title {
+  public static string Title {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "时装插件",
@@ -31,9 +31,9 @@ internal static class Language {
     }
   }
 
-  internal static string Save => Common.Language.Save;
+  public static string Save => Common.Language.Save;
 
-  internal static string Unlocked {
+  public static string Unlocked {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "解锁",
@@ -42,12 +42,12 @@ internal static class Language {
     }
   }
 
-  internal static string Unused => Common.Language.Unused;
+  public static string Unused => Common.Language.Unused;
 
   private static string[] GetStringList(string filename) =>
     Common.Language.GetStringList(typeof(FashionEditorPlugin).Assembly, nameof(FashionEditorPlugin), filename);
 
-  #region Common Language 
+  #region Common Language
   private static string Bottoms {
     get {
       return GameInfo.CurrentLanguage switch {
@@ -95,9 +95,9 @@ internal static class Language {
   #endregion
 
   internal static class SwSh {
-    internal static string Tops => Language.Tops;
-    
-    internal static string[] TopsList(int gender) {
+    public static string Tops => Language.Tops;
+
+    public static string[] TopsList(int gender) {
       return gender switch {
         0 => TopsListMale,
         1 => TopsListFemale,
@@ -105,7 +105,7 @@ internal static class Language {
       };
     }
 
-    internal static string[] TopsListMale {
+    public static string[] TopsListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_tops_male_zh.txt"),
@@ -114,7 +114,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] TopsListFemale {
+    public static string[] TopsListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_tops_female_zh.txt"),
@@ -123,7 +123,7 @@ internal static class Language {
       }
     }
 
-    internal static string Jackets {
+    public static string Jackets {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "外套",
@@ -132,7 +132,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] JacketsList(int gender) {
+    public static string[] JacketsList(int gender) {
       return gender switch {
         0 => JacketsListMale,
         1 => JacketsListFemale,
@@ -140,7 +140,7 @@ internal static class Language {
       };
     }
 
-    internal static string[] JacketsListMale {
+    public static string[] JacketsListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_jackets_male_zh.txt"),
@@ -149,7 +149,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] JacketsListFemale {
+    public static string[] JacketsListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_jackets_female_zh.txt"),
@@ -158,9 +158,9 @@ internal static class Language {
       }
     }
 
-    internal static string Bottoms => Language.Bottoms;
+    public static string Bottoms => Language.Bottoms;
 
-    internal static string[] BottomsList(int gender) {
+    public static string[] BottomsList(int gender) {
       return gender switch {
         0 => BottomsListMale,
         1 => BottomsListFemale,
@@ -168,7 +168,7 @@ internal static class Language {
       };
     }
 
-    internal static string[] BottomsListMale {
+    public static string[] BottomsListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_bottoms_male_zh.txt"),
@@ -177,7 +177,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] BottomsListFemale {
+    public static string[] BottomsListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_bottoms_female_zh.txt"),
@@ -186,7 +186,7 @@ internal static class Language {
       }
     }
 
-    internal static string Dresses {
+    public static string Dresses {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "时装",
@@ -195,7 +195,7 @@ internal static class Language {
       }
     }
 
-    internal static string Socks {
+    public static string Socks {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "袜子",
@@ -204,7 +204,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] SocksList(int gender) {
+    public static string[] SocksList(int gender) {
       return gender switch {
         0 => SocksListMale,
         1 => SocksListFemale,
@@ -212,7 +212,7 @@ internal static class Language {
       };
     }
 
-    internal static string[] SocksListMale {
+    public static string[] SocksListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_socks_male_zh.txt"),
@@ -221,7 +221,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] SocksListFemale {
+    public static string[] SocksListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_socks_female_zh.txt"),
@@ -230,9 +230,9 @@ internal static class Language {
       }
     }
 
-    internal static string Shoes => Language.Shoes;
+    public static string Shoes => Language.Shoes;
 
-    internal static string[] ShoesList(int gender) {
+    public static string[] ShoesList(int gender) {
       return gender switch {
         0 => ShoesListMale,
         1 => ShoesListFemale,
@@ -240,7 +240,7 @@ internal static class Language {
       };
     }
 
-    internal static string[] ShoesListMale {
+    public static string[] ShoesListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_shoes_male_zh.txt"),
@@ -249,7 +249,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] ShoesListFemale {
+    public static string[] ShoesListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_shoes_female_zh.txt"),
@@ -258,7 +258,7 @@ internal static class Language {
       }
     }
 
-    internal static string Bags {
+    public static string Bags {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "包包",
@@ -267,7 +267,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] BagsList(int gender) {
+    public static string[] BagsList(int gender) {
       return gender switch {
         0 => BagsListMale,
         1 => BagsListFemale,
@@ -275,7 +275,7 @@ internal static class Language {
       };
     }
 
-    internal static string[] BagsListMale {
+    public static string[] BagsListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_bags_male_zh.txt"),
@@ -284,7 +284,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] BagsListFemale {
+    public static string[] BagsListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_bags_female_zh.txt"),
@@ -293,9 +293,9 @@ internal static class Language {
       }
     }
 
-    internal static string Hats => Language.Hats;
+    public static string Hats => Language.Hats;
 
-    internal static string[] HatsList(int gender) {
+    public static string[] HatsList(int gender) {
       return gender switch {
         0 => HatsListMale,
         1 => HatsListFemale,
@@ -303,7 +303,7 @@ internal static class Language {
       };
     }
 
-    internal static string[] HatsListMale {
+    public static string[] HatsListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_hats_male_zh.txt"),
@@ -312,7 +312,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] HatsListFemale {
+    public static string[] HatsListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_hats_female_zh.txt"),
@@ -321,9 +321,9 @@ internal static class Language {
       }
     }
 
-    internal static string Glasses => Language.Glasses;
+    public static string Glasses => Language.Glasses;
 
-    internal static string[] GlassesList(int gender) {
+    public static string[] GlassesList(int gender) {
       return gender switch {
         0 => GlassesListMale,
         1 => GlassesListFemale,
@@ -331,7 +331,7 @@ internal static class Language {
       };
     }
 
-    internal static string[] GlassesListMale {
+    public static string[] GlassesListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_glasses_male_zh.txt"),
@@ -340,7 +340,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] GlassesListFemale {
+    public static string[] GlassesListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_glasses_female_zh.txt"),
@@ -349,7 +349,7 @@ internal static class Language {
       }
     }
 
-    internal static string Gloves {
+    public static string Gloves {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "手套",
@@ -358,7 +358,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] GlovesList(int gender) {
+    public static string[] GlovesList(int gender) {
       return gender switch {
         0 => GlovesListMale,
         1 => GlovesListFemale,
@@ -366,7 +366,7 @@ internal static class Language {
       };
     }
 
-    internal static string[] GlovesListMale {
+    public static string[] GlovesListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_gloves_male_zh.txt"),
@@ -375,7 +375,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] GlovesListFemale {
+    public static string[] GlovesListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("swsh_gloves_female_zh.txt"),
@@ -386,7 +386,7 @@ internal static class Language {
   }
 
   internal static class BDSP {
-    internal static string FashionEveryday {
+    public static string FashionEveryday {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "平常",
@@ -395,7 +395,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionPikachu {
+    public static string FashionPikachu {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "皮卡丘卫衣",
@@ -404,7 +404,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionPlatinum {
+    public static string FashionPlatinum {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "白金",
@@ -413,7 +413,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionOveralls {
+    public static string FashionOveralls {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "工装服",
@@ -422,7 +422,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionEevee {
+    public static string FashionEevee {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "伊布刺绣夹克",
@@ -431,7 +431,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionGengar {
+    public static string FashionGengar {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "耿鬼刺绣夹克",
@@ -440,7 +440,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionCyber {
+    public static string FashionCyber {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "赛博",
@@ -449,7 +449,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionSummer {
+    public static string FashionSummer {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "夏季",
@@ -458,7 +458,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionWinter {
+    public static string FashionWinter {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "冬季",
@@ -467,7 +467,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionSpring {
+    public static string FashionSpring {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "春季",
@@ -476,7 +476,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionCasual {
+    public static string FashionCasual {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "运动",
@@ -485,7 +485,7 @@ internal static class Language {
       }
     }
 
-    internal static string FashionLeather {
+    public static string FashionLeather {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "皮夹克",
@@ -496,9 +496,9 @@ internal static class Language {
   }
 
   internal static class LA {
-    internal static string Hats => Language.Hats;
+    public static string Hats => Language.Hats;
 
-    internal static string[] HatsList(int gender) {
+    public static string[] HatsList(int gender) {
       return gender switch {
         0 => HatsListMale,
         1 => HatsListFemale,
@@ -507,7 +507,7 @@ internal static class Language {
     }
 
 
-    internal static string[] HatsListMale {
+    public static string[] HatsListMale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("la_hats_male_zh.txt"),
@@ -516,7 +516,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] HatsListFemale {
+    public static string[] HatsListFemale {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("la_hats_female_zh.txt"),
@@ -525,9 +525,9 @@ internal static class Language {
       }
     }
 
-    internal static string Tops => Language.Tops;
+    public static string Tops => Language.Tops;
 
-    internal static string[] TopsList {
+    public static string[] TopsList {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("la_tops_zh.txt"),
@@ -536,9 +536,9 @@ internal static class Language {
       }
     }
 
-    internal static string Bottoms => Language.Bottoms;
+    public static string Bottoms => Language.Bottoms;
 
-    internal static string[] BottomsList {
+    public static string[] BottomsList {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("la_bottoms_zh.txt"),
@@ -547,7 +547,7 @@ internal static class Language {
       }
     }
 
-    internal static string Uniforms {
+    public static string Uniforms {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => "套装",
@@ -556,7 +556,7 @@ internal static class Language {
       }
     }
 
-    internal static string[] UniformsList {
+    public static string[] UniformsList {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("la_uniforms_zh.txt"),
@@ -565,9 +565,9 @@ internal static class Language {
       }
     }
 
-    internal static string Shoes => Language.Shoes;
+    public static string Shoes => Language.Shoes;
 
-    internal static string[] ShoesList {
+    public static string[] ShoesList {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("la_shoes_zh.txt"),
@@ -576,9 +576,9 @@ internal static class Language {
       }
     }
 
-    internal static string Glasses => Language.Glasses;
+    public static string Glasses => Language.Glasses;
 
-    internal static string[] GlassesList {
+    public static string[] GlassesList {
       get {
         return GameInfo.CurrentLanguage switch {
           "zh"      => GetStringList("la_glasses_zh.txt"),

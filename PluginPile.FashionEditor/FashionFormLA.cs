@@ -1,6 +1,6 @@
 using PKHeX.Core;
 
-namespace PluginPile.FashionEditor; 
+namespace PluginPile.FashionEditor;
 public partial class FashionFormLA : Form {
 
   private readonly SAV8LA SAV;

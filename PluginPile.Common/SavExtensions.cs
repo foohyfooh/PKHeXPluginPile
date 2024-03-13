@@ -1,6 +1,6 @@
 using PKHeX.Core;
 
-namespace PluginPile.Common; 
+namespace PluginPile.Common;
 public static class SavExtensions {
 
   public static string GetBoxName(this SaveFile sav, int index) {

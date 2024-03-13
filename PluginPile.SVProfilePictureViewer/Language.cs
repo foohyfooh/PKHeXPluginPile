@@ -1,8 +1,8 @@
 using PKHeX.Core;
 
-namespace PluginPile.SVProfilePictureViewer; 
+namespace PluginPile.SVProfilePictureViewer;
 internal static class Language {
-  internal static string CurrentProfilePicture {
+  public static string CurrentProfilePicture {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "当前个人简介照片",
@@ -12,7 +12,7 @@ internal static class Language {
     }
   }
 
-  internal static string CurrentProfileIcon {
+  public static string CurrentProfileIcon {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "当前训练家头像",
@@ -22,7 +22,7 @@ internal static class Language {
     }
   }
 
-  internal static string InitialProfilePicture {
+  public static string InitialProfilePicture {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "初始个人简介照片",
@@ -32,7 +32,7 @@ internal static class Language {
     }
   }
 
-  internal static string InitialProfileIcon {
+  public static string InitialProfileIcon {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "初始训练家头像",
@@ -42,7 +42,7 @@ internal static class Language {
     }
   }
 
-  internal static string PluginName {
+  public static string PluginName {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "个人简介照片查看器",
@@ -52,7 +52,7 @@ internal static class Language {
     }
   }
 
-  internal static string Export {
+  public static string Export {
     get {
       return GameInfo.CurrentLanguage switch {
         "zh"      => "导出",

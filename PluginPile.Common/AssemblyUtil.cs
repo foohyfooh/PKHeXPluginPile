@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace PluginPile.Common; 
+namespace PluginPile.Common;
 public static class AssemblyUtil {
 
   public static Assembly GetAssemblyByName(string name) {

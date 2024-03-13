@@ -6,7 +6,7 @@ internal static class Language {
   public static string MenuName {
     get {
       return GameInfo.CurrentLanguage switch {
-        "zh" => "BW工具",
+        "zh"      => "BW工具",
         "en" or _ => "BW Tool"
       };
     }
@@ -15,7 +15,7 @@ internal static class Language {
   private static string None {
     get {
       return GameInfo.CurrentLanguage switch {
-        "zh" => "无",
+        "zh"      => "无",
         "en" or _ => "None"
       };
     }
@@ -23,7 +23,7 @@ internal static class Language {
 
   public static string[] PkmList => GameInfo.Strings.specieslist[..(int)Species.Chespin].Select((string p, int index) => index == 0 ? None : $"{index:000} - {p}").ToArray();
 
-  public static readonly string[] MoveList = new string[] {
+  public static readonly string[] MoveList = [
     "----------------------",
     "Pound",
     "Karate Chop",
@@ -584,9 +584,9 @@ internal static class Language {
     "V-create",
     "Fusion Flare",
     "Fusion Bolt"
-  };
+  ];
 
-  public static readonly string[] ItemList = new string[] {
+  public static readonly string[] ItemList = [
     "None",
     "Master Ball",
     "Ultra Ball",
@@ -1226,9 +1226,9 @@ internal static class Language {
     "Dropped Item (BW2 exclusive)",
     "Dropped Item (BW2 exclusive)",
     "Reveal Glass (BW2 exclusive)"
-  };
+  ];
 
-  public static readonly string[] DRPkmList = new string[] {
+  public static readonly string[] DRPkmList = [
     "NONE",
     "079 - Slowpoke",
     "120 - Staryu",
@@ -1248,9 +1248,9 @@ internal static class Language {
     "479 - Rotom",
     "517 - Munna",
     "561 - Sigilyph"
-  };
+  ];
 
-  public static readonly string[] DRItemList = new string[] {
+  public static readonly string[] DRItemList = [
     "NONE",
     "Red Shard",
     "Blue Shard",
@@ -1275,6 +1275,6 @@ internal static class Language {
     "Sacred Ash",
     "Rare Candy",
     "King's Rock"
-  };
+  ];
 
 }

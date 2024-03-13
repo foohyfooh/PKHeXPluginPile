@@ -57,5 +57,5 @@ public partial class PictureViewerForm : Form {
     pictureBox.Image = DrawingUtil.GetBitmap(rgbaBytes, width, height);
     pictureBox.Size = pictureBox.Image.Size / 4;
   }
-  
+
 }

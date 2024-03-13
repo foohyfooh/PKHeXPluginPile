@@ -1,7 +1,7 @@
 using PKHeX.Core;
 using PluginPile.Common;
 
-namespace PluginPile.RaidImporter; 
+namespace PluginPile.RaidImporter;
 public class RaidImportPlugin : PluginBase {
   public override string Name => nameof(RaidImportPlugin);
   private readonly ToolStripMenuItem ImportRaidOrOutbreakButton;
@@ -71,7 +71,7 @@ public class RaidImportPlugin : PluginBase {
       bool didImport = Import(outbtreakPath, sav, blocksLists, Language.OutbreakImported);
       if (didImport) {
         sav.Blocks.GetBlock(Constants.SV.OutbreakEnabled).ChangeBooleanType(SCTypeCode.Bool2);
-      } 
+      }
     }
   }
 

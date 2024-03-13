@@ -1,4 +1,4 @@
-namespace PluginPile.Sorting; 
+namespace PluginPile.Sorting;
 public record class PositionForms(int Position, HashSet<int> Forms) {
   public static implicit operator PositionForms((int, HashSet<int>) t) => new PositionForms(t.Item1, t.Item2);
   public static implicit operator PositionForms((int, int) t) => (t.Item1, new HashSet<int>() { t.Item2 });

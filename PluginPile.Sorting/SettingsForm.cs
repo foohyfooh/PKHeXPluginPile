@@ -1,4 +1,4 @@
-namespace PluginPile.Sorting; 
+namespace PluginPile.Sorting;
 public partial class SettingsForm : Form {
   private readonly SortingPlugin Plugin;
 

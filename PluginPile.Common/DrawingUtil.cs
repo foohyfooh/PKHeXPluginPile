@@ -13,7 +13,7 @@ public class DrawingUtil {
     MethodInfo getSpriteMethod = SpriteUtilType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
       .Single(m => m.Name == "GetSprite" && m.GetParameters().Length == 1);
     return (Image)getSpriteMethod.Invoke(null, [pkm])!;
-  }  
+  }
 
   public static Image GetSprite(ushort species, byte form, byte gender, uint formarg, int item, bool isegg, Shiny shiny, EntityContext context = EntityContext.None) {
     MethodInfo getSpriteMethod = SpriteUtilType.GetMethods(BindingFlags.Public | BindingFlags.Static)

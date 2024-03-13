@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Configuration;
 
-namespace PluginPile.Sorting; 
+namespace PluginPile.Sorting;
 
 internal sealed partial class PluginSettings : ApplicationSettingsBase {
 

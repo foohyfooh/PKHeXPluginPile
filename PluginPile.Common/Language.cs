@@ -1,7 +1,7 @@
 using PKHeX.Core;
 using System.Reflection;
 
-namespace PluginPile.Common; 
+namespace PluginPile.Common;
 public static class Language {
 
   public static string Cancel {

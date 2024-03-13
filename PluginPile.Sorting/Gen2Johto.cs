@@ -1,6 +1,6 @@
 using PKHeX.Core;
 
-namespace PluginPile.Sorting; 
+namespace PluginPile.Sorting;
 internal class Gen2Johto : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> NewPokedex = new Dictionary<Species, PositionForms>() {

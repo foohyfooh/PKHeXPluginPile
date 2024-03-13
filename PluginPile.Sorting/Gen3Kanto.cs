@@ -1,6 +1,6 @@
 using PKHeX.Core;
 
-namespace PluginPile.Sorting; 
+namespace PluginPile.Sorting;
 internal class Gen3Kanto : SortingBase {
 
   public static Func<PKM, IComparable>[] GetSortFunctions() {

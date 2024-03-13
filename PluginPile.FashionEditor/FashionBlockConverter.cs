@@ -1,6 +1,6 @@
 using PKHeX.Core;
 
-namespace PluginPile.FashionEditor; 
+namespace PluginPile.FashionEditor;
 
 public interface IFashionBlockConverter {
   public bool[] FromBlockData(byte[] data);

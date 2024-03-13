@@ -38,9 +38,9 @@ namespace PluginPile.FashionEditor {
       FashionCasual = new CheckBox();
       FashionLeather = new CheckBox();
       SuspendLayout();
-      // 
+      //
       // Cancel
-      // 
+      //
       Cancel.Location = new Point(12, 181);
       Cancel.Name = "Cancel";
       Cancel.Size = new Size(75, 23);
@@ -48,9 +48,9 @@ namespace PluginPile.FashionEditor {
       Cancel.Text = "Cancel";
       Cancel.UseVisualStyleBackColor = true;
       Cancel.Click += CancelButton_Click;
-      // 
+      //
       // SaveButton
-      // 
+      //
       SaveButton.Location = new Point(120, 181);
       SaveButton.Name = "SaveButton";
       SaveButton.Size = new Size(75, 23);
@@ -58,9 +58,9 @@ namespace PluginPile.FashionEditor {
       SaveButton.Text = "Save";
       SaveButton.UseVisualStyleBackColor = true;
       SaveButton.Click += SaveButton_Click;
-      // 
+      //
       // FashionEveryday
-      // 
+      //
       FashionEveryday.AutoSize = true;
       FashionEveryday.Checked = true;
       FashionEveryday.CheckState = CheckState.Checked;
@@ -71,9 +71,9 @@ namespace PluginPile.FashionEditor {
       FashionEveryday.TabIndex = 2;
       FashionEveryday.Text = "Everyday";
       FashionEveryday.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionPikachu
-      // 
+      //
       FashionPikachu.AutoSize = true;
       FashionPikachu.Location = new Point(120, 12);
       FashionPikachu.Name = "FashionPikachu";
@@ -81,9 +81,9 @@ namespace PluginPile.FashionEditor {
       FashionPikachu.TabIndex = 3;
       FashionPikachu.Text = "Pikachu";
       FashionPikachu.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionPlatinum
-      // 
+      //
       FashionPlatinum.AutoSize = true;
       FashionPlatinum.Location = new Point(12, 37);
       FashionPlatinum.Name = "FashionPlatinum";
@@ -91,9 +91,9 @@ namespace PluginPile.FashionEditor {
       FashionPlatinum.TabIndex = 4;
       FashionPlatinum.Text = "Platinum";
       FashionPlatinum.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionOveralls
-      // 
+      //
       FashionOveralls.AutoSize = true;
       FashionOveralls.Location = new Point(120, 37);
       FashionOveralls.Name = "FashionOveralls";
@@ -101,9 +101,9 @@ namespace PluginPile.FashionEditor {
       FashionOveralls.TabIndex = 5;
       FashionOveralls.Text = "Overalls";
       FashionOveralls.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionEevee
-      // 
+      //
       FashionEevee.AutoSize = true;
       FashionEevee.Location = new Point(12, 62);
       FashionEevee.Name = "FashionEevee";
@@ -111,9 +111,9 @@ namespace PluginPile.FashionEditor {
       FashionEevee.TabIndex = 6;
       FashionEevee.Text = "Eevee";
       FashionEevee.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionGengar
-      // 
+      //
       FashionGengar.AutoSize = true;
       FashionGengar.Location = new Point(120, 62);
       FashionGengar.Name = "FashionGengar";
@@ -121,9 +121,9 @@ namespace PluginPile.FashionEditor {
       FashionGengar.TabIndex = 7;
       FashionGengar.Text = "Gengar";
       FashionGengar.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionCyber
-      // 
+      //
       FashionCyber.AutoSize = true;
       FashionCyber.Location = new Point(12, 87);
       FashionCyber.Name = "FashionCyber";
@@ -131,9 +131,9 @@ namespace PluginPile.FashionEditor {
       FashionCyber.TabIndex = 8;
       FashionCyber.Text = "Cyber";
       FashionCyber.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionSummer
-      // 
+      //
       FashionSummer.AutoSize = true;
       FashionSummer.Location = new Point(120, 87);
       FashionSummer.Name = "FashionSummer";
@@ -141,9 +141,9 @@ namespace PluginPile.FashionEditor {
       FashionSummer.TabIndex = 9;
       FashionSummer.Text = "Summer";
       FashionSummer.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionWinter
-      // 
+      //
       FashionWinter.AutoSize = true;
       FashionWinter.Location = new Point(12, 112);
       FashionWinter.Name = "FashionWinter";
@@ -151,9 +151,9 @@ namespace PluginPile.FashionEditor {
       FashionWinter.TabIndex = 10;
       FashionWinter.Text = "Winter";
       FashionWinter.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionSpring
-      // 
+      //
       FashionSpring.AutoSize = true;
       FashionSpring.Location = new Point(120, 112);
       FashionSpring.Name = "FashionSpring";
@@ -161,9 +161,9 @@ namespace PluginPile.FashionEditor {
       FashionSpring.TabIndex = 11;
       FashionSpring.Text = "Spring";
       FashionSpring.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionCasual
-      // 
+      //
       FashionCasual.AutoSize = true;
       FashionCasual.Location = new Point(12, 137);
       FashionCasual.Name = "FashionCasual";
@@ -171,9 +171,9 @@ namespace PluginPile.FashionEditor {
       FashionCasual.TabIndex = 12;
       FashionCasual.Text = "Casual";
       FashionCasual.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionLeather
-      // 
+      //
       FashionLeather.AutoSize = true;
       FashionLeather.Location = new Point(120, 137);
       FashionLeather.Name = "FashionLeather";
@@ -181,9 +181,9 @@ namespace PluginPile.FashionEditor {
       FashionLeather.TabIndex = 13;
       FashionLeather.Text = "Leather";
       FashionLeather.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionFormBDSP
-      // 
+      //
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(234, 216);

@@ -1,4 +1,4 @@
-namespace PluginPile.Common; 
+namespace PluginPile.Common;
 public static class FormExtensions {
 
   public static DialogResult ShowDialogInParent(this Form form, Form parent) {

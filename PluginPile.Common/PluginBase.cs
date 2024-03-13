@@ -1,7 +1,7 @@
 using PKHeX.Core;
 using System.Reflection;
 
-namespace PluginPile.Common; 
+namespace PluginPile.Common;
 public abstract class PluginBase : IPlugin {
   public abstract string Name { get; }
   public virtual int Priority => 1; // Loading order, lowest is first.

@@ -126,7 +126,7 @@ public class SpecialFinderPlugin : PluginBase {
       }
     } else {
       MessageBox.Show(Language.NoResults, Language.WurmpleEvolutionFinder);
-    }      
+    }
   }
 
   public override void NotifyDisplayLanguageChanged(string language) {

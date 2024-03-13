@@ -37,9 +37,9 @@ namespace PluginPile.FashionEditor {
       GlovesPage = new TabPage();
       TabControl.SuspendLayout();
       SuspendLayout();
-      // 
+      //
       // Cancel
-      // 
+      //
       Cancel.Location = new Point(12, 106);
       Cancel.Name = "Cancel";
       Cancel.Size = new Size(75, 23);
@@ -47,9 +47,9 @@ namespace PluginPile.FashionEditor {
       Cancel.Text = "Cancel";
       Cancel.UseVisualStyleBackColor = true;
       Cancel.Click += CancelButton_Click;
-      // 
+      //
       // SaveButton
-      // 
+      //
       SaveButton.Location = new Point(93, 106);
       SaveButton.Name = "SaveButton";
       SaveButton.Size = new Size(75, 23);
@@ -57,9 +57,9 @@ namespace PluginPile.FashionEditor {
       SaveButton.Text = "Save";
       SaveButton.UseVisualStyleBackColor = true;
       SaveButton.Click += SaveButton_Click;
-      // 
+      //
       // TabControl
-      // 
+      //
       TabControl.Controls.Add(TopsPage);
       TabControl.Controls.Add(JacketsPage);
       TabControl.Controls.Add(BottomsPage);
@@ -74,9 +74,9 @@ namespace PluginPile.FashionEditor {
       TabControl.SelectedIndex = 0;
       TabControl.Size = new Size(517, 100);
       TabControl.TabIndex = 2;
-      // 
+      //
       // TopsPage
-      // 
+      //
       TopsPage.Location = new Point(4, 24);
       TopsPage.Name = "TopsPage";
       TopsPage.Padding = new Padding(3);
@@ -84,9 +84,9 @@ namespace PluginPile.FashionEditor {
       TopsPage.TabIndex = 0;
       TopsPage.Text = "Tops";
       TopsPage.UseVisualStyleBackColor = true;
-      // 
+      //
       // JacketsPage
-      // 
+      //
       JacketsPage.Location = new Point(4, 24);
       JacketsPage.Name = "JacketsPage";
       JacketsPage.Padding = new Padding(3);
@@ -94,63 +94,63 @@ namespace PluginPile.FashionEditor {
       JacketsPage.TabIndex = 1;
       JacketsPage.Text = "Jackets";
       JacketsPage.UseVisualStyleBackColor = true;
-      // 
+      //
       // BottomsPage
-      // 
+      //
       BottomsPage.Location = new Point(4, 24);
       BottomsPage.Name = "BottomsPage";
       BottomsPage.Size = new Size(509, 72);
       BottomsPage.TabIndex = 2;
       BottomsPage.Text = "Bottoms";
       BottomsPage.UseVisualStyleBackColor = true;
-      // 
+      //
       // SocksPage
-      // 
+      //
       SocksPage.Location = new Point(4, 24);
       SocksPage.Name = "SocksPage";
       SocksPage.Size = new Size(509, 72);
       SocksPage.TabIndex = 3;
       SocksPage.Text = "Socks";
       SocksPage.UseVisualStyleBackColor = true;
-      // 
+      //
       // ShoesPage
-      // 
+      //
       ShoesPage.Location = new Point(4, 24);
       ShoesPage.Name = "ShoesPage";
       ShoesPage.Size = new Size(509, 72);
       ShoesPage.TabIndex = 4;
       ShoesPage.Text = "Shoes";
       ShoesPage.UseVisualStyleBackColor = true;
-      // 
+      //
       // BagsPage
-      // 
+      //
       BagsPage.Location = new Point(4, 24);
       BagsPage.Name = "BagsPage";
       BagsPage.Size = new Size(509, 72);
       BagsPage.TabIndex = 5;
       BagsPage.Text = "Bag";
       BagsPage.UseVisualStyleBackColor = true;
-      // 
+      //
       // HatsPage
-      // 
+      //
       HatsPage.Location = new Point(4, 24);
       HatsPage.Name = "HatsPage";
       HatsPage.Size = new Size(509, 72);
       HatsPage.TabIndex = 6;
       HatsPage.Text = "Hats";
       HatsPage.UseVisualStyleBackColor = true;
-      // 
+      //
       // GlassesPage
-      // 
+      //
       GlassesPage.Location = new Point(4, 24);
       GlassesPage.Name = "GlassesPage";
       GlassesPage.Size = new Size(509, 72);
       GlassesPage.TabIndex = 7;
       GlassesPage.Text = "Glasses";
       GlassesPage.UseVisualStyleBackColor = true;
-      // 
+      //
       // GlovesPage
-      // 
+      //
       GlovesPage.Location = new Point(4, 24);
       GlovesPage.Name = "GlovesPage";
       GlovesPage.Padding = new Padding(3);
@@ -158,9 +158,9 @@ namespace PluginPile.FashionEditor {
       GlovesPage.TabIndex = 8;
       GlovesPage.Text = "Gloves";
       GlovesPage.UseVisualStyleBackColor = true;
-      // 
+      //
       // FashionFormSwSh
-      // 
+      //
       AutoScaleDimensions = new SizeF(7F, 15F);
       AutoScaleMode = AutoScaleMode.Font;
       ClientSize = new Size(529, 136);

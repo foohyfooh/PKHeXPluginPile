@@ -6,7 +6,7 @@ internal static class Language {
   public static string MenuItemName {
     get {
       return GameInfo.CurrentLanguage switch {
-        "zh" => "游走插件",
+        "zh"      => "游走插件",
         "en" or _ => "Edit Roamer"
       };
     }
@@ -20,7 +20,7 @@ internal static class Language {
     public static string[] RoamerState {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => ["游走", "捕获", "击败"],
+          "zh"      => ["游走", "捕获", "击败"],
           "en" or _ => ["Roaming", "Caught", "Fainted"]
         };
       }
@@ -29,7 +29,7 @@ internal static class Language {
     public static string NoActieRoamer {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => "无活跃的游走",
+          "zh"      => "无活跃的游走",
           "en" or _ => "No Active Roamer"
         };
       }
@@ -44,7 +44,7 @@ internal static class Language {
     public static string[] RoamerState {
       get {
         return GameInfo.CurrentLanguage switch {
-          "zh" => ["未激活", "游走", "定点", "击败", "捕获"],
+          "zh"      => ["未激活", "游走", "定点", "击败", "捕获"],
           "en" or _ => ["Inactive", "Roaming", "Stationary", "Defeated", "Captured"]
         };
       }

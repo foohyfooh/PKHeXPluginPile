@@ -1,7 +1,7 @@
 using PKHeX.Core;
 using PluginPile.Common;
 
-namespace PluginPile.SVivillon; 
+namespace PluginPile.SVivillon;
 public class SVivillonPlugin : PluginBase {
 
   public override string Name => nameof(SVivillonPlugin);

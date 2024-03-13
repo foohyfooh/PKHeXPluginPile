@@ -1,6 +1,6 @@
 using PKHeX.Core;
 
-namespace PluginPile.Sorting; 
+namespace PluginPile.Sorting;
 internal class Gen3Hoenn : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> Dex = new Dictionary<Species, PositionForms>() {
