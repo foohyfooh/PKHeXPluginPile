@@ -6,6 +6,7 @@ internal static class Language {
   public static string ViewBattleTeams {
     get {
       return GameInfo.CurrentLanguage switch {
+        "zh" => "查看对战队伍",
         "en" or _ => "View Battle Teams"
       };
     }
@@ -50,6 +51,7 @@ internal static class Language {
   public static string BattleTeams {
     get {
       return GameInfo.CurrentLanguage switch {
+        "zh" => "对战队伍",
         "en" or _ => "Battle Teams"
       };
     }
@@ -58,6 +60,7 @@ internal static class Language {
   public static string RentalTeams {
     get {
       return GameInfo.CurrentLanguage switch {
+        "zh" => "租借队伍",
         "en" or _ => "Rental Teams"
       };
     }
@@ -66,6 +69,7 @@ internal static class Language {
   public static string Team {
     get {
       return GameInfo.CurrentLanguage switch {
+        "zh" => "队伍",
         "en" or _ => "Team"
       };
     }
