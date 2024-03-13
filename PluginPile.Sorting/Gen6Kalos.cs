@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting;
-internal class Gen6_Kalos : SortingBase {
+internal class Gen6Kalos : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> CentralKalosDex = new Dictionary<Species, PositionForms>() {
     {Species.Chespin, 1},

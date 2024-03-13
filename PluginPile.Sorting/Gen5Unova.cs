@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting;
-internal class Gen5_Unova : SortingBase {
+internal class Gen5Unova : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> BWDex = new Dictionary<Species, PositionForms>() {
     {Species.Victini, 0},

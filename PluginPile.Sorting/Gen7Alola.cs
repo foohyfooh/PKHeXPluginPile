@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting;
-internal class Gen7_Alola : SortingBase {
+internal class Gen7Alola : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> SMFullDex = new Dictionary<Species, PositionForms>() {
     {Species.Rowlet, 1},

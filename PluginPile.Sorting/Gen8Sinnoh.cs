@@ -1,10 +1,10 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting;
-internal class Gen8_Sinnoh : SortingBase {
+internal class Gen8Sinnoh : SortingBase {
 
   public static Func<PKM, IComparable>[] GetSortFunctions() {
-    return Gen4_Sinnoh.GetDPSortFunctions();
+    return Gen4Sinnoh.GetDPSortFunctions();
   }
 
 }

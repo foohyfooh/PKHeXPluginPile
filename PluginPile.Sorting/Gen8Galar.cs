@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting;
-internal class Gen8_Galar : SortingBase {
+internal class Gen8Galar : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> GalarDex = new Dictionary<Species, PositionForms>() {
     {Species.Grookey, 1},

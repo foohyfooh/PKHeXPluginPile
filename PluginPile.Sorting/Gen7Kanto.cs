@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting;
-internal class Gen7_Kanto : Gen1_Kanto {
+internal class Gen7Kanto : Gen1Kanto {
 
   private static readonly Dictionary<Species, PositionForms> ExtendedDex = new Dictionary<Species, PositionForms>(Dex) {
     {Species.Meltan, 152},

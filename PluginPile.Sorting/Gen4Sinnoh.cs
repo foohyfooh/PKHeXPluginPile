@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting;
-internal class Gen4_Sinnoh : SortingBase {
+internal class Gen4Sinnoh : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> DPDex = new Dictionary<Species, PositionForms>(){
     {Species.Turtwig, 1},

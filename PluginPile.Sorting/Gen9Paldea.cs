@@ -1,7 +1,7 @@
 using PKHeX.Core;
 
 namespace PluginPile.Sorting;
-internal class Gen9_Paldea : SortingBase {
+internal class Gen9Paldea : SortingBase {
 
   private static readonly Dictionary<Species, PositionForms> PaldeaDex = new Dictionary<Species, PositionForms>() {
     {Species.Sprigatito, 1},
