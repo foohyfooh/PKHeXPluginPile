@@ -133,7 +133,6 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       gen4_clistbox.FormattingEnabled = true;
       gen4_clistbox.Items.AddRange(new object[] { "Dialga", "Palkia", "Giratina", "Uxie", "Mesprit", "Azelf", "Heatran", "Cresselia" });
       gen4_clistbox.Location = new Point(6, 19);
-      gen4_clistbox.MultiColumn = true;
       gen4_clistbox.Name = "gen4_clistbox";
       gen4_clistbox.Size = new Size(120, 112);
       gen4_clistbox.TabIndex = 8;
@@ -168,7 +167,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g1FA_BTN
       //
-      g1FA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g1FA_BTN.Font = new Font("Segoe UI", 8.25F);
       g1FA_BTN.Location = new Point(6, 149);
       g1FA_BTN.Name = "g1FA_BTN";
       g1FA_BTN.Size = new Size(57, 34);
@@ -179,7 +178,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g1RA_BTN
       //
-      g1RA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g1RA_BTN.Font = new Font("Segoe UI", 8.25F);
       g1RA_BTN.Location = new Point(69, 149);
       g1RA_BTN.Name = "g1RA_BTN";
       g1RA_BTN.Size = new Size(57, 34);
@@ -190,7 +189,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g2RA_BTN
       //
-      g2RA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g2RA_BTN.Font = new Font("Segoe UI", 8.25F);
       g2RA_BTN.Location = new Point(69, 149);
       g2RA_BTN.Name = "g2RA_BTN";
       g2RA_BTN.Size = new Size(57, 34);
@@ -201,7 +200,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g2FA_BTN
       //
-      g2FA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g2FA_BTN.Font = new Font("Segoe UI", 8.25F);
       g2FA_BTN.Location = new Point(6, 149);
       g2FA_BTN.Name = "g2FA_BTN";
       g2FA_BTN.Size = new Size(57, 34);
@@ -212,7 +211,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g3RA_BTN
       //
-      g3RA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g3RA_BTN.Font = new Font("Segoe UI", 8.25F);
       g3RA_BTN.Location = new Point(69, 149);
       g3RA_BTN.Name = "g3RA_BTN";
       g3RA_BTN.Size = new Size(57, 34);
@@ -223,7 +222,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g3FA_BTN
       //
-      g3FA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g3FA_BTN.Font = new Font("Segoe UI", 8.25F);
       g3FA_BTN.Location = new Point(6, 149);
       g3FA_BTN.Name = "g3FA_BTN";
       g3FA_BTN.Size = new Size(57, 34);
@@ -282,7 +281,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g4FA_BTN
       //
-      g4FA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g4FA_BTN.Font = new Font("Segoe UI", 8.25F);
       g4FA_BTN.Location = new Point(6, 149);
       g4FA_BTN.Name = "g4FA_BTN";
       g4FA_BTN.Size = new Size(57, 34);
@@ -293,7 +292,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g4RA_BTN
       //
-      g4RA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g4RA_BTN.Font = new Font("Segoe UI", 8.25F);
       g4RA_BTN.Location = new Point(69, 149);
       g4RA_BTN.Name = "g4RA_BTN";
       g4RA_BTN.Size = new Size(57, 34);
@@ -316,7 +315,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g5FA_BTN
       //
-      g5FA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g5FA_BTN.Font = new Font("Segoe UI", 8.25F);
       g5FA_BTN.Location = new Point(6, 149);
       g5FA_BTN.Name = "g5FA_BTN";
       g5FA_BTN.Size = new Size(57, 34);
@@ -327,7 +326,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g5RA_BTN
       //
-      g5RA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g5RA_BTN.Font = new Font("Segoe UI", 8.25F);
       g5RA_BTN.Location = new Point(69, 149);
       g5RA_BTN.Name = "g5RA_BTN";
       g5RA_BTN.Size = new Size(57, 34);
@@ -350,7 +349,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g6FA_BTN
       //
-      g6FA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g6FA_BTN.Font = new Font("Segoe UI", 8.25F);
       g6FA_BTN.Location = new Point(6, 179);
       g6FA_BTN.Name = "g6FA_BTN";
       g6FA_BTN.Size = new Size(57, 34);
@@ -361,7 +360,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g6RA_BTN
       //
-      g6RA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g6RA_BTN.Font = new Font("Segoe UI", 8.25F);
       g6RA_BTN.Location = new Point(69, 179);
       g6RA_BTN.Name = "g6RA_BTN";
       g6RA_BTN.Size = new Size(57, 34);
@@ -384,7 +383,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g7FA_BTN
       //
-      g7FA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g7FA_BTN.Font = new Font("Segoe UI", 8.25F);
       g7FA_BTN.Location = new Point(6, 179);
       g7FA_BTN.Name = "g7FA_BTN";
       g7FA_BTN.Size = new Size(57, 34);
@@ -395,7 +394,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g7RA_BTN
       //
-      g7RA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g7RA_BTN.Font = new Font("Segoe UI", 8.25F);
       g7RA_BTN.Location = new Point(69, 179);
       g7RA_BTN.Name = "g7RA_BTN";
       g7RA_BTN.Size = new Size(57, 34);
@@ -418,7 +417,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g7ubFA_BTN
       //
-      g7ubFA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g7ubFA_BTN.Font = new Font("Segoe UI", 8.25F);
       g7ubFA_BTN.Location = new Point(6, 179);
       g7ubFA_BTN.Name = "g7ubFA_BTN";
       g7ubFA_BTN.Size = new Size(57, 34);
@@ -429,7 +428,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // g7ubRA_BTN
       //
-      g7ubRA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      g7ubRA_BTN.Font = new Font("Segoe UI", 8.25F);
       g7ubRA_BTN.Location = new Point(69, 179);
       g7ubRA_BTN.Name = "g7ubRA_BTN";
       g7ubRA_BTN.Size = new Size(57, 34);
@@ -440,7 +439,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       //
       // glFA_BTN
       //
-      glFA_BTN.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+      glFA_BTN.Font = new Font("Segoe UI", 8.25F);
       glFA_BTN.Location = new Point(426, 392);
       glFA_BTN.Name = "glFA_BTN";
       glFA_BTN.Size = new Size(60, 34);
@@ -569,7 +568,6 @@ namespace PluginPile.Unmaintained.SwShEventEditor {
       mlnotes_legal_LBL.Size = new Size(98, 15);
       mlnotes_legal_LBL.TabIndex = 57;
       mlnotes_legal_LBL.Text = "Legal Status: N/A";
-      mlnotes_legal_LBL.Click += mlnotes_legal_LBL_Click;
       //
       // ml_legality_CB
       //

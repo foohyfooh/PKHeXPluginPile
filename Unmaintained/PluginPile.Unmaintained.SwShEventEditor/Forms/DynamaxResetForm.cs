@@ -449,9 +449,4 @@ public partial class DynamaxResetForm : Form {
   private static DialogResult ShowWrongGameMSG() {
     return MessageBox.Show("You have chosen a legendary that you cannot have notes for! Would you like to correct this to the legendary for your game?", "Error", MessageBoxButtons.YesNo);
   }
-
-  private void mlnotes_legal_LBL_Click(object sender, EventArgs e) {
-
-  }
-
 }
