@@ -71,7 +71,10 @@ public class SwShRulesExporterPlugin : Common.PluginBase {
     string rulesZipPath = Path.Combine(currentDir, "swsh_rules.zip");
     if (Path.Exists(rulesZipPath)) File.Delete(rulesZipPath);
     ZipFile.CreateFromDirectory(rulesDir, rulesZipPath);
-    MessageBox.Show(Language.ThanksMessage);
+    DialogResult result = MessageBox.Show(Language.ThanksMessage, Language.MenuName, MessageBoxButtons.OKCancel);
+    if (result == DialogResult.OK) {
+      Clipboard.SetText(Language.UploadURL);
+    }
   }
 
   protected override void LoadMenu(ToolStripDropDownItem tools) => tools.DropDownItems.Add(ContainerMenuItem);
