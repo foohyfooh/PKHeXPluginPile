@@ -56,7 +56,7 @@ public class SwShRulesExporterPlugin : Common.PluginBase {
     string currentDir = Directory.GetCurrentDirectory();
     string bakDir = Path.Combine(currentDir, "bak");
     string[] saves = Directory.GetFiles(bakDir);
-    IEnumerable<string> filteredSaves = saves.Where(save => save.Contains("main"));
+    IEnumerable<string> filteredSaves = saves.Where(save => save.Contains("main") || save.Contains("backup"));
     foreach (string save in filteredSaves) {
       SaveFile? sav = SaveUtil.GetVariantSAV(save)!;
       if (sav is SAV8SWSH sav8swsh) {
