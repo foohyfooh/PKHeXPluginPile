@@ -82,6 +82,12 @@ The purpose of this plugin is to find Pokémon with special conditions to get sp
 ### Acknowledgement
 The original idea is from [suloku](https://github.com/suloku)'s [PKHeXThreeFinderPlugin](https://github.com/suloku/PKHeXThreeFinderPlugin) to find Dunsparce or Tandemaus which will give the Three-Segment or Family of Three forms respectively.
 
+## Sword/Shield Download Rules Exporter
+The purpose of this plugin is to export the Download Rules from Pokémon Sword and Shield saves and put them in swsh_rules folder and a swsh_rules.zip. These can be used to contribute to the [Project Pokémon rules-repo](https://github.com/projectpokemon/rules-repo).
+- *SwSh Download Rules Exporter* should now be in the *Tools* menu of PKHeX
+  - *Export From Current Save* will give you the files for the current Sword or Shield save
+  - *Export From bak Folder* will give you the files for all the Sword and Shield saves in the bak folder
+
 ## Building
 - Open PowerShell and Run `build.ps1`
 - Individual Plugins should be located in `bin\Build\Individual`
