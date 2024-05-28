@@ -1,25 +1,17 @@
 using PKHeX.Core;
 
-namespace PluginPile.Unmaintained.BWTool; 
+namespace PluginPile.Unmaintained.BWTool;
 internal static class Language {
 
-  public static string MenuName {
-    get {
-      return GameInfo.CurrentLanguage switch {
-        "zh"      => "BW工具",
-        "en" or _ => "BW Tool"
-      };
-    }
-  }
+  public static string MenuName => GameInfo.CurrentLanguage switch {
+    "zh"      => "BW工具",
+    "en" or _ => "BW Tool"
+  };
 
-  private static string None {
-    get {
-      return GameInfo.CurrentLanguage switch {
-        "zh"      => "无",
-        "en" or _ => "None"
-      };
-    }
-  }
+  private static string None => GameInfo.CurrentLanguage switch {
+    "zh"      => "无",
+    "en" or _ => "None"
+  };
 
   public static string[] PkmList => GameInfo.Strings.specieslist[..(int)Species.Chespin].Select((string p, int index) => index == 0 ? None : $"{index:000} - {p}").ToArray();
 
