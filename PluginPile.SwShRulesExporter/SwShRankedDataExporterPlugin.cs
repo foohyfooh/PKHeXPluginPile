@@ -65,15 +65,25 @@ public class SwShRulesExporterPlugin : Common.PluginBase {
     }
   }
 
+  private static bool HasRules(string dir) {
+    return Directory.Exists(dir) && Directory.GetFiles(dir).Length != 0;
+  }
+
   private static void EndProcess() {
     string currentDir = Directory.GetCurrentDirectory();
     string rulesDir = Path.Combine(currentDir, "swsh_rules");
+    string singlesDir = Path.Combine(rulesDir, "Singles");
+    string doublesDir = Path.Combine(rulesDir, "Doubles");
     string rulesZipPath = Path.Combine(currentDir, "swsh_rules.zip");
-    if (Path.Exists(rulesZipPath)) File.Delete(rulesZipPath);
-    ZipFile.CreateFromDirectory(rulesDir, rulesZipPath);
-    DialogResult result = MessageBox.Show(Language.ThanksMessage, Language.MenuName, MessageBoxButtons.OKCancel);
-    if (result == DialogResult.OK) {
-      Clipboard.SetText(Language.UploadURL);
+    if (HasRules(singlesDir) || HasRules(doublesDir)) {
+      if (Path.Exists(rulesZipPath)) File.Delete(rulesZipPath);
+      ZipFile.CreateFromDirectory(rulesDir, rulesZipPath);
+      DialogResult result = MessageBox.Show(Language.ThanksMessageSuccess, Language.MenuName, MessageBoxButtons.OKCancel);
+      if (result == DialogResult.OK) {
+        Clipboard.SetText(Language.UploadURL);
+      }
+    } else {
+      MessageBox.Show(Language.ThanksMessageNoRules);
     }
   }
 

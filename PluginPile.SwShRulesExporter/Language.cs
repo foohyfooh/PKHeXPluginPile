@@ -17,8 +17,12 @@ internal static class Language {
 
   public static string UploadURL => "https://projectpokemon.org/home/forums/topic/65248-help-me-add-sword-and-shield-download-rules-to-the-rules-repo/";
 
-  public static string ThanksMessage => GameInfo.CurrentLanguage switch {
-    "en" or _ => $"Export Successful.\nPlease distribute the swsh_rules.zip to foohyfooh on Project Pokémon at {UploadURL} .\n\nCopy URL to clipoard"
+  public static string ThanksMessageSuccess => GameInfo.CurrentLanguage switch {
+    "en" or _ => $"Export Successful.\nPlease distribute the swsh_rules.zip to foohyfooh on Project Pokémon at {UploadURL}\n\nCopy URL to clipoard"
+  };
+
+  public static string ThanksMessageNoRules => GameInfo.CurrentLanguage switch {
+    "en" or _ => "Thanks for checking but no rules were found."
   };
 
 }
