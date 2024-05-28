@@ -40,6 +40,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.Unmaintained.Aut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluginPile.Unmaintained.BWTool", "Unmaintained\PluginPile.Unmaintained.BWTool\PluginPile.Unmaintained.BWTool.csproj", "{7B0F1BBB-0308-4466-AE42-2E52F86D5219}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginPile.SwShRulesExporter", "PluginPile.SwShRulesExporter\PluginPile.SwShRulesExporter.csproj", "{C8DED48C-A874-4793-817E-20142EFCF77E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -106,6 +108,10 @@ Global
 		{7B0F1BBB-0308-4466-AE42-2E52F86D5219}.Debug|x64.Build.0 = Debug|x64
 		{7B0F1BBB-0308-4466-AE42-2E52F86D5219}.Release|x64.ActiveCfg = Release|x64
 		{7B0F1BBB-0308-4466-AE42-2E52F86D5219}.Release|x64.Build.0 = Release|x64
+		{C8DED48C-A874-4793-817E-20142EFCF77E}.Debug|x64.ActiveCfg = Debug|x64
+		{C8DED48C-A874-4793-817E-20142EFCF77E}.Debug|x64.Build.0 = Debug|x64
+		{C8DED48C-A874-4793-817E-20142EFCF77E}.Release|x64.ActiveCfg = Release|x64
+		{C8DED48C-A874-4793-817E-20142EFCF77E}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
