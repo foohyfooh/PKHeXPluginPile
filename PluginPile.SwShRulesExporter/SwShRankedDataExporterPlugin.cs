@@ -83,6 +83,9 @@ public class SwShRulesExporterPlugin : Common.PluginBase {
         Clipboard.SetText(Language.UploadURL);
       }
     } else {
+      Directory.Delete(singlesDir);
+      Directory.Delete(doublesDir);
+      Directory.Delete(rulesDir);
       MessageBox.Show(Language.ThanksMessageNoRules);
     }
   }
