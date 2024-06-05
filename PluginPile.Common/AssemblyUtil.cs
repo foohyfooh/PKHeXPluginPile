@@ -8,15 +8,15 @@ public static class AssemblyUtil {
            Single(assembly => assembly.GetName().Name == name);
   }
 
-  public static Type GetTypeFromAssembly(String assemblyName, String typeName) {
+  public static Type GetTypeFromAssembly(string assemblyName, string typeName) {
     return GetAssemblyByName(assemblyName).GetType(typeName)!;
   }
 
-  public static MethodInfo GetMethodInfo(String assemblyName, String typeName, String methodName) {
+  public static MethodInfo GetMethodInfo(string assemblyName, string typeName, string methodName) {
     return GetTypeFromAssembly(assemblyName, typeName).GetMethod(methodName)!;
   }
 
-  public static MethodInfo GetMethodInfo(String assemblyName, String typeName, BindingFlags flags, Func<MethodInfo, bool> predicate) {
+  public static MethodInfo GetMethodInfo(string assemblyName, string typeName, BindingFlags flags, Func<MethodInfo, bool> predicate) {
     return GetTypeFromAssembly(assemblyName, typeName).GetMethods(flags).Single(predicate);
   }
 

@@ -28,6 +28,15 @@ public static class Language {
     "en" or _ => "New"
   };
 
+  private static readonly Type UtilType = AssemblyUtil.GetTypeFromAssembly("PKHeX.Core", "PKHeX.Core.Util");
+
+  // Caching and Text Splitting Method From ResourceUtil
+  private static string[] LoadStringList(string filename, string text) {
+    MethodInfo loadStringListMethod = UtilType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
+      .Single(m => m.Name == "LoadStringList");
+    return (string[])loadStringListMethod.Invoke(null, [filename, text])!;
+  }
+
   private const string StringCachePrefix = "PluginPile";
 
   // Modified Copy Of PKHeX ResourceUtil.GetStringList
@@ -42,7 +51,7 @@ public static class Language {
     if (stream == null) return [];
     using StreamReader reader = new StreamReader(stream);
     string text = reader.ReadToEnd().Trim(); // Handle Final Newline Getting Counted
-    return Util.LoadStringList(fullyQualifiedName, text);
+    return LoadStringList(fullyQualifiedName, text);
   }
 
 }
