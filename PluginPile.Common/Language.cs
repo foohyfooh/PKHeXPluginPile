@@ -28,21 +28,11 @@ public static class Language {
     "en" or _ => "New"
   };
 
-  private static readonly Type UtilType = AssemblyUtil.GetTypeFromAssembly("PKHeX.Core", "PKHeX.Core.Util");
-
-  // Caching and Text Splitting Method From ResourceUtil
-  private static string[] LoadStringList(string filename, string text) {
-    MethodInfo loadStringListMethod = UtilType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
-      .Single(m => m.Name == "LoadStringList");
-    return (string[])loadStringListMethod.Invoke(null, [filename, text])!;
-  }
-
   private const string StringCachePrefix = "PluginPile";
 
-  // Modified Copy Of PKHeX ResourceUtil.GetStringList
   public static string[] GetStringList(Assembly assembly, string pluginName, string filename) {
     string fullyQualifiedName = $"{StringCachePrefix}_{pluginName}_{filename}";
-    if (Util.IsStringListCached(fullyQualifiedName, out string[]? cachedText))
+    if (Util.CachedStrings.TryGetValue(fullyQualifiedName, out string[]? cachedText))
       return cachedText;
     string? resourceName = assembly.GetManifestResourceNames()
       .SingleOrDefault(str => str.EndsWith(filename));
@@ -51,7 +41,9 @@ public static class Language {
     if (stream == null) return [];
     using StreamReader reader = new StreamReader(stream);
     string text = reader.ReadToEnd().Trim(); // Handle Final Newline Getting Counted
-    return LoadStringList(fullyQualifiedName, text);
+    string[] splitText = text.Split('\n');
+    Util.CachedStrings.TryAdd(fullyQualifiedName, splitText);
+    return splitText;
   }
 
 }
