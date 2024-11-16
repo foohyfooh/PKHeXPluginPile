@@ -4,12 +4,12 @@ namespace PluginPile.Unmaintained.BWTool;
 internal static class Language {
 
   public static string MenuName => GameInfo.CurrentLanguage switch {
-    "zh"      => "BW工具",
+    "zh-Hans" => "BW工具",
     "en" or _ => "BW Tool"
   };
 
   private static string None => GameInfo.CurrentLanguage switch {
-    "zh"      => "无",
+    "zh-Hans" => "无",
     "en" or _ => "None"
   };
 

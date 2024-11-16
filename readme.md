@@ -107,14 +107,14 @@ The purpose of this plugin is to export the Download Rules from Pokémon Sword a
 
 ## Language Support
 The default language for this project is English but there appears to be interest in localizing, so I have added a way to add to do multilingual support even if it is hacky. To add support for a language that PKHeX supports, go to the desired plugin and modify the switch cases in the `Language.cs` file using the following language codes that `PKHeX.Core.GameInfo.CurrentLanguage` returns
-| Key | Language            | Supported | Contributors                                                                                                                                                       |
-|-----|---------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| de  | German              | Partial   | [BlackShark](https://github.com/Bl4ckSh4rk)                                                                                                                        |
-| en  | English             | Yes       | Me                                                                                                                                                                 |
-| es  | Spanish             | Partial   | [StevensND](https://github.com/StevensND)                                                                                                                          |
-| fr  | French              | No        |                                                                                                                                                                    |
-| it  | Italian             | Partial   | [Pasquale Nardiello](https://github.com/pasqualenardiello)                                                                                                         |
-| ja  | Japanese            | No        |                                                                                                                                                                    |
-| ko  | Korean              | No        |                                                                                                                                                                    |
-| zh  | Simplified Chinese  | Partial   | [wubinwww](https://github.com/wubinwww), [ppllouf](https://github.com/ppllouf), [easyworld](https://github.com/easyworld), [ZiYuKing](https://github.com/ZiYuKing) |
-| zh2 | Traditional Chinese | No        |                                                                                                                                                                    |
+| Key     | Language            | Supported | Contributors                                                                                                                                                       |
+|---------|---------------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| de      | German              | Partial   | [BlackShark](https://github.com/Bl4ckSh4rk)                                                                                                                        |
+| en      | English             | Yes       | Me                                                                                                                                                                 |
+| es      | Spanish             | Partial   | [StevensND](https://github.com/StevensND)                                                                                                                          |
+| fr      | French              | No        |                                                                                                                                                                    |
+| it      | Italian             | Partial   | [Pasquale Nardiello](https://github.com/pasqualenardiello)                                                                                                         |
+| ja      | Japanese            | No        |                                                                                                                                                                    |
+| ko      | Korean              | No        |                                                                                                                                                                    |
+| zh-Hans | Simplified Chinese  | Partial   | [wubinwww](https://github.com/wubinwww), [ppllouf](https://github.com/ppllouf), [easyworld](https://github.com/easyworld), [ZiYuKing](https://github.com/ZiYuKing) |
+| zh-Hant | Traditional Chinese | No        |                                                                                                                                                                    |

@@ -4,7 +4,7 @@ namespace PluginPile.RoamerTool;
 internal static class Language {
 
   public static string MenuItemName => GameInfo.CurrentLanguage switch {
-    "zh"      => "游走插件",
+    "zh-Hans" => "游走插件",
     "en" or _ => "Edit Roamer"
   };
 
@@ -14,12 +14,12 @@ internal static class Language {
 
   public static class Gen4 {
     public static string[] RoamerState => GameInfo.CurrentLanguage switch {
-      "zh"      => ["游走", "捕获", "击败"],
+      "zh-Hans" => ["游走", "捕获", "击败"],
       "en" or _ => ["Roaming", "Caught", "Fainted"]
     };
 
     public static string NoActieRoamer => GameInfo.CurrentLanguage switch {
-      "zh"      => "无活跃的游走",
+      "zh-Hans" => "无活跃的游走",
       "en" or _ => "No Active Roamer"
     };
 
@@ -30,7 +30,7 @@ internal static class Language {
     public static string[] Roamers => GameInfo.Strings.specieslist[(int)Species.Articuno..(int)Species.Dratini];
 
     public static string[] RoamerState => GameInfo.CurrentLanguage switch {
-      "zh"      => ["未激活", "游走", "定点", "击败", "捕获"],
+      "zh-Hans" => ["未激活", "游走", "定点", "击败", "捕获"],
       "en" or _ => ["Inactive", "Roaming", "Stationary", "Defeated", "Captured"]
     };
   }
