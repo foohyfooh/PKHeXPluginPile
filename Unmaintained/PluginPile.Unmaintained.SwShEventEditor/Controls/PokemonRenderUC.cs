@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
   public partial class PokemonRenderUC : UserControl {
 #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
@@ -9,6 +11,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
     private Image pokemon;
     private string pokemonsubform;
 
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public string PokemonSubForm {
       get => pokemonsubform;
       set {
@@ -19,6 +22,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
 
 
     private int pokemonID;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public int Pokemon {
       get => pokemonID;
       set {
@@ -29,6 +33,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
 
     public enum LegalStatus { Illegal, Legal }
     private LegalStatus legalstatus;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public LegalStatus Legalility {
       get => legalstatus;
       set {
@@ -37,13 +42,11 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
       }
     }
 
-    private bool messageicon;
-    public bool ShowMessageIcon {
-      get => messageicon;
-      set => messageicon = value;
-    }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool ShowMessageIcon { get; set; }
 
     private bool caught;
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public bool Caught {
       get => caught;
       set {
@@ -53,6 +56,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
       }
     }
 
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public string ToolTip {
       get => toolTip1.GetToolTip(this)!;
       set => toolTip1.SetToolTip(this, value);
@@ -69,11 +73,8 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
       Invalidate();
     }
 
-    private bool drawDyna;
-    public bool DrawDynaxMaxIcon {
-      get => drawDyna;
-      set => drawDyna = value;
-    }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public bool DrawDynaxMaxIcon { get; set; }
     public event EventHandler LegaliltyCheck_OnClick;
     public event EventHandler Caught_OnClick;
 
@@ -93,14 +94,14 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
       if (caught)
         e.Graphics.DrawImage(Properties.Resources._ball4, this.Width - 15, this.Height - 15, 15, 15);
 
-      if (messageicon)
+      if (ShowMessageIcon)
         e.Graphics.DrawImage(Properties.Resources.hint, 0, this.Height - 16);
 
       if (legalstatus == LegalStatus.Illegal)
         e.Graphics.DrawImage(Properties.Resources.warn, 0, 0);
       else
         e.Graphics.DrawImage(Properties.Resources.valid, 0, 0);
-      if (drawDyna)
+      if (DrawDynaxMaxIcon)
         e.Graphics.DrawImage(Properties.Resources.dyna, this.Width - 20, 0);
     }
 

@@ -1,4 +1,5 @@
 using System.Text;
+using System.ComponentModel;
 #nullable disable
 
 // https://www.codeproject.com/Articles/31105/A-ComboBox-with-a-CheckedListBox-as-a-Dropdown
@@ -12,21 +13,9 @@ public class CheckedComboBox : ComboBox {
     /// <summary>
     /// Custom EventArgs encapsulating value as to whether the combo box value(s) should be assignd to or not.
     /// </summary>
-    internal class CCBoxEventArgs : EventArgs {
-      private bool assignValues;
-      public bool AssignValues {
-        get { return assignValues; }
-        set { assignValues = value; }
-      }
-      private EventArgs e;
-      public EventArgs EventArgs {
-        get { return e; }
-        set { e = value; }
-      }
-      public CCBoxEventArgs(EventArgs e, bool assignValues) : base() {
-        this.e = e;
-        this.assignValues = assignValues;
-      }
+    internal class CCBoxEventArgs(EventArgs e, bool assignValues) : EventArgs() {
+      public bool AssignValues { get; set; } = assignValues;
+      public EventArgs EventArgs { get; set; } = e;
     }
 
     // ---------------------------------- internal class CustomCheckedListBox --------------------------------------------
@@ -38,8 +27,8 @@ public class CheckedComboBox : ComboBox {
       private int curSelIndex = -1;
 
       public CustomCheckedListBox() : base() {
-        this.SelectionMode = SelectionMode.One;
-        this.HorizontalScrollbar = true;
+        SelectionMode = SelectionMode.One;
+        HorizontalScrollbar = true;
       }
 
       /// <summary>
@@ -83,7 +72,7 @@ public class CheckedComboBox : ComboBox {
 
     // ********************************************* Data *********************************************
 
-    private CheckedComboBox ccbParent;
+    private readonly CheckedComboBox ccbParent;
 
     // Keeps track of whether checked item(s) changed, hence the value of the CheckedComboBox as a whole changed.
     // This is simply done via maintaining the old string-representation of the value(s) and the new one and comparing them!
@@ -105,63 +94,60 @@ public class CheckedComboBox : ComboBox {
     // Whether the dropdown is closed.
     private bool dropdownClosed = true;
 
-    private CustomCheckedListBox cclb;
-    public CustomCheckedListBox List {
-      get { return cclb; }
-      set { cclb = value; }
-    }
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+    public CustomCheckedListBox List { get; set; }
 
     // ********************************************* Construction *********************************************
 
     public Dropdown(CheckedComboBox ccbParent) {
       this.ccbParent = ccbParent;
       InitializeComponent();
-      this.ShowInTaskbar = false;
+      ShowInTaskbar = false;
       // Add a handler to notify our parent of ItemCheck events.
-      this.cclb.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.cclb_ItemCheck);
+      List.ItemCheck += new ItemCheckEventHandler(cclb_ItemCheck);
     }
 
     // ********************************************* Methods *********************************************
 
     // Create a CustomCheckedListBox which fills up the entire form area.
     private void InitializeComponent() {
-      this.cclb = new CustomCheckedListBox();
-      this.SuspendLayout();
+      List = new CustomCheckedListBox();
+      SuspendLayout();
       //
       // cclb
       //
-      this.cclb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.cclb.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.cclb.FormattingEnabled = true;
-      this.cclb.Location = new System.Drawing.Point(0, 0);
-      this.cclb.Name = "cclb";
-      this.cclb.Size = new System.Drawing.Size(47, 15);
-      this.cclb.TabIndex = 0;
+      List.BorderStyle = BorderStyle.None;
+      List.Dock = DockStyle.Fill;
+      List.FormattingEnabled = true;
+      List.Location = new Point(0, 0);
+      List.Name = "cclb";
+      List.Size = new Size(47, 15);
+      List.TabIndex = 0;
       //
       // Dropdown
       //
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.BackColor = System.Drawing.SystemColors.Menu;
-      this.ClientSize = new System.Drawing.Size(47, 16);
-      this.ControlBox = false;
-      this.Controls.Add(this.cclb);
-      this.ForeColor = System.Drawing.SystemColors.ControlText;
-      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-      this.MinimizeBox = false;
-      this.Name = "ccbParent";
-      this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-      this.ResumeLayout(false);
+      AutoScaleDimensions = new SizeF(6F, 13F);
+      AutoScaleMode = AutoScaleMode.Font;
+      BackColor = SystemColors.Menu;
+      ClientSize = new Size(47, 16);
+      ControlBox = false;
+      Controls.Add(this.List);
+      ForeColor = SystemColors.ControlText;
+      FormBorderStyle = FormBorderStyle.FixedToolWindow;
+      MinimizeBox = false;
+      Name = "ccbParent";
+      StartPosition = FormStartPosition.Manual;
+      ResumeLayout(false);
     }
 
     public string GetCheckedItemsStringValue() {
       StringBuilder sb = new StringBuilder("");
-      if (cclb.CheckedItems.Count == 0) {
-        sb.Append(ccbParent.defaultValue);
+      if (List.CheckedItems.Count == 0) {
+        sb.Append(ccbParent.DefaultValue);
         return sb.ToString();
       } else {
-        for (int i = 0; i < cclb.CheckedItems.Count; i++) {
-          sb.Append(cclb.GetItemText(cclb.CheckedItems[i])).Append(ccbParent.ValueSeparator);
+        for (int i = 0; i < List.CheckedItems.Count; i++) {
+          sb.Append(List.GetItemText(List.CheckedItems[i])).Append(ccbParent.ValueSeparator);
         }
         if (sb.Length > 0) {
           sb.Remove(sb.Length - ccbParent.ValueSeparator.Length, ccbParent.ValueSeparator.Length);
@@ -189,8 +175,8 @@ public class CheckedComboBox : ComboBox {
 
       } else {
         // Caller cancelled selection - need to restore the checked items to their original state.
-        for (int i = 0; i < cclb.Items.Count; i++) {
-          cclb.SetItemChecked(i, checkedStateArr[i]);
+        for (int i = 0; i < List.Items.Count; i++) {
+          List.SetItemChecked(i, checkedStateArr[i]);
         }
       }
       // From now on the dropdown is considered closed. We set the flag here to prevent OnDeactivate() calling
@@ -198,7 +184,7 @@ public class CheckedComboBox : ComboBox {
       dropdownClosed = true;
       // Set the focus to our parent CheckedComboBox and hide the dropdown check list.
       ccbParent.Focus();
-      this.Hide();
+      Hide();
       // Notify CheckedComboBox that its dropdown is closed. (NOTE: it does not matter which parameters we pass to
       // OnDropDownClosed() as long as the argument is CCBoxEventArgs so that the method knows the notification has
       // come from our code and not from the framework).
@@ -211,18 +197,16 @@ public class CheckedComboBox : ComboBox {
       // Assign the old string value to compare with the new value for any changes.
       oldStrValue = ccbParent.Text;
       // Make a copy of the checked state of each item, in cace caller cancels selection.
-      checkedStateArr = new bool[cclb.Items.Count];
-      for (int i = 0; i < cclb.Items.Count; i++) {
-        checkedStateArr[i] = cclb.GetItemChecked(i);
+      checkedStateArr = new bool[List.Items.Count];
+      for (int i = 0; i < List.Items.Count; i++) {
+        checkedStateArr[i] = List.GetItemChecked(i);
       }
     }
 
     protected override void OnDeactivate(EventArgs e) {
       base.OnDeactivate(e);
-      CCBoxEventArgs ce = e as CCBoxEventArgs;
-      if (ce != null) {
+      if (e is CCBoxEventArgs ce) {
         CloseDropdown(ce.AssignValues);
-
       } else {
         // If not custom event arguments passed, means that this method was called from the
         // framework. We assume that the checked values should be registered regardless.
@@ -231,9 +215,7 @@ public class CheckedComboBox : ComboBox {
     }
 
     private void cclb_ItemCheck(object sender, ItemCheckEventArgs e) {
-      if (ccbParent.ItemCheck != null) {
-        ccbParent.ItemCheck(sender, e);
-      }
+      ccbParent.ItemCheck?.Invoke(sender, e);
     }
   } // end internal class Dropdown
 
@@ -241,27 +223,20 @@ public class CheckedComboBox : ComboBox {
   /// <summary>
   /// Required designer variable.
   /// </summary>
-  private System.ComponentModel.IContainer components = null;
+  private readonly IContainer components = null;
   // A form-derived object representing the drop-down list of the checked combo box.
-  private Dropdown dropdown;
+  private readonly Dropdown dropdown;
 
-  // The valueSeparator character(s) between the ticked elements as they appear in the
-  // text portion of the CheckedComboBox.
-  private string valueSeparator;
-  public string ValueSeparator {
-    get { return valueSeparator; }
-    set { valueSeparator = value; }
-  }
-  private string defaultValue;
-  public string DefaultValue {
-    get { return defaultValue; }
-    set { defaultValue = value; }
-  }
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+  public string ValueSeparator { get; set; }
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+  public string DefaultValue { get; set; }
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
   public bool CheckOnClick {
     get { return dropdown.List.CheckOnClick; }
     set { dropdown.List.CheckOnClick = value; }
   }
-
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
   public new string DisplayMember {
     get { return dropdown.List.DisplayMember; }
     set { dropdown.List.DisplayMember = value; }
@@ -294,21 +269,21 @@ public class CheckedComboBox : ComboBox {
 
   public CheckedComboBox() : base() {
     // We want to do the drawing of the dropdown.
-    this.DrawMode = DrawMode.OwnerDrawVariable;
+    DrawMode = DrawMode.OwnerDrawVariable;
     // Default value separator.
-    this.valueSeparator = ", ";
+    ValueSeparator = ", ";
     // This prevents the actual ComboBox dropdown to show, although it's not strickly-speaking necessary.
     // But including this remove a slight flickering just before our dropdown appears (which is caused by
     // the empty-dropdown list of the ComboBox which is displayed for fractions of a second).
-    this.DropDownHeight = 1;
+    DropDownHeight = 1;
     // This is the default setting - text portion is editable and user must click the arrow button
     // to see the list portion. Although we don't want to allow the user to edit the text portion
     // the DropDownList style is not being used because for some reason it wouldn't allow the text
     // portion to be programmatically set. Hence we set it as editable but disable keyboard input (see below).
-    this.DropDownStyle = ComboBoxStyle.DropDown;
-    this.dropdown = new Dropdown(this);
+    DropDownStyle = ComboBoxStyle.DropDown;
+    dropdown = new Dropdown(this);
     // CheckOnClick style for the dropdown (NOTE: must be set after dropdown is created).
-    this.CheckOnClick = true;
+    CheckOnClick = true;
   }
 
   // ******************************** Operations ********************************
@@ -375,7 +350,7 @@ public class CheckedComboBox : ComboBox {
 
   public bool GetItemChecked(int index) {
     if (index < 0 || index > Items.Count) {
-      throw new ArgumentOutOfRangeException("index", "value out of range");
+      throw new ArgumentOutOfRangeException(nameof(index), "value out of range");
     } else {
       return dropdown.List.GetItemChecked(index);
     }
@@ -383,17 +358,17 @@ public class CheckedComboBox : ComboBox {
 
   public void SetItemChecked(int index, bool isChecked) {
     if (index < 0 || index > Items.Count) {
-      throw new ArgumentOutOfRangeException("index", "value out of range");
+      throw new ArgumentOutOfRangeException(nameof(index), "value out of range");
     } else {
       dropdown.List.SetItemChecked(index, isChecked);
       // Need to update the Text.
-      this.Text = dropdown.GetCheckedItemsStringValue();
+      Text = dropdown.GetCheckedItemsStringValue();
     }
   }
 
   public CheckState GetItemCheckState(int index) {
     if (index < 0 || index > Items.Count) {
-      throw new ArgumentOutOfRangeException("index", "value out of range");
+      throw new ArgumentOutOfRangeException(nameof(index), "value out of range");
     } else {
       return dropdown.List.GetItemCheckState(index);
     }
@@ -401,11 +376,11 @@ public class CheckedComboBox : ComboBox {
 
   public void SetItemCheckState(int index, CheckState state) {
     if (index < 0 || index > Items.Count) {
-      throw new ArgumentOutOfRangeException("index", "value out of range");
+      throw new ArgumentOutOfRangeException(nameof(index), "value out of range");
     } else {
       dropdown.List.SetItemCheckState(index, state);
       // Need to update the Text.
-      this.Text = dropdown.GetCheckedItemsStringValue();
+      Text = dropdown.GetCheckedItemsStringValue();
     }
   }
 

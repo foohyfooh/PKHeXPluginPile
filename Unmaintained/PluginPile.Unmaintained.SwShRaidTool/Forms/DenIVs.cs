@@ -129,40 +129,40 @@ public partial class DenIVs : Form {
   }
 
   private bool GetIsRowVisible(DataGridViewRow row) {
-    int hp = int.Parse((string)row.Cells[1].Value);
+    int hp = int.Parse((string)row.Cells[1].Value!);
     if (hp < minHP.Value || hp > maxHP.Value)
       return false;
 
-    int atk = int.Parse((string)row.Cells[2].Value);
+    int atk = int.Parse((string)row.Cells[2].Value!);
     if (atk < minAtk.Value || atk > maxAtk.Value)
       return false;
 
-    int def = int.Parse((string)row.Cells[3].Value);
+    int def = int.Parse((string)row.Cells[3].Value!);
     if (def < minDef.Value || def > maxDef.Value)
       return false;
 
-    int spa = int.Parse((string)row.Cells[4].Value);
+    int spa = int.Parse((string)row.Cells[4].Value!);
     if (spa < minSpa.Value || spa > maxSpa.Value)
       return false;
 
-    int spd = int.Parse((string)row.Cells[5].Value);
+    int spd = int.Parse((string)row.Cells[5].Value!);
     if (spd < minSpd.Value || spd > maxSpd.Value)
       return false;
 
-    int spe = int.Parse((string)row.Cells[6].Value);
+    int spe = int.Parse((string)row.Cells[6].Value!);
     if (spe < MinSpe.Value || spe > maxSpe.Value)
       return false;
 
-    if (!natureBox.GetItemChecked(0) && !natureBox.GetItemChecked(natureIdx[(string)row.Cells[7].Value]))
+    if (!natureBox.GetItemChecked(0) && !natureBox.GetItemChecked(natureIdx[(string)row.Cells[7].Value!]))
       return false;
 
-    if (abilityBox.SelectedIndex != 0 && !abilityBox.Text.StartsWith((string)row.Cells[8].Value))
+    if (abilityBox.SelectedIndex != 0 && !abilityBox.Text.StartsWith((string)row.Cells[8].Value!))
       return false;
 
-    if (genderBox.SelectedIndex != 0 && genderBox.Text != (string)row.Cells[9].Value)
+    if (genderBox.SelectedIndex != 0 && genderBox.Text != (string)row.Cells[9].Value!)
       return false;
 
-    string shiny = (string)row.Cells[10].Value;
+    string shiny = (string)row.Cells[10].Value!;
     return (shinyBox.SelectedIndex == 1 && shiny != "No") || shinyBox.Text == shiny || shinyBox.SelectedIndex == 0;
   }
 

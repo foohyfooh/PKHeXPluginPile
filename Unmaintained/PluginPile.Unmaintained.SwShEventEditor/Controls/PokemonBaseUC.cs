@@ -8,20 +8,25 @@ public partial class PokemonBaseUC : UserControl {
   }
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
 
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
   public int Pokemon {
     get => pokemonRenderUC1.Pokemon;
     set => pokemonRenderUC1.Pokemon = value;
   }
+
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
   public string PokemonSubform {
     get => pokemonRenderUC1.PokemonSubForm;
     set => pokemonRenderUC1.PokemonSubForm = value;
   }
 
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
   public PokemonRenderUC.LegalStatus Legalility {
     get => pokemonRenderUC1.Legalility;
     set => pokemonRenderUC1.Legalility = value;
   }
 
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
   public bool Caught {
     get => pokemonRenderUC1.Caught;
     set {
@@ -38,16 +43,19 @@ public partial class PokemonBaseUC : UserControl {
     illegalToolStripMenuItem.Image = Legalility == PokemonRenderUC.LegalStatus.Illegal ? Properties.Resources.warn : Properties.Resources.valid;
   }
 
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
   public bool DrawDynaxMaxIcon {
     get => pokemonRenderUC1.DrawDynaxMaxIcon;
     set => pokemonRenderUC1.DrawDynaxMaxIcon = value;
   }
 
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
   public string ToolTip {
     get => pokemonRenderUC1.ToolTip;
     set => pokemonRenderUC1.ToolTip = value;
   }
 
+  [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
   public string PokemonName {
     get => pokeName.Text;
     set => pokeName.Text = value;

@@ -231,7 +231,7 @@ public partial class EntralinkForm : Form {
     forest.IndexPkm = temp;
   }
   void DataGridView1CurrentCellChanged(object sender, EventArgs e) {
-    slot.Value = dataGridView1.CurrentRow.Index;
+    slot.Value = dataGridView1.CurrentRow!.Index;
   }
 
   int Animation() {

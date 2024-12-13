@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
   public partial class PokemonRenderCheckListBox : UserControl {
@@ -10,7 +11,7 @@ namespace PluginPile.Unmaintained.SwShEventEditor.Controls {
     private Point _relativeMousePosition = Point.Empty;
     private ObservableCollection<int> _pokemonArray = [];
 
-
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public ObservableCollection<int> PokemonIDs {
       get => _pokemonArray;
       set {
