@@ -48,7 +48,7 @@ public class TMTool : PluginBase {
           int slotIndex = SaveFileEditor.CurrentBox * SaveFileEditor.SAV.BoxSlotCount + info.Slot.Slot;
           PK9 mon = (PK9)SaveFileEditor.SAV.GetBoxSlotAtIndex(slotIndex);
           change(mon);
-          SaveFileEditor.SAV.SetBoxSlotAtIndex(mon, slotIndex, PKMImportSetting.Skip, PKMImportSetting.Skip);
+          SaveFileEditor.SAV.SetBoxSlotAtIndex(mon, slotIndex, EntityImportSettings.None);
         }
 
         ToolStripMenuItem addProtect = new ToolStripMenuItem(Language.AddProtect);

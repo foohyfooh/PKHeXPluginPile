@@ -7,14 +7,12 @@ public abstract class PluginBase : IPlugin {
   public virtual int Priority => 1; // Loading order, lowest is first.
 
   // Initialized on plugin load
-  protected object[] Args { get; private set; } = null!;
   public static Form MainWindow { get; private set; } = null!;
   public ISaveFileProvider SaveFileEditor { get; private set; } = null!;
   public IPKMView PKMEditor { get; private set; } = null!;
 
   public virtual void Initialize(params object[] args) {
     Console.WriteLine($"Loading {Name}...");
-    Args = args;
     SaveFileEditor = (ISaveFileProvider)Array.Find(args, z => z is ISaveFileProvider)!;
     PKMEditor = (IPKMView)Array.Find(args, z => z is IPKMView)!;
     MainWindow = (Form)Array.Find(args, z => z is Form)!;

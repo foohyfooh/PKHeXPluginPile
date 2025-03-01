@@ -5,11 +5,13 @@ namespace PluginPile.Sorting;
 public class SortingPlugin : PluginBase {
   public override string Name => nameof(SortingPlugin);
   private readonly ToolStripMenuItem SortByButton;
+  private readonly EntityImportSettings ImportSettings;
 
   public SortingPlugin() {
     SortByButton = new ToolStripMenuItem() {
       Image = Properties.Images.SortIcon
     };
+    ImportSettings = new EntityImportSettings(EntityImportOption.UseDefault, EntityImportOption.Disable, EntityImportOption.Disable);
   }
 
   protected override void HandleSaveLoaded() => ReloadMenu();
@@ -210,7 +212,7 @@ public class SortingPlugin : PluginBase {
       StorageSlotSource slotSource = SaveFileEditor.SAV.GetBoxSlotFlags(index);
       if (slotSource.IsOverwriteProtected()) continue;
       nextMon = SaveFileEditor.SAV.GetBoxSlotAtIndex(index);
-      SaveFileEditor.SAV.SetBoxSlotAtIndex(currMon, index, PKMImportSetting.UseDefault, PKMImportSetting.Skip);
+      SaveFileEditor.SAV.SetBoxSlotAtIndex(currMon, index, ImportSettings);
       currMon = nextMon;
     }
     SaveFileEditor.ReloadSlots();

@@ -6,13 +6,13 @@ public class BattleTeams : TeamsBase {
 
   public BattleTeams(SAV8SWSH sav) : base(Constants.SwSh.NumBattleTeams) {
     sav.TeamIndexes.LoadBattleTeams();
-    byte[] namesData = sav.Blocks.GetBlock(Constants.SwSh.BatleTeamsNames).Data;
+    byte[] namesData = sav.Blocks.GetBlock(Constants.SwSh.BatleTeamsNames).Data.ToArray();
     ExtractTeamFromIndexes(sav, Constants.SwSh.NumBattleTeams, sav.TeamIndexes, namesData, Constants.SwSh.BattleTeamNameSize);
   }
 
   public BattleTeams(SAV9SV sav) : base(Constants.SV.NumBattleTeams) {
     sav.TeamIndexes.LoadBattleTeams();
-    byte[] namesData = sav.Blocks.GetBlock(Constants.SV.BatleTeamsNames).Data;
+    byte[] namesData = sav.Blocks.GetBlock(Constants.SV.BatleTeamsNames).Data.ToArray();
     ExtractTeamFromIndexes(sav, Constants.SV.NumBattleTeams, sav.TeamIndexes, namesData, Constants.SV.BattleTeamNameSize);
   }
 

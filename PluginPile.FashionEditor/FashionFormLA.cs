@@ -31,12 +31,12 @@ public partial class FashionFormLA : Form {
     GlassesBlock = SAV.Blocks.GetBlock(Constants.LA.FashionGlasses);
 
     Converter = new FashionBlockConverterLA();
-    HatSelector = new FashionPageSelector(Converter.FromBlockData(HatsBlock.Data), Language.LA.HatsList(SAV.Gender));
-    TopsSelector = new FashionPageSelector(Converter.FromBlockData(TopsBlock.Data), Language.LA.TopsList);
-    BottomsSelector = new FashionPageSelector(Converter.FromBlockData(BottomsBlock.Data), Language.LA.BottomsList);
-    UniformsSelector = new FashionPageSelector(Converter.FromBlockData(UniformsBlock.Data), Language.LA.UniformsList);
-    ShoesSelector = new FashionPageSelector(Converter.FromBlockData(ShoesBlock.Data), Language.LA.ShoesList);
-    GlassesSelector = new FashionPageSelector(Converter.FromBlockData(GlassesBlock.Data), Language.LA.GlassesList);
+    HatSelector = new FashionPageSelector(Converter.FromBlockData(HatsBlock.Data.ToArray()), Language.LA.HatsList(SAV.Gender));
+    TopsSelector = new FashionPageSelector(Converter.FromBlockData(TopsBlock.Data.ToArray()), Language.LA.TopsList);
+    BottomsSelector = new FashionPageSelector(Converter.FromBlockData(BottomsBlock.Data.ToArray()), Language.LA.BottomsList);
+    UniformsSelector = new FashionPageSelector(Converter.FromBlockData(UniformsBlock.Data.ToArray()), Language.LA.UniformsList);
+    ShoesSelector = new FashionPageSelector(Converter.FromBlockData(ShoesBlock.Data.ToArray()), Language.LA.ShoesList);
+    GlassesSelector = new FashionPageSelector(Converter.FromBlockData(GlassesBlock.Data.ToArray()), Language.LA.GlassesList);
 
     HatsPage.Controls.Add(HatSelector);
     TopsPage.Controls.Add(TopsSelector);

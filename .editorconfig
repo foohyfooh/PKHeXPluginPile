@@ -88,7 +88,7 @@ dotnet_style_qualification_for_field = false:silent
 dotnet_style_qualification_for_property = false:silent
 dotnet_style_qualification_for_method = false:silent
 dotnet_style_qualification_for_event = false:silent
-dotnet_style_prefer_collection_expression = true:suggestion
+dotnet_style_prefer_collection_expression = when_types_exactly_match:suggestion
 
 [*.cs]
 csharp_using_directive_placement = outside_namespace:silent
@@ -143,3 +143,4 @@ csharp_new_line_before_catch = false
 csharp_new_line_before_finally = false
 csharp_space_around_binary_operators = before_and_after
 csharp_style_prefer_primary_constructors = true:suggestion
+csharp_prefer_system_threading_lock = true:suggestion

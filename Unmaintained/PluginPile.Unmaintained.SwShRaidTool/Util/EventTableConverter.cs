@@ -10,7 +10,7 @@ public static class EventTableConverter {
   const uint NORMAL_ENCOUNTER_RIGEL2 = 0x11615F45;
 
   public static void GetCurrentEventTable(SaveBlockAccessor8SWSH blocks, RaidTables rt) {
-    byte[] archive = blocks.GetBlock(NORMAL_ENCOUNTER).Data;
+    byte[] archive = blocks.GetBlock(NORMAL_ENCOUNTER).Data.ToArray();
     if (archive.Length < 0x20 || archive.Length != 4 + BitConverter.ToInt32(archive, 0x10) || BitConverter.ToInt32(archive, 0x8) != 0x20)
       return; // no event loaded
     byte[] encount_data = new byte[archive.Length - 0x24];
@@ -42,7 +42,7 @@ public static class EventTableConverter {
     }
 
     // Rigel1
-    archive = blocks.GetBlock(NORMAL_ENCOUNTER_RIGEL1).Data;
+    archive = blocks.GetBlock(NORMAL_ENCOUNTER_RIGEL1).Data.ToArray();
     if (archive.Length < 0x20 || archive.Length != 4 + BitConverter.ToInt32(archive, 0x10) || BitConverter.ToInt32(archive, 0x8) != 0x20)
       return; // no event loaded
     encount_data = new byte[archive.Length - 0x24];
@@ -74,7 +74,7 @@ public static class EventTableConverter {
     }
 
     // Rigel2
-    archive = blocks.GetBlock(NORMAL_ENCOUNTER_RIGEL2).Data;
+    archive = blocks.GetBlock(NORMAL_ENCOUNTER_RIGEL2).Data.ToArray();
     if (archive.Length < 0x20 || archive.Length != 4 + BitConverter.ToInt32(archive, 0x10) || BitConverter.ToInt32(archive, 0x8) != 0x20)
       return; // no event loaded
     encount_data = new byte[archive.Length - 0x24];

@@ -6,20 +6,20 @@ public class RentalTeams : TeamsBase  {
 
   public RentalTeams(SAV8SWSH sav) : base(Constants.SwSh.NumRentalTeams) {
     SCBlock team1Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam1);
-    Teams.Add(new RentalTeam8(team1Block.Data));
+    Teams.Add(new RentalTeam8(team1Block.Data.ToArray()));
     SCBlock team2Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam2);
-    Teams.Add(new RentalTeam8(team2Block.Data));
+    Teams.Add(new RentalTeam8(team2Block.Data.ToArray()));
     SCBlock team3Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam3);
-    Teams.Add(new RentalTeam8(team3Block.Data));
+    Teams.Add(new RentalTeam8(team3Block.Data.ToArray()));
     SCBlock team4Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam4);
-    Teams.Add(new RentalTeam8(team4Block.Data));
+    Teams.Add(new RentalTeam8(team4Block.Data.ToArray()));
     SCBlock team5Block = sav.Blocks.GetBlock(Constants.SwSh.RentalTeam5);
-    Teams.Add(new RentalTeam8(team5Block.Data));
+    Teams.Add(new RentalTeam8(team5Block.Data.ToArray()));
   }
 
   public RentalTeams(SAV9SV sav) : base(Constants.SV.NumRentalTeams) {
-    byte[] codesData = sav.Blocks.GetBlock(Constants.SV.RentalTeamCodesLocation).Data;
-    byte[] teamsData = sav.Blocks.GetBlock(Constants.SV.RentalTeamsLocation).Data;
+    byte[] codesData = sav.Blocks.GetBlock(Constants.SV.RentalTeamCodesLocation).Data.ToArray();
+    byte[] teamsData = sav.Blocks.GetBlock(Constants.SV.RentalTeamsLocation).Data.ToArray();
     for (int i = 0; i < Constants.SV.NumRentalTeams; i++) {
       byte[] codeBytes = codesData
         .Skip(i * Constants.SV.RentalCodeSize)

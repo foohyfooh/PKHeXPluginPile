@@ -40,7 +40,7 @@ public class SwShRulesExporterPlugin : Common.PluginBase {
     foreach (Block block in Constants.AllRuleBlocks) {
       SCBlock scBlock = sav.Accessor.GetBlockSafe(block);
       if (scBlock.Type is SCTypeCode.None) continue;
-      byte[] data = scBlock.Data;
+      byte[] data = scBlock.Data.ToArray();
       if (!data.Any((byte b) => b != 0)) continue;
       byte[] nameBytes = data.Skip(Constants.EnlgishNameLocation).Take(Constants.EnlgishNameSize).ToArray();
       string rulesName = StringConverter8.GetString(nameBytes);

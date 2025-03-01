@@ -14,6 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PKHeX.Core" Version="25.2.23" />
     <ProjectReference Include="$(SolutionDir)\PluginPile.Common\PluginPile.Common.csproj" Condition="'$(RootNamespace)' != 'PluginPile.Common'" PrivateAssets="All"/>
   </ItemGroup>
 
