@@ -1,13 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Title>Fashion Editor</Title>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Costura.Fody" Version="6.0.0" PrivateAssets="all" />
-    <PackageReference Include="Fody" Version="6.9.1" PrivateAssets="all" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Files.Designer.cs">

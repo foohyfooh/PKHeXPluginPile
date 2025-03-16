@@ -4,9 +4,4 @@
     <Title>BW Tool</Title>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Costura.Fody" Version="6.0.0" PrivateAssets="all" />
-    <PackageReference Include="Fody" Version="6.9.1" PrivateAssets="all" />
-  </ItemGroup>
-
 </Project>

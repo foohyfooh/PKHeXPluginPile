@@ -6,11 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Costura.Fody" Version="6.0.0" PrivateAssets="all" />
-    <PackageReference Include="Fody" Version="6.9.1" PrivateAssets="all" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PluginPile.Sorting\PluginPile.Sorting.csproj" />
     <ProjectReference Include="..\PluginPile.RaidImporter\PluginPile.RaidImporter.csproj" />
     <ProjectReference Include="..\PluginPile.SVivillon\PluginPile.SVivillon.csproj" />
