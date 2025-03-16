@@ -1,4 +1,4 @@
-dotnet publish -c release
+dotnet publish -c release -v detailed
 if (Test-Path "bin\Build\") {
   Remove-Item -Path "bin\Build\" -Recurse
 }
