@@ -10,11 +10,11 @@ public static class EventTableConverter {
   const uint NORMAL_ENCOUNTER_RIGEL2 = 0x11615F45;
 
   public static void GetCurrentEventTable(SaveBlockAccessor8SWSH blocks, RaidTables rt) {
-    byte[] archive = blocks.GetBlock(NORMAL_ENCOUNTER).Data.ToArray();
-    if (archive.Length < 0x20 || archive.Length != 4 + BitConverter.ToInt32(archive, 0x10) || BitConverter.ToInt32(archive, 0x8) != 0x20)
+    Span<byte> archive = blocks.GetBlock(NORMAL_ENCOUNTER).Data;
+    if (archive.Length < 0x20 || archive.Length != 4 + BitConverter.ToInt32(archive[0x10..]) || BitConverter.ToInt32(archive[0x8..]) != 0x20)
       return; // no event loaded
-    byte[] encount_data = new byte[archive.Length - 0x24];
-    Array.Copy(archive, 0x20, encount_data, 0, encount_data.Length);
+    byte[] encount_data = new byte[archive.Length - 0x20];
+    archive[0x20..].CopyTo(encount_data); 
 
 
     FlatBufferBuilder fbb = new FlatBufferBuilder(new ByteBuffer(encount_data));
@@ -43,10 +43,10 @@ public static class EventTableConverter {
 
     // Rigel1
     archive = blocks.GetBlock(NORMAL_ENCOUNTER_RIGEL1).Data.ToArray();
-    if (archive.Length < 0x20 || archive.Length != 4 + BitConverter.ToInt32(archive, 0x10) || BitConverter.ToInt32(archive, 0x8) != 0x20)
+    if (archive.Length < 0x20 || archive.Length != 4 + BitConverter.ToInt32(archive[0x10..]) || BitConverter.ToInt32(archive[0x8..]) != 0x20)
       return; // no event loaded
-    encount_data = new byte[archive.Length - 0x24];
-    Array.Copy(archive, 0x20, encount_data, 0, encount_data.Length);
+    encount_data = new byte[archive.Length - 0x20];
+    archive[0x20..].CopyTo(encount_data);
 
 
     fbb = new FlatBufferBuilder(new ByteBuffer(encount_data));
@@ -75,10 +75,10 @@ public static class EventTableConverter {
 
     // Rigel2
     archive = blocks.GetBlock(NORMAL_ENCOUNTER_RIGEL2).Data.ToArray();
-    if (archive.Length < 0x20 || archive.Length != 4 + BitConverter.ToInt32(archive, 0x10) || BitConverter.ToInt32(archive, 0x8) != 0x20)
+    if (archive.Length < 0x20 || archive.Length != 4 + BitConverter.ToInt32(archive[0x10..]) || BitConverter.ToInt32(archive[0x8..]) != 0x20)
       return; // no event loaded
-    encount_data = new byte[archive.Length - 0x24];
-    Array.Copy(archive, 0x20, encount_data, 0, encount_data.Length);
+    encount_data = new byte[archive.Length - 0x20];
+    archive[0x20..].CopyTo(encount_data);
 
 
     fbb = new FlatBufferBuilder(new ByteBuffer(encount_data));
