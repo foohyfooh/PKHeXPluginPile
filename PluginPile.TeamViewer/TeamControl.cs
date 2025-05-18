@@ -27,7 +27,7 @@ public partial class TeamControl : UserControl {
     foreach ((PictureBox box, PKM mon) in boxes.Zip(Team.Members)) {
       box.Image = DrawingUtil.GetSprite(mon);
       box.MouseEnter += (o, args) => {
-        string setText = ShowdownParsing.GetLocalizedPreviewText(mon, GameInfo.CurrentLanguage);
+        string setText = ShowdownParsing.GetLocalizedPreviewText(mon, new BattleTemplateExportSettings(GameInfo.CurrentLanguage));
         SetTooltip.SetToolTip(box, setText);
       };
       box.MouseLeave += (o, args) => SetTooltip.RemoveAll();

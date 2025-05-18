@@ -107,8 +107,8 @@ public static class EventTableConverter {
 
   public static void LoadFromJson(string filecontent, RaidTables rt) {
     Old_NestHoleDistributionEncounter8Archive dist_encounts = JsonConvert.DeserializeObject<Old_NestHoleDistributionEncounter8Archive>(filecontent)!;
-    List<Old_NestHoleDistributionEncounter8Table> sword_table = dist_encounts.Tables.Where(z => z.GameVersion == 1).ToList();
-    List<Old_NestHoleDistributionEncounter8Table> shield_table = dist_encounts.Tables.Where(z => z.GameVersion == 2).ToList();
+    List<Old_NestHoleDistributionEncounter8Table> sword_table = [.. dist_encounts.Tables.Where(z => z.GameVersion == 1)];
+    List<Old_NestHoleDistributionEncounter8Table> shield_table = [.. dist_encounts.Tables.Where(z => z.GameVersion == 2)];
     RaidTemplateTable swordTable = new RaidTemplateTable(NestLocations.EventHash, 1, new RaidTemplate[sword_table[0].Entries.Length]);
     RaidTemplateTable shieldTable = new RaidTemplateTable(NestLocations.EventHash, 2, new RaidTemplate[sword_table[0].Entries.Length]);
     for (int i = 0; i < sword_table[0].Entries.Length; i++) {
