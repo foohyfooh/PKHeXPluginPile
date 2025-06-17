@@ -44,16 +44,17 @@ public class RaidImportPlugin : PluginBase {
     DialogResult dialogResult = dialog.ShowDialog();
     if (dialogResult == DialogResult.OK) {
       string raidPath = dialog.SelectedPath;
-      IReadOnlyList<Block>[] blocksLists = null!;
+      List<IReadOnlyList<Block>> blocksLists = [];
       if (SaveFileEditor.SAV is SAV8SWSH sav8SwSh) {
-             if (sav8SwSh.SaveRevision == 0) blocksLists = [Constants.SwSh.BaseGameBlocks];
-        else if (sav8SwSh.SaveRevision == 1) blocksLists = [Constants.SwSh.IsleOfArmorBlocks];
-        else if (sav8SwSh.SaveRevision == 2) blocksLists = [Constants.SwSh.CrownTundraBlocks];
+        blocksLists.Add(Constants.SwSh.BaseGameBlocks);
+        if (sav8SwSh.SaveRevision >= 1) blocksLists.Insert(0, Constants.SwSh.IsleOfArmorBlocks);
+        if (sav8SwSh.SaveRevision >= 2) blocksLists.Insert(0, Constants.SwSh.CrownTundraBlocks);
       } else if (SaveFileEditor.SAV is SAV9SV sav9SV) {
         raidPath += @"\Files";
-             if (sav9SV.SaveRevision == 0) blocksLists = [Constants.SV.BaseGameRaidBlocks, Constants.SV.BaseGameRaidBlocks_1_3_0];
-        else if (sav9SV.SaveRevision == 1) blocksLists = [Constants.SV.TealMaskRaidBlocks];
-        else if (sav9SV.SaveRevision == 2) blocksLists = [Constants.SV.IndigoDiskRaidBlocks];
+        // No PKHeX way to determine if 1.0.0 vs 1.3.0 so both are just included by default
+        blocksLists.AddRange([Constants.SV.BaseGameRaidBlocks_1_3_0, Constants.SV.BaseGameRaidBlocks]);
+        if (sav9SV.SaveRevision >= 1) blocksLists.Insert(0, Constants.SV.TealMaskRaidBlocks);
+        if (sav9SV.SaveRevision >= 2) blocksLists.Insert(0, Constants.SV.IndigoDiskRaidBlocks);
       }
       Import(raidPath, (dynamic)SaveFileEditor.SAV, blocksLists, Language.RaidImported);
     }
@@ -65,9 +66,8 @@ public class RaidImportPlugin : PluginBase {
     if (dialogResult == DialogResult.OK) {
       SAV9SV sav = (SAV9SV)SaveFileEditor.SAV;
       string outbtreakPath = $@"{dialog.SelectedPath}\Files";
-      IReadOnlyList<Block>[] blocksLists = null!;
-           if (sav.SaveRevision == 1) blocksLists = [Constants.SV.TealMaskOutbreakBlocks];
-      else if (sav.SaveRevision == 2) blocksLists = [Constants.SV.IndigoDiskOutbreakBlocks];
+      List<IReadOnlyList<Block>> blocksLists = [Constants.SV.TealMaskOutbreakBlocks];
+      if (sav.SaveRevision >= 2) blocksLists.Insert(0, Constants.SV.IndigoDiskOutbreakBlocks);
       bool didImport = Import(outbtreakPath, sav, blocksLists, Language.OutbreakImported);
       if (didImport) {
         sav.Blocks.GetBlock(Constants.SV.OutbreakEnabled).ChangeBooleanType(SCTypeCode.Bool2);
@@ -75,7 +75,7 @@ public class RaidImportPlugin : PluginBase {
     }
   }
 
-  private static bool Import<S>(string path, S sav, IReadOnlyList<Block>[] blocksLists, string successMessage) where S: SaveFile, ISCBlockArray, ISaveFileRevision {
+  private static bool Import<S>(string path, S sav, List<IReadOnlyList<Block>> blocksLists, string successMessage) where S: SaveFile, ISCBlockArray, ISaveFileRevision {
     string FilePath(string file) => $@"{path}\{file}";
     bool didImport = false;
     foreach (IReadOnlyList<Block> blocks in blocksLists) {
