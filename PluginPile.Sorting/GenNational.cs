@@ -99,8 +99,8 @@ internal class GenNational: SortingBase {
 
   public static Func<PKM, IComparable>[] GetNationalDexWithRegionalFormsSortFunctions() {
     Func<PKM, IComparable>[] sortFunctions = [
-      (PKM p) => SortRegionalForms(p),
-      (PKM p) => p.Species,
+      p => SortRegionalForms(p),
+      p => p.Species,
     ];
     return AddSortOptions(sortFunctions);
   }

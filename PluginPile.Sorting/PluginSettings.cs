@@ -5,7 +5,7 @@ namespace PluginPile.Sorting;
 
 internal sealed partial class PluginSettings : ApplicationSettingsBase {
 
-  private static PluginSettings defaultInstance = ((PluginSettings)(Synchronized(new PluginSettings())));
+  private static readonly PluginSettings defaultInstance = ((PluginSettings)(Synchronized(new PluginSettings())));
 
   public static PluginSettings Default {
     get {
@@ -21,10 +21,10 @@ internal sealed partial class PluginSettings : ApplicationSettingsBase {
   [DefaultSettingValueAttribute("False")]
   public bool ShowIndividualPokedéxes {
     get {
-      return (bool)this["ShowIndividualPokedéxes"];
+      return (bool)this[nameof(ShowIndividualPokedéxes)];
     }
     set {
-      this["ShowIndividualPokedéxes"] = value;
+      this[nameof(ShowIndividualPokedéxes)] = value;
     }
   }
 
@@ -36,10 +36,10 @@ internal sealed partial class PluginSettings : ApplicationSettingsBase {
   [DefaultSettingValueAttribute("1")]
   public int SortBeginBox {
     get {
-      return (int)this["SortBeginBox"];
+      return (int)this[nameof(SortBeginBox)];
     }
     set {
-      this["SortBeginBox"] = value;
+      this[nameof(SortBeginBox)] = value;
     }
   }
 
@@ -51,10 +51,10 @@ internal sealed partial class PluginSettings : ApplicationSettingsBase {
   [DefaultSettingValueAttribute("-1")]
   public int SortEndBox {
     get {
-      return (int)this["SortEndBox"];
+      return (int)this[nameof(SortEndBox)];
     }
     set {
-      this["SortEndBox"] = value;
+      this[nameof(SortEndBox)] = value;
     }
   }
 
@@ -66,10 +66,10 @@ internal sealed partial class PluginSettings : ApplicationSettingsBase {
   [DefaultSettingValueAttribute("True")]
   public bool CheckForms {
     get {
-      return (bool)this["CheckForms"];
+      return (bool)this[nameof(CheckForms)];
     }
     set {
-      this["CheckForms"] = value;
+      this[nameof(CheckForms)] = value;
     }
   }
 
@@ -86,10 +86,10 @@ internal sealed partial class PluginSettings : ApplicationSettingsBase {
   [DefaultSettingValueAttribute("0")]
   public SortOptions AdditionalSortOptions {
     get {
-      return (SortOptions)this["AdditionalSortOptions"];
+      return (SortOptions)this[nameof(AdditionalSortOptions)];
     }
     set {
-      this["AdditionalSortOptions"] = value;
+      this[nameof(AdditionalSortOptions)] = value;
     }
   }
 

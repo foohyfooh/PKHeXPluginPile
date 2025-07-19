@@ -15,16 +15,16 @@ internal abstract class SortingBase {
 
   protected static Func<PKM, IComparable>[] AddSortOptions(Func<PKM, IComparable>[] sortFunctions) {
     return PluginSettings.Default.AdditionalSortOptions switch {
-      PluginSettings.SortOptions.Level => [.. sortFunctions, (PKM p) => p.CurrentLevel],
-      PluginSettings.SortOptions.MetDate => [.. sortFunctions, (PKM p) => p.MetDate!],
-      PluginSettings.SortOptions.LevelThenMetDate => [.. sortFunctions, (PKM p) => p.CurrentLevel, (PKM p) => p.MetDate!],
-      PluginSettings.SortOptions.MetDateThenLevel => [.. sortFunctions, (PKM p) => p.MetDate!, (PKM p) => p.CurrentLevel],
+      PluginSettings.SortOptions.Level => [.. sortFunctions, p => p.CurrentLevel],
+      PluginSettings.SortOptions.MetDate => [.. sortFunctions, p => p.MetDate!],
+      PluginSettings.SortOptions.LevelThenMetDate => [.. sortFunctions, p => p.CurrentLevel, p => p.MetDate!],
+      PluginSettings.SortOptions.MetDateThenLevel => [.. sortFunctions, p => p.MetDate!, p => p.CurrentLevel],
       PluginSettings.SortOptions.None or _ => sortFunctions,
     };
   }
 
   protected static Func<PKM, IComparable>[] GenerateSortingFunctions(params Dictionary<Species, PositionForms>[] dexes) {
-    Func<PKM, IComparable>[] sortFunctions = [(PKM p) => SortPokemon(dexes, p)];
+    Func<PKM, IComparable>[] sortFunctions = [p => SortPokemon(dexes, p)];
     return AddSortOptions(sortFunctions);
   }
 
