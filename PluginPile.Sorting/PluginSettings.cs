@@ -14,17 +14,17 @@ internal sealed partial class PluginSettings : ApplicationSettingsBase {
   }
 
   /// <summary>
-  /// Show the individual area Pokedéxes for those that have it.
+  /// Show the individual area Pokédexes for those that have it.
   /// </summary>
   [UserScopedSettingAttribute()]
-  [Description("Show the individual area Pokedéxes for those that have it.")]
+  [Description("Show the individual area Pokédexes for those that have it.")]
   [DefaultSettingValueAttribute("False")]
-  public bool ShowIndividualPokedéxes {
+  public bool ShowIndividualPokédexes {
     get {
-      return (bool)this[nameof(ShowIndividualPokedéxes)];
+      return (bool)this[nameof(ShowIndividualPokédexes)];
     }
     set {
-      this[nameof(ShowIndividualPokedéxes)] = value;
+      this[nameof(ShowIndividualPokédexes)] = value;
     }
   }
 
@@ -59,10 +59,10 @@ internal sealed partial class PluginSettings : ApplicationSettingsBase {
   }
 
   /// <summary>
-  /// Only accept forms from the regional Pokedéx that are being sorted
+  /// Only accept forms from the regional Pokédex that are being sorted
   /// </summary>
   [UserScopedSettingAttribute()]
-  [Description("Only accept forms from the regional Pokedéx that are being sorted")]
+  [Description("Only accept forms from the regional Pokédex that are being sorted")]
   [DefaultSettingValueAttribute("True")]
   public bool CheckForms {
     get {
@@ -81,8 +81,11 @@ internal sealed partial class PluginSettings : ApplicationSettingsBase {
     MetDateThenLevel,
   }
 
+  /// <summary>
+  /// Additional sorting options to be applied after Pokédex sorting
+  /// </summary>
   [UserScopedSettingAttribute()]
-  [Description("Additional sorting options to be applied after Pokedéx sorting")]
+  [Description("Additional sorting options to be applied after Pokédex sorting")]
   [DefaultSettingValueAttribute("0")]
   public SortOptions AdditionalSortOptions {
     get {
