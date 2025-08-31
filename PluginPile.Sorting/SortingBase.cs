@@ -14,13 +14,37 @@ internal abstract class SortingBase {
   }
 
   protected static Func<PKM, IComparable>[] AddSortOptions(Func<PKM, IComparable>[] sortFunctions) {
-    return PluginSettings.Default.AdditionalSortOptions switch {
-      PluginSettings.SortOptions.Level => [.. sortFunctions, p => p.CurrentLevel],
-      PluginSettings.SortOptions.MetDate => [.. sortFunctions, p => p.MetDate!],
-      PluginSettings.SortOptions.LevelThenMetDate => [.. sortFunctions, p => p.CurrentLevel, p => p.MetDate!],
-      PluginSettings.SortOptions.MetDateThenLevel => [.. sortFunctions, p => p.MetDate!, p => p.CurrentLevel],
-      PluginSettings.SortOptions.None or _ => sortFunctions,
-    };
+    PluginSettings.SortOptions[] options = PluginSettings.Default.AdditionalSortOptions;
+    if (options == null) return sortFunctions;
+    for (int i = 0; i < options.Length; i++) {
+      switch (options[i]) {
+        case PluginSettings.SortOptions.LevelAsc:
+          sortFunctions = [.. sortFunctions, p => p.CurrentLevel];
+          break;
+        case PluginSettings.SortOptions.LevelDesc:
+          sortFunctions = [.. sortFunctions, p => -p.CurrentLevel];
+          break;
+        case PluginSettings.SortOptions.MetDateAsc:
+          sortFunctions = [.. sortFunctions, p => p.MetDate!];
+          break;
+        case PluginSettings.SortOptions.ShinyAsc:
+          sortFunctions = [.. sortFunctions, p => p.IsShiny];
+          break;
+        case PluginSettings.SortOptions.ShinyDesc:
+          sortFunctions = [.. sortFunctions, p => !p.IsShiny];
+          break;
+        case PluginSettings.SortOptions.GenderAsc:
+          sortFunctions = [.. sortFunctions, p => p.Gender];
+          break;
+        case PluginSettings.SortOptions.GenderDesc:
+          sortFunctions = [.. sortFunctions, p => -p.Gender];
+          break;
+        default:
+          break;
+      }
+    }
+
+    return sortFunctions;
   }
 
   protected static Func<PKM, IComparable>[] GenerateSortingFunctions(params Dictionary<Species, PositionForms>[] dexes) {
