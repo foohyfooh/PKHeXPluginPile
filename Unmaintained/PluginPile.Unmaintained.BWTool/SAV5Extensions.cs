@@ -5,19 +5,19 @@ namespace PluginPile.Unmaintained.BWTool;
 public static class SAV5Extensions {
 
   public static byte[] GetData(this SAV5 sav, int Offset, int Length) {
-    return sav.Data.Skip(Offset).Take(Length).ToArray();
+    return [.. sav.Data.ToArray().Skip(Offset).Take(Length)];
   }
 
   public static void SetData(this SAV5 sav, byte[] input, int Offset) {
-    input.CopyTo(sav.Data, Offset);
+    input.CopyTo(sav.Data[Offset..(Offset+input.Length)]);
     sav.State.Edited = true;
   }
 
   private static byte[] GetBlock(this SAV5 sav, int index, int crcIndex, int backupOffset) {
     if (index < crcIndex) {
-      return sav.Data.Skip(sav.AllBlocks[index].Offset).Take(sav.AllBlocks[index + 1].Offset - sav.AllBlocks[index].Offset).ToArray();
+      return [.. sav.Data[sav.AllBlocks[index].Offset..sav.AllBlocks[index + 1].Offset]];
     } else if (index == crcIndex) {
-      return sav.Data.Skip(sav.AllBlocks[index].Offset).Take(backupOffset - sav.AllBlocks[index].Offset).ToArray();
+      return [.. sav.Data[sav.AllBlocks[index].Offset..backupOffset]];
     }
     throw new ArgumentOutOfRangeException($"Index should be less than {crcIndex}");
   }
@@ -56,20 +56,22 @@ public static class SAV5Extensions {
     if (index <= crcIndex) {
       //Recalculate checksum before applying to savedata
       ushort crc = Checksums.CRC16_CCITT(input.Take(sav.AllBlocks[index].Length).ToArray());
-      ushort crcintable = BitConverter.ToUInt16(sav.Data, sav.AllBlocks[crcIndex].Offset + (index * 2));
+      ushort crcintable = BitConverter.ToUInt16(sav.Data[(sav.AllBlocks[crcIndex].Offset + (index * 2))..]);
       if (crc != BitConverter.ToUInt16(input, ((BlockInfoNDS)sav.AllBlocks[index]).Checksum() - sav.AllBlocks[index].Offset) || crc != crcintable) {
-        Array.Copy(BitConverter.GetBytes(crc), 0, input, ((BlockInfoNDS)sav.AllBlocks[index]).Checksum() - sav.AllBlocks[index].Offset, 2);
+        byte[] crcBytes = BitConverter.GetBytes(crc);
+        Array.Copy(crcBytes, 0, input, ((BlockInfoNDS)sav.AllBlocks[index]).Checksum() - sav.AllBlocks[index].Offset, 2);
         // Update CRC tables
-        Array.Copy(BitConverter.GetBytes(crc), 0, sav.Data, (sav.AllBlocks[crcIndex].Offset) + (index * 2), 2);
-        Array.Copy(BitConverter.GetBytes(crc), 0, sav.Data, (sav.AllBlocks[crcIndex].Offset) + (index * 2) + backupOffset, 2);
+        crcBytes.CopyTo(sav.Data.Slice((sav.AllBlocks[crcIndex].Offset) + (index * 2)               , 2));
+        crcBytes.CopyTo(sav.Data.Slice((sav.AllBlocks[crcIndex].Offset) + (index * 2) + backupOffset, 2));
         // recalculate CRC table's checksum
-        ushort crctable = Checksums.CRC16_CCITT(sav.Data.Skip(sav.AllBlocks[crcIndex].Offset).Take((crcIndex + 1) * 2).ToArray());
-        Array.Copy(BitConverter.GetBytes(crctable), 0, sav.Data, ((BlockInfoNDS)sav.AllBlocks[crcIndex]).Checksum(), 2);
-        Array.Copy(BitConverter.GetBytes(crctable), 0, sav.Data, ((BlockInfoNDS)sav.AllBlocks[crcIndex]).Checksum() + backupOffset, 2);
+        ushort crctable = Checksums.CRC16_CCITT(sav.Data.Slice(sav.AllBlocks[crcIndex].Offset, (crcIndex + 1) * 2));
+        byte[] crctableBytes = BitConverter.GetBytes(crctable);
+        crctableBytes.CopyTo(sav.Data.Slice(((BlockInfoNDS)sav.AllBlocks[crcIndex]).Checksum()               , 2));
+        crctableBytes.CopyTo(sav.Data.Slice(((BlockInfoNDS)sav.AllBlocks[crcIndex]).Checksum() + backupOffset, 2));
       }
 
-      input.CopyTo(sav.Data, sav.AllBlocks[index].Offset);
-      input.CopyTo(sav.Data, sav.AllBlocks[index].Offset + backupOffset);
+      input.CopyTo(sav.Data.Slice(sav.AllBlocks[index].Offset, input.Length));
+      input.CopyTo(sav.Data.Slice(sav.AllBlocks[index].Offset + backupOffset, input.Length));
       sav.State.Edited = true;
     } else throw new ArgumentOutOfRangeException($"Index should be less than {crcIndex}");
   }
@@ -103,10 +105,10 @@ public static class SAV5Extensions {
   public static byte[] GetBlockDec(this SAV5 sav, int index, int crcIndex, int backupOffset) {
     Dictionary<int, EncryptedBlockInfo> enc = sav.GetEnc();
     if (index < crcIndex) {
-      byte[] decrypt = Crypto.CryptoArray(sav.Data.Skip(sav.AllBlocks[index].Offset).Take(sav.AllBlocks[index + 1].Offset - sav.AllBlocks[index].Offset).ToArray(), enc[index].Start, enc[index].Length, enc[index].Seed);
+      byte[] decrypt = Crypto.CryptoArray([.. sav.Data[sav.AllBlocks[index].Offset..sav.AllBlocks[index + 1].Offset]], enc[index].Start, enc[index].Length, enc[index].Seed);
       return decrypt;
     } else if (index == crcIndex) {
-      return sav.Data.Skip(sav.AllBlocks[index].Offset).Take(backupOffset - sav.AllBlocks[index].Offset).ToArray();
+      return [.. sav.Data[sav.AllBlocks[index].Offset..backupOffset]];
     }
     throw new ArgumentOutOfRangeException($"Index should be less than {crcIndex}");
   }

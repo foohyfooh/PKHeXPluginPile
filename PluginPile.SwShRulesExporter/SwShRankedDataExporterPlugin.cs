@@ -41,8 +41,8 @@ public class SwShRulesExporterPlugin : Common.PluginBase {
       SCBlock scBlock = sav.Accessor.GetBlockSafe(block);
       if (scBlock.Type is SCTypeCode.None) continue;
       byte[] data = scBlock.Data.ToArray();
-      if (!data.Any((byte b) => b != 0)) continue;
-      byte[] nameBytes = data.Skip(Constants.EnlgishNameLocation).Take(Constants.EnlgishNameSize).ToArray();
+      if (!data.Any(b => b != 0)) continue;
+      byte[] nameBytes = [.. data.Skip(Constants.EnlgishNameLocation).Take(Constants.EnlgishNameSize)];
       string rulesName = StringConverter8.GetString(nameBytes);
 
       // TODO: Verify no characters from Path.GetInvalidPathChars() is in the path
@@ -58,7 +58,7 @@ public class SwShRulesExporterPlugin : Common.PluginBase {
     string[] saves = Directory.GetFiles(bakDir);
     IEnumerable<string> filteredSaves = saves.Where(save => save.Contains("main") || save.Contains("backup"));
     foreach (string save in filteredSaves) {
-      SaveFile? sav = SaveUtil.GetVariantSAV(save)!;
+      SaveFile? sav = SaveUtil.GetSaveFile(save)!;
       if (sav is SAV8SWSH sav8swsh) {
         ExportRuleBlocks(sav8swsh);
       }

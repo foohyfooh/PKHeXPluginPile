@@ -71,8 +71,8 @@ public partial class GrottoForm : Form {
     InitializeComponent();
     SAV = sav;
     unknowngrottobox.Hexadecimal = true;
-    Array.Copy(SAV.Data, SAV.AllBlocks[Constants.B2W2.Grotto].Offset, grottobuffer, 0, GROTTO_BLOCK_SIZE);
-    Array.Copy(SAV.Data, SAV.AllBlocks[Constants.B2W2.Overworld].Offset, overworldbuffer, 0, OVERWORLD_BLOCK_SIZE);
+    grottobuffer.CopyTo(SAV.Data.Slice(SAV.AllBlocks[Constants.B2W2.Grotto].Offset, GROTTO_BLOCK_SIZE));
+    overworldbuffer.CopyTo(SAV.Data.Slice(SAV.AllBlocks[Constants.B2W2.Overworld].Offset, OVERWORLD_BLOCK_SIZE));
     LoadGrottoData();
     LoadSwarmData();
     Grotto_route.SelectedIndex = 0;
@@ -624,10 +624,10 @@ public partial class GrottoForm : Form {
     //PDR_fix_grotto_checksum();
     //PDR_injectNsave();
 
-    Array.Copy(grottobuffer, 0, SAV.Data, SAV.AllBlocks[Constants.B2W2.Grotto].Offset, GROTTO_BLOCK_SIZE);
-    Array.Copy(grottobuffer, 0, SAV.Data, SAV.AllBlocks[Constants.B2W2.Grotto].Offset + 0x26000, GROTTO_BLOCK_SIZE); //Should not hardcode value...
-    Array.Copy(overworldbuffer, 0, SAV.Data, SAV.AllBlocks[Constants.B2W2.Overworld].Offset, OVERWORLD_BLOCK_SIZE);
-    Array.Copy(overworldbuffer, 0, SAV.Data, SAV.AllBlocks[Constants.B2W2.Overworld].Offset + 0x26000, OVERWORLD_BLOCK_SIZE); //Should not hardcode value...
+    grottobuffer.CopyTo(SAV.Data.Slice(SAV.AllBlocks[Constants.B2W2.Grotto].Offset                              , GROTTO_BLOCK_SIZE));
+    grottobuffer.CopyTo(SAV.Data.Slice(SAV.AllBlocks[Constants.B2W2.Grotto].Offset + Constants.B2W2.BackupOffset, GROTTO_BLOCK_SIZE));
+    overworldbuffer.CopyTo(SAV.Data.Slice(SAV.AllBlocks[Constants.B2W2.Overworld].Offset                              , OVERWORLD_BLOCK_SIZE));
+    overworldbuffer.CopyTo(SAV.Data.Slice(SAV.AllBlocks[Constants.B2W2.Overworld].Offset + Constants.B2W2.BackupOffset, OVERWORLD_BLOCK_SIZE));
     SAV.State.Edited = true;
     Close();
   }
