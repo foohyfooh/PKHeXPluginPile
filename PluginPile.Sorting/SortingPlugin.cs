@@ -34,6 +34,7 @@ public class SortingPlugin : PluginBase {
       sortItems.Add(GetRegionalSortButton(Language.Gen7Kanto, Gen7Kanto.GetSortFunctions()));
     } else {
       bool isBDSP = version == GameVersion.BD || version == GameVersion.SP;
+      bool isScVi = version == GameVersion.SL || version == GameVersion.VL;
       bool isPLA  = version == GameVersion.PLA;
 
       if (gen >= 1) {
@@ -96,7 +97,6 @@ public class SortingPlugin : PluginBase {
       if (gen >= 8) {
         bool isSwSh = version == GameVersion.SW || version == GameVersion.SH;
         if (!isBDSP && !isPLA) {
-          bool isScVi = version == GameVersion.SL || version == GameVersion.VL;
           if (!isScVi) {
             sortItems.Add(GetRegionalSortButton(Language.Gen7Kanto, Gen7Kanto.GetSortFunctions()));
           }
@@ -135,6 +135,12 @@ public class SortingPlugin : PluginBase {
           ]));
         }
         sortItems.Add(GetRegionalSortButton(Language.Gen9Paldea, Gen9Paldea.GetSortFunctions()));
+
+
+        if (!isScVi) {
+          sortItems.Add(GetRegionalSortButton(Language.Gen9Kalos, Gen9Kalos.GetLumioseDexSortFunctions()));
+        }
+          
       }
 
       if (gen != 1) {
