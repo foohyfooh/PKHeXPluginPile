@@ -75,7 +75,7 @@ public partial class FashionFormSwSh : Form {
 
   private FashionPageSelector NewSelector(int region, Func<int, string[]> textList) {
     bool[] OwnedFlags(int region) => SAV.Blocks.Fashion.GetArrayOwnedFlag(region);
-    bool[] NewFlags(int region) => SAV.Blocks.Fashion.GetArrayNewFlag(region).Select(b => !b).ToArray();
+    bool[] NewFlags(int region) => [.. SAV.Blocks.Fashion.GetArrayNewFlag(region).Select(b => !b)];
     return new FashionPageSelector(OwnedFlags(region), textList(SAV.Gender), NewFlags(region));
   }
 
