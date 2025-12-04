@@ -8,13 +8,13 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <BaseOutputPath>$(SolutionDir)bin\</BaseOutputPath>
-    <Version>1.16.0</Version>
+    <Version>1.17.0</Version>
     <Company>foohyfooh</Company>
     <Authors>foohyfooh</Authors>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PKHeX.Core" Version="25.11.30" />
+    <PackageReference Include="PKHeX.Core" Version="25.12.2" />
     <PackageReference Include="Costura.Fody" Version="5.7.0" PrivateAssets="all" />
     <PackageReference Include="Fody" Version="6.9.2" PrivateAssets="all" />
     <ProjectReference Include="$(SolutionDir)\PluginPile.Common\PluginPile.Common.csproj" Condition="'$(RootNamespace)' != 'PluginPile.Common'" PrivateAssets="All"/>
