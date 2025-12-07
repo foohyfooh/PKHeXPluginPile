@@ -287,18 +287,22 @@ internal static class Language {
   };
 
   public static string Gen9PaldeaRegionsBlueberryAcademy => GameInfo.CurrentLanguage switch {
+    "zh-Hans" => "蓝莓学院",
     "en" or _ => "Blueberry Academy"
   };
 
   public static string Gen9Kalos => GameInfo.CurrentLanguage switch {
+    "zh-Hans" => "Gen 9 卡洛斯",
     "en" or _ => "Gen 9 Kalos"
   };
 
   public static string Gen9KalosRegions => GameInfo.CurrentLanguage switch {
+    "zh-Hans" => "Gen 9 卡洛斯地区",
     "en" or _ => "Gen 9 Kalos Regions"
   };
 
   public static string Gen9KalosRegionLumioseCity => GameInfo.CurrentLanguage switch {
+    "zh-Hans" => "密阿雷市",
     "en" or _ => "Lumiose City"
   };
 
