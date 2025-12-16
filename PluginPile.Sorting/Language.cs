@@ -302,6 +302,10 @@ internal static class Language {
     "en" or _ => "Lumiose City"
   };
 
+  public static string Gen9KalosRegionHyperspaceLumiose => GameInfo.CurrentLanguage switch {
+    "en" or _ => "Hyperspace Lumiose"
+  };
+
   public static string MenuItemName => GameInfo.CurrentLanguage switch {
     "de"      => "Sortiere Boxen nach",
     "zh-Hans" => "排序插件",

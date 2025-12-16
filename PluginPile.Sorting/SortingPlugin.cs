@@ -138,7 +138,13 @@ public class SortingPlugin : PluginBase {
 
 
         if (!isScVi) {
-          sortItems.Add(GetRegionalSortButton(Language.Gen9Kalos, Gen9Kalos.GetLumioseDexSortFunctions()));
+          if (PluginSettings.Default.ShowIndividualPokédexes) {
+            sortItems.Add(GetAreaButtons(Language.Gen9KalosRegions, [
+              GetRegionalSortButton(Language.Gen9KalosRegionLumioseCity, Gen9Kalos.GetLumioseDexSortFunctions()),
+              GetRegionalSortButton(Language.Gen9KalosRegionHyperspaceLumiose, Gen9Kalos.GetHyperspaceDexSortFunctions()),
+            ]));
+          }
+          sortItems.Add(GetRegionalSortButton(Language.Gen9Kalos, Gen9Kalos.GetSortFunctions()));
         }
           
       }
