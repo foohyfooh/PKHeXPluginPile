@@ -307,6 +307,7 @@ internal static class Language {
   };
 
   public static string Gen9KalosRegionHyperspaceLumiose => GameInfo.CurrentLanguage switch {
+    "zh-Hans" => "超空间密阿雷市",
     "en" or _ => "Hyperspace Lumiose"
   };
 
