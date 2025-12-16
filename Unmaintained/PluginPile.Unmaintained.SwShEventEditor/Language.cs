@@ -1,7 +1,6 @@
 using PKHeX.Core;
 
 namespace PluginPile.Unmaintained.SwShEventEditor;
-
 internal static class Language {
 
   public static string MenuItemName => GameInfo.CurrentLanguage switch {
@@ -78,4 +77,5 @@ internal static class Language {
     "zh-Hans" => ["必须野营", "出现", "已捕获"],
     "en" or _ => ["Have To Camp", "Appeared", "Captured"]
   };
+
 }

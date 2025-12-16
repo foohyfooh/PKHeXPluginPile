@@ -1,7 +1,6 @@
 using PKHeX.Core;
 
 namespace PluginPile.SwShRulesExporter;
-
 internal static class Language {
 
   public static string MenuName => GameInfo.CurrentLanguage switch {
@@ -30,4 +29,5 @@ internal static class Language {
     "zh-Hans" => "感谢您进行检查，但未找到规则。",
     "en" or _ => "Thanks for checking but no rules were found."
   };
+
 }
