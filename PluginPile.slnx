@@ -1,0 +1,59 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="FodyWeavers.xml" />
+    <File Path="readme.md" />
+  </Folder>
+  <Project Path="PluginPile.Common/PluginPile.Common.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.FashionEditor/PluginPile.FashionEditor.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.RaidImporter/PluginPile.RaidImporter.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.RoamerTool/PluginPile.RoamerTool.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.Sorting/PluginPile.Sorting.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.SpecialPkmnFinder/PluginPile.SpecialPkmnFinder.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.SVivillon/PluginPile.SVivillon.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.SVProfilePictureViewer/PluginPile.SVProfilePictureViewer.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.SwShRulesExporter/PluginPile.SwShRulesExporter.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.TeamViewer/PluginPile.TeamViewer.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile.TMTool/PluginPile.TMTool.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="PluginPile/PluginPile.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="Unmaintained/PluginPile.Unmaintained.AutoModQRPlugins/PluginPile.Unmaintained.AutoModQRPlugins.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="Unmaintained/PluginPile.Unmaintained.BWTool/PluginPile.Unmaintained.BWTool.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="Unmaintained/PluginPile.Unmaintained.SwShEventEditor/PluginPile.Unmaintained.SwShEventEditor.csproj">
+    <Platform Project="x64" />
+  </Project>
+  <Project Path="Unmaintained/PluginPile.Unmaintained.SwShRaidTool/PluginPile.Unmaintained.SwShRaidTool.csproj">
+    <Platform Project="x64" />
+  </Project>
+</Solution>
