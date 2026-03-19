@@ -28,7 +28,7 @@ public static class RaidUtil {
     }
 
     if (!active) {
-      sprite = DrawingUtil.ToGrayscale(sprite);
+      DrawingUtil.ToGrayscale(sprite);
     }
 
     return sprite;

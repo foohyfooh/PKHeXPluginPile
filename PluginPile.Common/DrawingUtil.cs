@@ -33,9 +33,9 @@ public class DrawingUtil {
     return (Image)layerImageMethod.Invoke(null, [baseLayer, overLayer, x, y])!;
   }
 
-  public static Image ToGrayscale(Image img) {
+  public static void ToGrayscale(Image img) {
     MethodInfo toGrayscaleMethod = ImageUtilType.GetMethod("ToGrayscale")!;
-    return (Image)toGrayscaleMethod.Invoke(null, [img])!;
+    toGrayscaleMethod.Invoke(null, [img, 1f]);
   }
 
   public static Bitmap GetBitmap(byte[] data, int width, int height) {
