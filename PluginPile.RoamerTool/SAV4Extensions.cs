@@ -13,7 +13,7 @@ public static class SAV4Extensions {
   }
 
   public static bool HasActiveRoamer(this SAV4 sav4) {
-    return sav4.GetRoamers().Any(roamer => roamer.Active);
+    return sav4.GetRoamers().Any(roamer => roamer.IsActive);
   }
 
 }

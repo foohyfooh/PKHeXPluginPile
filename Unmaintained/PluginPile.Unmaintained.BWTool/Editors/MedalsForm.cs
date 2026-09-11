@@ -6,8 +6,6 @@ public partial class MedalsForm : Form {
   private readonly SAV5B2W2 Origin, SAV;
   private readonly MedalList5 Medals;
   private int MedalIndex;
-  private Medal5 CurrentMedal => Medals[MedalIndex];
-
 
   public MedalsForm(SAV5B2W2 sav) {
     InitializeComponent();
@@ -44,15 +42,16 @@ public partial class MedalsForm : Form {
       MedalIndex = MedalSelection.SelectedIndex - 5;
     }
 
-    MedalState.SelectedIndex = (int)CurrentMedal.State;
-    if (CurrentMedal.CanHaveDate) {
+    Medal5 currentMedal = Medals[MedalIndex];
+    MedalState.SelectedIndex = (int)currentMedal.State;
+    if (currentMedal.CanHaveDate) {
       MedalDate.Enabled = true;
-      MedalDate.Value = CurrentMedal.Date.ToDateTime(new TimeOnly());
+      MedalDate.Value = currentMedal.Date.ToDateTime(new TimeOnly());
     } else {
       MedalDate.Enabled = false;
       MedalDate.Value = EncounterDate.GetDateNDS().ToDateTime(new TimeOnly());
     }
-    UnreadFlag.Checked = CurrentMedal.IsUnread;
+    UnreadFlag.Checked = currentMedal.IsUnread;
   }
 
   void Exit_Click(object sender, EventArgs e) => Close();
@@ -63,10 +62,11 @@ public partial class MedalsForm : Form {
   }
 
   private void MedalState_SelectedIndexChanged(object sender, EventArgs e) {
-    CurrentMedal.State = (Medal5State)MedalState.SelectedIndex;
-    if (CurrentMedal.CanHaveDate) {
-      if (!CurrentMedal.HasDate)
-        CurrentMedal.Date = EncounterDate.GetDateNDS();
+    Medal5 currentMedal = Medals[MedalIndex];
+    currentMedal.State = (MedalState5)MedalState.SelectedIndex;
+    if (currentMedal.CanHaveDate) {
+      if (!currentMedal.HasDate)
+        currentMedal.Date = EncounterDate.GetDateNDS();
       MedalDate.Enabled = true;
     } else {
       MedalDate.Enabled = false;
@@ -74,16 +74,20 @@ public partial class MedalsForm : Form {
   }
 
   void MedalDate_ValueChanged(object sender, EventArgs e) {
-    if (MedalDate.Enabled)
+    if (MedalDate.Enabled) {
+      Medal5 CurrentMedal = Medals[MedalIndex];
       CurrentMedal.Date = DateOnly.FromDateTime(MedalDate.Value);
+    } 
   }
   
   void UnreadFlag_CheckedChanged(object sender, EventArgs e) {
-    CurrentMedal.IsUnread = UnreadFlag.Checked;
+    Medal5 currentMedal = Medals[MedalIndex];
+    currentMedal.IsUnread = UnreadFlag.Checked;
   }
 
   void Delete_Click(object sender, EventArgs e) {
-    CurrentMedal.Clear();
+    Medal5 currentMedal = Medals[MedalIndex];
+    currentMedal.Clear();
     int index = MedalSelection.SelectedIndex;
     MedalSelection.SelectedIndex = -1;
     MedalSelection.SelectedIndex = index;

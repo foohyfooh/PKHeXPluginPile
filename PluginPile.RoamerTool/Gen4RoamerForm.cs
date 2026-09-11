@@ -12,7 +12,7 @@ public partial class Gen4RoamerForm : Form {
     SAV = sav;
     RoamersControls = [];
     foreach (Roamer4 roamer in SAV.GetRoamers()) {
-      if (roamer.Active) {
+      if (roamer.IsActive) {
         AddRoamerTab(roamer);
       }
     }
