@@ -117,7 +117,7 @@ internal class Gen4Sinnoh : SortingBase {
     {Species.Garchomp, 111},
     {Species.Munchlax, 112},
     {Species.Snorlax, 113},
-    {Species.Unown, 114},
+    {Species.Unown, (114, 0..27)},
     {Species.Riolu, 115},
     {Species.Lucario, 116},
     {Species.Wooper, 117},
